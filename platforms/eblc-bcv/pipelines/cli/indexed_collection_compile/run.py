@@ -202,7 +202,7 @@ Z3 exact stop-position witness는 `{witness['exact_outputs']['c0__stop_position'
 
 
 def execute(collection_path: Path, run_id: str) -> tuple[Path, dict[str, Any]]:
-    output = ROOT / "artifacts/results/public/eblc-indexed-collection-001" / run_id
+    output = ROOT / "platforms/eblc-bcv/artifacts/public/eblc-indexed-collection-001" / run_id
     if output.exists():
         raise FileExistsError(f"refusing to overwrite existing run: {run_id}")
     collection = load_indexed_collection(collection_path)

@@ -27,11 +27,11 @@ restricted scene ID가 들어간 export는 공개 폴더에 저장하지 않는�
 ```bash
 /usr/bin/python3 projects/04-guardsynth-coc/pipelines/cli/scene_evidence_review/build_embedded.py \
   --image-dir <restricted-image-directory> \
-  --output-dir artifacts/results/restricted/guardsynth-scene-evidence-review-001/<new-run-id> \
+  --output-dir projects/04-guardsynth-coc/artifacts/restricted/guardsynth-scene-evidence-review-001/<new-run-id> \
   --source-ref <internal-derived-source-ref>
 ```
 
-이미지 bytes가 들어간 HTML은 `artifacts/results/restricted/` 밖으로 출력할 수 없도록
+이미지 bytes가 들어간 HTML은 `projects/04-guardsynth-coc/artifacts/restricted/` 밖으로 출력할 수 없도록
 builder가 거부한다.
 
 ## 이미지밖에 없는 검토
@@ -46,6 +46,6 @@ assurance는 자동으로 `NOT_AVAILABLE_FROM_IMAGE`이며 결과는 항상 계�
 /usr/bin/python3 projects/04-guardsynth-coc/pipelines/cli/scene_evidence_review/build_embedded.py \
   --review-mode image-only \
   --image-dir <restricted-image-directory> \
-  --output-dir artifacts/results/restricted/guardsynth-image-only-scene-review-001/<new-run-id> \
+  --output-dir projects/04-guardsynth-coc/artifacts/restricted/guardsynth-image-only-scene-review-001/<new-run-id> \
   --source-ref <internal-derived-source-ref>
 ```

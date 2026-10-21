@@ -29,7 +29,7 @@ from guard_synth_eblc.schema_validation import load_json
 
 EXPERIMENT_ID = "GUARDSYNTH-EXPERT-PILOT-PREFLIGHT-001"
 DEFAULT_BATCH = ROOT / (
-    "artifacts/results/restricted/guardsynth-sim24-batch-001/"
+    "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-sim24-batch-001/"
     "alpamayo-terminal-batch-2026-08-12-v1/BATCH_RESULT.json"
 )
 ANNOTATION_SCHEMA = ROOT / "projects/04-guardsynth-coc/src/guard_synth/schemas/expert_annotation.schema.json"

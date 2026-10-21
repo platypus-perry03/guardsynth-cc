@@ -7,7 +7,7 @@ import math
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[4]
-BASE = ROOT/'artifacts/projects/guardsynth-coc/public/paper1-method-preservation-001'
+BASE = ROOT/'projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001'
 EXP = BASE/'temporal-expansion-learning-2026-09-29-001'
 COST = BASE/'temporal-cost-learning-2026-09-29-001'
 SECONDARY = BASE/'temporal-secondary-metrics-2026-09-29-001'

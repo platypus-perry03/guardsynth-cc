@@ -9,4 +9,4 @@ It is a preceding data-consistency study, not the GuardSynth constraint generato
 - Execution tracker: [`docs/plans/03_PROJECT_EXECUTION_TRACKER.md`](docs/plans/03_PROJECT_EXECUTION_TRACKER.md)
 - Surveys: [`docs/surveys/README.md`](docs/surveys/README.md)
 - Paper: [`paper/manuscript/README.md`](paper/manuscript/README.md)
-- Results: [`results/RESULT_INDEX.md`](results/RESULT_INDEX.md)
+- Results: [`artifacts/RESULT_INDEX.md`](artifacts/RESULT_INDEX.md)

@@ -241,7 +241,7 @@ O01~O06은 해당 기능의 구현·배포 확인 사항이다. 새 조사나 �
 | 기존 실패 | 내용 |
 |---|---|
 | 명명 1 | `projects/P003_ophthalmic_foundation_model_validation` 디렉터리 이름 |
-| 명명 2–3 | `guardsynth-m16-scene-acquisition-001/m16-geometry-curator-submission-2026-09-06-v1/`의 `m16_geometry_candidate_review (1).csv` 및 `.json` |
+| 명명 2–3 | `guardsynth-m16-scene-acquisition-001/m16-geometry-curator-submission-2026-09-06-v1/`의 `m16_geometry_candidate_review_v2_0.csv` 및 `.json` |
 | 명명 4 | `guardsynth-paper1-reviewed-contract-001/scene18-independent-submission-2026-09-08-001/scene18_scene_cnl_review (1).json` |
 | 명명 5 | 미등록 root 파일 `portal_exec.md` |
 | 구조 1 | `test_maintained_files_follow_naming_codex`: 위 5건 |

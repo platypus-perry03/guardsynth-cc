@@ -1,0 +1,26 @@
+{
+  "project_id": "guardsynth-coc",
+  "run_id": "coauthor-seminar-2026-10-07-003",
+  "status": "PASS",
+  "checks": {
+    "slides_pages": 32,
+    "notes_pages": 32,
+    "requested_title_text_removed": true,
+    "remaining_slide_and_note_text_unchanged": true,
+    "visual_review": "PASS",
+    "latex_build": "PASS",
+    "file_naming": "Only 10 pre-existing unrelated findings; no new seminar findings."
+  },
+  "outputs": {
+    "slides": {
+      "file": "coauthor-seminar-v01-en.pdf",
+      "pages": 32,
+      "sha256": "d8fbe08c128bcaf9c94c64533a92ec64f43eceba59bb4c8b510b28b89e862e3f"
+    },
+    "notes": {
+      "file": "coauthor-seminar-v01-en-notes.pdf",
+      "pages": 32,
+      "sha256": "0e97916cdff96d43d043ceb3647b3055f8ee50a5a4f01a450cc0ab3353ff27da"
+    }
+  }
+}

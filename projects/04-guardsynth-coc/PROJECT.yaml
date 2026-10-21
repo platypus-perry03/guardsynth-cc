@@ -7,7 +7,7 @@ dependencies:
   - eblc-bcv
 related_research:
   - eblc-language-verification
-artifact_root: artifacts/projects/guardsynth-coc
+artifact_root: projects/04-guardsynth-coc/artifacts
 canonical_status: STATUS.md
 canonical_research_plan: docs/plans/01_RESEARCH_PLAN_V02.md
 canonical_milestones: docs/plans/02_PROJECT_MILESTONES.md
@@ -24,3 +24,13 @@ subprojects:
     design_verification: docs/reports/GUARDSYNTH_STUDIO_DESIGN_VERIFICATION_REPORT_V01.md
     application: ../../apps/guardsynth_studio
     implementation_verification: docs/reports/GUARDSYNTH_STUDIO_IMPLEMENTATION_VERIFICATION_REPORT_V01.md
+  - id: guardsynth-studio-sequential-coc
+    parent: guardsynth-studio
+    title: GuardSynth Studio — Recorded CoC and Stateful Constraints
+    kind: engineering_subproject
+    status: local_implemented_synthetic_acceptance_verified_real_generation_evaluation_pending
+    requirements: docs/requirements/STUDIO_SEQUENTIAL_COC_REQUIREMENTS_V01.md
+    design: docs/designs/STUDIO_SEQUENTIAL_COC_DESIGN_V01.md
+    implementation_plan: docs/plans/studio-sequential-coc/STUDIO_SEQUENTIAL_COC_PLAN_V01.md
+    application: ../../apps/guardsynth_studio
+    implementation_verification: docs/reports/STUDIO_SEQUENTIAL_COC_IMPLEMENTATION_REPORT_V01.md

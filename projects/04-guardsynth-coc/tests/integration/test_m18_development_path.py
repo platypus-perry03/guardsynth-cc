@@ -55,7 +55,7 @@ class DevelopmentPathTest(unittest.TestCase):
     def test_cohort_audit_has_no_implicit_speed_admission_or_main_split(self):
         with tempfile.TemporaryDirectory() as tmp:
             out=Path(tmp)/'prep-001'
-            config=real.BASE/'m18-cohort-feasibility-2026-09-29-005/admission_evidence.json'
+            config=ROOT/'projects/04-guardsynth-coc/tests/fixtures/m18_projection_only.json'
             result=prep.execute(out,config)
             self.assertEqual(result['speed_training_eligible'],0)
             self.assertEqual(result['speed_mechanically_ready'],2)

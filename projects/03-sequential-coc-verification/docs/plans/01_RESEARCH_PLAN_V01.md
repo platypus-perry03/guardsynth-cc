@@ -12,6 +12,10 @@
 - 상세 선택 근거: [정형기법 선택 서베이](../surveys/02_METHOD_SELECTION_SURVEY_V01.md)
 - 이전 UPPAAL 우선안: [UPPAAL 우선안](../decisions/UPPAAL_FIRST_OPTION_DECISION.md)
 
+## 현재 KIEE 개정 범위 (2026-10-12)
+
+아래 장기 STL/CBF·학습 계획은 SQ-M06 후속 범위다. 현재 실행인 SQ-M05는 연속 CoC의 시간·조건 일관성 **feasibility와 근거 추적**에 한정한다. X3a 원 판정의 AC1 재분석, 81건 경계 정책 본문 통합 및 무선별 유한 직적 35,042,928건의 구현 적합성 시험을 수행했다. 이는 자연 의미 정답이나 외부 독립 평가를 확립하지 않는다. 최신 결과·미실시 항목은 [대응 설계 13.9절](../designs/KIEE_REVIEW_RESPONSE_REEXPERIMENT_DESIGN_V01.md#139-후속-실행-결과--2026-10-12)과 [실행 추적표](03_PROJECT_EXECUTION_TRACKER.md)를 따른다.
+
 ## 1. 연구 목적과 범위
 
 E2E 자율주행 모델은 영상과 차량 상태로부터 reasoning trace와 미래 trajectory를 함께 생성할 수 있다. CoC reasoning trace는 원인, 판단, 행동, 예상 결과를 명시하지만, 자연어 설명이 그럴듯하다는 사실만으로 그것이 장면에 근거하거나 trajectory가 안전하다고 결론 내릴 수는 없다.

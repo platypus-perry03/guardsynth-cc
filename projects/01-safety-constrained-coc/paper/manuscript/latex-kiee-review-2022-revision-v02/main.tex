@@ -1,4 +1,8 @@
 \documentclass[9pt,twocolumn]{extarticle}
+\ifdefined\kieepublication
+\usepackage{cite}
+\renewcommand{\citepunct}{], [}
+\fi
 \usepackage{kiee-review}
 
 % Earlier review changes are accepted; blue marks only this revision.
@@ -11,6 +15,10 @@
 
 \kieeenglishtitle{Guard-Aware Trajectory Candidate Selection for Vision-Language Autonomous Driving:\ Safety-Constrained Chain-of-Causation}
 \kieekoreantitle{비전-언어 자율주행 모델의 실행 가드 기반 궤적 후보 선택:\ Safety-Constrained Chain-of-Causation}
+
+\ifdefined\kieepublication
+\usepackage{kiee-publication}
+\fi
 
 \begin{document}
 
@@ -35,17 +43,32 @@
 \input{sections/08-conclusion}
 
 \noindent\begin{minipage}{\columnwidth}
+\ifdefined\kieepublication
+\section*{Acknowledgements}
+\else
 \section*{감사의 글}
+\fi
 \begingroup
 \raggedright
+\ifdefined\kieepublication
+This work was supported by the National Research Foundation of Korea (NRF) grant funded by the Korean government (Ministry of Education, Science and Technology) (\nolinkurl{NRF-2023R1A2C1006639}), and by the Institute of Information \& Communications Technology Planning \& Evaluation (IITP) grant funded by the Korean government (Ministry of Science and ICT) through the Regional Intelligence Innovation Talent Development Program (\nolinkurl{IITP-2026-RS-2024-00436773}).
+\else
 본 연구는 대한민국 정부(교육과학기술부)의 재원으로 한국연구재단(NRF)의 지원을 받아 수행되었으며(\nolinkurl{NRF-2023R1A2C1006639}), 대한민국 정부(과학기술정보통신부)의 재원으로 정보통신기획평가원(IITP)의 지역지능화혁신인재양성사업 지원을 받아 수행되었음(\nolinkurl{IITP-2026-RS-2024-00436773}).
+\fi
 \par
 \endgroup
 \end{minipage}
 
+\ifdefined\kieepublication
+\bibliographystyle{ieeetr}
+\else
 \bibliographystyle{unsrt}
+\fi
 \begingroup
 \fontsize{8pt}{12pt}\selectfont
 \bibliography{references}
 \endgroup
+\ifdefined\kieepublication
+\input{sections/09-author-biography}
+\fi
 \end{document}

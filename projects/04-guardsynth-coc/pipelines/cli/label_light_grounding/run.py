@@ -48,7 +48,7 @@ DEFAULT_RUN_ID = "label-light-2026-08-10-v1"
 PACKET_FIXTURE = ROOT / "projects/04-guardsynth-coc/src/guard_synth/fixtures/label_light_grounding_packet_v0_1.json"
 BASE_REQUEST = ROOT / "projects/04-guardsynth-coc/src/guard_synth/fixtures/source_aware_generation_request_p0b_v0_1.json"
 REGISTRY_FIXTURE = ROOT / "projects/04-guardsynth-coc/src/guard_synth/fixtures/vehicle_assurance_registry_synthetic_test_v0_1.json"
-LEGACY_ADAPTER = ROOT / "artifacts/results/restricted/eblc-p0b-001/p0b-restricted-grounding-multiview-2026-08-08-v1/ADAPTER_RESULT.json"
+LEGACY_ADAPTER = ROOT / "platforms/eblc-bcv/artifacts/restricted/eblc-p0b-001/p0b-restricted-grounding-multiview-2026-08-08-v1/ADAPTER_RESULT.json"
 CLAIM_SCOPE = "LABEL_LIGHT_SYNTHETIC_GROUNDING_AND_BOUNDED_HANDOFF_NOT_ASSOCIATION_ACCURACY_OR_VEHICLE_SAFETY"
 
 
@@ -242,7 +242,7 @@ workflow와 bounded handoff를 검증했을 뿐 association 정확도, 실제 �
 
 
 def execute(run_id: str) -> tuple[Path, dict[str, Any]]:
-    output = ROOT / "artifacts/results/public/guardsynth-label-light-grounding-001" / run_id
+    output = ROOT / "projects/04-guardsynth-coc/artifacts/public/guardsynth-label-light-grounding-001" / run_id
     if output.exists():
         raise FileExistsError(f"refusing to overwrite existing run: {run_id}")
     output.mkdir(parents=True)

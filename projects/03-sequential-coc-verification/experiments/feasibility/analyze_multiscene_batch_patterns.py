@@ -9,8 +9,8 @@ from pathlib import Path
 from typing import Any
 
 
-DEFAULT_INPUT = Path("artifacts/results/public/multiscene-chain/uppaal-loop-batch-all-strict-1s.json")
-DEFAULT_OUTPUT = Path("artifacts/results/public/multiscene-chain/uppaal-loop-pattern-analysis.json")
+DEFAULT_INPUT = Path("projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/uppaal-loop-batch-all-strict-1s.json")
+DEFAULT_OUTPUT = Path("projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/uppaal-loop-pattern-analysis.json")
 
 
 KEYWORDS = {

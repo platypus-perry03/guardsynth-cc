@@ -1,0 +1,98 @@
+[
+  {
+    "job": "temporal_ce_rule_seed42",
+    "last_progress": {
+      "task": "temporal",
+      "arm": "ce_rule",
+      "seed": 42,
+      "epoch": 2,
+      "updates": 120,
+      "elapsed_seconds": 611.6907835975289,
+      "ce": 0.1403922095729816,
+      "semantic": 0.19692935148874918,
+      "total": 0.1403922095729816
+    },
+    "reason": "Predecessor exec-session termination ended descendants; restart from the same base and seed",
+    "predictions_excluded": true
+  },
+  {
+    "job": "temporal_semantic_rule_seed42",
+    "last_progress": {
+      "task": "temporal",
+      "arm": "semantic_rule",
+      "seed": 42,
+      "epoch": 2,
+      "updates": 110,
+      "elapsed_seconds": 565.4994288384914,
+      "ce": 0.1819476651423882,
+      "semantic": 0.061721940040588376,
+      "total": 0.24366960581749889
+    },
+    "reason": "Predecessor exec-session termination ended descendants; restart from the same base and seed",
+    "predictions_excluded": true
+  },
+  {
+    "job": "position_hold_semantic_no_rule_seed42",
+    "last_progress": {
+      "task": "position_hold",
+      "arm": "semantic_no_rule",
+      "seed": 42,
+      "epoch": 2,
+      "updates": 80,
+      "elapsed_seconds": 558.3416887409985,
+      "ce": 0.3682944725922425,
+      "semantic": 0.10579416155815125,
+      "total": 0.4740886339248391
+    },
+    "reason": "Predecessor exec-session termination ended descendants; restart from the same base and seed",
+    "predictions_excluded": true
+  },
+  {
+    "job": "position_hold_semantic_rule_seed42",
+    "last_progress": {
+      "task": "position_hold",
+      "arm": "semantic_rule",
+      "seed": 42,
+      "epoch": 1,
+      "updates": 30,
+      "elapsed_seconds": 65.88666608929634,
+      "ce": 0.6748741520680294,
+      "semantic": 0.4773291985193888,
+      "total": 1.1522033520430948
+    },
+    "reason": "Predecessor exec-session termination ended descendants; restart from the same base and seed",
+    "predictions_excluded": true
+  },
+  {
+    "job": "temporal_ce_rule_seed123",
+    "last_progress": {
+      "task": "temporal",
+      "arm": "ce_rule",
+      "seed": 123,
+      "epoch": 3,
+      "updates": 170,
+      "elapsed_seconds": 812.1094069704413,
+      "ce": 0.02889692087597709,
+      "semantic": 0.04307410478591919,
+      "total": 0.02889692087597709
+    },
+    "reason": "Previous execution sessions ended before completion; restart from the same base and seed",
+    "predictions_excluded": true
+  },
+  {
+    "job": "temporal_semantic_rule_seed123",
+    "last_progress": {
+      "task": "temporal",
+      "arm": "semantic_rule",
+      "seed": 123,
+      "epoch": 2,
+      "updates": 110,
+      "elapsed_seconds": 492.6034593619406,
+      "ce": 0.19045819006102632,
+      "semantic": 0.061569046974182126,
+      "total": 0.25202723831493556
+    },
+    "reason": "Previous execution sessions ended before completion; restart from the same base and seed",
+    "predictions_excluded": true
+  }
+]

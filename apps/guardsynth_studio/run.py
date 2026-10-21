@@ -16,7 +16,7 @@ from .provider import configured_provider
 from .server import make_server
 from apps.research_portal.security import hash_secret
 
-ARTIFACT_ROOT = ROOT / "artifacts/projects/guardsynth-coc/restricted/guardsynth-studio-001"
+ARTIFACT_ROOT = ROOT / "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-studio-001"
 
 
 def valid_port(port):

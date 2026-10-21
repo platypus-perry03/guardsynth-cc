@@ -189,7 +189,7 @@ L_total = L_imitation
 
 ```bash
 python projects/03-sequential-coc-verification/experiments/feasibility/check_longitudinal_falsification.py \
-  > artifacts/results/public/scene-0001/longitudinal-falsification-result.json
+  > projects/03-sequential-coc-verification/artifacts/public/scene-0001/longitudinal-falsification-result.json
 ```
 
 기본 profile은 다음과 같다.

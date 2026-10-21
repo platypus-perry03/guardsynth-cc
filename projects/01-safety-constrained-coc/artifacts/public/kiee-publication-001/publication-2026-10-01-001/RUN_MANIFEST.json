@@ -1,0 +1,165 @@
+{
+  "project_id": "safety-constrained-coc",
+  "experiment_id": "kiee-publication-001",
+  "run_id": "publication-2026-10-01-001",
+  "license_class": "public",
+  "created_date": "2026-10-01",
+  "command": "make publication",
+  "inputs": [
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/publication_reference.pdf",
+      "sha256": "776b7dd4cb846dd7657c701c945230434c04aaa3920c2088c5ca00a21f84e212"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/publication_template.hwp",
+      "sha256": "4364fd70f6c69dca350b1258896486b40c73bd02314ee902049bfee6db38e95a"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/sections/jin.jpg",
+      "sha256": "debc1d871990dfba172ed6feaa55d636323981cd363b7b4fcd5428c8bcb673fc"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022/figures/fig01_concept.png",
+      "sha256": "6abbaa1dc519e1d3982c428fe24853a87e5598ad7c83cc934fe571703a9aec17"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022/figures/fig02_pipeline.png",
+      "sha256": "75df68cae8264abf8a60cc68ded27a7dd0754c9f6a569d2bfe8e59cf81ca944b"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022/figures/fig03_paired_contract.png",
+      "sha256": "4f62ce631ea90e62392b94bd9f92f3132c882fbb9de8d1071be9021c94594680"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022/figures/fig04_r1_diagnostic.png",
+      "sha256": "2fc0b9cd447d7def332caceae3a8469b7bd95bcad3c293a4cce7b16fe92cba08"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022/figures/fig04_results.png",
+      "sha256": "b1332415610a7ae4ac39b53d32ba53c6c2cb80180dca596792f5ab4f08d1bde9"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022/figures/fig05_temporal_pair.png",
+      "sha256": "ea21cbc6242b74864281f3369ec3bf2f1a66eb48d41cba0339aa0b8db488c01b"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022/figures/fig05_typed_contract.png",
+      "sha256": "3ee82f667b9e66066e8d10a76b520bc493bb00eccf3edb8da39c1dc0abe4eb60"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022/figures/fig06_release_reversal.png",
+      "sha256": "bc9c08637a3535c37c9f82009e4455aba0bf77d9bdc9b7e7ac0ced2074146fa3"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022/fonts/NotoSerifCJKkr-Bold.otf",
+      "sha256": "10cc03741178ad6d2747df8497d911e34b167d0474a826fb9d866c402cbe3d8f"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022/fonts/NotoSerifCJKkr-Regular.otf",
+      "sha256": "77b4b741f864d27f15e90f275b17106dde90b2ad28f82bab72dc95805db5fb42"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022/fonts/OFL.txt",
+      "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/Makefile",
+      "sha256": "95ef37eb17f89a41a1399a90f7c844d2bedeb8a50c0a7aaa0f6f80a5a965468d"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/README.md",
+      "sha256": "9dc4a4183fea54e17f41a226c1e0f083d89d0b3f2ec85dc46b0fa49ef0d78143"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/fonts/ChosunNm.ttf",
+      "sha256": "715b213eb713a520366ae9634dade0fe377601a5523ad71a60453410db9bf81b"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/fonts/README.md",
+      "sha256": "98394641d117dab8a2c55505111d6735aa7b843c881747d15fe01ea33442e512"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/kiee-publication.sty",
+      "sha256": "a5e95b07c96ef5d1aebe8218987bd5d09ae66ab2e5d9c638273a757d7dda0c6d"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/kiee-review.sty",
+      "sha256": "004b3a62487195213472d69a08e29758ba7d6ab47a8500dd13d73d69c91ccb6b"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/main.tex",
+      "sha256": "ddce8d0db509ad4cce562709d17d1fc5b1332dd0d75062a81dacf8ae3af9a08d"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/publication.tex",
+      "sha256": "20a20736cb2f1011266bdf65aabaaac11246cdf6cbfc904024722a5a679b81c2"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/references.bib",
+      "sha256": "acfe14466133d52fae99f8220f6ecbc228ef689774752c60bfa8baa99b72f9fa"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/response-to-reviewer-1.tex",
+      "sha256": "750f0b32db58754ee17f0df678d9b39610870a1b0426724bbf38d3fcfc27bcb1"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/sections/01-introduction.tex",
+      "sha256": "58418b94f04ea2eae4d9128c33e00b867812b713799498ead450a6d1ac1461e9"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/sections/02-related-work.tex",
+      "sha256": "816ac66fa265e691c3db3cbe4b9c83f9ae05f04622163e1fe12ad48fc6a0c6d4"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/sections/03-problem.tex",
+      "sha256": "5aae5c9bbe0c846139cb5cd5afa17391593cf250cd441b817b3f3bd9c6135249"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/sections/04-method.tex",
+      "sha256": "678c424049e0e041516527f7b09e74d1b75b5482c59cccf9674e4d096697bd8c"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/sections/05-experiments.tex",
+      "sha256": "32bf1354daebf5ff3c05548dc6aadb7d3000f7fea00d3bd7994ce948cdb686de"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/sections/06-results.tex",
+      "sha256": "7106e85e2d100d1052278dafd481b8fb42d5cabde4ba11a009d2ceb0d404ddbc"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/sections/07-discussion.tex",
+      "sha256": "83ac552114a4d457bb33c35776f6885052366f7588fbec87df7af2cb238bc6f7"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/sections/08-conclusion.tex",
+      "sha256": "55f6458b7ab801c6010e7139943b55745d04ababa0d81920e5f6064cff21a1d3"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/sections/09-author-biography.tex",
+      "sha256": "55bc3cbf2d2cd9b7eecca7949a9a29fc67150e0bfcd10cbc612cb4439d06d403"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/sections/jin.jpg",
+      "sha256": "debc1d871990dfba172ed6feaa55d636323981cd363b7b4fcd5428c8bcb673fc"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/publication.pdf",
+      "sha256": "902a3dc92fd018302a988de69c21a03ae1fe2d26060232b49390f614241f2720"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/publication-source.zip",
+      "sha256": "ef454b25994593ccd6643179f20f711cb10f39e718db5575d6a23d8e6e017ad4"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/artifacts/public/kiee-publication-001/publication-2026-10-01-001/RESULT.json",
+      "sha256": "331dc305375190f311b17f5fd08f55276fb422f97c3661833b2a3d2ffe019bad"
+    }
+  ],
+  "external_sources": {
+    "biography_current_affiliation": "https://jin-kim.net/",
+    "font": "https://fontdown.chosun.com/100/ChosunNm.zip",
+    "orcid": "user-confirmed https://orcid.org/0000-0002-2308-1638"
+  }
+}

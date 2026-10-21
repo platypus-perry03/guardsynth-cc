@@ -1,0 +1,105 @@
+{
+  "project_id": "guardsynth-coc",
+  "task_id": "document-grounded-constraint-composition",
+  "status": "COMPLETE",
+  "aggregate": {
+    "cases": 176,
+    "full_sat": 118,
+    "full_unsat": 58,
+    "queries": 896,
+    "unknown": 0,
+    "mismatches": 0,
+    "sat_witnesses": 832,
+    "invalid_witnesses": 0,
+    "all_components_sat": 176,
+    "component_only_detected": 0,
+    "pairwise_detected": 46,
+    "minimal_conflict_groups": 58,
+    "pairwise_sat_full_unsat": 12
+  },
+  "families": {
+    "suppression": {
+      "cases": 48,
+      "full_sat": 30,
+      "full_unsat": 18,
+      "queries": 384,
+      "unknown": 0,
+      "mismatches": 0,
+      "sat_witnesses": 360,
+      "invalid_witnesses": 0,
+      "all_components_sat": 48,
+      "component_only_detected": 0,
+      "pairwise_detected": 6,
+      "minimal_conflict_groups": 18,
+      "pairwise_sat_full_unsat": 12
+    },
+    "yellow": {
+      "cases": 64,
+      "full_sat": 54,
+      "full_unsat": 10,
+      "queries": 256,
+      "unknown": 0,
+      "mismatches": 0,
+      "sat_witnesses": 246,
+      "invalid_witnesses": 0,
+      "all_components_sat": 64,
+      "component_only_detected": 0,
+      "pairwise_detected": 10,
+      "minimal_conflict_groups": 10,
+      "pairwise_sat_full_unsat": 0
+    },
+    "interlock": {
+      "cases": 32,
+      "full_sat": 17,
+      "full_unsat": 15,
+      "queries": 128,
+      "unknown": 0,
+      "mismatches": 0,
+      "sat_witnesses": 113,
+      "invalid_witnesses": 0,
+      "all_components_sat": 32,
+      "component_only_detected": 0,
+      "pairwise_detected": 15,
+      "minimal_conflict_groups": 15,
+      "pairwise_sat_full_unsat": 0
+    },
+    "exception": {
+      "cases": 32,
+      "full_sat": 17,
+      "full_unsat": 15,
+      "queries": 128,
+      "unknown": 0,
+      "mismatches": 0,
+      "sat_witnesses": 113,
+      "invalid_witnesses": 0,
+      "all_components_sat": 32,
+      "component_only_detected": 0,
+      "pairwise_detected": 15,
+      "minimal_conflict_groups": 15,
+      "pairwise_sat_full_unsat": 0
+    }
+  },
+  "controls": {
+    "suppression_only_incompatible": {
+      "cases": 24,
+      "sat": 12,
+      "unsat": 12
+    },
+    "hold_requests": {
+      "cases": 16,
+      "sat": 16,
+      "unsat": 0
+    },
+    "exception_preserved": {
+      "cases": 1,
+      "sat": 1,
+      "unsat": 0
+    },
+    "no_cross_requests": {
+      "cases": 16,
+      "sat": 16,
+      "unsat": 0
+    }
+  },
+  "claim_scope": "MANUALLY_DOCUMENT_GROUNDED_RESTRICTED_SCENARIOS_NOT_ACCIDENT_RECONSTRUCTION_OR_LEGAL_VALIDATION"
+}

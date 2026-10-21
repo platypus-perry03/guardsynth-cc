@@ -97,7 +97,7 @@ class SceneEvidenceReviewUiTest(unittest.TestCase):
         self.assertIn("guardsynth-scene-evidence-review-v01-embedded-", self.html)
         self.assertNotIn('name="local_image"', self.html)
         builder = EMBEDDER_PATH.read_text(encoding="utf-8")
-        self.assertIn('ROOT / "artifacts/results/restricted"', builder)
+        self.assertIn('ROOT / "projects/04-guardsynth-coc/artifacts/restricted"', builder)
         self.assertIn("if not output_dir.is_relative_to", builder)
         self.assertIn('"input_class": "LICENSE_RESTRICTED"', builder)
         self.assertIn('"image_bytes_in_json_csv_export": False', builder)

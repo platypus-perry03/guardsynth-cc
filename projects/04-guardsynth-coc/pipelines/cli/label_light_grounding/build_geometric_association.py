@@ -27,7 +27,7 @@ from guard_synth.geometric_association import build_geometric_set_association
 
 
 EXPERIMENT_ID = "GUARDSYNTH-GEOMETRIC-ASSOCIATION-001"
-RESTRICTED_ROOT = ROOT / "artifacts/results/restricted"
+RESTRICTED_ROOT = ROOT / "projects/04-guardsynth-coc/artifacts/restricted"
 
 
 def _sha256(path: Path) -> str:

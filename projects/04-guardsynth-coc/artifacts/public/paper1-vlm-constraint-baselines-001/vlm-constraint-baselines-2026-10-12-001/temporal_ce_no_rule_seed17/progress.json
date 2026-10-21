@@ -1,0 +1,11 @@
+{
+  "task": "temporal",
+  "arm": "ce_no_rule",
+  "seed": 17,
+  "epoch": 3,
+  "updates": 180,
+  "elapsed_seconds": 650.662398993969,
+  "ce": 0.2616819215628008,
+  "semantic": 0.3704310139020284,
+  "total": 0.2616819215628008
+}

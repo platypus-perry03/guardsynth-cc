@@ -5,7 +5,7 @@
 사용자 요청 “그 데이터를 예제로 올려서 실제 생성해보고 coc를 만들어보자..”에 따라
 공식 nuScenes mini `scene-0061`의 전방 영상과 원본 CAN vehicle_monitor로 실제 CoC 1건을 생성했다.
 이는 앞서 영상만 사용하는 요구의 후속 예제 확장이며 기존 연구·논문·학습 범위는 변경하지 않는다.
-[입력·출처·결과와 검토](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-studio-001/nuscenes-can-demo-2026-09-30-001/REPORT_KO.md)를 참조한다.
+[입력·출처·결과와 검토](../../artifacts/restricted/guardsynth-studio-001/nuscenes-can-demo-2026-09-30-001/REPORT_KO.md)를 참조한다.
 
 - 카메라 keyframe39개의 원본 시각을 MP4 PTS로 보존, 26번째 시점12.55초에서 과거/현재7장 사용.
 - 속도·브레이크 압력·스로틀·조향의 원단위를 유지하고 영상 시각 이전 마지막 CAN만 선택.
@@ -100,7 +100,7 @@ PASS는 아래 특정 합성/로컬 사례에서의 동작 결과다. 운영 규
 - 링크/추적: Studio·프로젝트 진입 문서 로컬 링크 56개 정상, canonical 진입 링크 오류 0개,
   GS 6행/AT 15행 누락·중복 없음, registry owner 정상.
 - 명명 검사: 기존 5건만 실패. `projects/P003_ophthalmic_foundation_model_validation`,
-  `m16_geometry_candidate_review (1).csv/.json`, `scene18_scene_cnl_review (1).json`, `portal_exec.md`.
+  `m16_geometry_candidate_review_v2_0.csv/.json`, `scene18_scene_cnl_review (1).json`, `portal_exec.md`.
 - 관련 구조 unittest: 22개 중 20개 통과. 기존 naming assertion 및 미등록 P003 프로젝트 assertion
   2건만 실패; 신규 Studio 소유 검사는 통과했다.
 
@@ -182,8 +182,8 @@ PASS는 아래 특정 합성/로컬 사례에서의 동작 결과다. 운영 규
 확인했다. Codex 표준 로그인 파일에는 ChatGPT 인증만 있었으며, 거기서 API 키를 추출하거나
 로그인 토큰을 대체 키로 쓰지 않았다. 키 값·일부 문자열·해시는 출력하지 않았다.
 
-- [합성 영상 연결 시험](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-studio-001/api-smoke-2026-09-30-001/RESULT.json): 기존 합성 영상 도우미와 실제 업로드·추출·작업자·Responses 경로 사용. `gpt-5.4`, 7프레임, 실제 1회 호출, CoC 구조화 응답 성공. 입력 873/출력 534토큰. 실제 주행 의미 정확성 검증은 아니다.
-- [공개 주행 영상 데모](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-studio-001/public-video-demo-2026-09-30-001/REPORT_KO.md): CC0 영상 첫 12초, 13개 시점 추출. 0-based ordinal 6·12(화면 7·13번), 각각 최대 7개 causal frame으로 실제 CoC 초안 생성 성공. 두 호출 합계 입력 8,484/출력 1,317토큰.
+- [합성 영상 연결 시험](../../artifacts/restricted/guardsynth-studio-001/api-smoke-2026-09-30-001/RESULT.json): 기존 합성 영상 도우미와 실제 업로드·추출·작업자·Responses 경로 사용. `gpt-5.4`, 7프레임, 실제 1회 호출, CoC 구조화 응답 성공. 입력 873/출력 534토큰. 실제 주행 의미 정확성 검증은 아니다.
+- [공개 주행 영상 데모](../../artifacts/restricted/guardsynth-studio-001/public-video-demo-2026-09-30-001/REPORT_KO.md): CC0 영상 첫 12초, 13개 시점 추출. 0-based ordinal 6·12(화면 7·13번), 각각 최대 7개 causal frame으로 실제 CoC 초안 생성 성공. 두 호출 합계 입력 8,484/출력 1,317토큰.
 - 공개 영상 출처는 L. Shyamal의 [Bangalore 20220814 154815](https://commons.wikimedia.org/wiki/File:Bangalore_20220814_154815.webm), CC0-1.0이다. 내려받은 버전·해시·변환·구간은 RUN_MANIFEST에 기록했다. 프로젝트 내 NVIDIA 제한 영상은 외부 전송하지 않았다.
 - 별도 Studio 서버를 loopback 자동 할당 포트에서 시작했다. 실제 `/` HTTP 200, 로그인 HTTP 200, 인증 후 REAL provider·모델·영상 1건 조회를 확인했다. 기존 8766/8877 서비스는 변경하지 않았다.
 - API 키는 상속 환경변수에만 유지한다. 생성한 두 run의 파일/DB에서 실제 키의 바이트 일치가 없음을 검사했다. 별도 Studio 로그인은 무작위 비밀번호의 hash로 구성하고, 사용자 전달용 비밀번호 파일은 `/tmp`에 0600 권한으로 두었다. 비밀번호/API 키는 이 보고서에 기록하지 않는다.

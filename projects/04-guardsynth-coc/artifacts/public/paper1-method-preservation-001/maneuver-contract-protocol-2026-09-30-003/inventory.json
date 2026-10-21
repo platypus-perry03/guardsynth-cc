@@ -1,0 +1,83 @@
+{
+  "train": {
+    "rows": 384,
+    "scene_ids": 192,
+    "unique_images": 2,
+    "targets": {
+      "D": 96,
+      "A": 96,
+      "B": 96,
+      "C": 96
+    },
+    "subtypes": {
+      "cruise_stop": 192,
+      "lane_change": 192
+    },
+    "image_overlap_with_train": 2
+  },
+  "test": {
+    "rows": 96,
+    "scene_ids": 48,
+    "unique_images": 2,
+    "targets": {
+      "D": 24,
+      "A": 24,
+      "B": 24,
+      "C": 24
+    },
+    "subtypes": {
+      "cruise_stop": 48,
+      "lane_change": 48
+    },
+    "image_overlap_with_train": 2
+  },
+  "paraphrase": {
+    "rows": 96,
+    "scene_ids": 48,
+    "unique_images": 2,
+    "targets": {
+      "D": 24,
+      "A": 24,
+      "B": 24,
+      "C": 24
+    },
+    "subtypes": {
+      "cruise_stop": 48,
+      "lane_change": 48
+    },
+    "image_overlap_with_train": 2
+  },
+  "unseen": {
+    "rows": 96,
+    "scene_ids": 48,
+    "unique_images": 2,
+    "targets": {
+      "D": 24,
+      "A": 24,
+      "B": 24,
+      "C": 24
+    },
+    "subtypes": {
+      "cruise_stop": 48,
+      "lane_change": 48
+    },
+    "image_overlap_with_train": 2
+  },
+  "hard": {
+    "rows": 96,
+    "scene_ids": 48,
+    "unique_images": 2,
+    "targets": {
+      "D": 24,
+      "A": 24,
+      "B": 24,
+      "C": 24
+    },
+    "subtypes": {
+      "cruise_stop": 48,
+      "lane_change": 48
+    },
+    "image_overlap_with_train": 2
+  },
+  "shuffle_changed_fraction": 0.9036458333333334
+}

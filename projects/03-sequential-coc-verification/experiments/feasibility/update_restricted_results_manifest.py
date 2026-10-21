@@ -5,11 +5,12 @@ from __future__ import annotations
 
 import hashlib
 from pathlib import Path
+import sys
 
 
 ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / "PROJECT_REGISTRY.json").is_file())
-RESTRICTED_RESULTS = ROOT / "artifacts/results/restricted"
-MANIFEST = RESTRICTED_RESULTS / "MANIFEST.sha256"
+sys.path.insert(0, str(ROOT))
+from cli.project_paths import artifact_roots
 
 
 def sha256(path: Path) -> str:
@@ -21,18 +22,13 @@ def sha256(path: Path) -> str:
 
 
 def main() -> int:
-    files = sorted(
-        path
-        for path in RESTRICTED_RESULTS.rglob("*")
-        if path.is_file() and path != MANIFEST
-    )
-    lines = [
-        f"{sha256(path)}  ./{path.relative_to(RESTRICTED_RESULTS).as_posix()}"
-        for path in files
-    ]
-    MANIFEST.write_text("\n".join(lines) + "\n", encoding="utf-8")
-    MANIFEST.chmod(0o600)
-    print(f"updated {MANIFEST.relative_to(ROOT)} with {len(files)} files")
+    for results in artifact_roots(ROOT, "restricted"):
+        manifest = results / "manifest.sha256"
+        files = sorted(path for path in results.rglob("*") if path.is_file() and path != manifest)
+        lines = [f"{sha256(path)}  ./{path.relative_to(results).as_posix()}" for path in files]
+        manifest.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        manifest.chmod(0o600)
+        print(f"updated {manifest.relative_to(ROOT)} with {len(files)} files")
     return 0
 
 

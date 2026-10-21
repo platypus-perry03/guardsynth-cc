@@ -187,7 +187,7 @@ class ReviewWorkflowTest(unittest.TestCase):
                 claim_limitations=[],
             )
 
-        output = Path(self.directory.name) / "artifacts/projects/guardsynth-coc/public/review-export-001/run-v1"
+        output = Path(self.directory.name) / "projects/04-guardsynth-coc/artifacts/public/review-export-001/run-v1"
         result = write_public_export_run(
             output, exported, experiment_id="GUARDSYNTH-REVIEW-EXPORT-001", run_id="run-v1"
         )
@@ -200,7 +200,7 @@ class ReviewWorkflowTest(unittest.TestCase):
 
     def test_lead_exports_only_aggregate_from_a_closed_round(self):
         self.store.transition_round("round-01", "ELIGIBILITY_BLOCKED", actor_id="lead")
-        public_root = Path(self.directory.name) / "artifacts/projects/guardsynth-coc/public/research-review-export-001"
+        public_root = Path(self.directory.name) / "projects/04-guardsynth-coc/artifacts/public/research-review-export-001"
         backend = ReviewBackend(
             self.store,
             lead_actor_ids={"lead"},

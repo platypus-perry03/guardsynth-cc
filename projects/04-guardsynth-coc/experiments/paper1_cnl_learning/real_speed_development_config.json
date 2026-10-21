@@ -4,9 +4,9 @@
   "scope": "EXPOSED_CLIP_DEVELOPMENT_EXPLORATORY_NOT_MAIN",
   "model_id": "Qwen/Qwen3-VL-2B-Instruct",
   "model_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
-  "split_lock": "artifacts/projects/guardsynth-coc/restricted/guardsynth-eblc-learning-001/m18-cohort-feasibility-2026-09-29-001/exploratory_split_lock.json",
+  "split_lock": "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-eblc-learning-001/m18-cohort-feasibility-2026-09-29-001/exploratory_split_lock.json",
   "admission_evidence": {
-    "immutable_run": "artifacts/projects/guardsynth-coc/restricted/guardsynth-paper1-training-readiness-001/stop-common-consequence-acceptance-2026-09-29-001"
+    "immutable_run": "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-paper1-training-readiness-001/stop-common-consequence-acceptance-2026-09-29-001"
   },
   "main_four_arm_gate_unchanged": true,
   "first_pair": ["L0", "L3"],
@@ -36,10 +36,10 @@
   "matched_compute_claim": false,
   "report_actual_tokens_gpu_time_and_coverage": true,
   "arms": {
-    "L0": {"constraint_supervision": "NONE", "dataset": "artifacts/projects/guardsynth-coc/restricted/guardsynth-eblc-learning-001/speed-development-packaging-2026-09-29-003/l0_admitted_train.jsonl"},
+    "L0": {"constraint_supervision": "NONE", "dataset": "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-eblc-learning-001/speed-development-packaging-2026-09-29-003/l0_admitted_train.jsonl"},
     "L1": {"constraint_supervision": "DIRECT_NL", "dataset": null, "provider": "run_matched_speed_providers.py", "provider_qualified_for_main": false},
     "L2": {"constraint_supervision": "UNVERIFIED_CANDIDATE_COMMON_RENDERER", "dataset": null, "provider": "run_matched_speed_providers.py", "provider_qualified_for_main": false},
-    "L3": {"constraint_supervision": "SOURCE_BOUND_VERIFIED_CNL", "dataset": "artifacts/projects/guardsynth-coc/restricted/guardsynth-eblc-learning-001/speed-development-packaging-2026-09-29-003/l3_admitted_train.jsonl"}
+    "L3": {"constraint_supervision": "SOURCE_BOUND_VERIFIED_CNL", "dataset": "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-eblc-learning-001/speed-development-packaging-2026-09-29-003/l3_admitted_train.jsonl"}
   },
   "required_before_execution": [
     "exact scoped speed admission receipt and source/CNL hash verification",

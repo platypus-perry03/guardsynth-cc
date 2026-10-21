@@ -49,4 +49,4 @@ CONFLICT > UNSUPPORTED > REVIEW_REQUIRED
 perception association이 맞는지, geometry/transform source가 참인지, 차량 profile이
 보장값인지 또는 차량이 안전한지는 입증하지 않는다.
 
-실행 근거는 [결과 보고서](../../../artifacts/results/public/eblc-indexed-collection-001/indexed-collection-2026-08-09-v1/REPORT_KO.md)에 있다.
+실행 근거는 [결과 보고서](../../artifacts/public/eblc-indexed-collection-001/indexed-collection-2026-08-09-v1/REPORT_KO.md)에 있다.

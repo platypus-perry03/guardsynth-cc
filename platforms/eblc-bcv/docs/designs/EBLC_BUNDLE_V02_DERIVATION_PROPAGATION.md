@@ -49,4 +49,4 @@ SMT-LIB replay 2/2를 통과했다. 이는 synthetic bounded translation evidenc
 실제 법규 source, 실제 차량 감속 성능, 센서 정확성, 무한시간/연속 동역학 또는
 차량 안전성을 입증하지 않는다.
 
-결과는 [실행 보고서](../../../artifacts/results/public/eblc-composition-compilation-001/composition-v02-typed-derivation-2026-08-09-v2/REPORT_KO.md)에 있다.
+결과는 [실행 보고서](../../artifacts/public/eblc-composition-compilation-001/composition-v02-typed-derivation-2026-08-09-v2/REPORT_KO.md)에 있다.

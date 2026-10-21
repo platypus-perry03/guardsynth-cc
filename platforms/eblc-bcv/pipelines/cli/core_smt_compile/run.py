@@ -147,7 +147,7 @@ EBLC Core JSON을 스키마 검사한 뒤 typed AST로 읽고, 변수 sort·단�
 
 
 def execute(model_path: Path, run_id: str, *, run_tests: bool = True) -> tuple[Path, dict[str, Any]]:
-    output = ROOT / "artifacts/results/public/eblc-core-smt-001" / run_id
+    output = ROOT / "platforms/eblc-bcv/artifacts/public/eblc-core-smt-001" / run_id
     if output.exists():
         raise FileExistsError(f"refusing to overwrite existing run: {run_id}")
 

@@ -1,0 +1,394 @@
+{
+  "model_id": "pair_z1_m1",
+  "horizon": 2,
+  "symbols": [
+    {
+      "smt_symbol": "pair_z1_m1__signal_s1_truth__t0",
+      "declaration": "signal_s1_truth",
+      "time": 0,
+      "sort": "ENUM",
+      "enum_name": "Truth",
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__signal_s1_truth__t1",
+      "declaration": "signal_s1_truth",
+      "time": 1,
+      "sort": "ENUM",
+      "enum_name": "Truth",
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__signal_s1_evidence_valid__t0",
+      "declaration": "signal_s1_evidence_valid",
+      "time": 0,
+      "sort": "BOOL",
+      "enum_name": null,
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__signal_s1_evidence_valid__t1",
+      "declaration": "signal_s1_evidence_valid",
+      "time": 1,
+      "sort": "BOOL",
+      "enum_name": null,
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__signal_s1_on__t0",
+      "declaration": "signal_s1_on",
+      "time": 0,
+      "sort": "BOOL",
+      "enum_name": null,
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__signal_s1_on__t1",
+      "declaration": "signal_s1_on",
+      "time": 1,
+      "sort": "BOOL",
+      "enum_name": null,
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__signal_s1_clear__t0",
+      "declaration": "signal_s1_clear",
+      "time": 0,
+      "sort": "BOOL",
+      "enum_name": null,
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__signal_s1_clear__t1",
+      "declaration": "signal_s1_clear",
+      "time": 1,
+      "sort": "BOOL",
+      "enum_name": null,
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__signal_s1_active__t0",
+      "declaration": "signal_s1_active",
+      "time": 0,
+      "sort": "BOOL",
+      "enum_name": null,
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__signal_s1_active__t1",
+      "declaration": "signal_s1_active",
+      "time": 1,
+      "sort": "BOOL",
+      "enum_name": null,
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__signal_s1_prior_active__const",
+      "declaration": "signal_s1_prior_active",
+      "time": null,
+      "sort": "BOOL",
+      "enum_name": null,
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__cross_a_truth__t0",
+      "declaration": "cross_a_truth",
+      "time": 0,
+      "sort": "ENUM",
+      "enum_name": "Truth",
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__cross_a_truth__t1",
+      "declaration": "cross_a_truth",
+      "time": 1,
+      "sort": "ENUM",
+      "enum_name": "Truth",
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__cross_a_evidence_valid__t0",
+      "declaration": "cross_a_evidence_valid",
+      "time": 0,
+      "sort": "BOOL",
+      "enum_name": null,
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__cross_a_evidence_valid__t1",
+      "declaration": "cross_a_evidence_valid",
+      "time": 1,
+      "sort": "BOOL",
+      "enum_name": null,
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__cross_a_on__t0",
+      "declaration": "cross_a_on",
+      "time": 0,
+      "sort": "BOOL",
+      "enum_name": null,
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__cross_a_on__t1",
+      "declaration": "cross_a_on",
+      "time": 1,
+      "sort": "BOOL",
+      "enum_name": null,
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__cross_a_clear__t0",
+      "declaration": "cross_a_clear",
+      "time": 0,
+      "sort": "BOOL",
+      "enum_name": null,
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__cross_a_clear__t1",
+      "declaration": "cross_a_clear",
+      "time": 1,
+      "sort": "BOOL",
+      "enum_name": null,
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__cross_a_active__t0",
+      "declaration": "cross_a_active",
+      "time": 0,
+      "sort": "BOOL",
+      "enum_name": null,
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__cross_a_active__t1",
+      "declaration": "cross_a_active",
+      "time": 1,
+      "sort": "BOOL",
+      "enum_name": null,
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__cross_a_prior_active__const",
+      "declaration": "cross_a_prior_active",
+      "time": null,
+      "sort": "BOOL",
+      "enum_name": null,
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__entry_permitted__t0",
+      "declaration": "entry_permitted",
+      "time": 0,
+      "sort": "BOOL",
+      "enum_name": null,
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1",
+        "synthetic_scene_1",
+        "synthetic_scene_2"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__entry_permitted__t1",
+      "declaration": "entry_permitted",
+      "time": 1,
+      "sort": "BOOL",
+      "enum_name": null,
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1",
+        "synthetic_scene_1",
+        "synthetic_scene_2"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__review_required__t0",
+      "declaration": "review_required",
+      "time": 0,
+      "sort": "BOOL",
+      "enum_name": null,
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1",
+        "synthetic_scene_1",
+        "synthetic_scene_2"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__review_required__t1",
+      "declaration": "review_required",
+      "time": 1,
+      "sort": "BOOL",
+      "enum_name": null,
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1",
+        "synthetic_scene_1",
+        "synthetic_scene_2"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__action__t0",
+      "declaration": "action",
+      "time": 0,
+      "sort": "ENUM",
+      "enum_name": "Action",
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1",
+        "synthetic_scene_1",
+        "synthetic_scene_2"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__action__t1",
+      "declaration": "action",
+      "time": 1,
+      "sort": "ENUM",
+      "enum_name": "Action",
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1",
+        "synthetic_scene_1",
+        "synthetic_scene_2"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__ego_inside_z1__t0",
+      "declaration": "ego_inside_z1",
+      "time": 0,
+      "sort": "BOOL",
+      "enum_name": null,
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1",
+        "synthetic_scene_1",
+        "synthetic_scene_2"
+      ]
+    },
+    {
+      "smt_symbol": "pair_z1_m1__ego_inside_z1__t1",
+      "declaration": "ego_inside_z1",
+      "time": 1,
+      "sort": "BOOL",
+      "enum_name": null,
+      "unit": null,
+      "frame": null,
+      "source_refs": [
+        "synthetic_policy_z1_m1",
+        "synthetic_scene_1",
+        "synthetic_scene_2"
+      ]
+    }
+  ],
+  "enum_codes": {
+    "Truth": {
+      "TRUE": 0,
+      "FALSE": 1,
+      "UNKNOWN": 2,
+      "CONFLICT": 3
+    },
+    "Action": {
+      "DEFER_ENTRY": 0,
+      "ENTER_ZONE": 1
+    }
+  }
+}

@@ -52,7 +52,7 @@ def _test(module: str) -> dict[str, Any]:
 
 
 def execute(run_id: str) -> tuple[Path, dict[str, Any]]:
-    output = ROOT / "artifacts/results/public/guardsynth-scene-evidence-review-001" / run_id
+    output = ROOT / "projects/04-guardsynth-coc/artifacts/public/guardsynth-scene-evidence-review-001" / run_id
     if output.exists():
         raise FileExistsError(f"refusing to overwrite existing run: {run_id}")
     output.mkdir(parents=True)

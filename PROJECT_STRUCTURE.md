@@ -1,17 +1,16 @@
 # Project structure
 
 The canonical repository layout is defined in the
-[Project Structure Codex v3](docs/architecture/PROJECT_STRUCTURE_CODEX.md).
+[Project Structure Codex v4](docs/architecture/PROJECT_STRUCTURE_CODEX.md).
 The machine-readable owner list is [PROJECT_REGISTRY.json](PROJECT_REGISTRY.json).
 File and directory names are governed by the
 [File Naming Codex](docs/architecture/FILE_NAMING_CODEX.md).
 
 ```text
-projects/      ordered `<NN>-<project-id>` directory per research question
-platforms/     reusable language and verification platforms
+projects/      complete `<NN>-<project-id>` tree, including artifacts, per research question
+platforms/     reusable language and verification platforms with local artifacts
 shared/        utilities with at least two real consumers
 apps/          repository applications such as the research portal
-artifacts/     owner-scoped generated outputs and immutable legacy runs
 governance/    Superpowers and Git worktree policies
 docs/          repository architecture and cross-project governance only
 src/           temporary import shims; no new domain implementation
@@ -33,18 +32,22 @@ Key rules:
   real refinement sets receive local hierarchy numbers.
 - Name every maintained file according to `FILE_NAMING_CODEX.md` and run
   `python3 cli/checks/file_naming.py` before completion.
-- New results go to `artifacts/projects/<project-id>/<class>/...` or
-  `artifacts/platforms/<platform-id>/<class>/...`.
-- `artifacts/results/` and `artifacts/intermediate/` are immutable v2 history.
+- Results go to `projects/<NN>-<project-id>/artifacts/<class>/...` or
+  `platforms/<platform-id>/artifacts/<class>/...`.
+- Paper compilation outputs stay beside the manuscript source in its `paper/` directory;
+  do not place a working PDF or compiler auxiliary files in `artifacts/intermediate/`.
+- Merge the same task's output into one experiment directory. Keep one
+  `artifacts/RESULT_INDEX.md` per owner, the latest completed task results, and required
+  inputs. Root artifacts and separate results directories are retired.
 - New EBLC pipelines go to `platforms/eblc-bcv/pipelines/cli/<purpose>/`.
 - Independent EBLC paper protocols, analyses, and manuscript assets go to
   `projects/05-eblc-language-verification/` and depend on the platform without copying it.
 - New GuardSynth generation pipelines go to `projects/04-guardsynth-coc/pipelines/cli/<purpose>/`;
   reusable generator code goes to `projects/04-guardsynth-coc/src/guard_synth/`, separate from frozen EBLC semantics.
 - The repository-wide research/review web application is owned by `apps/research_portal/`, not an
-  experiment pipeline. New portal runs use `artifacts/projects/guardsynth-coc/restricted/`.
+  experiment pipeline. New portal runs use `projects/04-guardsynth-coc/artifacts/restricted/`.
 - Real-scene source authoring and assurance lookup remain in `projects/04-guardsynth-coc/src/guard_synth/`;
-  restricted scene contents remain under `artifacts/results/restricted/`.
+  restricted scene contents remain under `projects/04-guardsynth-coc/artifacts/restricted/`.
 - EBLC tests belong to `platforms/eblc-bcv/tests/`; GuardSynth tests belong to
   `projects/04-guardsynth-coc/tests/`; portal tests belong to `apps/research_portal/tests/`.
 - Superpowers scratch files stay in ignored `.superpowers/`; promoted documents follow
@@ -53,3 +56,5 @@ Key rules:
 - Do not create a new top-level `research/` or `experiments/results/` directory.
 
 The v2 historical path table is [MIGRATION_MAP.json](docs/architecture/MIGRATION_MAP.json).
+The v4 relocation and retention record is
+[ARTIFACT_MIGRATION.json](docs/architecture/ARTIFACT_MIGRATION.json).

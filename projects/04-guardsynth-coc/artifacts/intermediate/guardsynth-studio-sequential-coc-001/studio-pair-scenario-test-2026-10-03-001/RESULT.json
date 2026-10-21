@@ -1,0 +1,7 @@
+{
+  "project_id": "guardsynth-coc",
+  "status": "FAILED_MODEL_CONSTRUCTION",
+  "error": "Observed current post-state in base plus iff entry transition made the base UNSAT. Action and post observations must instead be compared in a query.",
+  "accepted_demonstration": false,
+  "paid_model_calls": 0
+}

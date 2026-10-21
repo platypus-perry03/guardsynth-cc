@@ -73,6 +73,66 @@ class OpenAIProviderTests(unittest.TestCase):
         Worker(self.service).run_once()
         return self.store.get(job["job_id"], "job")
 
+    def test_acceptance_requires_unchanged_suggestion_and_edit_clears_acceptance(self):
+        from .helpers import edit, approve
+        self.connect()
+        self.run_job()
+        identity = self.ids[6]
+        original = deepcopy(self.store.moment(identity)["components"]["coc"]["payload"])
+        with self.assertRaises(StudioError):
+            edit(self.service, identity, "coc", {"edited_text": "수정 문장", "review_choice": "ACCEPTED"})
+        edit(self.service, identity, "coc", {"causal_confirmed": True})
+        with self.assertRaises(StudioError):
+            approve(self.service, identity, "coc")
+        edit(self.service, identity, "coc", {"review_choice": "ACCEPTED"})
+        approve(self.service, identity, "coc")
+        self.assertEqual(self.service.moment(identity)["components"]["coc"]["payload"]["review_choice"], "ACCEPTED")
+        edit(self.service, identity, "coc", {"edited_text": "작성자가 교정한 문장"})
+        revised = self.service.moment(identity)
+        self.assertEqual(revised["components"]["coc"]["payload"]["review_choice"], "EDITED")
+        self.assertEqual(revised["model_suggestion"]["edited_text"], "현재 관찰")
+        self.assertEqual(revised["components"]["coc"]["payload"]["raw_output"], original["raw_output"])
+        self.assertFalse(self.store.approved(revised, "coc"))
+        self.reply = response({**coc(), "edited_text": "새 제안"})
+        self.assertEqual(self.run_job()["status"], "SUCCEEDED")
+        regenerated = self.service.moment(identity)
+        self.assertEqual(regenerated["model_suggestion"]["edited_text"], "새 제안")
+        self.assertEqual(regenerated["components"]["coc"]["payload"]["review_choice"], "UNREVIEWED")
+        self.assertFalse(regenerated["components"]["coc"]["payload"]["causal_confirmed"])
+
+    def test_capabilities_report_durable_budget_without_spending_calls(self):
+        self.connect({**config(), "max_calls": 1})
+        self.assertEqual(self.service.capabilities()["call_budget"], {"used": 0, "limit": 1, "remaining": 1})
+        self.run_job()
+        self.assertEqual(self.service.capabilities()["call_budget"], {"used": 1, "limit": 1, "remaining": 0})
+        self.assertFalse(self.service.moment(self.ids[0])["generation"]["enabled"])
+        self.assertEqual(len(self.sent), 1)
+
+    def test_local_video_can_upload_is_atomic_and_never_implies_transmission_consent(self):
+        self.connect()
+        content = b"local-upload-test-video"
+        metadata = {"name": "test.mp4", "source": "test", "license": "test", "permission": True}
+        state = {**self.vehicle_state(), "video_sha256": hashlib.sha256(content).hexdigest()}
+        before = len(self.store.objects("video"))
+        with self.assertRaises(StudioError):
+            self.service.upload(content, metadata, "reviewer", uid(), vehicle_state={**state, "video_sha256": "0" * 64})
+        self.assertEqual(len(self.store.objects("video")), before)
+        uploaded = self.service.upload(content, metadata, "reviewer", uid(), vehicle_state=state)
+        video = self.store.get(uploaded["video_id"], "video")
+        stored = self.store.get(video["vehicle_state_id"], "vehicle_state")
+        self.assertIs(stored["transmission_approved"], False)
+        # Even if the video is approved later, the unapproved CAN must block transmission.
+        self.service.provider.config["video_sha256_allowlist"].append(video["original_sha256"])
+        ex = self.store.get(self.extraction, "extraction")
+        ex["video_id"] = uploaded["video_id"]
+        extraction = self.store.put("extraction", ex)
+        with self.store.transaction():
+            identity = self.store.create_moment(extraction, 0, ex["frames"][0])
+        self.assertFalse(self.service.moment(identity)["generation"]["enabled"])
+        with self.assertRaises(StudioError):
+            self.service.enqueue(identity, 0, "COC", "reviewer", uid())
+        self.assertEqual(self.sent, [])
+
     def test_missing_deployment_settings_disable_generation(self):
         for key in config():
             settings = config()

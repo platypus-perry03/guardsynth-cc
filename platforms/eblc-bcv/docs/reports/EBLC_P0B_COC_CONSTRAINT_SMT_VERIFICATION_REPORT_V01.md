@@ -782,7 +782,7 @@ Core 절을 생성했다. 다음 고정 scenario는 canonical resolver와 생성
 기존 기준선 77/77, 신규 composition 12/12, 전체 EBLC 89/89, P0a 7/7 및
 생성 SMT-LIB 직접 replay 2/2가 통과했다. 상세 설계는
 [composition/compilation 설계](../designs/guard-synth-coc/EBLC_COMPOSITION_AND_COMPILATION_V01.md),
-실행 근거는 [결과 보고서](../../artifacts/results/public/eblc-composition-compilation-001/composition-compilation-2026-08-09-v1/REPORT_KO.md)에 있다.
+실행 근거는 [결과 보고서](../../artifacts/public/eblc-composition-compilation-001/composition-compilation-2026-08-09-v1/REPORT_KO.md)에 있다.
 
 ### 7.8 TDD 기반 typed derivation→Core→SMT
 
@@ -806,7 +806,7 @@ Z3 witness는 exact rational `-3/2`였고 locked canonical–Core-SMT trace 8/8,
 구현 전 기준선 89/89, 신규 derivation 11/11, 전체 EBLC 100/100, P0a 7/7 및
 SMT-LIB replay 2/2가 통과했다. 상세 내용은
 [typed derivation 설계](../designs/guard-synth-coc/EBLC_TYPED_DERIVATION_COMPILER_V01.md)와
-[실행 보고서](../../artifacts/results/public/eblc-derivation-compilation-001/typed-derivation-2026-08-09-v1/REPORT_KO.md)에 있다.
+[실행 보고서](../../artifacts/public/eblc-derivation-compilation-001/typed-derivation-2026-08-09-v1/REPORT_KO.md)에 있다.
 
 ### 7.9 program v0.2 내장 derivation과 전체 정지거리 DAG
 
@@ -837,7 +837,7 @@ coordinate frame은 기존 generic Core compiler가 검사한다. adjusted speed
 TDD 신규 11/11, 전체 EBLC 111/111, P0a 7/7, canonical–Core-SMT 129 trace/266 frame와
 SMT-LIB 직접 replay 2/2가 통과했다. 표적 조사와 문법 결정은
 [program v0.2 통합 설계](../designs/guard-synth-coc/EBLC_PROGRAM_V02_TYPED_DERIVATION_PLAN.md),
-실행 근거는 [v0.2 보고서](../../artifacts/results/public/eblc-elaboration-conformance-001/elaboration-conformance-2026-08-09-v02-typed-derivation-v4/REPORT_KO.md)에 있다.
+실행 근거는 [v0.2 보고서](../../artifacts/public/eblc-elaboration-conformance-001/elaboration-conformance-2026-08-09-v02-typed-derivation-v4/REPORT_KO.md)에 있다.
 
 ### 7.10 program v0.2 derivation의 bundle→Core→SMT 전파
 
@@ -863,7 +863,7 @@ resolver와 생성 Core-SMT가 일치했다. TDD 신규 8/8, 구현 전 기준�
 EBLC 119/119, P0a 7/7, composition scenario 5/5와 SMT-LIB replay 2/2를 통과했다.
 
 설계는 [v0.2 bundle 전파 문서](../designs/guard-synth-coc/EBLC_BUNDLE_V02_DERIVATION_PROPAGATION.md),
-실행 근거는 [결과 보고서](../../artifacts/results/public/eblc-composition-compilation-001/composition-v02-typed-derivation-2026-08-09-v2/REPORT_KO.md)에 있다.
+실행 근거는 [결과 보고서](../../artifacts/public/eblc-composition-compilation-001/composition-v02-typed-derivation-2026-08-09-v2/REPORT_KO.md)에 있다.
 
 ### 7.11 다중 actor–zone indexed collection
 
@@ -887,7 +887,7 @@ bundle을 생성하지 않았다. `UNSUPPORTED`와 `CONFLICT`도 부분 계약 �
 closed로 중단한다. 구현 전 기준선 119/119, 신규 9/9, 전체 EBLC 128/128, P0a 7/7과
 SMT-LIB replay 2/2를 통과했다. 설계는
 [indexed collection 문서](../designs/guard-synth-coc/EBLC_INDEXED_COLLECTION_V01.md),
-실행 근거는 [결과 보고서](../../artifacts/results/public/eblc-indexed-collection-001/indexed-collection-2026-08-09-v1/REPORT_KO.md)에 있다.
+실행 근거는 [결과 보고서](../../artifacts/public/eblc-indexed-collection-001/indexed-collection-2026-08-09-v1/REPORT_KO.md)에 있다.
 
 ### 7.12 결정론적 EBLC→CNL 투영과 v0.2 RC 동결
 
@@ -906,7 +906,7 @@ CNL을 다시 실행 계약으로 파싱하는 의미는 없다. 따라서 자�
 새 수치·근거·보장을 만드는 경로를 차단한다. v0.2의 bounded language/tooling 범위와
 미지원 기능은 [언어 명세](../specifications/eblc/EBLC_LANGUAGE_SPEC_V02.md)와
 [요구사항 추적표](EBLC_REQUIREMENT_TRACEABILITY_V02.md)에 동결한다. 최종 RC 실행은
-[release 보고서](../../artifacts/results/public/eblc-release-candidate-001/eblc-v0.2-rc1-2026-08-09/REPORT_KO.md)에 기록한다.
+[release 보고서](../../artifacts/public/eblc-release-candidate-001/eblc-v0.2-rc1-2026-08-09/REPORT_KO.md)에 기록한다.
 
 ### 7.13 EBLC 앞단 source-aware GuardSynth generator
 
@@ -924,7 +924,7 @@ distance `9`, `3`을 보존했다. CoC claim-only 및 association/profile/geomet
 collection을 만들지 않는다. EBLC RC 기준선 138/138, generator 12/12, 전체 150/150,
 P0a 7/7, 구조 9/9와 SMT-LIB replay 2/2를 통과했다. 상세 입력 계약과 제한은
 [generator 설계](../../../../projects/04-guardsynth-coc/docs/designs/GUARDSYNTH_SOURCE_AWARE_GENERATOR_DESIGN_V01.md),
-실행 근거는 [generator 보고서](../../artifacts/results/public/guardsynth-source-aware-generator-001/source-aware-generator-2026-08-09-v3/REPORT_KO.md)에 있다.
+실행 근거는 [generator 보고서](../../../../projects/04-guardsynth-coc/artifacts/public/guardsynth-source-aware-generator-001/source-aware-generator-2026-08-09-v3/REPORT_KO.md)에 있다.
 
 ## 8. 무엇을 입증했고 무엇을 입증하지 않았는가
 
@@ -993,48 +993,48 @@ python3 -m cli.pipelines.guardsynth.source_aware_generate.run --run-id <new-run-
 
 결과 근거:
 
-- [P0b 실행 보고서](../../artifacts/results/public/eblc-p0b-001/p0b-fail-closed-2026-08-08-v1/REPORT_KO.md)
-- [P0b RESULT](../../artifacts/results/public/eblc-p0b-001/p0b-fail-closed-2026-08-08-v1/RESULT.json)
-- [Translation 결과](../../artifacts/results/public/eblc-p0b-001/p0b-fail-closed-2026-08-08-v1/TRANSLATION_RESULTS.json)
-- [Mutation 결과](../../artifacts/results/public/eblc-p0b-001/p0b-fail-closed-2026-08-08-v1/MUTATION_RESULTS.json)
-- [Robustness 보고서](../../artifacts/results/public/eblc-robustness-audit-001/robustness-fail-closed-2026-08-08-v6/REPORT_KO.md)
-- [Core→SMT 실행 보고서](../../artifacts/results/public/eblc-core-smt-001/core-smt-2026-08-08-v4/REPORT_KO.md)
-- [Core query manifest](../../artifacts/results/public/eblc-core-smt-001/core-smt-2026-08-08-v4/QUERY_MANIFEST.json)
-- [Core SMT 직접 재실행 결과](../../artifacts/results/public/eblc-core-smt-001/core-smt-2026-08-08-v4/SMT_REPLAY.json)
-- [Core symbol table](../../artifacts/results/public/eblc-core-smt-001/core-smt-2026-08-08-v4/SYMBOL_TABLE.json)
-- [Core source map](../../artifacts/results/public/eblc-core-smt-001/core-smt-2026-08-08-v4/SOURCE_MAP.json)
-- [High-level elaboration/conformance 보고서](../../artifacts/results/public/eblc-elaboration-conformance-001/elaboration-conformance-2026-08-08-v3/REPORT_KO.md)
-- [다각도 단위ㆍ통합 검증 보고서](../../artifacts/results/public/eblc-scenario-test-001/scenario-matrix-2026-08-08-v3/REPORT_KO.md)
-- [Elaborated Core](../../artifacts/results/public/eblc-elaboration-conformance-001/elaboration-conformance-2026-08-08-v3/ELABORATED_CORE.json)
-- [Elaboration map](../../artifacts/results/public/eblc-elaboration-conformance-001/elaboration-conformance-2026-08-08-v3/ELABORATION_MAP.json)
-- [Generated conformance 결과](../../artifacts/results/public/eblc-elaboration-conformance-001/elaboration-conformance-2026-08-08-v3/CONFORMANCE_RESULTS.json)
-- [Composition/compilation 보고서](../../artifacts/results/public/eblc-composition-compilation-001/composition-compilation-2026-08-09-v1/REPORT_KO.md)
-- [고수준 bundle 입력](../../artifacts/results/public/eblc-composition-compilation-001/composition-compilation-2026-08-09-v1/INPUT_BUNDLE.json)
-- [Composition 생성 Core](../../artifacts/results/public/eblc-composition-compilation-001/composition-compilation-2026-08-09-v1/ELABORATED_CORE.json)
-- [Composition SMT-LIB](../../artifacts/results/public/eblc-composition-compilation-001/composition-compilation-2026-08-09-v1/MODEL.smt2)
-- [Typed derivation 보고서](../../artifacts/results/public/eblc-derivation-compilation-001/typed-derivation-2026-08-09-v1/REPORT_KO.md)
-- [Typed derivation 입력](../../artifacts/results/public/eblc-derivation-compilation-001/typed-derivation-2026-08-09-v1/INPUT_DERIVATION_SPEC.json)
-- [Derived Core](../../artifacts/results/public/eblc-derivation-compilation-001/typed-derivation-2026-08-09-v1/DERIVED_CORE.json)
-- [Typed derivation SMT-LIB](../../artifacts/results/public/eblc-derivation-compilation-001/typed-derivation-2026-08-09-v1/MODEL.smt2)
-- [Program v0.2 통합 보고서](../../artifacts/results/public/eblc-elaboration-conformance-001/elaboration-conformance-2026-08-09-v02-typed-derivation-v4/REPORT_KO.md)
-- [Program v0.2 입력](../../artifacts/results/public/eblc-elaboration-conformance-001/elaboration-conformance-2026-08-09-v02-typed-derivation-v4/INPUT_PROGRAM.json)
-- [Program v0.2 derived witness](../../artifacts/results/public/eblc-elaboration-conformance-001/elaboration-conformance-2026-08-09-v02-typed-derivation-v4/DERIVATION_WITNESS.json)
-- [Program v0.2 생성 Core](../../artifacts/results/public/eblc-elaboration-conformance-001/elaboration-conformance-2026-08-09-v02-typed-derivation-v4/ELABORATED_CORE.json)
-- [Program v0.2 bundle 전파 보고서](../../artifacts/results/public/eblc-composition-compilation-001/composition-v02-typed-derivation-2026-08-09-v2/REPORT_KO.md)
-- [Program v0.2 bundle 입력](../../artifacts/results/public/eblc-composition-compilation-001/composition-v02-typed-derivation-2026-08-09-v2/INPUT_BUNDLE.json)
-- [Program v0.2 bundle derivation witness](../../artifacts/results/public/eblc-composition-compilation-001/composition-v02-typed-derivation-2026-08-09-v2/DERIVATION_WITNESS.json)
-- [Program v0.2 bundle SMT-LIB](../../artifacts/results/public/eblc-composition-compilation-001/composition-v02-typed-derivation-2026-08-09-v2/MODEL.smt2)
-- [Indexed collection 보고서](../../artifacts/results/public/eblc-indexed-collection-001/indexed-collection-2026-08-09-v1/REPORT_KO.md)
-- [Indexed collection 입력](../../artifacts/results/public/eblc-indexed-collection-001/indexed-collection-2026-08-09-v1/INPUT_COLLECTION.json)
-- [Indexed expansion 결과](../../artifacts/results/public/eblc-indexed-collection-001/indexed-collection-2026-08-09-v1/EXPANSION_RESULT.json)
-- [Indexed exact witness](../../artifacts/results/public/eblc-indexed-collection-001/indexed-collection-2026-08-09-v1/EXACT_WITNESS.json)
-- [Association abstention 결과](../../artifacts/results/public/eblc-indexed-collection-001/indexed-collection-2026-08-09-v1/ASSOCIATION_ABSTENTION.json)
-- [EBLC v0.2 RC 보고서](../../artifacts/results/public/eblc-release-candidate-001/eblc-v0.2-rc1-2026-08-09/REPORT_KO.md)
-- [Program CNL mapping](../../artifacts/results/public/eblc-release-candidate-001/eblc-v0.2-rc1-2026-08-09/PROGRAM_CNL_MAPPING.json)
-- [Requirement traceability artifact](../../artifacts/results/public/eblc-release-candidate-001/eblc-v0.2-rc1-2026-08-09/REQUIREMENT_TRACEABILITY.json)
-- [Source-aware generator 보고서](../../artifacts/results/public/guardsynth-source-aware-generator-001/source-aware-generator-2026-08-09-v3/REPORT_KO.md)
-- [생성된 indexed collection](../../artifacts/results/public/guardsynth-source-aware-generator-001/source-aware-generator-2026-08-09-v3/GENERATED_INDEXED_COLLECTION.json)
-- [Generator abstention 결과](../../artifacts/results/public/guardsynth-source-aware-generator-001/source-aware-generator-2026-08-09-v3/ABSTENTION_RESULTS.json)
+- [P0b 실행 보고서](../../artifacts/public/eblc-p0b-001/p0b-fail-closed-2026-08-08-v1/REPORT_KO.md)
+- [P0b RESULT](../../artifacts/public/eblc-p0b-001/p0b-fail-closed-2026-08-08-v1/RESULT.json)
+- [Translation 결과](../../artifacts/public/eblc-p0b-001/p0b-fail-closed-2026-08-08-v1/TRANSLATION_RESULTS.json)
+- [Mutation 결과](../../artifacts/public/eblc-p0b-001/p0b-fail-closed-2026-08-08-v1/MUTATION_RESULTS.json)
+- [Robustness 보고서](../../artifacts/public/eblc-robustness-audit-001/robustness-fail-closed-2026-08-08-v6/REPORT_KO.md)
+- [Core→SMT 실행 보고서](../../artifacts/public/eblc-core-smt-001/core-smt-2026-08-08-v4/REPORT_KO.md)
+- [Core query manifest](../../artifacts/public/eblc-core-smt-001/core-smt-2026-08-08-v4/QUERY_MANIFEST.json)
+- [Core SMT 직접 재실행 결과](../../artifacts/public/eblc-core-smt-001/core-smt-2026-08-08-v4/SMT_REPLAY.json)
+- [Core symbol table](../../artifacts/public/eblc-core-smt-001/core-smt-2026-08-08-v4/SYMBOL_TABLE.json)
+- [Core source map](../../artifacts/public/eblc-core-smt-001/core-smt-2026-08-08-v4/SOURCE_MAP.json)
+- [High-level elaboration/conformance 보고서](../../artifacts/public/eblc-elaboration-conformance-001/elaboration-conformance-2026-08-08-v3/REPORT_KO.md)
+- [다각도 단위ㆍ통합 검증 보고서](../../artifacts/public/eblc-scenario-test-001/scenario-matrix-2026-08-08-v3/REPORT_KO.md)
+- [Elaborated Core](../../artifacts/public/eblc-elaboration-conformance-001/elaboration-conformance-2026-08-08-v3/ELABORATED_CORE.json)
+- [Elaboration map](../../artifacts/public/eblc-elaboration-conformance-001/elaboration-conformance-2026-08-08-v3/ELABORATION_MAP.json)
+- [Generated conformance 결과](../../artifacts/public/eblc-elaboration-conformance-001/elaboration-conformance-2026-08-08-v3/CONFORMANCE_RESULTS.json)
+- [Composition/compilation 보고서](../../artifacts/public/eblc-composition-compilation-001/composition-compilation-2026-08-09-v1/REPORT_KO.md)
+- [고수준 bundle 입력](../../artifacts/public/eblc-composition-compilation-001/composition-compilation-2026-08-09-v1/INPUT_BUNDLE.json)
+- [Composition 생성 Core](../../artifacts/public/eblc-composition-compilation-001/composition-compilation-2026-08-09-v1/ELABORATED_CORE.json)
+- [Composition SMT-LIB](../../artifacts/public/eblc-composition-compilation-001/composition-compilation-2026-08-09-v1/MODEL.smt2)
+- [Typed derivation 보고서](../../artifacts/public/eblc-derivation-compilation-001/typed-derivation-2026-08-09-v1/REPORT_KO.md)
+- [Typed derivation 입력](../../artifacts/public/eblc-derivation-compilation-001/typed-derivation-2026-08-09-v1/INPUT_DERIVATION_SPEC.json)
+- [Derived Core](../../artifacts/public/eblc-derivation-compilation-001/typed-derivation-2026-08-09-v1/DERIVED_CORE.json)
+- [Typed derivation SMT-LIB](../../artifacts/public/eblc-derivation-compilation-001/typed-derivation-2026-08-09-v1/MODEL.smt2)
+- [Program v0.2 통합 보고서](../../artifacts/public/eblc-elaboration-conformance-001/elaboration-conformance-2026-08-09-v02-typed-derivation-v4/REPORT_KO.md)
+- [Program v0.2 입력](../../artifacts/public/eblc-elaboration-conformance-001/elaboration-conformance-2026-08-09-v02-typed-derivation-v4/INPUT_PROGRAM.json)
+- [Program v0.2 derived witness](../../artifacts/public/eblc-elaboration-conformance-001/elaboration-conformance-2026-08-09-v02-typed-derivation-v4/DERIVATION_WITNESS.json)
+- [Program v0.2 생성 Core](../../artifacts/public/eblc-elaboration-conformance-001/elaboration-conformance-2026-08-09-v02-typed-derivation-v4/ELABORATED_CORE.json)
+- [Program v0.2 bundle 전파 보고서](../../artifacts/public/eblc-composition-compilation-001/composition-v02-typed-derivation-2026-08-09-v2/REPORT_KO.md)
+- [Program v0.2 bundle 입력](../../artifacts/public/eblc-composition-compilation-001/composition-v02-typed-derivation-2026-08-09-v2/INPUT_BUNDLE.json)
+- [Program v0.2 bundle derivation witness](../../artifacts/public/eblc-composition-compilation-001/composition-v02-typed-derivation-2026-08-09-v2/DERIVATION_WITNESS.json)
+- [Program v0.2 bundle SMT-LIB](../../artifacts/public/eblc-composition-compilation-001/composition-v02-typed-derivation-2026-08-09-v2/MODEL.smt2)
+- [Indexed collection 보고서](../../artifacts/public/eblc-indexed-collection-001/indexed-collection-2026-08-09-v1/REPORT_KO.md)
+- [Indexed collection 입력](../../artifacts/public/eblc-indexed-collection-001/indexed-collection-2026-08-09-v1/INPUT_COLLECTION.json)
+- [Indexed expansion 결과](../../artifacts/public/eblc-indexed-collection-001/indexed-collection-2026-08-09-v1/EXPANSION_RESULT.json)
+- [Indexed exact witness](../../artifacts/public/eblc-indexed-collection-001/indexed-collection-2026-08-09-v1/EXACT_WITNESS.json)
+- [Association abstention 결과](../../artifacts/public/eblc-indexed-collection-001/indexed-collection-2026-08-09-v1/ASSOCIATION_ABSTENTION.json)
+- [EBLC v0.2 RC 보고서](../../artifacts/public/eblc-release-candidate-001/eblc-v0.2-rc1-2026-08-09/REPORT_KO.md)
+- [Program CNL mapping](../../artifacts/public/eblc-release-candidate-001/eblc-v0.2-rc1-2026-08-09/PROGRAM_CNL_MAPPING.json)
+- [Requirement traceability artifact](../../artifacts/public/eblc-release-candidate-001/eblc-v0.2-rc1-2026-08-09/REQUIREMENT_TRACEABILITY.json)
+- [Source-aware generator 보고서](../../../../projects/04-guardsynth-coc/artifacts/public/guardsynth-source-aware-generator-001/source-aware-generator-2026-08-09-v3/REPORT_KO.md)
+- [생성된 indexed collection](../../../../projects/04-guardsynth-coc/artifacts/public/guardsynth-source-aware-generator-001/source-aware-generator-2026-08-09-v3/GENERATED_INDEXED_COLLECTION.json)
+- [Generator abstention 결과](../../../../projects/04-guardsynth-coc/artifacts/public/guardsynth-source-aware-generator-001/source-aware-generator-2026-08-09-v3/ABSTENTION_RESULTS.json)
 
 ## 10. 다음 단계
 

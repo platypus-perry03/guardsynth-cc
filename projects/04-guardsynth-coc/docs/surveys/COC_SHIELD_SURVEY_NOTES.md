@@ -73,7 +73,7 @@
 
   - 현재는 seed 3개뿐이며 CoC가 72–94자 정도로 짧음
   - seed에 따라 trajectory ADE도 바뀜
-  - [실제 출력 요약](../../../artifacts/results/restricted/alp-exp-005/summary.json)
+  - [실제 출력 요약](../../../01-safety-constrained-coc/artifacts/restricted/alp-exp-005/summary.json)
   - 이는 feasibility 증거이지 논문 규모의 데이터는 아님
 
 - 계산 자원:

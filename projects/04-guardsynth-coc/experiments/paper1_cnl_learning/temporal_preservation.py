@@ -21,7 +21,7 @@ from guard_synth_eblc.core_ir import parse_core_model
 from guard_synth_eblc.smt_compiler import compile_core_model, check_queries
 
 CONFIG = Path(__file__).with_name('temporal_preservation_config.json')
-BASE = ROOT / 'artifacts/projects/guardsynth-coc/public/paper1-method-preservation-001'
+BASE = ROOT / 'projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001'
 VERSION = 'supplied-temporal-eblc-profile-v0.1'
 
 
@@ -164,7 +164,7 @@ def prepare(output):
              PRIOR/'vlm_guard_learning/train_qwen_guard_lora.py']
     for seed in cfg['seeds']:
         for condition in ('coc-only','rich-coc'):
-            sources.append(ROOT/f'artifacts/results/public/small-vlm-guard-v0/temporal-{condition}-seed{seed}-v0/result.json')
+            sources.append(ROOT/f'projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/temporal-{condition}-seed{seed}-v0/result.json')
     (output/'RUN_MANIFEST.json').write_text(json.dumps({'project_id':'guardsynth-coc',
         'input_hashes':{str(p.relative_to(ROOT)):sha(p) for p in sources},
         'output_hashes':{p.name:sha(p) for p in output.iterdir() if p.is_file()}},indent=2)+'\n')

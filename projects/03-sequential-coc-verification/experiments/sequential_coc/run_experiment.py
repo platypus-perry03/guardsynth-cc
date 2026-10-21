@@ -146,10 +146,10 @@ def _aggregate_checkpoint(root: Path, files: Iterable[Path]) -> dict[str, object
 
 
 def protected_input_checkpoints(root: Path, output_dir: Path) -> dict[str, object]:
-    """Recompute Task-1 checkpoints with its exact relative-path/hash algorithm."""
+    """Hash protected inputs and the consolidated owner's existing results tree."""
     reasoning = root / "data/baseline/coc_nusc/reasoning/ood_reasoning.parquet"
     egomotion = root / "data/baseline/coc_nusc/labels/egomotion"
-    results = root / "artifacts/results"
+    results = root / "projects/03-sequential-coc-verification/artifacts"
     paper = root / "projects/03-sequential-coc-verification/paper/manuscript/latex-kiee-review-2022-coc-audit"
     result_files = (
         path
@@ -391,7 +391,7 @@ def production_config(
     root: Path | None = None, *, verifyta: Path | None = None
 ) -> ExperimentConfig:
     project_root = (root or next(parent for parent in Path(__file__).resolve().parents if (parent / "PROJECT_REGISTRY.json").is_file())).resolve()
-    output_dir = project_root / "artifacts/results/restricted/sequential-coc-consistency-v1"
+    output_dir = project_root / "projects/03-sequential-coc-verification/artifacts/restricted/sequential-coc-consistency-v1"
     paper_root = project_root / "projects/03-sequential-coc-verification/paper/manuscript/latex-kiee-review-2022-coc-audit"
     verifyta_path = verifyta or project_root / "runtime/solvers/uppaal-5.0.0-linux64/bin/verifyta"
     external_command = (

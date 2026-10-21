@@ -27,7 +27,7 @@ DEFAULT_COHORT = (
 )
 DEFAULT_OUTPUT = (
     ROOT
-    / "artifacts/results/restricted/alp-exp-005"
+    / "projects/01-safety-constrained-coc/artifacts/restricted/alp-exp-005"
     / "feasibility-batch-v0"
 )
 RUNNER = ROOT / "runtime/alpamayo/run_alp_exp_005.py"

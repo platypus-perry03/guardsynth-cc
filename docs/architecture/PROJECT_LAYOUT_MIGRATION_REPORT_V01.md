@@ -17,7 +17,7 @@
 | 유지보수 단위ㆍ통합ㆍ회귀 테스트 | `tests/<package>/` |
 | 실험 정의ㆍ프로토콜ㆍ실험 전용 분석 | `experiments/<family>/` |
 | 재생성 가능한 중간 산출물 | `artifacts/intermediate/` |
-| 공개ㆍ제한 최종 실행 결과 | `artifacts/results/public|restricted/` |
+| 공개ㆍ제한 최종 실행 결과 | `projects/04-guardsynth-coc/artifacts/public|restricted/` |
 
 기존 `research/`의 문서는 문서 역할별로 `docs/`에 분류했다. 기존
 `experiments/results/`는 `artifacts/results/`로 옮겼으며 과거 결과의 내용은 수정하지
@@ -30,7 +30,7 @@ UPPAAL 원본 압축 파일은 `archive/installers/`로 이동해 코드ㆍ문�
 분리했다.
 
 재생성 가능한 438개 UPPAAL XMLㆍqueryㆍprofile은
-`projects/03-sequential-coc-verification/experiments/uppaal/models/`에서 `artifacts/intermediate/uppaal-models/`로 옮겼다.
+`projects/03-sequential-coc-verification/experiments/uppaal/models/`에서 `projects/03-sequential-coc-verification/projects/03-sequential-coc-verification/artifacts/intermediate/uppaal-models/`로 옮겼다.
 생성기와 검증기는 새 경로를 기본값으로 사용한다.
 
 ## 자동 통제
@@ -46,7 +46,7 @@ UPPAAL 원본 압축 파일은 `archive/installers/`로 이동해 코드ㆍ문�
 
 최종 검사 수치와 명령별 exit code는 아래 run 디렉터리에 고정한다.
 
-`artifacts/results/public/project-layout-refactor-001/layout-v2-2026-08-09-v4/`
+`projects/04-guardsynth-coc/artifacts/public/project-layout-refactor-001/layout-v2-2026-08-09-v4/`
 
 기본 Python에 `numpy`와 `pandas`가 없어 각각 일부 `contract_micro_world`와
 `sequential_coc` legacy test가 import되지 않는 문제는 이동 전에도 존재한 환경 의존성

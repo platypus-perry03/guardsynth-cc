@@ -18,7 +18,7 @@ def main() -> None:
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("artifacts/results/public/multiscene-chain/uppaal-verification-result.json"),
+        default=Path("projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/uppaal-verification-result.json"),
     )
     args = parser.parse_args()
 

@@ -1,0 +1,7 @@
+{
+  "project_id": "sequential-coc-verification",
+  "source_run": "REPOSITORY_ROOT-worktrees/sequential-coc-review-20260930/projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001",
+  "source_results_sha256": "e9d2fc0d296b7dd7e1327e8d710d47d2748ef0c06cb57fbe7e6d5b7b9ec74df9",
+  "script_sha256": "b92b4b5c63654df0c67a0ec2b5fb68345f8d803fed743877a7d96aa78adb7cd9",
+  "purpose": "DIAGNOSTIC_TERMINAL_QUERY_NOT_NEW_TEST_SET"
+}

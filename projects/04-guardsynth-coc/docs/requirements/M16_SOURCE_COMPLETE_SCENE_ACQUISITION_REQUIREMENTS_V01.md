@@ -104,7 +104,7 @@ formal/runtime verification을 구현하는 senior research software engineer다
 artifact 생성, gate 판정과 프로젝트 관리 문서 갱신까지 완료하라.
 
 프로젝트 루트:
-/home/jinhyun/prj_ws/prj_jin/guardsynth-cc
+REPOSITORY_ROOT
 
 프로젝트 owner:
 guardsynth-coc
@@ -168,9 +168,9 @@ source-linked lane/zone·conflict geometry와 남은 actor/control association�
 18. projects/04-guardsynth-coc/pipelines/cli/simulated_scene_dry_run/README.md
 19. projects/04-guardsynth-coc/tests/integration/test_expert_pilot_protocol.py
 20. data/OWNERSHIP.json
-21. artifacts/results/restricted/guardsynth-expert-pilot-preflight-001/m16-preflight-2026-08-12-v4/REPORT_KO.md
-22. artifacts/results/restricted/guardsynth-sim24-batch-001/alpamayo-terminal-batch-2026-08-12-v1/REPORT_KO.md
-23. artifacts/results/restricted/guardsynth-sim24-candidate-audit-001/alpamayo-candidate-inventory-2026-08-12-v2/REPORT_KO.md
+21. projects/04-guardsynth-coc/artifacts/restricted/guardsynth-expert-pilot-preflight-001/m16-preflight-2026-08-12-v4/REPORT_KO.md
+22. projects/04-guardsynth-coc/artifacts/restricted/guardsynth-sim24-batch-001/alpamayo-terminal-batch-2026-08-12-v1/REPORT_KO.md
+23. projects/04-guardsynth-coc/artifacts/restricted/guardsynth-sim24-candidate-audit-001/alpamayo-candidate-inventory-2026-08-12-v2/REPORT_KO.md
 
 핵심 연구 경계:
 - CoC는 CLAIMED 상황 단서이지 관측 fact나 규범 authority가 아니다.
@@ -304,10 +304,10 @@ M16-F. 구현 위치
 
 M16-G. 새 결과 배치
 제한 상세:
-artifacts/projects/guardsynth-coc/restricted/guardsynth-m16-scene-acquisition-001/<run-id>/
+projects/04-guardsynth-coc/artifacts/restricted/guardsynth-m16-scene-acquisition-001/<run-id>/
 
 공개 비식별 집계가 필요한 경우:
-artifacts/projects/guardsynth-coc/public/guardsynth-m16-scene-acquisition-001/<run-id>/
+projects/04-guardsynth-coc/artifacts/public/guardsynth-m16-scene-acquisition-001/<run-id>/
 
 기존 artifacts/results/ 아래 run은 immutable history이므로 수정하지 않는다.
 
@@ -372,7 +372,7 @@ adjudication, agreement/timing과 power analysis가 추가로 필요하다.
 2. 02_PROJECT_MILESTONES.md의 M16 단계 게이트 상태, Todo와 대표 근거를 사실대로 갱신한다.
 3. 03_PROJECT_EXECUTION_TRACKER.md의 방금 수행한 단계 상태, M16 전체 완료 상태, eligible 수,
    blocker와 단일 다음 작업을 갱신한다.
-4. projects/04-guardsynth-coc/results/RESULT_INDEX.md에 새 owner-scoped run을 등록한다.
+4. projects/04-guardsynth-coc/artifacts/RESULT_INDEX.md에 새 owner-scoped run을 등록한다.
 5. 연구 scope/gate가 바뀌지 않았다면 01_RESEARCH_PLAN_V02.md를 수정하지 않는다.
 6. scope 변경이 필요하면 기존 계획을 조용히 편집하지 말고 명시적 decision과 새 plan version이
    필요하다고 보고한다.

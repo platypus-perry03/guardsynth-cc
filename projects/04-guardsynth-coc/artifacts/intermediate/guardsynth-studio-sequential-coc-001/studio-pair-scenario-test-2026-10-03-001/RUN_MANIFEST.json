@@ -1,0 +1,9 @@
+{
+  "project_id": "guardsynth-coc",
+  "subproject_id": "guardsynth-studio-sequential-coc",
+  "run_id": "studio-pair-scenario-test-2026-10-03-001",
+  "license_class": "intermediate",
+  "synthetic_only": true,
+  "paid_model_calls": 0,
+  "purpose": "Initial model-construction attempt; not accepted demonstration"
+}

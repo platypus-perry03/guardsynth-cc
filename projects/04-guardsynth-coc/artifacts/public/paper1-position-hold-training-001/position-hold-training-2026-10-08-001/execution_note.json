@@ -1,0 +1,29 @@
+{
+  "recorded_at": "2026-10-08T17:12:35.034289+00:00",
+  "reason": "GPU 8 acquired several competing jobs; timing-only probe on GPU 3 found lower latency and sufficient memory",
+  "completed_fits_preserved": 6,
+  "incomplete_fit": {
+    "arm": "p2",
+    "seed": 42,
+    "epoch": 2,
+    "updates": 70,
+    "mean_loss": 0.06751479144968471,
+    "elapsed_seconds": 494.51290668174624
+  },
+  "incomplete_weights_saved": false,
+  "retry": "Restart p2 seed42 from frozen original parent with full 960 rows x 3 epochs, 180 updates; retain original before-test predictions",
+  "training_gpu_before": 8,
+  "training_gpu_after": 3,
+  "cpu_threads_after": 4,
+  "allocator_after": "expandable_segments:True",
+  "timing_probe": {
+    "minibatches": 8,
+    "seconds": 4.921975441277027,
+    "max_allocated_gb": 13.021709442138672,
+    "max_reserved_gb": 17.123046875,
+    "optimizer_updates": 0,
+    "weights_saved": false
+  },
+  "data_sources_and_learning_settings": "Unchanged",
+  "interruption": "KeyboardInterrupt of our training process; no partial adapter saved"
+}

@@ -21,5 +21,5 @@ Project 05를 관련 독립 연구로 참조한다.
 
 - 플랫폼 source, schema, conformance test와 release report는 이동하지 않는다.
 - Project 05는 플랫폼 version을 dependency로 고정해 평가한다.
-- Project 05의 실험 run은 `artifacts/projects/eblc-language-verification/`에 기록한다.
-- 플랫폼 자체 release/conformance run은 `artifacts/platforms/eblc-bcv/`에 남는다.
+- Project 05의 실험 run은 `projects/05-eblc-language-verification/artifacts/`에 기록한다.
+- 플랫폼 자체 release/conformance run은 `platforms/eblc-bcv/artifacts/`에 남는다.

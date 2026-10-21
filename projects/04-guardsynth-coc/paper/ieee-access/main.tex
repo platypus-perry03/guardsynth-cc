@@ -1,0 +1,944 @@
+% !TeX program = pdflatex
+% Integrated author-review manuscript; generated from maintained bilingual section Markdown.
+% Build here with make; English author-review manuscript.
+\makeatletter\def\input@path{{template/}}\makeatother
+\documentclass[nolineno]{ieeeaccess}
+\usepackage{amsmath,amssymb,booktabs,array,xcolor,graphicx,hyperref}
+\setlength{\emergencystretch}{3em}\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.12}\hypersetup{hidelinks}\raggedbottom
+\setcounter{dbltopnumber}{2}
+
+\usepackage[T1]{fontenc}
+\usepackage{etoolbox}
+\definecolor{accessblue}{cmyk}{1,.35,0,.3}
+\makeatletter
+\def\reviewfooter{\hbox to\textwidth{\scriptsize Author-review draft\hfill\thepage}}
+\apptocmd{\ps@titlepage}{\let\@oddfoot\reviewfooter\let\@evenfoot\reviewfooter}{}{}
+\apptocmd{\ps@headings}{\let\@oddfoot\reviewfooter\let\@evenfoot\reviewfooter}{}{}
+\makeatother
+\begin{document}\pagestyle{headings}
+\history{Author-review draft; publication metadata pending.}\doi{}
+\title{GuardSynth: Augmenting Chain-of-Causation with Verified Behavioral Constraints for Autonomous Driving}
+\author{Author information pending confirmation}
+\address{Affiliations and corresponding author to be confirmed}
+\markboth{GuardSynth: Verified Behavioral Constraints for CoC}{GuardSynth: Verified Behavioral Constraints for CoC}
+\begin{abstract}Driving models increasingly explain their actions in natural language, but a convincing explanation does not establish rule compliance. A recent study of Alpamayo 1.5 found that one third of its reasoning traces were unreliable, and trajectories agreed with reliable reasoning in only 74\% of cases. Even agreement does not ensure compliance with an external speed limit or waiting rule. Chain of Causation (CoC) explains why a decision was made, but may leave the conditions defining allowed actions implicit. Our preliminary Alpamayo tests found violations despite explicit inference-time rules. These observations motivate explicit training constraints and checks on their correctness. We present GuardSynth, a method that records the sources of constraints, represents them in Evidence-Bound Lifecycle Contracts (EBLC), checks supported logical properties, and generates Controlled Natural Language (CNL) sentences appended to CoC. With identical evaluation rules, additional position-hold training yields 22/192, 1/192, and 0/192 violations for CoC-only, natural-language-constraint, and EBLC-derived-CNL training, respectively, on the 2 s interval-maximum test. Across six synthetic action-selection tasks, both natural-language constraints and EBLC-derived CNL improved accuracy and reduced violations relative to CoC alone. With constraints supplied during training and evaluation, temporal-task accuracy increased from 49.86\% to over 96\%, while violations fell from 19.17\% to below 1.5\%. Specification checks detected all 144 injected errors across six supported types and accepted all 24 valid contracts, but missed 24 errors in which evidence and specification were wrong together.\end{abstract}
+\begin{keywords}Behavioral constraints, Chain of Causation, controlled natural language, formal verification, vision-language models.\end{keywords}
+\maketitle
+
+\section{Introduction}
+
+Vision-language-action (VLA) driving models increasingly generate natural-language reasoning alongside driving plans. \cite{r1}, \cite{r2}, \cite{r3} Reasoning, however, does not guarantee acceptable behavior. An analysis of 150 reasoning--trajectory pairs from Alpamayo 1.5 judged 33.3\% of the reasoning traces unreliable and found 74\% trajectory agreement even for reliable ones. \cite{r18} A further gap remains when reasoning and trajectory do agree: behavior must also satisfy externally specified constraints, such as traffic rules or operator instructions, that the model's own explanation need not encode. Chain of Causation (CoC) in Alpamayo-R1 illustrates this gap. \cite{r1} CoC explains why observations lead to a decision, as in ``a pedestrian is crossing, so the vehicle slows down.'' A constraint such as ``do not enter while the zone is occupied, and wait 1.5 s after it clears'' instead restricts which actions are admissible. Because the same scene admits different entry times under different waiting rules, a correct explanation cannot establish compliance.\par
+
+Simply stating the rule to the model is not sufficient. When we supplied explicit speed limits to Alpamayo-R1-10B at inference, choosing limits that maintaining the current speed would satisfy, predictions still exceeded them within two seconds in 6/9 PhysicalAI and 9/9 converted nuScenes outputs, and raising the limit shifted predicted positions by at most 0.087 m on average. When asked to hold position within 0.2 m for two seconds, all three predictions for a low-speed input from each source left that radius. The violation counts were the same whether the rule was given in the user prompt or appended to the CoC.\footnote{Alpamayo-R1, also called Alpamayo 1, and the updated Alpamayo 1.5 belong to the same model family; these experiments use R1 rather than the 1.5 version evaluated in \emph{Drive the Thoughts}. \cite{r20} Each source contributes three inputs evaluated with three trajectory-generation seeds. The 0.087 m value is the largest mean XY difference averaged over three seeds for each input and rule-input route, rather than a bound on each paired prediction. The nuScenes inputs are a third-party conversion to PhysicalAI format. Speed and position-hold checks use tolerances of 0.05 m/s and 0.01 m, respectively. These are open-loop predictions under supplied experimental policies, not measurements of executed driving or population-level road failure rates. Supplement S11 reports the protocol and aggregate results.} Because these diagnostics do not test training, we examined it separately in a controlled synthetic candidate-selection task with a smaller VLM, Qwen3-VL-2B-Instruct. In a position-hold task, a CoC-only model given the rule only at evaluation violated it in 22/192 predictions, whereas models that also received constraints during training violated it in 1/192 and 0/192.\footnote{The 192 predictions combine 64 test rows with three training seeds. The CoC-only training condition showed no violations under the 0.5-second waiting rule in this interval-maximum evaluation. This is selection among supplied candidates, separate from Alpamayo's trajectory-generation test. Supplement S12 reports the training protocol and results.} Constraints therefore need to enter the training data. This raises a further question: are the constraints themselves correct?\par
+
+Answering this question is difficult for three reasons, and existing approaches address only parts of it. First, a single constraint combines evidence with different roles: an observed clearance time, a supplied waiting duration, and an assumption that the zone stays clear. When such a constraint is wrong, a natural-language sentence alone does not reveal which source is at fault. Second, errors are silent but consequential. Constraints that read correctly but were attached to the wrong training cases left accuracy near 50\%, the constraint-free level, and small changes in units, negation, boundaries, or release conditions alter admissible behavior. Third, checking requires a formal representation, whereas a VLM learns from natural language, and the learned interpretation depends on wording: rewording the constraints without changing their meaning reduced static-task accuracy of the CNL-trained model from 100\% to 80.32\% (Section VI). A checked meaning is therefore useful for learning only if it is rendered consistently. Reasoning frameworks such as DriveLM and DriveVLM do not represent admissibility constraints separately from reasoning. \cite{r2}, \cite{r3} Reachability-based safety filters restrict control inputs at execution rather than shaping training data. \cite{r19} nl2spec translates requirements into temporal logic but neither binds them to scene evidence nor regenerates checked learning inputs. \cite{r9} Our earlier natural-language guards improved action selection but left their construction unchecked. \cite{r4}\par
+
+We present GuardSynth, a development method that addresses each of these difficulties. (i) It binds constraint fields to their sources, separating observations, supplied rules, and modeling assumptions. (ii) It records applicability, action restrictions, persistence and release, timing, and evidence in Evidence-Bound Lifecycle Contracts (EBLC). Supported profiles are lowered to SMT to check consistency and designated properties within a restricted model. (iii) It generates Controlled Natural Language (CNL) from the checked fields and appends it to the original CoC, so the model still learns from language. For real scenes, the required observations and applicability need human confirmation.\par
+
+We evaluate Qwen3-VL-2B-Instruct on six synthetic action-selection tasks with matched LoRA budgets and three seeds. Both natural-language constraints (P1) and EBLC-derived CNL (P2) outperform CoC alone (P0) in accuracy and violation rate. On temporal entry, accuracy is 49.86\%, 96.81\%, and 98.06\%, and violation rate is 19.17\%, 1.39\%, and 0.83\%. The behavioral gain stems mainly from supplying constraints, and P2 does not outperform P1 under every condition. What GuardSynth adds is checkability: its checks detect all 144 injected errors of six supported types and accept all 24 valid contracts. They miss 24 errors in which evidence and specification are wrong together, which marks the limit of internal consistency checks.\par
+
+Our contributions are:\par
+
+\begin{enumerate}
+\item A procedure for selecting and binding supplied behavioral constraints in CoC context while separating observations, rules, and modeling assumptions.
+\item An EBLC-based path from evidence-bound specifications through restricted logical verification to CNL inserted into CoC.
+\item An evaluation that separates model compliance and selection from specification quality across six behavioral tasks.
+\end{enumerate}
+
+Sections II and III review related work and background, Section IV presents GuardSynth, Sections V and VI report the experiments, and Sections VII and VIII discuss limitations and conclude.\par
+
+\section{Related Work}
+
+This section reviews research connecting driving observations, reasoning, and actions, followed by traffic-rule specification and regulation-aware decision making. It then examines natural-language formalization and controlled natural language to clarify how GuardSynth relates to existing approaches.\par
+
+\subsection{Reasoning-Based Autonomous Driving and CoC}
+
+Connecting visual observations to language-based reasoning and actions is an important direction in autonomous driving. Alpamayo-R1 combines Chain of Causation (CoC) reasoning with trajectory prediction and uses supervised fine-tuning and reinforcement learning to improve reasoning--action alignment. DriveLM represents relationships among perception, prediction, and planning questions and answers as a graph, while DriveVLM connects scene description, scene analysis, and hierarchical planning. These studies provide learnable representations of the process from observation to decision. \cite{r1}, \cite{r2}, \cite{r3}\par
+
+Alignment between explanations and actions is also important for useful reasoning. Drive-R1 addresses reasoning--planning misalignment and history-based shortcut learning, using trajectory and meta-action rewards after supervised fine-tuning. Complementing this direction, we focus on how behavioral constraints are represented in learning data. We distinguish CoC explanations of why an action is taken from constraints restricting which actions are admissible in the situation, and combine the two. This distinction defines explicit normative information to accompany explanations, rather than presuming a general performance deficiency of existing reasoning models. \cite{r5}\par
+
+DriveLM's graph connects perception, prediction, and planning questions, while DriveVLM uses scene description and analysis to support hierarchical planning. GuardSynth addresses a different interface: developing explicit behavioral conditions that accompany an existing action rationale. The conditions link supplied observations, rules, and assumptions to an EBLC profile, logical checks, and generated CNL. Our candidate-selection experiment therefore measures the use of supplied restrictions, rather than reproducing these systems' native driving tasks. \cite{r2,r3}\par
+
+General reasoning prompts provide another comparison direction. Zero-shot CoT elicits step-by-step reasoning before answer extraction, and basic Plan-and-Solve first requests a plan and then its execution. These instructions organize reasoning without supplying a case-specific rule. We use them as supplementary inference controls to examine whether additional reasoning instructions change action choices when the added constraint is absent. \cite{r16,r17}\par
+
+\subsection{Traffic-Rule Specification and Regulation-Aware Decisions}
+
+Machine-interpretable traffic rules provide a direct foundation for formalizing behavioral constraints. Esterle et al. express traffic rules in linear temporal logic (LTL) and apply them to compliance assessment on driving data. This approach gives applicability conditions and temporal relationships explicit semantics. Following this principle, we structure the subject and target, activation, persistence, release, and evidence links of CoC-augmenting constraints as EBLC elements. \cite{r6}\par
+
+Retrieval-augmented reasoning offers another way to connect regulations with scenes. DriveReg retrieves situation-relevant traffic regulations and connects them to language-model reasoning to support compliance and interpretable decisions. Its central focus is retrieving and using applicable regulations. GuardSynth instead focuses on expressing selected behavioral constraints in an explicit intermediate representation, checking them within a restricted logical model, and conveying them as natural-language learning inputs. Regulation retrieval and constraint specification have complementary roles in obtaining supporting evidence and representing constraints. \cite{r7}\par
+
+\subsection{Natural Language, Formal Specifications, and CNL}
+
+Translating natural-language requirements into formal specifications connects human-readable descriptions with machine-verifiable representations. NL2TL uses abstracted atomic propositions and language models to translate natural language into temporal logic, separating domain-specific proposition recognition from translation structure. nl2spec associates language fragments with subformulas and lets users revise these associations to resolve ambiguity. The former emphasizes learning and adapting a translation model, while the latter emphasizes interactive specification and user correction. \cite{r8}, \cite{r9}\par
+
+Both methods formalize supplied language requirements. Their native outputs are temporal-logic expressions, not labels for our action candidates. GuardSynth additionally defines how CoC context, scene evidence, supplied rules, and assumptions populate a restricted contract and how the checked restriction returns to CoC through CNL. Translation quality and downstream candidate-selection accuracy consequently answer different questions. Applying a new candidate selector to nl2spec or NL2TL would evaluate an adapted pipeline, and we do not treat their native demonstrations as action-selection baselines. \cite{r8,r9}\par
+
+Controlled Natural Language (CNL) is also relevant when specifications are presented in readable language. Attempto Controlled English (ACE) restricts grammar and interpretation rules to connect natural-language sentences with formal representations. GuardSynth's CNL is not an implementation of ACE; it maps fields and clauses of a selected EBLC profile to restricted sentence patterns. Our focus is traceable correspondence between defined constraint elements and generated sentences, rather than semantic equivalence across unrestricted natural language. Logical verification, sentence correspondence, and the validity of scene evidence are consequently distinct review targets. \cite{r10}\par
+
+\subsection{Positioning of This Work}
+
+Our preceding Safety-Constrained CoC manuscript already introduces natural-language execution guards and contract-pair evaluation over static, temporal, and maneuver tasks. GuardSynth retains that learning interface but develops a traceable source-to-specification-to-CNL path for producing its constraint component. The present P1 condition instantiates our earlier approach; P2 is its formally supported development path. Reused task generators and scoring principles are distinguished from newly executed experiments. \cite{r4}\par
+
+These research directions establish foundations for learning driving reasoning, formalizing traffic rules, and connecting language with logic. Building on them, GuardSynth defines the scope, properties, and elements of CoC behavioral constraints and connects EBLC specification, restricted logical verification, CNL generation, and CoC augmentation. The focus is on organizing learning constraints through a consistent representation and verification procedure, rather than developing a new driving model or a general-purpose translator. Table~\ref{tab:related-work} compares the central objectives of the selected studies; it is neither an exhaustive feature audit nor a performance ranking.\par
+
+
+\begin{table*}[tp]\caption{Central objectives of related work and their relationship to GuardSynth.}\label{tab:related-work}
+\centering\fontsize{8}{10}\selectfont\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{\dimexpr 0.24\textwidth-4.32pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.25\textwidth-4.5pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.25\textwidth-4.5pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.26\textwidth-4.68pt\relax}@{}}
+\toprule
+\textbf{Study} & \textbf{Central objective} & \textbf{Representation or approach} & \textbf{Connection to this work}\\
+\midrule
+Alpamayo-R1; Drive-R1 \cite{r1,r5} & Reasoning--action alignment & CoC/CoT, supervised learning and RL & Useful supervision for action selection\\[3pt]
+DriveLM; DriveVLM \cite{r2,r3} & Reasoning from scenes to plans & Graph question answering; hierarchical planning & Structuring scene and action explanations\\[3pt]
+Esterle et al. \cite{r6} & Machine-interpretable traffic rules & LTL specifications & Explicit conditional and temporal semantics\\[3pt]
+DriveReg \cite{r7} & Regulation-aware decisions & Regulation retrieval and LLM reasoning & Connecting applicable rules and evidence\\[3pt]
+NL2TL; nl2spec \cite{r8,r9} & Formalizing language requirements & Temporal-logic translation; interactive revision & Language--specification correspondence\\[3pt]
+ACE \cite{r10} & Unambiguously interpreted language & Restricted grammar and formal interpretation & Principles of controlled expression\\[3pt]
+GuardSynth & Structuring constraints for CoC learning & EBLC \ensuremath{\rightarrow} logical checks \ensuremath{\rightarrow} CNL \ensuremath{\rightarrow} CoC augmentation & Linking constraint model, verification, and learning inputs\\[3pt]
+\bottomrule\end{tabular}
+\end{table*}
+
+We assess learning utility by comparing CoC alone (P0) with constraint-augmented CoC (P1 and P2), using the same model and matched training budgets. P1 is our existing natural-language constraint approach, and P2 uses CNL generated from EBLC. Thus, P1/P2 versus P0 is the primary comparison, while P1 versus P2 compares representations within our proposed family. This experiment evaluates the effect of supplying constraints; it does not isolate a causal effect of logical verification. The paper covers constraint specification, verification, CNL generation, and learning use. EBLC-based test generation and runtime monitoring are subsequent applications.\par
+
+\subsection{Native Execution Checks and Comparison Scope}\label{sec:external-checks}
+
+Table~\ref{tab:external-execution} records our checks of the selected methods' original execution paths. We ran their supplied examples without adding GuardSynth constraints or a candidate-selection adapter. These checks establish which native paths were exercised; they do not provide a shared-task performance ranking or a translation-accuracy benchmark.\par
+
+\begin{table*}[tp]\caption{Native execution checks of selected external methods}\label{tab:external-execution}
+\centering\fontsize{8}{10}\selectfont\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{\dimexpr 0.15\textwidth-1.8pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.35\textwidth-4.2pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.50\textwidth-6pt\relax}@{}}
+\toprule
+\textbf{Method} & \textbf{Native task or output} & \textbf{Execution checked in this study}\\
+\midrule
+nl2spec \cite{r9} & Temporal-logic translation with language--subformula links & One original CLI example executed with three translation samples; interactive user correction was not exercised.\\[3pt]
+NL2TL \cite{r8} & Temporal-logic translation of supplied requirements & Eleven original notebook examples executed using the official model weights.\\[3pt]
+DriveLM \cite{r2} & Graph VQA and driving reasoning & Native inference not executed: the original LLaMA-7B base weights required by the inspected released challenge baseline were unavailable in our environment.\\[3pt]
+DriveVLM \cite{r3} & Scene analysis and hierarchical planning & Native inference not executed: the inspected official repository contained project-page material, but no inference code or model weights.\\[3pt]
+\bottomrule\end{tabular}
+\end{table*}
+
+The DriveLM check concerns the released challenge baseline and is not a reproduction of the full DriveLM-Agent. Resource statements in Table~\ref{tab:external-execution} describe the local environment and official sources inspected on October 7, 2026; they do not assert that resources are unavailable elsewhere. The completed translator demonstrations produced no predictions on our common candidate-selection task.\par
+\section{Background}
+
+This section introduces the established concepts underlying the proposed method. It begins with vision-language models and CoC, then explains satisfiability-based verification, finite temporal bounds, and modeling assumptions, before outlining controlled natural language and low-rank adaptation.\par
+
+\subsection{Vision--Language Models and Chain of Causation}
+
+Vision--language models (VLMs) process visual and textual information to generate descriptions or responses about a scene. Vision--language--action models (VLAs) connect such processing to action prediction. Alpamayo-R1 combines vision--language reasoning with trajectory generation for driving. \cite{r1}\par
+
+Visual input, linguistic explanation, and action output serve different roles. The input provides observations; an explanation relates observations to a decision; the output represents the selected action. For example, answering “What is visible?” and “Which action should be selected next?” defines different learning targets. An action output can itself be a linguistic category such as “decelerate,” rather than a trajectory or a steering and acceleration command. Descriptions of action prediction should therefore specify both the available inputs and the representation being learned.\par
+
+Chain of Causation (CoC) expresses causally connected observations, rationales, and actions relevant to a decision. Alpamayo-R1 aligns these explanations with driving behavior. \cite{r1} An illustrative explanation is “the leading vehicle decelerates \ensuremath{\rightarrow} the gap may shrink \ensuremath{\rightarrow} decelerate to maintain separation.” This example describes an action rationale; it is distinct from statistically identifying causal relationships from observational data.\par
+
+The first part of this example is an observation, the second an anticipated consequence, and the last an action rationale. These arrows indicate explanatory flow rather than formal implication. Learning from such explanations encourages a model to express these relationships. Whether the stated facts are supported by observations and whether the model selects an appropriate action remain separate questions.\par
+
+\subsection{Logical Specifications and Satisfiability-Based Verification}
+
+SAT determines propositional satisfiability, while SMT also considers background theories such as arithmetic. \cite{r11} Z3 is a solver for such SMT queries. \cite{r12}\par
+
+\subsubsection{Satisfiability and Counterexamples}
+
+Let \ensuremath{\Phi} combine a specification and its assumptions, and let P denote a property. Satisfiability of \ensuremath{\Phi} establishes the existence of a model satisfying the combined conditions. Property verification can be expressed by checking the counterexample formula:\par
+
+\[\Phi\land\neg P\]
+
+A satisfying model violates the property; unsatisfiability establishes that \ensuremath{\Phi} entails P. Because inconsistent assumptions entail any property vacuously, satisfiability of \ensuremath{\Phi} must also be checked. When temporal states are encoded over finitely many indexed steps, the conclusion applies to that bound and those assumptions. Its scope is determined by the facts and relationships represented in the specification. \cite{r11}\par
+
+Consider an elementary arithmetic example: x is an integer and \ensuremath{\Phi} is ‘0 \ensuremath{\leq} x \ensuremath{\leq} 5.’ The assignment x = 3 satisfies \ensuremath{\Phi}. Here, a model means an interpretation of logical variables and symbols that satisfies the formula, not a trained neural network. If P is ‘x \ensuremath{\leq} 10,’ the counterexample query asks whether ‘0 \ensuremath{\leq} x \ensuremath{\leq} 5 and x > 10’ can hold. No integer satisfies it, so the query is UNSAT and \ensuremath{\Phi} \ensuremath{\models} P holds.\par
+
+If instead P is ‘x \ensuremath{\leq} 2,’ assigning x = 3 satisfies \ensuremath{\Phi} but violates P. The counterexample query is SAT, and this assignment refutes the claim that P always holds. SAT for a counterexample query does not mean the original specification is inconsistent: it identifies a case permitted by the specification that violates the property. SAT and UNSAT must therefore be interpreted with respect to the particular query.\par
+
+\subsubsection{Finite Temporal Bounds and Assumptions}
+
+Temporal change can be represented by indexed states and relations between adjacent states. For example, s\ensuremath{_0}, s\ensuremath{_1}, and s\ensuremath{_2} denote three decision states with two intervening transitions. Unless a time interval is separately defined, these indices do not denote physical seconds. A bounded verification problem combines initial conditions, transition relations, and properties within the selected range.\par
+
+This distinction matters when interpreting a result. The absence of a counterexample over three states does not establish a property at every future time. Likewise, when observed facts are supplied as assumptions, logical verification addresses what follows from those assumptions rather than independently establishing their observational accuracy. Specification consistency, property satisfaction, and the correctness of input facts are distinct questions.\par
+
+\subsection{Controlled Natural Language}
+
+Controlled natural language (CNL) deliberately restricts the vocabulary, grammar, or interpretation of a natural language. It supports precision and consistency while retaining natural-language readability. CNLs intended to improve document comprehension differ in purpose and rigor from those designed to correspond to formal representations. \cite{r13}\par
+
+For formally oriented CNL, interpretation rules for conditions, negation scope, and logical relationships are important. Precision depends on explicit definitions of permitted expressions and their interpretation, rather than fluency alone. Describing a CNL therefore requires attention to its particular grammatical and semantic rules. \cite{r13}\par
+
+As a simple illustration, let p mean “the device is locked” and q mean “the device operates.” The sentence “If the device is locked, it does not operate” can be assigned the interpretation p \ensuremath{\rightarrow} \ensuremath{\neg}q. It restricts operation while locked, but does not require operation whenever the device is unlocked. Rewriting it as “If the device is unlocked, it operates” instead gives \ensuremath{\neg}p \ensuremath{\rightarrow} q, a different condition. Natural phrasing and logical equivalence are separate issues.\par
+
+In this example, p and q fix the meanings of terms, “if” expresses the conditional relationship, and “not” determines the scope of negation. An explicit correspondence makes the condition and conclusion identifiable. Preserving meaning between language and formulas concerns these lexical, grammatical, and logical relationships, not merely similar words or sentence lengths. This example illustrates a CNL principle without defining a domain-specific constraint language.\par
+
+\subsection{Low-Rank Adaptation}
+
+Supervised fine-tuning adapts a pretrained model using examples of inputs and target outputs. For language outputs, training can encourage generation of target tokens given an input. Full fine-tuning updates all model weights selected for training, whereas parameter-efficient fine-tuning learns a subset of parameters or a small additional parameter set.\par
+
+Low-Rank Adaptation (LoRA) fine-tunes a model by freezing pretrained weights and learning an update represented by low-rank matrices. For a pretrained weight matrix W\ensuremath{_0}, the adapted weight is expressed as follows. \cite{r14}\par
+
+\[W=W_0+\frac{\alpha}{r}BA\]
+
+Here, W\ensuremath{_0} is the frozen pretrained weight and W is the effective adapted weight. For a linear map with input dimension k and output dimension d, both have size d \ensuremath{\times} k. The trainable matrices A and B have sizes r \ensuremath{\times} k and d \ensuremath{\times} r, respectively, where r is a positive internal dimension usually smaller than d and k. Their product BA therefore has the same shape as W\ensuremath{_0} and rank at most r. The scalar setting \ensuremath{\alpha} scales the update through \ensuremath{\alpha}/r. \cite{r14}\par
+
+Only A and B are learned rather than the entire W\ensuremath{_0}. With sufficiently small r, the trainable parameter count for that matrix decreases from dk to r(d + k). The choice of r controls both the space of representable updates and the parameter count, so its role differs from a simple scaling coefficient.\par
+
+For an illustrative calculation with d = k = 512 and r = 8, the full matrix contains 262,144 values, whereas A and B together contain 8,192 trainable values, or 3.125\% as many. This is a one-matrix example, not a whole-model memory reduction or an experimental setting. LoRA specifies how adaptation is performed; the accuracy and constraint compliance of learned actions require separate evaluation.\par
+\section{Proposed Method}
+
+
+This section follows the constraint-development process: selecting supplied action-relevant constraints and binding their evidence, specifying their meaning in EBLC, checking the executable representation, and generating CNL to augment CoC. The temporal example connects these stages; a separate qualitative profile defines how uncertain evidence affects constraint lifecycles. Model training and evaluation are described in the experimental section.\par
+
+\subsection{Overview and Scope}
+
+GuardSynth preserves the action explanation in CoC while making conditions that restrict action selection explicit in a separate specification, then returning those conditions to a natural-language representation. Inputs comprise original CoC, scene observations available for the decision, and applicable rules with their evidence. Outputs comprise structured behavioral constraints, logical verification results under a restricted model, controlled natural language (CNL) generated from the specification, and an augmented learning input. The formal representation specifies condition semantics and verification scope; the language representation conveys those conditions to learning.\par
+
+The process has four stages: select and bind supplied constraint candidates, specify accepted content in EBLC, check the supported logical representation, and render the checked restriction as CNL for insertion into the original CoC. Unexpected results return the specification for review; unconfirmed scene information remains unresolved.\par
+
+\begin{figure*}[!t]\centering
+\includegraphics[width=.94\textwidth,height=.30\textheight,keepaspectratio]{projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/manuscript-revision-2026-09-30-001/figures/method-flow-en.pdf}
+\caption{The upper row distinguishes four input roles; stages 01--04 below run from evidence binding to CoC augmentation. Solid arrows show processing order; the dashed path returns unexpected verdicts or UNKNOWN for revision. Unresolved candidates are held at stage 01. Real scenes require human confirmation of applicability evidence; synthetic experiments bind supplied conditions.}\label{fig:workflow}
+\end{figure*}
+
+The inputs in Figure~\ref{fig:workflow} provide non-interchangeable information. Original CoC supplies action and rationale context for identifying relevant constraint candidates. The other three inputs are defined below as observational values, behavioral rules, and interpretation scope.\par
+
+\textbf{Observations: definition and example.} An observation describes the state of an entity, zone, or event at a specified time. Real-scene observations are linked to evidence such as video and its confirmation, whereas the primary synthetic experiment uses states supplied by the generating environment. “The conflict zone became clear at 11.0 seconds” is an event-time observation. Stage 01 in Figure~\ref{fig:workflow} binds the entity and event to the observation; stage 03 uses the observed clearance time (clear\_ms = 11000) as an input to the verification query. This observation alone does not determine a required waiting duration.\par
+
+\textbf{Rules: definition and example.} A rule specifies which action is restricted under an applicability condition and when that restriction is released. “Do not enter for at least 0.5 seconds after clearance” is a supplied experimental rule. Stage 01 in Figure~\ref{fig:workflow} confirms its applicability evidence; stage 02 specifies the restricted action and release\_clear\_ms = 500. The duration is neither an observed scene property nor a value inferred from CoC.\par
+
+\textbf{Modeling assumptions: definition and example.} A modeling assumption states the scope within which inputs are interpreted and verified. “The zone is not reoccupied after clearance” allows continuous clearance to be represented by one clearance time. Stage 02 in Figure~\ref{fig:workflow} records this assumption as contract scope; stage 03 uses it in the logical interpretation. If reoccupation is possible, the assumption must be reconsidered before applying the same single-time expression.\par
+
+Consequently, the same observation at 11.0 seconds yields admissibility from 11.5 or 12.5 seconds under supplied waits of 0.5 or 1.5 seconds. Stage 04 in Figure~\ref{fig:workflow} conveys the specified and verified restriction through CNL. Separating these roles prevents treating an observation as a rule or an assumption as an observed fact.\par
+
+Executable numerical and qualitative profiles instantiate this approach. The learning experiments use a temporal profile and static/maneuver candidate-summary profiles constructed from supplied synthetic rules. A separate qualitative profile connects entities, zones, and events through observations and human review of real scenes. Both link specifications to evidence, but their inputs and semantics differ. We use the temporal contract as the running example and the qualitative profile to describe evidence uncertainty and constraint lifecycles.\par
+
+\subsection{Selecting Supplied Constraints and Binding Evidence}\label{sec:extraction}
+
+\subsubsection{Distinguishing Constraints from Other CoC Content}
+
+A behavioral constraint restricts available actions in a situation. For example, “a pedestrian is crossing” describes an observation; “yield to protect the pedestrian” provides an action rationale; “do not enter the conflict zone while the pedestrian occupies it” specifies a behavioral constraint; and “select the admissible action with the greatest progress” states an objective that ranks permitted actions. Satisfying an entry-permission condition does not force entry; selecting among permitted actions requires a separate objective.\par
+
+Not every CoC sentence becomes a constraint. We select content with a relevant condition and an action restriction, while keeping observations, rationales, and selection objectives in their distinct roles. This prevents inventing thresholds or release conditions absent from CoC and its evidence. In particular, a waiting duration requires a supplied rule or separately established normative evidence.\par
+
+\subsubsection{Input Sources and Evidence Binding}
+
+To construct an EBLC specification, supplied CoC context, observations, and rules are reviewed for relevance to the action. The selected content binds entities, zones, and the decision time to the applicable restriction. Accepted inputs are mapped to supported fields with explicit assumptions, evidence references, and version information. The output of selection and binding is a constraint candidate with its supporting inputs, not a verified contract or a learning target.\par
+
+Table~\ref{tab:source-mapping} summarizes the source-to-field mapping. CoC supplies action and rationale context, observations supply scene bindings, rules supply restrictions and bounds, and modeling decisions specify interpretation scope. A statement appearing in CoC does not itself confirm that it applies to the current scene.\par
+
+
+\begin{table*}[tp]\caption{Source content and its mapping to specification inputs}\label{tab:source-mapping}
+\centering\fontsize{8}{10}\selectfont\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{\dimexpr 0.24\textwidth-2.88pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.33\textwidth-3.96pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.43\textwidth-5.16pt\relax}@{}}
+\toprule
+\textbf{Source} & \textbf{Selected content} & \textbf{Destination}\\
+\midrule
+Original CoC & Intended action, rationale, potential obligation & Constraint kind and relevance candidate; preserve the original CoC separately\\[3pt]
+Scene evidence or synthetic state & Target, zone, decision time, clearance event, candidate measurements & Entity bindings and query assignments; not rule thresholds\\[3pt]
+Supplied rule or reviewed rule evidence & Restricted action, applicability, comparison, bound, release requirement & EBLC obligation or {\ttfamily\fontseries{m}\selectfont\footnotesize limits} fields with source references\\[3pt]
+Explicit modeling decision & Time scope, no reoccupation, completion convention & Versioned profile assumptions, disclosed with evaluation scope\\[3pt]
+\bottomrule\end{tabular}
+\end{table*}
+
+Following the mapping in Table~\ref{tab:source-mapping}, numerical bounds are read from supplied rule fields ({\ttfamily\fontseries{m}\selectfont\footnotesize threshold}, {\ttfamily\fontseries{m}\selectfont\footnotesize max\_\allowbreak decel}, {\ttfamily\fontseries{m}\selectfont\footnotesize max\_\allowbreak jerk}, {\ttfamily\fontseries{m}\selectfont\footnotesize min\_\allowbreak gap}, or the temporal wait). They are not inferred from image pixels. Candidate measurements are separate inputs used when a candidate is queried; the encoding of these bounds is defined in the specification subsection.\par
+
+\subsubsection{Preparing and Binding Supplied Scene Inputs}\label{sec:video-to-constraint}
+
+Preparation of real-scene inputs combines supplied or human-reviewed observations with an applicable supplied rule. The input roles in Figure~\ref{fig:workflow} and Table~\ref{tab:source-mapping} become the following grounding steps; a rule is not inferred merely because an action appears in a video. Figure~\ref{fig:video-grounding} illustrates their combination in the temporal example.\par
+
+\begin{figure*}[!t]\centering
+\includegraphics[width=.658\textwidth,height=.28\textheight,keepaspectratio]{figures/video-grounding-en.pdf}
+\caption{Preparing and binding supplied scene inputs. Observations and rule content follow separate paths and are joined through human confirmation of applicability. Accepted inputs retain distinct observation and rule references; unresolved candidates are held without learning export. The 0.5 s wait is an illustrative supplied rule. The evaluated pipeline uses supplied synthetic inputs.}\label{fig:video-grounding}
+\end{figure*}
+
+\textbf{1. Review supplied observations.} Use the CoC action context to review the supplied entities, zones, states, and timestamps. Link real-scene observations to supporting video segments; synthetic observations come from the environment generator. Uncertain or occluded evidence remains unresolved rather than being treated as confirmed clearance.\par
+
+\textbf{2. Review the supplied rule.} Record the restriction and numerical parameters supplied by the experimental policy or reviewed rule evidence. For real scenes, the rule source may be an operating policy, operator instruction, or confirmed sign. Waiting durations and displacement tolerances require an explicit rule source; they are not invented from the scene or the CoC rationale.\par
+
+\textbf{3. Confirm applicability.} Check that the rule applies to the observed entity, zone, and decision time. Distinguish what the video supports from what the rule requires, and disclose assumptions such as no reoccupation after clearance. For real scenes, reviewers confirm these bindings and the rule evidence before accepting the candidate.\par
+
+\textbf{4. Bind the specification inputs.} Map the accepted restriction, comparisons, and bounds to EBLC rule fields, keeping scene states and event times as separate bindings. Retain references to both the observation and the rule. The resulting candidate proceeds to specification and checking; unresolved inputs remain unbound and are not exported as reviewed learning data.\par
+
+These steps define input preparation and source binding. Automatic extraction by an LLM or perception model is outside this paper's scope. The evaluated pipeline starts from supplied observations and rules; it checks supported specification properties and evaluates candidate selection with the resulting CNL.\par
+
+\subsubsection{Implemented Transformations and Human Review}
+
+In the temporal synthetic experiment, the environment generator supplies the clearance time, while a supplied experimental rule sets the required waiting duration. The duration becomes an EBLC rule parameter; the clearance time and candidate action values are bound separately in verification queries. Automation structures and transforms these supplied conditions. Observed values and rule parameters remain separate inputs; specification checks do not establish their factual or normative validity.\par
+
+For real-scene grounding, reviewers must confirm which observed entity and zone the constraint concerns, which events and clearance times the evidence supports, and whether the evidence meets the specified acceptance criteria. They must also establish rule applicability and the basis for timing parameters, modeling assumptions, and any initial activation and evidence history used by a lifecycle profile. These are grounding decisions that logical consistency checks cannot establish from evidence identifiers alone.\par
+
+The implemented real-scene adapter supports one pinned scene18 development-review task. Target and zone bindings, event predicates, evidence acceptance, an independent action reference, and CNL review remain unresolved in that task; learning export is disabled. A conditional contract can still be checked under supplied inputs, but adopting it as reviewed real-scene learning data requires resolving those grounding and reference-review items. Deferral under incomplete evidence is a policy output, not an automatically established real-scene action label.\par
+
+\begin{figure*}[!t]\centering
+\includegraphics[width=.94\textwidth,height=.30\textheight,keepaspectratio]{projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/manuscript-revision-2026-09-30-001/figures/evidence-map-en.pdf}
+\caption{Environmental clearance at 11.0 seconds binds a query variable, whereas the supplied 0.5-second duration becomes a contract field. No reoccupation is an assumption needed to connect these values through a temporal inequality. Derivation distinguishes these roles when constructing evidence-supported fields.}\label{fig:evidence-mapping}
+\end{figure*}
+
+The next stage maps these inputs to EBLC fields; verification then checks the resulting permissions before CNL generation.\par
+
+
+\subsection{Specifying Behavioral Constraints in EBLC}\label{sec:specification}
+
+\subsubsection{Scope and Elements}
+
+This stage represents an accepted constraint candidate and its evidence in a supported EBLC profile. Its output is a contract with defined interpretation; candidate values and verification verdicts are supplied in the next stage.\par
+
+Evidence-Bound Lifecycle Contracts (EBLC) make the precedingbehavioral constraint explicit by recording its target, conditions, restricted action, persistence, release, and evidence. In the pedestrian example, the ego vehicle is the constrained actor and the conflict zone is the target. The condition is pedestrian occupancy of that zone, and the restricted action is vehicle entry. Persistence specifies that the restriction remains active until its release condition is met. Release requires confirmed clearance and, if stipulated by the supplied rule, completion of a minimum waiting duration. Evidence links identify the observations establishing occupancy or clearance and the rule defining the restriction and any required wait.\par
+
+Evidence-Bound therefore denotes explicit links to the inputs on which conditions and rules depend; modeling assumptions define the scope of their interpretation. Lifecycle denotes activation, persistence, release, and, where required, reactivation. This paper uses these organizing principles and implemented restricted profiles, rather than assuming a language covering every traffic situation.\par
+
+Table~\ref{tab:eblc-elements} summarizes these elements and their temporal instantiation.\par
+
+
+\begin{table*}[tp]\caption{EBLC elements and their temporal instantiation}\label{tab:eblc-elements}
+\centering\fontsize{8}{10}\selectfont\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{\dimexpr 0.24\textwidth-2.88pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.33\textwidth-3.96pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.43\textwidth-5.16pt\relax}@{}}
+\toprule
+\textbf{Element} & \textbf{Specification role} & \textbf{Temporal instantiation}\\
+\midrule
+Subject and target & Whose action is restricted, and with respect to what? & Ego and pedestrian conflict zone\\[3pt]
+Scope & Situation and model of interpretation & Single clearance transition without reoccupation\\[3pt]
+Action restriction & What is disallowed? & Entry before release conditions hold\\[3pt]
+Persistence and release & When does the restriction persist or end? & Required duration following clearance\\[3pt]
+Time and units & Instants, durations, and boundaries & Integer milliseconds; inclusive threshold\\[3pt]
+Evidence and version & Rule sources and interpretation & Rule references and profile version\\[3pt]
+\bottomrule\end{tabular}
+\end{table*}
+
+The qualitative profile additionally represents event truth, evidence validity, initial activation, and a policy for combining obligations. These define how uncertain evidence is interpreted; they are distinct from the single-clearance temporal profile used in the primary learning experiment.\par
+
+\subsubsection{Contract Definition and Interpretation}
+
+We use $C = (s, z, \Sigma, O, E, V)$ to explain the profile organization: $s$ denotes the actor, $z$ the target or zone, $\Sigma$ the scope and modeling assumptions, $O$ the set of restrictive obligations, $E$ the observation and rule evidence links, and $V$ the interpretation version. This is explanatory notation, not a new six-field JSON schema. Actual serialization follows the restricted profile in Code Box 1.\par
+
+An obligation is interpreted through its activation condition, persistence and release rules, restricted action, and any required initial state. The temporal profile compresses these into a single clearance time and a waiting duration. The qualitative profile updates activation from evidence and the previous state at each decision step. Assumptions and state variables from different profiles are not interchangeable.\par
+
+Let $h_t$ denote the supplied evidence and state history through decision step $t$, and $a$ a current action candidate. The meaning of a contract is its admissible candidate set $A_C(h_t)$. Membership means compatibility with the stated conditions and restrictions. Subscript $t$ identifies the decision step, and $C$ identifies the contract. Multiple obligations combine their admissible sets by intersection, requiring all applicable restrictions to hold. The qualitative profile also imposes an entry policy requiring current clearance evidence. Previous inactivity is therefore distinct from current entry permission.\par
+
+An independent objective selects among admissible candidates. Deferral and entry after sufficient waiting may both be permitted while receiving different progress scores. Separating admissibility from optimization prevents interpreting compliance as optimality.\par
+
+\subsubsection{Temporal Syntax and Semantics}
+
+The temporal profile records the actor, target zone, occupancy restriction, required wait, unit, assumption, and rule sources. Code Box 1 shows the serialized contract for a supplied 0.5-second rule.\par
+
+\textbf{Code Box 1. Actual generated temporal contract JSON}\par
+
+The input is a supplied 0.5-second waiting rule; the output is a contract containing its target, release condition, and assumptions. Line numbers refer to positions within this box.\par
+
+\par\smallskip\noindent\fcolorbox{black!30}{black!3}{\begin{minipage}{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}
+\noindent\makebox[1.5em][r]{\scriptsize 1}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.0em}\{\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 2}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.6em}"version": "supplied-temporal-eblc-profile-v0.1",\allowbreak \strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 3}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.6em}"subject": "ego",\allowbreak \strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 4}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.6em}"target": "pedestrian\_\allowbreak conflict\_\allowbreak zone",\allowbreak \strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 5}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.6em}"hold": "NO\_\allowbreak ENTRY\_\allowbreak WHILE\_\allowbreak OCCUPIED",\allowbreak \strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 6}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.6em}"release\_\allowbreak clear\_\allowbreak ms": 500,\allowbreak \strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 7}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.6em}"time\_\allowbreak unit": "ms",\allowbreak \strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 8}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.6em}"source\_\allowbreak kind": "SUPPLIED\_\allowbreak SYNTHETIC\_\allowbreak RULE",\allowbreak \strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 9}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.6em}"assumption": "SINGLE\_\allowbreak CLEAR\_\allowbreak TRANSITION\_\allowbreak NO\_\allowbreak REOCCUPATION",\allowbreak \strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 10}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.6em}"source\_\allowbreak refs": [\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 11}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{1.2em}"Project01/temporal\_\allowbreak guard\_\allowbreak world.py::\_\allowbreak guard",\allowbreak \strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 12}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{1.2em}"paper1-method-preservation-v0.1"\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 13}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.6em}]\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 14}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.0em}\}\strut}\par
+\end{minipage}}\par\smallskip
+
+The {\ttfamily\fontseries{m}\selectfont\footnotesize subject} and {\ttfamily\fontseries{m}\selectfont\footnotesize target} identify the actor and restricted zone. The {\ttfamily\fontseries{m}\selectfont\footnotesize hold} field specifies no entry during occupancy; {\ttfamily\fontseries{m}\selectfont\footnotesize release\_\allowbreak clear\_\allowbreak ms} specifies waiting after clearance. The {\ttfamily\fontseries{m}\selectfont\footnotesize assumption} permits one occupied-to-clear transition without reoccupation, so one clearance instant and an elapsed duration can represent continuous clearance. In Code Box 1, lines 2--5 identify version and restriction, lines 6--7 duration and unit, and lines 8--13 the assumption and sources.\par
+
+For the temporal restriction, let $\tau_{\mathrm{ms}}$ denote environmental clearance time {\ttfamily\fontseries{m}\selectfont\footnotesize clear\_\allowbreak ms}, $u_{\mathrm{ms}}$ candidate entry time {\ttfamily\fontseries{m}\selectfont\footnotesize entry\_\allowbreak ms}, $\Delta_{\mathrm{ms}}$ the contract duration {\ttfamily\fontseries{m}\selectfont\footnotesize release\_\allowbreak clear\_\allowbreak ms}, and $e$ the Boolean candidate indicator {\ttfamily\fontseries{m}\selectfont\footnotesize enters}. The subscript ms denotes integer milliseconds. Both $\tau_{\mathrm{ms}}$ and $u_{\mathrm{ms}}$ are instants, whereas $\Delta_{\mathrm{ms}}$ is a duration. The entry restriction is:\par
+
+\[e\Rightarrow u_{\mathrm{ms}}\geq\tau_{\mathrm{ms}}+\Delta_{\mathrm{ms}}.\]
+
+The temporal admissibility predicate is equivalently $P_C=\neg e\lor(u_{\mathrm{ms}}\geq\tau_{\mathrm{ms}}+\Delta_{\mathrm{ms}})$. Thus, clearance alone does not establish that the required waiting duration has elapsed.\par
+
+Code Box 1 contains the rule parameters, not a candidate's action values. Core lowering declares {\ttfamily\fontseries{m}\selectfont\footnotesize enters}, {\ttfamily\fontseries{m}\selectfont\footnotesize clear\_\allowbreak ms}, and {\ttfamily\fontseries{m}\selectfont\footnotesize entry\_\allowbreak ms}; each verification query assigns the environment and candidate values separately. In particular, {\ttfamily\fontseries{m}\selectfont\footnotesize enters = false} denotes a non-entering candidate, not a fixed contract field. Such a candidate satisfies this entry implication; its utility is evaluated by the separate objective.\par
+
+The other numerical profiles store each bound under {\ttfamily\fontseries{m}\selectfont\footnotesize limits} as {\ttfamily\fontseries{m}\selectfont\footnotesize field/\allowbreak op/\allowbreak unit/\allowbreak ticks}: the restricted candidate attribute, comparison operator, external unit, and integer bound. After unit checking, {\ttfamily\fontseries{m}\selectfont\footnotesize scale = 1000} represents values in thousandths of that external unit, rather than converting every quantity to milliseconds. For example, a deceleration bound of $5.8\,\mathrm{m/s^{2}}$ is stored as 5800 ticks. Candidate measurements are bound separately during verification.\par
+
+\subsubsection{Qualitative Lifecycle Semantics}
+
+The qualitative profile defines the interpretation of an obligation j at decision step t using condition status {\ttfamily\fontseries{m}\selectfont\footnotesize truth[j,t]}, evidence acceptance {\ttfamily\fontseries{m}\selectfont\footnotesize valid[j,t]}, and Boolean obligation state {\ttfamily\fontseries{m}\selectfont\footnotesize active[j,t]}. Truth values are TRUE, FALSE, UNKNOWN, and CONFLICT. FALSE means confirmed resolution of the restricting condition, not merely a missing observation. Code Box 2 maps the current status and evidence validity, together with previous activation, to the current obligation state; {\ttfamily\fontseries{m}\selectfont\footnotesize active} is not a direct copy of {\ttfamily\fontseries{m}\selectfont\footnotesize truth}.\par
+
+\textbf{Code Box 2. Pseudocode for evidence-based state updates}\par
+
+Inputs are the current truth value and evidence validity for obligation j, together with previous activation; the output is current activation. This is explanatory pseudocode, not a verbatim source excerpt.\par
+
+\par\smallskip\noindent\fcolorbox{black!30}{black!3}{\begin{minipage}{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}
+\noindent\makebox[1.5em][r]{\scriptsize 1}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.0em}on[j,\allowbreak t] = valid[j,\allowbreak t] AND (truth[j,\allowbreak t] = TRUE)\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 2}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.0em}clear[j,\allowbreak t] = valid[j,\allowbreak t] AND (truth[j,\allowbreak t] = FALSE)\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 3}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.0em}active[j,\allowbreak t] = TRUE,\allowbreak              if on[j,\allowbreak t]\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 4}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{4.2em}FALSE,\allowbreak            else if clear[j,\allowbreak t]\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 5}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{4.2em}previous\_\allowbreak active,\allowbreak  otherwise\strut}\par
+\end{minipage}}\par\smallskip
+
+Lines 1--2 define activation evidence {\ttfamily\fontseries{m}\selectfont\footnotesize on} as valid TRUE and clearance evidence {\ttfamily\fontseries{m}\selectfont\footnotesize clear} as valid FALSE. Lines 3--4 activate or release the obligation; line 5 retains its previous state for UNKNOWN, CONFLICT, or invalid evidence. At the first decision, {\ttfamily\fontseries{m}\selectfont\footnotesize previous\_\allowbreak active} is the supplied {\ttfamily\fontseries{m}\selectfont\footnotesize prior\_\allowbreak active}; subsequently it is the preceding step's {\ttfamily\fontseries{m}\selectfont\footnotesize active}. These are interpretation rules relating evidence, obligation state, and action restrictions, not instructions about the solver's internal execution order.\par
+
+\begin{figure*}[!t]\centering
+\includegraphics[width=.94\textwidth,height=.30\textheight,keepaspectratio]{projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/manuscript-revision-2026-09-30-001/figures/lifecycle-en.pdf}
+\caption{(a) shows the state transitions of an individual obligation j; (b) combines all obligations' clearance conditions to determine entry permission. Solid arrows denote transitions or state retention; dashed arrows carry current clear values. The release condition in (a) and its corresponding input in (b) use the same evidence-derived value, combined with other obligations' clear values by AND. Panel (b) is neither a third state nor a nested state of (a). Because inactivity includes both initial inactivity and release, permission depends on current clearance of every obligation, not inactivity alone.}\label{fig:lifecycle}
+\end{figure*}
+
+Figure~\ref{fig:lifecycle} connects obligation state to the separate entry policy: {\ttfamily\fontseries{m}\selectfont\footnotesize entry\_\allowbreak permitted[t] = AND\_\allowbreak j clear[j,t]}. Entry requires current valid clearance for every declared obligation. Previous inactivity alone does not permit entry when current clearance is unconfirmed. Starting from inactivity, valid TRUE \ensuremath{\rightarrow} UNKNOWN \ensuremath{\rightarrow} FALSE \ensuremath{\rightarrow} TRUE yields active \ensuremath{\rightarrow} active \ensuremath{\rightarrow} inactive \ensuremath{\rightarrow} active: UNKNOWN retains the active restriction, FALSE releases it, and a later TRUE reactivates it. Entry is permitted only at the third decision in this illustration, where deferral remains allowed.\par
+
+Unknown, conflicting, or invalid evidence sets {\ttfamily\fontseries{m}\selectfont\footnotesize review\_\allowbreak required}. Evidence UNKNOWN and CONFLICT differ from a solver's UNKNOWN result, which means it could not decide a query. This subsection defines state interpretation; the separate lifecycle checks and their supplied-history scope are reported in the verification subsection.\par
+
+\subsubsection{Running Temporal Specification Example}
+
+This example maps original CoC, a supplied clearance observation, and an explicit waiting rule to the temporal contract and its query inputs. Original CoC reads “Yield to the crossing pedestrian, then proceed through the intersection.” Clearance occurs at 11.0 seconds; the rule requires 0.5 or 1.5 seconds of additional clearance. The duration is a supplied experimental condition, not inferred from CoC or asserted as a universal traffic-law requirement. We compare four hypothetical action candidates A--D in Table~\ref{tab:temporal-candidates}; three specify entry times and one defers entry.\par
+
+
+\begin{table*}[tp]\caption{Action-candidate admissibility under alternative waiting requirements}\label{tab:temporal-candidates}
+\centering\fontsize{8}{10}\selectfont\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{\dimexpr 0.13\textwidth-3.12pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.19\textwidth-4.5600000000000005pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.25\textwidth-6.0pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.25\textwidth-6.0pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.18\textwidth-4.32pt\relax}@{}}
+\toprule
+\textbf{Candidate} & \textbf{Entry time} & \textbf{Assigned utility score} & \textbf{0.5-second wait} & \textbf{1.5-second wait}\\
+\midrule
+A & 10.5s & 110 & Violates & Violates\\[3pt]
+B & 11.5s & 100 & Admissible; reference action & Violates\\[3pt]
+C & 12.5s & 85 & Admissible & Admissible; reference action\\[3pt]
+D & No entry & 0 & Admissible & Admissible\\[3pt]
+\bottomrule\end{tabular}
+\end{table*}
+
+Table~\ref{tab:temporal-candidates} presents a generated data instance, not observed model predictions. The generator assigns synthetic utility scores of 110, 100, 85, and 0 to the ordered candidate templates; these are not computed from measured distance or speed and do not enter the SMT restriction. Candidate B (11.5-second entry) is admissible under the 0.5-second rule but excluded under the 1.5-second rule. Candidate C (12.5-second entry) is admissible under both, and candidate D (deferral) satisfies both restrictions with zero utility.\par
+
+Here, {\ttfamily\fontseries{m}\selectfont\footnotesize reference action} denotes the highest-utility admissible candidate: B under the 0.5-second rule and C under the 1.5-second rule. The assigned scores provide an independent selection objective; they do not determine admissibility. The next subsection checks these permission conditions through logical queries. CNL generation later shows their expression in the augmented CoC, and the experimental section describes reference-label construction and training.\par
+
+\subsubsection{Why Use an EBLC Profile?}
+
+JSON specifies a serialization structure; by itself it does not assign lifecycle semantics, define the interpretation of unknown evidence, or establish what a generated sentence means. General temporal logics can express many of these conditions, and hand-written rules can implement them. EBLC is not claimed to be more expressive than those alternatives. Its role here is to fix a domain-specific contract between evidence fields, interpretation rules, supported Core lowering, and model-facing language. For example, {\ttfamily\fontseries{m}\selectfont\footnotesize release\_\allowbreak clear\_\allowbreak ms} denotes a duration rather than an event time, a {\ttfamily\fontseries{m}\selectfont\footnotesize ge} bound is inclusive, and {\ttfamily\fontseries{m}\selectfont\footnotesize source\_\allowbreak refs} records provenance rather than a model answer.\par
+
+The contribution is thus an explicit development interface with checkable mappings, not the invention of implication, JSON, or SMT. Each implemented profile has a validator, logical interpretation, and renderer; unsupported combinations are rejected. The experiments evaluate the utility and checks of this path, not superiority over an equally specified JSON-to-SMT system. A bare schema would become an equivalent engineering alternative only after supplying the corresponding semantics, lowering, provenance policy, and language mapping.\par
+
+
+\subsection{Verifying EBLC Specifications}\label{sec:verification}
+
+\subsubsection{Verification Purpose and Input Checks}
+
+Before rendering a contract as CNL for CoC augmentation, verification checks whether its executable representation rejects prohibited candidates while retaining intended permissions. This concerns the contract under supplied inputs and assumptions. It does not formally prove the original CoC or the combined natural-language text, factual scene interpretation, or vehicle safety.\par
+
+Verification requires semantic input binding and logical queries. Subject, zone, event time, and applicable duration must refer to the same case; contracts must satisfy supported version, field, and unit requirements. Evidence identifiers enable traceability but do not prove factual truth. Unbound fields remain distinct from reviewer-confirmed scene bindings: syntax acceptance alone does not turn a conditional contract into reviewed learning data.\par
+
+The temporal validator checks the supported version and fixed field combinations. Supported durations are 500, 1500, 800, and 1800ms; the primary expanded learning dataset uses 500 and 1500ms. This structural profile check precedes logical queries and does not itself establish candidate admissibility. Arbitrary JSON is not accepted as a general contract.\par
+
+\subsubsection{Core Lowering and Query Inputs}
+
+To enable SMT checking, EBLC temporal contracts are first translated into Core, an intermediate representation of typed variables and logical clauses. The lowering declares Boolean {\ttfamily\fontseries{m}\selectfont\footnotesize enters} and integer {\ttfamily\fontseries{m}\selectfont\footnotesize clear\_\allowbreak ms} and {\ttfamily\fontseries{m}\selectfont\footnotesize entry\_\allowbreak ms}, and embeds {\ttfamily\fontseries{m}\selectfont\footnotesize release\_\allowbreak clear\_\allowbreak ms} as an integer constant. Types are checked before SMT compilation; candidate values are assigned in subsequent queries as described in the temporal specification.\par
+
+Time is represented by integer millisecond counts with the dimensionless Core unit marker {\ttfamily\fontseries{m}\selectfont\footnotesize 1}; 11000 counts mean 11.0 seconds under this profile. Variables are time-invariant and the clause is enforced initially, so a query checks fixed environment and candidate values rather than a stepwise vehicle trajectory. The configured {\ttfamily\fontseries{m}\selectfont\footnotesize horizon = 2} bounds the logical model; it is not two seconds of physical driving verification.\par
+
+\subsubsection{Properties and Queries}
+
+Table~\ref{tab:temporal-candidates} shows the permissions implied by the waiting rules; Table~\ref{tab:properties} specifies how consistency, restriction enforcement, release boundaries, and permissibility are checked. Base SAT establishes that a satisfying variable assignment exists, but this assignment may simply represent non-entry. We therefore separately check whether entry is feasible at and after release, avoiding a specification that admits deferral while excluding all entry.\par
+
+The early-entry query checks a safety property within the encoded model: entry must not precede the required release time. SAT queries at and after release establish entry feasibility. They do not establish liveness, which would require eventual progress: deferral remains permitted. Whether a learned VLM actually selects a progress-making candidate is evaluated separately.\par
+
+For the concrete boundary queries in Table~\ref{tab:properties}, clearance is 11000ms and the wait is 500ms. Entering queries set {\ttfamily\fontseries{m}\selectfont\footnotesize enters = true}; the deferral query sets it to false.\par
+
+
+\begin{table*}[tp]\caption{Properties, verification queries, and expected verdicts}\label{tab:properties}
+\centering\fontsize{8}{10}\selectfont\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{\dimexpr 0.24\textwidth-4.32pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.25\textwidth-4.5pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.25\textwidth-4.5pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.26\textwidth-4.68pt\relax}@{}}
+\toprule
+\textbf{Property} & \textbf{Query} & \textbf{Expected} & \textbf{Interpretation}\\
+\midrule
+Consistency & Base contract & SAT & A satisfying case exists\\[3pt]
+Restriction & Entry earlier than release & UNSAT & Early entry and contract are incompatible\\[3pt]
+Before boundary & Entry at 11.499s; wait 0.5s & UNSAT & Entry just before release is excluded\\[3pt]
+At boundary & Entry at 11.500s; wait 0.5s & SAT & Equality is permitted\\[3pt]
+After boundary & Entry at 11.501s; wait 0.5s & SAT & Entry after release is feasible\\[3pt]
+Deferral & enters is false & SAT & Entry is not forced\\[3pt]
+\bottomrule\end{tabular}
+\end{table*}
+
+The symbolic restriction query searches for an entering assignment with {\ttfamily\fontseries{m}\selectfont\footnotesize entry\_\allowbreak ms < clear\_\allowbreak ms + release\_\allowbreak clear\_\allowbreak ms}, without fixing both time variables. UNSAT excludes such a counterexample under the encoded rule and assumptions. The concrete queries test 11499, 11500, and 11501ms: early entry must be UNSAT, while the inclusive boundary and later entry must be SAT. A mistaken strict comparison would reject 11500ms; an omitted waiting condition would admit premature entry. These are illustrative errors detectable by unexpected verdicts, not claims that those errors occurred in the current implementation.\par
+
+Candidate-query verdicts are also compared with independently implemented integer environmental rules. An expected UNSAT result is the intended rejection of a hypothetical candidate, not evidence of an observed driving violation. Unexpected SAT or UNSAT and solver UNKNOWN require review; checking only permitted candidates would miss rules that also admit prohibited candidates. Concrete-case agreement and symbolic counterexample exclusion have distinct scopes, neither of which validates video evidence or the adequacy of a supplied waiting rule.\par
+
+The six manuscript queries were executed for both 500ms and 1500ms contracts, yielding 12 matching verdicts. The existing bridge's 100 queries were rerun separately. These are archived specification checks, not new learning-effect evidence. Query records retain expected and observed results and actual SMT-LIB output for reproducibility.\par
+
+\subsubsection{SMT Representation and Interpretation}
+
+The following readable SMT-LIB example expresses the core 0.5-second restriction. It is an explanatory representation, not the entire compiler output, which is retained in separate query files.\par
+
+\textbf{Code Box 3. Executable SMT-LIB example comparing early and boundary entry}\par
+
+Inputs are the contract duration and clearance at 11000ms. Each candidate time is fixed in turn to query compatibility with the contract.\par
+
+\par\smallskip\noindent\fcolorbox{black!30}{black!3}{\begin{minipage}{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}
+\noindent\makebox[1.5em][r]{\scriptsize 1}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.0em}(declare-const enters Bool)\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 2}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.0em}(declare-const entry\_\allowbreak ms Int)\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 3}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.0em}(declare-const clear\_\allowbreak ms Int)\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 4}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.0em}(assert (= clear\_\allowbreak ms 11000))\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 5}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.0em}(assert (=> enters (>= entry\_\allowbreak ms (+ clear\_\allowbreak ms 500))))\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 6}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.0em}(assert enters)\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 7}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.0em}(push)\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 8}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.0em}(assert (= entry\_\allowbreak ms 11499))\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 9}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.0em}(check-sat) ; unsat\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 10}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.0em}(pop)\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 11}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.0em}(push)\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 12}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.0em}(assert (= entry\_\allowbreak ms 11500))\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 13}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.0em}(check-sat) ; sat\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 14}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.0em}(pop)\strut}\par
+\end{minipage}}\par\smallskip
+
+The first UNSAT verdict indicates incompatibility of early entry with the specification, not a defective specification. The second SAT verdict indicates compatibility of the selected entry. Neither includes optimality or real-world safety. UNKNOWN or unexpected verdicts are not accepted as successful verification. Structural checks, scene binding, logical verification, and CNL correspondence serve different roles.\par
+
+Lines 1--3 of Code Box 3 declare types; line 4 binds environmental clearance and line 5 states the restriction. Line 6 excludes satisfying the query through non-entry. Lines 7--10 temporarily add 11499ms, obtain UNSAT, and remove that candidate condition. Lines 11--14 add 11500ms to the same base contract and obtain SAT. The push/pop scopes prevent both candidate conditions from remaining simultaneously and causing an artificial contradiction.\par
+
+\subsubsection{Lifecycle Checks and Their Scope}
+
+We check whether an obligation stays active, is released, and becomes active again according to the specified rules. The initial state is supplied through {\ttfamily\fontseries{m}\selectfont\footnotesize prior\_\allowbreak active}. At each later step, the state is updated using the previous {\ttfamily\fontseries{m}\selectfont\footnotesize active} value and the current evidence.\par
+%
+These checks use specified initial states and constructed evidence sequences. UNKNOWN or invalid clearance evidence leaves the previous state unchanged. Valid FALSE releases the obligation, while valid TRUE activates it.\par
+%
+For example, if an obligation was active and the current evidence is UNKNOWN, it must remain active. Adding a condition that it is now inactive must therefore return UNSAT. This checks the specified update rule; it does not show that a real scene's history was correctly observed.\par
+
+The archived qualitative run contains 25 queries matching their expected verdicts. These checks establish the stated behavior under the supplied initial states and evidence sequences; they do not establish that those inputs were correctly recovered from real-scene video. The primary temporal learning evaluation uses {\ttfamily\fontseries{m}\selectfont\footnotesize clear\_\allowbreak ms}, {\ttfamily\fontseries{m}\selectfont\footnotesize entry\_\allowbreak ms}, and {\ttfamily\fontseries{m}\selectfont\footnotesize enters} under the no-reoccupation assumption and does not track previous activation. In the qualitative profile, activation depends on history while entry permission requires current clearance of every obligation. Neither profile guarantees eventual entry.\par
+
+
+\subsection{CNL Generation and CoC Augmentation}\label{sec:cnl}
+
+\subsubsection{Generating Sentences from Verified Specifications}
+
+CNL is generated from checked fields through fixed sentence rules. The temporal renderer accepts structurally validated contracts and maps zone and duration to text. It does not itself invoke the solver; specification verification precedes rendering. Candidate labels, reference actions, and progress scores are not generator arguments.\par
+
+\textbf{Code Box 4. Verbatim excerpt of the CNL generator}\par
+
+Code Box 4 reproduces the temporal contract renderer used in the experiments. Input raw is a temporal contract; the return value contains two sentences. Numbers count logical source lines; long lines wrap within the box.\par
+
+\par\smallskip\noindent\fcolorbox{black!30}{black!3}{\begin{minipage}{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}
+\noindent\makebox[1.5em][r]{\scriptsize 1}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{0.0em}def render(raw):\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 2}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{1.2em}validate(raw)\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 3}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{1.2em}\# Render only validated contract fields,\allowbreak  never scene target/candidate/answer.\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 4}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{1.2em}return ('Do not enter the pedestrian conflict zone while it is occupied. '\strut}\par
+\noindent\makebox[1.5em][r]{\scriptsize 5}\hspace{.4em}\parbox[t]{\dimexpr\linewidth-2em\relax}{\raggedright\ttfamily\fontseries{m}\fontsize{7.2}{9}\selectfont \hspace*{3.5999999999999996em}f'Enter only after the zone has remained clear for at least \{raw["release\_\allowbreak clear\_\allowbreak ms"]/1000:.1f\} s.')\strut}\par
+\end{minipage}}\par\smallskip
+
+Line 2 requires an exact match to a supported contract. Since validation also fixes the target and restriction type, line 4 can emit a constant zone phrase. Line 5 converts milliseconds to seconds with one decimal place, exactly representing the currently supported durations. The function neither invokes the solver nor selects a target action. Other targets or arbitrary precision would require a separate extension.\par
+
+Actual output for the 0.5-second contract is:\par
+
+\begin{quote}\small Do not enter the pedestrian conflict zone while it is occupied. Enter only after the zone has remained clear for at least 0.5 s.\end{quote}
+
+Figure~\ref{fig:cnl-map} shows how the EBLC specification maps to the two CNL sentences above. The first sentence identifies the zone and prohibits entry while it is occupied. The second states the clearance condition and required waiting duration. “At least” includes the boundary value, and “only after” states a necessary condition for entry; it does not require entry. The conversion maps 500ms to 0.5s and 1500ms to 1.5s. This correspondence applies to supported durations under the single-clearance, no-reoccupation assumption.\par
+
+\begin{figure*}[!t]\centering
+\includegraphics[width=.94\textwidth,height=.30\textheight,keepaspectratio]{projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/manuscript-revision-2026-09-30-001/figures/cnl-map-en.pdf}
+\caption{Target and restriction map to the first sentence; release duration and the inclusive boundary map to the second. Original CoC and CNL enter the model together, while source and version metadata remain separately traceable. Colors distinguish mappings, not additional levels of verification.}\label{fig:cnl-map}
+\end{figure*}
+
+\subsubsection{Scope of Semantic Correspondence}
+
+Generation preserves target, negation, conditional direction, value, and unit. Omitting “at least” or replacing “enter only after” with a requirement to enter after clearance would change admissibility. Fixed field mappings make these relationships explicit and inspectable.\par
+
+Not all metadata appears in model-facing sentences. Versions and source references remain traceability metadata; CNL conveys action-relevant conditions. Modeling assumptions are specified in the environment and task definition. The claim is correspondence of action restrictions within that context, not literal one-to-one rendering of every JSON field. Freely rewritten sentences or additional profiles require separate semantic review.\par
+
+\subsubsection{Combining CNL with Learning Inputs}
+
+Original CoC provides an action rationale, and CNL supplies additional behavioral conditions. They are combined without replacing CoC with a specification. Table~\ref{tab:coc-cnl} separates the original CoC from the added CNL; the model-facing text concatenates them in that order. Temporal rows reproduce synthetic training text, whereas the STOP row summarizes and translates the core of a real-scene development output.\par
+
+
+\begin{table*}[tp]\caption{Original CoC and added constraint sentences}\label{tab:coc-cnl}
+\centering\fontsize{8}{10}\selectfont\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{\dimexpr 0.24\textwidth-2.88pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.33\textwidth-3.96pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.43\textwidth-5.16pt\relax}@{}}
+\toprule
+\textbf{Example} & \textbf{Original CoC} & \textbf{Added CNL}\\
+\midrule
+Pedestrian yielding, 0.5-second rule & Yield to the crossing pedestrian, then proceed through the intersection. & Do not enter the pedestrian conflict zone while it is occupied. Enter only after the zone has remained clear for at least 0.5 s.\\[3pt]
+Pedestrian yielding, 1.5-second rule & Yield to the crossing pedestrian, then proceed through the intersection. & Do not enter the pedestrian conflict zone while it is occupied. Enter only after the zone has remained clear for at least 1.5 s.\\[3pt]
+Worker’s STOP sign: illustrative real-scene example & Stop at the stop sign held by the construction worker for the one-way alternating traffic zone ahead. & While the confirmed stop instruction applies to ego at the current decision, do not start or accelerate even if motion state is unknown. This does not prohibit deceleration intended to stop or continued waiting; instruction clearance is not established.\\[3pt]
+\bottomrule\end{tabular}
+\end{table*}
+
+The first two rows pair different waiting rules for the same task, not different scene categories. If the zone clears at 6.0 s, entry at 6.5 s meets the 0.5-second condition but not the 1.5-second condition. CNL thus distinguishes prohibition and release conditions absent from the shared CoC; the durations are supplied experimental rules. The STOP row expresses a prohibition common to moving and stationary states and is separate from the main synthetic performance experiment. Adding a constraint does not confirm every factual claim in the original CoC. In the worker's STOP-sign example, the original claim about a red light remained unconfirmed. The added constraint was based on a separately confirmed STOP instruction from the worker.\par
+
+For the 0.5-second temporal example, the complete augmented requirement text is:\par
+
+\begin{quote}\small Yield to the crossing pedestrian, then proceed through the intersection. Do not enter the pedestrian conflict zone while it is occupied. Enter only after the zone has remained clear for at least 0.5 s.\end{quote}
+
+The first sentence is the original CoC; the last two are generated restrictions. Clearance at 11.0 seconds is separate environmental information, so this text conveys a rule rather than specifying the answer “enter at 11.5 seconds.”\par
+
+The generated sentences follow the existing rationale in {\ttfamily\fontseries{m}\selectfont\footnotesize Requirement CoC}, before candidate descriptions and the selection instruction. Static records construct {\ttfamily\fontseries{m}\selectfont\footnotesize rich\_\allowbreak coc\_\allowbreak text = COC\_\allowbreak TEXT + " " + CNL}; maneuver records append {\ttfamily\fontseries{m}\selectfont\footnotesize constraint\_\allowbreak text} to the CoC requirement. EBLC, provenance, query verdicts, candidates, reference labels, image references, and splits remain in separate traceability records. Neither the reference label nor SAT/UNSAT is inserted as an answer hint.\par
+
+The image and action candidates accompany this text, while a separate reference calculation supplies the target label. To evaluate constraint augmentation, we compare three model-input conditions: original CoC alone (P0), CoC with the existing natural-language constraint (P1), and CoC with EBLC-derived CNL (P2). Both P1 and P2 are compared primarily with P0. Section~\ref{sec:experimental-setup} describes the experiment. Raw EBLC JSON and solver verdicts are not supplied as answer hints.\par
+
+
+
+\subsection{Task-to-Field-to-Verdict Summary}
+
+Table~\ref{tab:taskmap} shows how supplied rules for the six evaluated tasks become EBLC fields, logical conditions, CNL, and candidate judgments. The examples come from archived test contracts; the temporal row uses the boundary query described above. They illustrate implemented specifications, rather than six independently collected road videos. The constraint fields record supplied rule limits, not values inferred from pixels. These fields are compiled into logical conditions during verification, while candidate measurements and completion or entry flags are supplied separately. The same contract fields are also used to generate CNL.\par
+
+Let $q$ denote {\ttfamily\fontseries{m}\selectfont\footnotesize completes}, $e$ denote {\ttfamily\fontseries{m}\selectfont\footnotesize enters}, and $\widehat{x}$ denote a candidate measurement scaled by 1000. Each non-temporal Core clause is $q\Rightarrow(\widehat{x}\ \mathrm{op}\ b)$, where $b$ is the stored integer {\ttfamily\fontseries{m}\selectfont\footnotesize ticks}. For stopping, three clauses are conjoined. Static candidates all complete; noncompletion in a maneuver is nonviolating but does not count as goal completion. The generated CNL conveys numeric bounds but does not separately render the Core exemption for noncompletion. Correspondence of bounds for goal-completing candidates is therefore distinguished from whole-contract equivalence over noncompleting behavior; the latter is not established here. The profile checks stored candidate summaries, not continuous trajectories.\par
+
+
+\begin{table*}[tp]\caption{Executed task-to-verdict mappings; CNL cells quote generated clauses}\label{tab:taskmap}
+\centering\fontsize{8}{10}\selectfont\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{\dimexpr 0.13\textwidth-3.12pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.19\textwidth-4.5600000000000005pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.25\textwidth-6.0pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.25\textwidth-6.0pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.18\textwidth-4.32pt\relax}@{}}
+\toprule
+\textbf{Task} & \textbf{Constraint fields} & \textbf{Actual logical condition} & \textbf{Generated CNL} & \textbf{Candidate judgment}\\
+\midrule
+Maximum speed & {\ttfamily\fontseries{m}\selectfont\footnotesize speed/\allowbreak le/\allowbreak m/\allowbreak s/\allowbreak 4400} & $q\Rightarrow\widehat{v}\leq4400$ & The candidate's maximum speed must be at most 4.4 m/s. & A: 6.0 m/s, UNSAT; B: 2.8 m/s, SAT\\[3pt]
+Minimum clearance & {\ttfamily\fontseries{m}\selectfont\footnotesize clearance/\allowbreak ge/\allowbreak m/\allowbreak 2000} & $q\Rightarrow\widehat{d}\geq2000$ & The candidate's minimum obstacle clearance must be at least 2 m. & A: 0.9 m, UNSAT; B: 3.1 m, SAT\\[3pt]
+Minimum entry delay & {\ttfamily\fontseries{m}\selectfont\footnotesize entry\_\allowbreak delay/\allowbreak ge/\allowbreak s/\allowbreak 2500} & $q\Rightarrow\widehat{u}\geq2500$ & The candidate's intersection entry time from now must be at least 2.5 s. & A: 0.9 s, UNSAT; B: 4.1 s, SAT\\[3pt]
+Temporal clearance & {\ttfamily\fontseries{m}\selectfont\footnotesize release\_\allowbreak clear\_\allowbreak ms=500} & $e\Rightarrow u_{\mathrm{ms}}\geq11000+500$ & Enter only after the zone has remained clear for at least 0.5 s. & 11499 ms: UNSAT; 11500 ms: SAT\\[3pt]
+Stopping & {\ttfamily\fontseries{m}\selectfont\footnotesize stop\_\allowbreak offset\_\allowbreak m}, {\ttfamily\fontseries{m}\selectfont\footnotesize peak\_\allowbreak decel}, {\ttfamily\fontseries{m}\selectfont\footnotesize peak\_\allowbreak jerk}; bounds 0, 5800, 7400 & $q\Rightarrow(\widehat{o}\leq0\land\widehat{a}\leq5800\land\widehat{j}\leq7400)$ & Stop at or before the stop line (stop offset at most 0 m). & C beyond line: UNSAT; D within all bounds: SAT and preferred\\[3pt]
+Lane change & {\ttfamily\fontseries{m}\selectfont\footnotesize min\_\allowbreak gap\_\allowbreak m/\allowbreak ge/\allowbreak m/\allowbreak 5800} & $q\Rightarrow\widehat{g}\geq5800$ & The candidate's minimum gap during the lane change must be at least 5.8 m. & D: UNSAT; A: SAT and preferred; C: SAT but incomplete\\[3pt]
+\bottomrule\end{tabular}
+\end{table*}
+
+For stopping, the two remaining generated clauses are “The candidate's peak deceleration must be at most $5.8\,\mathrm{m/s^{2}}$.” and “The candidate's peak jerk must be at most $7.4\,\mathrm{m/s^{3}}$.” Thus the table abbreviates the CNL display, not the checked contract. Here $o$ is signed stop offset, $a$ peak deceleration, $j$ peak jerk, $g$ minimum lane-change gap, $v$ maximum speed, $d$ minimum obstacle clearance, and $u$ entry delay. Temporal clearance differs from a fixed delay from now: it binds an observed clearance instant before adding the required wait.\par
+
+For each action candidate, we check whether its supplied values satisfy the compiled contract. The solver combines the contract with assignments of candidate measurements and the completion flag, or the entry flag in the temporal profile. We write this query as $\Phi_C\land B(a)$, where $\Phi_C$ is the contract's logical representation and $B(a)$ specifies the candidate inputs. SAT means compatible with the encoded contract; UNSAT means incompatible.\par
+
+For example, the supplied maximum-speed rule of 4.4 m/s is stored as {\ttfamily\fontseries{m}\selectfont\footnotesize speed/\allowbreak le/\allowbreak m/\allowbreak s/\allowbreak 4400}. With a scale of 1000, the logical condition is $q\Rightarrow\widehat{v}\leq4400$. For a candidate that completes the task, 6.0 m/s is rejected (UNSAT), while 2.8 m/s is permitted (SAT). In the temporal row, {\ttfamily\fontseries{m}\selectfont\footnotesize release\_\allowbreak clear\_\allowbreak ms=500} is a contract field; {\ttfamily\fontseries{m}\selectfont\footnotesize clear\_\allowbreak ms=11000} is a separate environmental query input.\par
+
+A reference program separately applies the same supplied task rules to identify allowed candidates. It selects the allowed candidate with the highest progress score as the reference answer. Accuracy measures whether the learned model selects that answer. A violation occurs when the model selects a prohibited candidate. For example, waiting and entering after the required delay may both be allowed, but waiting has lower progress. A SAT choice can therefore be an incorrect answer without violating the contract.\par
+
+Comparing the reference program's admissibility judgments with SMT verdicts checks whether the two implementations agree. Both use the same supplied rules and assumptions, so agreement does not independently establish safety on real roads.\par
+
+The experimental section follows the same order: task-wise accuracy and violations, response to changed contracts, and specification/CNL quality. Detailed per-candidate records and unsupported-error cases remain in the supplement.\par
+
+\section{Experimental Setup}\label{sec:experimental-setup}
+
+
+This section defines the experimental basis for evaluating behavioral benefits and specification checkability. It introduces the comparison conditions, tasks, and data, then describes the model and training budgets, reference judgments, and evaluation metrics.\par
+
+\subsection{Evaluation Objectives and Setup}
+
+Table~\ref{tab:comparison-conditions} defines the training-input conditions: CoC alone (P0), CoC with the existing natural-language constraint (P1), and CoC with EBLC-derived CNL (P2). We evaluate the behavioral effects of adding constraints and the checkability of the EBLC-to-CNL path. P1 and P2 are our two constraint-enhancement approaches; their comparison concerns development paths.\par
+%
+\begin{table*}[tp]\caption{Comparison conditions and roles}\label{tab:comparison-conditions}
+\centering\fontsize{8}{10}\selectfont\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{\dimexpr 0.24\textwidth-2.88pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.33\textwidth-3.96pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.43\textwidth-5.16pt\relax}@{}}
+\toprule
+\textbf{Condition} & \textbf{Information added to CoC during training} & \textbf{Evaluation role}\\
+\midrule
+P0 & No additional constraint & CoC-only baseline\\[3pt]
+P1 & Existing natural-language behavioral constraint & Our preceding constraint-enhancement approach\\[3pt]
+P2 & CNL generated after specifying and checking the same rule in EBLC & Formally supported constraint-development path\\[3pt]
+\bottomrule\end{tabular}
+\end{table*}
+%
+In the six-task study, the three conditions use the same images, candidates, reference labels, and data splits. P1 and P2 receive constraints during both training and evaluation. P2 receives the generated CNL. \par
+%
+Two examples may have the same image, original CoC, and action candidates but different waiting requirements. For example, entry 0.5 seconds after the zone becomes clear is permitted under a 0.5-second rule but prohibited under a 1.5-second rule. The reference action can therefore differ between the two examples. In this six-task comparison, because P0 does not receive the waiting rule, it sees the same input in both cases and lacks the information needed to distinguish them.\par
+
+The six-task comparison therefore measures how well models use constraints supplied during training and evaluation. A separate position-hold learning study supplies the same rule to every condition at evaluation and compares each checkpoint before and after additional training. Neither study tests performance when constraints are omitted during evaluation.\par
+
+\subsubsection{Dataset Generation and Splits}
+
+We construct synthetic action-selection examples from schematic scenes, supplied rule values, and candidate summaries. The temporal generator varies clearance times, waits, candidate timings, and label assignments. Static examples apply maximum-speed, minimum-clearance, and minimum-entry-delay rules; maneuver examples apply stopping and lane-change rules. A reference program uses the supplied rules and the candidates' numerical values to determine allowed actions and the reference answer. Candidate scalars are supplied in text, rather than measured from images by the VLM.\par
+
+Each example contains an image reference, original or constraint-augmented CoC, candidate descriptions, and a selection instruction. The reference label is retained as the training target or evaluation answer. P0, P1, and P2 share the same examples and splits, while their constraint text differs. Pairs keep the scene and candidates fixed but change the rule, which can change the reference answer.\par
+
+Table~\ref{tab:dataset-sizes} reports training, validation, and primary-test rows per input condition. Static training contains 192 rows per subtype, with 48 primary-test rows per subtype. Maneuver training contains 192 rows each for stopping and lane change, with 48 primary-test rows each. Repeating the experiment over three optimization seeds does not create new independent examples.\par
+
+\begin{table}[tbp]\caption{Synthetic dataset sizes per input condition}\label{tab:dataset-sizes}
+\centering\fontsize{8}{10}\selectfont\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{\dimexpr 0.2\columnwidth-3.6pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.2\columnwidth-3.6pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.3\columnwidth-5.4pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.3\columnwidth-5.4pt\relax}@{}}
+\toprule
+\textbf{Family} & \textbf{Training rows} & \textbf{Validation rows} & \textbf{Primary-test rows}\\
+\midrule
+Temporal & 960 & 240 & 240\\[3pt]
+Static & 576 & No separate split & 144\\[3pt]
+Maneuver & 384 & No separate split & 96\\[3pt]
+Position hold & 960 & 128 & 256\\[3pt]
+\bottomrule\end{tabular}
+\end{table}
+
+Temporal training, validation, and test images have no identical-pixel overlap. All 13 static primary-test images occur in training, and maneuver data reuse two diagrams across splits. Rows therefore represent constructed examples, not independent road videos. Supplement S1 and S8 report split inventories.\par
+
+Secondary temporal evaluations use 240 rows each for paraphrasing and unseen durations. Static paraphrase and unseen-value sets each contain 144 rows; maneuver paraphrase, unseen-value, and combined hard-condition sets each contain 96 rows. Paraphrase sets reuse primary-test scenes, so these evaluations must not be pooled as independent scenes.\par
+
+\subsubsection{Model and Training Settings}
+
+We use Qwen3-VL-2B-Instruct with LoRA and optimization seeds 42, 17, and 123. Within each task family, P0, P1, and P2 use the same examples, three epochs, optimizer settings, and final-checkpoint policy. Temporal, static, and maneuver fits perform 180, 108, and 72 optimizer updates, respectively. LoRA rank/alpha/dropout are 8/16/0.05; batch size is 2 with accumulation 8, AdamW learning rate is 0.0002, and weight decay is 0.01. All evaluations use the final checkpoint; validation scores do not select it. Supplement S1 and S8 provide detailed budgets.\par
+
+\subsubsection{Position-Hold Learning with Identical Evaluation Inputs}\label{sec:position-hold-setup}
+
+The position-hold study tests whether including constraints during training improves compliance when evaluation information is held fixed. It continues the nine existing temporal adapters (P0, P1, and P2; seeds 42, 17, and 123) with 960 position-hold rows each, using three further epochs and 180 optimizer updates with the settings above. P0 training receives original CoC, P1 receives CoC with a natural-language rule, and P2 receives CoC with CNL generated from a restricted position-hold EBLC profile. Before and after this training, every adapter is evaluated with identical P2 CNL, images, and candidate descriptions. The adapters retain their different prior training histories; this comparison does not independently isolate verification or wording effects.\par
+
+The rule requires remaining within 0.2 m of the initial position for either 0.5 or 2.0 s, including the end time. Synthetic candidate profiles are presented as XY waypoints or precomputed interval-maximum distances from those same waypoints. Images are generated diagrams of the profiles. Each profile produces eight related rows: two label rotations, two durations, and two representations. The profile-disjoint training, validation, and test sets contain 120, 16, and 32 profiles, respectively, giving the row counts in Table~\ref{tab:dataset-sizes}. The final checkpoint is fixed; validation does not select it. These are candidate-selection examples, separate from the preliminary Alpamayo trajectory-generation diagnostics on PhysicalAI and converted nuScenes inputs.\par
+
+An independent integer calculation checks every supplied point up to the release time using $x^2+y^2\leq 200^2$, with coordinates in millimeters. Leaving the permitted radius and returning before release still violates the rule. The reference answer is the highest-progress allowed candidate. All 5,376 candidate checks across the three splits agree with SMT. Main results use the strict 0.2 m radius; a 0.01 m tolerance is reported only as an auxiliary measure. Each duration--representation stratum contains 64 test rows, evaluated over three seeds, yielding 192 predictions rather than 192 independent road scenes. Earlier diagnostic profiles are disjoint and are reevaluated separately as a regression check. Supplement S12 gives the profile semantics, protocol, and complete records.\par
+
+\subsubsection{Candidate References and Label Assignment}
+
+Each example supplies an image, original or constraint-augmented CoC, and candidate descriptions; Qwen3-VL-2B-Instruct is trained to output a candidate label A, B, C, or D. In the synthetic temporal task, independent integer arithmetic uses the clearance time and supplied wait to determine admissible candidates. The highest-utility admissible candidate is the reference action. Both permitted and prohibited candidates remain alternatives, while the supervised response contains only the reference label. EBLC candidate verdicts are compared with this independent admissibility calculation and retained as metadata, not copied into the prompt.\par
+
+The temporal generator assigns utility values 110, 100, 85, and 0 to ordered candidate templates; no distance or speed calculation produces these scores. The target depends on their ordering among admissible candidates. During dataset construction, A--D are cyclically reassigned to those behaviors, so the same admissible action can have different output letters. This reduces a fixed-letter shortcut; it does not remove shortcuts from the supplied numeric candidate values or establish visual scene understanding.\par
+
+The main metrics are \textbf{accuracy} against the highest-progress admissible candidate, \textbf{violation rate}, and \textbf{contract-pair accuracy}, which requires both members of a pair to be correct. An admissible but lower-progress choice is inaccurate without violating the contract. Six-task tables show three-seed means. The position-hold table reports accuracy and violation counts over three seeds, with 192 predictions per duration and representation. Compliant completion is auxiliary and is not independent evidence when it equals one minus violation rate.\par
+
+\subsubsection{External Comparisons and Reasoning-Prompt Controls}\label{sec:reasoning-controls}
+
+Direct performance comparisons require compatible inputs, outputs, and evaluation units. The native translators in Table~\ref{tab:external-execution} return logic expressions, while DriveLM and DriveVLM use driving tasks and metrics that differ from our numerical candidate selection. Together with the recorded resource limitations, these differences prevent a shared-task comparison using the inspected original execution paths. Adding our constraints or a new output adapter would change the method being evaluated.\par
+
+We therefore conduct a supplementary comparison using Zero-shot CoT and basic Plan-and-Solve prompts on the existing final P0 checkpoints. Zero-shot CoT uses its step-by-step trigger followed by answer extraction. Plan-and-Solve uses the original basic planning-and-solving prompt, with direct extraction when the specified answer marker is present and a second generation otherwise. We use neither PS+ nor self-consistency. These are transfers of prompting procedures to our VLM task, not reproductions of the original language-model benchmarks. \cite{r16,r17}\par
+
+Both controls retain the P0 image, original CoC, and candidate descriptions. No rule thresholds, EBLC, CNL, solver verdicts, or reference labels are added to the model input, and no additional training is performed. Each method evaluates 240 temporal, 144 static, and 96 maneuver rows for each of seeds 42, 17, and 123, giving 2,880 scored predictions. With greedy decoding, one output is reused for identical image-and-prompt inputs within each method and checkpoint. There are 120, 24, and 38 unique inputs per family, yielding 1,092 first-stage generations across both methods and three seeds.\par
+
+The native reasoning caps are 128 tokens for Zero-shot CoT and 256 for Plan-and-Solve, with up to 32 tokens for answer extraction. These are unequal inference budgets. Accuracy, violation rate, and pair accuracy use the existing reference rules; invalid answers remain in the accuracy denominator and are reported separately. We also inspect whether the first stage produces reasoning or only an option label.\par
+\subsubsection{Representation, Robustness, and Error-Checking Evaluations}\label{sec:additional-evaluations}
+
+The following archived evaluations examine representation, wording, visual input, and specification errors. They use the existing checkpoints and records; their rows are not added to the primary-test denominator. Tables~\ref{tab:constraint-representations}, \ref{tab:wording-hard}, \ref{tab:image-interventions}, and \ref{tab:specification-checks} report these complementary evaluations.\par
+
+\textbf{Constraint representations.} The temporal experiment includes three additional arms: \texttt{NATURAL\_GUARD}, an alternative natural-language expression of the supplied rule; \texttt{LOGIC\_GUARD}, logical text expressing that rule; and \texttt{SHUFFLED\_GUARD}, natural-language guards whose correspondence with training cases is shuffled. Together with P0, P1, and P2, these yield six arms and three seeds. Each fit uses the same 960 training rows and 180 updates. Every arm receives 240 rows in each evaluation set. Correct case--guard associations are restored at evaluation for the shuffled arm. Logical text is a model input, not an internal solver. Supplement S1 and the additional temporal analyses retain the exact formulations and budgets.\par
+
+\textbf{Wording and combined conditions.} Paraphrase evaluations change the constraint wording while retaining the case, candidate measurements, and intended rule. Temporal P1 and P2 receive the same held-out formulation; P0 and the temporal logical-text arm are unchanged in this test. The 240 temporal, 144 static, and 96 maneuver rows reuse their primary-test cases. A separate 96-row hard maneuver set combines negation, clause order, equality boundaries, and m/cm units. The latter tests their joint effect rather than isolating any one factor. All results use the existing final checkpoints and three seeds.\par
+
+\textbf{Image interventions.} A follow-up temporal diagnostic pairs original images with blank images and images redrawn with clearance 1.0 s later. CoC, constraint text, candidates, and source reference labels remain fixed. Each image condition has 24 rows: three semantic parameter groups, two waiting rules, and four label rotations. Nine existing P0/P1/P2 adapters produce 648 predictions across these three conditions, as part of the 2,160-prediction follow-up diagnostic. We report source-reference accuracy, violation rate, and changes from the original-image selection. Because the redrawn image conflicts with the retained source, its scores describe an input intervention rather than ordinary scene accuracy. Supplement S9 retains all diagnostic strata; no new training is performed.\par
+
+\textbf{Error injection and checking layers.} The balanced quality set contains 24 cases for each of six supported mutations, 24 shared-source/specification errors, and 24 valid contracts, totaling 192 cases. Supported mutations change CNL negation or thresholds, delete release conditions, reverse comparisons, change specification thresholds, or use incorrect units. Schema checks examine supported fields and units; source correspondence compares fields with supplied inputs; Core--environment checks compare encoded restrictions with the independent reference rule; and CNL correspondence checks the generated wording. Shared-source errors change the trusted input and specification together. Valid contracts measure false rejection and are excluded from the error-detection denominator. The existing S3/D4 records are counted once, not as new evidence from the follow-up evaluation.\par
+
+\section{Results}
+
+This section first reports the primary position-hold learning comparison under identical evaluation inputs, followed by six-task action-selection performance and the reasoning-prompt controls. It then examines contract changes, constraint representations, wording and combined conditions, visual-input interventions, and the layers that detect specification errors. Unseen numeric conditions and the scope of these evaluations are discussed separately.\par
+
+\subsection{Position-Hold Learning Under Identical Evaluation Inputs}\label{sec:position-hold-results}
+
+Our primary learning comparison asks whether models better follow a supplied rule after training with constraints, while keeping evaluation inputs identical. Figure~\ref{fig:position-hold-learning} reports accuracy and strict violation rates before and after position-hold training under the protocol in Section~\ref{sec:position-hold-setup}. The two representations describe the same candidate profiles; neither requires the model to generate a trajectory.\par
+
+\begin{figure*}[!t]\centering
+\includegraphics[width=.97\textwidth,height=.34\textheight,keepaspectratio]{figures/position-hold-learning-en.pdf}
+\caption{Position-hold accuracy (top) and strict violation rate (bottom) before (gray) and after (blue) additional training. Columns show both durations and representations of the same profiles. All arms receive identical evaluation inputs. Each bar pools 64 test rows over three seeds (192 predictions); labels show percentages rounded to one decimal. Supplement S12 retains exact counts and the separate XY regression.}\label{fig:position-hold-learning}
+\end{figure*}
+
+For the 2.0 s rule with interval maxima, Figure~\ref{fig:position-hold-learning} shows that P0, P1, and P2 end with 22/192, 1/192, and 0/192 violations, respectively (11.46\%, 0.52\%, and 0\%). P2 improves from 81.77\% to 98.44\% accuracy and from 20 to zero observed violations; P1 reaches the same accuracy with one violation. Since every condition receives the same rule at evaluation, this result is not explained by withholding that rule from P0 at evaluation. With XY waypoints, P2 improves from 39.58\% to 97.92\% accuracy but retains 4/192 violations. The 0.5 s results also distinguish compliance from reference-answer accuracy: P0 makes no prohibited selections with interval maxima, yet reaches only 67.19\% accuracy, compared with 94.79\% for P2.\par
+
+These improvements do not resolve the earlier XY diagnostic. After training, that separate 2.0 s regression set still yields 79/192 violations for P1 and 77/192 for P2. Its numerical distribution differs: the smallest prohibited overshoot is 1 mm, whereas the new primary test has a minimum prohibited overshoot of 22 mm. The two sets are not pooled. Supplement S12 retains both strict and tolerance-based regression results. The primary findings therefore support improved selection on the new synthetic test, with remaining sensitivity to representation and small boundary overshoots; they do not establish continuous-time safety, real-scene generalization, or a trained Alpamayo remedy.\par
+
+\subsection{Performance Across Behavioral Tasks}
+
+We evaluate whether adding behavioral constraints to CoC improves candidate selection across six synthetic tasks. We compare P0, P1, and P2, defined in Table~\ref{tab:comparison-conditions}, using action-selection accuracy and constraint violation rate. Table~\ref{tab:primary-performance} reports the primary results.\par
+
+This subsection evaluates the model’s action choices across the six tasks listed in Table~\ref{tab:taskmap}. A reference program applies the supplied rules to identify allowed candidates and selects the one with the highest progress score as the reference answer. We measure accuracy by comparing the model’s choice with this answer. Separately, we count a constraint violation when the model selects a prohibited candidate.\par
+
+As an auxiliary check, we compare the reference program’s admissibility judgments with the corresponding SMT verdicts, using the same rules and candidate values. This comparison checks whether the two implementations agree. The checks of whether the EBLC specification correctly expresses the intended restrictions and release conditions are described in Section~\ref{sec:verification}.\par
+
+
+\begin{table*}[tp]\caption{Primary accuracy / violation rate, \%, mean over three seeds}\label{tab:primary-performance}
+\centering\fontsize{8}{10}\selectfont\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{\dimexpr 0.24\textwidth-4.32pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.25\textwidth-4.5pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.25\textwidth-4.5pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.26\textwidth-4.68pt\relax}@{}}
+\toprule
+\textbf{Task} & \textbf{P0} & \textbf{P1} & \textbf{P2}\\
+\midrule
+Maximum speed & 50.00 / 24.31 & 100.00 / 0.00 & 100.00 / 0.00\\[3pt]
+Minimum clearance & 50.00 / 24.31 & 100.00 / 0.00 & 100.00 / 0.00\\[3pt]
+Minimum entry delay & 50.00 / 24.31 & 100.00 / 0.00 & 100.00 / 0.00\\[3pt]
+Entry after clearance and waiting & 49.86 / 19.17 & 96.81 / 1.39 & 98.06 / 0.83\\[3pt]
+Stopping & 50.00 / 23.61 & 100.00 / 0.00 & 100.00 / 0.00\\[3pt]
+Lane change & 50.00 / 38.19 & 100.00 / 0.00 & 97.92 / 0.00\\[3pt]
+\bottomrule\end{tabular}
+\end{table*}
+
+Table~\ref{tab:primary-performance} reports mean accuracy and violation rates over three seeds. P1 and P2 have higher accuracy and lower violation rates than P0 for all six task types. Temporal accuracy gains over P0 are 46.94 and 48.19 percentage points for P1 and P2, with violation reductions of 17.78 and 18.33 points. P1 and P2 tie in the three static types and stopping.\par
+
+The per-candidate records in Supplement S8 show that residual P2 lane-change errors select admissible but lower-progress candidates; compliant completion is 100\%. Temporal P2 compliant completion is 99.17\%, as reported in Supplement S2.\par
+
+The mean results in Table~\ref{tab:primary-performance} summarize the comparison with P0. Supplement S2 and S8 report seed-level variability and additional evaluation conditions. P2 does not outperform P1 under every seed and evaluation condition. We report both paths relative to P0 and have not conducted a formal noninferiority test between P1 and P2.\par
+
+\subsection{Supplementary Comparison with Reasoning Prompts}\label{sec:reasoning-results}
+
+This comparison tests whether adding generic reasoning instructions to CoC-only checkpoints changes candidate selection without supplying the missing behavioral rule. Figure~\ref{fig:reasoning-comparison} compares the two controls defined in Section~\ref{sec:reasoning-controls} with the archived P0, P1, and P2 predictions on the same primary-test rows. Bars show three-seed means and points show individual seeds.\par
+
+Across the 480 rows, mean accuracy is 49.93\% for P0 and for each reasoning-prompt control. Violation rates are 23.06\% for P0, 22.64\% for Zero-shot CoT, and 22.71\% for Plan-and-Solve. These pooled percentages weight task families by their row counts. Both controls have 0\% contract-pair accuracy in every family, and all final answers are valid candidate labels. The violation changes depend on the task: temporal and lane-change rates decrease slightly, while static rates increase. Figure~\ref{fig:reasoning-comparison} retains these differences.\par
+
+\begin{figure*}[!t]\centering
+\includegraphics[width=.82\textwidth,height=.30\textheight,keepaspectratio]{figures/reasoning-comparison-en.pdf}
+\caption{Supplementary reasoning-prompt comparison on existing P0 checkpoints. ZS-CoT denotes Zero-shot CoT and PS denotes basic Plan-and-Solve. Bars show accuracy and constraint violation rates; dots show the three optimization seeds. P1 and P2 are archived results with additional rule information. The dotted 50\% line marks the fixed-output accuracy ceiling for conditions without supplied constraints. This is a prompting-strategy transfer, not a reproduction of the original methods' benchmark scores.}\label{fig:reasoning-comparison}
+\end{figure*}
+
+The first-stage outputs limit the interpretation. All 546 unique Zero-shot CoT cases return short option-label strings; Plan-and-Solve does so in 498 of 546 cases. Its remaining 48 cases, all static, generate longer text but reach the 256-token reasoning cap before answer extraction. Thus, issuing a reasoning prompt does not establish that these label-trained checkpoints perform a complete multistep reasoning procedure.\par
+
+Every distinct P0 image-and-prompt group has conflicting reference labels under different rules. The best fixed output per group can therefore achieve at most 50\% accuracy in each family. Additional reasoning cannot identify an omitted experimental rule from identical inputs. Figure~\ref{fig:reasoning-comparison} consequently describes the response of the current checkpoints to reasoning instructions; differences from P1 or P2 also reflect rule availability and do not establish equal-information algorithm superiority.\par
+
+\subsection{Contract Changes and Correct Association}
+
+Changing the rule while keeping the scene and candidates fixed tests whether models adjust their action choices accordingly. We also test whether correct pairing between cases and constraints during training matters by comparing correctly paired data with shuffled pairings.\par
+
+The left panel of Figure~\ref{fig:contract-linkage} reports contract-pair accuracy, which is 0\% for P0 in all three task families. In temporal, static, and maneuver families, respectively, P1 achieves 93.61\%, 100\%, and 100\%, and P2 achieves 96.11\%, 100\%, and 97.92\%. Constraint-conditioned models can change their selections when the rule changes while the visual input remains fixed. P0's low values must be interpreted with its missing contract information.\par
+
+The right panel of Figure~\ref{fig:contract-linkage} compares correctly paired and shuffled training data. Shuffling training-time case--constraint associations while restoring correct constraints at evaluation gives accuracies of 50.56\%, 50.69\%, and 49.65\%. Temporal shuffling uses natural-language guards, whereas new static and maneuver shuffling permutes P2 CNL within subtype; these are not pooled as one identical intervention. The results support the importance of correct case--constraint association beyond adding sentences alone.\par
+
+\begin{figure*}[!t]\centering
+\includegraphics[width=.74\textwidth,height=.23\textheight,keepaspectratio]{projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/manuscript-revision-2026-09-30-001/figures/contract-linkage-en.pdf}
+\caption{Left: contract-pair accuracy. Right: action accuracy of P2 with correct associations versus shuffled training associations. Points are three-seed means; static and maneuver values aggregate their subtypes.}\label{fig:contract-linkage}
+\end{figure*}
+
+In one recorded prediction with clearance at 11.0 s and a 1.5 s wait, P0 chooses entry at 11.5 s, while P1 and P2 choose the admissible boundary at 12.5 s. Another P2 example enters 0.1 s too early. These post-hoc explanatory cases are detailed in Supplement S5.\par
+
+\subsection{Constraint Representation and Generalization}\label{sec:representation-results}
+
+Comparing different expressions of the same rule tests whether high performance depends on EBLC-derived CNL alone. Table~\ref{tab:constraint-representations} reports the six temporal arms defined in Section~\ref{sec:additional-evaluations}. The primary and unseen-duration columns each contain 240 rows per arm and seed; the unseen waits are 0.8 and 1.8 s, compared with 0.5 and 1.5 s during training.\par
+
+\begin{table}[tbp]\caption{Temporal constraint representations: accuracy / violation rate, \%, three-seed means}\label{tab:constraint-representations}
+\centering\fontsize{8}{10}\selectfont\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{\dimexpr 0.40\columnwidth-4.80pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.30\columnwidth-3.60pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.30\columnwidth-3.60pt\relax}@{}}
+\toprule
+\textbf{Arm} & \textbf{Primary} & \textbf{Unseen wait}\\
+\midrule
+\texttt{P0} & 49.86 / 19.17 & 49.86 / 18.47\\[3pt]
+\texttt{P1} & 96.81 / 1.39 & 96.67 / 2.22\\[3pt]
+\texttt{P2} & 98.06 / 0.83 & 96.67 / 1.53\\[3pt]
+\texttt{NATURAL\_GUARD} & 98.06 / 1.11 & 98.61 / 0.56\\[3pt]
+\texttt{SHUFFLED\_GUARD} & 50.56 / 19.72 & 50.97 / 18.89\\[3pt]
+\texttt{LOGIC\_GUARD} & 99.17 / 0.14 & 81.25 / 0.83\\[3pt]
+\bottomrule\end{tabular}
+\end{table}
+
+In Table~\ref{tab:constraint-representations}, alternative natural-language guards match P2 primary accuracy at 98.06\%, while logical text reaches 99.17\%. On unseen durations, the natural-language arm reaches 98.61\%, but the logical-text arm falls to 81.25\% despite a violation rate of only 0.83\%. Low violation does not imply selection of the highest-progress admissible action.\par
+
+The shuffled arm remains near 50\% accuracy even though correctly associated guards are supplied at evaluation. This agrees with the binding comparison in Figure~\ref{fig:contract-linkage}. Together, the results support supplying the rule and preserving its correspondence with the case; they do not establish universal behavioral superiority of CNL over other representations. The formal path additionally provides the checks reported in Table~\ref{tab:specification-checks}.\par
+
+\subsection{Sensitivity to Wording and Combined Conditions}\label{sec:wording-results}
+
+Table~\ref{tab:wording-hard} compares primary results with changed wording and the combined hard maneuver conditions. Each paraphrase row retains its corresponding primary cases and rules, so changes describe sensitivity to wording rather than performance on additional independent scenes. The hard row is a separate combined-condition test.\par
+
+\begin{table}[tbp]\caption{Wording and combined conditions: accuracy / violation rate, \%, three-seed means}\label{tab:wording-hard}
+\centering\fontsize{8}{10}\selectfont\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{\dimexpr 0.31\columnwidth-5.58pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.23\columnwidth-4.14pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.23\columnwidth-4.14pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.23\columnwidth-4.14pt\relax}@{}}
+\toprule
+\textbf{Evaluation} & \textbf{P0} & \textbf{P1} & \textbf{P2}\\
+\midrule
+Temporal: Primary & 49.86 / 19.17 & 96.81 / 1.39 & 98.06 / 0.83\\[3pt]
+Temporal: Paraphrase & 49.86 / 19.17 & 90.56 / 5.00 & 96.94 / 1.25\\[3pt]
+Static: Primary & 50.00 / 24.31 & 100.00 / 0.00 & 100.00 / 0.00\\[3pt]
+Static: Paraphrase & 50.00 / 24.31 & 93.29 / 0.00 & 80.32 / 7.87\\[3pt]
+Maneuver: Primary & 50.00 / 30.90 & 100.00 / 0.00 & 98.96 / 0.00\\[3pt]
+Maneuver: Paraphrase & 50.00 / 30.90 & 100.00 / 0.00 & 97.92 / 2.08\\[3pt]
+Maneuver: Combined hard & 50.00 / 30.21 & 94.10 / 0.69 & 91.32 / 1.04\\[3pt]
+\bottomrule\end{tabular}
+\end{table}
+
+For temporal paraphrases in Table~\ref{tab:wording-hard}, P2 retains 96.94\% accuracy with 1.25\% violations, compared with 90.56\% and 5.00\% for P1. Static paraphrases show the reverse ordering: P2 falls from 100\% to 80.32\% accuracy with 7.87\% violations, while P1 reaches 93.29\% with no observed violations. Both the favorable temporal result and the unfavorable static result are needed to characterize the CNL input interface.\par
+
+On combined hard maneuver cases in Table~\ref{tab:wording-hard}, P1 reaches 94.10\% accuracy and 0.69\% violations, whereas P2 reaches 91.32\% and 1.04\%. P2 contract-pair accuracy also falls from 97.92\% on the primary maneuver test to 82.64\% on the hard set. The combined test does not identify whether negation, order, boundary equality, or units individually cause the errors.\par
+
+A separate follow-up wording diagnostic in Supplement S9 contains 24 rows per formulation and seed. Its second paraphrase lowers P1 accuracy from 100\% to 76.39\% and P2 from 95.83\% to 77.78\%; violations rise to 15.28\% and 9.72\%, respectively. These small exploratory strata are separate from Table~\ref{tab:wording-hard}. They reinforce that a checked rule representation does not guarantee stable interpretation by the learned model under every wording change.\par
+
+\subsection{Dependence on Visual Input}\label{sec:image-results}
+
+The paired image interventions examine whether candidate selections change when the visual input is removed or conflicts with the retained textual case. Table~\ref{tab:image-interventions} reports source-reference accuracy and violation rate for the 24-row temporal diagnostic in Section~\ref{sec:additional-evaluations}. These results are separate from primary-test performance.\par
+
+\begin{table}[tbp]\caption{Image interventions: source-reference accuracy / violation rate, \%, three-seed means}\label{tab:image-interventions}
+\centering\fontsize{8}{10}\selectfont\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{\dimexpr 0.31\columnwidth-5.58pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.23\columnwidth-4.14pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.23\columnwidth-4.14pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.23\columnwidth-4.14pt\relax}@{}}
+\toprule
+\textbf{Image} & \textbf{P0} & \textbf{P1} & \textbf{P2}\\
+\midrule
+Original & 50.00 / 22.22 & 100.00 / 0.00 & 98.61 / 1.39\\[3pt]
+Blank & 50.00 / 13.89 & 81.94 / 2.78 & 76.39 / 1.39\\[3pt]
+Redrawn (+1 s) & 50.00 / 19.44 & 87.50 / 0.00 & 79.17 / 1.39\\[3pt]
+\bottomrule\end{tabular}
+\end{table}
+
+In Table~\ref{tab:image-interventions}, P2 source-reference accuracy falls from 98.61\% with the original image to 76.39\% with a blank image and 79.17\% with the redrawn image. Its selection changes on 25.00\% and 19.44\% of the corresponding paired cases. P1 changes on 18.06\% and 12.50\%, with accuracy falling from 100\% to 81.94\% and 87.50\%. Thus, the selected labels are sensitive to visual input, even though numerical candidate values are also supplied in text.\par
+
+P2 violation rate remains 1.39\% in all three image conditions in Table~\ref{tab:image-interventions}. The accuracy loss therefore need not be an increase in prohibited selections; admissible but lower-progress choices can also change. Retaining substantial accuracy with a blank image does not establish visual grounding, and sensitivity to a conflicting image does not prove that the model interprets the depicted event correctly. Three semantic parameter groups and three seeds make this an exploratory input-dependence check, not evidence of real-road perception accuracy.\par
+
+\subsection{Checkability of Specifications and CNL}
+
+To assess specification quality, we test whether the checking pipeline detects errors in EBLC specifications and generated CNL while accepting valid contracts. We also test whether the encoded temporal restriction rejects premature entry and permits entry at and after release.\par
+
+We inject errors involving negation, thresholds, release conditions, comparison direction, and units into the schema, evidence, Core, and CNL checking path. Supplement S3 reports the six supported types and their checking layers. This quality evaluation is distinct from model accuracy.\par
+
+Prediction accuracy and violation rate are calculated over model test predictions. The checks in Table~\ref{tab:specification-checks} count tested specifications, while boundary-query checks count logical queries. These counting units are reported separately.\par
+
+
+\begin{table}[tbp]\caption{Specification and CNL checks by category and layer}\label{tab:specification-checks}
+\centering\fontsize{8}{10}\selectfont\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{\dimexpr 0.40\columnwidth-4.80pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.18\columnwidth-2.16pt\relax}>{\raggedright\arraybackslash}p{\dimexpr 0.42\columnwidth-5.04pt\relax}@{}}
+\toprule
+\textbf{Input category} & \textbf{Detected / cases} & \textbf{Checking layer}\\
+\midrule
+CNL negation change & 24/24 & CNL correspondence\\[3pt]
+CNL threshold change & 24/24 & CNL correspondence\\[3pt]
+Release deletion & 24/24 & Core--environment\\[3pt]
+Comparison reversal & 24/24 & Core--environment\\[3pt]
+Specification threshold change & 24/24 & Source and Core\\[3pt]
+Unit error & 24/24 & Schema\\[3pt]
+Shared source/specification error & 0/24 & No layer detects\\[3pt]
+Valid contract & --- & All 24 accepted\\[3pt]
+\bottomrule\end{tabular}
+\end{table}
+
+
+
+Table~\ref{tab:specification-checks} shows that all 144 mutations in the six supported categories are detected and all 24 valid contracts are accepted, with no false rejection. All 24 shared-source/specification errors are missed, giving 144 detections among 168 erroneous cases, or 85.71\%. The layers matter: a CNL negation change is found by comparing the sentence with its specification, while an incorrect unit is rejected by the schema. The aggregate is not a SAT-only detection rate.\par
+
+The shared-source row of Table~\ref{tab:specification-checks} identifies a failure that internal consistency cannot settle. If the supplied waiting duration and its EBLC field are both changed to the same incorrect value, source correspondence and the reference comparison can still agree. All 24 shared-source errors remain internally SAT. Independent review of the rule evidence is needed to find this failure; another solve of the same internally consistent inputs does not provide it.\par
+
+Bypassing the checks accepts all 192 cases. Applying them accepts 48: the 24 valid contracts and the 24 shared-source errors. This comparison demonstrates rejection of supported mutations while retaining the undetected negative controls. It does not measure naturally occurring error prevalence, and the same S3/D4 injection records are not counted again as a second experiment.\par
+
+All 100 temporal boundary queries match expected outcomes: 76 SAT, 24 UNSAT, and no UNKNOWN. Figure~\ref{fig:smt-boundary} illustrates three queries around the release boundary for a 0.5-second wait. Additional candidate checks and comparisons with model judgments appear in Supplement S8.\par
+
+\begin{figure}[bp]\centering
+\includegraphics[width=.98\linewidth,keepaspectratio]{figures/smt-boundary-en.pdf}
+\caption{With clearance at 11.000 s and a 0.500 s wait, entry at 11.499 s is UNSAT; 11.500 s and 11.501 s are SAT. The 1 ms logical-time expansion does not imply vehicle-control precision.}\label{fig:smt-boundary}
+\end{figure}
+
+In Figure~\ref{fig:smt-boundary}, UNSAT excludes a prohibited entry rather than counting a defective specification. By contrast, increasing an injected wait by 100 ms makes an originally permitted query UNSAT, while removing the release restriction makes a prohibited query SAT. Unexpected outcomes require reviewing the source, threshold, and clause, then rechecking both sides of the boundary. An inconsistent base contract or UNKNOWN is not accepted as verification evidence. Supplement S3 retains the representative conflict set and response rules.\par
+
+\subsection{Unseen Conditions and Interpretation}
+
+Tests with numerical values or waiting durations absent from training measure action-selection accuracy and constraint violation rate under new conditions. We also summarize additional tests of changed wording and input conditions to clarify the scope of the results.\par
+
+
+\begin{table}[tbp]\caption{Unseen numeric/time conditions: accuracy / violation rate, \%, three-seed means}\label{tab:unseen-conditions}
+\centering\fontsize{8}{10}\selectfont\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Task family} & \textbf{P0} & \textbf{P1} & \textbf{P2}\\
+\midrule
+Temporal & 49.86 / 18.47 & 96.67 / 2.22 & 96.67 / 1.53\\[1pt]
+Static & 50.00 / 22.92 & 99.54 / 0.00 & 97.22 / 0.23\\[1pt]
+Maneuver & 50.00 / 30.90 & 100.00 / 0.00 & 98.96 / 0.00\\[1pt]
+\bottomrule\end{tabular}
+\end{table}
+
+As shown in Table~\ref{tab:unseen-conditions}, both constraint-enhancement paths outperform P0 on unseen numeric/time conditions.\par
+
+Tables~\ref{tab:constraint-representations} and \ref{tab:wording-hard} show that generalization depends on both the input representation and the task. Table~\ref{tab:image-interventions} reports exploratory image dependence, and Table~\ref{tab:specification-checks} distinguishes supported checks from undetected shared-source errors. Specification-derived auxiliary-cost learning remains a separate secondary analysis in Supplement S6; it is not pooled with these evaluations.\par
+
+The results concern supplied synthetic constraints and finite candidates. Textual scalars, repeated diagrams, one model, and three seeds limit claims about real-road visual understanding, closed-loop safety, or Alpamayo training. Constraint availability and the causal effect of verification are distinguished. Detailed variability, conditional intervals, and archived operational-criterion outcomes remain in the supplement.\par
+
+Overall, multiple action tasks show benefits from constraint-enhanced CoC, while the EBLC-supported development path combines high action-selection performance with explicit checks of constraint errors and admissible/prohibited boundaries.\par
+\section{Discussion}
+
+This section interprets the role of explicit constraints in CoC and the value of formal support for their development. It distinguishes evidence validity, specification and translation correctness, and behavioral compliance, then considers the study's limitations and directions for further development.\par
+
+\subsection{The Role of Explicit Behavioral Constraints in CoC}
+
+Whereas CoC connects a situation with reasons for an action, explicit behavioral constraints specify conditions that permit or restrict choices. The higher accuracy and lower violation rates of P1 and P2 relative to P0 across static, temporal, and maneuver tasks support this complementary role. Contract-pair evaluation is particularly informative: the same scene and candidates can require different choices under different rules. Constraint enhancement therefore supplements the explanation in CoC with explicit conditions for action selection, rather than replacing that explanation.\par
+
+The weak performance of shuffled associations indicates that adding constraint sentences alone is insufficient; their correspondence with each case matters. This supports the methodological motivation to connect targets, regions, and times to observations while distinguishing observations from applicable rules. In the six-task study, P0 does not receive the variable contract, so those gains include the effect of supplying additional information. They should not be generalized to an overall deficiency in CoC reasoning or to greater learning efficiency under identical information.\par
+
+The primary position-hold comparison in Section~\ref{sec:position-hold-results} supplies the same evaluation rule to all conditions and measures each adapter before and after additional training. The reduced violations support incorporating constraints into training for this candidate-selection task. Different prior adapter histories and training formulations remain, so the comparison does not isolate the causal benefit of verification. The remaining XY regression failures also limit claims beyond the new test distribution.\par
+
+\subsection{Formal Support for Constraint Development}
+
+This development path specifies which constraints to obtain, where their content comes from, and where it enters learning data. CoC contributes relevant actions and rationales; observations contribute targets, zones, and events; supplied rules contribute bounds and release requirements. These are linked to specification fields and sources before checked CNL is appended to the original CoC. Table~\ref{tab:taskmap} makes the task--field--formula--CNL--verdict chain concrete. The present contribution is this traceable, checkable development process, building on the preceding manuscript's constraint-enhancement concept and evaluation principle.\par
+
+P1 and P2 are not competing external methods but different development paths within our constraint-enhancement approach. P1 directly supplies existing natural-language constraints; P2 specifies and verifies the corresponding rules in EBLC before generating CNL. The central value of formalization is not necessarily higher model performance. It is the ability to distinguish targets, scope, activation, maintenance and release conditions, restricted actions, and assumptions in a checkable representation. Natural-language constraints can also be reviewed by people; the EBLC path additionally makes specification, translation, and generated-language correspondence explicit objects of supported checks.\par
+
+Behavioral evaluation and error injection support different aspects of this value. The former shows that CNL produced through the formalization path can support high action-selection performance; the latter demonstrates checks for omissions, boundary errors, and semantic mismatches. Differences between P1 and P2 varied across tasks and expressions, so universal equivalence or noninferiority is not established. The supported claim is that systematic constraint development and checking can accompany the benefits of constraint enhancement, not that verification itself causes the behavioral improvement.\par
+
+\subsection{Evidence, Verification, and Compliance}
+
+Reliability in this process has three distinct layers. Evidence validity concerns whether the selected observations, rules, and assumptions are appropriate for the scene. Representation and translation validity concern whether the specification and CNL express the intended content. Behavioral compliance concerns whether the model selects an action consistent with the supplied constraint. SMT verification checks logical properties under the specified model and assumptions, while supported correspondence checks examine specification-to-language agreement. Neither substitutes for establishing the factual validity of scene interpretation or rule evidence.\par
+
+Undetected shared errors in evidence and specification expose a limitation of the first layer; residual model violations despite a correct specification expose a limitation of the third. These require different responses. Expected UNSAT when a prohibited action is conjoined with the contract supports its exclusion, whereas unexpected UNSAT for an admissible action motivates re-examining evidence, clauses, and translation. Specification verification and behavioral evaluation are thus complementary sources of evidence addressing different errors, rather than interchangeable assurances.\par
+
+\subsection{Scope and Further Development}
+
+The behavioral evidence is limited to supplied synthetic rules, finite candidates, one VLM, and three optimization seeds. Candidate values are also provided in text, and some images are reused; performance on unseen values therefore does not establish visual generalization to new real-road scenes. P1 and P2 also receive constraints at evaluation, leaving internalization without supplied constraints unexamined. Sensitivity to paraphrasing describes the applicability of the model and its input interface; this study does not isolate underlying language capability as its sole cause. Error detection likewise remains bounded by supported syntax and injected error types.\par
+
+Further work can evaluate how constraint applicability is established in real scenes and how generated CNL is used across models and environments. A promising division of work concentrates human review on observations, rules, and assumptions, while assigning structuring, specification checks, and language generation to machine processing. GuardSynth Studio can provide an implementation setting for this workflow, but real-scene applicability and reductions in authoring time require separate evaluation. The present study establishes a more limited foundation: evidence for constraint-enhanced CoC action selection and a systematic path from structured, checked constraints to natural-language learning inputs.\par
+\section{Conclusion}
+
+GuardSynth provides a systematic development path for behavioral constraints that augment Chain of Causation. It records supplied constraint content and its sources, binds it to supported EBLC fields and semantics, checks a restricted logical representation, and generates CNL for insertion after the original CoC. The task--field--formula--CNL--verdict mapping connects this method to executable examples and evaluation.\par
+
+With identical evaluation rules, the primary position-hold study ends with 22/192, 1/192, and 0/192 strict violations for CoC-only, natural-language-constraint, and EBLC-derived-CNL training, respectively, on the 2.0 s interval-maximum test. Residual XY diagnostic failures show that this improvement depends on the tested representation and numerical distribution.\par
+
+Across six synthetic candidate-selection tasks, our existing natural-language constraint path and the EBLC-derived CNL path achieve higher primary accuracy and lower violation rates than CoC alone. Separate error and boundary analyses demonstrate supported checks while exposing shared-source errors and residual model violations. The contribution combines the behavioral utility of explicit constraints with a traceable formal development interface; broader real-scene applicability and generalization remain future work.\par
+\section*{Acknowledgment}
+OpenAI Codex assisted with writing and editing this manuscript. The authors are responsible for its content and references.\cite{r15}
+\bibliographystyle{template/IEEEtran}
+\bibliography{references}
+\EOD
+\end{document}

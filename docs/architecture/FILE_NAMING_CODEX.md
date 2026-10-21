@@ -1,7 +1,7 @@
 # GuardSynth-CC File Naming Codex
 
-- Codex version: `v1.4`
-- Effective date: `2026-08-13`
+- Codex version: `v1.6`
+- Effective date: `2026-10-09`
 - Scope: maintained repository files and directories
 - Structure authority: [`PROJECT_STRUCTURE_CODEX.md`](PROJECT_STRUCTURE_CODEX.md)
 - Automated check: [`cli/checks/file_naming.py`](../../cli/checks/file_naming.py)
@@ -198,6 +198,11 @@ entry names such as `main.tex`, `references.bib`, and `Makefile`. Planning and a
 inside a paper tree still use the document rule above. Upstream class/style/font files retain
 their upstream names.
 
+Compile each manuscript in its own paper directory. Its working PDF and compiler-defined
+auxiliary/log files stay beside the source, using one stable job name such as
+`ncaa-manuscript-en`. Paper builds do not receive artifact experiment/run IDs or dated
+output directories; rebuilding updates the same files. See Structure Codex section 6.1.
+
 External editable templates imported into a maintained paper tree receive a short ASCII name
 describing their role, for example `publication_review_template_2022.hwp`. The original title
 and origin belong in the paper README or provenance metadata, not in a path.
@@ -211,9 +216,14 @@ New artifact directory names follow the Structure Codex. Required result files a
 - `REPORT_KO.md` when a Korean report is required
 
 Generated filenames defined by an external tool or historical manifest are not renamed.
-The automated check covers all new owner-scoped output under `artifacts/projects/` and
-`artifacts/platforms/`. Immutable legacy output under `artifacts/results/` and
-`artifacts/intermediate/` is excluded.
+The automated check covers output under `projects/<NN>-<project-id>/artifacts/` and
+`platforms/<platform-id>/artifacts/`. Migrated pre-v3 outputs retain their provenance names
+under narrowly scoped migration exclusions. Do not recreate root artifact paths.
+
+Use a single `artifacts/RESULT_INDEX.md` per owner. Keep one canonical file for duplicate
+deliverables and update consumers to that path. Retention follows Structure Codex section 6:
+the latest completed result per actual task plus required inputs and active work. Do not use
+`latest`, `final`, `copy`, `(1)`, or a second results directory to identify the current result.
 
 A completed run is never edited only to normalize a filename. Record a narrow exception for
 an irregular path already fixed by its run manifest, and correct the producer so later runs

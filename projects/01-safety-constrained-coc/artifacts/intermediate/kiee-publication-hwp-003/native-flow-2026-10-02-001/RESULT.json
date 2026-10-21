@@ -1,0 +1,30 @@
+{
+  "status": "awaiting-hancom-validation",
+  "native_sections": 15,
+  "logical_tables": 12,
+  "source_cells_checked": 318,
+  "table_source_mismatches": 0,
+  "body_and_captions_preserved": true,
+  "embedded_images_preserved": true,
+  "layout_wrappers_removed": 15,
+  "native_two_column_definitions": 15,
+  "cached_page_column_overflow": 0,
+  "cached_text_object_overlap": 0,
+  "independent_parser_valid": true,
+  "hancom_application_validation": false,
+  "changes": [
+    "Remove all 15 page-sized layout tables and all nested content tables.",
+    "Use native ColumnDef controls and explicit column breaks.",
+    "Reserve complete inline table/image heights in paragraph line-segment caches.",
+    "Use the supplied template page margins, including header/footer areas.",
+    "Scale the two wide result figures on section 11 to 93 percent to fit the template margins."
+  ],
+  "hancom_page_count": null,
+  "rendered_preview": null,
+  "limitations": [
+    "No Hancom Office runtime or connected document session is available.",
+    "Actual Hancom pagination and appearance remain unverified.",
+    "The hwp-cli renderer supports one column configuration per section and cannot verify this native layout with mid-page column changes.",
+    "Two display equations remain images as in the previous conversion."
+  ]
+}

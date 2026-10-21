@@ -1,0 +1,58 @@
+{
+  "project_id": "guardsynth-coc",
+  "experiment_id": "paper1-reasoning-comparison-001",
+  "version": "0.1",
+  "status": "METHOD_SELECTION_COMPLETE_PERFORMANCE_NOT_EXECUTED",
+  "selected_on": "2026-10-07",
+  "question": "Does additional reasoning without supplied constraints improve candidate choices beyond the existing CoC-only condition?",
+  "role": "Supplementary action-selection controls; not an autonomous-driving system benchmark or an equal-information superiority experiment",
+  "methods": [
+    {
+      "id": "zero_shot_cot",
+      "name": "Zero-shot CoT",
+      "paper": "https://arxiv.org/abs/2205.11916",
+      "official_repository": "https://github.com/kojima-takeshi188/zero_shot_cot",
+      "commit": "5ef330fcdeec0cd26aee27943504f91f8ec1c33c",
+      "procedure": "Generate reasoning using the original cot_trigger_no=1, then extract a final answer in a second generation",
+      "source_locations": ["main.py:zero_shot_cot branch", "main.py:parse_arguments"],
+      "reasoning_max_new_tokens": 128,
+      "answer_max_new_tokens": 32
+    },
+    {
+      "id": "plan_and_solve",
+      "name": "Plan-and-Solve",
+      "paper": "https://aclanthology.org/2023.acl-long.147/",
+      "official_repository": "https://github.com/AGI-Edgerunners/Plan-and-Solve-Prompting",
+      "commit": "9d5a176f5b4de1011d426009ab6398dc76046e88",
+      "procedure": "Use original basic PS prompt_201 for planning and solving, following the official answer-extraction procedure; no PS+ substitutions or self-consistency",
+      "source_locations": ["prompt.py:prompt_201", "main.py:zero_shot_cot", "config.py"],
+      "reasoning_max_new_tokens": 256,
+      "answer_max_new_tokens": 32
+    }
+  ],
+  "backbone": "Qwen/Qwen3-VL-2B-Instruct",
+  "checkpoints": "Reuse the existing P0 final LoRA checkpoint for each task family and optimization seed",
+  "optimization_seeds": [42, 17, 123],
+  "additional_training": false,
+  "additional_human_labels": false,
+  "model_input": ["Existing P0 image", "Original CoC", "Existing candidate descriptions", "Generic reasoning-method instructions"],
+  "forbidden_model_input": ["P1 guard", "P2 CNL", "EBLC JSON", "Hidden rule values", "Reference labels", "SAT/UNSAT results"],
+  "primary_test_rows_per_method_and_checkpoint_seed": {
+    "temporal": 240,
+    "static": 144,
+    "maneuver": 96,
+    "total": 480
+  },
+  "planned_total_answer_predictions": 2880,
+  "metrics": ["Accuracy", "Constraint violation rate", "Contract-pair accuracy", "Invalid-answer rate", "Generated tokens", "Inference latency"],
+  "failure_accounting": "Invalid outputs remain in the denominator; report their frequency separately and do not invent an action label or an admissibility verdict",
+  "budget_accounting": "Original code defaults give unequal reasoning token caps; report actual cost and do not claim equal inference budgets",
+  "interpretation_limits": [
+    "Both methods are transferred prompting procedures on our VLM and dataset, not full reproductions of their original GPT-3 experiments",
+    "Neither is a driving-specific model or a replacement reproduction of DriveLM/DriveVLM",
+    "Current paired data contain identical P0 image-and-prompt inputs with different targets; the best fixed output per identical input is correct on at most 50 percent of the rows",
+    "More reasoning cannot recover an omitted experimental rule; differences from P2 mix information availability and reasoning strategy",
+    "Reusing P0 checkpoints tests inference procedures, not new training methods or training-only gains"
+  ],
+  "reporting_gate": "Keep these controls supplementary. Do not add numerical claims or graphs before full inference and scoring are actually complete."
+}

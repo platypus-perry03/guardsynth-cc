@@ -19,7 +19,7 @@
 
 ## 현 실행 결과: M18 통제 비교 완료 → M20 원고
 
-2026-09-29 실험 마감: [전체 표·무결성 감사](../../../../artifacts/projects/guardsynth-coc/public/paper1-method-preservation-001/temporal-experiment-closure-2026-09-29-001/REPORT_KO.md).
+2026-09-29 실험 마감: [전체 표·무결성 감사](../../artifacts/public/paper1-method-preservation-001/temporal-experiment-closure-2026-09-29-001/REPORT_KO.md).
 확장18/18 fits·3,240 updates·17,280예측, 비용6/6 추가 fits·360 updates·6,480예측 완료.
 비용 예측에는 추가 학습 전3개 adapter 평가도 포함한다. 추가 지표도 완료했으며 독립 새 표본은 아니다.
 296개 고유 파일 해시, 모든 seed별 집계, 동일 예산·학습 순서 및 adapter 변화 확인; 회귀 테스트49개 통과.
@@ -74,7 +74,7 @@ Unseen-time 안전완료 .6250/.6389/1.0000, 정확도 .5000/.6250/.8993.
 전체 deadlock0·coverage1. 6개 storyboard/24개 P0 image-candidate 입력을 반복하는 한계와
 추론 때 제약 제공, 검증-only/학습-only 인과효과 미분리 사실을 함께 기록했다.
 
-43 tests·100 SMT 통과. `paper/main.tex` 실제 결과4쪽 및 `temporal-paper-2026-09-29-001/main.pdf`
+43 tests·100 SMT 통과. `paper/ieee-access/main.tex` 실제 결과4쪽 및 `temporal-paper-2026-09-29-001/main.pdf`
 컴파일 완료. 원고/결과/hash 원장 동기화. 다음 단일 작업은 새 scope 아래 인용과 방법 논증을
 정리하는 M20 원고 개선이다. 추가 사람 응답/권한 승인으로 막힌 기계 작업은 없다.
 재검증 명령(새 분석 ID 사용, 기존 run 덮어쓰기 금지):
@@ -256,8 +256,8 @@ RUN_MANIFEST 부재도 기록했다. 이 supplied guard-at-inference 결과를 P
 실행 명령(기존 checkpoint 재학습 불필요):
 
 ```bash
-cat artifacts/projects/guardsynth-coc/restricted/guardsynth-eblc-learning-001/real-development-smoke-2026-09-29-001/RESULT.json
-runtime/alpamayo/ar1_venv/bin/python projects/04-guardsynth-coc/experiments/paper1_cnl_learning/score_speed_development.py --targets artifacts/projects/guardsynth-coc/restricted/guardsynth-paper1-training-readiness-001/speed-action-intake-2026-09-29-001/development_action_targets.jsonl --predictions /tmp/speed_predictions.jsonl --output /tmp/speed_scores.json
+cat projects/04-guardsynth-coc/artifacts/restricted/guardsynth-eblc-learning-001/real-development-smoke-2026-09-29-001/RESULT.json
+runtime/alpamayo/ar1_venv/bin/python projects/04-guardsynth-coc/experiments/paper1_cnl_learning/score_speed_development.py --targets projects/04-guardsynth-coc/artifacts/restricted/guardsynth-paper1-training-readiness-001/speed-action-intake-2026-09-29-001/development_action_targets.jsonl --predictions /tmp/speed_predictions.jsonl --output /tmp/speed_scores.json
 ```
 
 두 번째 명령은 실제 prediction JSONL이 있을 때 실행한다. 현재 모델 성능 예측으로
@@ -317,7 +317,7 @@ port8766의 `guardsynth-portal-current`만 `portal-2026-09-29-001`로 교체했�
 검토자 URL: `http://127.0.0.1:8766/reviews/paper1_speed_action_jonh.html`.
 담당자 목록: `http://127.0.0.1:8766/reviews.html`; 검토자에게는 전용 URL만 전달한다.
 전용 화면에 원문/기존답변/도형/판정/CNL 또는 해당 자료 링크는 없으며 기존 중단 화면은 그대로다.
-제출 폴더: `artifacts/projects/guardsynth-coc/restricted/guardsynth-paper1-training-readiness-001/speed-action-submission-2026-09-29-001/`.
+제출 폴더: `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-paper1-training-readiness-001/speed-action-submission-2026-09-29-001/`.
 파일명 `jonh_speed_action_submission.json`. 다운로드는 서버 접수가 아니며 실제 파일 전달 뒤 별도 intake에서 검증한다.
 테스트 응답은 /tmp에만 저장하고 운영 초안/접수 수에 포함하지 않는다. 응답/gold/학습 0.
 모든 ACTION 뒤 CNL, #79/#81 보류, 2인 formal gate와 M16/M17 PARTIAL 유지. 외부 메시지 발송 없음.
@@ -580,7 +580,7 @@ t0 무손실 PNG 준비. 첫 영상 -0.111570초와 CASCADE 점 0초의 불일�
 source 수용기·한 장면 검토 UI·좌표 보존/JSON 복원·future-input 배제 tests 14개 통과.
 003이 현행 run이며 001 보존, 002는 잘못된 zero-time assertion 실패를 보존한다.
 
-[#18 source 검토 화면](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-paper1-source-acceptance-001/scene18-source-acceptance-2026-09-08-003/scene18_source_binding_review.html)은
+[#18 source 검토 화면](../../artifacts/restricted/guardsynth-paper1-source-acceptance-001/scene18-source-acceptance-2026-09-08-003/scene18_source_binding_review.html)은
 완료된 확인 절차의 보존용이다. 같은 설문 반복은 필요 없다. 기계가 사람의 확인을 작성하거나
 독립 action gold로 복사하지 않는다. 아래는 선행 구현의 이력이다.
 
@@ -606,7 +606,7 @@ action 후보/gold 계약을 동결한 뒤 32개 개발 표본을 그 기준으�
 packet/image, geometry frame/mask hash를 재검증했다. 12건 위험 보임, 4건 위험 보이지 않음,
 2건 전이, 1건 관측 불가를 유지했다. 조건부 초안 18건은 기존 답변을 구조화한 것이지
 독립적인 모델 예측·정확도나 검증된 CNL이 아니다. 미검토 13건도 분모에 보존했다.
-[읽기 전용 대응표](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-review-constraint-alignment-001/reviewed-scene-alignment-2026-09-07-001/review_constraint_alignment.html)를
+[읽기 전용 대응표](../../artifacts/restricted/guardsynth-review-constraint-alignment-001/reviewed-scene-alignment-2026-09-07-001/review_constraint_alignment.html)를
 생성했으며 새 설문/전량 재검토를 요청하지 않았다.
 
 다음 실제 연결 대상은 actor↔semantic zone, 시간창 관찰↔event-time predicate, 그리고
@@ -826,29 +826,29 @@ M13의 부족한 실제 장면을 합성해 60-scene pilot 성공으로 바꾸�
   machine output ground-truth 승격 0건
 - new 8/8/outcome/eligible 0/0/0
 - acquisition session `M16_SOURCE_GEOMETRY_CANDIDATES_GENERATED_CURATOR_REVIEW_REQUIRED`
-- 최종 package: `artifacts/projects/guardsynth-coc/restricted/guardsynth-m16-scene-acquisition-001/m16-source-acquisition-2026-08-14-v18/`
-- source-review workbench: `artifacts/projects/guardsynth-coc/restricted/guardsynth-m16-source-review-001/m16-source-review-2026-08-15-v5/`
-- validated human-review result: `artifacts/projects/guardsynth-coc/restricted/guardsynth-m16-source-review-001/m16-source-review-2026-09-04-v1/`
-- post-review source-closure result: `artifacts/projects/guardsynth-coc/restricted/guardsynth-m16-scene-acquisition-001/m16-post-review-source-closure-2026-09-05-v1/`
-- event-anchor transform result: `artifacts/projects/guardsynth-coc/restricted/guardsynth-m16-scene-acquisition-001/m16-event-anchor-transform-2026-09-05-v1/`
-- structured-link audit result: `artifacts/projects/guardsynth-coc/restricted/guardsynth-m16-scene-acquisition-001/m16-cascade-structured-link-audit-2026-09-05-v1/`
-- geometry candidate result: `artifacts/projects/guardsynth-coc/restricted/guardsynth-m16-scene-acquisition-001/m16-geometry-candidate-2026-09-05-v1/`
-- geometry review workbench: `artifacts/projects/guardsynth-coc/restricted/guardsynth-m16-scene-acquisition-001/m16-geometry-review-2026-09-06-v1/`
-- validated geometry curator review: `artifacts/projects/guardsynth-coc/restricted/guardsynth-m16-scene-acquisition-001/m16-geometry-curator-review-2026-09-06-v1/`
+- 최종 package: `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-m16-scene-acquisition-001/m16-source-acquisition-2026-08-14-v18/`
+- source-review workbench: `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-m16-source-review-001/m16-source-review-2026-08-15-v5/`
+- validated human-review result: `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-m16-source-review-001/m16-source-review-2026-09-04-v1/`
+- post-review source-closure result: `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-m16-scene-acquisition-001/m16-post-review-source-closure-2026-09-05-v1/`
+- event-anchor transform result: `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-m16-scene-acquisition-001/m16-event-anchor-transform-2026-09-05-v1/`
+- structured-link audit result: `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-m16-scene-acquisition-001/m16-cascade-structured-link-audit-2026-09-05-v1/`
+- geometry candidate result: `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-m16-scene-acquisition-001/m16-geometry-candidate-2026-09-05-v1/`
+- geometry review workbench: `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-m16-scene-acquisition-001/m16-geometry-review-2026-09-06-v1/`
+- validated geometry curator review: `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-m16-scene-acquisition-001/m16-geometry-curator-review-2026-09-06-v1/`
 - 기존 업로드 JSON/CSV의 98개 품질 평가를 manifest·순서·slice·event/image hash에 대해 검증했으며
   curator review는 98/98 완료다. 기계 geometry 확인은 61건이고 수동 보정 판정 37건은 업로드
   파일에 polygon 좌표가 없어 correction data pending으로 유지한다. 없는 좌표는 생성하지 않았다.
-- geometry source frontier: `artifacts/projects/guardsynth-coc/restricted/guardsynth-m16-scene-acquisition-001/m16-geometry-source-frontier-2026-09-06-v1/`
+- geometry source frontier: `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-m16-scene-acquisition-001/m16-geometry-source-frontier-2026-09-06-v1/`
 - accepted 61건의 다섯 시점 drivable/lane mask 610개를 manifest SHA-256으로 재검증해 source-bound
   candidate로 결합했다. 이는 ego lane, crossing conflict zone, stop line/stopping zone 또는 target
   lane의 의미를 닫지 않으므로 semantic rig geometry update는 0건이다. 남은 작업은 항목별 queue로
   고정했고 new 8/8/outcome/eligible은 0/0/0, 총 eligible은 1/60이다.
-- machine-assisted expert source review: `artifacts/projects/guardsynth-coc/restricted/guardsynth-m16-expert-source-review-001/m16-expert-source-review-2026-09-06-v2/`
+- machine-assisted expert source review: `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-m16-expert-source-review-001/m16-expert-source-review-2026-09-06-v2/`
 - 60/60 모델 overlay와 저신뢰 ego-corridor, 24장면의 사건 시각 근접 CASCADE target anchor
   33개, 회색 context-only anchor 23개, pedestrian event-zone 후보 8건을 기계 표시로 제공한다. 기존 60건 영상 관찰은 machine
   prediction으로 바꾸지 않고 provenance-labelled draft로만 제시한다. 최소 2인 독립 확인과
   adjudication 전에는 source-complete/outcome/eligible을 변경하지 않는다.
-- current portal: `artifacts/projects/guardsynth-coc/restricted/guardsynth-project-portal-001/portal-2026-09-06-v3/`
+- current portal: `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-project-portal-001/portal-2026-09-06-v3/`
 
 ##### 이전 다음 단일 작업
 
@@ -866,27 +866,27 @@ M13의 부족한 실제 장면을 합성해 60-scene pilot 성공으로 바꾸�
 
 | 완료 항목 | 대표 근거 | 주장 범위 |
 |---|---|---|
-| EBLC v0.2 RC | [release artifact](../../../../artifacts/results/public/eblc-release-candidate-001/eblc-v0.2-rc1-2026-08-09/REPORT_KO.md) | bounded language/tooling, not safety |
-| source-aware generator | [generator report](../../../../artifacts/results/public/guardsynth-source-aware-generator-001/source-aware-generator-2026-08-09-v3/REPORT_KO.md) | synthetic structured generation |
-| source boundary/readiness | [terminal report](../../../../artifacts/results/public/guardsynth-real-scene-readiness-001/terminal-readiness-2026-08-09-v3/REPORT_KO.md) | readiness/abstention, 0/24 complete |
-| label-light interface | [label-light report](../../../../artifacts/results/public/guardsynth-label-light-grounding-001/label-light-2026-08-10-v3/REPORT_KO.md) | synthetic workflow, not association accuracy |
-| 대한민국 scope/source catalog | [catalog report](../../../../artifacts/results/public/guardsynth-source-catalog-001/kr-source-catalog-2026-08-10-v2/REPORT_KO.md) | source traceability, not legal advice/safety |
-| 24-scene readiness | [readiness directory](../../../../artifacts/results/public/guardsynth-24-scene-dry-run-001/kr-dry-run-readiness-2026-08-10-v1/) | slot/data-gap audit, real execution 0/24 |
-| image-review partial packet | [restricted packet directory](../../../../artifacts/results/restricted/guardsynth-image-review-partial-scene-001/alpamayo-image-review-2026-08-11-v2/) | image-only 10건 변환, source-complete 0/10, 임의 필수값 0건, blinded audit 2건 대기 |
-| first calibration source audit | [restricted audit directory](../../../../artifacts/results/restricted/guardsynth-calibration-scene-source-audit-001/alpamayo-calibration-source-2026-08-11-v17-rule-applicability/) | timestamp·ego state·geometry·actor tracks·coordinate transform·clip rig binding·geometric SET association·조건부 공식 rule binding 8/9, 실제 계약 실행 0건 |
-| first scene rule applicability | [restricted rule directory](../../../../artifacts/results/restricted/guardsynth-rule-applicability-001/alpamayo-episode-05-2026-08-11-v1/) | CA §21950 조건부 연결, §21954 예외 문맥, 이미지 단서 위치 추론(not dataset GPS), 안전 검증 아님 |
-| scene-evidence review | [review kit](../../../../artifacts/results/public/guardsynth-scene-evidence-review-001/scene-evidence-review-2026-08-10-v5/SCENE_EVIDENCE_REVIEW.html) | 이미지-설문 1:1 카드, batch/folder import와 제한 내장 builder; 누락 source 대체 아님 |
-| vehicle assurance source audit | [restricted assurance audit](../../../../artifacts/results/restricted/guardsynth-vehicle-assurance-audit-001/alpamayo-episode-05-2026-08-11-v1/) | 후보 4건 모두 보장 profile로 부적합, 8/9 유지, synthetic fill 0 |
-| recorded-scene simulation projection | [restricted simulation report](../../../../artifacts/results/restricted/guardsynth-simulated-scene-dry-run-001/alpamayo-episode-05-simulation-2026-08-11-v4/REPORT_KO.md) | 실제 장면 8/9 + 별도 가상 차량, 2계약, Core/Z3 실행; 실제 차량 source closure 아님 |
-| simulation-24 candidate inventory | [restricted inventory report](../../../../artifacts/results/restricted/guardsynth-sim24-candidate-audit-001/alpamayo-candidate-inventory-2026-08-12-v1/REPORT_KO.md) | 중복 제거 13건; 8/8 1, 4/8 3, 0/8 9; 식별자·synthetic fill 0 |
-| M13 terminal simulation batch | [restricted terminal report](../../../../artifacts/results/restricted/guardsynth-sim24-batch-001/alpamayo-terminal-batch-2026-08-12-v1/REPORT_KO.md) | 4/24 장면·17계약; canonical/runtime/bounded-Z3/Core/direct replay 100%; 20장면 부족·slice/strata 공백, 실제 차량 안전 증거 아님 |
-| M14 CoC-conditioned front-end | [locked matrix](../../../../artifacts/results/public/guardsynth-coc-frontend-matrix-001/locked-synthetic-2026-08-12-v1/REPORT_KO.md), [materialization](../../../../artifacts/results/public/guardsynth-coc-frontend-materialization-001/crosswalk-synthetic-2026-08-12-v1/REPORT_KO.md) | 24-case protocol 100%, 1-rule EBLC/Core/Z3 handoff; 실제 NLP/장면 정확도 아님 |
-| M15 baseline protocol | [protocol run](../../../../artifacts/results/public/guardsynth-baseline-protocol-001/locked-interface-2026-08-12-v2/REPORT_KO.md) | 240 common results, channel violations 0; 성능 비교 아님 |
-| M16 expert pilot preflight | [restricted preflight](../../../../artifacts/results/restricted/guardsynth-expert-pilot-preflight-001/m16-preflight-2026-08-12-v4/REPORT_KO.md) | locked 60-slot design, 4/60 eligibility, annotation start 금지, 부족값 합성 안 함 |
-| M16 source eligibility reacquisition | [restricted run](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-m16-scene-acquisition-001/m16-source-acquisition-2026-08-13-v1/REPORT_KO.md), [public aggregate](../../../../artifacts/projects/guardsynth-coc/public/guardsynth-m16-scene-acquisition-001/m16-source-acquisition-2026-08-13-v1/REPORT_KO.md) | 33→23 candidates, 기존 4개 중 3개 8/8·0개 KR-scope eligible, annotation 미시작, 안전성/효과 결과 아님 |
-| M16 geometry source frontier | [restricted frontier](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-m16-scene-acquisition-001/m16-geometry-source-frontier-2026-09-06-v1/REPORT_KO.md) | curator 98/98, accepted mask 61건/610파일 검증; semantic geometry·authority·lifecycle 승격 0, eligible 1/60 |
-| M16 treaty normative baseline | [restricted binding run](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-m16-scene-acquisition-001/m16-treaty-authority-binding-2026-09-06-v2/REPORT_KO.md) | 98/98 bound; Vienna direct 35, Geneva fallback 63, domestic legal compliance not evaluated, eligible 1/60 |
-| local research/review portal | [restricted portal](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-project-portal-001/portal-2026-09-05-v1/REPORT_KO.md) | 루트 first-class 앱; 52 milestone 자동 추적, offline variant 98/98 폐쇄와 남은 transform·geometry·authority·lifecycle source closure를 표시하고 상세 검토 UI를 loopback 제공; 연구 결과 아님 |
+| EBLC v0.2 RC | [release artifact](../../../../platforms/eblc-bcv/artifacts/public/eblc-release-candidate-001/eblc-v0.2-rc1-2026-08-09/REPORT_KO.md) | bounded language/tooling, not safety |
+| source-aware generator | [generator report](../../artifacts/public/guardsynth-source-aware-generator-001/source-aware-generator-2026-08-09-v3/REPORT_KO.md) | synthetic structured generation |
+| source boundary/readiness | [terminal report](../../artifacts/public/guardsynth-real-scene-readiness-001/terminal-readiness-2026-08-09-v3/REPORT_KO.md) | readiness/abstention, 0/24 complete |
+| label-light interface | [label-light report](../../artifacts/public/guardsynth-label-light-grounding-001/label-light-2026-08-10-v3/REPORT_KO.md) | synthetic workflow, not association accuracy |
+| 대한민국 scope/source catalog | [catalog report](../../artifacts/public/guardsynth-source-catalog-001/kr-source-catalog-2026-08-10-v2/REPORT_KO.md) | source traceability, not legal advice/safety |
+| 24-scene readiness | [readiness directory](../../artifacts/public/guardsynth-24-scene-dry-run-001/kr-dry-run-readiness-2026-08-10-v1) | slot/data-gap audit, real execution 0/24 |
+| image-review partial packet | [restricted packet directory](../../artifacts/restricted/guardsynth-image-review-partial-scene-001/alpamayo-image-review-2026-08-11-v2) | image-only 10건 변환, source-complete 0/10, 임의 필수값 0건, blinded audit 2건 대기 |
+| first calibration source audit | [restricted audit directory](../../artifacts/restricted/guardsynth-calibration-scene-source-audit-001/alpamayo-calibration-source-2026-08-11-v17-rule-applicability) | timestamp·ego state·geometry·actor tracks·coordinate transform·clip rig binding·geometric SET association·조건부 공식 rule binding 8/9, 실제 계약 실행 0건 |
+| first scene rule applicability | [restricted rule directory](../../artifacts/restricted/guardsynth-rule-applicability-001/alpamayo-episode-05-2026-08-11-v1) | CA §21950 조건부 연결, §21954 예외 문맥, 이미지 단서 위치 추론(not dataset GPS), 안전 검증 아님 |
+| scene-evidence review | [review kit](../../artifacts/public/guardsynth-scene-evidence-review-001/scene-evidence-review-2026-08-10-v5/SCENE_EVIDENCE_REVIEW.html) | 이미지-설문 1:1 카드, batch/folder import와 제한 내장 builder; 누락 source 대체 아님 |
+| vehicle assurance source audit | [restricted assurance audit](../../artifacts/restricted/guardsynth-vehicle-assurance-audit-001/alpamayo-episode-05-2026-08-11-v1) | 후보 4건 모두 보장 profile로 부적합, 8/9 유지, synthetic fill 0 |
+| recorded-scene simulation projection | [restricted simulation report](../../artifacts/restricted/guardsynth-simulated-scene-dry-run-001/alpamayo-episode-05-simulation-2026-08-11-v4/REPORT_KO.md) | 실제 장면 8/9 + 별도 가상 차량, 2계약, Core/Z3 실행; 실제 차량 source closure 아님 |
+| simulation-24 candidate inventory | restricted inventory report (superseded run removed; see artifact migration catalog) | 중복 제거 13건; 8/8 1, 4/8 3, 0/8 9; 식별자·synthetic fill 0 |
+| M13 terminal simulation batch | [restricted terminal report](../../artifacts/restricted/guardsynth-sim24-batch-001/alpamayo-terminal-batch-2026-08-12-v1/REPORT_KO.md) | 4/24 장면·17계약; canonical/runtime/bounded-Z3/Core/direct replay 100%; 20장면 부족·slice/strata 공백, 실제 차량 안전 증거 아님 |
+| M14 CoC-conditioned front-end | [locked matrix](../../artifacts/public/guardsynth-coc-frontend-matrix-001/locked-synthetic-2026-08-12-v1/REPORT_KO.md), [materialization](../../artifacts/public/guardsynth-coc-frontend-materialization-001/crosswalk-synthetic-2026-08-12-v1/REPORT_KO.md) | 24-case protocol 100%, 1-rule EBLC/Core/Z3 handoff; 실제 NLP/장면 정확도 아님 |
+| M15 baseline protocol | [protocol run](../../artifacts/public/guardsynth-baseline-protocol-001/locked-interface-2026-08-12-v2/REPORT_KO.md) | 240 common results, channel violations 0; 성능 비교 아님 |
+| M16 expert pilot preflight | [restricted preflight](../../artifacts/restricted/guardsynth-expert-pilot-preflight-001/m16-preflight-2026-08-12-v4/REPORT_KO.md) | locked 60-slot design, 4/60 eligibility, annotation start 금지, 부족값 합성 안 함 |
+| M16 source eligibility reacquisition | restricted run (superseded run removed; see artifact migration catalog), public aggregate (superseded run removed; see artifact migration catalog) | 33→23 candidates, 기존 4개 중 3개 8/8·0개 KR-scope eligible, annotation 미시작, 안전성/효과 결과 아님 |
+| M16 geometry source frontier | [restricted frontier](../../artifacts/restricted/guardsynth-m16-scene-acquisition-001/m16-geometry-source-frontier-2026-09-06-v1/REPORT_KO.md) | curator 98/98, accepted mask 61건/610파일 검증; semantic geometry·authority·lifecycle 승격 0, eligible 1/60 |
+| M16 treaty normative baseline | [restricted binding run](../../artifacts/restricted/guardsynth-m16-scene-acquisition-001/m16-treaty-authority-binding-2026-09-06-v2/REPORT_KO.md) | 98/98 bound; Vienna direct 35, Geneva fallback 63, domestic legal compliance not evaluated, eligible 1/60 |
+| local research/review portal | restricted portal (superseded run removed; see artifact migration catalog) | 루트 first-class 앱; 52 milestone 자동 추적, offline variant 98/98 폐쇄와 남은 transform·geometry·authority·lifecycle source closure를 표시하고 상세 검토 UI를 loopback 제공; 연구 결과 아님 |
 | current backend regression | M16 image-review portal 후 GuardSynth 210/210, EBLC 133/133, portal/structure 26/26 | scoped software regression; isolated local NumPy/SciPy environment와 project-local Z3 5.0.0 사용 |
 
 #### 이전 7. 매 작업 세션의 운영 규칙

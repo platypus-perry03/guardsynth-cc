@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from apps.research_portal.run import _review_cards, build_portal
+from apps.research_portal.run import ROOT, _review_cards, build_portal
 
 
 class SiteIntegrityTest(unittest.TestCase):
@@ -60,11 +60,11 @@ class SiteIntegrityTest(unittest.TestCase):
             self.assertTrue(all("canonical_path" not in item for item in data["artifact_registry"]))
             # The actual questionnaire links must exist before JavaScript runs.
             reviews = (output / "reviews.html").read_text(encoding="utf-8")
-            links = re.findall(r'href="(reviews/[^"]+)"', reviews)
+            links = re.findall(r'href="(/assets/[^"]+)"', reviews)
             expected = [page["href"] for project in data["research_projects"]
                         for page in project["review_pages"]]
             self.assertEqual(links, expected)
-            self.assertEqual(links[0], "reviews/paper1_action_review.html")
+            self.assertRegex(links[0], r"^/assets/art-[a-f0-9]+/asset-[a-f0-9]+$")
             self.assertNotIn("{{REVIEW_CARDS}}", reviews)
             self.assertIn('data-rendered="true"', reviews)
 
@@ -73,11 +73,18 @@ class SiteIntegrityTest(unittest.TestCase):
             output = Path(directory) / "portal"
             build_portal(output)
 
+            from apps.research_portal.artifact_registry import ArtifactRegistry
+            registry = ArtifactRegistry(ROOT)
             for source in output.glob("*.html"):
                 for raw in re.findall(r'(?:href|src)="([^"]+)"', source.read_text(encoding="utf-8")):
                     if raw.startswith(("#", "http:", "https:", "data:")):
                         continue
-                    self.assertTrue((source.parent / raw.split("#", 1)[0]).exists(), f"{source.name}: {raw}")
+                    if raw.startswith("/assets/"):
+                        _, _, artifact_id, asset_id = raw.split("/")
+                        path, _ = registry.resolve_asset(artifact_id, asset_id, include_restricted=True)
+                        self.assertTrue(path.is_file())
+                    else:
+                        self.assertTrue((source.parent / raw.split("#", 1)[0]).exists(), f"{source.name}: {raw}")
 
 
 if __name__ == "__main__":

@@ -8,7 +8,7 @@
 당신은 autonomous-driving safety requirement synthesis와 formal/runtime verification을 구현하는 senior research software engineer다. 계획이나 서베이만 작성하지 말고, 현재 저장소를 검사한 뒤 설계, 코드, 테스트, 파일럿 실행, 결과 보고까지 완료하라.
 
 프로젝트 위치:
-/home/jinhyun/prj_ws/prj_jin/guardsynth-cc
+REPOSITORY_ROOT
 
 실험 ID:
 EBLC-P0B-001
@@ -27,7 +27,7 @@ EBLC-P0B-001
 3. platforms/eblc-bcv/experiments/eblc_pilot/README.md
 4. platforms/eblc-bcv/experiments/eblc_pilot/pilot.py
 5. platforms/eblc-bcv/experiments/eblc_pilot/test_pilot.py
-6. artifacts/results/public/eblc-pilot-v0/pilot-2026-08-08/REPORT_KO.md
+6. platforms/eblc-bcv/artifacts/public/eblc-pilot-v0/pilot-2026-08-08/REPORT_KO.md
 7. projects/03-sequential-coc-verification/experiments/sequential_coc/contract_ir.py
 8. projects/03-sequential-coc-verification/experiments/sequential_coc/stateful_checker.py
 9. projects/03-sequential-coc-verification/experiments/logic/run_bounded_temporal_smt.py
@@ -51,7 +51,7 @@ P0b-A. 환경 및 자산 audit
 1. 프로젝트 루트, Python 버전, z3-solver import 가능 여부를 확인하라.
 2. 기존 P0a 테스트를 수정 전에 실행하고 결과를 기록하라.
 3. 보행자ㆍ횡단보도ㆍego trajectory가 시간 정렬된 로컬 실제/파생 데이터 후보를 read-only로 찾으라.
-4. restricted NVIDIA 원본ㆍ파생물을 사용하면 입력과 결과를 artifacts/results/restricted/ 아래에만 두고 원문을 최종 답변에 노출하지 마라.
+4. restricted NVIDIA 원본ㆍ파생물을 사용하면 입력과 결과를 projects/04-guardsynth-coc/artifacts/restricted/ 아래에만 두고 원문을 최종 답변에 노출하지 마라.
 5. 실제 장면에 conflict-zone geometry, pedestrian association, ego pose/speed 또는 timestamps가 없으면 부족한 field를 정확히 기록하고 synthetic value로 채우지 마라.
 
 P0b-B. Canonical EBLC v0
@@ -175,9 +175,9 @@ P0b-F. 실제 장면 adapter와 dry run
 
 결과 배치:
 - 공개 synthetic 결과:
-  artifacts/results/public/eblc-p0b-001/<run-id>/
+  platforms/eblc-bcv/artifacts/public/eblc-p0b-001/<run-id>/
 - 실제 NVIDIA/제한 데이터 결과:
-  artifacts/results/restricted/eblc-p0b-001/<run-id>/
+  platforms/eblc-bcv/artifacts/restricted/eblc-p0b-001/<run-id>/
 
 필수 결과 파일:
 - RESULT.json
@@ -198,7 +198,7 @@ RUN_MANIFEST 필수 필드:
 - claim_scope=P0B_SCHEMA_AND_BOUNDED_EXECUTION_NOT_VEHICLE_SAFETY
 
 문서 반영:
-1. experiments/README.md와 artifacts/results/README.md에 새 실험을 추가하라.
+1. experiments/README.md와 projects/04-guardsynth-coc/artifacts/RESULT_INDEX.md에 새 실험을 추가하라.
 2. 01_RESEARCH_PLAN_V02.md에는 P0b 실행 상태, 통과/실패 gate와 결과 링크만 추가하라.
 3. 기존 survey 문서를 다시 쓰지 마라. 새 선행연구 조사로 작업을 확장하지 마라.
 4. 구현 중 operational semantics가 계획서와 충돌하면 코드를 조용히 맞추지 말고 차이를 보고하고 최소한으로 계획서를 교정하라.

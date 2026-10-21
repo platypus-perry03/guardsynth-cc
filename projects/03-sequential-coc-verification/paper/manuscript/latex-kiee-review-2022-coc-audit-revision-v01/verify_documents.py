@@ -62,6 +62,13 @@ def locate():
                 if any(split_with_float(needle, page, cut) for cut in range(20, len(needle) - 20)):
                     found = [number]
                     break
+        if not found:
+            # The same interruption can occur where an excerpt continues onto the next page.
+            for index in range(len(article) - 1):
+                joined = article[index] + article[index + 1]
+                if any(split_with_float(needle, joined, cut) for cut in range(5, len(needle) - 5)):
+                    found = [index + 1, index + 2]
+                    break
         assert found, "Excerpt not found in the article PDF: " + identity
         matches[identity] = found
         label = ", ".join(map(str, found)) + "쪽"

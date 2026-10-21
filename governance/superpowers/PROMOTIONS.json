@@ -10,6 +10,50 @@
       "reviewed_by": "user",
       "review_basis": "Reviewed plan, selected natural-CoC fault injection, and requested stepwise execution in this conversation",
       "promoted_on": "2026-09-30"
+    },
+    {
+      "work_id": "studio-sequential-coc-20261002",
+      "project_id": "guardsynth-coc",
+      "document_class": "requirement",
+      "source": "user-requested-direct-authoring",
+      "target": "projects/04-guardsynth-coc/docs/requirements/STUDIO_SEQUENTIAL_COC_REQUIREMENTS_V01.md",
+      "promotion_status": "REQUESTED_DRAFT_PENDING_DOCUMENT_REVIEW",
+      "reviewed_by": null,
+      "review_basis": "User discussed the architecture and explicitly requested requirements/design followed by implementation. Detailed document text has not been separately human-reviewed; these are requested deliverable drafts, not approved research authority. User explicitly authorized connecting tested CoC/constraint generation improvements and the remaining counterexample review/quality features to Studio (2026-10-04: coc, 제약사항 개선도 연결...나머지 반영). Updated direct-authoring drafts record this implementation scope; no separate human document review is claimed.",
+      "promoted_on": null
+    },
+    {
+      "work_id": "studio-sequential-coc-20261002",
+      "project_id": "guardsynth-coc",
+      "document_class": "design",
+      "source": "user-requested-direct-authoring",
+      "target": "projects/04-guardsynth-coc/docs/designs/STUDIO_SEQUENTIAL_COC_DESIGN_V01.md",
+      "promotion_status": "REQUESTED_DRAFT_PENDING_DOCUMENT_REVIEW",
+      "reviewed_by": null,
+      "review_basis": "User requested revisions of the existing Studio design for partial starts, seven classes, entity/relation and causal contracts, bounded resources and excessive conservatism; then explicitly restricted each verification input to the immediately preceding and current scene, carrying older conditions only as a bounded state summary (2026-10-03). This records requested direct draft revision, not implementation or detailed document/research authority approval. User subsequently requested executable hypothetical two-scene CoC/constraint models with passing and nonpassing cases; the draft links the resulting synthetic probe (2026-10-03). User explicitly authorized connecting tested CoC/constraint generation improvements and the remaining counterexample review/quality features to Studio (2026-10-04: coc, 제약사항 개선도 연결...나머지 반영). Updated direct-authoring drafts record this implementation scope; no separate human document review is claimed.",
+      "promoted_on": null
+    },
+    {
+      "work_id": "studio-sequential-coc-20261002",
+      "project_id": "guardsynth-coc",
+      "document_class": "plan",
+      "source": "user-requested-direct-authoring",
+      "target": "projects/04-guardsynth-coc/docs/plans/studio-sequential-coc/STUDIO_SEQUENTIAL_COC_PLAN_V01.md",
+      "promotion_status": "REQUESTED_DRAFT_PENDING_DOCUMENT_REVIEW",
+      "reviewed_by": null,
+      "review_basis": "User discussed the architecture and explicitly requested requirements/design followed by implementation. Detailed document text has not been separately human-reviewed; these are requested deliverable drafts, not approved research authority. User explicitly authorized connecting tested CoC/constraint generation improvements and the remaining counterexample review/quality features to Studio (2026-10-04: coc, 제약사항 개선도 연결...나머지 반영). Updated direct-authoring drafts record this implementation scope; no separate human document review is claimed.",
+      "promoted_on": null
+    },
+    {
+      "work_id": "studio-sequential-coc-20261002",
+      "project_id": "guardsynth-coc",
+      "document_class": "report",
+      "source": "user-requested-direct-authoring",
+      "target": "projects/04-guardsynth-coc/docs/reports/STUDIO_SEQUENTIAL_COC_IMPLEMENTATION_REPORT_V01.md",
+      "promotion_status": "REQUESTED_DRAFT_PENDING_DOCUMENT_REVIEW",
+      "reviewed_by": null,
+      "review_basis": "User discussed the architecture and explicitly requested requirements/design followed by implementation. Detailed document text has not been separately human-reviewed; these are requested deliverable drafts, not approved research authority. User explicitly authorized connecting tested CoC/constraint generation improvements and the remaining counterexample review/quality features to Studio (2026-10-04: coc, 제약사항 개선도 연결...나머지 반영). Updated direct-authoring drafts record this implementation scope; no separate human document review is claimed.",
+      "promoted_on": null
     }
   ]
 }

@@ -1,0 +1,26 @@
+{
+  "project_id": "sequential-coc-verification",
+  "task_id": "review-artifact-publication",
+  "status": "COMPLETED",
+  "created_at": "2026-10-13T02:07:03.017302+00:00",
+  "inputs": [
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/review-publication-001/review-publication-2026-10-12-002/RUN_MANIFEST.json",
+      "sha256": "c4b43b5d1628c982b93a91c8eed000d9f59da4b649f41f9cd24983720c65b123"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/review-publication-001/review-publication-2026-10-12-002/RESULT.json",
+      "sha256": "dde120e545e5f9379ceb101483d252be23d128cd438cad831de2a11caa516af9"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/review-publication-001/review-publication-2026-10-12-002/payload/artifact_manifest.json",
+      "sha256": "ec5555dbffb4185547c72be4f81320325ca131946ebfb278e39f8dc63bdc9bd3"
+    }
+  ],
+  "outputs": {
+    "RESULT.json": "9902396f0f4320c04f158d6ce4c0eb663866318028d43506706f2fd3c0e995a2",
+    "REPORT_KO.md": "babc7e0f684391566cb2cff0195c0cf1f973fef6edb6610a84c9f1be80169c75"
+  },
+  "commit": "36e7dd7a6978de060890ae589dad5343d8022b2f",
+  "authorization": "User approved commit and push after candidate preparation"
+}

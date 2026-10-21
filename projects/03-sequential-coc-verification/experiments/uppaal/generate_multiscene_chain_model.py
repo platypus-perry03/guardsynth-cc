@@ -18,7 +18,7 @@ from generate_models import add_location, add_template, add_transition
 ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / "PROJECT_REGISTRY.json").is_file())
 COC_ROOT = ROOT / "data/baseline/coc_nusc"
 NUSC_ROOT = ROOT / "data/baseline/nuscenes_metadata/interp_12Hz_trainval"
-MODEL_DIR = ROOT / "artifacts/intermediate/uppaal-models/multiscene-chain"
+MODEL_DIR = ROOT / "projects/03-sequential-coc-verification/projects/03-sequential-coc-verification/artifacts/intermediate/uppaal-models/multiscene-chain"
 DEFAULT_SCENES = ("scene-0130", "scene-0131", "scene-0132", "scene-0133")
 
 DEADLINE_MS = 3000

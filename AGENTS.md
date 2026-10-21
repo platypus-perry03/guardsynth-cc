@@ -18,8 +18,23 @@ Mandatory placement rules:
   `projects/05-eblc-language-verification/`; never copy the reusable platform implementation there.
 - Cross-project utilities only belong to `shared/` after at least two real consumers exist.
 - Repository applications belong to `apps/`; generated runs never belong there.
-- New run output belongs to `artifacts/projects/<project-id>/...` or
-  `artifacts/platforms/<platform-id>/...` according to its owner and license class.
+- Run output belongs to `projects/<NN>-<project-id>/artifacts/` or
+  `platforms/<platform-id>/artifacts/`, beside its maintained source. Never recreate a
+  root `artifacts/` tree or a separate project `results/` tree.
+- Paper compilation is an exception: keep the working PDF, bibliography output, and
+  compiler auxiliary/log files beside the manuscript source in its `paper/` directory.
+  Do not create an `artifacts/intermediate/` run for a paper build.
+- Merge older locations for the same task into one experiment directory per owner and
+  license class. Do not keep parallel legacy trees, copied indexes, or compatibility symlinks.
+- Keep the latest completed result per task plus concrete inputs needed by retained
+  results and current papers. Preserve active work and independent seeds/conditions.
+  Inspect consumers before deleting an older run and record retention/removal in
+  `docs/architecture/ARTIFACT_MIGRATION.json`; dates alone do not establish redundancy.
+- Keep one canonical copy of maintained source and deliverables. Update consumers
+  before removing duplicates; preserve required run metadata and licensed data boundaries.
+- Each owner has one result entry point: `artifacts/RESULT_INDEX.md`. Link paper builds
+  to their paper directory. Do not copy experiment output or result indexes into
+  `docs/`, `paper/`, or another results directory.
 - Do not add new canonical implementation, tests, plans, or papers to legacy root
   `src/`, `tests/`, `experiments/`, `papers/`, or domain folders under `docs/`.
   Those roots may contain only documented compatibility shims or historical material.

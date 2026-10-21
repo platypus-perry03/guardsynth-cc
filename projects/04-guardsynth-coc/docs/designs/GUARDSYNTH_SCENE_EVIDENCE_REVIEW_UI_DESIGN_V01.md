@@ -63,7 +63,7 @@ artifact에는 들어가지 않는다.
 4. 각 단계의 실제 evidence ref를 입력한다.
 5. 자동 권고와 reason code를 확인하고 최종 판정을 선택한다.
 6. JSON과 CSV를 모두 저장한다.
-7. restricted scene ID가 포함된 결과는 `artifacts/results/restricted/`에서만 관리한다.
+7. restricted scene ID가 포함된 결과는 `projects/04-guardsynth-coc/artifacts/restricted/`에서만 관리한다.
 
 공개 연구 결과에는 raw ID와 이미지 대신 판정별 count, reason-code count, review time만
 집계한다.
@@ -71,7 +71,7 @@ artifact에는 들어가지 않는다.
 이미지 내장 패키지는 별도 갤러리를 만들지 않고 각 장면을 해당 설문 카드 상단에 직접
 연결한다. 카드별 파일 선택란은 없으며 공개 shell에서만 상단 batch/folder import를 제공한다.
 HTML 자체에는 제한 image bytes가 포함되므로 builder와 산출물은
-`artifacts/results/restricted/` 경계를 강제한다.
+`projects/04-guardsynth-coc/artifacts/restricted/` 경계를 강제한다.
 
 ## 5. Image-only 검토 모드
 

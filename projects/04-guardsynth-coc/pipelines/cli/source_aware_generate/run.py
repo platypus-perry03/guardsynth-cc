@@ -214,7 +214,7 @@ perception association, 차량 보장값 또는 차량 안전성을 입증하지
 
 
 def execute(request_path: Path, run_id: str) -> tuple[Path, dict[str, Any]]:
-    output = ROOT / "artifacts/results/public/guardsynth-source-aware-generator-001" / run_id
+    output = ROOT / "projects/04-guardsynth-coc/artifacts/public/guardsynth-source-aware-generator-001" / run_id
     if output.exists():
         raise FileExistsError(f"refusing to overwrite existing run: {run_id}")
     output.mkdir(parents=True)

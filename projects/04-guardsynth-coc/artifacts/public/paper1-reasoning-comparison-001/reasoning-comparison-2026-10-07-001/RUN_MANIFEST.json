@@ -1,0 +1,195 @@
+{
+  "project_id": "guardsynth-coc",
+  "run_id": "reasoning-comparison-2026-10-07-001",
+  "frozen_at": "2026-10-07T15:58:43.408157+00:00",
+  "protocol": {
+    "project_id": "guardsynth-coc",
+    "experiment_id": "paper1-reasoning-comparison-001",
+    "version": "0.1",
+    "status": "METHOD_SELECTION_COMPLETE_PERFORMANCE_NOT_EXECUTED",
+    "selected_on": "2026-10-07",
+    "question": "Does additional reasoning without supplied constraints improve candidate choices beyond the existing CoC-only condition?",
+    "role": "Supplementary action-selection controls; not an autonomous-driving system benchmark or an equal-information superiority experiment",
+    "methods": [
+      {
+        "id": "zero_shot_cot",
+        "name": "Zero-shot CoT",
+        "paper": "https://arxiv.org/abs/2205.11916",
+        "official_repository": "https://github.com/kojima-takeshi188/zero_shot_cot",
+        "commit": "5ef330fcdeec0cd26aee27943504f91f8ec1c33c",
+        "procedure": "Generate reasoning using the original cot_trigger_no=1, then extract a final answer in a second generation",
+        "source_locations": [
+          "main.py:zero_shot_cot branch",
+          "main.py:parse_arguments"
+        ],
+        "reasoning_max_new_tokens": 128,
+        "answer_max_new_tokens": 32
+      },
+      {
+        "id": "plan_and_solve",
+        "name": "Plan-and-Solve",
+        "paper": "https://aclanthology.org/2023.acl-long.147/",
+        "official_repository": "https://github.com/AGI-Edgerunners/Plan-and-Solve-Prompting",
+        "commit": "9d5a176f5b4de1011d426009ab6398dc76046e88",
+        "procedure": "Use original basic PS prompt_201 for planning and solving, following the official answer-extraction procedure; no PS+ substitutions or self-consistency",
+        "source_locations": [
+          "prompt.py:prompt_201",
+          "main.py:zero_shot_cot",
+          "config.py"
+        ],
+        "reasoning_max_new_tokens": 256,
+        "answer_max_new_tokens": 32
+      }
+    ],
+    "backbone": "Qwen/Qwen3-VL-2B-Instruct",
+    "checkpoints": "Reuse the existing P0 final LoRA checkpoint for each task family and optimization seed",
+    "optimization_seeds": [
+      42,
+      17,
+      123
+    ],
+    "additional_training": false,
+    "additional_human_labels": false,
+    "model_input": [
+      "Existing P0 image",
+      "Original CoC",
+      "Existing candidate descriptions",
+      "Generic reasoning-method instructions"
+    ],
+    "forbidden_model_input": [
+      "P1 guard",
+      "P2 CNL",
+      "EBLC JSON",
+      "Hidden rule values",
+      "Reference labels",
+      "SAT/UNSAT results"
+    ],
+    "primary_test_rows_per_method_and_checkpoint_seed": {
+      "temporal": 240,
+      "static": 144,
+      "maneuver": 96,
+      "total": 480
+    },
+    "planned_total_answer_predictions": 2880,
+    "metrics": [
+      "Accuracy",
+      "Constraint violation rate",
+      "Contract-pair accuracy",
+      "Invalid-answer rate",
+      "Generated tokens",
+      "Inference latency"
+    ],
+    "failure_accounting": "Invalid outputs remain in the denominator; report their frequency separately and do not invent an action label or an admissibility verdict",
+    "budget_accounting": "Original code defaults give unequal reasoning token caps; report actual cost and do not claim equal inference budgets",
+    "interpretation_limits": [
+      "Both methods are transferred prompting procedures on our VLM and dataset, not full reproductions of their original GPT-3 experiments",
+      "Neither is a driving-specific model or a replacement reproduction of DriveLM/DriveVLM",
+      "Current paired data contain identical P0 image-and-prompt inputs with different targets; the best fixed output per identical input is correct on at most 50 percent of the rows",
+      "More reasoning cannot recover an omitted experimental rule; differences from P2 mix information availability and reasoning strategy",
+      "Reusing P0 checkpoints tests inference procedures, not new training methods or training-only gains"
+    ],
+    "reporting_gate": "Keep these controls supplementary. Do not add numerical claims or graphs before full inference and scoring are actually complete."
+  },
+  "dataset_audit": {
+    "temporal": {
+      "rows": 240,
+      "unique_inputs": 120,
+      "fixed_input_accuracy_ceiling": 0.5
+    },
+    "static": {
+      "rows": 144,
+      "unique_inputs": 24,
+      "fixed_input_accuracy_ceiling": 0.5
+    },
+    "maneuver": {
+      "rows": 96,
+      "unique_inputs": 38,
+      "fixed_input_accuracy_ceiling": 0.5
+    }
+  },
+  "model_path": "LOCAL_PATH_REMOVED_d248733d543e",
+  "sources": {
+    "projects/04-guardsynth-coc/experiments/paper1_external_methods/run_reasoning_comparison.py": "a57053f94b2c9ff30e2b2c8eda1c1520767af2f0bcca8fcf172f1947f97551eb",
+    "projects/04-guardsynth-coc/experiments/paper1_external_methods/reasoning_comparison_protocol_v0_1.json": "e8a59e667725e64a374e7c9be39f97153821e50bafc02cf9a9355b32b02459f0",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-training-data-2026-09-29-001/test_p0.jsonl": "ebc640dd77a0960d279f6225e3f28a7932ade07218b7d00929ee2335b19858c8",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-training-data-2026-09-29-001/test_paired.jsonl": "556a01447b1640188aefe9970fd7a7e78fca8cf3f0b53d671953344cec3172a8",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed42/adapter/README.md": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed42/adapter/adapter_model.safetensors": "0890b2738dcd3d06dd7d1942cb6e2ec9c60bd359d70c062d647fa5f78d1b8946",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed42/adapter/adapter_config.json": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed42/test.jsonl": "37714fbdff01f4028c331f1d11f032fe3dc14124bc419b4ef907a28f6833b12e",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p1-seed42/test.jsonl": "0a2e79c20eb2e586aa773a7234a6bfe834f65da7b66348585daee5a41b0034fe",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p2-seed42/test.jsonl": "39ed21281b192a7754b2c219b810f24bf415d2a9ec07d59eb73fc2c440f068ba",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed17/adapter/README.md": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed17/adapter/adapter_model.safetensors": "7fa6acd065369ac969df544b4ee57722220dd9143eaa6b91b2e819fd5ad6a67a",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed17/adapter/adapter_config.json": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed17/test.jsonl": "3bdd0f46e1ac261c64f9ac92bf393edf46f1d6505b082ea8de8c22b12b2a1048",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p1-seed17/test.jsonl": "6717cdf235aaa6f1d3f63250614400913abdff049a830926f9d310259671efde",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p2-seed17/test.jsonl": "4614e743979317333bcf6176ab2cd91e93a453878e31e2d07dce893f9f45683b",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed123/adapter/README.md": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed123/adapter/adapter_model.safetensors": "8e3dc9e060587a63f5c0c48a1bd0377426810b99595e9750c3b7e5d4f41969c3",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed123/adapter/adapter_config.json": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed123/test.jsonl": "a2bfc200f54807a0a2fee44d1e90cacf5cd73cfd8bdf07c06ffc1db1734d1de3",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p1-seed123/test.jsonl": "db4bd713ba609a7dd6753d483fa05576556fe8a3c55db2eed34e5989bfb6b0ab",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p2-seed123/test.jsonl": "1ac4c6ca9ef33a0f9aeb8b9af469a8eac68b7a977168a83aa85a4978e245bf41",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-protocol-2026-09-30-003/test_p0.jsonl": "f10ab51b860cb8d7511031842654f42e7aa99d10221882cee0b0040e9b98bd50",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-protocol-2026-09-30-003/test_contracts.jsonl": "0fcefda3b04669fc6ccb73a0520e5baf2dddcbe7a1c3c7ac6a1bef2cfe4f18ee",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p0-seed42/adapter/README.md": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p0-seed42/adapter/adapter_model.safetensors": "7f19c5b345c5c07172d18073832d89c5bce4592b13c8dfb8cd83459772ec2c13",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p0-seed42/adapter/adapter_config.json": "0fcafbe9503d13a5d3dae2e7324ae9539a8c9088c9f666c1d6259be24090551c",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p0-seed42/test.jsonl": "a0246757dd83c7b3b34a4dc9977c10de09e5c5b3764db6dffc5f7fb1569a5bd3",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p1-seed42/test.jsonl": "2dfd017d18c673154b3b21b8262e76504815f2309d7f1f0d7ad5c9db6a4dc76b",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p2-seed42/test.jsonl": "3ab1513e0b51ecfe698357f1978436a0c9b60cfdaa6f11f70328b760196e864f",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p0-seed17/adapter/README.md": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p0-seed17/adapter/adapter_model.safetensors": "dcc2d7297f4a71684cb6df6181649624920828776e2257a26e4e975e8f3a08c1",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p0-seed17/adapter/adapter_config.json": "0fcafbe9503d13a5d3dae2e7324ae9539a8c9088c9f666c1d6259be24090551c",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p0-seed17/test.jsonl": "8af600ff5bb453d76ec995a08affa925e59f03d225388e10fe987d5a3a78decc",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p1-seed17/test.jsonl": "6b916c63500fcfae13c70998139a3bdbf9c11774c521ace4b972b4ecb92a1f90",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p2-seed17/test.jsonl": "8dbe723ec895c17907f140b2fa55824b8663466a2168ef5d2b8009336ca47bdb",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p0-seed123/adapter/README.md": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p0-seed123/adapter/adapter_model.safetensors": "118e62582a548016f7522937bf798e0148e43767ad457dd582055e96cd1fd9a8",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p0-seed123/adapter/adapter_config.json": "0fcafbe9503d13a5d3dae2e7324ae9539a8c9088c9f666c1d6259be24090551c",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p0-seed123/test.jsonl": "df095d683b144cc88a50b8515821610549477d256154f6be675d62cc2da9392b",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p1-seed123/test.jsonl": "2660bbd4e65b5919335da80d89c19d942e16abc12ee5a22a14454ed338d0e14b",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p2-seed123/test.jsonl": "c55cd6f1f2c9e17f2a648a730250e5550ba8e153081f5ba0f71a5af1452ef8de",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-protocol-2026-09-30-003/test_p0.jsonl": "7e749ead303e309326bd4ce9a7424a835f44c124dd4698e3d7603c075a16c388",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-protocol-2026-09-30-003/test_contracts.jsonl": "1698de7e5ac7f5737467085ec18addbc70f93c121bba6acc337ae8a2af6155fa",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p0-seed42/adapter/README.md": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p0-seed42/adapter/adapter_model.safetensors": "03ebd7b8a1a48784e4f554c679b941cfbd060ed14d066b777c61f84f67ee5c39",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p0-seed42/adapter/adapter_config.json": "e44f41a798170c103b632f5c0ba0ceebe13f01b6f8c65b1ddcbf5e06169fb49f",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p0-seed42/test.jsonl": "4700efcfa4ef20818148b5a697c232402d3dcdcebf2366a551e8b88d0e2d6882",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p1-seed42/test.jsonl": "363303bbc5bce0e9a5db944929022347054ab91a98a3c88fc3ea34d877bf1664",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p2-seed42/test.jsonl": "7fcba5b83375844264a27c921988b2bbdcb4773497f56107412ccbc3ec34b8ea",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p0-seed17/adapter/README.md": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p0-seed17/adapter/adapter_model.safetensors": "48b2dca8c3928976079c9e0ea45ba279730201a1d765f8d69889b6fead19f1d4",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p0-seed17/adapter/adapter_config.json": "e44f41a798170c103b632f5c0ba0ceebe13f01b6f8c65b1ddcbf5e06169fb49f",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p0-seed17/test.jsonl": "b787fc9dd09f05431b302a12fa7d3aa08b96bfb66c42e91d85b701402006093f",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p1-seed17/test.jsonl": "3fbc37555fd7de75ff59b714d916d40385c0253def2c10c1cc5c8df65dd88204",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p2-seed17/test.jsonl": "608c7a87474cfb305a9f4e6b6c16de07c1dd842d5402efe0bcf711de76c20370",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p0-seed123/adapter/README.md": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p0-seed123/adapter/adapter_model.safetensors": "475d5403db986085724e97823374022f674f1f852841250220913caeb2dc4394",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p0-seed123/adapter/adapter_config.json": "e44f41a798170c103b632f5c0ba0ceebe13f01b6f8c65b1ddcbf5e06169fb49f",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p0-seed123/test.jsonl": "ca1b682eb851532aebabf885f7bde672b1e1c69cdebb97bda075a665444500d6",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p1-seed123/test.jsonl": "f661263c06754a150456098e6bf1d854d91d529be9dd1ba23b0f455c1e742be7",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p2-seed123/test.jsonl": "98500395702c6ed0b631bf4ff74026a99867b889011f71fca260448fe8461327",
+    "REPOSITORY_ROOT-worktrees/guardsynth-additional-20260930/projects/01-safety-constrained-coc/experiments/vlm_guard_learning/candidate_guard_world.py": "1f72eb35e999592ed6309e925ecca48a735933eef75d6b7b505ed55f80616e7d",
+    "REPOSITORY_ROOT-worktrees/guardsynth-additional-20260930/projects/01-safety-constrained-coc/experiments/vlm_guard_learning/maneuver_guard_world.py": "0a63e79abbbd4107dea2774f7c7350c429735cad38b7cdf48fde5c965ac87264"
+  },
+  "inference": {
+    "greedy": true,
+    "batch_size": 8,
+    "dtype": "bfloat16",
+    "attention": "sdpa",
+    "prompts": {
+      "zero_shot_cot": "Let's think step by step.",
+      "plan_and_solve": "Let's first understand the problem and devise a plan to solve the problem. Then, let's carry out the plan to solve the problem step by step."
+    },
+    "ps_final_trigger": "Therefore,the answer is",
+    "ps_extraction": "Native conditional extraction on original exact answer markers",
+    "choice_parser": "Unique standalone uppercase A-E in answer tail; illegal/ambiguous/missing options INVALID",
+    "multimodal_transfer": "Original completion text in a Qwen user turn with the existing image; no few-shot examples",
+    "deduplication": "One greedy generation per identical pixel hash and P0 prompt, per method and checkpoint; copied predictions scored under every paired rule",
+    "timing": "Batch generation wall time divided by batch size; report unique generations and total GPU worker wall time separately",
+    "extra_training": false
+  },
+  "claim": "Prompting-strategy transfer on existing P0 LoRA checkpoints; no original-paper model reproduction; unequal token caps"
+}

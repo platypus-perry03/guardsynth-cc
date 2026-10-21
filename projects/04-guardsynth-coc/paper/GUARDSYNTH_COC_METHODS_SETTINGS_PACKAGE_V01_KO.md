@@ -8,7 +8,7 @@ project_id: `guardsynth-coc`
 
 사용자의 편집 결정에 따라 과거 adapter의 일반화 실패 표는 새 본문 구성에 넣지 않는다. 기존 기록은 보존하고 최신 동일 예산 실험을 중심으로 구성한다. 합성 환경, 평가 시 제약 제공, 실제 도로 일반화 미확인이라는 해석 범위는 유지한다.
 
-핵심 결과는 CoC 단독 P0보다 자연어 제약 P1과 EBLC 기반 CNL 제약 P2가 통제 과제에서 더 정확한 행동을 선택했다는 것이다. 확장 시험 정확도는 49.86%, 96.81%, 98.06%였고 위반율은 19.17%, 1.39%, 0.83%였다. 별도로 명세의 경계값 검사·행동 판정·오류 탐지를 실행했다. 행동 효과와 검사 가능성은 구별되는 기여다. 기존 [6쪽 원고](main.tex)에는 최신 결과가 모두 통합되어 있지 않다.
+핵심 결과는 CoC 단독 P0보다 자연어 제약 P1과 EBLC 기반 CNL 제약 P2가 통제 과제에서 더 정확한 행동을 선택했다는 것이다. 확장 시험 정확도는 49.86%, 96.81%, 98.06%였고 위반율은 19.17%, 1.39%, 0.83%였다. 별도로 명세의 경계값 검사·행동 판정·오류 탐지를 실행했다. 행동 효과와 검사 가능성은 구별되는 기여다. 기존 [6쪽 원고](ieee-access/main.tex)에는 최신 결과가 모두 통합되어 있지 않다.
 
 ## 1 제목과 중심 주장
 
@@ -226,7 +226,7 @@ test     = model answer → 독립 참조 + EBLC 행동 검사
 | CNL 대응 | 제한 문법·필드 대응 | 자유 자연어 전체 등가성 |
 | 행동 평가 | 예측의 준수·진행 | 사고율·폐루프 안정성 |
 
-temporal bridge는 네 대기시간에서 100개 기대 결과 질의를 실행했다. 확장 데이터 검사는 5,760개 후보 바인딩, 960개 고유 SMT 할당이다. 반복 실행과 고유 사례를 구별한다. 근거는 [시간 계약 코드](../experiments/paper1_cnl_learning/temporal_preservation.py)와 [확장 데이터 보고서](../../../artifacts/projects/guardsynth-coc/public/paper1-method-preservation-001/temporal-training-data-2026-09-29-001/REPORT_KO.md)다.
+temporal bridge는 네 대기시간에서 100개 기대 결과 질의를 실행했다. 확장 데이터 검사는 5,760개 후보 바인딩, 960개 고유 SMT 할당이다. 반복 실행과 고유 사례를 구별한다. 근거는 [시간 계약 코드](../experiments/paper1_cnl_learning/temporal_preservation.py)와 [확장 데이터 보고서](../artifacts/public/paper1-method-preservation-001/temporal-training-data-2026-09-29-001/REPORT_KO.md)다.
 
 ### 9.1 제약 품질 오류 주입
 
@@ -243,7 +243,7 @@ temporal bridge는 네 대기시간에서 100개 기대 결과 질의를 실행�
 
 192개 중 지원 오류 144개를 탐지했고 정상 24개와 공유 오류 24개를 수용했다. 전체 오류 168개가 분모이면 탐지율은 85.71%다. 모든 오류 100% 탐지라고 쓰지 않는다. 균형을 맞춘 오류 주입이므로 자연 오류율·배포 정밀도를 추정하지 않는다.
 
-SAT만의 성과도 아니다. 단위 오류를 제외한 여러 잘못된 계약도 자체적으로 SAT가 된다. 스키마·source 대응·독립 판정·CNL을 함께 검사한 결과다. [원 보고서 D4](../../../artifacts/projects/guardsynth-coc/public/paper1-temporal-diversity-001/diversity-analysis-2026-09-29-001/REPORT_KO.md)가 출처다. 같은 보고서의 과거 일반화 실험은 새 주 성능 표에 넣지 않는다.
+SAT만의 성과도 아니다. 단위 오류를 제외한 여러 잘못된 계약도 자체적으로 SAT가 된다. 스키마·source 대응·독립 판정·CNL을 함께 검사한 결과다. [원 보고서 D4](../artifacts/public/paper1-temporal-diversity-001/diversity-analysis-2026-09-29-001/REPORT_KO.md)가 출처다. 같은 보고서의 과거 일반화 실험은 새 주 성능 표에 넣지 않는다.
 
 ## 10 실험 구성과 표본 단위
 
@@ -301,7 +301,7 @@ SHUFFLED_GUARD 시험에는 정상 guard를 제공한다. paraphrase의 P1/P2는
 | loss | assistant 정답 토큰만 |
 | checkpoint | 최종 고정 예산, validation/test 선택 없음 |
 
-실제 이미지 processor와 LoRA 갱신을 사용했다. 전체 vision encoder 학습은 아니다. examples·updates는 같지만 prompt 길이가 달라 토큰 수·FLOPs까지 동일하지는 않다. 총 18 fits, 3,240 updates다. [동결 설정](../../../artifacts/projects/guardsynth-coc/public/paper1-method-preservation-001/temporal-expansion-protocol-2026-09-29-001/protocol.json)과 [학습 코드](../experiments/paper1_cnl_learning/train_temporal_expansion.py)가 근거다.
+실제 이미지 processor와 LoRA 갱신을 사용했다. 전체 vision encoder 학습은 아니다. examples·updates는 같지만 prompt 길이가 달라 토큰 수·FLOPs까지 동일하지는 않다. 총 18 fits, 3,240 updates다. [동결 설정](../artifacts/public/paper1-method-preservation-001/temporal-expansion-protocol-2026-09-29-001/protocol.json)과 [학습 코드](../experiments/paper1_cnl_learning/train_temporal_expansion.py)가 근거다.
 
 ## 12 지표와 통계
 
@@ -348,7 +348,7 @@ P0 대비 P1 정확도는 +46.944%p, 위반은 −17.778%p다. P2 정확도는 +
 | 123 | P1 | 98.750 | 0.417 | 99.583 |
 | 123 | P2 | 97.917 | 1.667 | 98.333 |
 
-P2가 P1보다 모든 시드에서 좋지는 않다. [마감 보고서](../../../artifacts/projects/guardsynth-coc/public/paper1-method-preservation-001/temporal-experiment-closure-2026-09-29-001/REPORT_KO.md)와 [전체 시드·SD·CI CSV](../../../artifacts/projects/guardsynth-coc/public/paper1-method-preservation-001/temporal-experiment-closure-2026-09-29-001/all_primary_metrics.csv)를 근거로 사용한다.
+P2가 P1보다 모든 시드에서 좋지는 않다. [마감 보고서](../artifacts/public/paper1-method-preservation-001/temporal-experiment-closure-2026-09-29-001/REPORT_KO.md)와 [전체 시드·SD·CI CSV](../artifacts/public/paper1-method-preservation-001/temporal-experiment-closure-2026-09-29-001/all_primary_metrics.csv)를 근거로 사용한다.
 
 ### 13.3 최신 표현·시간 변화
 
@@ -397,7 +397,7 @@ cost(a) = 1 × constraint_violation(a) + 0.25 × deadlock(a)
 CE_ONLY: λ=0       CE_EBLC: λ=1
 ```
 
-확률은 네 후보 토큰의 정규화 확률이다. 미분 가능한 보조 loss이며 정책 gradient RL·환경 상호작용 강화학습·추론 시 shield가 아니다. [비용 프로토콜](../../../artifacts/projects/guardsynth-coc/public/paper1-method-preservation-001/temporal-cost-protocol-2026-09-29-001/protocol.json)에 설정이 있다.
+확률은 네 후보 토큰의 정규화 확률이다. 미분 가능한 보조 loss이며 정책 gradient RL·환경 상호작용 강화학습·추론 시 shield가 아니다. [비용 프로토콜](../artifacts/public/paper1-method-preservation-001/temporal-cost-protocol-2026-09-29-001/protocol.json)에 설정이 있다.
 
 | 평가 | 조건 | 정확도 | 위반율 | 준수·목표 달성 | 계약쌍 |
 |---|---|---:|---:|---:|---:|
@@ -428,7 +428,7 @@ canonical에서는 위반이 0.556→0%로 낮아졌지만 정확도도 99.167�
 
 준수 선택 내 손실은 최적 허용 후보의 점수에서 선택 점수를 뺀 값으로 준수 선택만 분모로 한다. 전체 유효 손실은 위반·무응답의 진행을 0으로 두는 정규화 복합 지표다. 조기 진입은 max(0, clear+duration−entry)를 위반 사례에서 평균한다. 진행은 실제 거리, 조기 진입은 충돌 위험 크기가 아니다. 조건별 분모 차이도 명시한다.
 
-CPU 시간은 고유 binding 48개를 두 경로에서 각 3회 측정했다. compile-and-solve 평균 3.462ms·중앙값 3.524ms·p95 3.782ms, 컴파일 재사용 solve 평균 2.322ms·중앙값 2.368ms·p95 2.621ms였다. 초기화·모델·영상·I/O를 제외한 값이지 차량 전체 지연 보장이 아니다. [추가 지표 보고서](../../../artifacts/projects/guardsynth-coc/public/paper1-method-preservation-001/temporal-secondary-metrics-2026-09-29-001/REPORT_KO.md)에 전체 평가가 있다.
+CPU 시간은 고유 binding 48개를 두 경로에서 각 3회 측정했다. compile-and-solve 평균 3.462ms·중앙값 3.524ms·p95 3.782ms, 컴파일 재사용 solve 평균 2.322ms·중앙값 2.368ms·p95 2.621ms였다. 초기화·모델·영상·I/O를 제외한 값이지 차량 전체 지연 보장이 아니다. [추가 지표 보고서](../artifacts/public/paper1-method-preservation-001/temporal-secondary-metrics-2026-09-29-001/REPORT_KO.md)에 전체 평가가 있다.
 
 ## 17 사전 판정과 보고 초점
 
@@ -492,20 +492,20 @@ CPU 시간은 고유 binding 48개를 두 경로에서 각 3회 측정했다. co
 
 | 자료 | 역할 |
 |---|---|
-| [기존 원고](main.tex) | 이전 초안 |
+| [기존 원고](ieee-access/main.tex) | 이전 초안 |
 | [범위 결정](../docs/decisions/PAPER1_METHOD_PRESERVATION_AND_LABELING_DECISION_V01.md) | 합성 주 실험·실제 장면 후속 |
 | [정성적 설계](../docs/designs/PAPER1_ACTION_CONTRACT_DESIGN_V01.md) | UNKNOWN·다중 의무 |
 | [시간 계약 코드](../experiments/paper1_cnl_learning/temporal_preservation.py) | 계약·Core·CNL |
-| [D4 원 보고서](../../../artifacts/projects/guardsynth-coc/public/paper1-temporal-diversity-001/diversity-analysis-2026-09-29-001/REPORT_KO.md) | 제약 품질 |
-| [데이터 설정](../../../artifacts/projects/guardsynth-coc/public/paper1-method-preservation-001/temporal-training-data-2026-09-29-001/protocol.json) | 분할·후보·시간 |
-| [확장 동결 설정](../../../artifacts/projects/guardsynth-coc/public/paper1-method-preservation-001/temporal-expansion-protocol-2026-09-29-001/protocol.json) | 예산·기준 |
-| [확장 결과](../../../artifacts/projects/guardsynth-coc/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/RESULT.json) | 조건·시드·CI |
-| [확장 manifest](../../../artifacts/projects/guardsynth-coc/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/RUN_MANIFEST.json) | 추적 |
-| [비용 설정](../../../artifacts/projects/guardsynth-coc/public/paper1-method-preservation-001/temporal-cost-protocol-2026-09-29-001/protocol.json) | loss·대조 |
-| [비용 결과](../../../artifacts/projects/guardsynth-coc/public/paper1-method-preservation-001/temporal-cost-learning-2026-09-29-001/REPORT_KO.md) | 효과·절충 |
-| [추가 지표](../../../artifacts/projects/guardsynth-coc/public/paper1-method-preservation-001/temporal-secondary-metrics-2026-09-29-001/REPORT_KO.md) | 진행·조기 진입·시간 |
-| [통합 CSV](../../../artifacts/projects/guardsynth-coc/public/paper1-method-preservation-001/temporal-experiment-closure-2026-09-29-001/all_primary_metrics.csv) | 평균·SD·시드·CI 전량 |
-| [마감 manifest](../../../artifacts/projects/guardsynth-coc/public/paper1-method-preservation-001/temporal-experiment-closure-2026-09-29-001/RUN_MANIFEST.json) | 마감 시 296개 근거 파일 확인 |
+| [D4 원 보고서](../artifacts/public/paper1-temporal-diversity-001/diversity-analysis-2026-09-29-001/REPORT_KO.md) | 제약 품질 |
+| [데이터 설정](../artifacts/public/paper1-method-preservation-001/temporal-training-data-2026-09-29-001/protocol.json) | 분할·후보·시간 |
+| [확장 동결 설정](../artifacts/public/paper1-method-preservation-001/temporal-expansion-protocol-2026-09-29-001/protocol.json) | 예산·기준 |
+| [확장 결과](../artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/RESULT.json) | 조건·시드·CI |
+| [확장 manifest](../artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/RUN_MANIFEST.json) | 추적 |
+| [비용 설정](../artifacts/public/paper1-method-preservation-001/temporal-cost-protocol-2026-09-29-001/protocol.json) | loss·대조 |
+| [비용 결과](../artifacts/public/paper1-method-preservation-001/temporal-cost-learning-2026-09-29-001/REPORT_KO.md) | 효과·절충 |
+| [추가 지표](../artifacts/public/paper1-method-preservation-001/temporal-secondary-metrics-2026-09-29-001/REPORT_KO.md) | 진행·조기 진입·시간 |
+| [통합 CSV](../artifacts/public/paper1-method-preservation-001/temporal-experiment-closure-2026-09-29-001/all_primary_metrics.csv) | 평균·SD·시드·CI 전량 |
+| [마감 manifest](../artifacts/public/paper1-method-preservation-001/temporal-experiment-closure-2026-09-29-001/RUN_MANIFEST.json) | 마감 시 296개 근거 파일 확인 |
 | [실제 장면 예제](examples/SCENE18_PIPELINE_EXAMPLE_REPORT_V01.md) | 실제 CoC·관측·규범 연결 |
 
 재현은 원 run을 덮어쓰지 않고 새 owner-scoped artifact run에서 수행한다. 패키지 작성으로 학습을 재시작하지 않는다. GPU·라이브러리 버전은 과거 실행 기록에서 확인하고 현재 환경으로 대신 적지 않는다. 코드·model revision·분할·prompt·adapter·예측·집계를 공개 가능한 범위로 묶는다.

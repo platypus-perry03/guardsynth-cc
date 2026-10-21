@@ -1,6 +1,6 @@
 {
   "migration_id": "PROJECT-STRUCTURE-V3-2026-08-12",
-  "policy": "OLD_PATH_TO_CANONICAL_PATH_NO_RESULT_CONTENT_REWRITE",
+  "policy": "HISTORICAL_SOURCE_MOVES_WITH_V4_OWNER_LOCAL_ARTIFACT_TARGETS",
   "mappings": {
     "projects/01-safety-constrained-coc/docs/designs/COC_TRAJECTORY_EXPLORATION.md": "projects/01-safety-constrained-coc/docs/surveys/COC_TRAJECTORY_EXPLORATION_NOTES.md",
     "projects/03-sequential-coc-verification/docs/designs/NATURAL_LANGUAGE_PROHIBITION_STUDY_V01.md": "projects/03-sequential-coc-verification/docs/designs/NATURAL_LANGUAGE_PROHIBITION_STUDY_DESIGN_V01.md",
@@ -38,8 +38,8 @@
     "research/EBLC_P0B_COC_CONSTRAINT_SMT_VERIFICATION_REPORT_V1.md": "platforms/eblc-bcv/docs/reports/EBLC_P0B_COC_CONSTRAINT_SMT_VERIFICATION_REPORT_V01.md",
     "research/SAFETY_CONSTRAINED_COC_PROGRESS_REPORT_V1.md": "projects/01-safety-constrained-coc/docs/reports/SAFETY_CONSTRAINED_COC_PROGRESS_REPORT_V01.md",
     "research/TEMPORAL_GUARD_MULTISEED_EXPERIMENT_REPORT_V1.md": "projects/01-safety-constrained-coc/docs/reports/TEMPORAL_GUARD_MULTISEED_EXPERIMENT_REPORT_V01.md",
-    "experiments/results/baseline": "artifacts/results/public",
-    "experiments/results/restricted": "artifacts/results/restricted",
+    "experiments/results/baseline": "projects/*/artifacts/public",
+    "experiments/results/restricted": "projects/*/artifacts/restricted",
     "experiments/contract_micro_world": "projects/01-safety-constrained-coc/experiments/contract_micro_world",
     "experiments/alpamayo": "projects/01-safety-constrained-coc/experiments/alpamayo",
     "experiments/sequential_coc": "projects/03-sequential-coc-verification/experiments/sequential_coc",
@@ -65,6 +65,7 @@
     "uppaal-5.0.0-linux64.zip": "archive/installers/uppaal-5.0.0-linux64.zip",
     "z3-5.0.0-x64-glibc-2.39.zip": "archive/installers/z3-5.0.0-x64-glibc-2.39.zip",
     "z3-z3-5.0.0.tar.gz": "archive/installers/z3-z3-5.0.0.tar.gz",
-    "projects/03-sequential-coc-verification/experiments/uppaal/models": "artifacts/intermediate/uppaal-models"
-  }
+    "projects/03-sequential-coc-verification/experiments/uppaal/models": "projects/03-sequential-coc-verification/artifacts/intermediate/uppaal-models"
+  },
+  "artifact_migration": "docs/architecture/ARTIFACT_MIGRATION.json"
 }

@@ -1,0 +1,23 @@
+{
+  "history": [
+    {
+      "epoch": 1,
+      "mean_loss": 0.23618612260524968,
+      "examples": 960
+    },
+    {
+      "epoch": 2,
+      "mean_loss": 0.07206977836553581,
+      "examples": 960
+    },
+    {
+      "epoch": 3,
+      "mean_loss": 0.02960086864320838,
+      "examples": 960
+    }
+  ],
+  "optimizer_updates": 180,
+  "elapsed_seconds": 391.9129914753139,
+  "trainable_parameters": 3211264,
+  "assistant_only_labels": true
+}

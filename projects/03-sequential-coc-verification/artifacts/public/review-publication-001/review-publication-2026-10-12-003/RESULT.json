@@ -1,0 +1,18 @@
+{
+  "status": "COMPLETED",
+  "project_id": "sequential-coc-verification",
+  "task_id": "review-artifact-publication",
+  "publication_branch": "review-artifact",
+  "commit": "36e7dd7a6978de060890ae589dad5343d8022b2f",
+  "previous_commit": "79acd64a1fdf1f8b2c8a7817409368d976cd64f0",
+  "git_published": true,
+  "remote_commit_verified": true,
+  "local_branch_and_remote_tracking_verified": true,
+  "payload_files": 1095,
+  "changed_files": 10,
+  "payload_matches_validated_candidate": true,
+  "commit_identity": "Anonymous Authors <anonymous@invalid>",
+  "anonymous_mirror_verified": false,
+  "anonymous_mirror_status": "UNCONFIRMED_TOOL_CANNOT_OPEN_PAGE",
+  "manuscript_release_wording_updated": false
+}

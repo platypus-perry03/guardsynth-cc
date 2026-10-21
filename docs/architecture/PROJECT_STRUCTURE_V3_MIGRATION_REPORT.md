@@ -53,7 +53,7 @@ placement, shared-infrastructure catalogs, and entry-document links.
 ## Verification record
 
 The original ownership audit is stored at
-[`layout-v3-2026-08-12-v1`](../../artifacts/projects/guardsynth-coc/public/project-layout-refactor-001/layout-v3-2026-08-12-v1/REPORT_KO.md).
+`layout-v3-2026-08-12-v1` (superseded run removed; see artifact migration catalog).
 It recorded `EXECUTED`, 17/17 structure checks, 133/133 EBLC tests, 170/170
 GuardSynth tests, 11/11 Safety-Constrained CoC micro-world tests, 166/166 Sequential CoC
 tests, 12/12 bounded logic/SMT tests, 7/7 P0a tests, 14/14 UPPAAL model-generation tests,
@@ -63,5 +63,5 @@ equivalence test remains explicitly skipped when an UPPAAL license is unavailabl
 Structure Codex v3.2 added the repository-wide File Naming Codex and names audit. Structure
 Codex v3.3 additionally orders the canonical project directories by research progression. The
 final post-ordering audit is stored at
-[`layout-v3-2026-08-12-v5`](../../artifacts/projects/guardsynth-coc/public/project-layout-refactor-001/layout-v3-2026-08-12-v5/REPORT_KO.md)
+[`layout-v3-2026-08-12-v5`](../../projects/04-guardsynth-coc/artifacts/public/project-layout-refactor-001/layout-v3-2026-08-12-v5/REPORT_KO.md)
 under the same immutable experiment namespace.

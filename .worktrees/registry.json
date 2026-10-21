@@ -22,8 +22,30 @@
       "status": "RETIRED",
       "note": "User requested all worktree contents consolidated into main workspace and external worktree removed. Latest 11-page manuscript, responses, experiments, and scratch history retained; differing originals archived in restricted integration record.",
       "retired_on": "2026-10-01",
-      "integrated_into": "/home/jinhyun/prj_ws/prj_jin/guardsynth-cc",
-      "integration_record": "artifacts/projects/sequential-coc-verification/restricted/worktree-integration-001/integration-2026-10-01-001"
+      "integrated_into": "REPOSITORY_ROOT",
+      "integration_record": "projects/03-sequential-coc-verification/artifacts/restricted/worktree-integration-001/integration-2026-10-01-001"
+    },
+    {
+      "work_id": "studio-author-review-20261002",
+      "project_id": "guardsynth-coc",
+      "branch": "feature/studio-author-review-20261002",
+      "path": "../guardsynth-cc-worktrees/studio-author-review-20261002",
+      "creator": "Codex",
+      "created": "2026-10-02",
+      "status": "ACTIVE",
+      "note": "User-approved Studio material import and single-screen author review."
+    },
+    {
+      "work_id": "studio-generation-verification-20261004",
+      "project_id": "guardsynth-coc",
+      "branch": "feature/studio-generation-verification-20261004",
+      "path": "../guardsynth-cc-worktrees/studio-generation-verification-20261004",
+      "creator": "Codex",
+      "created": "2026-10-04",
+      "status": "ACTIVE",
+      "note": "User-approved generation/verification/review/quality delta hash-guarded into main workspace and live45453. Branch/worktree retained with uncommitted baseline; no Git merge or discard performed.",
+      "integrated_on": "2026-10-04",
+      "integration_record": "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-studio-sequential-coc-001/studio-generation-integration-2026-10-04-001"
     }
   ]
 }

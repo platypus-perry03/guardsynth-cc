@@ -24,7 +24,7 @@
 | 작업 | SQLite 영속 큐와 작업자 1개; decode/VLM/SMT/export는 웹 요청 밖의 제한된 작업으로 수행 |
 | 검증 | Project 04가 관찰·출처·적용성과 질의를 구성; EBLC 플랫폼이 구문·타입·Core·SMT·공용 CNL 담당 |
 | VLM | 배포 시 단일 provider와 모델을 명시 설정; 미설정이면 생성 기능 비활성, mock 자동 대체 금지 |
-| 실행 소유 | `artifacts/projects/guardsynth-coc/restricted/guardsynth-studio-001/<run-id>/`; 완료 export는 불변 |
+| 실행 소유 | `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-studio-001/<run-id>/`; 완료 export는 불변 |
 
 웹앱 예정 위치는 `apps/guardsynth_studio/`다. 실제 코드 작성 전에 applications registry에
 `guardsynth-coc` 소유를 등록한다. 프로젝트 장면 연결 로직은 Project 04, 범용 플랫폼 개선은

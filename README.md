@@ -7,7 +7,7 @@ synthesis. EBLC/BCV is the shared executable-contract platform used by those pro
 ## Start here
 
 - [Research project index](PROJECTS.md)
-- [Project Structure Codex v3](docs/architecture/PROJECT_STRUCTURE_CODEX.md)
+- [Project Structure Codex v4](docs/architecture/PROJECT_STRUCTURE_CODEX.md)
 - [Research document naming and hierarchy](docs/architecture/FILE_NAMING_CODEX.md)
 - [Machine-readable project registry](PROJECT_REGISTRY.json)
 - [GuardSynth-CoC status](projects/04-guardsynth-coc/STATUS.md)
@@ -17,11 +17,10 @@ synthesis. EBLC/BCV is the shared executable-contract platform used by those pro
 ## Owner-oriented layout
 
 ```text
-projects/      five research-question owners, each with docs/code/tests/experiments/paper
-platforms/     reusable EBLC/BCV language and verification backend
+projects/      five owners, each with docs/code/tests/experiments/paper/artifacts
+platforms/     reusable EBLC/BCV implementation and its own artifacts
 apps/          repository applications
 shared/        genuinely cross-owner utilities
-artifacts/     owner-scoped new outputs plus immutable legacy runs
 governance/    Superpowers and worktree policies
 docs/          repository architecture only
 data/          license-separated shared inputs
@@ -36,9 +35,14 @@ tests only.
 
 ## Reproducibility and restricted data
 
-- New runs use `artifacts/projects/<project-id>/<class>/...` or
-  `artifacts/platforms/<platform-id>/<class>/...`.
-- Existing `artifacts/results/` and `artifacts/intermediate/` are immutable pre-v3 history.
+- Runs use `projects/<NN>-<project-id>/artifacts/<class>/...` or
+  `platforms/<platform-id>/artifacts/<class>/...`.
+- Paper sources, working PDFs, and compiler auxiliary files are managed together in
+  the corresponding `paper/` directory; paper builds do not use intermediate artifacts.
+- Each owner has one `artifacts/RESULT_INDEX.md`; root artifacts and separate results
+  trees are retired. Keep the latest completed task result and required inputs.
+- [Artifact migration and retention catalog](docs/architecture/ARTIFACT_MIGRATION.json)
+  records merged locations, removed runs, and duplicate redirects.
 - Restricted NVIDIA-derived data and outputs must remain in restricted namespaces.
 - Actual-vehicle validation is deferred until the research, paper, and patent stages described
   by the GuardSynth project decision records.
@@ -48,4 +52,4 @@ The exact public-manifest exclusion policy is implemented in
 
 ## GuardSynth NCA reproducibility package
 
-The frozen [source, synthetic data and prediction records](projects/04-guardsynth-coc/artifacts/public/paper1-reproducibility-release-001/github-release-2026-10-21-002/README.md) include a standard-library metric verifier and formal-check reproduction instructions. Code in this distribution is MIT; synthetic data and generated records are CC BY 4.0. Licenses are scoped to this distribution, not the entire monorepo. Host home paths and GPU identifiers are removed from exported copies. Model weights and restricted road imagery are excluded.
+The [sanitized NCA reproducibility distribution](projects/04-guardsynth-coc/artifacts/public/paper1-reproducibility-release-001/github-release-2026-10-21-002/README.md) provides selected code (MIT), synthetic data and generated records (CC BY 4.0), with metric verification and formal-check reproduction instructions. These licenses apply to that distribution, not the whole monorepo. Model weights, restricted road imagery and credentials are excluded.

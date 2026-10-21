@@ -1,0 +1,58 @@
+{
+  "status": "ORIGINAL_METHOD_CHECKS_EXECUTED_COMMON_TASK_COMPARISON_BLOCKED",
+  "common_task_predictions": 0,
+  "external_performance_metrics": null,
+  "input_information_audit": [
+    {
+      "family": "temporal",
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-training-data-2026-09-29-001/test_p0.jsonl",
+      "sha256": "ebc640dd77a0960d279f6225e3f28a7932ade07218b7d00929ee2335b19858c8",
+      "rows": 240,
+      "distinct_image_and_prompt_groups": 120,
+      "groups_with_conflicting_reference_labels": 120,
+      "maximum_correct_for_one_fixed_output_per_identical_input": 120,
+      "scope": "Input-information audit; not a measured external-model score"
+    },
+    {
+      "family": "static",
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-protocol-2026-09-30-003/test_p0.jsonl",
+      "sha256": "f10ab51b860cb8d7511031842654f42e7aa99d10221882cee0b0040e9b98bd50",
+      "rows": 144,
+      "distinct_image_and_prompt_groups": 24,
+      "groups_with_conflicting_reference_labels": 24,
+      "maximum_correct_for_one_fixed_output_per_identical_input": 72,
+      "scope": "Input-information audit; not a measured external-model score"
+    },
+    {
+      "family": "maneuver",
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-protocol-2026-09-30-003/test_p0.jsonl",
+      "sha256": "7e749ead303e309326bd4ce9a7424a835f44c124dd4698e3d7603c075a16c388",
+      "rows": 96,
+      "distinct_image_and_prompt_groups": 38,
+      "groups_with_conflicting_reference_labels": 38,
+      "maximum_correct_for_one_fixed_output_per_identical_input": 48,
+      "scope": "Input-information audit; not a measured external-model score"
+    }
+  ],
+  "nl2spec": {
+    "status": "NATIVE_CLI_DEMO_EXECUTED",
+    "output_type": "LTL and subtranslation confidence, not a candidate label",
+    "interactive_correction_executed": false
+  },
+  "NL2TL": {
+    "status": "NATIVE_DEMO_EXECUTED",
+    "demonstration_cases": 11
+  },
+  "DriveLM": {
+    "status": "NATIVE_INFERENCE_NOT_EXECUTED",
+    "resource_blocker": "Original LLaMA-7B consolidated weights not found in inspected local cache/runtime/data/third_party roots",
+    "scope": "Released challenge baseline is LLaMA-Adapter V2; do not equate it with a reproduced full DriveLM-Agent",
+    "task_blocker": "Official Graph VQA inputs and metrics differ from our numeric candidate benchmark"
+  },
+  "DriveVLM": {
+    "status": "NATIVE_INFERENCE_NOT_EXECUTED",
+    "resource_blocker": "Official repository has only github-pages branch with HTML, images and paper; no inference implementation or checkpoints in inspected source",
+    "task_blocker": "Native scene analysis and hierarchical planning are not our candidate-label task"
+  },
+  "conclusion": "No common-task comparison is reported. Native translation demos establish execution only. A scoreable adaptation would change the original methods and is prohibited by this protocol."
+}

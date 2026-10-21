@@ -30,7 +30,7 @@ import z3
 ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / "PROJECT_REGISTRY.json").is_file())
 DEFAULT_BATCH = (
     ROOT
-    / "artifacts/results/restricted/alp-exp-005"
+    / "projects/01-safety-constrained-coc/artifacts/restricted/alp-exp-005"
     / "feasibility-batch-v0"
 )
 DEFAULT_COHORT = (

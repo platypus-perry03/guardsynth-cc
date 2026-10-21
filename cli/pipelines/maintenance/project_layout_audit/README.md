@@ -8,4 +8,4 @@ python3 -m cli.pipelines.maintenance.project_layout_audit.run \
 ```
 
 The runner refuses to overwrite an existing result and writes only to
-`artifacts/results/public/project-layout-refactor-001/<run-id>/`.
+`projects/04-guardsynth-coc/artifacts/public/project-layout-refactor-001/<run-id>/`.

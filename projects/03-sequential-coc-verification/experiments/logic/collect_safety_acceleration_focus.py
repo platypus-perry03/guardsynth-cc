@@ -24,7 +24,7 @@ from build_phase_aware_alignment_review import temporal_series  # noqa: E402
 from run_bounded_temporal_smt import parse_actions  # noqa: E402
 
 
-BATCH = ROOT / "artifacts/results/restricted/alp-exp-005/feasibility-batch-v0"
+BATCH = ROOT / "projects/01-safety-constrained-coc/artifacts/restricted/alp-exp-005/feasibility-batch-v0"
 REVIEW = BATCH / "phase-aware-review-v1"
 OUTPUT = BATCH / "safety-acceleration-focus-v1"
 MIN_FORWARD_DRAWUP_MPS = 0.5

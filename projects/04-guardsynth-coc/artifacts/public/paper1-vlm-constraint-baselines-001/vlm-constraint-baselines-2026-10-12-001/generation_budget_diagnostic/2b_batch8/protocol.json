@@ -1,0 +1,20 @@
+{
+  "project_id": "guardsynth-coc",
+  "task_id": "pretrained-batched-generation-budget",
+  "created_at": "2026-10-12T16:17:54.882997+00:00",
+  "model": "2b",
+  "batch_size": 8,
+  "max_new_tokens": 512,
+  "decoding": "Greedy",
+  "prompts": "Unchanged frozen P2 inputs; no demonstrations or training",
+  "parser": "Same final-answer parser as the batch-two diagnostic",
+  "reason": "Execution-batch amendment for throughput, before any full 2B diagnostic was available; not score-based selection",
+  "source_sha256": "9665c72dc0098396d81703531c29fa0cc9464a09649c7ba9970da6c8c81c20d2",
+  "parser_source_sha256": "2e57ac7d91a55e1c127781a5dee100613f6a1d0805f97d0a61e77d4a42ee16dc",
+  "test_sha256": "774bb817204e7ba043537480c47ab2e15fe531715b512bd34bff1a14d358c77d",
+  "excluded_partial": {
+    "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/generation_budget_diagnostic/2b/predictions.jsonl",
+    "sha256": "e17826e9bf8de624749c9a9cbd4036017c33ffacbc5aacba6c08f3eee0967117",
+    "rows": 82
+  }
+}

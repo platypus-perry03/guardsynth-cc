@@ -32,7 +32,7 @@ from guard_synth_eblc.schema_validation import load_json
 
 
 EXPERIMENT_ID = "GUARDSYNTH-IMAGE-REVIEW-PARTIAL-SCENE-001"
-RESTRICTED_ROOT = ROOT / "artifacts/results/restricted"
+RESTRICTED_ROOT = ROOT / "projects/04-guardsynth-coc/artifacts/restricted"
 CLAIM_SCOPE = "IMAGE_REVIEW_TO_PARTIAL_SCENE_PACKET_NOT_SOURCE_CLOSURE_ASSOCIATION_ACCURACY_OR_VEHICLE_SAFETY"
 
 
@@ -50,7 +50,7 @@ def _write_json(path: Path, value: Any) -> None:
 def _restricted(path: Path) -> Path:
     resolved = path.resolve()
     if not resolved.is_relative_to(RESTRICTED_ROOT.resolve()):
-        raise ValueError("image-review input and output must remain under artifacts/results/restricted")
+        raise ValueError("image-review input and output must remain under projects/04-guardsynth-coc/artifacts/restricted")
     return resolved
 
 

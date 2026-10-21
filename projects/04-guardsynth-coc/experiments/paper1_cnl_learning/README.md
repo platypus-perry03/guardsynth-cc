@@ -2,6 +2,29 @@
 
 Owner: `guardsynth-coc`. Protocol: `v2.3-cnl-supervision`.
 
+## Document-grounded composition diagnostic (2026-10-17)
+
+`document_grounded_composition.py --run-id <unused-run-id>` uses the reviewed
+official-source catalog and grid in `document_grounded_composition_protocol_v0_1.json`.
+It calls the unchanged Core/SMT compiler through the existing experiment helpers.
+Eight official documents were inspected, with two further UNECE candidates
+excluded for incomplete direct access. Four families combine documented
+conditions with explicitly authored states, requests, objectives, and models.
+The result is a restricted compatibility diagnostic, not reconstructed
+operations, accident prevention, or automatic extraction of legal rules.
+
+Current frozen run: `paper1-constraint-composition-001/document-grounded-composition-2026-10-17-002`
+under the owner's public artifacts. It contains the source catalog, natural/formal
+conditions, all subsets and SMT-LIB, independent rational feasibility references,
+checked witnesses, minimal groups, and input/output hashes. See the owner
+[result index](../../artifacts/RESULT_INDEX.md). The original synthetic
+`constraint_composition.py` run is retained as a separate boundary-control task.
+
+```bash
+runtime/alpamayo/ar1_venv/bin/python -m unittest discover -s projects/04-guardsynth-coc/tests/unit -p test_document_grounded_composition.py -v
+runtime/alpamayo/ar1_venv/bin/python projects/04-guardsynth-coc/experiments/paper1_cnl_learning/document_grounded_composition.py --run-id document-grounded-composition-2026-10-17-003
+```
+
 ## Actual speed ACTION intake and development evaluation bank (2026-09-29)
 
 `intake_speed_actions.py --run-id <unused-numeric-suffix-id>` validates the received Jonh final/draft,
@@ -149,7 +172,7 @@ revision `89644892e4d85e24eaac8bacfd4f463576704203`. File hashes pin actual mode
 an overridden model path is not certified to match the default revision.
 
 Outputs are private owner-scoped runs under
-`artifacts/projects/guardsynth-coc/restricted/guardsynth-eblc-learning-001/<run-id>/`.
+`projects/04-guardsynth-coc/artifacts/restricted/guardsynth-eblc-learning-001/<run-id>/`.
 Existing IDs are refused. Runs record source/model/code hashes, assistant-only masks, input
 and target tokens, actual LoRA deltas, adapter weights and a zero-pixel diagnostic. The latter
 checks sensitivity to visual tensors, **not correct visual grounding**. No held-out action
@@ -298,7 +321,7 @@ These are not real-scene safety, independent semantic-fidelity or learning-effec
 
 [Detailed example and publication boundaries](../../paper/examples/SCENE18_PIPELINE_EXAMPLE_REPORT_V01.md),
 [English manuscript insert](../../paper/examples/scene18-worked-example.tex),
-[compiled one-page preview](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-paper-worked-example-001/scene18-paper-preview-2026-09-08-001/scene18-example-preview.pdf).
+[compiled one-page preview](../../artifacts/restricted/guardsynth-paper-worked-example-001/scene18-paper-preview-2026-09-08-001/scene18-example-preview.pdf).
 
 ## Current v2.4 temporal preservation execution
 
@@ -309,7 +332,7 @@ fields only. It is not automatic road-source extraction. `train_temporal_preserv
 Project01's actual Qwen visual collator/LoRA trainer with matched P0/P1/P2 budgets and checks
 that the selected physical GPU is idle before loading the model. It refuses existing run IDs.
 
-Frozen artifacts reside at `artifacts/projects/guardsynth-coc/public/paper1-method-preservation-001/`.
+Frozen artifacts reside at `projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/`.
 `temporal-protocol-2026-09-29-001` fixes three paired seeds,72 updates per arm/seed, criterion
 thresholds, prompts, supplied contracts, source hashes, and2,016 paired records. Only six
 unique storyboard images exist across standard and unseen-time conditions. New generator seeds
@@ -346,3 +369,29 @@ tmux capture-pane -p -t guardsynth-temporal-expansion-20260929:0.0 -S -30
 The final command only monitors the separate authorized six-arm training. Do not launch a
 duplicate fit or overwrite its queue/run. `progress.json` records actual updates; planned18
 checkpoints/17,280 predictions are not completion evidence.
+
+## Bounded constraint composition
+
+`constraint_composition.py` and `constraint_composition_protocol_v0_1.json`
+evaluate conjunctions of two or three synthetic source conditions under explicit
+contexts. Entry and hold components reuse the learning-profile lowerers; the
+platform Core compiler performs the SMT checks. Source documents S1–S9 are
+synthetic policies, operator requirements, and a modeling assumption. They are
+not retrieved regulations. Each case retains natural statements, formal
+conditions, and source IDs. This is a logical diagnostic, without VLM training
+or claims about continuous-time safety or legal-exception preservation.
+
+Run the scientific-control tests with:
+
+```bash
+runtime/alpamayo/ar1_venv/bin/python -m unittest discover -s projects/04-guardsynth-coc/tests/unit -p test_constraint_composition.py -v
+```
+
+Run the experiment with a previously unused run ID:
+
+```bash
+runtime/alpamayo/ar1_venv/bin/python projects/04-guardsynth-coc/experiments/paper1_cnl_learning/constraint_composition.py --run-id <unused-run-id>
+```
+
+Outputs belong to `projects/04-guardsynth-coc/artifacts/public/paper1-constraint-composition-001/`.
+The owner [result index](../../artifacts/RESULT_INDEX.md) links the retained run.

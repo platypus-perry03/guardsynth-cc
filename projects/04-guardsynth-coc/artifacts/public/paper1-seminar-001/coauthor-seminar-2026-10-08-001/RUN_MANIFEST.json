@@ -1,0 +1,188 @@
+{
+  "project_id": "guardsynth-coc",
+  "run_id": "coauthor-seminar-2026-10-08-001",
+  "source": "projects/04-guardsynth-coc/paper/seminar/coauthor-seminar-v01-en.tex",
+  "language": "en",
+  "input_sha256": {
+    "projects/04-guardsynth-coc/paper/seminar/coauthor-seminar-v01-en.tex": "36b7fc50799d93ecf686a0551e32a9094b4bd75fa87d96586ef6a736fd3cdd9b",
+    "projects/04-guardsynth-coc/paper/ieee-access/main.tex": "f00ff082cd9230679d2110d6b741fe0ca0345fd6eb3bbeb6cd8a54b581f2a93a",
+    "projects/04-guardsynth-coc/paper/ieee-access/references.bib": "2ad918ad3d1aa540e7efdd09f0e20f44e85be687d3abc178d4cbf667cabf59b3",
+    "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_METHODOLOGY_V01_EN.md": "cf202803d80fabe9ea72e7b8523fb4388bc64991a2680769ded899716c62b9ad",
+    "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_EXPERIMENTS_V01_EN.md": "6122ec0b5a1758ed61c589425af2f8099544c194e6cc365b7b2b2fadcb54bb3e",
+    "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_EXPERIMENTS_SUPPLEMENT_V01_EN.md": "0c0f88ef0ff25cd47426ec45f1b825d717be62de2fd43ea9302557318bf7e7a4",
+    "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_RELATED_WORK_V01_EN.md": "1e49064716b7b332f30ada85078b8040ad11d1075350c58e710bee557b89dc5d",
+    "projects/04-guardsynth-coc/paper/ieee-access/figures/reasoning-comparison-en.pdf": "338ea254afd351e326a1b40b0bd5bc3754a8a5849a5c11e4fbeb5012fdda4b76",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/RESULT.json": "9e2838e60dc49114ed4836ca3a0a2c60feb0fb60f82016b6b4daeb0054f2a85a",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-temporal-diversity-001/expanded-diagnostics-analysis-2026-09-30-001/RESULT.json": "253fcd32baba715e8c523922daf5ca3135f4800d0be23cc15cd1bc0bc219a854",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-reasoning-comparison-001/reasoning-comparison-2026-10-07-001/RESULT.json": "43cf85b42398455d4ac5c78bb3f3c62177bf32685d5949370af93eba56f6f882"
+  },
+  "outputs": {
+    "slides": {
+      "file": "coauthor-seminar-v01-en.pdf",
+      "pages": 38,
+      "sha256": "899889ed15c7f9d5b30d38f36f0439db5ecb87b4b83600bd2c2eb86a78b9808c"
+    },
+    "notes": {
+      "file": "coauthor-seminar-v01-en-notes.pdf",
+      "pages": 38,
+      "sha256": "0eef602b72d13533836ba5b474ada26d52944974f2c5fc2d9aa3dba70a87e74a"
+    }
+  },
+  "engine": "LOCAL_PATH_REMOVED_79e0d7dfee0d",
+  "texinputs": ":/tmp/guardsynth-seminar-texdeps/tex//",
+  "main_slides": 29,
+  "backup_slides": 9,
+  "talk_minutes": 27,
+  "discussion_minutes": 3,
+  "timing": [
+    {
+      "slide": 1,
+      "start_seconds": 0,
+      "duration_seconds": 30
+    },
+    {
+      "slide": 2,
+      "start_seconds": 30,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 3,
+      "start_seconds": 90,
+      "duration_seconds": 45
+    },
+    {
+      "slide": 4,
+      "start_seconds": 135,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 5,
+      "start_seconds": 210,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 6,
+      "start_seconds": 270,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 7,
+      "start_seconds": 330,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 8,
+      "start_seconds": 390,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 9,
+      "start_seconds": 450,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 10,
+      "start_seconds": 510,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 11,
+      "start_seconds": 570,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 12,
+      "start_seconds": 630,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 13,
+      "start_seconds": 690,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 14,
+      "start_seconds": 750,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 15,
+      "start_seconds": 810,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 16,
+      "start_seconds": 870,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 17,
+      "start_seconds": 930,
+      "duration_seconds": 30
+    },
+    {
+      "slide": 18,
+      "start_seconds": 960,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 19,
+      "start_seconds": 1020,
+      "duration_seconds": 90
+    },
+    {
+      "slide": 20,
+      "start_seconds": 1110,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 21,
+      "start_seconds": 1170,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 22,
+      "start_seconds": 1230,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 23,
+      "start_seconds": 1290,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 24,
+      "start_seconds": 1350,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 25,
+      "start_seconds": 1410,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 26,
+      "start_seconds": 1470,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 27,
+      "start_seconds": 1530,
+      "duration_seconds": 45
+    },
+    {
+      "slide": 28,
+      "start_seconds": 1575,
+      "duration_seconds": 45
+    },
+    {
+      "slide": 29,
+      "start_seconds": 1620,
+      "duration_seconds": 180
+    }
+  ],
+  "manuscript_and_experiments_modified": false,
+  "new_model_predictions": 0,
+  "visual_review": "PASS: title page readable and unclipped; other37 slides and notes text unchanged",
+  "title": "GuardSynth: Augmenting Chain-of-Causation with Verified Behavioral Constraints for Autonomous Driving"
+}

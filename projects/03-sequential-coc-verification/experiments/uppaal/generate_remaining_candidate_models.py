@@ -12,9 +12,9 @@ from generate_models import add_location, add_template, add_transition
 
 
 ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / "PROJECT_REGISTRY.json").is_file())
-MODEL_DIR = ROOT / "artifacts/intermediate/uppaal-models/remaining-candidates"
+MODEL_DIR = ROOT / "projects/03-sequential-coc-verification/projects/03-sequential-coc-verification/artifacts/intermediate/uppaal-models/remaining-candidates"
 COHORT_RESULT = (
-    ROOT / "artifacts/results/public/chunk-0000-94/weak-kinematic-cohort-result.json"
+    ROOT / "projects/03-sequential-coc-verification/artifacts/public/chunk-0000-94/weak-kinematic-cohort-result.json"
 )
 DEADLINES_MS = (1000, 2000, 3000, 4000, 5000)
 SEMANTICS = ("preserve", "reset", "deduplicate_1s")

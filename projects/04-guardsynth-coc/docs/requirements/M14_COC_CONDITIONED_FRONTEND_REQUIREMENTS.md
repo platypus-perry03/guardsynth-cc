@@ -91,9 +91,9 @@ accuracy, actual-vehicle assurance 또는 안전 효과는 후속 expert/empiric
 
 #### 이전 종료 근거
 
-- proposal pilot: `artifacts/results/public/guardsynth-coc-frontend-001/crosswalk-synthetic-2026-08-12-v3/`
-- source-separated materialization: `artifacts/results/public/guardsynth-coc-frontend-materialization-001/crosswalk-synthetic-2026-08-12-v1/`
-- 24-case locked matrix: `artifacts/results/public/guardsynth-coc-frontend-matrix-001/locked-synthetic-2026-08-12-v1/`
+- proposal pilot: `projects/04-guardsynth-coc/artifacts/public/guardsynth-coc-frontend-001/crosswalk-synthetic-2026-08-12-v3/`
+- source-separated materialization: `projects/04-guardsynth-coc/artifacts/public/guardsynth-coc-frontend-materialization-001/crosswalk-synthetic-2026-08-12-v1/`
+- 24-case locked matrix: `projects/04-guardsynth-coc/artifacts/public/guardsynth-coc-frontend-matrix-001/locked-synthetic-2026-08-12-v1/`
 - schema/expected verdict 24/24, CoC authority 승격 0건, 지원된 proposal compiler 2/2
 - maintained 286/286, P0a 7/7, structure 10/10
 

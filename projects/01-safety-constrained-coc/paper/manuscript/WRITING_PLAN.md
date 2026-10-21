@@ -134,7 +134,7 @@ Qwen3-VL-2B-Instruct + LoRA를 사용해 동일 장면에서 permissive/restrict
 | Safety-Constrained CoC | 0.000 ± 0.000 | 1.000 ± 0.000 | 1.000 ± 0.000 |
 | Shuffled constraint | 0.267 ± 0.039 | 0.733 ± 0.039 | 0.028 ± 0.032 |
 
-표준 test에서 Safety-Constrained CoC는 세 seed 모두 두 maneuver의 위반 0, 안전한 목표 완료 1.0, 계약 전환 pair 1.0을 기록했다. 경계 equality, 부정 표현, 절 순서 변경 및 단위 변환을 결합한 hard test에서는 정확도 `0.948 ± 0.063`, 위반 `0.010 ± 0.010`, 안전한 목표 완료 `0.990 ± 0.010`, 계약 pair `0.896 ± 0.127`이었다. 이는 효과 재현과 동시에 자연어ㆍ수치 일반화가 완전하지 않다는 후속 문제를 드러낸다. 상세 결과는 `artifacts/results/public/small-vlm-guard-v0/maneuver-guard-multiseed-v0/REPORT_KO.md`에 기록했다.
+표준 test에서 Safety-Constrained CoC는 세 seed 모두 두 maneuver의 위반 0, 안전한 목표 완료 1.0, 계약 전환 pair 1.0을 기록했다. 경계 equality, 부정 표현, 절 순서 변경 및 단위 변환을 결합한 hard test에서는 정확도 `0.948 ± 0.063`, 위반 `0.010 ± 0.010`, 안전한 목표 완료 `0.990 ± 0.010`, 계약 pair `0.896 ± 0.127`이었다. 이는 효과 재현과 동시에 자연어ㆍ수치 일반화가 완전하지 않다는 후속 문제를 드러낸다. 상세 결과는 `projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/maneuver-guard-multiseed-v0/REPORT_KO.md`에 기록했다.
 
 ## 7. 논문의 핵심 기여
 
@@ -314,7 +314,7 @@ Guard 예:
 
 - `../../docs/reports/SAFETY_CONSTRAINED_COC_PROGRESS_REPORT_V01.md`
 - `../../docs/reports/TEMPORAL_GUARD_MULTISEED_EXPERIMENT_REPORT_V01.md`
-- `../../artifacts/results/public/small-vlm-guard-v0/candidate-guard-summary-seed42-v0/`
-- `../../artifacts/results/public/small-vlm-guard-v0/temporal-guard-multiseed-v0/`
-- `../../artifacts/results/restricted/alp-exp-006/guard-semantic-summary-v2/`
+- `../../artifacts/public/small-vlm-guard-v0/candidate-guard-summary-seed42-v0/`
+- `../../artifacts/public/small-vlm-guard-v0/temporal-guard-multiseed-v0/`
+- `../../artifacts/restricted/alp-exp-006/guard-semantic-summary-v2/`
 - `INTERNATIONAL_JOURNAL_EXPANSION_PLAN.md`

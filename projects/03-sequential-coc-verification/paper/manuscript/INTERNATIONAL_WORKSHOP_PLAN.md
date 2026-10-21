@@ -4,7 +4,7 @@
 
 관련 결과 문서: `INTERNATIONAL_WORKSHOP_RESULTS.md`
 
-실험 산출물 위치: `artifacts/results/public/workshop-boost/`
+실험 산출물 위치: `projects/01-safety-constrained-coc/artifacts/public/workshop-boost/`
 
 본 문서는 국내 학술지형 원고를 국제 워크숍 투고 후보 수준으로 끌어올리기 위해 세운 계획과 현재 수행 상태를 정리한다. 이전 버전의 계획서에는 일부 항목이 아직 제안 단계로 남아 있었으나, 현재 문서는 확장 실험 이후의 상태를 기준으로 정리한다.
 
@@ -33,7 +33,7 @@
 
 | Experiment | Status | Output / Evidence | Claim strengthened |
 |---|---|---|---|
-| Single-scene feasibility | Done | `artifacts/results/public/scene-0001/*` | timed obligation 변환 가능성 |
+| Single-scene feasibility | Done | `projects/03-sequential-coc-verification/artifacts/public/scene-0001/*` | timed obligation 변환 가능성 |
 | Weak kinematic cohort | Done | `weak-kinematic-chunk0.json` | 94 scene batch screening 가능성 |
 | Detector sensitivity | Done | `workshop-experiment-results.json` | weak witness 불확실성 정량화 |
 | UPPAAL cohort verification | Done | `uppaal-cohort-verification-result.json` | 282 models, 1,128 queries, oracle match |
@@ -56,7 +56,7 @@
 ```bash
 python projects/03-sequential-coc-verification/experiments/feasibility/check_cohort.py \
   --chunk 0 \
-  --output artifacts/results/public/workshop-boost/weak-kinematic-chunk0.json
+  --output projects/01-safety-constrained-coc/artifacts/public/workshop-boost/weak-kinematic-chunk0.json
 ```
 
 결과:
@@ -103,9 +103,9 @@ Review priority:
 
 ```bash
 python projects/03-sequential-coc-verification/experiments/uppaal/run_cohort_verification.py \
-  --cohort-result artifacts/results/public/workshop-boost/weak-kinematic-chunk0.json \
-  --model-dir artifacts/intermediate/uppaal-models/chunk-0000-94 \
-  --output artifacts/results/public/workshop-boost/uppaal-cohort-verification-result.json
+  --cohort-result projects/01-safety-constrained-coc/artifacts/public/workshop-boost/weak-kinematic-chunk0.json \
+  --model-dir projects/03-sequential-coc-verification/projects/03-sequential-coc-verification/artifacts/intermediate/uppaal-models/chunk-0000-94 \
+  --output projects/01-safety-constrained-coc/artifacts/public/workshop-boost/uppaal-cohort-verification-result.json
 ```
 
 결과:
@@ -139,7 +139,7 @@ Dedicated UPPAAL boundary negative-control도 수행했다.
 
 ```bash
 python projects/03-sequential-coc-verification/experiments/uppaal/run_boundary_negative_control.py \
-  --output artifacts/results/public/workshop-boost/boundary-negative-control-result.json
+  --output projects/01-safety-constrained-coc/artifacts/public/workshop-boost/boundary-negative-control-result.json
 ```
 
 결과:

@@ -1,0 +1,34 @@
+{
+  "project_id": "guardsynth-coc",
+  "run_id": "coauthor-seminar-2026-10-07-001",
+  "status": "PASS",
+  "main_slides": 24,
+  "backup_slides": 6,
+  "talk_minutes": 27,
+  "discussion_minutes": 3,
+  "outputs": {
+    "slides": {
+      "file": "coauthor-seminar-v01-ko.pdf",
+      "pages": 30,
+      "sha256": "5b00c82321f4e09b6985c074c6562c57b035cf02ec61608156bba0b1326e49cf"
+    },
+    "notes": {
+      "file": "coauthor-seminar-v01-ko-notes.pdf",
+      "pages": 30,
+      "sha256": "5f38f3002dffffa0e62346654f42ef7e592d1e80c2174283897c8b48a35ee320"
+    }
+  },
+  "new_experiments": false,
+  "verification": {
+    "xelatex": "PASS, two passes for each PDF",
+    "overflow_missing_glyphs_undefined_references": "None",
+    "duration_minutes": 30,
+    "main_talk_minutes": 27,
+    "discussion_minutes": 3,
+    "primary_metric_values_compared": 36,
+    "unseen_condition_metric_values_compared": 18,
+    "dataset_and_diagnostic_values": "Match manuscript",
+    "manuscript_source_hashes": "Unchanged throughout build",
+    "file_naming": "No seminar-file findings; repository check reports 10 pre-existing unrelated findings"
+  }
+}

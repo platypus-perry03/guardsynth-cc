@@ -1,0 +1,742 @@
+[
+  {
+    "example_kind": "diagonal_excursion_return",
+    "id": "profile-04-rotation-0-500-xy_waypoints",
+    "arm": "p2",
+    "seed": 42,
+    "phase": "after",
+    "hold_ms": 500,
+    "profile": 4,
+    "rotation": 0,
+    "prediction": "A",
+    "target": "C",
+    "correct": false,
+    "tolerance_violation": true,
+    "role": "early_diagonal_excursion",
+    "max_radius_mm": 214.00934559032697,
+    "excess_mm": 14.009345590326973,
+    "violating_waypoints": [
+      {
+        "time_ms": 250,
+        "x_mm": 130,
+        "y_mm": 170,
+        "squared_mm": 45800,
+        "radius_mm": 214.00934559032697
+      }
+    ],
+    "violation": true,
+    "componentwise_test_would_allow": true,
+    "endpoint_test_would_allow": true,
+    "first_500ms_test_would_allow": false,
+    "global_highest_progress": true,
+    "paired_maxima_prediction": "C",
+    "paired_maxima_correct": true,
+    "paired_maxima_violation": false,
+    "selected_candidate_smt": "UNSAT",
+    "coc": "Requirement CoC: Remain at the current position until the required hold period has ended, then proceed when permitted.",
+    "constraint": "Constraint: Hold the ego vehicle's initial position for at least 0.5 s. At every listed waypoint with t <= 0.5 s, including the endpoint, the radial XY distance from the initial position must be at most 0.200 m. Movement after that period is permitted.",
+    "full_prompt": "Requirement CoC: Remain at the current position until the required hold period has ended, then proceed when permitted.\nConstraint: Hold the ego vehicle's initial position for at least 0.5 s. At every listed waypoint with t <= 0.5 s, including the endpoint, the radial XY distance from the initial position must be at most 0.200 m. Movement after that period is permitted.\nAll candidates start at (x,y)=(0,0) m at t=0 s. The diagram shows candidate radial distances over time. Numerical values below define the candidates.\nCandidate A: (t in s, x in m, y in m) waypoints: (0.00, 0.000, 0.000); (0.25, 0.130, 0.170); (0.50, 0.000, 0.000); (1.00, 0.000, 0.000); (1.50, 0.000, 0.000); (2.00, 0.000, 0.000); (2.10, 1.100, 0.000). Progress score: 119.\nCandidate B: (t in s, x in m, y in m) waypoints: (0.00, 0.000, 0.000); (0.25, 0.050, 0.000); (0.50, 0.200, 0.000); (1.00, 0.210, 0.000); (1.50, 0.100, 0.000); (2.00, 0.000, 0.000); (2.10, 1.000, 0.000). Progress score: 79.\nCandidate C: (t in s, x in m, y in m) waypoints: (0.00, 0.000, 0.000); (0.25, 0.050, 0.000); (0.50, 0.000, 0.199); (1.00, 0.000, 0.199); (1.50, 0.050, 0.000); (2.00, 0.000, 0.199); (2.10, 0.800, 0.000). Progress score: 99.\nCandidate D: (t in s, x in m, y in m) waypoints: (0.00, 0.000, 0.000); (0.25, 0.000, 0.000); (0.50, 0.000, 0.000); (1.00, 0.000, 0.000); (1.50, 0.000, 0.000); (2.00, 0.000, 0.000); (2.10, 0.000, 0.000). Progress score: 0.\nSelect the candidate that satisfies the constraint and has the greatest progress score among permitted candidates. Progress is a supplied synthetic utility. Answer exactly A, B, C, or D.",
+    "candidates": [
+      {
+        "label": "A",
+        "xy_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            130,
+            170
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1100,
+            0
+          ]
+        ],
+        "progress": 119
+      },
+      {
+        "label": "B",
+        "xy_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            50,
+            0
+          ],
+          [
+            200,
+            0
+          ],
+          [
+            210,
+            0
+          ],
+          [
+            100,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1000,
+            0
+          ]
+        ],
+        "progress": 79
+      },
+      {
+        "label": "C",
+        "xy_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            50,
+            0
+          ],
+          [
+            0,
+            199
+          ],
+          [
+            0,
+            199
+          ],
+          [
+            50,
+            0
+          ],
+          [
+            0,
+            199
+          ],
+          [
+            800,
+            0
+          ]
+        ],
+        "progress": 99
+      },
+      {
+        "label": "D",
+        "xy_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "progress": 0
+      }
+    ],
+    "waypoint_times_ms": [
+      0,
+      250,
+      500,
+      1000,
+      1500,
+      2000,
+      2100
+    ]
+  },
+  {
+    "example_kind": "inclusive_endpoint_diagonal",
+    "id": "profile-10-rotation-2-500-xy_waypoints",
+    "arm": "p1",
+    "seed": 42,
+    "phase": "after",
+    "hold_ms": 500,
+    "profile": 10,
+    "rotation": 2,
+    "prediction": "C",
+    "target": "A",
+    "correct": false,
+    "tolerance_violation": true,
+    "role": "early_diagonal_excursion",
+    "max_radius_mm": 215.41123461880997,
+    "excess_mm": 15.41123461880997,
+    "violating_waypoints": [
+      {
+        "time_ms": 500,
+        "x_mm": 131,
+        "y_mm": 171,
+        "squared_mm": 46402,
+        "radius_mm": 215.41123461880997
+      }
+    ],
+    "violation": true,
+    "componentwise_test_would_allow": true,
+    "endpoint_test_would_allow": false,
+    "first_500ms_test_would_allow": false,
+    "global_highest_progress": true,
+    "paired_maxima_prediction": "A",
+    "paired_maxima_correct": true,
+    "paired_maxima_violation": false,
+    "selected_candidate_smt": "UNSAT",
+    "coc": "Requirement CoC: Remain at the current position until the required hold period has ended, then proceed when permitted.",
+    "constraint": "Constraint: Hold the ego vehicle's initial position for at least 0.5 s. At every listed waypoint with t <= 0.5 s, including the endpoint, the radial XY distance from the initial position must be at most 0.200 m. Movement after that period is permitted.",
+    "full_prompt": "Requirement CoC: Remain at the current position until the required hold period has ended, then proceed when permitted.\nConstraint: Hold the ego vehicle's initial position for at least 0.5 s. At every listed waypoint with t <= 0.5 s, including the endpoint, the radial XY distance from the initial position must be at most 0.200 m. Movement after that period is permitted.\nAll candidates start at (x,y)=(0,0) m at t=0 s. The diagram shows candidate radial distances over time. Numerical values below define the candidates.\nCandidate A: (t in s, x in m, y in m) waypoints: (0.00, 0.000, 0.000); (0.25, 0.050, 0.000); (0.50, 0.000, 0.199); (1.00, 0.000, 0.199); (1.50, 0.050, 0.000); (2.00, 0.000, 0.199); (2.10, 0.800, 0.000). Progress score: 105.\nCandidate B: (t in s, x in m, y in m) waypoints: (0.00, 0.000, 0.000); (0.25, 0.000, 0.000); (0.50, 0.000, 0.000); (1.00, 0.000, 0.000); (1.50, 0.000, 0.000); (2.00, 0.000, 0.000); (2.10, 0.000, 0.000). Progress score: 0.\nCandidate C: (t in s, x in m, y in m) waypoints: (0.00, 0.000, 0.000); (0.25, 0.000, 0.000); (0.50, 0.131, 0.171); (1.00, 0.000, 0.000); (1.50, 0.000, 0.000); (2.00, 0.000, 0.000); (2.10, 1.100, 0.000). Progress score: 125.\nCandidate D: (t in s, x in m, y in m) waypoints: (0.00, 0.000, 0.000); (0.25, 0.050, 0.000); (0.50, 0.200, 0.000); (1.00, 0.211, 0.000); (1.50, 0.100, 0.000); (2.00, 0.000, 0.000); (2.10, 1.000, 0.000). Progress score: 85.\nSelect the candidate that satisfies the constraint and has the greatest progress score among permitted candidates. Progress is a supplied synthetic utility. Answer exactly A, B, C, or D.",
+    "candidates": [
+      {
+        "label": "A",
+        "xy_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            50,
+            0
+          ],
+          [
+            0,
+            199
+          ],
+          [
+            0,
+            199
+          ],
+          [
+            50,
+            0
+          ],
+          [
+            0,
+            199
+          ],
+          [
+            800,
+            0
+          ]
+        ],
+        "progress": 105
+      },
+      {
+        "label": "B",
+        "xy_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "progress": 0
+      },
+      {
+        "label": "C",
+        "xy_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            131,
+            171
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1100,
+            0
+          ]
+        ],
+        "progress": 125
+      },
+      {
+        "label": "D",
+        "xy_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            50,
+            0
+          ],
+          [
+            200,
+            0
+          ],
+          [
+            211,
+            0
+          ],
+          [
+            100,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1000,
+            0
+          ]
+        ],
+        "progress": 85
+      }
+    ],
+    "waypoint_times_ms": [
+      0,
+      250,
+      500,
+      1000,
+      1500,
+      2000,
+      2100
+    ]
+  },
+  {
+    "example_kind": "late_axis_1mm",
+    "id": "profile-03-rotation-3-2000-xy_waypoints",
+    "arm": "p2",
+    "seed": 42,
+    "phase": "after",
+    "hold_ms": 2000,
+    "profile": 3,
+    "rotation": 3,
+    "prediction": "A",
+    "target": "B",
+    "correct": false,
+    "tolerance_violation": false,
+    "role": "allowed_for_500ms_only",
+    "max_radius_mm": 201.0,
+    "excess_mm": 1.0,
+    "violating_waypoints": [
+      {
+        "time_ms": 1000,
+        "x_mm": 201,
+        "y_mm": 0,
+        "squared_mm": 40401,
+        "radius_mm": 201.0
+      }
+    ],
+    "violation": true,
+    "componentwise_test_would_allow": false,
+    "endpoint_test_would_allow": true,
+    "first_500ms_test_would_allow": true,
+    "global_highest_progress": true,
+    "paired_maxima_prediction": "B",
+    "paired_maxima_correct": true,
+    "paired_maxima_violation": false,
+    "selected_candidate_smt": "UNSAT",
+    "coc": "Requirement CoC: Remain at the current position until the required hold period has ended, then proceed when permitted.",
+    "constraint": "Constraint: Hold the ego vehicle's initial position for at least 2.0 s. At every listed waypoint with t <= 2.0 s, including the endpoint, the radial XY distance from the initial position must be at most 0.200 m. Movement after that period is permitted.",
+    "full_prompt": "Requirement CoC: Remain at the current position until the required hold period has ended, then proceed when permitted.\nConstraint: Hold the ego vehicle's initial position for at least 2.0 s. At every listed waypoint with t <= 2.0 s, including the endpoint, the radial XY distance from the initial position must be at most 0.200 m. Movement after that period is permitted.\nAll candidates start at (x,y)=(0,0) m at t=0 s. The diagram shows candidate radial distances over time. Numerical values below define the candidates.\nCandidate A: (t in s, x in m, y in m) waypoints: (0.00, 0.000, 0.000); (0.25, 0.050, 0.000); (0.50, 0.200, 0.000); (1.00, 0.201, 0.000); (1.50, 0.100, 0.000); (2.00, 0.000, 0.000); (2.10, 1.000, 0.000). Progress score: 118.\nCandidate B: (t in s, x in m, y in m) waypoints: (0.00, 0.000, 0.000); (0.25, 0.050, 0.000); (0.50, 0.120, 0.160); (1.00, 0.120, 0.160); (1.50, 0.050, 0.000); (2.00, 0.120, 0.160); (2.10, 0.800, 0.000). Progress score: 78.\nCandidate C: (t in s, x in m, y in m) waypoints: (0.00, 0.000, 0.000); (0.25, 0.000, 0.000); (0.50, 0.000, 0.000); (1.00, 0.000, 0.000); (1.50, 0.000, 0.000); (2.00, 0.000, 0.000); (2.10, 0.000, 0.000). Progress score: 0.\nCandidate D: (t in s, x in m, y in m) waypoints: (0.00, 0.000, 0.000); (0.25, 0.000, 0.000); (0.50, 0.121, 0.161); (1.00, 0.000, 0.000); (1.50, 0.000, 0.000); (2.00, 0.000, 0.000); (2.10, 1.100, 0.000). Progress score: 98.\nSelect the candidate that satisfies the constraint and has the greatest progress score among permitted candidates. Progress is a supplied synthetic utility. Answer exactly A, B, C, or D.",
+    "candidates": [
+      {
+        "label": "A",
+        "xy_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            50,
+            0
+          ],
+          [
+            200,
+            0
+          ],
+          [
+            201,
+            0
+          ],
+          [
+            100,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1000,
+            0
+          ]
+        ],
+        "progress": 118
+      },
+      {
+        "label": "B",
+        "xy_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            50,
+            0
+          ],
+          [
+            120,
+            160
+          ],
+          [
+            120,
+            160
+          ],
+          [
+            50,
+            0
+          ],
+          [
+            120,
+            160
+          ],
+          [
+            800,
+            0
+          ]
+        ],
+        "progress": 78
+      },
+      {
+        "label": "C",
+        "xy_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "progress": 0
+      },
+      {
+        "label": "D",
+        "xy_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            121,
+            161
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1100,
+            0
+          ]
+        ],
+        "progress": 98
+      }
+    ],
+    "waypoint_times_ms": [
+      0,
+      250,
+      500,
+      1000,
+      1500,
+      2000,
+      2100
+    ]
+  },
+  {
+    "example_kind": "late_axis_50mm",
+    "id": "profile-12-rotation-2-2000-xy_waypoints",
+    "arm": "p1",
+    "seed": 42,
+    "phase": "after",
+    "hold_ms": 2000,
+    "profile": 12,
+    "rotation": 2,
+    "prediction": "D",
+    "target": "A",
+    "correct": false,
+    "tolerance_violation": true,
+    "role": "allowed_for_500ms_only",
+    "max_radius_mm": 250.0,
+    "excess_mm": 50.0,
+    "violating_waypoints": [
+      {
+        "time_ms": 1000,
+        "x_mm": 250,
+        "y_mm": 0,
+        "squared_mm": 62500,
+        "radius_mm": 250.0
+      }
+    ],
+    "violation": true,
+    "componentwise_test_would_allow": false,
+    "endpoint_test_would_allow": true,
+    "first_500ms_test_would_allow": true,
+    "global_highest_progress": false,
+    "paired_maxima_prediction": "A",
+    "paired_maxima_correct": true,
+    "paired_maxima_violation": false,
+    "selected_candidate_smt": "UNSAT",
+    "coc": "Requirement CoC: Remain at the current position until the required hold period has ended, then proceed when permitted.",
+    "constraint": "Constraint: Hold the ego vehicle's initial position for at least 2.0 s. At every listed waypoint with t <= 2.0 s, including the endpoint, the radial XY distance from the initial position must be at most 0.200 m. Movement after that period is permitted.",
+    "full_prompt": "Requirement CoC: Remain at the current position until the required hold period has ended, then proceed when permitted.\nConstraint: Hold the ego vehicle's initial position for at least 2.0 s. At every listed waypoint with t <= 2.0 s, including the endpoint, the radial XY distance from the initial position must be at most 0.200 m. Movement after that period is permitted.\nAll candidates start at (x,y)=(0,0) m at t=0 s. The diagram shows candidate radial distances over time. Numerical values below define the candidates.\nCandidate A: (t in s, x in m, y in m) waypoints: (0.00, 0.000, 0.000); (0.25, 0.050, 0.000); (0.50, 0.000, 0.199); (1.00, 0.000, 0.199); (1.50, 0.050, 0.000); (2.00, 0.000, 0.199); (2.10, 0.800, 0.000). Progress score: 127.\nCandidate B: (t in s, x in m, y in m) waypoints: (0.00, 0.000, 0.000); (0.25, 0.000, 0.000); (0.50, 0.000, 0.000); (1.00, 0.000, 0.000); (1.50, 0.000, 0.000); (2.00, 0.000, 0.000); (2.10, 0.000, 0.000). Progress score: 0.\nCandidate C: (t in s, x in m, y in m) waypoints: (0.00, 0.000, 0.000); (0.25, 0.170, 0.210); (0.50, 0.000, 0.000); (1.00, 0.000, 0.000); (1.50, 0.000, 0.000); (2.00, 0.000, 0.000); (2.10, 1.100, 0.000). Progress score: 87.\nCandidate D: (t in s, x in m, y in m) waypoints: (0.00, 0.000, 0.000); (0.25, 0.050, 0.000); (0.50, 0.200, 0.000); (1.00, 0.250, 0.000); (1.50, 0.100, 0.000); (2.00, 0.000, 0.000); (2.10, 1.000, 0.000). Progress score: 107.\nSelect the candidate that satisfies the constraint and has the greatest progress score among permitted candidates. Progress is a supplied synthetic utility. Answer exactly A, B, C, or D.",
+    "candidates": [
+      {
+        "label": "A",
+        "xy_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            50,
+            0
+          ],
+          [
+            0,
+            199
+          ],
+          [
+            0,
+            199
+          ],
+          [
+            50,
+            0
+          ],
+          [
+            0,
+            199
+          ],
+          [
+            800,
+            0
+          ]
+        ],
+        "progress": 127
+      },
+      {
+        "label": "B",
+        "xy_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "progress": 0
+      },
+      {
+        "label": "C",
+        "xy_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            170,
+            210
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1100,
+            0
+          ]
+        ],
+        "progress": 87
+      },
+      {
+        "label": "D",
+        "xy_mm": [
+          [
+            0,
+            0
+          ],
+          [
+            50,
+            0
+          ],
+          [
+            200,
+            0
+          ],
+          [
+            250,
+            0
+          ],
+          [
+            100,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1000,
+            0
+          ]
+        ],
+        "progress": 107
+      }
+    ],
+    "waypoint_times_ms": [
+      0,
+      250,
+      500,
+      1000,
+      1500,
+      2000,
+      2100
+    ]
+  }
+]

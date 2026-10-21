@@ -105,7 +105,7 @@ STOP/YIELD 관련 장면에서 속도가 증가하는 사례가 있었지만, �
 
 판정은 `WEAK_DIRECTIONAL_NOT_SEMANTICALLY_SPECIFIC`이었다. 즉, 추가 문장은 trajectory에 영향을 주지만 Guard 의미에 맞는 안정적인 zero-shot 제어라고 볼 수 없었다.
 
-상세 결과: `artifacts/results/restricted/alp-exp-006/guard-semantic-summary-v2/REPORT_KO.md`
+상세 결과: `projects/01-safety-constrained-coc/artifacts/restricted/alp-exp-006/guard-semantic-summary-v2/REPORT_KO.md`
 
 ## 5. 작은 VLM feasibility 실험
 
@@ -122,7 +122,7 @@ STOP/YIELD 관련 장면에서 속도가 증가하는 사례가 있었지만, �
 
 자연어 Guard–행동 대응은 학습 가능했다. 그러나 unseen paraphrase 정확도는 두 조건 모두 약 0.74였고 counterfactual 일반화는 0이어서 표현 일반화는 확립되지 않았다.
 
-상세 결과: `artifacts/results/public/small-vlm-guard-v0/pilot-summary-seed42-v3/REPORT_KO.md`
+상세 결과: `projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/pilot-summary-seed42-v3/REPORT_KO.md`
 
 ### 5.2 전통적 CoC 대 CoC+Guard
 
@@ -130,7 +130,7 @@ STOP/YIELD 관련 장면에서 속도가 증가하는 사례가 있었지만, �
 
 이 단순 과제에서는 전통적 CoC 모델도 dense state–action label에서 규칙을 암묵적으로 배울 수 있었다. 따라서 STOP/PROCEED 최종 label만으로 Guard의 추가 가치를 주장할 수 없었다.
 
-상세 결과: `artifacts/results/public/small-vlm-guard-v0/coc-vs-guard-summary-seed42-v2/REPORT_KO.md`
+상세 결과: `projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/coc-vs-guard-summary-seed42-v2/REPORT_KO.md`
 
 ### 5.3 목표 충족 후보 내부의 Guard 위반 선택
 
@@ -148,7 +148,7 @@ STOP/YIELD 관련 장면에서 속도가 증가하는 사례가 있었지만, �
 
 단, 요구사항 CoC만 주어진 조건은 현재 계약 정보를 받지 못하므로 동일 입력의 상충 정답을 원리적으로 구분할 수 없다. 이는 CoC가 해롭다는 증거가 아니라 명세 정보 누락 대조군이다.
 
-상세 결과: `artifacts/results/public/small-vlm-guard-v0/candidate-guard-summary-seed42-v0/REPORT_KO.md`
+상세 결과: `projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/candidate-guard-summary-seed42-v0/REPORT_KO.md`
 
 ### 5.4 STOP–HOLD–RELEASE–GO 시간적 Guard
 
@@ -173,7 +173,7 @@ Storyboard 이미지에서 보행자 conflict zone이 clear가 되는 시점을 
 
 반면 자연어 제약을 일반적인 CoC 지시문 안에 넣은 조건은 완벽하게 학습됐다. 이는 별도 Guard가 본질적으로 열등하다는 증거가 아니다. 정보 위치, 형식 친숙도, 제한된 LoRA update 및 단일 seed 효과를 분리해야 한다.
 
-상세 결과: `artifacts/results/public/small-vlm-guard-v0/temporal-guard-summary-seed42-v0/REPORT_KO.md`
+상세 결과: `projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/temporal-guard-summary-seed42-v0/REPORT_KO.md`
 
 ### 5.5 시간적 Guard 3-seed 재현
 
@@ -191,7 +191,7 @@ Inline 자연어 제약은 세 seed 모두에서 완벽하게 재현됐다. 별�
 
 추가 seed 실행 전에 선언한 다섯 진단 기준 중 네 개가 통과했다. 별도 자연어 Guard의 unseen-time 안전 목표 완료 0.70 기준은 통과하지 못했다. Inline 형식의 학습 가능성은 강하게 재현됐지만, 새로운 시간값 일반화와 별도 필드 학습 안정성은 다음 단계의 미해결 문제다.
 
-상세 결과: `artifacts/results/public/small-vlm-guard-v0/temporal-guard-multiseed-v0/REPORT_KO.md`
+상세 결과: `projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/temporal-guard-multiseed-v0/REPORT_KO.md`
 
 ## 6. 표현 조건의 재정의
 

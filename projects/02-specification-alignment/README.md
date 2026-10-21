@@ -10,4 +10,4 @@ deterministic formal execution.
 - Execution tracker: [`docs/plans/03_PROJECT_EXECUTION_TRACKER.md`](docs/plans/03_PROJECT_EXECUTION_TRACKER.md)
 - Surveys: [`docs/surveys/README.md`](docs/surveys/README.md)
 - Paper: [`paper/manuscript/WRITING_PLAN.md`](paper/manuscript/WRITING_PLAN.md)
-- Results: [`results/RESULT_INDEX.md`](results/RESULT_INDEX.md)
+- Results: [`artifacts/RESULT_INDEX.md`](artifacts/RESULT_INDEX.md)

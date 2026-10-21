@@ -8,7 +8,7 @@ from pathlib import Path
 import re
 
 ROOT = next(p for p in Path(__file__).resolve().parents if (p / 'PROJECT_REGISTRY.json').is_file())
-BASE = ROOT / 'artifacts/projects/guardsynth-coc/restricted/guardsynth-paper1-training-readiness-001'
+BASE = ROOT / 'projects/04-guardsynth-coc/artifacts/restricted/guardsynth-paper1-training-readiness-001'
 SOURCE = BASE / 'speed-contract-execution-2026-09-28-001'
 TEMPLATE = Path(__file__).with_name('speed_action_review.html')
 INDICES = [6, 7, 31, 48, 50, 52, 53, 55, 59, 60, 64, 68, 74, 84, 85, 86, 88, 93, 94]

@@ -1,0 +1,57 @@
+{
+  "project_id": "guardsynth-coc",
+  "run_id": "position-hold-error-analysis-2026-10-08-001",
+  "frozen_at": "2026-10-08T18:24:08.118420+00:00",
+  "sources": {
+    "projects/04-guardsynth-coc/experiments/paper1_external_methods/analyze_position_hold_errors.py": "abdf2c623f16b5af08fe394f278e049c58b8406b45ede39e5da085e6d8a56ed9",
+    "projects/04-guardsynth-coc/experiments/paper1_external_methods/position_hold_training_profile.py": "651c429f2c51d9e93e810ae155b012176cea0b63ee5b941fc22e89a0903b6b48",
+    "projects/04-guardsynth-coc/experiments/paper1_external_methods/run_position_hold_selection.py": "39b0cf8356ec3c9500fbc74d1f149b2f78abf87cf1055f8e7785ded7b9045fd0",
+    "projects/04-guardsynth-coc/experiments/paper1_external_methods/run_reasoning_comparison.py": "9a07caa04431154b1649d4c63348d93caf0645924c32e1db2130813581b581a1"
+  },
+  "inputs": {
+    "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-selection-001/position-hold-selection-2026-10-08-002/evaluation_inputs.jsonl": "7e8e261ed55610c5828bed15f2391fd0db5591dad10119e8871761f32b737a22",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/RESULT.json": "f334f35c73f8cd603d75fbecaeaf8714c58496ab5468da7e3bbee973b7efffb0",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/RUN_MANIFEST.json": "a8cda281142c7a3e5ffd611f9fafbf3b07ad7ee6c22b5c130abee2d2aa768e31",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/generalization_analysis.json": "8debb5a9bd1bf3f0faa3f2766e82ae16155226e8fc41ec438d55dea24f961976",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-selection-001/position-hold-selection-2026-10-08-002/RUN_MANIFEST.json": "6ba5a8c35697f675937716fda95da050cf9b417f7f8d102ab864eaccb133510d",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-selection-001/position-hold-selection-2026-10-08-002/p1_seed42.jsonl": "b0c5d10a3dcdbbd5fec5bd7ee1e1a201d4092b15cb36425b2cbbec2fea651367",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/p1_seed42/after_regression.jsonl": "de297bf5211fef70c606bbfad975dd75a063a02c89725b905909edc9c95c4cf9",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-selection-001/position-hold-selection-2026-10-08-002/p1_seed17.jsonl": "0fa30132f5595edbbfc67ec51e71904280d27c4fa239d10960d3f1ee77a47831",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/p1_seed17/after_regression.jsonl": "c83d8797e1625b445818eb447391206f6ceef1c9d7130e218dcb4918426de870",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-selection-001/position-hold-selection-2026-10-08-002/p1_seed123.jsonl": "424bde3abdb7036c5d654fa3e71154ef516f7b2db3a028c49738892280e6c10d",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/p1_seed123/after_regression.jsonl": "987c741de693725dd0c08d8c118370781d021d4d70189b053bae98e6c691d141",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-selection-001/position-hold-selection-2026-10-08-002/p2_seed42.jsonl": "2540b4f81659e54b94e768729dae54703bf5143e41dd1071fea1a6a023e4a424",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/p2_seed42/after_regression.jsonl": "2bfbf8d1823459ea66da39b5c1aa57df6ca9389e6585cbd2a5431fea39e7272b",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-selection-001/position-hold-selection-2026-10-08-002/p2_seed17.jsonl": "f5175feb67bc37dc9398a8f9fab0b2368fc6409294a619c2e548e7a5ed715c86",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/p2_seed17/after_regression.jsonl": "efde47c5b4aad8739d1f2a027bde83b8d4d316b6053b182d86140cbc64949e54",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-selection-001/position-hold-selection-2026-10-08-002/p2_seed123.jsonl": "8ad75dc8030d11897e49d50575b5978008784cbf18c94d21347ee3d2ad706eac",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/p2_seed123/after_regression.jsonl": "340ed7f383471d9f1e1b300785315f777e96c5ad3a5f2ff1ef00361a3b836ccc"
+  },
+  "protocol": {
+    "scope": "Archived P1/P2 XY predictions before/after continuation training; paired maxima prompts",
+    "new_inference": false,
+    "new_training": false,
+    "new_human_labels": false,
+    "alpamayo": false,
+    "seeds": [
+      42,
+      17,
+      123
+    ],
+    "waypoint_times_ms": [
+      0,
+      250,
+      500,
+      1000,
+      1500,
+      2000,
+      2100
+    ],
+    "primary_radius_mm": 200,
+    "secondary_tolerance_mm": 10,
+    "expected_xy_predictions": 1536,
+    "categories": "Geometry-derived properties; overlapping flags are not inferred internal reasoning",
+    "pairing": "Same geometry, image, rule, label order and utilities; candidate numerical representation differs",
+    "guard": "Offline counterfactual rejection only; not a deployed controller or model improvement"
+  }
+}

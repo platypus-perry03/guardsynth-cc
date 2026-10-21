@@ -23,11 +23,11 @@ python3 -m cli.pipelines.guardsynth.label_light_grounding.run --run-id <new-run-
 
 ```bash
 python3 projects/04-guardsynth-coc/pipelines/cli/label_light_grounding/convert_image_review.py \
-  --input artifacts/results/restricted/<review-run>/guardsynth_image_only_review.json \
-  --output-dir artifacts/results/restricted/<partial-packet-run>
+  --input projects/04-guardsynth-coc/artifacts/restricted/<review-run>/guardsynth_image_only_review.json \
+  --output-dir projects/04-guardsynth-coc/artifacts/restricted/<partial-packet-run>
 ```
 
-입력과 출력은 모두 `artifacts/results/restricted/` 아래에 있어야 한다. 결과에는 이미지
+입력과 출력은 모두 `projects/04-guardsynth-coc/artifacts/restricted/` 아래에 있어야 한다. 결과에는 이미지
 bytes를 넣지 않으며 timestamp, target/zone ID, geometry, transform 또는 vehicle assurance를
 임의 생성하지 않는다. `CALIBRATION_AUDIT_QUEUE.json`은 기존 판정을 넣지 않고 판정 유형별
 한 건을 결정적으로 선택하므로, 별도 검토자가 독립적으로 재검토할 때 사용한다.
@@ -36,11 +36,11 @@ bytes를 넣지 않으며 timestamp, target/zone ID, geometry, transform 또는 
 
 ```bash
 python3 projects/04-guardsynth-coc/pipelines/cli/label_light_grounding/audit_calibration_scene.py \
-  --packets artifacts/results/restricted/<partial-run>/PARTIAL_SCENE_PACKETS.json \
-  --embedded-manifest artifacts/results/restricted/<review-run>/EMBEDDED_REVIEW_MANIFEST.json \
-  --adapter-result artifacts/results/restricted/<adapter-run>/ADAPTER_RESULT.json \
-  --source-root artifacts/results/restricted/<derived-source-root> \
-  --output-dir artifacts/results/restricted/<source-audit-run>
+  --packets projects/04-guardsynth-coc/artifacts/restricted/<partial-run>/PARTIAL_SCENE_PACKETS.json \
+  --embedded-manifest projects/04-guardsynth-coc/artifacts/restricted/<review-run>/EMBEDDED_REVIEW_MANIFEST.json \
+  --adapter-result projects/04-guardsynth-coc/artifacts/restricted/<adapter-run>/ADAPTER_RESULT.json \
+  --source-root projects/04-guardsynth-coc/artifacts/restricted/<derived-source-root> \
+  --output-dir projects/04-guardsynth-coc/artifacts/restricted/<source-audit-run>
 ```
 
 10개 중 실제 source-linked field 수가 가장 많은 장면을 고른다. 동일 이미지가 SHA-256으로
@@ -64,9 +64,9 @@ python3 projects/03-sequential-coc-verification/experiments/feasibility/extract_
   --cohort data/restricted/nvidia_physicalai/internal-derived/cohort-10/cohort-conformance.json \
   --obstacles data/restricted/nvidia_physicalai/internal-derived/cohort-10/obstacle-feasibility-v2-all-candidates.json \
   --episode-index <index> --event-index <index> \
-  --manifest artifacts/results/restricted/<episode-run>/manifest.json \
+  --manifest projects/04-guardsynth-coc/artifacts/restricted/<episode-run>/manifest.json \
   --scene-ref <scene-ref> \
-  --output artifacts/results/restricted/<source-bundle-run>/SCENE_SOURCE_BUNDLE.json
+  --output projects/04-guardsynth-coc/artifacts/restricted/<source-bundle-run>/SCENE_SOURCE_BUNDLE.json
 ```
 
 이 bundle을 `audit_calibration_scene.py --scene-source-bundle <path>`에 전달하면 수치적 역변환
@@ -78,10 +78,10 @@ source-linked로 인정한다. 이 binding은 VIN 또는 vehicle assurance profi
 ```bash
 python3 projects/04-guardsynth-coc/pipelines/cli/label_light_grounding/build_geometric_association.py \
   --obstacles data/restricted/<all-candidates.json> \
-  --adapter-result artifacts/results/restricted/<adapter-run>/ADAPTER_RESULT.json \
+  --adapter-result projects/04-guardsynth-coc/artifacts/restricted/<adapter-run>/ADAPTER_RESULT.json \
   --scene-ref <scene-ref> --episode-index <n> --event-index <n> \
   --adapter-candidate-index <n> \
-  --output-dir artifacts/results/restricted/<association-run>
+  --output-dir projects/04-guardsynth-coc/artifacts/restricted/<association-run>
 ```
 
 이 단계는 가장 가까운 actor 하나를 고르지 않는다. source-linked oriented box가 ego corridor와
@@ -95,15 +95,15 @@ python3 projects/04-guardsynth-coc/pipelines/cli/label_light_grounding/build_geo
 
 ```bash
 python3 projects/04-guardsynth-coc/pipelines/cli/label_light_grounding/build_rule_applicability.py \
-  --packets artifacts/results/restricted/<partial-run>/PARTIAL_SCENE_PACKETS.json \
-  --association-evidence artifacts/results/restricted/<association-run>/ASSOCIATION_EVIDENCE.json \
-  --source-audit artifacts/results/restricted/<audit-run>/CALIBRATION_SOURCE_AUDIT.json \
+  --packets projects/04-guardsynth-coc/artifacts/restricted/<partial-run>/PARTIAL_SCENE_PACKETS.json \
+  --association-evidence projects/04-guardsynth-coc/artifacts/restricted/<association-run>/ASSOCIATION_EVIDENCE.json \
+  --source-audit projects/04-guardsynth-coc/artifacts/restricted/<audit-run>/CALIBRATION_SOURCE_AUDIT.json \
   --ca-21950-snapshot <downloaded-official-21950.html> \
   --ca-21954-snapshot <downloaded-official-21954.html> \
   --sfmta-route-snapshot <downloaded-official-route.html> \
   --sfcta-report-snapshot <downloaded-official-report.pdf> \
   --scene-ref <scene-ref> --dataset-country 'United States' \
-  --output-dir artifacts/results/restricted/<rule-applicability-run>
+  --output-dir projects/04-guardsynth-coc/artifacts/restricted/<rule-applicability-run>
 ```
 
 출력은 공식 URL과 snapshot SHA-256, 사람 검토 조건, association 및 위치 추론의 한계를 함께
@@ -116,14 +116,14 @@ profile만 허용한다.
 
 ```bash
 python3 projects/04-guardsynth-coc/pipelines/cli/label_light_grounding/audit_vehicle_assurance.py \
-  --scene-source-bundle artifacts/results/restricted/<bundle-run>/SCENE_SOURCE_BUNDLE.json \
+  --scene-source-bundle projects/04-guardsynth-coc/artifacts/restricted/<bundle-run>/SCENE_SOURCE_BUNDLE.json \
   --cohort-conformance data/restricted/<cohort-conformance.json> \
   --experiment-report data/restricted/<experiment-report.md> \
   --dataset-card-snapshot <official-dataset-card.html> \
   --drive-agx-snapshot <official-drive-agx.html> \
   --vehicleio-workflow-snapshot <official-vehicleio-workflow.html> \
   --vehicleio-actuators-snapshot <official-vehicleio-actuators.html> \
-  --output-dir artifacts/results/restricted/<assurance-audit-run>
+  --output-dir projects/04-guardsynth-coc/artifacts/restricted/<assurance-audit-run>
 ```
 
 통과하려면 vehicle/DBW identity와 정확히 일치하는 감속·command-to-deceleration latency·jerk,

@@ -68,7 +68,7 @@ class ProjectionTest(unittest.TestCase):
 
     def test_survey_and_result_indexes_are_live_content_sources(self):
         survey = ROOT / "projects/04-guardsynth-coc/docs/surveys/README.md"
-        result = ROOT / "projects/04-guardsynth-coc/results/RESULT_INDEX.md"
+        result = ROOT / "projects/04-guardsynth-coc/artifacts/RESULT_INDEX.md"
         base = load_portfolio(ROOT)
         changed = load_portfolio(ROOT, document_overrides={
             survey: survey.read_text(encoding="utf-8") + "\n<!-- live survey fixture -->\n",

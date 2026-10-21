@@ -72,7 +72,7 @@ expiry와 sensor fallback은 대체로 **시스템 operationalization**이다. �
 - 법령 전문을 저장소에 복제하지 않고 국가법령정보센터 원문을 참조한다.
 - `record_hash`는 원문 파일 hash가 아니라 canonical source record의 hash임을 명시한다.
 - restricted scene의 원본, 식별자, frame, CoC 전문과 license 제한 annotation은
-  `artifacts/results/restricted/`에만 둔다.
+  `projects/04-guardsynth-coc/artifacts/restricted/`에만 둔다.
 - 공개 결과에는 비식별 집계와 missing-field reason code만 둔다.
 
 ## 7. M12 초기 배분

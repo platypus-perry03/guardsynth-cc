@@ -95,33 +95,33 @@ abstention metric 아래 동결한다.
 M15 baseline protocol은 이후 완료됐다. B0–B8/B13의 24×10=240개 공통 결과가 schema를
 통과했고 channel firewall 위반과 hidden failure는 0건이었다. 품질 점수는 독립 gold가 없어
 계산하지 않았다. 이어서 M16 60-scene preflight를 실행한 결과 source-complete 장면은
-4/60이며 56개가 부족했다. [preflight](../../../../artifacts/results/restricted/guardsynth-expert-pilot-preflight-001/m16-preflight-2026-08-12-v4/REPORT_KO.md)는
+4/60이며 56개가 부족했다. [preflight](../../artifacts/restricted/guardsynth-expert-pilot-preflight-001/m16-preflight-2026-08-12-v4/REPORT_KO.md)는
 blinded assignment, 두-mode training UI, annotation/metrics/power 계약까지 동봉한다. 다만
 annotation start는 금지되며 실제 expert gold와 관측 effect/variance가 없으므로 M17과
 power 결과는 시작·생성하지 않는다.
 
-검토 방법 자체는 [scene-evidence review kit](../../../../artifacts/results/public/guardsynth-scene-evidence-review-001/scene-evidence-review-2026-08-10-v5/SCENE_EVIDENCE_REVIEW.html)으로
+검토 방법 자체는 [scene-evidence review kit](../../artifacts/public/guardsynth-scene-evidence-review-001/scene-evidence-review-2026-08-10-v5/SCENE_EVIDENCE_REVIEW.html)으로
 고정했다. 로컬 장면 이미지를 보면서 association, transform/time, rule applicability,
 필요 assurance와 lifecycle을 기록하고 자동 권고를 받을 수 있다. 이 도구의 완성은 실제
 근거의 확보와 다르며 M13 결과는 4/24 terminal shortfall이다.
 
 ## 6. P0 catalog 및 24-slot 준비 근거
 
-[대한민국 catalog audit](../../../../artifacts/results/public/guardsynth-source-catalog-001/kr-source-catalog-2026-08-10-v2/REPORT_KO.md)은
+[대한민국 catalog audit](../../artifacts/public/guardsynth-source-catalog-001/kr-source-catalog-2026-08-10-v2/REPORT_KO.md)은
 공식 source record 6개/claim 16개에 세 slice 15개 template를 연결하고 six-family 6/6,
 source 없는 규범·실행 수치 0건, maintained 202/202를 기록했다. 법에 수치가 없는
 필요 안전거리는 `UNSUPPORTED`로 남겼다.
 
-[24-slot readiness](../../../../artifacts/results/public/guardsynth-24-scene-dry-run-001/kr-dry-run-readiness-2026-08-10-v1/)는
+[24-slot readiness](../../artifacts/public/guardsynth-24-scene-dry-run-001/kr-dry-run-readiness-2026-08-10-v1)는
 세 slice별 8개와 네 strata를 고정했다. 당시 실제 source-complete 입력은 0/24이므로
 `M13_BLOCKED_SOURCE_COMPLETE_SCENES`를 기록했다. 현재는 장면 필드의 synthetic fill 없이
 8개 실제/파생 근거와 별도 simulation binding을 사용해 4장면을 실행했다. [M13 terminal
-batch](../../../../artifacts/results/restricted/guardsynth-sim24-batch-001/alpamayo-terminal-batch-2026-08-12-v1/REPORT_KO.md)는
+batch](../../artifacts/restricted/guardsynth-sim24-batch-001/alpamayo-terminal-batch-2026-08-12-v1/REPORT_KO.md)는
 17계약의 canonical/runtime/bounded-Z3/Core/direct replay 100%와 20장면 부족을 함께 기록한다.
 
 ## 7. label-light v0.1 실행 근거
 
-[완료 run](../../../../artifacts/results/public/guardsynth-label-light-grounding-001/label-light-2026-08-10-v3/REPORT_KO.md)은
+[완료 run](../../artifacts/public/guardsynth-label-light-grounding-001/label-light-2026-08-10-v3/REPORT_KO.md)은
 synthetic 판정 시나리오 8/8, label-light 집중 테스트 15/15, 전체 maintained 187/187,
 P0a 7/7, 구조/링크 9/9를 통과했다. 자동 확인된 synthetic 두 장면은 실제 project-local
 Z3 5.0.0까지 전달되어 query agreement 100%를 기록했다. 기존 제한 입력은 식별자 없는

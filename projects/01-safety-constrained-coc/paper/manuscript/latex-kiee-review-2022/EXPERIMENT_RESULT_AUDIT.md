@@ -66,7 +66,7 @@ python3 -m unittest discover -v -s tests
 재현 파일:
 
 - 평가기: `projects/01-safety-constrained-coc/experiments/vlm_guard_learning/evaluate_adapter_robustness.py`
-- 결과: `artifacts/results/public/small-vlm-guard-v0/recheck-20260810/*.json`
+- 결과: `projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/recheck-20260810/*.json`
 
 ### 정적 후보
 

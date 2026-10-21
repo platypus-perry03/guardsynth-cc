@@ -638,14 +638,14 @@ Natural-language Safety-Constrained CoC
 ## 12. 결과 출처와 재현 파일
 
 - 종합 진행 보고서: `docs/reports/SAFETY_CONSTRAINED_COC_PROGRESS_REPORT_V01.md`
-- R1 결과: `artifacts/results/restricted/alp-exp-005/`
-- 최소 Guard 학습: `artifacts/results/public/small-vlm-guard-v0/pilot-summary-seed42-v3/`
-- 전통 CoC 대 Guard: `artifacts/results/public/small-vlm-guard-v0/coc-vs-guard-summary-seed42-v2/`
-- 정적 후보: `artifacts/results/public/small-vlm-guard-v0/candidate-guard-summary-seed42-v0/`
-- 시간적 3-seed: `artifacts/results/public/small-vlm-guard-v0/temporal-guard-multiseed-v0/`
-- 다중 maneuver 3-seed/hard: `artifacts/results/public/small-vlm-guard-v0/maneuver-guard-multiseed-v0/`
-- Phase-complete 폐루프: `artifacts/results/public/contract-microworld-v1/pilot-phase-complete-isolated-2026-08-04-v2/`
-- Release-reversal stress: `artifacts/results/public/contract-microworld-v2/pilot-release-reversal-2026-08-04-v1/`
+- R1 결과: `projects/01-safety-constrained-coc/artifacts/restricted/alp-exp-005/`
+- 최소 Guard 학습: `projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/pilot-summary-seed42-v3/`
+- 전통 CoC 대 Guard: `projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/coc-vs-guard-summary-seed42-v2/`
+- 정적 후보: `projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/candidate-guard-summary-seed42-v0/`
+- 시간적 3-seed: `projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/temporal-guard-multiseed-v0/`
+- 다중 maneuver 3-seed/hard: `projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/maneuver-guard-multiseed-v0/`
+- Phase-complete 폐루프: `projects/01-safety-constrained-coc/artifacts/public/contract-microworld-v1/pilot-phase-complete-isolated-2026-08-04-v2/`
+- Release-reversal stress: `projects/01-safety-constrained-coc/artifacts/public/contract-microworld-v2/pilot-release-reversal-2026-08-04-v1/`
 
 ## 13. 집필 우선순위
 

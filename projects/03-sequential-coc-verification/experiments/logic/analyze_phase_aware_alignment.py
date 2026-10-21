@@ -23,7 +23,7 @@ from run_bounded_temporal_smt import parse_actions  # noqa: E402
 
 DEFAULT_BATCH = (
     ROOT
-    / "artifacts/results/restricted/alp-exp-005"
+    / "projects/01-safety-constrained-coc/artifacts/restricted/alp-exp-005"
     / "feasibility-batch-v0"
 )
 DEFAULT_EVIDENCE = DEFAULT_BATCH / "bounded-temporal-smt-v0/logic-inputs.json"

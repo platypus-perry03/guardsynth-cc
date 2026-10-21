@@ -1,0 +1,8 @@
+{
+  "arm": "p2",
+  "seed": 123,
+  "epoch": 3,
+  "updates": 180,
+  "mean_loss": 0.036033815558554734,
+  "elapsed_seconds": 829.9699717313051
+}

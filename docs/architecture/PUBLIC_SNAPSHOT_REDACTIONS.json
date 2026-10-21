@@ -1,0 +1,2424 @@
+{
+  "scope": "Repository-wide code and UTF-8 text documents/data; additional HWP/media/log/PDF/archive/binary files withheld at author request.",
+  "policy": "Remove host-specific locations/identifiers in public copies; preserve original local experiment files and JSON numeric leaves.",
+  "redacted_files": [
+    {
+      "path": ".worktrees/registry.json",
+      "source_sha256": "97ef495891eda9bd1fbf9cfa9ee4f11255aebe745dd9cc1bcc52b12430058782",
+      "public_sha256": "984cead28b841ff47412e86fee996a57e680160ee3fa0f96a0ef95a5c87557f8"
+    },
+    {
+      "path": "apps/qwen_vlm/README.md",
+      "source_sha256": "468c3e4b98e39ae8e336de6d07eb76147211759eabfad385e37c731a965951e0",
+      "public_sha256": "e7a051576b1f3a1054b0a59921f7758dfce0eebee2c5f11e0273a1b499365cda"
+    },
+    {
+      "path": "apps/qwen_vlm/check_capacity.py",
+      "source_sha256": "c74437cec6cc02cefaf976b70a05969d3a24b33afcbf658213f68b587268b251",
+      "public_sha256": "dadbc875bd3d2afd2cd0e096af175b397372a0dce73c414294b873efdfd9e199"
+    },
+    {
+      "path": "docs/architecture/ARTIFACT_MIGRATION.json",
+      "source_sha256": "2fdad5667f7938425c0a3110ae077d861f8d1fe8b715d3a1e074d74c47bd7c99",
+      "public_sha256": "4131c22c9e665e2c2377df426dbd911d595639578db5f3d0aa50c2c0378fd487"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/artifacts/public/workshop-boost/boundary-negative-control-result.json",
+      "source_sha256": "737aad580c498ea7a5c1fe7dd97ea88f3deb76add96b573c96d6508b09a22499",
+      "public_sha256": "05be70aa369cdceb43d5182f5f62add4c41fac589db898a9572037ae1383a2dc"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/artifacts/public/workshop-boost/uppaal-loop-verification-result.json",
+      "source_sha256": "bc182eac33fa49ad3fd5e6af608a750c2add12dd704aaa53eb5fb37ffdfbeee5",
+      "public_sha256": "924a125a47e40a322dd48c693ac90ce02cb53be65358017c72ba88589be0d04a"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/STATUS.md",
+      "source_sha256": "f2f3209e083f3a144d423d1f2ac49f1d34b058c68c070cd660a1ddc57ca18bc8",
+      "public_sha256": "4c6f3d2537c236824919f1a29921a3b9681890b23085cf6e3cd28745e6da52d2"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/intermediate/uppaal-models/scene-0001-chained-profile.json",
+      "source_sha256": "9888b9e92897d754ddf71a17eb98a4e07bba06ae527ae428ed3748070dcc9225",
+      "public_sha256": "2d9c888e16107135d9ee3f83cf7f838921f571bd651962d96338fec12908e619"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/intermediate/uppaal-models/scene-profile.json",
+      "source_sha256": "b9835071094c62056912598ccb6e3f21cd1a321c4968da3be2a39aa8c5c8f99d",
+      "public_sha256": "c00c369f0b9f8629255d52d2d7599acdbbdcc0fcc5fa60d8c56ee356d587706c"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/bounded-conformance-001/bounded-conformance-2026-10-12-001/RUN_MANIFEST.json",
+      "source_sha256": "adec7a59bbbfe7c74f977bc9a661d75023b3f5612b21ffc55e61128496d33ead",
+      "public_sha256": "46e00ccc2c39e77dcaf8212c6b6ccb0b1fbccea756982da416ca8bedc5b3d8eb"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/cross-scene-constraints-001/cross-scene-constraints-2026-10-12-001/RUN_MANIFEST.json",
+      "source_sha256": "11963430d0efe40c1dbc01eb6f917debc32ef70770927f608d26875e52641b97",
+      "public_sha256": "c7cf699378a177de71779601743e10e49ab7edcb0f2b9188896a32967effd423"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/condition-model-2026-10-01-001/RUN_MANIFEST.json",
+      "source_sha256": "0f620bbba25ed7188b770b3d7ab7b5885369c185cea6904be2e476e8956d80bd",
+      "public_sha256": "a26c9994e7ed7054c156b139c3e4f83e6c7f2dc20d847d3a2d2c888792e4509e"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/condition-model-2026-10-01-001/results.json",
+      "source_sha256": "0b31b39ae7518e3200153bf14b912e9b5b3329975445f65347593cbb950e23fc",
+      "public_sha256": "cac202f765ed26fe0bb61b7e9ab534a8a64686f0efb993779a5728dd00697c3e"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/RUN_MANIFEST.json",
+      "source_sha256": "2dc55a957694ae59b7a4e63296cafe2f484a766920a8e800ec01e628582b850f",
+      "public_sha256": "0e1cc1300de5b945712a651b4a0121c02449f0a00bf0e571e3790908ea918733"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/results.jsonl",
+      "source_sha256": "e9d2fc0d296b7dd7e1327e8d710d47d2748ef0c06cb57fbe7e6d5b7b9ec74df9",
+      "public_sha256": "90fd2520e8b694daaa3e0738a13bd8eb65f4cc3a94ba36eb1d2eef6ff8dc6369"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/bus-held_local_conflict-gap0/run_metadata.json",
+      "source_sha256": "1086cf5873d5268cfc0631aac47768d4a4f7fc4fdaa5c2b168e2097e558c84e9",
+      "public_sha256": "17e7a659a06086d70f9886afd3ff80a0dd89ef4b3823131d315294a3b24046b3"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/bus-held_local_conflict-gap2/run_metadata.json",
+      "source_sha256": "9e49c0dd58770ea28bf87b98af1fd5e57f80e12031d2bf0b03b0fd1cdfa7bd2c",
+      "public_sha256": "8319db7b63e3a7ba81c5aefeda65ec3cef3d031361f9498c6ee6d8f5a91f6d52"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/bus-held_local_conflict-gap6/run_metadata.json",
+      "source_sha256": "8e607ee00e1edfcfe7e5fcf58db349afe79ae9abefd6944666924b6b42af2688",
+      "public_sha256": "29f78e5994c0efd8b151a3031d6ac9c5b223804ca2aa0c011d5b6225a365aa5d"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/bus-held_memory_conflict-gap0/run_metadata.json",
+      "source_sha256": "df15f5b993d9a7ef5b4de281b9e8f550b5b24d1a89cd262c5b33ac6102fb9117",
+      "public_sha256": "f3ab77f7ace5f4aa66359769cf218b8280abece30073c83183b616374922733e"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/bus-held_memory_conflict-gap2/run_metadata.json",
+      "source_sha256": "7ddca70cfa956b0a530a638308243ecab69e033115e48743209051f3c04f73ff",
+      "public_sha256": "2834fdf35dee79242f57b16ede611af6083735b21015bc462f3c853e27126c72"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/bus-held_memory_conflict-gap6/run_metadata.json",
+      "source_sha256": "77b2c8419adf1023c8ff67adb5a5832eb79070a385c644c5aa86e6742b03bb00",
+      "public_sha256": "2e49c02942a6b5df86d4ae06e83e1c21ad955460c18f69a331eadc02d39ccfb5"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/bus-missing_release-gap0/run_metadata.json",
+      "source_sha256": "a6f74e74aa8a81e67329347a4782b4ca59ff9a66ac823c2e54e475513d39e6ad",
+      "public_sha256": "f657f7e6745979614468c5b4d13d33f68e06d06fbdf1474aa1a18acfbed85acf"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/bus-missing_release-gap2/run_metadata.json",
+      "source_sha256": "ed61a361dc804dd0092f40c35757acbcc27cc59ac3ae7df19c5abe85287dd5b0",
+      "public_sha256": "4ce59258b03e45236012450c591d55fe8607f678624edc4cf3f81a7f81af1c4f"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/bus-missing_release-gap6/run_metadata.json",
+      "source_sha256": "03fad919529bb5bf1347e23d17c214e528457cbc0eb741d790b865d0d41b8b84",
+      "public_sha256": "38e2e17a9fa4ce87e14f596a79c62e171ef4c21853fe679f9f9c954a037b9534"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/bus-multi_all_released-gap0/run_metadata.json",
+      "source_sha256": "9e00c63aa10d7f0015ed67d311f9d0da8097c7fe381befcc55314c28da0adfb7",
+      "public_sha256": "4e41214d67278f0df688a7fd6f776868ea2505685b0ae7096f1777df3ed8eaec"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/bus-multi_all_released-gap2/run_metadata.json",
+      "source_sha256": "aada0c395cbb7e296742c2b48eb7acf083a9211053ac4c0ba6cc62d402df4889",
+      "public_sha256": "f0e3788c7429ab6d7effec278ff93f07b9460dec33696a8ce0b09a33225e578e"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/bus-multi_all_released-gap6/run_metadata.json",
+      "source_sha256": "8e3e667b903bc6a0b2850a067f21183b953fe7e2bd66d8267746071f819086d4",
+      "public_sha256": "a6e4db823426d06c2b830a43c2a5368a88bfb39bd21ae97ea4d37830a5e90101"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/bus-multi_partial-gap0/run_metadata.json",
+      "source_sha256": "a1bd0c5210b928310881f58e916e17b704df1010da468cdbc371550a9b0a66a4",
+      "public_sha256": "0956d28a784dc9face2ae56bd225aa3457c8174fe44507a08074d22cfe1f4c59"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/bus-multi_partial-gap2/run_metadata.json",
+      "source_sha256": "3b3c661cbfc7e8e8ccddd310f25fe834cf2c35825a172992024d3c0a70577161",
+      "public_sha256": "fe117aafc0b50333a57efe9f637dae9f691feb592ce1127a21a28e0658b6af95"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/bus-multi_partial-gap6/run_metadata.json",
+      "source_sha256": "6ea9f7f5b1eb42afa8d9ffbba41a8f7af7079ed28ff5958ee66494894d3a7838",
+      "public_sha256": "49c6176fdfad4ccd49f5f782af699d9189a5bcd4f72109ffacc0d58bdd234837"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/bus-order_violation-gap0/run_metadata.json",
+      "source_sha256": "10021de03604e2b538815f722068fe46d3e95006e051c3a884e949ab2f933ae9",
+      "public_sha256": "aac2c5f8c4584877f764c22c910695a6efde10bf3b71161d09f2e2adcf000b6b"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/bus-order_violation-gap2/run_metadata.json",
+      "source_sha256": "46c6bda42616ee3a8a23ebb225e66502eb183c77e71661fc78d1cdd7d795ed92",
+      "public_sha256": "7336e1e083c3c2c21c0bcb2e52c4f7daff3ea0661d0e81b0aca0e0cecc49d124"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/bus-order_violation-gap6/run_metadata.json",
+      "source_sha256": "55649dc4e2ee6fe14ed941d35889e610c2b3445e74a2e6d1fcb6bd71fa5097cf",
+      "public_sha256": "5167914e6d96bb59e8cb472c454423c8d0080232cfd2014b66dff032839857c5"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/bus-released_normal-gap0/run_metadata.json",
+      "source_sha256": "60bbd5082b9e8a552b0829d8ba0a6c2667ec841542a0a0dee0be746a90551ccc",
+      "public_sha256": "ea473b64d79b4983e62376d1caee7d823b2014a8682682f5bb8465777d952a08"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/bus-released_normal-gap2/run_metadata.json",
+      "source_sha256": "7bc882827a32384847447b6cc41774fa391613d36e3e1ac5cf8323bcaf70c83c",
+      "public_sha256": "bfa55ee834b63c2f05d6b1f6f303d32e16765db6848dbb442b6bf0bd17eb6b0a"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/bus-released_normal-gap6/run_metadata.json",
+      "source_sha256": "e6bb4bba2022df1fef27b91bcb2c13076651bb1afd41bdce7d6d9f8f9b76351e",
+      "public_sha256": "bf98e174e08391ff96d593e54d79a1198c448df09ebf069475ece20365cb1caf"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/bus-wrong_release-gap0/run_metadata.json",
+      "source_sha256": "c769b3df243b5b0f174ba1804214d72ef4eee5fd59900b52e5ad35e3b3735bbe",
+      "public_sha256": "1bb32225b400f581a1872bc694347cb05191a92393d808c455a2e236cbaac63b"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/bus-wrong_release-gap2/run_metadata.json",
+      "source_sha256": "c04ba8c9857ed6429c34564de2569dc840809a5423718a5acd429242bb21574a",
+      "public_sha256": "7036cb7b63403f84f9d712feba16ecbccc7e6d40b28416099fd1bee920087133"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/bus-wrong_release-gap6/run_metadata.json",
+      "source_sha256": "257f6fc385492667982fc40afadda85e1bd6658de781fa663732cd6d1b848019",
+      "public_sha256": "2aca7f34e726abeb7b4a3640b8f988d846e027b62564a3697bfe9ec76390c261"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cross_traffic-held_local_conflict-gap0/run_metadata.json",
+      "source_sha256": "7859b618de3f5d8e6028f8091392d6b587755b7f34bbd96f6f0d6c7739053736",
+      "public_sha256": "59ce944e2dedd106d709eec9172f0804c793f475999f6904bb274054e46d6d19"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cross_traffic-held_local_conflict-gap2/run_metadata.json",
+      "source_sha256": "9a3be68bad2be741f2676aab5c5cbdafe54b0bb846449e353a931f6898746095",
+      "public_sha256": "b2fdf6aefb08e0903216c574b499dbe12e098de04d57506d27ef1dfb06533c01"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cross_traffic-held_local_conflict-gap6/run_metadata.json",
+      "source_sha256": "bbe951a5b83d02ec949b880adaa2bc4b4ecfcd5f03ed05aad082b4d0ee3eaf89",
+      "public_sha256": "14fb9d9f546479e91ed7906741e8b8ddba41ce6713bb624c0599ef0121e9aed0"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cross_traffic-held_memory_conflict-gap0/run_metadata.json",
+      "source_sha256": "23b9358fd8257e9fbd4f7fb213b7e8f5a333a425572cbdd1092512438b8b1ef2",
+      "public_sha256": "4adcc96c6f3a7d54c7ec7e89c7708f9e1648ea394d0f75cfd4deac87060b9bb7"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cross_traffic-held_memory_conflict-gap2/run_metadata.json",
+      "source_sha256": "467bba56a76f1b99e61caea705e9d51a818f744734d94f666b64a8bd5b8a0753",
+      "public_sha256": "7cd2ab7345d8d1b205daf4400dd20d2332735b35c211874d4ba556b06f715da1"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cross_traffic-held_memory_conflict-gap6/run_metadata.json",
+      "source_sha256": "d734efffc6ee2d718f1c5489968ce52a5158dd4567b8a6726d08d05560c34753",
+      "public_sha256": "fd2d10e0c7e6ed79a37a3c89c5b518914e33c1c60a11f35898acd8e47f4d581a"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cross_traffic-missing_release-gap0/run_metadata.json",
+      "source_sha256": "0de720ebad536c6935a672d4808b7510bb8390e26a2b52b7f4af6140b05193c0",
+      "public_sha256": "bcb383281cc4763a2babf4911ae9e7322063af0e798e16b86689f1742f5cfb85"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cross_traffic-missing_release-gap2/run_metadata.json",
+      "source_sha256": "9339af798f02b9369e79aec6e822c7ff7601a5f383dde52496ff13e072369a63",
+      "public_sha256": "c673f60635a91dd54d73c8cd6f1bd3768f7fc09cb69de4f9f66696a839f2d596"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cross_traffic-missing_release-gap6/run_metadata.json",
+      "source_sha256": "4926b10a0ebd6de9ea597658e42e86b8cf62820c97b1dd8af0cace7dca7e0cdd",
+      "public_sha256": "fd77ca0901b0a69d8033725ca5ec3a170919c58cba9fe15e2a636f967c97c9c6"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cross_traffic-multi_all_released-gap0/run_metadata.json",
+      "source_sha256": "d734905d123d6bcbe8064539950cdfc9aa60136c812fafe93013ce9e0eb9e5ef",
+      "public_sha256": "a77c803abce515dc336e53cde6e81b7e942037ce0f29ed53c942fb5335c6de6f"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cross_traffic-multi_all_released-gap2/run_metadata.json",
+      "source_sha256": "9334e0dbdf928f4f9d2970e48e02d3c61b29d01b7102904dbceffa5cbdbe2f25",
+      "public_sha256": "a1f58d3ad51b8dedefb3a333b0ef9b999ef25c9d342d8321ac68c9639caea108"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cross_traffic-multi_all_released-gap6/run_metadata.json",
+      "source_sha256": "574fe2d2b83617285415f679dc4c48fc04feb1778b7b447be2a4901c5d10f616",
+      "public_sha256": "6deba050625788b2e776cac879d33826adfab76cb99669b4fa68e736b6e405bd"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cross_traffic-multi_partial-gap0/run_metadata.json",
+      "source_sha256": "3f9b48c013a7ec3208b56b58f6a30b4b7ae6a8e8b4f86e6771df874b1d606a7b",
+      "public_sha256": "e08244ee9d739fa30e0a4872003031e82c4708c6b73b98b185c5dd797bd26d46"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cross_traffic-multi_partial-gap2/run_metadata.json",
+      "source_sha256": "e169eeb203747c8f479cbcb48a37a57374af14b76e6a11f5e3010c72e0f6fef2",
+      "public_sha256": "e56cf57606b5e530f055cce050bc26aef48e6887ff815a23f55b963fa1a13df8"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cross_traffic-multi_partial-gap6/run_metadata.json",
+      "source_sha256": "4197fa65a07d7892d654495ffe7b71a1a354a2aa7c0f0417a4704c62fcdde87f",
+      "public_sha256": "a29e4958d8aa250ec132c380fb8e382b4dbe714bda40c58fdeb416c9a595179e"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cross_traffic-order_violation-gap0/run_metadata.json",
+      "source_sha256": "8deb623203dfb3ca8e56cd27f544b072390fda54b7c46ff6db227080de07de56",
+      "public_sha256": "3f5a0ba804029333ba7a145c93e76340076ea3d49e5c937b517852479777e95a"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cross_traffic-order_violation-gap2/run_metadata.json",
+      "source_sha256": "737126c79f5e19a796ff8b312fae36471b1e564a71bcd953999ec82d81cee00c",
+      "public_sha256": "353d57ae4b8b68c2712c725fcda67c7620496d1629868d7eb4280de7cb204e02"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cross_traffic-order_violation-gap6/run_metadata.json",
+      "source_sha256": "25810ef47d34e588fe677e5241b8e71a9051acb169ab7780880f9fabb61cb4a1",
+      "public_sha256": "1fe2715a1c1d229fb2771651eedd0f617a55eba4599c98a88bbce1a312087eca"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cross_traffic-released_normal-gap0/run_metadata.json",
+      "source_sha256": "41e5afe5ca3b05cac500b757690618cd8929a47887ea2f51b171f2e753238c27",
+      "public_sha256": "dc013decb7c5596b43f0a668245475bc066332d9722bf489f2fd47cce3a6da31"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cross_traffic-released_normal-gap2/run_metadata.json",
+      "source_sha256": "90eaef1450a2928b10dac82c33cdc7016273fc3b83ef30e7d8a26a03ee7bfc5e",
+      "public_sha256": "117b7914f06064db61de2b826f8e2b256d74b18849cd6bf526c8d84401c1781a"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cross_traffic-released_normal-gap6/run_metadata.json",
+      "source_sha256": "e35f0502dfc7aa828718f75d1afca306499bef906eda5d6325256852d3fb1abb",
+      "public_sha256": "daed388e01fe584e7aef7ebc1f3870c6c7ff0ba49736e0f105d05469250d8ec6"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cross_traffic-wrong_release-gap0/run_metadata.json",
+      "source_sha256": "e594badb6930c8190a8c53bb8b048eab3e33cac5230fa3c53c90d6327cb03d25",
+      "public_sha256": "6dd017e5339b66a0c6c9586d79cf2ec44f9ff2040d39623505dd07aa03536ac7"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cross_traffic-wrong_release-gap2/run_metadata.json",
+      "source_sha256": "738cbebc0ccee1a35b51a04408734dd6409980f433566d5da8117f982045aaa7",
+      "public_sha256": "ef67662cecf944e92c4e1843868b88c5f28fe32a9cba13bea4ade0432e300c60"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cross_traffic-wrong_release-gap6/run_metadata.json",
+      "source_sha256": "334d151e983786e167186ea22dd67aa0419292bb6b92a494e90ff9176f8de5eb",
+      "public_sha256": "3b5889cd779ee3aaf967db2eec6dc1297e15f9f77b802f80c74831c5660de02f"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cyclist-held_local_conflict-gap0/run_metadata.json",
+      "source_sha256": "d43b41cd4ec40cd8676caad57c633f72f9880796f9a32f9eeb59909598f44668",
+      "public_sha256": "117df7dc103292b5864a18783836340cd8b8e9cf6b2123d30ac74de9371ec575"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cyclist-held_local_conflict-gap2/run_metadata.json",
+      "source_sha256": "f44c906ada74ef9dbcf25090e2b7a4b6baff56859f76a45c95a8abf2143ce44d",
+      "public_sha256": "ba6839707938ce63df168f3ad99dda7d446a148523e4c2e6e7808b0c02d142f5"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cyclist-held_local_conflict-gap6/run_metadata.json",
+      "source_sha256": "05143f94e48a0ce51c51b83aab483714ab36d723b496f69c5c48bc14acd8622f",
+      "public_sha256": "a35a9009d7d517d71a842256df188b1bf5bd1d4dab83f2f7903ebe239e5982ef"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cyclist-held_memory_conflict-gap0/run_metadata.json",
+      "source_sha256": "33c4fa3f5d58dcbf83310bc23ed520f726bcaa3783602c2a067fc7c8084b95b6",
+      "public_sha256": "aaa4e19c7030d43d7ebc121ec06a12486478987bcf9454f3401adfaf36502de6"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cyclist-held_memory_conflict-gap2/run_metadata.json",
+      "source_sha256": "95b41794fcdd293e8c76de795c72eae4feb5a04bfd7f0a81ff90fc0ebe6290be",
+      "public_sha256": "657bb3a61c7e868d67a109b7fe70daea9f5027e10dcd3ae4516a4db0db15555e"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cyclist-held_memory_conflict-gap6/run_metadata.json",
+      "source_sha256": "87b2a6fc41d910694f8507c512a8eaf6a6ccf296ac4bde0945ac0356f761c139",
+      "public_sha256": "220c79895735d1f96d495519177150707a8a35a1573927c9ff27db4009882a3c"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cyclist-missing_release-gap0/run_metadata.json",
+      "source_sha256": "ff97188d5b5ccdf86b287f8666fa954c8fceff7802aec711a4bb163f41fa97ed",
+      "public_sha256": "6dfbbd42f1e576b60eb5ab1795912d8975ad45137428ba891f4a89e6ab1bcc02"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cyclist-missing_release-gap2/run_metadata.json",
+      "source_sha256": "2e14438cb38105a263cb13881b206cc4476c09d470185614ed67d34642e6a05b",
+      "public_sha256": "a37f2406683a384386db95ba083916e76e9935980e4aa79f211094ac467e4602"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cyclist-missing_release-gap6/run_metadata.json",
+      "source_sha256": "636de211ac6f42f0fea22c563c76777078548dd79991a92c655d8fa89a85088d",
+      "public_sha256": "9852518825c0b3d5f246f3664617c2bea3914a5a23184edd5de3406104a3249f"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cyclist-multi_all_released-gap0/run_metadata.json",
+      "source_sha256": "c1540881867cea70a78ff65d9fb0f16bf9ff8174f5915c0abfbde386bab7d504",
+      "public_sha256": "11f2e569a989857ecdb5bc18f2106a54b229c081e81cfaddea21877adb5e1f72"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cyclist-multi_all_released-gap2/run_metadata.json",
+      "source_sha256": "75515d6c0c6fae06463a708eead244e2fab13440e6afdac9d118426a04fe55cc",
+      "public_sha256": "b9df919bafa9e510db3baac41020c95022e87d4b803763965ffe7f2ce13818b0"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cyclist-multi_all_released-gap6/run_metadata.json",
+      "source_sha256": "9d008ad8a9e25b4cc559f6295b69e6f752c809ab3a714093ca1460bae2e4f384",
+      "public_sha256": "8c79366a48370418c5f575beea4219837824b228dfdb4be9f7bc47e5a6acd3f9"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cyclist-multi_partial-gap0/run_metadata.json",
+      "source_sha256": "96eacb8b04ee95ee5ec4df43d4b542adad252bf95e4dd276c24535c5b4561c70",
+      "public_sha256": "d6cacede4015e5f01c11bc4540144816561e9ea89a47a4e042d77ea0df641df7"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cyclist-multi_partial-gap2/run_metadata.json",
+      "source_sha256": "810a0b373477004b50348ba5330e8ab52003cd0669af60597c2d320d29139695",
+      "public_sha256": "7b5f1941cf702e789f8d5f337371bfd4ed23efc0f74010c52db3f2837b8fe895"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cyclist-multi_partial-gap6/run_metadata.json",
+      "source_sha256": "e9925974a43105f2a2a058442667c6fce9583b7a575b2d14344885a7a4d97cdb",
+      "public_sha256": "b88b0fc37f284e1624c7f649ec509487315a69213948a662a7a23a3f73a4cc56"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cyclist-order_violation-gap0/run_metadata.json",
+      "source_sha256": "24eb06d0c09c3f744c6873b43791d19911a324538619a8b882060208dbe53870",
+      "public_sha256": "602457ca6ce0fd599816de04144881321303d28ac6c480bd6bed8843fc4578cf"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cyclist-order_violation-gap2/run_metadata.json",
+      "source_sha256": "9d12d0680abf404e0849b7880417ae27f4b5d25448e6e3633ebb2e62e4a77493",
+      "public_sha256": "13b5879a3d212f9ba6fc03f3e3e47d9363c4963d2a9bccbc820bf3bbf2741772"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cyclist-order_violation-gap6/run_metadata.json",
+      "source_sha256": "3ab0e1d38fa0815bca35d2f17a59ee6a7193a8a7ef4cceaea56b952e7889ae7c",
+      "public_sha256": "6a134118b14ac92d7f6a265abcf6c27cf5bcbf805abe9800cdf36dc6daa0603b"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cyclist-released_normal-gap0/run_metadata.json",
+      "source_sha256": "b0dff0c7aa8084af417191a4f3874c3a60f7402c213c801fa430bec04dd9b87c",
+      "public_sha256": "e8873c2973a25c0987c2953775623bf4f3160378cc0a6309140fa7c202cf1c7d"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cyclist-released_normal-gap2/run_metadata.json",
+      "source_sha256": "593cac4b6b81ea923c310a83df55d70024eb26a0ce4b23377a57ce255882e626",
+      "public_sha256": "e669d47aebce4c3c2e4b6739aa165982314ee8bba53e1ebb7741b68fcd08e0ab"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cyclist-released_normal-gap6/run_metadata.json",
+      "source_sha256": "e017d33841b04e070198d53d3f640b244e4f7fcbf8529c065dc3a9408e50e827",
+      "public_sha256": "4adb50ec955a7cf54aa6a3e8fd400dce4c4690af1addbbc78388d814c318461f"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cyclist-wrong_release-gap0/run_metadata.json",
+      "source_sha256": "2d04bdda3f6c58d3270a00ef93283316a42e5c7493877a5106887d8130a76a28",
+      "public_sha256": "59e50b0ca85a60721b38b63c70e215d8909d66125471c59dfd6d1ab69f1d8771"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cyclist-wrong_release-gap2/run_metadata.json",
+      "source_sha256": "408e830222bb3ecb142c46032bbad2697e1419941a8a68a53286c0ee2f655f70",
+      "public_sha256": "d0e20b5f4f972b5d37ba1623ee2306d490cc1abb5e15a3cb53a65d08bebe1410"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/cyclist-wrong_release-gap6/run_metadata.json",
+      "source_sha256": "7652acf74a72bfe326131269f215d59dead357632be38b08c18ca23a7eae9f12",
+      "public_sha256": "6a1c394e4cd5e61ffd00efd4126b9190e62fcf0572a02905eba6fe74cf0139d9"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/lead_vehicle-held_local_conflict-gap0/run_metadata.json",
+      "source_sha256": "92f846b0679e9c52cf4108d4e8fc05b5132bb05022df16a8c3963be4ffe593e4",
+      "public_sha256": "e5da85d54d598d85e6c9881c4cb2152d2f2f6531af27cdc52fbac74cd633117e"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/lead_vehicle-held_local_conflict-gap2/run_metadata.json",
+      "source_sha256": "5ad49fac116bb034ae6d5721ff1d987d116602270516ffa674aab9d306755cda",
+      "public_sha256": "436a6b13c7cd4cc616e8c235e1ae95c77646e516361abf6ed1481bfc57496364"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/lead_vehicle-held_local_conflict-gap6/run_metadata.json",
+      "source_sha256": "6b7150adc18b1986fad9de6375ed68cc61c6442fc36d3ecd9fee4a25f42d48ee",
+      "public_sha256": "b91876540774c39fea21fb8b4dcd5126fbc5c20c2b2f5ca25348369ae5a6f5a9"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/lead_vehicle-held_memory_conflict-gap0/run_metadata.json",
+      "source_sha256": "73cc83c4d00105fb1b25a0b1619fe843d24d0b6ab9da3bda0056c6dc45a7f8aa",
+      "public_sha256": "eeabea207a0f645c21bb1bc763d8ac5b364ed56040edf1f0cf4bdbf00d48a7be"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/lead_vehicle-held_memory_conflict-gap2/run_metadata.json",
+      "source_sha256": "c02c26ac0cb266e1609dc02b6ced8918a1dec7858b9351d4c07328456c87f44e",
+      "public_sha256": "6021bd8d126fad098170d6be52c2ebe4faece3140c43aba2c96604d5bc2f0ce8"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/lead_vehicle-held_memory_conflict-gap6/run_metadata.json",
+      "source_sha256": "df62dc216e646c6d918832973f0513e1ab27246277b447608420b54d12de62a1",
+      "public_sha256": "53ff00a83dc727ad50664e106e10a0f1817caa0d679101e555c7db330672b318"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/lead_vehicle-missing_release-gap0/run_metadata.json",
+      "source_sha256": "41e4d729aeab52dcb5dfbb1bc1ec39a39f8d125aeaf3808d3f92e30b3ab61636",
+      "public_sha256": "184d3307adfcd41137468be97e97d907f188c79949b3f753f803a38383036159"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/lead_vehicle-missing_release-gap2/run_metadata.json",
+      "source_sha256": "7324bf6c8805c5cb9e4d4b353f674c34dae1bd824d82a76a960fadcce72ee584",
+      "public_sha256": "6e3df1d954c128c065eb27d113bed390fc6f61d5da56806a7ee3806de7f30994"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/lead_vehicle-missing_release-gap6/run_metadata.json",
+      "source_sha256": "579a675a12e68068ca4194ffe1aa2d20e5930d8e0f5350b61565859515744b75",
+      "public_sha256": "890a122af0addfe900c72a936a1cb12943893f0d61d19f9319f88f07d171354f"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/lead_vehicle-multi_all_released-gap0/run_metadata.json",
+      "source_sha256": "c16f34f13308612b4d5a2424b59eb1d03909a8e72118247a6cdbe133c9be3eb0",
+      "public_sha256": "ff440b041916f98645a8f3d3ee215003323543c36012fc9329c90b0d0808b5a0"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/lead_vehicle-multi_all_released-gap2/run_metadata.json",
+      "source_sha256": "7589d2331cbe5ae3b9a135f9d68f329b2aa5ee6d99fde82b0b0cefff13c8d9ea",
+      "public_sha256": "e7d66dce73e4643b611e767d4fb6e5d38a84398aaec2170cda45573a2aa57109"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/lead_vehicle-multi_all_released-gap6/run_metadata.json",
+      "source_sha256": "6886eb759edba38694f67e1a72d008873fb2322d72c4ca3aa0936f0a7966b747",
+      "public_sha256": "0b455af2d55ac0d1bbbda7ece6d7dd9c29932d22a7e48fd077135a091233f14e"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/lead_vehicle-multi_partial-gap0/run_metadata.json",
+      "source_sha256": "ad134be8b6075ad0ffb103f3a29666098c426d6b39cd575b4d4422b7118a6ac6",
+      "public_sha256": "6b4fd0b8b4f253a7e89c9e441462dc714e92b8253085c6823c1791a5156d61c0"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/lead_vehicle-multi_partial-gap2/run_metadata.json",
+      "source_sha256": "86ab92e46a5ae941260befad9009e885ffffddbd7f1fb0fc5d7d4f9a6c345c22",
+      "public_sha256": "9a507a9a887478ca1a909861a5aac8b6749d8b7b9a80857b87b75ff06c2a006c"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/lead_vehicle-multi_partial-gap6/run_metadata.json",
+      "source_sha256": "085be00ce7f1daaa8e69e1f05e23e8e7d1032ffb4a260cdde08ec31107a66f5d",
+      "public_sha256": "767719bd28b96554a88678e12d2c063bb77bad0e4c8754009c58b72fef89d9bf"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/lead_vehicle-order_violation-gap0/run_metadata.json",
+      "source_sha256": "b5d3b9c71545c7db370c08b7d228f0bdf2d8bc12f25db4996801ac1c32b27249",
+      "public_sha256": "fe5dcc1e7a3f54044b32cb8ca1251637ce2de434c570c65fc082f2aa0103d941"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/lead_vehicle-order_violation-gap2/run_metadata.json",
+      "source_sha256": "39daaab0c8fc40ecb92efa8f2ccedbeb8c9b0e025dce3c2eff7e3214e902c8ef",
+      "public_sha256": "72e5b373db4e913efdcd51639c55cc8bbe023c95c3a7791626467f1baeeccc76"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/lead_vehicle-order_violation-gap6/run_metadata.json",
+      "source_sha256": "c4c52927a31b39d781456ee004718b1d254362436855c077d0e505907bf1c356",
+      "public_sha256": "94424128bd073a11c272ed16428ba8c208622b839d6b2c2d44268889a071083a"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/lead_vehicle-released_normal-gap0/run_metadata.json",
+      "source_sha256": "dbe2f75f48d0ffa04e8d41302b480c9e07b34ab9a09b010c6fe0002dd3206e7a",
+      "public_sha256": "482784620058a8a2b5de620847d8f410d1b60a473b8a78ea27b645d623069499"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/lead_vehicle-released_normal-gap2/run_metadata.json",
+      "source_sha256": "d71b47a9bfcc2ecfd52fdcedeb4595bfa90acb6927a8a502f7c8a1e4599af8be",
+      "public_sha256": "0c5d024e173f630a62d130908b0de27fdcf7e7110dba34ca8d44a40336de1c2f"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/lead_vehicle-released_normal-gap6/run_metadata.json",
+      "source_sha256": "0c1415d8187d1c7a047957a33e19bec7a2430a912f679857c5aceac10ce951e0",
+      "public_sha256": "8e11d41a807b403f8358ded9aeccf0ecf958b420d03e30d29f9a40bbaafa9ad3"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/lead_vehicle-wrong_release-gap0/run_metadata.json",
+      "source_sha256": "b9e41e7abefd902db57d70f170d5e31e4e199c582462449fe29c9f171b13948f",
+      "public_sha256": "91fbb846078221f2f696178d4a68aab7a7be3244e11036be266cd46e5ac3a048"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/lead_vehicle-wrong_release-gap2/run_metadata.json",
+      "source_sha256": "e33a39b78dc6711d205705961ff24a840c02dd839b089c1ec658b2762de89eef",
+      "public_sha256": "559cf61b7742ae26af3d633293fe3b480ab208af8511590052222f9b85acb57b"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/lead_vehicle-wrong_release-gap6/run_metadata.json",
+      "source_sha256": "b25f0a524edb8542ca69d1337cc4e25d342930ce7569808e2a669f583f2b2522",
+      "public_sha256": "502f53b537baf9d9e2511496dac1624c35b6f76347d48e1269576e9fe426750c"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/obstacle-held_local_conflict-gap0/run_metadata.json",
+      "source_sha256": "29d53f076501e72dfb195087aa614adf5e4bccd3ea8c79e63a03faac64c8afd5",
+      "public_sha256": "64558a07df737bf72ef58ed7f63c817355b91f79792b2b2990cbc7ae20a2148a"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/obstacle-held_local_conflict-gap2/run_metadata.json",
+      "source_sha256": "72d1a27a8162b2aa6eb62efb457c7b529b0f405a8d3f88757184021b8eb4f6f8",
+      "public_sha256": "ac224eace7d08efc14b1009b2748dba8b1967575451d2300ba70f3d0239e79df"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/obstacle-held_local_conflict-gap6/run_metadata.json",
+      "source_sha256": "8722d07cf2b3a96b62b0505da0764f671474f3d8f69e40d45150bd20788f96e8",
+      "public_sha256": "8c71fb38d97092cf1bdf5aaa589902d8facacd9ba390094e048c34912dba205e"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/obstacle-held_memory_conflict-gap0/run_metadata.json",
+      "source_sha256": "7ab05e70ea2fba294749aa933f7a61334407a0a02b7453ef1eb36f438cbfa264",
+      "public_sha256": "c1b9855fe4ec61c099d7aa5dbd9b3302b7d0027032e2541a9fafe2a2d15fdb55"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/obstacle-held_memory_conflict-gap2/run_metadata.json",
+      "source_sha256": "2d4aa352eb7d72cb38ae003992fcfe3592313a0c1fdbe1d7c4323955b66d95d3",
+      "public_sha256": "22ef4a1de7cedf42ca5cade667b4d4e63ba6f643964b205ae2a58acdf6e8e6ec"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/obstacle-held_memory_conflict-gap6/run_metadata.json",
+      "source_sha256": "12999bfd7d158f80c8575523846520f297832ddbb7bacf1111a0d0d3f3da99ea",
+      "public_sha256": "641c8ac9068d90a19683f0a6f1fd07e5330ac0619d27d1fb6aa50003ced6d39b"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/obstacle-missing_release-gap0/run_metadata.json",
+      "source_sha256": "f013cd91c84b411e98c3acbd2b403d57134336892d2e985a8d129959ddd6e5e0",
+      "public_sha256": "875bf5f69ee7637c274ff0bb5e91ca8ade802105be148382beef32d27cd0f955"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/obstacle-missing_release-gap2/run_metadata.json",
+      "source_sha256": "21e3bc3ca31763eeb445c6a04fe8b4d81453828dbfc5ba642e227630c38beeeb",
+      "public_sha256": "508749dd0600b90af4901042137c9d0ded3a8104d47df64f1a13ab45147ef0ca"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/obstacle-missing_release-gap6/run_metadata.json",
+      "source_sha256": "4644bdc4ccc22b7e2b1ff443c786f5ae2a435c46f2bfac95a4c5de91bc5b1dd0",
+      "public_sha256": "8d6dae006d4dc635f758b2062d185fc5be9ed4adb854b23d0bb35647e176b572"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/obstacle-multi_all_released-gap0/run_metadata.json",
+      "source_sha256": "14113a3ad0af263fa17b5886b74ebff3220430bd1a7262135c4ac5064ef57e63",
+      "public_sha256": "3ed7d8d481ea125f73fac8fa26d2bd6bb298558a70df8435b7e09800a524e736"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/obstacle-multi_all_released-gap2/run_metadata.json",
+      "source_sha256": "6d18e0e684673b19108de6a0ad60524cc780148ee8ab530007384928a31cb6da",
+      "public_sha256": "3842954537a2aaa5d60745677d4c302511d33795b0d95069d06c58b2756cfe57"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/obstacle-multi_all_released-gap6/run_metadata.json",
+      "source_sha256": "95b7306b57bfe8c47b9582866718778420435aea2212d5dd5505b16ede7ccd80",
+      "public_sha256": "cb4d5c7135e6b5679e3c52406c5f8aa388809f8dcefecccafc8d7dbd0763c8d4"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/obstacle-multi_partial-gap0/run_metadata.json",
+      "source_sha256": "d45d9394f3bb330769839a1ce77fd037b3511fe56f503830d0fe0a4ae3bdb229",
+      "public_sha256": "98a6ab6cdd53aa20ed8ed93828c6dc9be5c05ae08af18a09c1e5e16656f55bc2"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/obstacle-multi_partial-gap2/run_metadata.json",
+      "source_sha256": "125a48aef89b837fe2ae7df82b84949a871196a0be1367a9780bcea5ae89b8ec",
+      "public_sha256": "f65bd5748ff68a7ea4f2ee046fd11b7358aee142d841ea44191568c47919af6c"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/obstacle-multi_partial-gap6/run_metadata.json",
+      "source_sha256": "c46f9f743567a2ee0cf9732be284e8a46d27c80a19e951a1f9fc2429d9f7838c",
+      "public_sha256": "9ab00dd13a4a46da0ec89faac5a5f766b598c90a720c09261339bb3fef5bc8fb"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/obstacle-order_violation-gap0/run_metadata.json",
+      "source_sha256": "fa9b2e7e2e0cdcae9c3080084d2f465d6c728bc65b1fe2c3c01fa537c8722418",
+      "public_sha256": "6e0820e7dc86f06de85d0af788a1bc33f7fd6a8490c235ec8cb474884ab346c1"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/obstacle-order_violation-gap2/run_metadata.json",
+      "source_sha256": "a830ffc052d9a31a94da2f71b096349a8fdaab8c9f6453bf2890f19717dc46cf",
+      "public_sha256": "ba21e77d905111d6a12c169554466b8aa36c266c168a75334aa467133da8dc05"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/obstacle-order_violation-gap6/run_metadata.json",
+      "source_sha256": "cd38fe9ea6fb9599cbc2240c5a3a516dcade82d0fd10b2f4ba483686cc882422",
+      "public_sha256": "fb084ccb4369f37ccc894c3d81785dcef8953951c97ac8e585fe256f6d560f78"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/obstacle-released_normal-gap0/run_metadata.json",
+      "source_sha256": "309bad554b9164a1cefe8286242ca03760328524ede06bde4b22710ad95e608c",
+      "public_sha256": "d912d8dfb6519ff544c641dbd8b3877deed272aa3ccae165c251f8fc0deb14f1"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/obstacle-released_normal-gap2/run_metadata.json",
+      "source_sha256": "8e85e85d5471f0d199c2208d20c64a7e54b2d294633fb7a9d2ec222d5ce428d6",
+      "public_sha256": "b6279d8811c093a1019a28dc227bbb81c6d8bd85c7bfb898792e7e835ca1c400"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/obstacle-released_normal-gap6/run_metadata.json",
+      "source_sha256": "8dcd83e1aef1db0f3948c9c2f4118fe77f8abc11f35957ede91552bfc3f4e742",
+      "public_sha256": "a35574d4d64dd4c100f0e0bc6aa1e25fc179f8ba5baeb508c869201c8262ac5d"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/obstacle-wrong_release-gap0/run_metadata.json",
+      "source_sha256": "c93d108fb2aca8045ff27b64174dd5921e010bcee06b6176dfb14e98c115716c",
+      "public_sha256": "7ff145114935abef79728ca24fa37ef4c5813f1d3f64b5b6263a7fa255b93290"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/obstacle-wrong_release-gap2/run_metadata.json",
+      "source_sha256": "3afd444fb830348d4b503ad75e68c82ccc51165a8dc7fc13e0290cba54c8ef67",
+      "public_sha256": "2d89183d1f6e87a7a28490dcbd0c308d6e691cf262ef4ba2742880f6a6d0bbb1"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/obstacle-wrong_release-gap6/run_metadata.json",
+      "source_sha256": "f7598c046eeaaff34ded56cc099d4832cd6ce176732f747617b9805fd14821a9",
+      "public_sha256": "9db299ff6b7b8d46173e30c8c379a55bcfa7f4b9bdc83a8ad45c8c09a510c491"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/pedestrian-held_local_conflict-gap0/run_metadata.json",
+      "source_sha256": "beca6c197f073e16c085d8dc5fd5f54bc20c2c2d10251040efbf2755d341f683",
+      "public_sha256": "1a9e3a5807d51b038c251505f2fc025cd0d6075d9ebaf37a5c7eabf32f2a111d"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/pedestrian-held_local_conflict-gap2/run_metadata.json",
+      "source_sha256": "89523824d22fb4429414a78a223be57ca9b9a6aa7387341bcbb1c325dc0f1c15",
+      "public_sha256": "1efab8080f79182133bb6fe60d8251bf3b5e2ec9f542921f9e5d88e4e6211a86"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/pedestrian-held_local_conflict-gap6/run_metadata.json",
+      "source_sha256": "10bbecfd6bf20bea2fff2752d44eeb4ef069af4a1dddb5662bc495e9dcaed65d",
+      "public_sha256": "5c7c3a927ea713cd8ada2b092408a59254cb1add32ee3cba86e04c93605ace9d"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/pedestrian-held_memory_conflict-gap0/run_metadata.json",
+      "source_sha256": "8a6ac0eb25cbeb5993fefd225c3e39d4b390c8b47b6caaf3f9012af293d0651e",
+      "public_sha256": "f8cfda23d443ec4a73eb8541e6fb867607b4f659641e68a39aa60b4bf739dda1"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/pedestrian-held_memory_conflict-gap2/run_metadata.json",
+      "source_sha256": "3bd32f8846eb1ffa891c4576ac038e91dbdef4c55f47947d0ac5568859b4f436",
+      "public_sha256": "3f3400254ac5151a5fc4df36d8660e83c5f6ad4bd2eeee3e19d49e75c7c55e66"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/pedestrian-held_memory_conflict-gap6/run_metadata.json",
+      "source_sha256": "7bbe0ec72d5a080977af07fa2dc3119ae4b109747eb4733b592059396ec39624",
+      "public_sha256": "22e33b045190c29cb008868e0894ac680833f19d9446183721892697d9cda7cb"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/pedestrian-missing_release-gap0/run_metadata.json",
+      "source_sha256": "16ab1f4b685e3846d0ccf2b64ab8852027a43c12b009817b5e86ad9b623af3e2",
+      "public_sha256": "2213a9f499bae4bdbdfa3033488f1c5ecc7207a62139686a6991fc70919259ec"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/pedestrian-missing_release-gap2/run_metadata.json",
+      "source_sha256": "482267f47ebc541cea0de15b61c1f90360726e91c8b03e8ae15a798be74aa711",
+      "public_sha256": "a238a4770b1ed605d57171650dee8413cd7fcc7117504ef73a697d1c50adfd70"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/pedestrian-missing_release-gap6/run_metadata.json",
+      "source_sha256": "56dc67c3ebd39a129e517893fff5e4873578326d89def97e9419bbd6e3b2bbe7",
+      "public_sha256": "a98a3cb71a95d586af77b843308517f0091586d31172edbb88c79f9c26767096"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/pedestrian-multi_all_released-gap0/run_metadata.json",
+      "source_sha256": "3ab4f10b6b1b5face802b9005f865e965436b9e7ff9dfe053aae2b708eb0782c",
+      "public_sha256": "9f73199402768dc00787c3e9587e04fb51e04a0a8d074bbaf7a8ff8f7d4baea9"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/pedestrian-multi_all_released-gap2/run_metadata.json",
+      "source_sha256": "da7656d71483edd82a6e42c4bb5d6e1babe612f9d1232d96ecccf0cdd0398ccb",
+      "public_sha256": "a8f696acee7ed2fe128f422346e1bdfdc22c347d4be6ee39cc3fefbbc752160c"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/pedestrian-multi_all_released-gap6/run_metadata.json",
+      "source_sha256": "db3dfe84085a1d44f363bab44f46a0d3d197289d2671d78d649eca18b5fef7eb",
+      "public_sha256": "0eea25fc986da308eb21a46c166cdee820be6a2fc029f7a7bc7990d2b93a1cfb"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/pedestrian-multi_partial-gap0/run_metadata.json",
+      "source_sha256": "dec68cdd0e0249d4ad7fda5f8177cd1885cc7fc3c7d1339eb6bde32c151307a4",
+      "public_sha256": "c18d30a23d5a75171b7ae130350e41b48b03e19925f3d4a05d5b984bbbe438b7"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/pedestrian-multi_partial-gap2/run_metadata.json",
+      "source_sha256": "745dca2985cf10692a2c935db95b37dcf751286762d51f3beb48093052b4bb59",
+      "public_sha256": "436d3b3eec8eaa2ca50d8b7bab164bb2ec50d334070848cf112539565cc81e08"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/pedestrian-multi_partial-gap6/run_metadata.json",
+      "source_sha256": "747e2868be19d57aa17c677f259b05570bf4b732041dd16fa1d8e48f9b1c01c4",
+      "public_sha256": "20c84374849f5644741204586bfe5b3b69bd1a908f636c9a9d762618810655a6"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/pedestrian-order_violation-gap0/run_metadata.json",
+      "source_sha256": "9ae71612752f335589c4f4de9a39e7fe0d2f932af8ceb74a415ae62921d16750",
+      "public_sha256": "9dbde62ed1acd578af90370115ed01856faabd6fe4afc71c3950fbadeccfa496"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/pedestrian-order_violation-gap2/run_metadata.json",
+      "source_sha256": "96039f9dde8c9b1e2590324b4b2feca41e72075ef45345d4931937ebf6c78629",
+      "public_sha256": "22ea67f088c012e4bf4d0305a6a9e368ef1802c80dcaa18ed44bb241e93cfe27"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/pedestrian-order_violation-gap6/run_metadata.json",
+      "source_sha256": "1b2803b9c302b1243dc1a125fb7bdc23a890c7c167b8f138a2fd7e4b70572ad7",
+      "public_sha256": "b97e69fb1eff1476917df1ebc8b25b98d1d41329f5083345687a03a2faa94ddd"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/pedestrian-released_normal-gap0/run_metadata.json",
+      "source_sha256": "275d34355a85aa5502dd578b6c81ae91deb8081817c89028ec3ed50a5c93108d",
+      "public_sha256": "1a8c3ce0d3af464d502002216138ca8dbdf0e252c487ead0982e953ec7f4b421"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/pedestrian-released_normal-gap2/run_metadata.json",
+      "source_sha256": "bba61e14ce00e795ee0b63f589b6bbb92e2a33a79a6626eda405316e54d277ca",
+      "public_sha256": "23c8d832802f86e5b1f4b0b850dc138585ae065e2f4f52bc5cdeeed53fcf8819"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/pedestrian-released_normal-gap6/run_metadata.json",
+      "source_sha256": "21907737c593938c1037db70fe8589c4f3f493822dba9a208558ade947080b3b",
+      "public_sha256": "f262bf1fa5b0023ff968873d5d04c0ab960388959c2c8b8f62d604bb94f16efe"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/pedestrian-wrong_release-gap0/run_metadata.json",
+      "source_sha256": "91933ab5224ea88b2305837e8a6e85827dd7aefa0e5b566a5fdd8a80c153e0b1",
+      "public_sha256": "e8e40f6728864bdea4d8289a68f94c8fe6cb4be911c87bbdf17a20ed2e13b7f9"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/pedestrian-wrong_release-gap2/run_metadata.json",
+      "source_sha256": "aa0cc26cf87f774d503345c944c2021608d63fb3133ab5bd3fc091bed3ee547d",
+      "public_sha256": "657dc70a36d00dc40da10159f50b88ba935a5f9af052ce045f4d61c52fc2aa82"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/controlled-scenarios-2026-10-01-001/uppaal/pedestrian-wrong_release-gap6/run_metadata.json",
+      "source_sha256": "097ccc7700f98cc56d5ce7d5d1e0ca3c445203c7ffd4706517b75ed36529c9bd",
+      "public_sha256": "b77f56220b8ce5fb25ec1d7ac26c633565322d5ac0c30c7da2b506bcfc6126e1"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/manuscript-build-2026-10-01-004/RUN_MANIFEST.json",
+      "source_sha256": "33de4536403191910de30872e42249094b7e574f2c9dc8e7599bcbd4139fc5bf",
+      "public_sha256": "59a69747ce4146e075dcc336a21914f407b14773d9800b1823f6b0154d31300e"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/manuscript-build-2026-10-01-004/main-clean/build-1.txt",
+      "source_sha256": "715e0a77c3bdc83c82f3912de225054dc5d2f639416d0137d60a07f782f3c8df",
+      "public_sha256": "676440d9ecb593b29f417072722c72b6d45e2f0fc58150821b937714df0f8145"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/manuscript-build-2026-10-01-004/main-clean/build-3.txt",
+      "source_sha256": "81149e02f7595b54f85514cb6f96df2c0f6e0287b58057868772e8f8c1d344ea",
+      "public_sha256": "110b7599b80aeabe054fe81444e53ed9f66db04220c0b71ec7e85f2b012d0d26"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/manuscript-build-2026-10-01-004/main-clean/build-4.txt",
+      "source_sha256": "a23c44a2343374cac16fd426d1cc4ee9ffb436059d19eb59a529b623680475d5",
+      "public_sha256": "047da79723118d7cd6804e3bdfc77074093f796c8a8d96a17d2fd653f3983776"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/manuscript-build-2026-10-01-004/main/build-1.txt",
+      "source_sha256": "92dee344b84adb5deed9f05069467f3602edeb6544cc426c6013025543299de8",
+      "public_sha256": "e77e6dc45d3a858ce23c6795e7eefb56f5b0ca2b736f9845f5f5a2090c2d11e2"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/manuscript-build-2026-10-01-004/main/build-3.txt",
+      "source_sha256": "cf5343b74d3b9dc7fc492f8d732c44e9a78e57d7f1c4c79818b0e1f2000254a4",
+      "public_sha256": "08288453a06b6daa04fdea15252e340c7ff1938bf5917b420ea157e8655632c0"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/manuscript-build-2026-10-01-004/main/build-4.txt",
+      "source_sha256": "240eda33a57309c6bbe8eebc25b9b6a37deceb005d318086b80d12557988ba70",
+      "public_sha256": "c3ef93271c942391489db45de2fa4b0c4fc5eae6a0131603433c6f6d1a7f8399"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/manuscript-preview-2026-10-01-001/RUN_MANIFEST.json",
+      "source_sha256": "45c7fa98792a0c2e2195ab859d4c62864e83b90c9115d87bd7f852cb1f69056f",
+      "public_sha256": "db051517b218ee3d9f4b532e77de0123cad631f42f488c10f549cde9bff0191a"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/manuscript-validation-2026-10-01-002/REPORT_KO.md",
+      "source_sha256": "549274dacf11392b6c3b8550cb2c3c43e3c5a6d83a95c09053ce9862da5c01a8",
+      "public_sha256": "eaeac9e9a7c0634896ab5e34a0d2a01e3927e1b3086ab9caae5f1f174750c8eb"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/manuscript-validation-2026-10-01-002/RUN_MANIFEST.json",
+      "source_sha256": "e0ec22b4e55eab53d55542229afa31d856df88e358bf019e1db037facf1f5160",
+      "public_sha256": "7e954b3fb0ae8fc5458ed4cbd506f4432bce8aa80dae32826377837317f4d941"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/manuscript-validation-2026-10-01-002/section_comparison.json",
+      "source_sha256": "65a2ec64c081904689247361c94818f43184448ee476c078dc43a24d64228ffd",
+      "public_sha256": "c975bf31dd8c8db9875fd3cd34286ea7ea9fe3d05a8b4556b973b7f3ecd6ef35"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/manuscript-validation-2026-10-01-002/verify_documents.py",
+      "source_sha256": "933519df93419fc1c3e9276b154f8838f75c9a8c7c6c85c2134f5c9023eea856",
+      "public_sha256": "9710c5aedf432f25005532836c8a93f8fe737b35991228650a17a41f5116e2ec"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/terminal-evidence-2026-10-01-001/RUN_MANIFEST.json",
+      "source_sha256": "f9a04d78173efb8aa83c5cb12e71293fb1bff9ca550d9488fb58ca2cd761eb65",
+      "public_sha256": "2f64e70682d033ff9c190d257ec36bce5e4600d31001210d8ce9745a64cfa572"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/kiee-review-revision-001/terminal-evidence-2026-10-01-001/terminal_results.json",
+      "source_sha256": "a0893f803d7d3e3f0258b0ad421a944a24bcd3c496cf9f081fd443467dd26838",
+      "public_sha256": "bcdf4ed57af84557109e4e216f117d8983b860be649bd6aeb7312dde4e61906f"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0007-to-scene-0009-loop-result.json",
+      "source_sha256": "498c57a284bba64174cf51a264e847260af259c05c43650579ba68f96444ca33",
+      "public_sha256": "5f514ce6f8a72dbca9ec2b5ac662f3fda8964ad5a013a24c71315bc3276052f1"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0025-to-scene-0026-loop-result.json",
+      "source_sha256": "bbbcd20579e29854d3b36388362f97e9709801c3313d2f3f9d0565475119e4e7",
+      "public_sha256": "b70c35d5d98bf7ed84da75c4ebfaf3ba38cf7b195bba78c8046b37126c1bd32f"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0027-to-scene-0028-loop-result.json",
+      "source_sha256": "18b884b24ec07b5bbd1f5f3152352b7e61f9ecc603157ac6005a5909f3d3d29c",
+      "public_sha256": "bdfd150218272ce351cc221f248f2533aec82b8903e1c385482dfbfa145e7c74"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0031-to-scene-0032-loop-result.json",
+      "source_sha256": "b9bc309eb94d0a1d5506ff4d3e7d4a04ecb87618d5a2697edeccc9aa3678e570",
+      "public_sha256": "f24e911b61326fc32fd9b19c8f76077af49e5a618ebe71f7ca5bb14783b99840"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0048-to-scene-0049-loop-result.json",
+      "source_sha256": "bfc680a2d0c75b1075c8ad583e94dfc352af34f40b45a3b4666267d4f9be01f1",
+      "public_sha256": "d7e5d7fffbaf30cd70712890f20e511ec545eadd17bb50ed9d65a3e3e4c4f8e8"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0051-to-scene-0052-loop-result.json",
+      "source_sha256": "7c8b27c371716b7b09c2e4b5a41333e5e8483774b61b4df56bebd36049e0fa17",
+      "public_sha256": "0d2cde0ded7d3c9680b22f845284f1228cabc446abb12c0114d8295ac25dd2dc"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0056-to-scene-0057-loop-result.json",
+      "source_sha256": "201aa60ad256c67fff678fa6844f2a6354d51d714bf65fc59011a56cc449719e",
+      "public_sha256": "75329793f8e47e3fee276164e24b0ef016942e0aab36f76b89a833050fe899bd"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0063-to-scene-0064-loop-result.json",
+      "source_sha256": "2fce9f6f6335a6b42a09b6d0320a5e9b91636f639a070a898563dc6cbaf84177",
+      "public_sha256": "6ccd26c14816223da8a7659ff647321ed0aca2177396ad6ddce9b0de93b8bc2f"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0124-to-scene-0125-loop-result.json",
+      "source_sha256": "d40e20d523fc0846d7279a7d585e6f784850f4bf745fc24f633e0f9bee8ccc79",
+      "public_sha256": "d8c37fca1a5b39bbeff7dbac36fd8d9fa8949e0ec2ceb06c82651c62179c8c23"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0130-to-scene-0133-loop-result.json",
+      "source_sha256": "65a7418c6ce5910b6126a1fa9adbc590b955fdb6f6d6c8a5c782ddaaa68ea9cf",
+      "public_sha256": "90f155dd5a681b50d57ebdfcfe3adb56e3a8b0f11a9c8450f7182ce698d9e38f"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0134-to-scene-0135-loop-result.json",
+      "source_sha256": "edd4f700fee01bcf7dcfd1114269a049c69230f7bff85c94895494c9299f3bdd",
+      "public_sha256": "a7b95bdd059a1c094059718857152fbc23ff19f5e257c303333ac00e460d0fcf"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0150-to-scene-0151-loop-result.json",
+      "source_sha256": "0b2e97f981fd6d90c2f80f07b3a3dc2aa197d55042c82fabc8822eb5b457d568",
+      "public_sha256": "4eb0d6a53111fcf127e7b3052232304a642897aeacce53210bc9d1d2012f86a3"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0179-to-scene-0180-loop-result.json",
+      "source_sha256": "b7c5c6740a4abd9209cd0a9f3caf25d3007c6b918964cb0eec951f50cade823c",
+      "public_sha256": "6ef5826235714ceccb3053cebb5e080d0f1fad383e2633c7a16ddfe5314f27cb"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/uppaal-loop-batch-all-strict-1s.json",
+      "source_sha256": "9b365fe553182e6ae0938440ecf9751323ebc7cefbb20718b523c5014a85a540",
+      "public_sha256": "756ece49401636b8d0ae6319878a993794c7911961b5eab8315f080c2f200d53"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/uppaal-loop-batch-summary.json",
+      "source_sha256": "53d4ddd5033aa86b345ef55318071b1d47f64a615a7890fa10268f936ada6377",
+      "public_sha256": "282e3fee65f2656e1c5d1827b4a7cc2b4d863ab23c03b0a4fce4ce4234944a0d"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/uppaal-loop-verification-result.json",
+      "source_sha256": "0cdfd39bb46a8d3b4799988934bcc67e75b78d33895dcbeb99ba426cce7f8019",
+      "public_sha256": "7f8ebb44474b37f7a6351056bf7c2c13039f402c939c82543bd5357e885fac6f"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/uppaal-verification-result.json",
+      "source_sha256": "7378c6ec9bf919d855d00d7e265dcd9611dd9709c1a38484884cf9bcc52ee92d",
+      "public_sha256": "20a81eeac5e7925754d355ce11b66eef7d5d5a5e98de96facbff8df22c9d1127"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/scene-0001/uppaal-verification-result.json",
+      "source_sha256": "0b6fa9f99ffc61f4ec2ed3e944081767dfeb6e36f13c73bcdca991cd8a8d3102",
+      "public_sha256": "909e3679cce5f5ec6d4ef2aa21e24e5e671420ff4bf329a2a03544fd381c4b3e"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/docs/plans/03_PROJECT_EXECUTION_TRACKER.md",
+      "source_sha256": "7b540ee5b74a8fb3bcb85f454fe40c6b66a71a3b446780fc78cdd78ce3c500e4",
+      "public_sha256": "a9e7737227dd41fdc26cbb012431f7d17ca264ab0ac8089c81a33ffab0f122a8"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/experiments/review_publication/test_review_publication.py",
+      "source_sha256": "dca0dd6199768e5ed7ec3178b0c89974c3490b30d7bea14f7c33e68c39b77aed",
+      "public_sha256": "43475aa92ccce8a2cdd07619f2b2c7e89370b9ea0df04b21079bb5771288176a"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/paper/manuscript/latex-kiee-review-2022-coc-audit-10pages/NEXT_SESSION_EXPERIMENT_PROMPT.md",
+      "source_sha256": "37292fbb2fada1b765e6bdbf70bea33a3162ef3e3a2bce61c9190df29135478b",
+      "public_sha256": "0df718b7b3e238d3412f3e8f94fec1ffaf9dc731ef9751e614497c20376ef8b8"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/main-build-1.txt",
+      "source_sha256": "9dd23481ba50bf38163ef1ce9d2b6d23254ef17ebb13b1fdeced02b42011a32e",
+      "public_sha256": "78da239281298deb02cffe2818d2092e72b00437f2a3d208e869a054db4438b0"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/main-build-3.txt",
+      "source_sha256": "9dd23481ba50bf38163ef1ce9d2b6d23254ef17ebb13b1fdeced02b42011a32e",
+      "public_sha256": "78da239281298deb02cffe2818d2092e72b00437f2a3d208e869a054db4438b0"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/main-build-4.txt",
+      "source_sha256": "9dd23481ba50bf38163ef1ce9d2b6d23254ef17ebb13b1fdeced02b42011a32e",
+      "public_sha256": "78da239281298deb02cffe2818d2092e72b00437f2a3d208e869a054db4438b0"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/main-clean-build-1.txt",
+      "source_sha256": "34fe1d9ec23357a76b5cc03e164d90efcdcbe8b673e5b3819ec939286f1bc64e",
+      "public_sha256": "4be82ead3e0011f9ab4992c62f94753c7f9da241719887c2b7b31103eaecb2b5"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/main-clean-build-3.txt",
+      "source_sha256": "34fe1d9ec23357a76b5cc03e164d90efcdcbe8b673e5b3819ec939286f1bc64e",
+      "public_sha256": "4be82ead3e0011f9ab4992c62f94753c7f9da241719887c2b7b31103eaecb2b5"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/main-clean-build-4.txt",
+      "source_sha256": "34fe1d9ec23357a76b5cc03e164d90efcdcbe8b673e5b3819ec939286f1bc64e",
+      "public_sha256": "4be82ead3e0011f9ab4992c62f94753c7f9da241719887c2b7b31103eaecb2b5"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/paper/manuscript/latex-kiee-review-2022-coc-audit/NEXT_SESSION_EXPERIMENT_PROMPT.md",
+      "source_sha256": "37292fbb2fada1b765e6bdbf70bea33a3162ef3e3a2bce61c9190df29135478b",
+      "public_sha256": "0df718b7b3e238d3412f3e8f94fec1ffaf9dc731ef9751e614497c20376ef8b8"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/intermediate/guardsynth-studio-sequential-coc-001/studio-pair-scenario-test-2026-10-03-001/pair_scenario_probe.py",
+      "source_sha256": "0b16ed44824bc4b2ac239c5b8d9d8e6bc771b9167f502f596afba6f489081add",
+      "public_sha256": "7e1155949259ddfadc0fe1f9f97c48babd5927e31efaa2911889829d380a1df0"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/intermediate/guardsynth-studio-sequential-coc-001/studio-pair-scenario-test-2026-10-03-002/pair_scenario_probe.py",
+      "source_sha256": "d93c42b173007f282aa03c9bb1940232eac0740fb608467ff510fe7ff58b8cff",
+      "public_sha256": "b35c7c2cfc5ee7c629150b697b1d0fa45bccc2d4b93bcece8f146ee355782705"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/intermediate/guardsynth-studio-sequential-coc-001/studio-verification-feasibility-test-2026-10-03-001/RESULT.json",
+      "source_sha256": "f3d0e2603143556fcd65dabb83ebc44d13afc28506672c9d784cb269b9a7d8cd",
+      "public_sha256": "57da52eb880308fe75d4a9ff1a7904b76978a1d68c2d0ea4bd1710f509762965"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/intermediate/guardsynth-studio-sequential-coc-001/studio-verification-feasibility-test-2026-10-03-001/benchmark_probe.py",
+      "source_sha256": "d03a8e6f08a52bfb7bb8ec113756985e65f4f734ed7b550f09f2c02ecf9328da",
+      "public_sha256": "5c3ec89d3766c329866f28a29a487206d4772f05da839e6357740b394a58eac1"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-external-methods-001/original-method-checks-2026-10-07-001/RESULT.json",
+      "source_sha256": "dc1033a8dd8deab87c2ba7e048ed0cea0514094ce2b15721163e491a392156bd",
+      "public_sha256": "7c1a7a6eb10ac1259715e3f6208b95db1d8864799d514829fa46ff6c182fd8b8"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-introduction-revision-001/introduction-revision-2026-10-08-001/ieee-access-experiments-supplement-v01-en.tex",
+      "source_sha256": "c2fea47ce24978b382dc0f85da465ae0fd6e8eaadf7601ee530bf4ac475beb07",
+      "public_sha256": "2d4befff9f6a659a973dfb4d5e83160cc1334cede1b36a5c0ddd19558d7d0211"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-learning-specification-faults-001/learning-specification-faults-2026-10-12-001/RUN_MANIFEST.json",
+      "source_sha256": "bd43ffad6ca7a531e233d4a93b52f46444e944f8b4801415bae0ab5ac525f6a2",
+      "public_sha256": "b52c31b8dd0f3150436b8f82de1558c489342ba4cd3d3ff9bebbb265af19a7e7"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/discussion-section-2026-09-30-001/RUN_MANIFEST.json",
+      "source_sha256": "452f695b830be6ed533854606eda3c32d90d6df41814dc6e6539d1adb6b97b24",
+      "public_sha256": "3d901a2a0f9b75a162ff7f4c816c065a18ef384cd53e89855832fa0e1f8f6299"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/discussion-section-2026-09-30-001/build_snapshot.py",
+      "source_sha256": "c88d8cae9ec1b7268bf82e4e22bf935e24bd48b3aef0cf174ad8af16e7d464c9",
+      "public_sha256": "2e06029d3c782d9ca9bae8babcb248b8d2e785fb90666c6a8e40f4522cab9308"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/experiments-section-2026-09-30-003/IEEE_ACCESS_EXPERIMENTS_SUPPLEMENT_V01_KO.md",
+      "source_sha256": "6dc73e70048103d91d3076e59ace0825c266b37f0d81eb30f1561cc9da9dfb5d",
+      "public_sha256": "77975aee85da16e39358293222088f157f7540b316b5ecd29da7b317a9c409ac"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/experiments-section-2026-09-30-003/RUN_MANIFEST.json",
+      "source_sha256": "9c6f91bbba98322d5a592fe44d7684258b4800453e471ef3c537849e1a45a741",
+      "public_sha256": "7c9d331e04160786ad8306ae5c9da8887681c1ee67e61a1a83f85d0f1f8edbdd"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/experiments-section-2026-09-30-003/build_snapshot.py",
+      "source_sha256": "d99923b6deeb32c2c29209773fa6da1b6b45e162988b58d490101a4d0a1090d5",
+      "public_sha256": "dd759f65406e5b8eb4fe234d0fd9080689f1b4ac1e40b1fd768430eec24877ec"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/RUN_MANIFEST.json",
+      "source_sha256": "2b0b27324dbf63ced735bf8e25a97fa156d1a15ba233ba0f1622b472e2575526",
+      "public_sha256": "6b224948e82c7c4c49d735c77707b8606034babe06d5c1bdca59e12139105b0b"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p0-seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p0-seed123/adapter/adapter_config.json",
+      "source_sha256": "e44f41a798170c103b632f5c0ba0ceebe13f01b6f8c65b1ddcbf5e06169fb49f",
+      "public_sha256": "5c36548d6f55bd0907cb9039c6c333815c50521947ab01e685d0f8f36a4727a2"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p0-seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p0-seed17/adapter/adapter_config.json",
+      "source_sha256": "e44f41a798170c103b632f5c0ba0ceebe13f01b6f8c65b1ddcbf5e06169fb49f",
+      "public_sha256": "5c36548d6f55bd0907cb9039c6c333815c50521947ab01e685d0f8f36a4727a2"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p0-seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p0-seed42/adapter/adapter_config.json",
+      "source_sha256": "e44f41a798170c103b632f5c0ba0ceebe13f01b6f8c65b1ddcbf5e06169fb49f",
+      "public_sha256": "5c36548d6f55bd0907cb9039c6c333815c50521947ab01e685d0f8f36a4727a2"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p1-seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p1-seed123/adapter/adapter_config.json",
+      "source_sha256": "e44f41a798170c103b632f5c0ba0ceebe13f01b6f8c65b1ddcbf5e06169fb49f",
+      "public_sha256": "5c36548d6f55bd0907cb9039c6c333815c50521947ab01e685d0f8f36a4727a2"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p1-seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p1-seed17/adapter/adapter_config.json",
+      "source_sha256": "e44f41a798170c103b632f5c0ba0ceebe13f01b6f8c65b1ddcbf5e06169fb49f",
+      "public_sha256": "5c36548d6f55bd0907cb9039c6c333815c50521947ab01e685d0f8f36a4727a2"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p1-seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p1-seed42/adapter/adapter_config.json",
+      "source_sha256": "e44f41a798170c103b632f5c0ba0ceebe13f01b6f8c65b1ddcbf5e06169fb49f",
+      "public_sha256": "5c36548d6f55bd0907cb9039c6c333815c50521947ab01e685d0f8f36a4727a2"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p2-seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p2-seed123/adapter/adapter_config.json",
+      "source_sha256": "e44f41a798170c103b632f5c0ba0ceebe13f01b6f8c65b1ddcbf5e06169fb49f",
+      "public_sha256": "5c36548d6f55bd0907cb9039c6c333815c50521947ab01e685d0f8f36a4727a2"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p2-seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p2-seed17/adapter/adapter_config.json",
+      "source_sha256": "e44f41a798170c103b632f5c0ba0ceebe13f01b6f8c65b1ddcbf5e06169fb49f",
+      "public_sha256": "5c36548d6f55bd0907cb9039c6c333815c50521947ab01e685d0f8f36a4727a2"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p2-seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/p2-seed42/adapter/adapter_config.json",
+      "source_sha256": "e44f41a798170c103b632f5c0ba0ceebe13f01b6f8c65b1ddcbf5e06169fb49f",
+      "public_sha256": "5c36548d6f55bd0907cb9039c6c333815c50521947ab01e685d0f8f36a4727a2"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/shuffled_guard-seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/shuffled_guard-seed123/adapter/adapter_config.json",
+      "source_sha256": "e44f41a798170c103b632f5c0ba0ceebe13f01b6f8c65b1ddcbf5e06169fb49f",
+      "public_sha256": "5c36548d6f55bd0907cb9039c6c333815c50521947ab01e685d0f8f36a4727a2"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/shuffled_guard-seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/shuffled_guard-seed17/adapter/adapter_config.json",
+      "source_sha256": "e44f41a798170c103b632f5c0ba0ceebe13f01b6f8c65b1ddcbf5e06169fb49f",
+      "public_sha256": "5c36548d6f55bd0907cb9039c6c333815c50521947ab01e685d0f8f36a4727a2"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/shuffled_guard-seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/maneuver-contract-learning-2026-09-30-001/shuffled_guard-seed42/adapter/adapter_config.json",
+      "source_sha256": "e44f41a798170c103b632f5c0ba0ceebe13f01b6f8c65b1ddcbf5e06169fb49f",
+      "public_sha256": "5c36548d6f55bd0907cb9039c6c333815c50521947ab01e685d0f8f36a4727a2"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/manuscript-package-2026-09-29-001/REPORT_KO.md",
+      "source_sha256": "4dff88a62827163da5b49334e398d489d4497c0367686a4e4f1b27c0059b89fe",
+      "public_sha256": "b1de3756ec5f4614f723119440f8c4420b3cbaba4568aa4dd5a1c72156ba4ef9"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/manuscript-revision-2026-09-30-001/IEEE_ACCESS_EXPERIMENTS_SUPPLEMENT_V01_EN.md",
+      "source_sha256": "0c0f88ef0ff25cd47426ec45f1b825d717be62de2fd43ea9302557318bf7e7a4",
+      "public_sha256": "3b3b71759c5d1ef8c5a648a089fafc384a53f033afea6823e6d1cc445f89e64d"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/manuscript-revision-2026-09-30-001/IEEE_ACCESS_EXPERIMENTS_SUPPLEMENT_V01_KO.md",
+      "source_sha256": "6dc73e70048103d91d3076e59ace0825c266b37f0d81eb30f1561cc9da9dfb5d",
+      "public_sha256": "77975aee85da16e39358293222088f157f7540b316b5ecd29da7b317a9c409ac"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/manuscript-revision-2026-09-30-001/build_manuscript.py",
+      "source_sha256": "9f1b31361ff77d4922111f870930f8292526cb8f3359ed32b5279beb48276032",
+      "public_sha256": "047574c489ff1d19bff3a8eda2b3161710b18d3d58b267ebaebf0322d6938026"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/manuscript-revision-2026-09-30-001/build_supplement.py",
+      "source_sha256": "4e845d38c406ef824158eda9b9833c1572118c03c448059ca804e7e36cbfca26",
+      "public_sha256": "1b99dd84911e6143f21d831066caad3f46ffda72383ada6e67b3761007044120"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/manuscript-revision-2026-09-30-001/content_checks.json",
+      "source_sha256": "80a5deab123f1ba9d39d858f5eeb6b8255779744ed9f9f194c8123ed91a66d38",
+      "public_sha256": "4b0617175c5365331d55bd234e8a3e35f4ffb0055b556011819245db3168b6f9"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/manuscript-revision-2026-09-30-001/ieee-access-manuscript-en.tex",
+      "source_sha256": "55b5a139d489124b5982f25e1478785576cf4333366120cbef8c8892b5801fa5",
+      "public_sha256": "c54be3535d52253b6a8e8c62e4298dc1156f55d37559920912f2eecaa8fc74c7"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/manuscript-revision-2026-09-30-001/ieee-access-manuscript-ko.tex",
+      "source_sha256": "85ef46895f247eaf16867ddcef64ac692a1f209a7162d41dcd1ed68e91299bcc",
+      "public_sha256": "ca77e22accf69c61930d033f5cf46bcf4cce255943393204d27f14db9caf07d8"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/manuscript-revision-2026-09-30-001/supplement_build.json",
+      "source_sha256": "2a1690ac142d95df997fe6e680aca08daf3d0de269b306d71a83bd92bdd96428",
+      "public_sha256": "cf4e9cc5cd8841257de031c54e12bc3b62b6e13f7614254362cb1191b28f9224"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/manuscript-revision-2026-09-30-001/verify_manuscript.py",
+      "source_sha256": "90516242576719c3389306735d226bc641b4d98f248f947afe6b316b01b09614",
+      "public_sha256": "f17a3fe688c12fd8dc969714e2c8f6d76059093b0436731b462f8a5e3f14591e"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/multitask-contract-analysis-2026-09-30-001/RESULT.json",
+      "source_sha256": "f9fad9f4d7424596854a8c0fddf21364bd465a9ffbdc44704baea79b2b6f55ed",
+      "public_sha256": "22a113268b8040e64294c72f3a047d08cab355cc932b6bca1e1d1ac6764d58b1"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/multitask-contract-analysis-2026-09-30-001/RUN_MANIFEST.json",
+      "source_sha256": "5fe4cda56a08e3790cbb432141f33beb84059670295f056a82e7b678237c5fee",
+      "public_sha256": "46c8c64fedb034f5fdbf428db3889a1be4bcb37988fe4f63517276fc3500888a"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/RUN_MANIFEST.json",
+      "source_sha256": "8a9da4e805f7903f376231e758caf2b363bcd401145547aae4d571afe9e30bba",
+      "public_sha256": "5f8b2fc6663272738ff2f5091b1c646d5ee95bd73ced2745ca55c3613b98eb9c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p0-seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p0-seed123/adapter/adapter_config.json",
+      "source_sha256": "0fcafbe9503d13a5d3dae2e7324ae9539a8c9088c9f666c1d6259be24090551c",
+      "public_sha256": "86a5fad25f36f4d0bb00df989cc1ce4a4c5aebcefdbc43b277fd58c0285bd961"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p0-seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p0-seed17/adapter/adapter_config.json",
+      "source_sha256": "0fcafbe9503d13a5d3dae2e7324ae9539a8c9088c9f666c1d6259be24090551c",
+      "public_sha256": "86a5fad25f36f4d0bb00df989cc1ce4a4c5aebcefdbc43b277fd58c0285bd961"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p0-seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p0-seed42/adapter/adapter_config.json",
+      "source_sha256": "0fcafbe9503d13a5d3dae2e7324ae9539a8c9088c9f666c1d6259be24090551c",
+      "public_sha256": "86a5fad25f36f4d0bb00df989cc1ce4a4c5aebcefdbc43b277fd58c0285bd961"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p1-seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p1-seed123/adapter/adapter_config.json",
+      "source_sha256": "0fcafbe9503d13a5d3dae2e7324ae9539a8c9088c9f666c1d6259be24090551c",
+      "public_sha256": "86a5fad25f36f4d0bb00df989cc1ce4a4c5aebcefdbc43b277fd58c0285bd961"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p1-seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p1-seed17/adapter/adapter_config.json",
+      "source_sha256": "0fcafbe9503d13a5d3dae2e7324ae9539a8c9088c9f666c1d6259be24090551c",
+      "public_sha256": "86a5fad25f36f4d0bb00df989cc1ce4a4c5aebcefdbc43b277fd58c0285bd961"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p1-seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p1-seed42/adapter/adapter_config.json",
+      "source_sha256": "0fcafbe9503d13a5d3dae2e7324ae9539a8c9088c9f666c1d6259be24090551c",
+      "public_sha256": "86a5fad25f36f4d0bb00df989cc1ce4a4c5aebcefdbc43b277fd58c0285bd961"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p2-seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p2-seed123/adapter/adapter_config.json",
+      "source_sha256": "0fcafbe9503d13a5d3dae2e7324ae9539a8c9088c9f666c1d6259be24090551c",
+      "public_sha256": "86a5fad25f36f4d0bb00df989cc1ce4a4c5aebcefdbc43b277fd58c0285bd961"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p2-seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p2-seed17/adapter/adapter_config.json",
+      "source_sha256": "0fcafbe9503d13a5d3dae2e7324ae9539a8c9088c9f666c1d6259be24090551c",
+      "public_sha256": "86a5fad25f36f4d0bb00df989cc1ce4a4c5aebcefdbc43b277fd58c0285bd961"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p2-seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/p2-seed42/adapter/adapter_config.json",
+      "source_sha256": "0fcafbe9503d13a5d3dae2e7324ae9539a8c9088c9f666c1d6259be24090551c",
+      "public_sha256": "86a5fad25f36f4d0bb00df989cc1ce4a4c5aebcefdbc43b277fd58c0285bd961"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/shuffled_guard-seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/shuffled_guard-seed123/adapter/adapter_config.json",
+      "source_sha256": "0fcafbe9503d13a5d3dae2e7324ae9539a8c9088c9f666c1d6259be24090551c",
+      "public_sha256": "86a5fad25f36f4d0bb00df989cc1ce4a4c5aebcefdbc43b277fd58c0285bd961"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/shuffled_guard-seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/shuffled_guard-seed17/adapter/adapter_config.json",
+      "source_sha256": "0fcafbe9503d13a5d3dae2e7324ae9539a8c9088c9f666c1d6259be24090551c",
+      "public_sha256": "86a5fad25f36f4d0bb00df989cc1ce4a4c5aebcefdbc43b277fd58c0285bd961"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/shuffled_guard-seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/static-contract-learning-2026-09-30-001/shuffled_guard-seed42/adapter/adapter_config.json",
+      "source_sha256": "0fcafbe9503d13a5d3dae2e7324ae9539a8c9088c9f666c1d6259be24090551c",
+      "public_sha256": "86a5fad25f36f4d0bb00df989cc1ce4a4c5aebcefdbc43b277fd58c0285bd961"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-cost-learning-2026-09-29-001/RUN_MANIFEST.json",
+      "source_sha256": "c3cd5bc0838092c24b4bdfbb5aaac88a5798383e6afdd725a65db4f835cde9a4",
+      "public_sha256": "9fa6a335b30698ba5c64a34c826b09aa9f882381104a0bca4500abc7ce3b6019"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-cost-learning-2026-09-29-001/ce_eblc-seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-cost-learning-2026-09-29-001/ce_eblc-seed123/adapter/adapter_config.json",
+      "source_sha256": "d145e21c227adcc607e6b1451affee508d8150f97be31a9eaa6bbc7990ab63bd",
+      "public_sha256": "74e7cd25a51f44d366d9b95fcac67e117793a1ebfd26d766c56a23d116cd90be"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-cost-learning-2026-09-29-001/ce_eblc-seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-cost-learning-2026-09-29-001/ce_eblc-seed17/adapter/adapter_config.json",
+      "source_sha256": "d145e21c227adcc607e6b1451affee508d8150f97be31a9eaa6bbc7990ab63bd",
+      "public_sha256": "74e7cd25a51f44d366d9b95fcac67e117793a1ebfd26d766c56a23d116cd90be"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-cost-learning-2026-09-29-001/ce_eblc-seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-cost-learning-2026-09-29-001/ce_eblc-seed42/adapter/adapter_config.json",
+      "source_sha256": "d145e21c227adcc607e6b1451affee508d8150f97be31a9eaa6bbc7990ab63bd",
+      "public_sha256": "74e7cd25a51f44d366d9b95fcac67e117793a1ebfd26d766c56a23d116cd90be"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-cost-learning-2026-09-29-001/ce_only-seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-cost-learning-2026-09-29-001/ce_only-seed123/adapter/adapter_config.json",
+      "source_sha256": "d145e21c227adcc607e6b1451affee508d8150f97be31a9eaa6bbc7990ab63bd",
+      "public_sha256": "74e7cd25a51f44d366d9b95fcac67e117793a1ebfd26d766c56a23d116cd90be"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-cost-learning-2026-09-29-001/ce_only-seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-cost-learning-2026-09-29-001/ce_only-seed17/adapter/adapter_config.json",
+      "source_sha256": "d145e21c227adcc607e6b1451affee508d8150f97be31a9eaa6bbc7990ab63bd",
+      "public_sha256": "74e7cd25a51f44d366d9b95fcac67e117793a1ebfd26d766c56a23d116cd90be"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-cost-learning-2026-09-29-001/ce_only-seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-cost-learning-2026-09-29-001/ce_only-seed42/adapter/adapter_config.json",
+      "source_sha256": "d145e21c227adcc607e6b1451affee508d8150f97be31a9eaa6bbc7990ab63bd",
+      "public_sha256": "74e7cd25a51f44d366d9b95fcac67e117793a1ebfd26d766c56a23d116cd90be"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/RUN_MANIFEST.json",
+      "source_sha256": "57cca261f8c3dbea1ae3c36e7f318426e0086e3d01127241d6ade7f9449fe243",
+      "public_sha256": "8a719eb48018e1b0de5ea1ebbd878e67ffc4d90f1dc9e82b25ea65446b27843c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/logic_guard-seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/logic_guard-seed123/adapter/adapter_config.json",
+      "source_sha256": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+      "public_sha256": "c8080120cbb398a4709ec16e99c0538e6a84ab7aa9288857fdf4a8b12bd8a48c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/logic_guard-seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/logic_guard-seed17/adapter/adapter_config.json",
+      "source_sha256": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+      "public_sha256": "c8080120cbb398a4709ec16e99c0538e6a84ab7aa9288857fdf4a8b12bd8a48c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/logic_guard-seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/logic_guard-seed42/adapter/adapter_config.json",
+      "source_sha256": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+      "public_sha256": "c8080120cbb398a4709ec16e99c0538e6a84ab7aa9288857fdf4a8b12bd8a48c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/natural_guard-seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/natural_guard-seed123/adapter/adapter_config.json",
+      "source_sha256": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+      "public_sha256": "c8080120cbb398a4709ec16e99c0538e6a84ab7aa9288857fdf4a8b12bd8a48c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/natural_guard-seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/natural_guard-seed17/adapter/adapter_config.json",
+      "source_sha256": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+      "public_sha256": "c8080120cbb398a4709ec16e99c0538e6a84ab7aa9288857fdf4a8b12bd8a48c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/natural_guard-seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/natural_guard-seed42/adapter/adapter_config.json",
+      "source_sha256": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+      "public_sha256": "c8080120cbb398a4709ec16e99c0538e6a84ab7aa9288857fdf4a8b12bd8a48c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed123/adapter/adapter_config.json",
+      "source_sha256": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+      "public_sha256": "c8080120cbb398a4709ec16e99c0538e6a84ab7aa9288857fdf4a8b12bd8a48c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed17/adapter/adapter_config.json",
+      "source_sha256": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+      "public_sha256": "c8080120cbb398a4709ec16e99c0538e6a84ab7aa9288857fdf4a8b12bd8a48c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed42/adapter/adapter_config.json",
+      "source_sha256": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+      "public_sha256": "c8080120cbb398a4709ec16e99c0538e6a84ab7aa9288857fdf4a8b12bd8a48c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p1-seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p1-seed123/adapter/adapter_config.json",
+      "source_sha256": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+      "public_sha256": "c8080120cbb398a4709ec16e99c0538e6a84ab7aa9288857fdf4a8b12bd8a48c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p1-seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p1-seed17/adapter/adapter_config.json",
+      "source_sha256": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+      "public_sha256": "c8080120cbb398a4709ec16e99c0538e6a84ab7aa9288857fdf4a8b12bd8a48c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p1-seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p1-seed42/adapter/adapter_config.json",
+      "source_sha256": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+      "public_sha256": "c8080120cbb398a4709ec16e99c0538e6a84ab7aa9288857fdf4a8b12bd8a48c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p2-seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p2-seed123/adapter/adapter_config.json",
+      "source_sha256": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+      "public_sha256": "c8080120cbb398a4709ec16e99c0538e6a84ab7aa9288857fdf4a8b12bd8a48c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p2-seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p2-seed17/adapter/adapter_config.json",
+      "source_sha256": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+      "public_sha256": "c8080120cbb398a4709ec16e99c0538e6a84ab7aa9288857fdf4a8b12bd8a48c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p2-seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p2-seed42/adapter/adapter_config.json",
+      "source_sha256": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+      "public_sha256": "c8080120cbb398a4709ec16e99c0538e6a84ab7aa9288857fdf4a8b12bd8a48c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/shuffled_guard-seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/shuffled_guard-seed123/adapter/adapter_config.json",
+      "source_sha256": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+      "public_sha256": "c8080120cbb398a4709ec16e99c0538e6a84ab7aa9288857fdf4a8b12bd8a48c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/shuffled_guard-seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/shuffled_guard-seed17/adapter/adapter_config.json",
+      "source_sha256": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+      "public_sha256": "c8080120cbb398a4709ec16e99c0538e6a84ab7aa9288857fdf4a8b12bd8a48c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/shuffled_guard-seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/shuffled_guard-seed42/adapter/adapter_config.json",
+      "source_sha256": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+      "public_sha256": "c8080120cbb398a4709ec16e99c0538e6a84ab7aa9288857fdf4a8b12bd8a48c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-learning-2026-09-29-001/RUN_MANIFEST.json",
+      "source_sha256": "b6ccb5a720d6577c1ee6dea61402d96bfcfa58e255fb097c4223e10a59622978",
+      "public_sha256": "bc34427c3942f982f5fe8468e3bf3446f6d987f6bc963dd1600cd9a3d94831ee"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-learning-2026-09-29-001/p0-seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-learning-2026-09-29-001/p0-seed123/adapter/adapter_config.json",
+      "source_sha256": "4c6367c7e30a22dd5a497037261ea5ed57b3476bb413cff95b4af7303d723a38",
+      "public_sha256": "a9ae3198722165c77ca0d8a550610a7ee51cdc4c402555e17742f9e358d55e03"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-learning-2026-09-29-001/p0-seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-learning-2026-09-29-001/p0-seed17/adapter/adapter_config.json",
+      "source_sha256": "4c6367c7e30a22dd5a497037261ea5ed57b3476bb413cff95b4af7303d723a38",
+      "public_sha256": "a9ae3198722165c77ca0d8a550610a7ee51cdc4c402555e17742f9e358d55e03"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-learning-2026-09-29-001/p0-seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-learning-2026-09-29-001/p0-seed42/adapter/adapter_config.json",
+      "source_sha256": "4c6367c7e30a22dd5a497037261ea5ed57b3476bb413cff95b4af7303d723a38",
+      "public_sha256": "a9ae3198722165c77ca0d8a550610a7ee51cdc4c402555e17742f9e358d55e03"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-learning-2026-09-29-001/p1-seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-learning-2026-09-29-001/p1-seed123/adapter/adapter_config.json",
+      "source_sha256": "4c6367c7e30a22dd5a497037261ea5ed57b3476bb413cff95b4af7303d723a38",
+      "public_sha256": "a9ae3198722165c77ca0d8a550610a7ee51cdc4c402555e17742f9e358d55e03"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-learning-2026-09-29-001/p1-seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-learning-2026-09-29-001/p1-seed17/adapter/adapter_config.json",
+      "source_sha256": "4c6367c7e30a22dd5a497037261ea5ed57b3476bb413cff95b4af7303d723a38",
+      "public_sha256": "a9ae3198722165c77ca0d8a550610a7ee51cdc4c402555e17742f9e358d55e03"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-learning-2026-09-29-001/p1-seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-learning-2026-09-29-001/p1-seed42/adapter/adapter_config.json",
+      "source_sha256": "4c6367c7e30a22dd5a497037261ea5ed57b3476bb413cff95b4af7303d723a38",
+      "public_sha256": "a9ae3198722165c77ca0d8a550610a7ee51cdc4c402555e17742f9e358d55e03"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-learning-2026-09-29-001/p2-seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-learning-2026-09-29-001/p2-seed123/adapter/adapter_config.json",
+      "source_sha256": "4c6367c7e30a22dd5a497037261ea5ed57b3476bb413cff95b4af7303d723a38",
+      "public_sha256": "a9ae3198722165c77ca0d8a550610a7ee51cdc4c402555e17742f9e358d55e03"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-learning-2026-09-29-001/p2-seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-learning-2026-09-29-001/p2-seed17/adapter/adapter_config.json",
+      "source_sha256": "4c6367c7e30a22dd5a497037261ea5ed57b3476bb413cff95b4af7303d723a38",
+      "public_sha256": "a9ae3198722165c77ca0d8a550610a7ee51cdc4c402555e17742f9e358d55e03"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-learning-2026-09-29-001/p2-seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-learning-2026-09-29-001/p2-seed42/adapter/adapter_config.json",
+      "source_sha256": "4c6367c7e30a22dd5a497037261ea5ed57b3476bb413cff95b4af7303d723a38",
+      "public_sha256": "a9ae3198722165c77ca0d8a550610a7ee51cdc4c402555e17742f9e358d55e03"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-error-analysis-001/position-hold-error-analysis-2026-10-08-001/RUN_MANIFEST.json",
+      "source_sha256": "f0aa2ee00d9873d483e83b449b46e7fde41a05b6be80d7a4a21ccae5b7ed9365",
+      "public_sha256": "2c903d3fa1feed8c79836dd893f33c7199325abb3156beba25c229ec5e65b2ac"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-selection-001/position-hold-selection-2026-10-08-001/RUN_MANIFEST.json",
+      "source_sha256": "36200980fe6b8487eacdae9e7443e1412698c04607bef54158bf427f4df1ecf6",
+      "public_sha256": "0bce67469c7f601a8ce7634b7890ad11bb334c4533872e1676c1aab8115c19c4"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-selection-001/position-hold-selection-2026-10-08-002/RESULT.json",
+      "source_sha256": "1ef7ee4aa889dd2e51e79803f299a8b6ec17394e56bbbe25618595d7b6b48089",
+      "public_sha256": "eb33d8cd03d9dac170fa34b50c24d926c0a3f6449268bf02e28887bd172346c8"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-selection-001/position-hold-selection-2026-10-08-002/RUN_MANIFEST.json",
+      "source_sha256": "6ba5a8c35697f675937716fda95da050cf9b417f7f8d102ab864eaccb133510d",
+      "public_sha256": "f8d02a60065386ecbd3e8a5ccaebad8ad0db41d7d4afce8cd1da0c8f9f10ee13"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/RUN_MANIFEST.json",
+      "source_sha256": "a8cda281142c7a3e5ffd611f9fafbf3b07ad7ee6c22b5c130abee2d2aa768e31",
+      "public_sha256": "a644cf09a63c15d2378034bf22f6e9ac8d29ce4723808db3ea27aa76d62ccc3e"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/p0_seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/p0_seed123/adapter/adapter_config.json",
+      "source_sha256": "2bbd841ec60d7acb029c28c4d72ef675c2c35829bb720f8d8eb019e56ccd77fd",
+      "public_sha256": "d2365605bb4ca352413f639251372aea6d05dc148081a2eacd5a84e548da1841"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/p0_seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/p0_seed17/adapter/adapter_config.json",
+      "source_sha256": "2bbd841ec60d7acb029c28c4d72ef675c2c35829bb720f8d8eb019e56ccd77fd",
+      "public_sha256": "d2365605bb4ca352413f639251372aea6d05dc148081a2eacd5a84e548da1841"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/p0_seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/p0_seed42/adapter/adapter_config.json",
+      "source_sha256": "2bbd841ec60d7acb029c28c4d72ef675c2c35829bb720f8d8eb019e56ccd77fd",
+      "public_sha256": "d2365605bb4ca352413f639251372aea6d05dc148081a2eacd5a84e548da1841"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/p1_seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/p1_seed123/adapter/adapter_config.json",
+      "source_sha256": "2bbd841ec60d7acb029c28c4d72ef675c2c35829bb720f8d8eb019e56ccd77fd",
+      "public_sha256": "d2365605bb4ca352413f639251372aea6d05dc148081a2eacd5a84e548da1841"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/p1_seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/p1_seed17/adapter/adapter_config.json",
+      "source_sha256": "2bbd841ec60d7acb029c28c4d72ef675c2c35829bb720f8d8eb019e56ccd77fd",
+      "public_sha256": "d2365605bb4ca352413f639251372aea6d05dc148081a2eacd5a84e548da1841"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/p1_seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/p1_seed42/adapter/adapter_config.json",
+      "source_sha256": "2bbd841ec60d7acb029c28c4d72ef675c2c35829bb720f8d8eb019e56ccd77fd",
+      "public_sha256": "d2365605bb4ca352413f639251372aea6d05dc148081a2eacd5a84e548da1841"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/p2_seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/p2_seed123/adapter/adapter_config.json",
+      "source_sha256": "ac341020abb51b5caa212f0afefb734ad4db872a6c2299acce39c99d345c5bab",
+      "public_sha256": "9bc708ee34fc75920b2ef9a3570304ec4be4ef13e36f5afd6ad3d3d8d130b4cb"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/p2_seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/p2_seed17/adapter/adapter_config.json",
+      "source_sha256": "ac341020abb51b5caa212f0afefb734ad4db872a6c2299acce39c99d345c5bab",
+      "public_sha256": "9bc708ee34fc75920b2ef9a3570304ec4be4ef13e36f5afd6ad3d3d8d130b4cb"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/p2_seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/p2_seed42/adapter/adapter_config.json",
+      "source_sha256": "ac341020abb51b5caa212f0afefb734ad4db872a6c2299acce39c99d345c5bab",
+      "public_sha256": "9bc708ee34fc75920b2ef9a3570304ec4be4ef13e36f5afd6ad3d3d8d130b4cb"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-reasoning-comparison-001/constraint-reasoning-2026-10-07-001/RUN_MANIFEST.json",
+      "source_sha256": "12a47580f323e20abd1e1ab54129240ba377294f2f273a083b1abe9fc9188bd8",
+      "public_sha256": "46fe75c91f3fcecfad69eea622e3d412975949b44b5f126e4797906949c8a169"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-reasoning-comparison-001/constraint-reasoning-2026-10-07-001/report_checksums.json",
+      "source_sha256": "049c5ebaef310fd1d42c65fe5a291203abde2e22ceba74379734c63eff7d5dd9",
+      "public_sha256": "7c3da856411a6061e942ae361e6d790047762fd7445f08cf7600f52be2138853"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-reasoning-comparison-001/matched-temporal-rules-2026-10-08-001/RUN_MANIFEST.json",
+      "source_sha256": "e764393c5846f7ba443ed0299e106939c9a7feab68b34a011d3797c5dedd838e",
+      "public_sha256": "091489820e4e3965ec07844246f18f031b41bc3587b1de14e21925f333df0c16"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-reasoning-comparison-001/reasoning-comparison-2026-10-07-001/RUN_MANIFEST.json",
+      "source_sha256": "c99fb44e41da03bddabd0cf0a5767ba31bed572096bc607dc348a12a78083b24",
+      "public_sha256": "0e1e55b5255229e15d4f12fcf48a1cc7d998307248b5e2afc09586c07c892790"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-reasoning-comparison-001/reasoning-comparison-2026-10-07-001/report_checksums.json",
+      "source_sha256": "1bfb351ec53d44f68dad67077e8439ac18ac5cc17d00900e8211540a1755dd83",
+      "public_sha256": "c4ea3fffc5fb73977fcd121e60820af0693c4aad2f49dbf18e0dd164577a823c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-reasoning-comparison-001/seven-condition-reasoning-2026-10-07-001/RUN_MANIFEST.json",
+      "source_sha256": "b91f5bb67c41b85d9370cb506d90c99ad1b656ef504d1d8c68c34a582ed75814",
+      "public_sha256": "18d98b7cecd2492d3dda33c40ee7169088f2f4105591eb384e8ed3356c656bec"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-reasoning-comparison-001/seven-condition-reasoning-2026-10-07-001/report_checksums.json",
+      "source_sha256": "8ce50e12bdb4ab169fe5ead2098a38e97601101fbd3418e4cac51561ea643a1f",
+      "public_sha256": "aeec11ad1128b60a3e79e92429ce945f58b4c3f75331c631b3e3a7f09225b21b"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-seminar-001/coauthor-seminar-2026-10-07-001/RUN_MANIFEST.json",
+      "source_sha256": "e16b3e34e88f48f13cd9969a5fdeb98e8e6a9c6f6c3b2d0ed88bac4787862ebb",
+      "public_sha256": "bab7bc4c8f9550a240dba6f833c01990200071bdbb674a31f8bfc6e03b565a81"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-seminar-001/coauthor-seminar-2026-10-07-002/RUN_MANIFEST.json",
+      "source_sha256": "d320ad8a75dc010477993d6bb547dda0f86bb56c60a46575df39a242b70c50a2",
+      "public_sha256": "298d45721de3cc5a4aab33e2145fbf110436ff540705d33fd7e7f17febd4380c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-seminar-001/coauthor-seminar-2026-10-07-003/RUN_MANIFEST.json",
+      "source_sha256": "baaae4c8a172c5fd6d1a846d00a22a09c7c62a5bb2004c171fae9d004735a520",
+      "public_sha256": "b97821b2b4976524d5ad99b69148aeec59ca6af45e29afecb850f58a8b48f061"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-seminar-001/coauthor-seminar-2026-10-07-004/RUN_MANIFEST.json",
+      "source_sha256": "c5597d82046267609a319956ca5bd48abab2dffad18dd0a6e52187907b360ae8",
+      "public_sha256": "0fc7c3506ee713f8f4b41a6778cc69a1598e6d62237459e04ade7d3c7dcee9e5"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-seminar-001/coauthor-seminar-2026-10-07-005/RUN_MANIFEST.json",
+      "source_sha256": "bc4c2ff4a1e09bfc4150a7fb4349b3419554ad0d006f99cbfd414a4745730e99",
+      "public_sha256": "59782eb87ec458204973438314f4045be7e4aed964de291745ec83048c0a70d8"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-seminar-001/coauthor-seminar-2026-10-07-006/RUN_MANIFEST.json",
+      "source_sha256": "3a57c7ad2aa93a6fcc06c94151577959559246eb6435407d15b59afe69cb1c12",
+      "public_sha256": "619d3258c0f3dae58d0b80b8461741900dc14e9ebe84fc17d1c28d92402fc5a8"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-seminar-001/coauthor-seminar-2026-10-07-007/RUN_MANIFEST.json",
+      "source_sha256": "22827135edf38e7c993af10b6df3a1200f973132cc1a60e5322eab56173f17be",
+      "public_sha256": "99e9029ff1aabf2ccdb39ba88227e012dd740cbb8a857937196f039da4881d40"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-seminar-001/coauthor-seminar-2026-10-08-001/RUN_MANIFEST.json",
+      "source_sha256": "2b399598a16b9699a0b37cf165efcd4f950a8920599cb0e8179b4e650f4bacfb",
+      "public_sha256": "e82d5791decd9e37e90619944a34caf7005e9cbaf009341eef27a44ffb781ddb"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-temporal-diversity-001/diversity-analysis-2026-09-29-001/RUN_MANIFEST.json",
+      "source_sha256": "a21fc7963356c670cbb2b960f140961c29ad369423906b80972dae7f814ad7ff",
+      "public_sha256": "f002196b1ab54e1168424f27fd98283b6d30bc360dc72eb5e2a06c6e2eeb644e"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-temporal-diversity-001/diversity-inference-2026-09-29-001/RUN_MANIFEST.json",
+      "source_sha256": "4dccec8c049b9233aecddebd458cbe8cf67d8ab3bccb3c4578f5d9882a483638",
+      "public_sha256": "5c6db4e892c707abcb2207ac640635be9db33d424cbe97d724480bda5cffd40d"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-temporal-diversity-001/diversity-protocol-2026-09-29-001/RUN_MANIFEST.json",
+      "source_sha256": "a1bff907976f4493569594090e3e854e87c7a012c4059357f84efd5df6e88f27",
+      "public_sha256": "4d38a767b203bee95cea134d12e8c05e74b54008918e1a002675f68dd8517901"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-temporal-diversity-001/expanded-diagnostics-inference-2026-09-30-001/RUN_MANIFEST.json",
+      "source_sha256": "23244a929d75f504d818169cf4bee0d77941db948612dccbd52d08cc17cd47dd",
+      "public_sha256": "0bc69d4b4cefb86e313163e92562c09a346000e4763243db86abcbcb1b73cb9c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/RUN_MANIFEST.json",
+      "source_sha256": "213664ff91d709b166e8975993213edd3dea3828f8cdf6c89a56f2e35f537343",
+      "public_sha256": "949d7a080b4a229789fe5c796ade3dd9a9a85aef50743c524dcd730d2737abbe"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_ce_no_rule_seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_ce_no_rule_seed123/adapter/adapter_config.json",
+      "source_sha256": "48e082a4e0d4c587c4c0e808a4a3df29275d82df6d11df529f08b430ce2c9505",
+      "public_sha256": "f85f628978bc5df1f93a04e4436287e82bf9f7917a140c7de114292e12e519c0"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_ce_no_rule_seed123/initialization.json",
+      "source_sha256": "7272a48c09b64cb09ab5c5435f667a7667c505b00e18dd1e71a1d9f9072cddaa",
+      "public_sha256": "70e26ab0afb7a13cc641346f01d8f42053e3d09c4dfc84cae7edba9ebb30d9a3"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_ce_no_rule_seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_ce_no_rule_seed17/adapter/adapter_config.json",
+      "source_sha256": "a1ac3cb877f261f7022dca8eede91b9033348fb3bbbae37209e55018e9e1cc1f",
+      "public_sha256": "3dd68acbec24ab05fca04d3881c35a5a4b57bcc7bdb7a712291c1c24f5d7af8d"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_ce_no_rule_seed17/initialization.json",
+      "source_sha256": "4178c17957cec53b244ee1a45c906a810b650ceedae718082f51138a8d0aff6b",
+      "public_sha256": "c5545f7f3bea507d05c7a2ead9bba8ae76d2eb0b272fc260bcdc60982cf84b55"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_ce_no_rule_seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_ce_no_rule_seed42/adapter/adapter_config.json",
+      "source_sha256": "48e082a4e0d4c587c4c0e808a4a3df29275d82df6d11df529f08b430ce2c9505",
+      "public_sha256": "f85f628978bc5df1f93a04e4436287e82bf9f7917a140c7de114292e12e519c0"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_ce_no_rule_seed42/initialization.json",
+      "source_sha256": "2293ca5e775387baf40f1ed8eef6b727f1ab415f6b59d77368daba9357436043",
+      "public_sha256": "d9202748588f78f10c09d6cf85fc781b9f20c9b5037d6ebd3985291c0fca5aad"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_ce_rule_seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_ce_rule_seed123/adapter/adapter_config.json",
+      "source_sha256": "fd9b1562eac50cc5f6b717669deebe582c911d35e7ef606c8bea27aa84a68332",
+      "public_sha256": "d32010c4b62876ea95f2d3d760d776375611e63342563648afd56d8d67e75f4e"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_ce_rule_seed123/initialization.json",
+      "source_sha256": "5f79c116b6cf32c054855f54b3e54b8eb493435fdf25248071350df7dabba027",
+      "public_sha256": "70e26ab0afb7a13cc641346f01d8f42053e3d09c4dfc84cae7edba9ebb30d9a3"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_ce_rule_seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_ce_rule_seed17/adapter/adapter_config.json",
+      "source_sha256": "8c9d4d26651b77e634f6b02ed14cdc33170f8146d1a9cd747e3d90591677ef6b",
+      "public_sha256": "cc07a5ba91d1fc65c0b8287acffb2e04675c1b8f45275f84161bcf32c67c20c2"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_ce_rule_seed17/initialization.json",
+      "source_sha256": "4178c17957cec53b244ee1a45c906a810b650ceedae718082f51138a8d0aff6b",
+      "public_sha256": "c5545f7f3bea507d05c7a2ead9bba8ae76d2eb0b272fc260bcdc60982cf84b55"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_ce_rule_seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_ce_rule_seed42/adapter/adapter_config.json",
+      "source_sha256": "8c9d4d26651b77e634f6b02ed14cdc33170f8146d1a9cd747e3d90591677ef6b",
+      "public_sha256": "cc07a5ba91d1fc65c0b8287acffb2e04675c1b8f45275f84161bcf32c67c20c2"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_ce_rule_seed42/initialization.json",
+      "source_sha256": "2293ca5e775387baf40f1ed8eef6b727f1ab415f6b59d77368daba9357436043",
+      "public_sha256": "d9202748588f78f10c09d6cf85fc781b9f20c9b5037d6ebd3985291c0fca5aad"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_semantic_no_rule_seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_semantic_no_rule_seed123/adapter/adapter_config.json",
+      "source_sha256": "8c9d4d26651b77e634f6b02ed14cdc33170f8146d1a9cd747e3d90591677ef6b",
+      "public_sha256": "cc07a5ba91d1fc65c0b8287acffb2e04675c1b8f45275f84161bcf32c67c20c2"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_semantic_no_rule_seed123/initialization.json",
+      "source_sha256": "5f79c116b6cf32c054855f54b3e54b8eb493435fdf25248071350df7dabba027",
+      "public_sha256": "70e26ab0afb7a13cc641346f01d8f42053e3d09c4dfc84cae7edba9ebb30d9a3"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_semantic_no_rule_seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_semantic_no_rule_seed17/adapter/adapter_config.json",
+      "source_sha256": "e44f41a798170c103b632f5c0ba0ceebe13f01b6f8c65b1ddcbf5e06169fb49f",
+      "public_sha256": "5c36548d6f55bd0907cb9039c6c333815c50521947ab01e685d0f8f36a4727a2"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_semantic_no_rule_seed17/initialization.json",
+      "source_sha256": "4178c17957cec53b244ee1a45c906a810b650ceedae718082f51138a8d0aff6b",
+      "public_sha256": "c5545f7f3bea507d05c7a2ead9bba8ae76d2eb0b272fc260bcdc60982cf84b55"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_semantic_no_rule_seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_semantic_no_rule_seed42/adapter/adapter_config.json",
+      "source_sha256": "aca30c71c2d354f805b368eb5a1465f79f49cf1d1a816f9d5fad3c2a45d362c3",
+      "public_sha256": "3fbf1b5010e19083551f1765fa3cbef42d139295b1c125c21ce8074b7f818b4c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_semantic_no_rule_seed42/initialization.json",
+      "source_sha256": "b5bbdeeb370f80877bfcb5728b70e813fe9f413b05bbd6d82cbcf6badb720166",
+      "public_sha256": "d9202748588f78f10c09d6cf85fc781b9f20c9b5037d6ebd3985291c0fca5aad"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_semantic_rule_seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_semantic_rule_seed123/adapter/adapter_config.json",
+      "source_sha256": "cdffb13f3d770bd90bb905e2b2a8cf28ebc4d53241036a8e1c7b372f73f86831",
+      "public_sha256": "447d0adb59b5b84db6751dd5fd8936a703818182c263a11cbd3dae2864fa1749"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_semantic_rule_seed123/initialization.json",
+      "source_sha256": "5f79c116b6cf32c054855f54b3e54b8eb493435fdf25248071350df7dabba027",
+      "public_sha256": "70e26ab0afb7a13cc641346f01d8f42053e3d09c4dfc84cae7edba9ebb30d9a3"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_semantic_rule_seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_semantic_rule_seed17/adapter/adapter_config.json",
+      "source_sha256": "aca30c71c2d354f805b368eb5a1465f79f49cf1d1a816f9d5fad3c2a45d362c3",
+      "public_sha256": "3fbf1b5010e19083551f1765fa3cbef42d139295b1c125c21ce8074b7f818b4c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_semantic_rule_seed17/initialization.json",
+      "source_sha256": "4178c17957cec53b244ee1a45c906a810b650ceedae718082f51138a8d0aff6b",
+      "public_sha256": "c5545f7f3bea507d05c7a2ead9bba8ae76d2eb0b272fc260bcdc60982cf84b55"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_semantic_rule_seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_semantic_rule_seed42/adapter/adapter_config.json",
+      "source_sha256": "86d721243d29fd333c4ed48ffc28f79ddc04f8ce3a505d4fa849e8cc95d03741",
+      "public_sha256": "0d8d568981476c2b15ee54d916e2dc44283ec9fa3f5a6ca08b97a037ac92f8de"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/position_hold_semantic_rule_seed42/initialization.json",
+      "source_sha256": "2293ca5e775387baf40f1ed8eef6b727f1ab415f6b59d77368daba9357436043",
+      "public_sha256": "d9202748588f78f10c09d6cf85fc781b9f20c9b5037d6ebd3985291c0fca5aad"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/pretrained_2b/COMPLETE.json",
+      "source_sha256": "2da7346109918726c494ba9fbd0e8315d4d8d0adcacf6291b95165603ec8b59a",
+      "public_sha256": "5d578d48dc2849cc3ec0366a73547745a9a089dcdda42f96f3d7a01cb8042fbc"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/pretrained_2b/model.json",
+      "source_sha256": "6c7fa510ada3fc2a9b093f69f326a5cbf0bb2a12a42169c4f74b9e0578ac2aa1",
+      "public_sha256": "767d0e76a601753f18f75b92cb4be7ad180c1d30dd92ce09671cca2e2f528a43"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/pretrained_8b/COMPLETE.json",
+      "source_sha256": "2923dd09ea1b89af41a515a8cb2365fdd1543d120941aadeb1190ef45bdf4041",
+      "public_sha256": "75b68d2e0ebbe352e0f3b70a048cdfe19bf7213ba199665b859e1962ff0cba92"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/pretrained_8b/model.json",
+      "source_sha256": "4639ec57b8cddc02915d72a20bad2e0580ab1045686229d946111c099ea94f92",
+      "public_sha256": "f475e2130ed2adacb7934e9be067ede9f13a7fd53c369d19735fd74c33dc34aa"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/scheduling.json",
+      "source_sha256": "ca0d85d038044e7947336ffc4c05347228da92f7cef6aa4d2b7186349759aecc",
+      "public_sha256": "cfaa85ff7a716661ae1dd55f549fa7add3279b0c18befd80ece8435f852d435b"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_ce_no_rule_seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_ce_no_rule_seed123/adapter/adapter_config.json",
+      "source_sha256": "acb9716db1691fb6dd318474dd962b48c14f9fd64530f9acc2ab737ae46a9b55",
+      "public_sha256": "aefd23656a9db746edb12314cc9dc839c08087e0e27cf1066643227c82ef6da7"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_ce_no_rule_seed123/initialization.json",
+      "source_sha256": "7272a48c09b64cb09ab5c5435f667a7667c505b00e18dd1e71a1d9f9072cddaa",
+      "public_sha256": "70e26ab0afb7a13cc641346f01d8f42053e3d09c4dfc84cae7edba9ebb30d9a3"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_ce_no_rule_seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_ce_no_rule_seed17/adapter/adapter_config.json",
+      "source_sha256": "e44f41a798170c103b632f5c0ba0ceebe13f01b6f8c65b1ddcbf5e06169fb49f",
+      "public_sha256": "5c36548d6f55bd0907cb9039c6c333815c50521947ab01e685d0f8f36a4727a2"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_ce_no_rule_seed17/initialization.json",
+      "source_sha256": "cf6a4666ece1d27a0e43500a6f5a60c3446e8571c9c95957f644d39ffcbeb0ba",
+      "public_sha256": "c5545f7f3bea507d05c7a2ead9bba8ae76d2eb0b272fc260bcdc60982cf84b55"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_ce_no_rule_seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_ce_no_rule_seed42/adapter/adapter_config.json",
+      "source_sha256": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+      "public_sha256": "c8080120cbb398a4709ec16e99c0538e6a84ab7aa9288857fdf4a8b12bd8a48c"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_ce_no_rule_seed42/initialization.json",
+      "source_sha256": "b5bbdeeb370f80877bfcb5728b70e813fe9f413b05bbd6d82cbcf6badb720166",
+      "public_sha256": "d9202748588f78f10c09d6cf85fc781b9f20c9b5037d6ebd3985291c0fca5aad"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_ce_rule_seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_ce_rule_seed123/adapter/adapter_config.json",
+      "source_sha256": "3dc207b3e281d3eb11de2ff21d8511c53c0776b09f3032e641d2ba1478ce4476",
+      "public_sha256": "cd86f0afddf465875956ac43227a9515a4e1caf20561d9257e734ea6b93eb5d5"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_ce_rule_seed123/initialization.json",
+      "source_sha256": "7272a48c09b64cb09ab5c5435f667a7667c505b00e18dd1e71a1d9f9072cddaa",
+      "public_sha256": "70e26ab0afb7a13cc641346f01d8f42053e3d09c4dfc84cae7edba9ebb30d9a3"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_ce_rule_seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_ce_rule_seed17/adapter/adapter_config.json",
+      "source_sha256": "a1ac3cb877f261f7022dca8eede91b9033348fb3bbbae37209e55018e9e1cc1f",
+      "public_sha256": "3dd68acbec24ab05fca04d3881c35a5a4b57bcc7bdb7a712291c1c24f5d7af8d"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_ce_rule_seed17/initialization.json",
+      "source_sha256": "cf6a4666ece1d27a0e43500a6f5a60c3446e8571c9c95957f644d39ffcbeb0ba",
+      "public_sha256": "c5545f7f3bea507d05c7a2ead9bba8ae76d2eb0b272fc260bcdc60982cf84b55"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_ce_rule_seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_ce_rule_seed42/adapter/adapter_config.json",
+      "source_sha256": "c114758ded93dccdba1a6a6c0cee8157344e54ccf10b6de995a2765744a97221",
+      "public_sha256": "1cc4240ce8181507bb85b62314b904bcbf3d0fb231aab1f5f16d5e774b25810a"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_ce_rule_seed42/initialization.json",
+      "source_sha256": "b5bbdeeb370f80877bfcb5728b70e813fe9f413b05bbd6d82cbcf6badb720166",
+      "public_sha256": "d9202748588f78f10c09d6cf85fc781b9f20c9b5037d6ebd3985291c0fca5aad"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_semantic_no_rule_seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_semantic_no_rule_seed123/adapter/adapter_config.json",
+      "source_sha256": "ea49eb62f1e1d8b145cb80b32cd32900a7e2312990afc8c3f3935efeff51f907",
+      "public_sha256": "45a5a584aa54344e6c2f3216853554b41741c23c7edf85bcb217a0839f91355e"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_semantic_no_rule_seed123/initialization.json",
+      "source_sha256": "7272a48c09b64cb09ab5c5435f667a7667c505b00e18dd1e71a1d9f9072cddaa",
+      "public_sha256": "70e26ab0afb7a13cc641346f01d8f42053e3d09c4dfc84cae7edba9ebb30d9a3"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_semantic_no_rule_seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_semantic_no_rule_seed17/adapter/adapter_config.json",
+      "source_sha256": "0fcafbe9503d13a5d3dae2e7324ae9539a8c9088c9f666c1d6259be24090551c",
+      "public_sha256": "86a5fad25f36f4d0bb00df989cc1ce4a4c5aebcefdbc43b277fd58c0285bd961"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_semantic_no_rule_seed17/initialization.json",
+      "source_sha256": "cf6a4666ece1d27a0e43500a6f5a60c3446e8571c9c95957f644d39ffcbeb0ba",
+      "public_sha256": "c5545f7f3bea507d05c7a2ead9bba8ae76d2eb0b272fc260bcdc60982cf84b55"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_semantic_no_rule_seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_semantic_no_rule_seed42/adapter/adapter_config.json",
+      "source_sha256": "a1ac3cb877f261f7022dca8eede91b9033348fb3bbbae37209e55018e9e1cc1f",
+      "public_sha256": "3dd68acbec24ab05fca04d3881c35a5a4b57bcc7bdb7a712291c1c24f5d7af8d"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_semantic_no_rule_seed42/initialization.json",
+      "source_sha256": "b5bbdeeb370f80877bfcb5728b70e813fe9f413b05bbd6d82cbcf6badb720166",
+      "public_sha256": "d9202748588f78f10c09d6cf85fc781b9f20c9b5037d6ebd3985291c0fca5aad"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_semantic_rule_seed123/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_semantic_rule_seed123/adapter/adapter_config.json",
+      "source_sha256": "86d721243d29fd333c4ed48ffc28f79ddc04f8ce3a505d4fa849e8cc95d03741",
+      "public_sha256": "0d8d568981476c2b15ee54d916e2dc44283ec9fa3f5a6ca08b97a037ac92f8de"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_semantic_rule_seed123/initialization.json",
+      "source_sha256": "7272a48c09b64cb09ab5c5435f667a7667c505b00e18dd1e71a1d9f9072cddaa",
+      "public_sha256": "70e26ab0afb7a13cc641346f01d8f42053e3d09c4dfc84cae7edba9ebb30d9a3"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_semantic_rule_seed17/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_semantic_rule_seed17/adapter/adapter_config.json",
+      "source_sha256": "2bbd841ec60d7acb029c28c4d72ef675c2c35829bb720f8d8eb019e56ccd77fd",
+      "public_sha256": "d2365605bb4ca352413f639251372aea6d05dc148081a2eacd5a84e548da1841"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_semantic_rule_seed17/initialization.json",
+      "source_sha256": "cf6a4666ece1d27a0e43500a6f5a60c3446e8571c9c95957f644d39ffcbeb0ba",
+      "public_sha256": "c5545f7f3bea507d05c7a2ead9bba8ae76d2eb0b272fc260bcdc60982cf84b55"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_semantic_rule_seed42/adapter/README.md",
+      "source_sha256": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+      "public_sha256": "2e1b299c8d7bf137dd0ba4613736498af296fc010057a1dafce1371d1f3aa662"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_semantic_rule_seed42/adapter/adapter_config.json",
+      "source_sha256": "c114758ded93dccdba1a6a6c0cee8157344e54ccf10b6de995a2765744a97221",
+      "public_sha256": "1cc4240ce8181507bb85b62314b904bcbf3d0fb231aab1f5f16d5e774b25810a"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/paper1-vlm-constraint-baselines-001/vlm-constraint-baselines-2026-10-12-001/temporal_semantic_rule_seed42/initialization.json",
+      "source_sha256": "b5bbdeeb370f80877bfcb5728b70e813fe9f413b05bbd6d82cbcf6badb720166",
+      "public_sha256": "d9202748588f78f10c09d6cf85fc781b9f20c9b5037d6ebd3985291c0fca5aad"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/project-layout-refactor-001/layout-v3-2026-08-12-v5/RESULT.json",
+      "source_sha256": "a752deaa1eec5ebccbeb29da877c07271a9ae43fdfe05e7133d80d94c8dcaffa",
+      "public_sha256": "7eabf9d1ef24008f65f63411b9f5fde00880981f9be742be3dfb2cd57e6d15ce"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/artifacts/public/project-layout-refactor-001/layout-v3-2026-08-12-v5/RUN_MANIFEST.json",
+      "source_sha256": "957a196466facc9f6863096afa67331eae082a293521118ef93b040f9d672e1a",
+      "public_sha256": "f9118ab7b5abfc3055f777763faef81d32d9294e87b6bce97445074d549a6b77"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/docs/requirements/M16_SOURCE_COMPLETE_SCENE_ACQUISITION_REQUIREMENTS_V01.md",
+      "source_sha256": "6b9ac166a2dec129acef0b15c2bc1585167a25504b4b8146e1eae6c21c85ee67",
+      "public_sha256": "6c6b9447be6b0fa126e6540cefcfb216403348295743580ab74133cdc1f3ba04"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/docs/requirements/P0B_IMPLEMENTATION_REQUIREMENTS.md",
+      "source_sha256": "2dd683ee9b8b6744053dabe2e052f9d8110ca80832dd3b511181bdf9f7a15f35",
+      "public_sha256": "4ffba620e272e8f6bef9957dd87b34493a6ce8f03cfc308e8368e3b220c4e004"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/docs/surveys/GUARDSYNTH_RELATED_WORK_SURVEY_AND_RESEARCH_STRATEGY_V01.md",
+      "source_sha256": "c81d9eabd9db5fee806867dcd2fdb76709a46483cf8b8b879e3f4700bc6fc090",
+      "public_sha256": "3305cdb13bc84e72c592999dd36e2108ce9ca55a8dfa7e8405df2ef47b2b7d64"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/experiments/paper1_external_methods/resume_vlm_constraint_baselines.py",
+      "source_sha256": "340d58f7ea89c8b6df1e21c17cf53a694c9161cf83558c3ce5eda2175a3a5d81",
+      "public_sha256": "a396cb3456110498d6a10c53da58733d33fd9da7155923daf4d50d6dede0ca12"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_EXPERIMENTS_SUPPLEMENT_V01_EN.md",
+      "source_sha256": "3cc1315f1f189f486d543e5f5daf42e7fc7898cd0ada98096b3cbbb831f2b3ec",
+      "public_sha256": "b8b55e1f8a65919ee62b83ee30d60667bf8f0893bd1b5dd1be093d8068123f47"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_EXPERIMENTS_SUPPLEMENT_V01_KO.md",
+      "source_sha256": "152bae618f21519b51790ffbdc8b03efb27cd9ca3cb3084e50056267fcac05e7",
+      "public_sha256": "69da3cb2b1e66e6e95624ddf4b6ee2054a38c027ec0cc66466d0ba86837c135f"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/paper/ieee-access/RUN_MANIFEST.json",
+      "source_sha256": "4283697a4f39636f45ab56b697508c4dd3ad66ee89707e300070b1bc5f1857b9",
+      "public_sha256": "47fcb41afe80908fcf969cccb7f47e76657482407fedec11b0b8112709584278"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/paper/ieee-access/build_layout.py",
+      "source_sha256": "94d14fd6a2d3e46a24b97082bd236bd41269efc22c67e331dba94be9373d0e31",
+      "public_sha256": "b6f2cc0e3bd196e3a1c804866475c0facbddfa50c532d7c6d8e10c44d7a32cc5"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/paper/ieee-access/main.tex",
+      "source_sha256": "66d747ee26dc41467bea3ca322b12a46048fcd97a38aa4c8e55a810f3d538660",
+      "public_sha256": "f29515dfae422fe1d0823b87d0d959364cc5bf016d511ebc46eadf96aa1c056b"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/paper/ieee-access/render_experiments.py",
+      "source_sha256": "9c05bba1c3ef6a2dfcb83ee4b38f946077f2f9562e154f4d02ba0b3a902e1902",
+      "public_sha256": "0d6a17e64e35c638fa094b4492417850c7db4a94f8cafc9533c613416bf222aa"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/paper/ieee-access/render_experiments_figures.py",
+      "source_sha256": "2d97b05565888c5e3817bdf5df6ae114442aa1144e9ed4098646f02121d8055a",
+      "public_sha256": "aa5015eee04bc7fc3b61a2375fa6d7a3186812ec70f0e9536fc914f569e1b079"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/paper/ieee-access/render_methodology.py",
+      "source_sha256": "bb2828ca008030429bab3d031fe7ac52c001a1f5c6211f4242ffd2856e39d0a2",
+      "public_sha256": "090afbb9db9086d4a75115a86a11a02e9546abaaf6f50f4cb91eb7cfc58b6dec"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/paper/ieee-access/render_methodology_figures.py",
+      "source_sha256": "e2f9a080e6e0aaeb11b15afb31b1a61227a49e63c3a257393fc9f16564fa6f82",
+      "public_sha256": "63084a0087f9492187a800f948ebe24015918eb8d2720a46a309a1e2b846820a"
+    },
+    {
+      "path": "projects/04-guardsynth-coc/paper/seminar/coauthor-seminar-v01-en.tex",
+      "source_sha256": "7d4dc5caf3cde9d139e5f2cc8a6c981826126ca6be9e347449680701e7797960",
+      "public_sha256": "1cb1f03fd0a065cf13111eef67fa525671b8606547ce640550275a684a92fe01"
+    }
+  ],
+  "excluded": "Existing ignore rules plus editorial correspondence, reviewed PDF, unsanitized release draft and upstream raw road-frame copies.",
+  "checks": {
+    "credential_patterns": "no matches",
+    "json_numeric_leaves": "unchanged"
+  },
+  "validation_limits": "NCA builds/formal release checks passed; Qwen API 9 tests passed; repository structure suite retains 4 existing failures. Not all research experiments rerun.",
+  "exclusion_counts": {
+    "HWP document": 13,
+    "additional unreviewed binary/document": 242,
+    "log or compiler auxiliary": 327,
+    "text execution log": 1218,
+    "image": 621,
+    "non-text content": 1,
+    "embedded image payload": 1,
+    "non-UTF8 content": 1
+  },
+  "published_parent": "b5c10a5e05f3b50f33440ff23131ef02429be7d9",
+  "publication_note": "Already-published NCA manuscript/figures/reproducibility package retained. Blocked full snapshot is not an ancestor."
+}

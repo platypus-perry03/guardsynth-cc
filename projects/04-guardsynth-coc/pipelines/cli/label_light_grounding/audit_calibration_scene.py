@@ -13,7 +13,7 @@ from typing import Any
 if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[4]))
 
-from cli.project_paths import project_root
+from cli.project_paths import artifact_roots, project_root
 
 
 ROOT = project_root(__file__)
@@ -25,7 +25,7 @@ from guard_synth.scene_source_closure import audit_calibration_scene_source
 
 
 EXPERIMENT_ID = "GUARDSYNTH-CALIBRATION-SCENE-SOURCE-AUDIT-001"
-RESTRICTED_ROOT = ROOT / "artifacts/results/restricted"
+RESTRICTED_ROOT = ROOT / "projects/04-guardsynth-coc/artifacts/restricted"
 CLAIM_SCOPE = "ONE_SCENE_HASH_LINKED_SOURCE_AUDIT_NOT_SOURCE_CLOSURE_ASSOCIATION_ACCURACY_OR_VEHICLE_SAFETY"
 
 _ACCEPTANCE = {
@@ -52,9 +52,12 @@ def _write_json(path: Path, value: Any) -> None:
     )
 
 
-def _restricted(path: Path) -> Path:
+def _restricted(path: Path, *, output: bool = False) -> Path:
     resolved = path.resolve()
-    if not resolved.is_relative_to(RESTRICTED_ROOT.resolve()):
+    allowed = (RESTRICTED_ROOT.resolve(),) if output else (
+        RESTRICTED_ROOT.resolve(), *artifact_roots(ROOT, "restricted")
+    )
+    if not any(resolved.is_relative_to(root) for root in allowed):
         raise ValueError("all calibration source audit paths must remain restricted")
     return resolved
 
@@ -93,7 +96,7 @@ def execute(
     if rule_applicability_path is not None:
         inputs.append(rule_applicability_path)
     source_root = _restricted(source_root)
-    output_dir = _restricted(output_dir)
+    output_dir = _restricted(output_dir, output=True)
     if any(not path.is_file() for path in inputs):
         raise FileNotFoundError("calibration source audit input is missing")
     if not source_root.is_dir():

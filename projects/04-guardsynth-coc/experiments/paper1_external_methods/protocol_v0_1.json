@@ -1,0 +1,25 @@
+{
+  "project_id": "guardsynth-coc",
+  "experiment_id": "paper1-external-methods-001",
+  "version": "0.1",
+  "authorization_date": "2026-10-07",
+  "requested_methods": ["nl2spec", "NL2TL", "DriveLM", "DriveVLM"],
+  "scope": "Original-method execution and compatibility with the existing candidate-selection benchmark",
+  "prohibited_changes": [
+    "Adding our EBLC, generated CNL, solver verdicts, or missing supplied rules to external methods",
+    "Replacing original models with Qwen and calling the result an original-method reproduction",
+    "Converting native logic/VQA/planning output into candidate labels without a separately authorized adaptation",
+    "Creating new human annotations or reference labels",
+    "Reporting native demonstration outputs as six-task candidate-selection accuracy"
+  ],
+  "intrinsic_requirements": "Original natural-language specifications and few-shot examples intrinsic to nl2spec/NL2TL are retained. No additional driving restrictions are inserted.",
+  "native_checks": {
+    "nl2spec": "Unmodified upstream CLI, README example, gpt-3.5-turbo, minimal prompt, three samples, temperature 0.2; automatic first pass only, no interactive human correction",
+    "NL2TL": "Official checkpoint-62500, t5-base tokenizer, eleven examples from Run.ipynb, original prefix and generation settings, seed 42; inference demonstration only",
+    "DriveLM": "Inspect official challenge implementation, original LLaMA-7B dependency, bundled multi-view data and native evaluation format",
+    "DriveVLM": "Inspect all advertised official repository branches for released model implementation/checkpoints"
+  },
+  "comparison_gate": "Common-task performance requires original methods to consume available inputs and produce scoreable outputs under the same reference semantics. Native demonstrations alone do not pass this gate.",
+  "stop_conditions": ["Missing original weights or implementation", "Incompatible native task requiring a new method", "Missing independently available annotations"],
+  "manuscript_policy": "Do not insert external performance numbers or plots until common-task evaluation is actually executed. Record resource and task blockers separately."
+}

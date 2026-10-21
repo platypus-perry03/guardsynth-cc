@@ -28,7 +28,7 @@ source-complete audit를 분리해 이미지밖에 없는 검토자가 ID·geome
 ## 4. 제한 자료 보안 경계
 
 - 출력 class는 `LICENSE_RESTRICTED_LOCAL_ONLY`
-- 결과는 `artifacts/results/restricted/guardsynth-project-portal-001/` 아래에만 생성
+- 결과는 `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-project-portal-001/` 아래에만 생성
 - 서버 주소는 코드에서 `127.0.0.1`로 고정하고 외부 host option을 제공하지 않음
 - 저장소 root를 서비스하지 않고, build 시 선택해 복사한 HTML·CSS·JS·JSON만 서비스
 - 기존 제한 HTML은 원문 이미지 파일을 새로 복사하지 않고 self-contained 결과를 복사

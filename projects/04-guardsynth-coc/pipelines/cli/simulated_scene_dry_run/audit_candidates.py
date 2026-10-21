@@ -20,15 +20,15 @@ from guard_synth.simulated_scene_inventory import build_scene_candidate_inventor
 
 
 DEFAULT_PACKETS = ROOT / (
-    "artifacts/results/restricted/guardsynth-image-review-partial-scene-001/"
+    "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-image-review-partial-scene-001/"
     "alpamayo-image-review-2026-08-11-v2/PARTIAL_SCENE_PACKETS.json"
 )
 DEFAULT_ADAPTER = ROOT / (
-    "artifacts/results/restricted/eblc-p0b-001/"
+    "platforms/eblc-bcv/artifacts/restricted/eblc-p0b-001/"
     "p0b-data-adapter-2026-08-11-v2-all-candidates/ADAPTER_RESULT.json"
 )
 DEFAULT_AUDIT = ROOT / (
-    "artifacts/results/restricted/guardsynth-calibration-scene-source-audit-001/"
+    "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-calibration-scene-source-audit-001/"
     "alpamayo-calibration-source-2026-08-11-v17-rule-applicability/"
     "CALIBRATION_SOURCE_AUDIT.json"
 )

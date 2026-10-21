@@ -27,7 +27,7 @@ from guard_synth_eblc.schema_validation import load_json
 
 EXPERIMENT_ID = "GUARDSYNTH-REAL-SCENE-READINESS-001"
 DEFAULT_RUN_ID = "terminal-readiness-2026-08-09-v1"
-DEFAULT_ADAPTER_RESULT = ROOT / "artifacts/results/restricted/eblc-p0b-001/p0b-restricted-grounding-multiview-2026-08-08-v1/ADAPTER_RESULT.json"
+DEFAULT_ADAPTER_RESULT = ROOT / "platforms/eblc-bcv/artifacts/restricted/eblc-p0b-001/p0b-restricted-grounding-multiview-2026-08-08-v1/ADAPTER_RESULT.json"
 DEFAULT_REGISTRY = ROOT / "projects/04-guardsynth-coc/src/guard_synth/fixtures/vehicle_assurance_registry_empty_v0_1.json"
 CLAIM_SCOPE = "SOURCE_READINESS_AND_ABSTENTION_NOT_REAL_SCENE_CONTRACT_OR_VEHICLE_SAFETY"
 
@@ -96,8 +96,8 @@ rig→ego-path transform 검증, 차량 validation/assurance source 확보 후 2
 
 
 def execute(adapter_path: Path, registry_path: Path, run_id: str) -> tuple[Path, Path, dict[str, Any]]:
-    restricted = ROOT / "artifacts/results/restricted/guardsynth-real-scene-readiness-001" / run_id
-    public = ROOT / "artifacts/results/public/guardsynth-real-scene-readiness-001" / run_id
+    restricted = ROOT / "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-real-scene-readiness-001" / run_id
+    public = ROOT / "projects/04-guardsynth-coc/artifacts/public/guardsynth-real-scene-readiness-001" / run_id
     if restricted.exists() or public.exists():
         raise FileExistsError(f"refusing to overwrite run: {run_id}")
     restricted.mkdir(parents=True, mode=0o700)

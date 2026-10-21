@@ -62,7 +62,7 @@ python3 -m cli.pipelines.eblc.p0b_schema_bcv.run --run-id <new-run-id>
 runtime/alpamayo/ar1_venv/bin/python -m cli.pipelines.eblc.restricted_scene_grounding.run --run-id <new-run-id>
 ```
 
-The runner refuses to overwrite an existing run directory. Public synthetic results go to `artifacts/results/public/eblc-p0b-001/`; restricted asset-readiness results go to `artifacts/results/restricted/eblc-p0b-001/` without copying raw input.
+The runner refuses to overwrite an existing run directory. Public synthetic results go to `platforms/eblc-bcv/artifacts/public/eblc-p0b-001/`; restricted asset-readiness results go to `platforms/eblc-bcv/artifacts/restricted/eblc-p0b-001/` without copying raw input.
 
 The previous `python3 -m experiments.eblc_p0b...` entry points remain available
 only to reproduce earlier commands. New automation should use `cli/pipelines/`.

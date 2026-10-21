@@ -1,0 +1,112 @@
+{
+  "project_id": "guardsynth-coc",
+  "task_id": "learning-specification-fault-injection",
+  "run_id": "learning-specification-faults-2026-10-12-001",
+  "status": "COMPLETE",
+  "created_at": "2026-10-12T14:09:52.687486+00:00",
+  "inputs": [
+    "projects/04-guardsynth-coc/experiments/paper1_cnl_learning/learning_specification_faults.py",
+    "projects/04-guardsynth-coc/experiments/paper1_cnl_learning/learning_specification_faults_protocol_v0_1.json",
+    "projects/04-guardsynth-coc/experiments/paper1_cnl_learning/temporal_preservation.py",
+    "projects/04-guardsynth-coc/experiments/paper1_external_methods/position_hold_training_profile.py",
+    "projects/01-safety-constrained-coc/experiments/vlm_guard_learning/temporal_guard_world.py",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-protocol-2026-09-29-001/paired_dataset.jsonl",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-protocol-2026-09-29-001/bridge.json",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/test.jsonl",
+    "platforms/eblc-bcv/src/guard_synth_eblc/core_ir.py",
+    "platforms/eblc-bcv/src/guard_synth_eblc/smt_compiler.py"
+  ],
+  "input_hashes": {
+    "projects/04-guardsynth-coc/experiments/paper1_cnl_learning/learning_specification_faults.py": "798ab9ef8a62765eea1040de707005e11c8d6ca801a59b126dca34161be79392",
+    "projects/04-guardsynth-coc/experiments/paper1_cnl_learning/learning_specification_faults_protocol_v0_1.json": "47b027fc2544468cce41c420e3b8e5e9df0e07f9777b2b5b3d6412b40442f618",
+    "projects/04-guardsynth-coc/experiments/paper1_cnl_learning/temporal_preservation.py": "399a379bf2812a1a0faab472fe45e0797968dd9484abb4636c5e07bf18b4a0be",
+    "projects/04-guardsynth-coc/experiments/paper1_external_methods/position_hold_training_profile.py": "651c429f2c51d9e93e810ae155b012176cea0b63ee5b941fc22e89a0903b6b48",
+    "projects/01-safety-constrained-coc/experiments/vlm_guard_learning/temporal_guard_world.py": "ff6aff71aeee645fd05fef6fda4972f7545288d5c264560507c79040c8efc16d",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-protocol-2026-09-29-001/paired_dataset.jsonl": "d13d1e6ce407354af681dbef25d1a6b7ce0035b410fab10ff92126dfca107a32",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-protocol-2026-09-29-001/bridge.json": "e29aa8a32ca00b7bf02350ebec16a5d6351ba8ce227219f119d2e9a9b2a071a6",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/test.jsonl": "409e47833a618b0be60b84bf02f546560b963b5f01cf162ae75a5a7836250e30",
+    "platforms/eblc-bcv/src/guard_synth_eblc/core_ir.py": "27ae690b450a6462b561d5592121e536da8a943eb54280d783961fc69e95228e",
+    "platforms/eblc-bcv/src/guard_synth_eblc/smt_compiler.py": "a85b3d0a501fff26dbfaba320042a8eb5711067f8a20b480a8f133c6f4e98bb0"
+  },
+  "runtime": {
+    "python": "3.12.13 (main, Jun  2 2026, 22:27:15) [Clang 22.1.3 ]",
+    "executable": "runtime/alpamayo/ar1_venv/bin/python"
+  },
+  "protocol": {
+    "project_id": "guardsynth-coc",
+    "task_id": "learning-specification-fault-injection",
+    "protocol_version": "1.0",
+    "profiles": [
+      "pedestrian_entry",
+      "position_hold"
+    ],
+    "base_contexts_per_profile": 24,
+    "selection": {
+      "pedestrian_entry": "First 12 scene IDs in seed-42 benchmark_regression, retaining both 500 and 1500 ms rules; reconstruct and verify archived P2 prompts and image hashes",
+      "position_hold": "First 12 profile IDs in frozen test.jsonl, rotation 0 and interval_maxima, retaining both 500 and 2000 ms rules; verify archived P2 constraint text"
+    },
+    "variants": [
+      "valid",
+      "duration_change",
+      "reverse_comparison",
+      "delete_release",
+      "unit_error",
+      "cnl_duration",
+      "cnl_negation",
+      "shared_source_error"
+    ],
+    "mutations": {
+      "duration_change": "Swap between the two supported task durations in the candidate specification only",
+      "reverse_comparison": "Reverse the entry-time inequality, or the hold-radius inequality at the hold endpoint only",
+      "delete_release": "Remove the temporal entry gate, or omit the hold release by extending radial restrictions to every listed post-hold sample",
+      "unit_error": "Change the specification time unit from ms to s without rescaling values",
+      "cnl_duration": "Replace all occurrences of the hold/wait duration with the other supported duration in the rendered sentence",
+      "cnl_negation": "Remove Do not from the entry prohibition, or insert not into the hold-radius requirement",
+      "shared_source_error": "Swap supported duration in both the candidate specification and trusted source record"
+    },
+    "checks": {
+      "reused": [
+        "unaltered structural validators",
+        "unaltered logical lowering before mutation",
+        "unaltered CNL renderers",
+        "platform SMT compiler and solver"
+      ],
+      "evaluation_additions": [
+        "comparison with frozen source records",
+        "fixed-grammar parsers for the two learning specifications",
+        "independent rule probes and result aggregation"
+      ],
+      "pedestrian_probes": "Archived action candidates and +/-1 ms plus exact boundary, with entry and non-entry",
+      "hold_probes": "Archived action candidates and 199/200/201 mm at every listed noninitial sample, including post-release samples; diagonal boundary and norm checks",
+      "kernel_subset": [
+        "structural",
+        "consistency",
+        "logic_rule"
+      ],
+      "full_suite": [
+        "structural",
+        "consistency",
+        "logic_rule",
+        "evidence",
+        "sentence"
+      ],
+      "unknown": "Report separately and reject; do not count as a proved semantic mismatch"
+    },
+    "units": "Integer milliseconds and millimetres; exact squared-distance reference",
+    "claim_scope": [
+      "Fault injection into the exact representation, lowering, and renderer used for learning",
+      "New evaluation-time evidence and sentence checks were not part of historical training runs",
+      "Repeated contexts use only two distinct rule specifications per task; no independent-scene or population inference",
+      "No VLM training, inference, image labeling, or continuous-time vehicle-safety claim",
+      "Do not pool the earlier separate temporal-profile evaluation with these counts"
+    ]
+  },
+  "completed_at": "2026-10-12T14:10:12.420435+00:00",
+  "output_hashes": {
+    "protocol.json": "bc42569772d4877f1865849701cd7152591d62959470ae7ace07a4b74ad280b3",
+    "base_cases.jsonl": "69b673528ae95a43ccab7a494f6e8e1fb0345421d134d28612f18407470c1c1d",
+    "mutations.jsonl": "f824f2c445a0c4adc80cafdfced3ab921e2b1e9d0f4cc785474b29733bf2145a",
+    "RESULT.json": "ae8b99d2128ab4f88492fb322f8148ee97ca68142e164e0f4ad51b14042616a6",
+    "REPORT_KO.md": "d2927bb0a2b4a73ff5d2446258960c46a92db472583864177467731f6e9b4a73"
+  }
+}

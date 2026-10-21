@@ -187,7 +187,7 @@ def main() -> None:
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("artifacts/results/public/scene-continuity-audit.json"),
+        default=Path("projects/03-sequential-coc-verification/artifacts/public/scene-continuity-001/continuity-audit-001/scene-continuity-audit.json"),
     )
     args = parser.parse_args()
     result = audit(args.coc_root, args.nvidia_root)

@@ -4,7 +4,7 @@
 
 ---
 
-`/home/jinhyun/prj_ws/prj_jin/coc-modelchecking` 프로젝트에서 전기학회논문지 원고의
+`LOCAL_PATH_REMOVED_096dcd0f7557 프로젝트에서 전기학회논문지 원고의
 추가 실험을 설계·구현·검증하고, 실제 결과가 확보된 뒤 KIEE 복사본 원고를
 보완해 주세요.
 
@@ -34,10 +34,10 @@
 6. `projects/03-sequential-coc-verification/paper/manuscript/latex-kiee-review-2022-coc-audit/sections/09-threats.tex`
 7. `projects/03-sequential-coc-verification/experiments/logic/README.md`
 8. `projects/03-sequential-coc-verification/experiments/logic/run_bounded_temporal_smt.py`
-9. `artifacts/results/public/multiscene-chain/PATTERN_REPORT.md`
-10. `artifacts/results/public/multiscene-chain/uppaal-loop-batch-all-strict-1s.json`
-11. `artifacts/results/public/scene-continuity-audit.json`
-12. `artifacts/results/public/nuscenes-official-mini-continuity-audit.json`
+9. `projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/PATTERN_REPORT.md`
+10. `projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/uppaal-loop-batch-all-strict-1s.json`
+11. `projects/03-sequential-coc-verification/artifacts/public/scene-continuity-001/continuity-audit-001/scene-continuity-audit.json`
+12. `projects/03-sequential-coc-verification/artifacts/public/scene-continuity-001/continuity-audit-001/nuscenes-official-mini-continuity-audit.json`
 
 관련 `AGENTS.md`, 적용 가능한 skill 지침과 프로젝트 README도 먼저 확인하세요.
 
@@ -187,7 +187,7 @@ projects/03-sequential-coc-verification/paper/manuscript/latex-kiee-review-2022-
 
 ```text
 projects/03-sequential-coc-verification/experiments/sequential_coc/
-artifacts/results/restricted/sequential-coc-consistency-v1/
+projects/03-sequential-coc-verification/artifacts/restricted/sequential-coc-consistency-v1/
 ```
 
 기존 실험과 결과를 덮어쓰지 마세요. 제한 자료의 원문 CoC, 이미지, 비디오 또는

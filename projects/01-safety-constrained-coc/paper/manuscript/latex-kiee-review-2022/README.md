@@ -35,12 +35,12 @@ LuaLaTeX 글꼴 캐시는 이 폴더의 `.texlive-cache/`에 저장된다. 그�
 
 ## 수치 출처
 
-- 정적 후보(seed 42): `artifacts/results/public/small-vlm-guard-v0/candidate-guard-summary-seed42-v0/summary.json`
-- 시간 계약: `artifacts/results/public/small-vlm-guard-v0/temporal-guard-multiseed-v0/summary.json`
+- 정적 후보(seed 42): `projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/candidate-guard-summary-seed42-v0/summary.json`
+- 시간 계약: `projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/temporal-guard-multiseed-v0/summary.json`
 - 시간 계약 해석 보고서: `docs/reports/TEMPORAL_GUARD_MULTISEED_EXPERIMENT_REPORT_V01.md`
-- 다중 maneuver/hard: `artifacts/results/public/small-vlm-guard-v0/maneuver-guard-multiseed-v0/summary.json`
-- R1 진단(단일 장면): `artifacts/results/restricted/alp-exp-006/guard-semantic-summary-v2/summary.json`
-- 폐루프 단계 완비: `artifacts/results/public/contract-microworld-v1/pilot-phase-complete-isolated-2026-08-04-v2/PHASE_COMPLETE_ASSESSMENT_KO.md`
-- Release reversal: `artifacts/results/public/contract-microworld-v2/pilot-release-reversal-2026-08-04-v1/DEEP_STRESS_ASSESSMENT_KO.md`
+- 다중 maneuver/hard: `projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/maneuver-guard-multiseed-v0/summary.json`
+- R1 진단(단일 장면): `projects/01-safety-constrained-coc/artifacts/restricted/alp-exp-006/guard-semantic-summary-v2/summary.json`
+- 폐루프 단계 완비: `projects/01-safety-constrained-coc/artifacts/public/contract-microworld-v1/pilot-phase-complete-isolated-2026-08-04-v2/PHASE_COMPLETE_ASSESSMENT_KO.md`
+- Release reversal: `projects/01-safety-constrained-coc/artifacts/public/contract-microworld-v2/pilot-release-reversal-2026-08-04-v1/DEEP_STRESS_ASSESSMENT_KO.md`
 
 주 증거는 Qwen3-VL-2B-Instruct의 합성 후보 선택 실험이다. Alpamayo-R1 단일 장면 진단과 별도 두 층 신경망의 폐루프 미시 환경은 서로 다른 모델ㆍ과제에서 얻은 보조 증거이므로 교차 모델 재현이나 실제 차량 안전성의 증거로 합치지 않는다.

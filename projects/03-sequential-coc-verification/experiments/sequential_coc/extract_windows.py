@@ -23,7 +23,7 @@ from experiments.sequential_coc.contract_ir import ContractEvent, EventWindow
 ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / "PROJECT_REGISTRY.json").is_file())
 REASONING_PATH = ROOT / "data/baseline/coc_nusc/reasoning/ood_reasoning.parquet"
 EGOMOTION_DIR = ROOT / "data/baseline/coc_nusc/labels/egomotion"
-RESULTS_ROOT = ROOT / "artifacts/results"
+RESULTS_ROOT = ROOT / "projects/03-sequential-coc-verification/artifacts"
 PAPER_ROOT = ROOT / "projects/03-sequential-coc-verification/paper/manuscript/latex-kiee-review-2022-coc-audit"
 OUTPUT_DIR = RESULTS_ROOT / "restricted/sequential-coc-consistency-v1"
 INVENTORY_PATH = OUTPUT_DIR / "inventory.json"

@@ -1,0 +1,8 @@
+{
+  "project_id": "guardsynth-coc",
+  "status": "ABORTED_PROTOCOL_CORRECTION",
+  "reason": "Fixed behavior order and progress ranks could expose response shortcuts; results not used. Correction decided before inspecting model verdicts.",
+  "replacement_run": "position-hold-selection-2026-10-08-002",
+  "original_runner_snapshot_sha256": "33b277717086b6737ee8db5942ae8921921765239c20288195a5041266997de5",
+  "excluded_output_records": 2304
+}

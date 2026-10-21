@@ -1,0 +1,14 @@
+{
+  "native_sections": 15,
+  "logical_tables": 12,
+  "source_cells_checked": 318,
+  "table_source_mismatches": 0,
+  "body_and_captions_preserved": true,
+  "embedded_images_preserved": true,
+  "layout_wrappers_removed": 15,
+  "native_two_column_definitions": 15,
+  "cached_page_column_overflow": 0,
+  "cached_text_object_overlap": 0,
+  "independent_parser_valid": true,
+  "hancom_application_validation": false
+}

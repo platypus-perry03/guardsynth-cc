@@ -11,7 +11,7 @@ analyses, and manuscript. Reusable EBLC/BCV implementation remains in the
 - Execution tracker: [`docs/plans/03_PROJECT_EXECUTION_TRACKER.md`](docs/plans/03_PROJECT_EXECUTION_TRACKER.md)
 - Surveys: [`docs/surveys/README.md`](docs/surveys/README.md)
 - Paper: [`paper/README.md`](paper/README.md)
-- Results: [`results/RESULT_INDEX.md`](results/RESULT_INDEX.md)
+- Results: [`artifacts/RESULT_INDEX.md`](artifacts/RESULT_INDEX.md)
 
 GuardSynth is an application and external consumer, not the sole source of evidence for this
 project. No platform source code is copied into this project.

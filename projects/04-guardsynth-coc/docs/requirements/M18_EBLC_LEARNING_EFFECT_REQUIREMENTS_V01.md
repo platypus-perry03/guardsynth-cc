@@ -136,7 +136,7 @@ long-horizon goal completion은 2차 E4이며 1차의 선행조건이 아니다.
 
 ## 6. 산출물과 종료
 
-출력: `artifacts/projects/guardsynth-coc/<class>/guardsynth-eblc-learning-001/<run-id>/`.
+출력: `projects/04-guardsynth-coc/artifacts/<class>/guardsynth-eblc-learning-001/<run-id>/`.
 기존 run을 덮어쓰지 않는다. 필수 산출물:
 
 - source→EBLC→검증→CNL→학습 example의 hash/provenance 및 split/노출 감사

@@ -1,0 +1,63 @@
+{
+  "train": {
+    "rows": 576,
+    "scene_ids": 96,
+    "unique_images": 18,
+    "targets": {
+      "B": 288,
+      "A": 288
+    },
+    "subtypes": {
+      "max_speed": 192,
+      "min_clearance": 192,
+      "min_entry_delay": 192
+    },
+    "image_overlap_with_train": 18
+  },
+  "test": {
+    "rows": 144,
+    "scene_ids": 24,
+    "unique_images": 13,
+    "targets": {
+      "B": 72,
+      "A": 72
+    },
+    "subtypes": {
+      "max_speed": 48,
+      "min_clearance": 48,
+      "min_entry_delay": 48
+    },
+    "image_overlap_with_train": 13
+  },
+  "paraphrase": {
+    "rows": 144,
+    "scene_ids": 24,
+    "unique_images": 13,
+    "targets": {
+      "B": 72,
+      "A": 72
+    },
+    "subtypes": {
+      "max_speed": 48,
+      "min_clearance": 48,
+      "min_entry_delay": 48
+    },
+    "image_overlap_with_train": 13
+  },
+  "unseen": {
+    "rows": 144,
+    "scene_ids": 24,
+    "unique_images": 8,
+    "targets": {
+      "B": 72,
+      "A": 72
+    },
+    "subtypes": {
+      "max_speed": 48,
+      "min_clearance": 48,
+      "min_entry_delay": 48
+    },
+    "image_overlap_with_train": 0
+  },
+  "shuffle_changed_fraction": 0.7916666666666666
+}

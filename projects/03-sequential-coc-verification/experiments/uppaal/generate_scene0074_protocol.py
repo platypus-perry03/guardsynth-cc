@@ -10,7 +10,7 @@ from generate_models import add_location, add_template, add_transition
 
 
 ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / "PROJECT_REGISTRY.json").is_file())
-MODEL_DIR = ROOT / "artifacts/intermediate/uppaal-models/scene-0074-protocol"
+MODEL_DIR = ROOT / "projects/03-sequential-coc-verification/projects/03-sequential-coc-verification/artifacts/intermediate/uppaal-models/scene-0074-protocol"
 MODEL_PATH = MODEL_DIR / "scene-0074-repeated-acceleration.xml"
 QUERY_PATH = MODEL_DIR / "scene-0074-repeated-acceleration.q"
 

@@ -1,0 +1,19 @@
+{
+  "arm": "P1",
+  "seed": 123,
+  "optimizer_updates": 72,
+  "history": [
+    {
+      "epoch": 1,
+      "mean_loss": 0.40549537203025027
+    },
+    {
+      "epoch": 2,
+      "mean_loss": 1.044413103853022e-06
+    },
+    {
+      "epoch": 3,
+      "mean_loss": 7.373989818389622e-07
+    }
+  ]
+}

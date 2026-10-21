@@ -1,7 +1,7 @@
 # GuardSynth-CC Project Structure Codex
 
-- Codex version: `v3.6`
-- Effective date: `2026-08-12`
+- Codex version: `v4.1`
+- Effective date: `2026-10-09`
 - Authority: repository-wide file placement and ownership
 - Machine registry: [`PROJECT_REGISTRY.json`](../../PROJECT_REGISTRY.json)
 - Agent entry point: [`AGENTS.md`](../../AGENTS.md)
@@ -34,17 +34,13 @@ guardsynth-cc/
 │   ├── 01-safety-constrained-coc/
 │   ├── 02-specification-alignment/
 │   ├── 03-sequential-coc-verification/
-│   ├── 04-guardsynth-coc/
+│   ├── 04-guardsynth-coc/        # source, docs, paper, artifacts together
 │   └── 05-eblc-language-verification/
 ├── platforms/
 │   └── eblc-bcv/
 ├── shared/
 ├── apps/
 │   └── research_portal/
-├── artifacts/
-│   ├── projects/<project-id>/<public|restricted|intermediate>/
-│   ├── platforms/<platform-id>/<public|restricted|intermediate>/
-│   └── results/                 # immutable pre-v3 historical runs only
 ├── data/                        # shared source data, separated by license
 ├── governance/
 │   ├── superpowers/
@@ -68,7 +64,6 @@ decision before creation.
 | `platforms/` | reusable language/verification platforms | scene- or paper-specific logic |
 | `apps/` | maintained web/desktop applications and their tests | experiment run output |
 | `shared/` | code/schema with at least two real owners | speculative abstractions |
-| `artifacts/` | generated immutable or intermediate outputs | maintained source code |
 | `governance/` | repository policies and operating procedures | project research plans |
 | `docs/` | repository architecture and migration records | project plans/reports/surveys |
 | `data/` | license-separated shared inputs plus ownership catalog | generated reports |
@@ -81,7 +76,7 @@ decision before creation.
 | `tests/` | repository structure/governance tests only | project/platform behavior tests |
 | `.superpowers/` | ignored disposable agent scratch | canonical documentation |
 | `.worktrees/` | `README.md` and `registry.json` only | actual Git worktrees |
-| `.agents/`, `.codex/` | local agent/tool configuration | research artifacts |
+| `.agents/`, `.codex/`, `.aws/` | ignored local tool configuration | research artifacts |
 
 Generated caches such as `.pytest_cache/` and `.ruff_cache/` are ignored operational state and
 are not project namespaces. `.git/` is Git-owned metadata.
@@ -116,8 +111,12 @@ src/                   maintained project-specific implementation
 pipelines/             project-specific user workflows
 tests/                 unit, integration, and acceptance tests
 experiments/           protocols, configs, fixtures, experiment-local analysis
-paper/                 manuscript, figures, supplement, submission assets
-results/RESULT_INDEX.md links to immutable artifact runs
+paper/                 manuscript, working PDF, build files, figures, submission assets
+artifacts/
+  RESULT_INDEX.md       single result entry point, beside the generated output
+  public/              shareable results
+  restricted/          licensed/private results, ignored by Git
+  intermediate/        current regenerable build or pipeline output
 ```
 
 Do not create a project file before choosing exactly one project owner. A file needed by two
@@ -148,8 +147,9 @@ reusable code and conformance tests remain in the platform.
 
 Use this order:
 
-1. Is it an immutable run output? Put it under the owner's artifact namespace.
-2. Is it a paper source or submission asset? Put it in the owning project's `paper/`.
+1. Is it a paper source, compilation output, or submission asset? Keep it in the
+   owning project's corresponding `paper/` directory.
+2. Is it an immutable experiment run output? Put it under the owner's artifact namespace.
 3. Is it a requirement, plan, design, decision, report, or survey for one research question?
    Put it in that project's corresponding `docs/` directory.
 4. Is it repository architecture or governance? Put it in root `docs/architecture/` or
@@ -158,21 +158,68 @@ Use this order:
 
 The repository root, `docs/`, and `experiments/` are not general-purpose dumping grounds.
 
-## 6. Results and reproducibility
+## 6. Results, consolidation, and retention
 
 New runs use:
 
 ```text
-artifacts/projects/<project-id>/<class>/<experiment-id>/<run-id>/
-artifacts/platforms/<platform-id>/<class>/<experiment-id>/<run-id>/
+projects/<NN>-<project-id>/artifacts/<class>/<experiment-id>/<run-id>/
+platforms/<platform-id>/artifacts/<class>/<experiment-id>/<run-id>/
 ```
 
 `<class>` is `public`, `restricted`, or `intermediate`. Final runs contain
 `RUN_MANIFEST.json`, `RESULT.json`, and a scoped report when required. Runners must refuse to
 overwrite an existing run ID.
 
-Existing `artifacts/results/` and `artifacts/intermediate/` paths are immutable v2 history.
-They may be read and indexed but must not receive new experiments after v3 adoption.
+New run manifests declare a stable `task_id`, completion status, creation time, and concrete
+`inputs` paths. Those fields make task identity and retention dependencies explicit; a date
+or modification time alone is insufficient. Existing migrated runs keep their recorded metadata
+and use the migration catalog for missing task/retention information.
+
+The registry's `artifact_root` is authoritative. Applications write into their registered
+project owner's artifact root. Root `artifacts/` and owner-local `results/` are retired; do
+not recreate them, keep compatibility symlinks, or create another output tree.
+
+One task has one experiment directory within its owner and classification. Merge legacy and
+current locations into that directory. Public aggregates and restricted evidence remain
+separate because their access restrictions differ. Use `artifacts/RESULT_INDEX.md` as the
+owner's only result index. Maintained source belongs in `src/`, `experiments/`, or `paper/`.
+Experiment PDFs, logs, and exports belong in artifacts; paper compilation follows section 6.1.
+
+Keep the latest completed result for each actual task, not merely the last directory in an
+experiment. A protocol, training run, evaluation, and figure can be distinct tasks. Independent
+seeds, conditions, cohorts, and environments are not interchangeable versions. An incomplete
+newer execution does not replace a completed result. Preserve active workspace changes.
+
+Before removing superseded results, follow concrete input references transitively from retained
+results, current papers, and maintained consumers. Retain those inputs, including older ones.
+Historical mentions alone do not pin an obsolete run. Remove unreferenced superseded runs,
+failed retries replaced by a completed execution, disposable build caches, and verified exact
+duplicates. Select one canonical deliverable, redirect its consumers, and then remove redundant
+copies; required run metadata is exempt from file-level deduplication. Never replace a cited
+old measurement with a newer different measurement just to make a link resolve.
+
+Record relocation, deleted runs, superseding results, retention reasons, and duplicate-file
+redirects in `docs/architecture/ARTIFACT_MIGRATION.json`. Preserve research values and raw review
+submissions. If relocation requires an embedded path update, record its original digest and
+refresh affected generated-file checksums explicitly. This approved v4 migration supersedes
+the old policy of retaining every v2/v3 run indefinitely.
+
+### 6.1 Paper builds
+
+Decision `PAPER-BUILD-COLOCATION-2026-10-09` applies to all maintained manuscripts.
+Keep the working PDF, `.aux`, `.out`, `.bbl`, `.blg`, and `.log` beside that manuscript's
+`main.tex` and Makefile in `projects/<NN>-<project-id>/paper/<manuscript>/`. Splitting a
+manuscript and its compilation output creates two locations for one editing task.
+Paper builds therefore do not use `artifacts/intermediate/`, dated experiment/run
+directories, or experiment `RUN_MANIFEST.json` / `RESULT.json` requirements.
+
+Rebuilding replaces the same manuscript's generated files. Keep compiler caches local
+and ignored; auxiliary files remain ignored by Git, while the working PDF may be tracked.
+The owner result index links to the paper directory and its PDF without copying them.
+Experiment evidence and reusable experiment figures retain their artifact ownership;
+paper compilation does not duplicate their source data. Record paper-build relocations
+under `paper_builds` in the artifact migration catalog, separately from experiment runs.
 
 ## 7. Compatibility roots
 

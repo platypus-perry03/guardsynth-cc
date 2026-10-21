@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "checked_at": "2026-10-07T18:06:53.838077+00:00",
+  "new_predictions_rescored": 4320,
+  "new_raw_records_verified": 4140,
+  "frozen_sources_checked": 149,
+  "prior_outputs_unchanged": true,
+  "checkpoint_input_separation": "P0 adapters with P1 text",
+  "no_new_training": true,
+  "no_new_human_labels": true
+}

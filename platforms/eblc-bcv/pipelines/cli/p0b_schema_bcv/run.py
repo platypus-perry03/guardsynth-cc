@@ -137,8 +137,8 @@ canonical interpreter가 operational semantic source of truth다. runtime monito
 
 
 def execute(run_id: str, *, run_tests: bool = True) -> tuple[Path, Path, dict[str, Any]]:
-    public_dir = ROOT / "artifacts/results/public/eblc-p0b-001" / run_id
-    restricted_dir = ROOT / "artifacts/results/restricted/eblc-p0b-001" / run_id
+    public_dir = ROOT / "platforms/eblc-bcv/artifacts/public/eblc-p0b-001" / run_id
+    restricted_dir = ROOT / "platforms/eblc-bcv/artifacts/restricted/eblc-p0b-001" / run_id
     if public_dir.exists() or restricted_dir.exists():
         raise FileExistsError(f"refusing to overwrite existing run: {run_id}")
 

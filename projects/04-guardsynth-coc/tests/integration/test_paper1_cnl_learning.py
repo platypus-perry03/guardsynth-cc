@@ -19,7 +19,7 @@ SPEC.loader.exec_module(runner)
 class Paper1RunnerTest(unittest.TestCase):
     def test_existing_run_is_not_overwritten(self):
         with TemporaryDirectory() as directory, patch.object(runner, "ROOT", Path(directory)):
-            output = Path(directory) / "artifacts/projects/guardsynth-coc/restricted/guardsynth-eblc-learning-001/test-001"
+            output = Path(directory) / "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-eblc-learning-001/test-001"
             output.mkdir(parents=True)
             marker = output / "RESULT.json"
             marker.write_text("existing evidence")

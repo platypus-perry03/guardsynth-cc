@@ -50,8 +50,8 @@ typed derivation, lifecycle, composition, multi-target lowering과 bidirectional
 - locked evaluation 설정 및 project-owned run
 - 표, 그림, 통계, 한계 분석과 원고
 
-플랫폼 자체 conformance run은 `artifacts/platforms/eblc-bcv/`에, 독립 논문 실험은
-`artifacts/projects/eblc-language-verification/`에 기록한다.
+플랫폼 자체 conformance run은 `platforms/eblc-bcv/artifacts/`에, 독립 논문 실험은
+`projects/05-eblc-language-verification/artifacts/`에 기록한다.
 
 ### 4.1 기존 플랫폼 자산의 역할
 

@@ -51,11 +51,11 @@ M16_ACQUISITION_REQUIREMENTS = ROOT / (
     "M16_SOURCE_COMPLETE_SCENE_ACQUISITION_REQUIREMENTS_V01.md"
 )
 M13_RESULT = ROOT / (
-    "artifacts/results/restricted/guardsynth-sim24-batch-001/"
+    "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-sim24-batch-001/"
     "alpamayo-terminal-batch-2026-08-12-v1/BATCH_RESULT.json"
 )
 M16_PREFLIGHT = ROOT / (
-    "artifacts/results/restricted/guardsynth-expert-pilot-preflight-001/"
+    "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-expert-pilot-preflight-001/"
     "m16-preflight-2026-08-12-v4/PILOT_PREFLIGHT.json"
 )
 REVIEW_ASSET_REGISTRY = Path(__file__).resolve().parent / "review_asset_registry.json"
@@ -584,7 +584,7 @@ def _portfolio_snapshot(base_data: dict[str, Any]) -> dict[str, Any]:
     return data
 
 
-def _review_sources(output_reviews: Path) -> list[dict[str, Any]]:
+def _review_sources() -> list[dict[str, Any]]:
     config = _load(REVIEW_ASSET_REGISTRY)
     if not isinstance(config, dict) or set(config) != {"schema_version", "entries"} or config["schema_version"] != 1:
         raise ValueError("review asset registry contract is invalid")
@@ -613,7 +613,7 @@ def _review_sources(output_reviews: Path) -> list[dict[str, Any]]:
             raise ValueError(f"registered review asset is missing: {entry['id']}")
         for index, record in enumerate(sorted(matches, key=lambda item: item["run_label"]), start=1):
             asset = next(item for item in record["assets"] if item["label"] == entry["asset_label"])
-            source, _ = service.resolve_asset(
+            service.resolve_asset(
                 record["artifact_id"], asset["asset_id"], include_restricted=True
             )
             if "{index}" in entry["output_name"]:
@@ -628,14 +628,14 @@ def _review_sources(output_reviews: Path) -> list[dict[str, Any]]:
                 title = entry["title"]
             if not re.fullmatch(r"[a-z][a-z0-9_]*\.html", output_name):
                 raise ValueError("review output name is invalid")
-            target = output_reviews / output_name
-            shutil.copyfile(source, target)
             pages.append({
                 "id": page_id,
                 "title": title,
                 "description": entry["description"],
                 "classification": entry["display_classification"],
-                "href": f"reviews/{target.name}",
+                "href": f"/assets/{record['artifact_id']}/{asset['asset_id']}",
+                "asset_name": output_name,
+                "asset_sha256": asset["sha256"],
                 "project_id": entry["owner_id"],
                 "artifact_id": record["artifact_id"],
                 "source_manifest_hash": record["manifest_hash"],
@@ -773,9 +773,7 @@ def build_portal(output_dir: Path) -> dict[str, Any]:
             "structure.html", "project.html", "project_review.html"
         ):
             shutil.copyfile(source, output_dir / source.name)
-    reviews_dir = output_dir / "reviews"
-    reviews_dir.mkdir()
-    review_pages = _review_sources(reviews_dir)
+    review_pages = _review_sources()
     papers = _paper_data(output_dir / "downloads", paper_registry)
     review_pages_by_project = {
         item["id"]: [
@@ -856,9 +854,8 @@ def build_portal(output_dir: Path) -> dict[str, Any]:
         "milestone_count": data["portfolio"]["milestone_count"],
         "review_page_count": len(review_pages),
         "review_assets": {
-            path.name: hashlib.sha256(path.read_bytes()).hexdigest()
-            for path in sorted(reviews_dir.iterdir())
-            if path.is_file()
+            page["asset_name"]: page["asset_sha256"]
+            for page in review_pages
         },
         "paper_count": len(papers),
         "paper_download_count": sum(paper["download"] is not None for paper in papers),

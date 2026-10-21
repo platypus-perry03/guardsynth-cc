@@ -29,7 +29,7 @@ from guard_synth.rule_applicability import (
 
 
 EXPERIMENT_ID = "GUARDSYNTH-RULE-APPLICABILITY-001"
-RESTRICTED_ROOT = ROOT / "artifacts/results/restricted"
+RESTRICTED_ROOT = ROOT / "projects/04-guardsynth-coc/artifacts/restricted"
 CA_21950_URL = (
     "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml"
     "?lawCode=VEH&sectionNum=21950."

@@ -1,0 +1,8 @@
+{
+  "task": "temporal",
+  "arm": "semantic_rule",
+  "seed": 123,
+  "rows": 240,
+  "status": "COMPLETE",
+  "elapsed_seconds": 426.99113865196705
+}

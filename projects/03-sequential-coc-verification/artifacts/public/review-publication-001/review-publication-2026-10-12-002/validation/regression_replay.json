@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "pairs": 40,
+  "byte_identical_regeneration": true,
+  "by_type": {
+    "PREMATURE_RELEASE": {
+      "pairs": 10,
+      "stateful": 10,
+      "event_local": 10
+    },
+    "STALE_OBLIGATION": {
+      "pairs": 10,
+      "stateful": 10,
+      "event_local": 0
+    },
+    "ORDER_VIOLATION": {
+      "pairs": 10,
+      "stateful": 10,
+      "event_local": 10
+    },
+    "HOLD_GO_CONFLICT": {
+      "pairs": 10,
+      "stateful": 10,
+      "event_local": 0
+    }
+  }
+}

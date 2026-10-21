@@ -326,7 +326,7 @@ R1 또는 R3로 VLM을 condition하고, R7 verifier로 최종 허용성을 검�
 
 - `../../docs/reports/TEMPORAL_GUARD_MULTISEED_EXPERIMENT_REPORT_V01.md`
 - `../../docs/reports/SAFETY_CONSTRAINED_COC_PROGRESS_REPORT_V01.md`
-- `../../artifacts/results/public/small-vlm-guard-v0/temporal-guard-multiseed-v0/`
+- `../../../01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/temporal-guard-multiseed-v0/`
 - `../../projects/01-safety-constrained-coc/experiments/vlm_guard_learning/temporal_guard_world.py`
 - `../../projects/01-safety-constrained-coc/experiments/vlm_guard_learning/train_qwen_temporal_guard_lora.py`
 

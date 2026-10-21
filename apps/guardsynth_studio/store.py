@@ -10,6 +10,7 @@ import threading
 from .common import StudioError, digest, dumps, now, uid
 
 DEPENDENCIES = {
+    "sequence_coc": (), "sequence_constraints": ("sequence_coc",),
     "coc": (), "source": (), "binding": (), "action": (),
     "proposal": ("coc", "source", "binding"),
     "contract": ("proposal", "source", "binding"),
@@ -43,6 +44,11 @@ class Store:
             CREATE TABLE IF NOT EXISTS receipts(actor TEXT NOT NULL, key TEXT NOT NULL,
                 request_hash TEXT NOT NULL, response TEXT NOT NULL, PRIMARY KEY(actor,key));
             CREATE TABLE IF NOT EXISTS audit(id TEXT PRIMARY KEY, data TEXT NOT NULL);
+            CREATE INDEX IF NOT EXISTS studio_job_status ON objects(json_extract(data,'$.status'))
+                WHERE kind='job';
+            CREATE INDEX IF NOT EXISTS studio_job_stage ON objects(
+                json_extract(data,'$.kind'), json_extract(data,'$.inputs.snapshot.extraction_id'))
+                WHERE kind='job';
         """)
         existing = self.db.execute("SELECT value FROM metadata WHERE key='owner'").fetchone()
         if existing and existing[0] != "guardsynth-coc/guardsynth-studio/v1":
@@ -61,7 +67,8 @@ class Store:
                 raise
 
     def close(self):
-        self.db.close()
+        with self.lock:
+            self.db.close()
 
     def put(self, kind, value, identity=None):
         identity = identity or uid()
@@ -70,14 +77,35 @@ class Store:
         return identity
 
     def get(self, identity, kind=None):
-        row = self.db.execute("SELECT * FROM objects WHERE id=?", (identity,)).fetchone()
-        if not row or (kind and row["kind"] != kind):
-            raise StudioError("NOT_FOUND", "Object not found", 404)
-        return json.loads(row["data"])
+        with self.lock:
+            row = self.db.execute("SELECT * FROM objects WHERE id=?", (identity,)).fetchone()
+            if not row or (kind and row["kind"] != kind):
+                raise StudioError("NOT_FOUND", "Object not found", 404)
+            return json.loads(row["data"])
 
     def objects(self, kind):
-        return [{"id": r["id"], **json.loads(r["data"])} for r in
-                self.db.execute("SELECT * FROM objects WHERE kind=? ORDER BY rowid", (kind,))]
+        with self.lock:
+            return [{"id": r["id"], **json.loads(r["data"])} for r in
+                    self.db.execute("SELECT * FROM objects WHERE kind=? ORDER BY rowid", (kind,))]
+
+    def job_ids(self, *, kind=None, extraction=None, statuses=None, newest_first=False, limit=None):
+        clauses, values = ["kind='job'"], []
+        if kind is not None:
+            clauses.append("json_extract(data,'$.kind')=?"); values.append(kind)
+        if extraction is not None:
+            clauses.append("json_extract(data,'$.inputs.snapshot.extraction_id')=?"); values.append(extraction)
+        if statuses is not None:
+            if not statuses: return []
+            clauses.append("json_extract(data,'$.status') IN ("+','.join('?' for _ in statuses)+")")
+            values.extend(statuses)
+        query = "SELECT id FROM objects WHERE "+' AND '.join(clauses)+" ORDER BY rowid "+("DESC" if newest_first else "ASC")
+        if limit is not None:
+            query += " LIMIT ?"; values.append(limit)
+        with self.lock:
+            return [r[0] for r in self.db.execute(query, values)]
+
+    def job(self, identity):
+        return {"id": identity, **self.get(identity, "job")}
 
     def mutate(self, actor, key, request, operation):
         if not isinstance(key, str) or not 8 <= len(key) <= 128:
@@ -103,14 +131,15 @@ class Store:
         return identity
 
     def moment(self, identity, revision=None):
-        head = self.db.execute("SELECT head FROM moments WHERE id=?", (identity,)).fetchone()
-        if head is None:
-            raise StudioError("NOT_FOUND", "Moment not found", 404)
-        revision = head[0] if revision is None else revision
-        row = self.db.execute("SELECT data FROM revisions WHERE moment=? AND revision=?", (identity, revision)).fetchone()
-        if row is None:
-            raise StudioError("NOT_FOUND", "Revision not found", 404)
-        return json.loads(row[0])
+        with self.lock:
+            head = self.db.execute("SELECT head FROM moments WHERE id=?", (identity,)).fetchone()
+            if head is None:
+                raise StudioError("NOT_FOUND", "Moment not found", 404)
+            revision = head[0] if revision is None else revision
+            row = self.db.execute("SELECT data FROM revisions WHERE moment=? AND revision=?", (identity, revision)).fetchone()
+            if row is None:
+                raise StudioError("NOT_FOUND", "Revision not found", 404)
+            return json.loads(row[0])
 
     def require_head(self, identity, expected):
         value = self.moment(identity)

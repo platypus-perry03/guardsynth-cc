@@ -411,5 +411,5 @@ Restricted 데이터 결과는 case study로 사용하고, 논문의 주요 결�
 - `WRITING_PLAN.md`
 - `../../docs/reports/SAFETY_CONSTRAINED_COC_PROGRESS_REPORT_V01.md`
 - `../../docs/reports/TEMPORAL_GUARD_MULTISEED_EXPERIMENT_REPORT_V01.md`
-- `../../artifacts/results/public/small-vlm-guard-v0/temporal-guard-multiseed-v0/`
+- `../../artifacts/public/small-vlm-guard-v0/temporal-guard-multiseed-v0/`
 

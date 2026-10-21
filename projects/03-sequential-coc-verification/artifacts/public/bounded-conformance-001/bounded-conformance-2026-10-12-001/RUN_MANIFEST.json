@@ -1,0 +1,70 @@
+{
+  "project_id": "sequential-coc-verification",
+  "task_id": "bounded-conformance",
+  "status": "COMPLETED",
+  "created_at": "2026-10-12T16:21:26.166544+00:00",
+  "repository_head": "a18b4396d8362a50854940d52b0de5d7756b8f87",
+  "pinning": "Working source hashes are authoritative; repository HEAD alone does not identify uncommitted model files.",
+  "inputs": [
+    {
+      "path": "projects/03-sequential-coc-verification/experiments/kiee_review_revision/condition_model.py",
+      "sha256": "5bab483b5823afa717efaed1d6a6cdc795e619ca3bca0f6f8378deb4d970beae"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/experiments/cross_scene_constraints/run.py",
+      "sha256": "5019bcd69c2b1eac6bb14ed325a70a37485f7a5bfb7e74a70ba1e49a827284d7"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/experiments/bounded_conformance/formula_oracle.hpp",
+      "sha256": "93fa4b628ba6b91a1f95ce3537e5a3f597beed7480dc4865855d80ab1ac8f323"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/experiments/bounded_conformance/enumerate.cpp",
+      "sha256": "c816597060eaf958b8a6a256de147c40fbd0acfcafd9e31ab08fb26dbd9af801"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/experiments/bounded_conformance/run.py",
+      "sha256": "bd1510fa6afacb98446512478b75e6031474239445568c01ae0411ab49a0c223"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/sections/04-problem.tex",
+      "sha256": "dfe2c5375c850b97a0e3294c60fc919cd5a4a98fd5e20cfcd780a3b4bfddce9f"
+    }
+  ],
+  "prepared_files": {
+    "condition_frozen.xml": "d1e7a028c809ece4f773b0aea520855272b27021b7e8ecae72fd2928463fd759",
+    "boundary_frozen.xml": "a13f923192178988b054d0464a87a38856574564618b025000ce0473ee5ae81b",
+    "frozen_targets.hpp": "cbcf5cde1c78483f475153b79320d1c6ad2cf13321715bbc14ee1db044783133",
+    "protocol.json": "2852bfd53cbd4bf0e712b600a80fcaccd6fc0e2f2ddc8db3c26014e469360bb8"
+  },
+  "independent_semantic_gold": false,
+  "completed_at": "2026-10-12T16:21:32.920821+00:00",
+  "command": [
+    "c++",
+    "-std=c++17",
+    "-O2",
+    "-I",
+    "projects/03-sequential-coc-verification/artifacts/public/bounded-conformance-001/bounded-conformance-2026-10-12-001",
+    "-I",
+    "projects/03-sequential-coc-verification/experiments/bounded_conformance",
+    "projects/03-sequential-coc-verification/experiments/bounded_conformance/enumerate.cpp",
+    "-o",
+    "projects/03-sequential-coc-verification/artifacts/public/bounded-conformance-001/bounded-conformance-2026-10-12-001/enumerator"
+  ],
+  "compiler": "c++ (Debian 12.2.0-14+deb12u1) 12.2.0",
+  "outputs": {
+    "condition_frozen.xml": "d1e7a028c809ece4f773b0aea520855272b27021b7e8ecae72fd2928463fd759",
+    "boundary_frozen.xml": "a13f923192178988b054d0464a87a38856574564618b025000ce0473ee5ae81b",
+    "frozen_targets.hpp": "cbcf5cde1c78483f475153b79320d1c6ad2cf13321715bbc14ee1db044783133",
+    "protocol.json": "2852bfd53cbd4bf0e712b600a80fcaccd6fc0e2f2ddc8db3c26014e469360bb8",
+    "enumerator": "ed28c4b29e2c7e635698d00912cf012b751ba9b67bcab489a3fbc788347ed8fc",
+    "compile_stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile_stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout.jsonl": "222d0e1ebdb8cc3f6d03f2cc68351858429d96147ff0bbe5f8dc5cba5a31dd08",
+    "stderr.txt": "4adfd78d0724304cf9d13d802f1310f533ceba70c231ce444b8d4a8f2e018d20",
+    "mismatches.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "fault_control_mismatches.jsonl": "88e68d116ac66c7ead1a5adeaf2d9ec47b9ec7a5aeb8eddd9bfe8af20571cba4",
+    "RESULT.json": "683b5277b80e680655a928e7105332cdf920cfffa352280c4a820c3617f0757a",
+    "REPORT_KO.md": "843f6df84ab27681ed10f2515e699f23cecf3442982afa409a88bee437183e60"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "case_id": "s04_local_omission",
+  "verdict": "FAIL",
+  "expected_verdict": "FAIL",
+  "base_consistency": "SAT",
+  "recorded_action": "UNSAT",
+  "scope": "Synthetic stated policy and fixed entity/zone/movement bindings; not scene safety or actual causal identification",
+  "missing_from_local": [
+    "cross_a"
+  ],
+  "missing_from_model": [],
+  "unsat_core_clause_ids": [
+    "cross_a_evidence_1",
+    "cross_a_fact_1",
+    "cross_a_no_entry",
+    "cross_a_on",
+    "cross_a_transition",
+    "recorded_action_query"
+  ],
+  "model_horizon": 2,
+  "variable_count": 30,
+  "source_frame_count": 2,
+  "naive_without_carry": {
+    "recorded_action": "SAT",
+    "missing_condition_ids": [
+      "cross_a"
+    ],
+    "assessment": "INVALID_MODEL_MISSING_CARRY"
+  },
+  "elapsed_s": 0.071261
+}

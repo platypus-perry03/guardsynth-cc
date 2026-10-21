@@ -21,7 +21,7 @@ if str(LOGIC) not in sys.path:
 from build_phase_aware_alignment_review import temporal_series  # noqa: E402
 
 
-BATCH = ROOT / "artifacts/results/restricted/alp-exp-005/feasibility-batch-v0"
+BATCH = ROOT / "projects/01-safety-constrained-coc/artifacts/restricted/alp-exp-005/feasibility-batch-v0"
 RUN = BATCH / "episode-05/seed-44"
 OUTPUT = BATCH / "safety-acceleration-focus-v1/par-011-recorded-future"
 START_S = -0.5

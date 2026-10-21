@@ -154,7 +154,7 @@ LLM/VLM이 제안하고 사람이 수정·승인한다. EBLC는 구조화, 제�
   코드 생성 전에 PROJECT_REGISTRY applications에 owner를 등록한다.
 - 장면 적용성은 Project 04, 공용 파서/Core/SMT/CNL은 `platforms/eblc-bcv/`를 재사용한다.
 - `apps/research_portal/`의 저장·보안을 검토 후 재사용한다. 운영 포털을 바로 대체하지 않는다.
-- 실행 자료: `artifacts/projects/guardsynth-coc/restricted/guardsynth-studio-001/<run-id>/`.
+- 실행 자료: `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-studio-001/<run-id>/`.
 - #18 전용 연결 코드는 범용 추출기가 아니다. 지원 범위는 실제 테스트로 확인한다.
 
 기존 구현의 재사용 경계는 다음과 같다. 아래 파일은 참조 대상이며 이번 단계에서 변경하지 않는다.

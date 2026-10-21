@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "project_id": "guardsynth-coc",
+  "run_id": "coauthor-seminar-2026-10-07-006",
+  "language": "en",
+  "main_slides": 29,
+  "backup_slides": 9,
+  "talk_minutes": 27,
+  "discussion_minutes": 3,
+  "outputs": {
+    "slides": {
+      "file": "coauthor-seminar-v01-en.pdf",
+      "pages": 38,
+      "sha256": "5707a14f1f9de49dec8af79da350ce311504ebf0559b3c7ece73d6328c7f30f2"
+    },
+    "notes": {
+      "file": "coauthor-seminar-v01-en-notes.pdf",
+      "pages": 38,
+      "sha256": "b32798748bb73f0b85d79ef2f637157564e8c0a3e575b149145f6605ee744c24"
+    }
+  },
+  "updates": [
+    "Slide 17 explicitly identifies external-system comparisons as not performed",
+    "Measured prompting adaptations introduced separately and linked to slide 20",
+    "Native-example execution and resource checks moved to backup B9",
+    "English presenter notes revised"
+  ],
+  "checks": {
+    "main_frames": 29,
+    "backup_frames": 9,
+    "unchanged_previous_frames": 36,
+    "unchanged_timing": true,
+    "all_notes_present": true,
+    "preserved_files": 91,
+    "comparison_scope_explicit": true,
+    "visual_review": {
+      "status": "PASS",
+      "slide_pages": [
+        17,
+        38
+      ],
+      "notes_pages": [
+        17
+      ],
+      "findings": "Readable, no clipped text."
+    },
+    "file_naming": {
+      "repository_exit_code": 1,
+      "preexisting_findings": 10,
+      "task_paths_in_findings": 0
+    },
+    "build_logs_clean": true
+  },
+  "new_model_predictions": 0
+}

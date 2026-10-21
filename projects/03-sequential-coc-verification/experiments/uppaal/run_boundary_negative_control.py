@@ -15,7 +15,7 @@ from run_verification import ANSI_ESCAPE, DEFAULT_VERIFYTA, classify_output
 
 
 ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / "PROJECT_REGISTRY.json").is_file())
-MODEL_DIR = ROOT / "artifacts/intermediate/uppaal-models/boundary-negative-control"
+MODEL_DIR = ROOT / "projects/03-sequential-coc-verification/projects/03-sequential-coc-verification/artifacts/intermediate/uppaal-models/boundary-negative-control"
 QUERIES = (
     "E<> Source.Done",
     "E<> Monitor.Discarded",
@@ -136,7 +136,7 @@ def main() -> None:
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("artifacts/results/public/workshop-boost/boundary-negative-control-result.json"),
+        default=Path("projects/01-safety-constrained-coc/artifacts/public/workshop-boost/boundary-negative-control-result.json"),
     )
     args = parser.parse_args()
 

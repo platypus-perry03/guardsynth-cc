@@ -62,37 +62,37 @@ OBSTACLES = ROOT / (
     "obstacle-feasibility-v2-all-candidates.json"
 )
 PACKETS = ROOT / (
-    "artifacts/results/restricted/guardsynth-image-review-partial-scene-001/"
+    "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-image-review-partial-scene-001/"
     "alpamayo-image-review-2026-08-11-v2/PARTIAL_SCENE_PACKETS.json"
 )
 MEDIA_MANIFEST = ROOT / (
-    "artifacts/results/restricted/alp-exp-005/feasibility-batch-v0/"
+    "projects/01-safety-constrained-coc/artifacts/restricted/alp-exp-005/feasibility-batch-v0/"
     "blind-review-v0/scene-inputs/media-manifest.json"
 )
 ADAPTER = ROOT / (
-    "artifacts/results/restricted/eblc-p0b-001/"
+    "platforms/eblc-bcv/artifacts/restricted/eblc-p0b-001/"
     "p0b-data-adapter-2026-08-11-v2-all-candidates/ADAPTER_RESULT.json"
 )
 PRIOR_CLOSURES = (
     ROOT / (
-        "artifacts/results/restricted/guardsynth-simulated-scene-evidence-001/"
+        "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-simulated-scene-evidence-001/"
         "alpamayo-episode-00-event-02-2026-08-12-v1/SCENE_SOURCE_CLOSURE.json"
     ),
     ROOT / (
-        "artifacts/results/restricted/guardsynth-simulated-scene-evidence-001/"
+        "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-simulated-scene-evidence-001/"
         "alpamayo-episode-02-event-00-2026-08-12-v1/SCENE_SOURCE_CLOSURE.json"
     ),
     ROOT / (
-        "artifacts/results/restricted/guardsynth-simulated-scene-evidence-001/"
+        "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-simulated-scene-evidence-001/"
         "alpamayo-episode-02-event-01-2026-08-12-v1/SCENE_SOURCE_CLOSURE.json"
     ),
     ROOT / (
-        "artifacts/results/restricted/guardsynth-calibration-scene-source-audit-001/"
+        "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-calibration-scene-source-audit-001/"
         "alpamayo-calibration-source-2026-08-11-v17-rule-applicability/"
         "CALIBRATION_SOURCE_AUDIT.json"
     ),
 )
-SOURCE_BUNDLE_ROOT = ROOT / "artifacts/results/restricted/guardsynth-scene-source-bundle-001"
+SOURCE_BUNDLE_ROOT = ROOT / "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-scene-source-bundle-001"
 SIMULATION_PROFILE = ROOT / (
     "projects/04-guardsynth-coc/src/guard_synth/fixtures/"
     "simulated_assurance_profile_v0_1.json"

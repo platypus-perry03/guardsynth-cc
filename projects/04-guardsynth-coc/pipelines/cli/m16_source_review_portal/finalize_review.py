@@ -29,11 +29,11 @@ from cli.project_paths import project_root
 
 ROOT = project_root(__file__)
 OUTPUT_ROOT = ROOT / (
-    "artifacts/projects/guardsynth-coc/restricted/"
+    "projects/04-guardsynth-coc/artifacts/restricted/"
     "guardsynth-m16-source-review-001"
 )
 DEFAULT_PACKET = ROOT / (
-    "artifacts/projects/guardsynth-coc/restricted/"
+    "projects/04-guardsynth-coc/artifacts/restricted/"
     "guardsynth-m16-scene-acquisition-001/"
     "m16-source-acquisition-2026-08-14-v18/"
     "HUMAN_SOURCE_REVIEW_PACKET.json"

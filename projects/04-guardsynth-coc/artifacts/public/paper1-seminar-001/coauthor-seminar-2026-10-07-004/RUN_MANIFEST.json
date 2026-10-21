@@ -1,0 +1,192 @@
+{
+  "project_id": "guardsynth-coc",
+  "run_id": "coauthor-seminar-2026-10-07-004",
+  "source": "projects/04-guardsynth-coc/paper/seminar/coauthor-seminar-v01-en.tex",
+  "language": "en",
+  "input_sha256": {
+    "projects/04-guardsynth-coc/paper/seminar/coauthor-seminar-v01-en.tex": "5b67f63abd96818d136533c1cea4e5e40f140aa60282101d4536368aeafa7eb4",
+    "projects/04-guardsynth-coc/paper/ieee-access/main.tex": "5f43d36bcf947e6b223540df2c08ab2f22a88121190cb178be2e9bcd4911068f",
+    "projects/04-guardsynth-coc/paper/ieee-access/references.bib": "55d935f81c21fe60569e883befaafcb938deef2bb006f7f3ae6a2c03863112dd",
+    "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_METHODOLOGY_V01_EN.md": "cf202803d80fabe9ea72e7b8523fb4388bc64991a2680769ded899716c62b9ad",
+    "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_EXPERIMENTS_V01_EN.md": "c11244b59232b0de91b0f6de8fa5f66986f212b0f5b389218232f1dd3e6414c6",
+    "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_EXPERIMENTS_SUPPLEMENT_V01_EN.md": "0c0f88ef0ff25cd47426ec45f1b825d717be62de2fd43ea9302557318bf7e7a4",
+    "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_RELATED_WORK_V01_EN.md": "ca82461a6fa1e4e2721c66a5161817f18e927f94c5955bc9862639bce95bfc23"
+  },
+  "outputs": {
+    "slides": {
+      "file": "coauthor-seminar-v01-en.pdf",
+      "pages": 32,
+      "sha256": "9b81eb6f163d0c0ca8e2c11b6ca8643608dce976801bf2eb2ba91561180f08f3"
+    },
+    "notes": {
+      "file": "coauthor-seminar-v01-en-notes.pdf",
+      "pages": 32,
+      "sha256": "c6083f1e128f5e692d3cd0741f0976a03b0a51e1dcd59b9c0ef9a404ebf9a2a6"
+    }
+  },
+  "engine": "LOCAL_PATH_REMOVED_79e0d7dfee0d",
+  "texinputs": ":/tmp/guardsynth-seminar-texdeps/tex//",
+  "main_slides": 26,
+  "backup_slides": 6,
+  "talk_minutes": 27,
+  "discussion_minutes": 3,
+  "timing": [
+    {
+      "slide": 1,
+      "start_seconds": 0,
+      "duration_seconds": 30
+    },
+    {
+      "slide": 2,
+      "start_seconds": 30,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 3,
+      "start_seconds": 90,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 4,
+      "start_seconds": 150,
+      "duration_seconds": 90
+    },
+    {
+      "slide": 5,
+      "start_seconds": 240,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 6,
+      "start_seconds": 300,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 7,
+      "start_seconds": 360,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 8,
+      "start_seconds": 420,
+      "duration_seconds": 90
+    },
+    {
+      "slide": 9,
+      "start_seconds": 510,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 10,
+      "start_seconds": 570,
+      "duration_seconds": 90
+    },
+    {
+      "slide": 11,
+      "start_seconds": 660,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 12,
+      "start_seconds": 735,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 13,
+      "start_seconds": 810,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 14,
+      "start_seconds": 870,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 15,
+      "start_seconds": 945,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 16,
+      "start_seconds": 1005,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 17,
+      "start_seconds": 1080,
+      "duration_seconds": 30
+    },
+    {
+      "slide": 18,
+      "start_seconds": 1110,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 19,
+      "start_seconds": 1185,
+      "duration_seconds": 105
+    },
+    {
+      "slide": 20,
+      "start_seconds": 1290,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 21,
+      "start_seconds": 1350,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 22,
+      "start_seconds": 1410,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 23,
+      "start_seconds": 1470,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 24,
+      "start_seconds": 1530,
+      "duration_seconds": 45
+    },
+    {
+      "slide": 25,
+      "start_seconds": 1575,
+      "duration_seconds": 45
+    },
+    {
+      "slide": 26,
+      "start_seconds": 1620,
+      "duration_seconds": 180
+    }
+  ],
+  "manuscript_and_experiments_modified": false,
+  "new_model_predictions": 0,
+  "visual_review": "PASS: all 32 rendered slides inspected; English note page and all notes text checked.",
+  "sections": [
+    "Introduction",
+    "Related Work and Comparison",
+    "Approach and Verification",
+    "Experimental Results",
+    "Conclusion"
+  ],
+  "related_work_comparison_slides": [
+    5,
+    6
+  ],
+  "verification_slides": [
+    11,
+    12,
+    13,
+    14
+  ],
+  "comparison_graph_slides": [
+    19,
+    20,
+    21
+  ],
+  "external_studies_evaluated": false,
+  "change": "Reorganize the English seminar into five sections with concise bullets, source/verification tables, explicit verification results, and three comparison-graph slides."
+}

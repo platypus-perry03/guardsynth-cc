@@ -168,7 +168,7 @@ class SourceAuthoringTest(unittest.TestCase):
         self.assertFalse(result["synthetic_scene_fill_performed"])
 
     def test_current_restricted_bundle_remains_fail_closed(self) -> None:
-        prior = ROOT / "artifacts/results/restricted/eblc-p0b-001/p0b-restricted-grounding-multiview-2026-08-08-v1/ADAPTER_RESULT.json"
+        prior = ROOT / "platforms/eblc-bcv/artifacts/restricted/eblc-p0b-001/p0b-restricted-grounding-multiview-2026-08-08-v1/ADAPTER_RESULT.json"
         if not prior.is_file():
             self.skipTest("restricted derived adapter artifact not present")
         adapter = load_json(prior)

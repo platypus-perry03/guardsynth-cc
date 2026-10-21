@@ -15,7 +15,7 @@ MODULE = ROOT / "projects/04-guardsynth-coc/experiments/paper1_cnl_learning/prep
 spec = importlib.util.spec_from_file_location("prepare_action_assignment", MODULE)
 assignment = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(assignment)
-SOURCE = ROOT / "artifacts/projects/guardsynth-coc/restricted/guardsynth-paper1-training-readiness-001/m17-machine-preflight-2026-09-28-002"
+SOURCE = ROOT / "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-paper1-training-readiness-001/m17-machine-preflight-2026-09-28-002"
 
 
 class ActionAssignmentTest(unittest.TestCase):

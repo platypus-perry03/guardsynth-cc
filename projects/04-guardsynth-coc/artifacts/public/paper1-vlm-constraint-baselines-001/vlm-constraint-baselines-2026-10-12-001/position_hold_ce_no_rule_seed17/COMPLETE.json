@@ -1,0 +1,8 @@
+{
+  "task": "position_hold",
+  "arm": "ce_no_rule",
+  "seed": 17,
+  "rows": 256,
+  "status": "COMPLETE",
+  "elapsed_seconds": 616.8505847714841
+}

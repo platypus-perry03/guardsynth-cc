@@ -1,0 +1,11 @@
+{
+  "task": "position_hold",
+  "arm": "ce_rule",
+  "seed": 123,
+  "epoch": 3,
+  "updates": 180,
+  "elapsed_seconds": 637.3892364129424,
+  "ce": 0.034217144508890365,
+  "semantic": 0.03601228992144267,
+  "total": 0.034217144508890365
+}

@@ -1,0 +1,34 @@
+{
+  "contract_version": "eblc-action-contract-v0.1",
+  "contract_id": "pair_z1_m1",
+  "horizon": 2,
+  "claim_scope": "CONDITIONAL_ACTION_SELECTION_NOT_VEHICLE_SAFETY",
+  "subject_id": "ego",
+  "zone_id": "Z1",
+  "policy": "CLEAR_REQUIRED_FOR_ENTRY",
+  "source_refs": [
+    "synthetic_policy_z1_m1",
+    "synthetic_scene_1",
+    "synthetic_scene_2"
+  ],
+  "obligations": [
+    {
+      "obligation_id": "signal_s1",
+      "predicate_id": "red_signal_s1",
+      "target_entity_id": "S1",
+      "rule_ref": "synthetic_policy_z1_m1",
+      "source_refs": [
+        "synthetic_policy_z1_m1"
+      ]
+    },
+    {
+      "obligation_id": "cross_a",
+      "predicate_id": "cross_a_occupies_z1",
+      "target_entity_id": "A",
+      "rule_ref": "synthetic_policy_z1_m1",
+      "source_refs": [
+        "synthetic_policy_z1_m1"
+      ]
+    }
+  ]
+}

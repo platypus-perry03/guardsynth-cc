@@ -1,0 +1,15 @@
+{
+  "status": "PUBLISHED_SOURCE_AWAITING_ANONYMOUS_MIRROR",
+  "payload_files": 1088,
+  "identity_scan": "PASS",
+  "zip_created": false,
+  "python_and_model_reconstruction": "PASS",
+  "bounded_cases": 35042928,
+  "bounded_mismatches": 0,
+  "solver_rerun": "NOT_COMPLETED_VERIFYTA_LICENSE_UNAVAILABLE",
+  "external_anonymous_url": null,
+  "publication_branch": "review-artifact",
+  "publication_commit": "79acd64a1fdf1f8b2c8a7817409368d976cd64f0",
+  "published": true,
+  "fresh_https_clone_reproduction": "PASS"
+}

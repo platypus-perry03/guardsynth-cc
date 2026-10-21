@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "project_id": "guardsynth-coc",
+  "run_id": "coauthor-seminar-2026-10-07-005",
+  "language": "en",
+  "main_slides": 29,
+  "backup_slides": 8,
+  "talk_minutes": 27,
+  "discussion_minutes": 3,
+  "outputs": {
+    "slides": {
+      "file": "coauthor-seminar-v01-en.pdf",
+      "pages": 37,
+      "sha256": "78e62f1f145e8c56316a70f32db1465456f35461aee68c0b0e88ac1e15cd1fb8"
+    },
+    "notes": {
+      "file": "coauthor-seminar-v01-en-notes.pdf",
+      "pages": 37,
+      "sha256": "d0262cc6d90fb5bba7a17e1e256956f6d0916bd56811b511e8a8fa281529774f"
+    }
+  },
+  "updates": [
+    "Layer-specific specification-error detection and accepted-case counts",
+    "Temporal representation comparison and unseen waiting durations",
+    "Paraphrase and combined hard-condition evaluation",
+    "Visual-input interventions and their diagnostic scope",
+    "Archived reasoning-prompt comparison and native external-method checks",
+    "Updated table/figure references and English presenter notes"
+  ],
+  "new_model_predictions": 0,
+  "checks": {
+    "numeric_pairs_verified_against_frozen_results": 42,
+    "original_chart_data_unchanged": true,
+    "original_primary_table_unchanged": true,
+    "preserved_files_verified": 192,
+    "main_frames": 29,
+    "backup_frames": 8,
+    "english_notes": 37,
+    "duration_minutes": 30,
+    "talk_minutes": 27,
+    "discussion_minutes": 3,
+    "build_logs_clean": true,
+    "input_output_hashes_match": true,
+    "visual_review": {
+      "status": "PASS",
+      "slide_pages": [
+        14,
+        17,
+        20,
+        23,
+        24,
+        25,
+        28,
+        37
+      ],
+      "notes_pages": [
+        20,
+        23,
+        25,
+        29
+      ],
+      "findings": "Tables, graphs, footers, and English notes are readable and unclipped."
+    },
+    "file_naming": {
+      "new_task_paths": "PASS",
+      "repository_exit_code": 1,
+      "preexisting_findings": 10,
+      "task_paths_in_findings": 0
+    }
+  }
+}

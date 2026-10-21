@@ -1,0 +1,174 @@
+{
+  "project_id": "guardsynth-coc",
+  "run_id": "coauthor-seminar-2026-10-07-001",
+  "source": "projects/04-guardsynth-coc/paper/seminar/coauthor-seminar-v01-ko.tex",
+  "input_sha256": {
+    "projects/04-guardsynth-coc/paper/seminar/coauthor-seminar-v01-ko.tex": "66ceec800242b78220f456426904a2796a04543e589d4745e4d50cccf693d738",
+    "projects/04-guardsynth-coc/paper/ieee-access/main.tex": "5f43d36bcf947e6b223540df2c08ab2f22a88121190cb178be2e9bcd4911068f",
+    "projects/04-guardsynth-coc/paper/ieee-access/references.bib": "55d935f81c21fe60569e883befaafcb938deef2bb006f7f3ae6a2c03863112dd",
+    "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_METHODOLOGY_V01_EN.md": "cf202803d80fabe9ea72e7b8523fb4388bc64991a2680769ded899716c62b9ad",
+    "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_EXPERIMENTS_V01_EN.md": "c11244b59232b0de91b0f6de8fa5f66986f212b0f5b389218232f1dd3e6414c6",
+    "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_EXPERIMENTS_SUPPLEMENT_V01_EN.md": "0c0f88ef0ff25cd47426ec45f1b825d717be62de2fd43ea9302557318bf7e7a4"
+  },
+  "outputs": {
+    "slides": {
+      "file": "coauthor-seminar-v01-ko.pdf",
+      "pages": 30,
+      "sha256": "5b00c82321f4e09b6985c074c6562c57b035cf02ec61608156bba0b1326e49cf"
+    },
+    "notes": {
+      "file": "coauthor-seminar-v01-ko-notes.pdf",
+      "pages": 30,
+      "sha256": "5f38f3002dffffa0e62346654f42ef7e592d1e80c2174283897c8b48a35ee320"
+    }
+  },
+  "engine": "LOCAL_PATH_REMOVED_79e0d7dfee0d",
+  "texinputs": ":/tmp/guardsynth-seminar-texdeps/tex//",
+  "main_slides": 24,
+  "backup_slides": 6,
+  "talk_minutes": 27,
+  "discussion_minutes": 3,
+  "timing": [
+    {
+      "slide": 1,
+      "start_seconds": 0,
+      "duration_seconds": 30
+    },
+    {
+      "slide": 2,
+      "start_seconds": 30,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 3,
+      "start_seconds": 90,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 4,
+      "start_seconds": 165,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 5,
+      "start_seconds": 240,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 6,
+      "start_seconds": 315,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 7,
+      "start_seconds": 390,
+      "duration_seconds": 90
+    },
+    {
+      "slide": 8,
+      "start_seconds": 480,
+      "duration_seconds": 90
+    },
+    {
+      "slide": 9,
+      "start_seconds": 570,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 10,
+      "start_seconds": 645,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 11,
+      "start_seconds": 720,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 12,
+      "start_seconds": 780,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 13,
+      "start_seconds": 855,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 14,
+      "start_seconds": 915,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 15,
+      "start_seconds": 990,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 16,
+      "start_seconds": 1050,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 17,
+      "start_seconds": 1125,
+      "duration_seconds": 105
+    },
+    {
+      "slide": 18,
+      "start_seconds": 1230,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 19,
+      "start_seconds": 1305,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 20,
+      "start_seconds": 1365,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 21,
+      "start_seconds": 1440,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 22,
+      "start_seconds": 1500,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 23,
+      "start_seconds": 1560,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 24,
+      "start_seconds": 1620,
+      "duration_seconds": 180
+    }
+  ],
+  "manuscript_and_experiments_modified": false,
+  "new_model_predictions": 0,
+  "visual_review": {
+    "status": "PASS",
+    "slides_reviewed": 30,
+    "presenter_notes_reviewed": 30,
+    "method": "All-page rendered contact sheets; detailed inspection of workflow, formula, tables, plot, and note page; extracted note text on every page",
+    "layout_defects_remaining": 0
+  },
+  "verification": {
+    "xelatex": "PASS, two passes for each PDF",
+    "overflow_missing_glyphs_undefined_references": "None",
+    "duration_minutes": 30,
+    "main_talk_minutes": 27,
+    "discussion_minutes": 3,
+    "primary_metric_values_compared": 36,
+    "unseen_condition_metric_values_compared": 18,
+    "dataset_and_diagnostic_values": "Match manuscript",
+    "manuscript_source_hashes": "Unchanged throughout build",
+    "file_naming": "No seminar-file findings; repository check reports 10 pre-existing unrelated findings"
+  }
+}

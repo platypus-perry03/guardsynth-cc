@@ -12,7 +12,7 @@ SIGNALS = {"vehicle_speed_kmh": (0, 250), "brake_pressure_bar": (0, 126),
 MAX_AGE_US = 600000  # 2 Hz vehicle_monitor; older observations remain unknown.
 
 
-def validate(value, video):
+def validate(value, video, *, require_transmission=True):
     fields = {"schema_version", "dataset", "scene_id", "video_sha256", "source_sha256",
               "clock_origin_utime", "transmission_approved", "samples"}
     if not isinstance(value, dict) or set(value) != fields:
@@ -20,7 +20,8 @@ def validate(value, video):
     if (value["schema_version"] != 1 or value["dataset"] != "nuscenes-can-bus"
             or not isinstance(value["scene_id"], str) or not re.fullmatch(r"scene-\d{4}", value["scene_id"])
             or value["video_sha256"] != video["original_sha256"]
-            or value["transmission_approved"] is not True
+            or type(value["transmission_approved"]) is not bool
+            or (require_transmission and value["transmission_approved"] is not True)
             or type(value["clock_origin_utime"]) is not int or value["clock_origin_utime"] <= 0
             or not isinstance(value["source_sha256"], str) or not re.fullmatch(r"[0-9a-f]{64}", value["source_sha256"])):
         raise StudioError("VEHICLE_STATE_BINDING", "Video, source, clock and transmission approval required")

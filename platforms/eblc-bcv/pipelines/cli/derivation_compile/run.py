@@ -161,7 +161,7 @@ symbolic replay다. free-form `operation` 문자열을 자동 해석하지 않�
 
 
 def execute(program_path: Path, spec_path: Path | None, run_id: str) -> tuple[Path, dict[str, Any]]:
-    output = ROOT / "artifacts/results/public/eblc-derivation-compilation-001" / run_id
+    output = ROOT / "platforms/eblc-bcv/artifacts/public/eblc-derivation-compilation-001" / run_id
     if output.exists():
         raise FileExistsError(f"refusing to overwrite existing run: {run_id}")
     program = load_program(program_path)

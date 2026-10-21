@@ -1,0 +1,76 @@
+{
+  "status": "NOT_RUN_NATURAL_CROSS_SCENE_SEMANTICS",
+  "saved_chain_count": 13,
+  "saved_scene_count": 29,
+  "official_metadata_present": false,
+  "boundary_count": 16,
+  "verified_semantic_boundary_bindings": 0,
+  "boundary_missing_fields": {
+    "condition_id": 16,
+    "subject_ref": 16,
+    "identity_witness": 16,
+    "applicability_witness": 16,
+    "release_truth": 16
+  },
+  "inspected_inputs": [
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0130-to-scene-0133-loop-result.json",
+      "sha256": "65a7418c6ce5910b6126a1fa9adbc590b955fdb6f6d6c8a5c782ddaaa68ea9cf"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0007-to-scene-0009-loop-result.json",
+      "sha256": "498c57a284bba64174cf51a264e847260af259c05c43650579ba68f96444ca33"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0031-to-scene-0032-loop-result.json",
+      "sha256": "b9bc309eb94d0a1d5506ff4d3e7d4a04ecb87618d5a2697edeccc9aa3678e570"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0027-to-scene-0028-loop-result.json",
+      "sha256": "18b884b24ec07b5bbd1f5f3152352b7e61f9ecc603157ac6005a5909f3d3d29c"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0063-to-scene-0064-loop-result.json",
+      "sha256": "2fce9f6f6335a6b42a09b6d0320a5e9b91636f639a070a898563dc6cbaf84177"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0056-to-scene-0057-loop-result.json",
+      "sha256": "201aa60ad256c67fff678fa6844f2a6354d51d714bf65fc59011a56cc449719e"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0048-to-scene-0049-loop-result.json",
+      "sha256": "bfc680a2d0c75b1075c8ad583e94dfc352af34f40b45a3b4666267d4f9be01f1"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0051-to-scene-0052-loop-result.json",
+      "sha256": "7c8b27c371716b7b09c2e4b5a41333e5e8483774b61b4df56bebd36049e0fa17"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0124-to-scene-0125-loop-result.json",
+      "sha256": "d40e20d523fc0846d7279a7d585e6f784850f4bf745fc24f633e0f9bee8ccc79"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0134-to-scene-0135-loop-result.json",
+      "sha256": "edd4f700fee01bcf7dcfd1114269a049c69230f7bff85c94895494c9299f3bdd"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0025-to-scene-0026-loop-result.json",
+      "sha256": "bbbcd20579e29854d3b36388362f97e9709801c3313d2f3f9d0565475119e4e7"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0179-to-scene-0180-loop-result.json",
+      "sha256": "b7c5c6740a4abd9209cd0a9f3caf25d3007c6b918964cb0eec951f50cade823c"
+    },
+    {
+      "path": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/scene-0150-to-scene-0151-loop-result.json",
+      "sha256": "0b2e97f981fd6d90c2f80f07b3a3dc2aa197d55042c82fabc8822eb5b457d568"
+    }
+  ],
+  "reasons": [
+    "OBJECT_AND_CONDITION_CONTINUITY_NOT_ESTABLISHED",
+    "SOURCE_PREDICATE_TRUTH_NOT_ANNOTATED"
+  ],
+  "saved_input": "projects/03-sequential-coc-verification/artifacts/public/multiscene-chain/uppaal-loop-batch-all-strict-1s.json",
+  "saved_input_sha256": "9b365fe553182e6ae0938440ecf9751323ebc7cefbb20718b523c5014a85a540",
+  "note": "Saved speed-request replay results do not supply pedestrian, signal, or obstacle identities and release truth."
+}

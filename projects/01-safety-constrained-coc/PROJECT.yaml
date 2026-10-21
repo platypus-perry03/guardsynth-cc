@@ -4,7 +4,7 @@ title: Safety-Constrained CoC
 research_question: Does a supplied execution constraint reduce guard-violating VLM choices while preserving the driving goal?
 status: manuscript_ready
 dependencies: []
-artifact_root: artifacts/projects/safety-constrained-coc
+artifact_root: projects/01-safety-constrained-coc/artifacts
 canonical_status: STATUS.md
 canonical_research_plan: docs/plans/01_RESEARCH_PLAN_V01.md
 canonical_milestones: docs/plans/02_PROJECT_MILESTONES.md

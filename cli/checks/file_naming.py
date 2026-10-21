@@ -20,7 +20,6 @@ MAINTAINED_ROOTS = (
     "projects", "platforms", "apps", "governance", "docs", "cli", "shared",
     "tests", "src", "experiments",
 )
-NEW_ARTIFACT_ROOTS = ("artifacts/projects", "artifacts/platforms")
 EXCLUDED_PARTS = {
     ".git", ".pytest_cache", ".ruff_cache", ".matplotlib-cache", ".texlive-cache",
     ".texlive-local", "__pycache__", "node_modules",
@@ -77,7 +76,15 @@ def _exception_patterns() -> tuple[str, ...]:
     payload = json.loads(
         (ROOT / "docs/architecture/NAMING_EXCEPTIONS.json").read_text(encoding="utf-8")
     )
-    return tuple(item["pattern"] for item in payload["exceptions"])
+    migration = json.loads(
+        (ROOT / "docs/architecture/ARTIFACT_MIGRATION.json").read_text(encoding="utf-8")
+    )
+    legacy = tuple(
+        pattern
+        for root in migration["legacy_naming_roots"]
+        for pattern in (root, root + "/*")
+    )
+    return (*legacy, *(item["pattern"] for item in payload["exceptions"]))
 
 
 def _controlled_document_sets() -> dict[str, dict[str, re.Pattern[str]]]:
@@ -110,7 +117,7 @@ def _document_has_role(path: Path, role: str) -> bool:
 
 def maintained_files() -> tuple[Path, ...]:
     files = [path for path in ROOT.iterdir() if path.is_file()]
-    for root_name in (*MAINTAINED_ROOTS, *NEW_ARTIFACT_ROOTS):
+    for root_name in MAINTAINED_ROOTS:
         for path in (ROOT / root_name).rglob("*"):
             if path.is_file() and not any(part in EXCLUDED_PARTS for part in path.parts):
                 files.append(path)
@@ -119,7 +126,7 @@ def maintained_files() -> tuple[Path, ...]:
 
 def maintained_directories() -> tuple[Path, ...]:
     directories: list[Path] = []
-    for root_name in (*MAINTAINED_ROOTS, *NEW_ARTIFACT_ROOTS):
+    for root_name in MAINTAINED_ROOTS:
         for path in (ROOT / root_name).rglob("*"):
             if path.is_dir() and not any(part in EXCLUDED_PARTS for part in path.parts):
                 directories.append(path)

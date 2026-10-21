@@ -223,7 +223,7 @@ traceability에서 명시적으로 이관했다. 실제 association, 법규 근�
 
 
 def execute(run_id: str) -> tuple[Path, dict[str, Any]]:
-    output = ROOT / "artifacts/results/public/eblc-release-candidate-001" / run_id
+    output = ROOT / "platforms/eblc-bcv/artifacts/public/eblc-release-candidate-001" / run_id
     if output.exists():
         raise FileExistsError(f"refusing to overwrite existing run: {run_id}")
     output.mkdir(parents=True)

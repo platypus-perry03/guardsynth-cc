@@ -1,0 +1,31 @@
+{
+  "project_id": "safety-constrained-coc",
+  "status": "publication_pdf_verified",
+  "pages": 15,
+  "figures": 7,
+  "tables": 12,
+  "references": 10,
+  "author": "Jin Hyun Kim",
+  "corresponding_author": true,
+  "email": "jin.kim@gnu.ac.kr",
+  "orcid": "0000-0002-2308-1638",
+  "checks": {
+    "build": true,
+    "caption_sequences": true,
+    "black_body_text": true,
+    "author_photo": true,
+    "first_page_links": true,
+    "page_bounds": true,
+    "existing_body_sources_unchanged": true,
+    "marked_review_pdfs_unchanged": true,
+    "review_entry_point_text_unchanged_all_pages": true,
+    "source_zip_integrity": true,
+    "source_package_rebuild_identical_text_and_render": true
+  },
+  "limitations": [
+    "HWP template used as format reference; no native HWP output.",
+    "15 pages; template suggests 5–10 pages rather than imposing a limit.",
+    "File naming audit reports 10 pre-existing violations, including two supplied external inputs; no new task-file violations."
+  ],
+  "font_warnings": "Standard Computer Modern size substitutions and unavailable ChosunNm italic shape; no missing glyphs or overfull boxes."
+}

@@ -11,7 +11,7 @@
       "artifact_id": {"type": "string", "pattern": "^art-[a-f0-9]{20}$"},
       "owner_kind": {"enum": ["PROJECT", "PLATFORM"]},
       "owner_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
-      "classification": {"enum": ["public", "restricted", "intermediate", "legacy_immutable"]},
+      "classification": {"enum": ["public", "restricted", "intermediate"]},
       "run_label": {"type": "string", "minLength": 1, "maxLength": 256},
       "experiment_id": {"type": "string"},
       "created_at": {"type": "string"},

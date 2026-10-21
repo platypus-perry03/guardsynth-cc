@@ -18,7 +18,7 @@
 효과 크기·무개선·저하·불확실성과 frozen 기준의 미충족 사실을 함께 보고한다.
 실험 수행 완료와 과학적 가설 지지는 별도이며 원 RESULT 판정은 바꾸지 않는다.
 
-실험 실행 마감: [전체 결과 및 감사](../../../../artifacts/projects/guardsynth-coc/public/paper1-method-preservation-001/temporal-experiment-closure-2026-09-29-001/REPORT_KO.md).
+실험 실행 마감: [전체 결과 및 감사](../../artifacts/public/paper1-method-preservation-001/temporal-experiment-closure-2026-09-29-001/REPORT_KO.md).
 확장18/18 fits(3,240 updates,17,280예측), 비용6/6 추가 fits(360 updates,6,480예측), 추가 지표 완료.
 296개 고유 파일 해시·seed별 재집계·동일 예산·checkpoint 변화 점검 및 회귀 테스트49개 통과.
 확장 NOT_SUPPORTED/비용 INCONCLUSIVE 원판정과 정확도-위반율 상충을 보존한다.
@@ -34,7 +34,7 @@ M18은 기존 효과 보존 비교, M20은 방법·실제 결과·한계 원고�
 현 실행 근거: M17 통제 temporal paired records2,016행·Core/SMT100질의 완료;
 M18 실제 Qwen P0/P1/P2 3seeds·9adapters·648updates·2,592예측 및 고정 분석 완료.
 표준·새seed 모두 P1/P2 위반0/안전완료1로 수준 보존 point criteria 충족. 새seed P0 .3160/.6840.
-M20 `paper/main.tex` 실제 결과·CI·한계4쪽 및 PDF 완료. formal 비열등성/실도로 일반화 미입증.
+M20 `paper/ieee-access/main.tex` 실제 결과·CI·한계4쪽 및 PDF 완료. formal 비열등성/실도로 일반화 미입증.
 6개 storyboard/24개 image-candidate 입력의 반복을 독립 새 환경으로 계산하지 않는다.
 
 D1–D4 후속 완료: 기존9개 adapter로2,160행/1,476모델 호출, 새로운 학습0.
@@ -158,7 +158,7 @@ Todo:
 - [x] under/overconstraint mutation witness
 - [x] P0a 7/7 회귀 결과 보존
 
-종료 근거: [P0a report](../../../../artifacts/results/public/eblc-pilot-v0/pilot-2026-08-08/REPORT_KO.md)
+종료 근거: [P0a report](../../../../platforms/eblc-bcv/artifacts/public/eblc-pilot-v0/pilot-2026-08-08/REPORT_KO.md)
 
 완료 경계: mechanism feasibility이며 실제 규칙·센서·차량 근거가 아니다.
 
@@ -176,7 +176,7 @@ Todo:
 - [x] underconstraint 5종과 overconstraint 5종 mutation 검출
 - [x] missing input의 REVIEW/UNSUPPORTED 및 data-gap artifact
 
-종료 근거: [P0b report](../../../../artifacts/results/public/eblc-p0b-001/p0b-2026-08-08-v1/REPORT_KO.md)
+종료 근거: [P0b report](../../../../platforms/eblc-bcv/artifacts/public/eblc-p0b-001/p0b-2026-08-08-v1/REPORT_KO.md)
 
 완료 경계: 한 synthetic pedestrian slice의 bounded semantics다.
 
@@ -196,9 +196,9 @@ Todo:
 
 종료 근거:
 
-- [Z3 P0b report](../../../../artifacts/results/public/eblc-p0b-001/p0b-z3-smt-2026-08-08-v4/REPORT_KO.md)
-- [fail-closed report](../../../../artifacts/results/public/eblc-p0b-001/p0b-fail-closed-2026-08-08-v1/REPORT_KO.md)
-- [robustness report](../../../../artifacts/results/public/eblc-robustness-audit-001/robustness-fail-closed-2026-08-08-v6/REPORT_KO.md)
+- [Z3 P0b report](../../../../platforms/eblc-bcv/artifacts/public/eblc-p0b-001/p0b-z3-smt-2026-08-08-v4/REPORT_KO.md)
+- [fail-closed report](../../../../platforms/eblc-bcv/artifacts/public/eblc-p0b-001/p0b-fail-closed-2026-08-08-v1/REPORT_KO.md)
+- [robustness report](../../../../platforms/eblc-bcv/artifacts/public/eblc-robustness-audit-001/robustness-fail-closed-2026-08-08-v6/REPORT_KO.md)
 
 완료 경계: bounded falsification/translation evidence이며 보편 안전 증명이 아니다.
 
@@ -218,9 +218,9 @@ Todo:
 
 종료 근거:
 
-- [Core-SMT report](../../../../artifacts/results/public/eblc-core-smt-001/core-smt-2026-08-08-v4/REPORT_KO.md)
-- [conformance report](../../../../artifacts/results/public/eblc-elaboration-conformance-001/elaboration-conformance-2026-08-08-v3/REPORT_KO.md)
-- [scenario report](../../../../artifacts/results/public/eblc-scenario-test-001/scenario-matrix-2026-08-08-v3/REPORT_KO.md)
+- [Core-SMT report](../../../../platforms/eblc-bcv/artifacts/public/eblc-core-smt-001/core-smt-2026-08-08-v4/REPORT_KO.md)
+- conformance report (superseded run removed; see artifact migration catalog)
+- [scenario report](../../../../platforms/eblc-bcv/artifacts/public/eblc-scenario-test-001/scenario-matrix-2026-08-08-v3/REPORT_KO.md)
 
 완료 경계: compiler conformance이며 독립 safety oracle은 아니다.
 
@@ -240,10 +240,10 @@ Todo:
 
 종료 근거:
 
-- [composition report](../../../../artifacts/results/public/eblc-composition-compilation-001/composition-compilation-2026-08-09-v1/REPORT_KO.md)
-- [typed derivation report](../../../../artifacts/results/public/eblc-derivation-compilation-001/typed-derivation-2026-08-09-v1/REPORT_KO.md)
-- [v0.2 derivation report](../../../../artifacts/results/public/eblc-elaboration-conformance-001/elaboration-conformance-2026-08-09-v02-typed-derivation-v4/REPORT_KO.md)
-- [indexed collection report](../../../../artifacts/results/public/eblc-indexed-collection-001/indexed-collection-2026-08-09-v1/REPORT_KO.md)
+- [composition report](../../../../platforms/eblc-bcv/artifacts/public/eblc-composition-compilation-001/composition-compilation-2026-08-09-v1/REPORT_KO.md)
+- [typed derivation report](../../../../platforms/eblc-bcv/artifacts/public/eblc-derivation-compilation-001/typed-derivation-2026-08-09-v1/REPORT_KO.md)
+- [v0.2 derivation report](../../../../platforms/eblc-bcv/artifacts/public/eblc-elaboration-conformance-001/elaboration-conformance-2026-08-09-v02-typed-derivation-v4/REPORT_KO.md)
+- [indexed collection report](../../../../platforms/eblc-bcv/artifacts/public/eblc-indexed-collection-001/indexed-collection-2026-08-09-v1/REPORT_KO.md)
 
 완료 경계: bounded synthetic multi-contract/actor backend다.
 
@@ -263,7 +263,7 @@ Todo:
 
 종료 근거:
 
-- [release artifact](../../../../artifacts/results/public/eblc-release-candidate-001/eblc-v0.2-rc1-2026-08-09/REPORT_KO.md)
+- [release artifact](../../../../platforms/eblc-bcv/artifacts/public/eblc-release-candidate-001/eblc-v0.2-rc1-2026-08-09/REPORT_KO.md)
 - [language specification](../../../../platforms/eblc-bcv/docs/specifications/EBLC_LANGUAGE_SPEC_V02.md)
 - [release notes](../../../../platforms/eblc-bcv/docs/releases/EBLC_RELEASE_NOTES_V02.md)
 
@@ -283,7 +283,7 @@ Todo:
 - [x] claim-only/missing/ambiguous/conflict/unit mismatch abstention
 - [x] synthetic 두 instance를 EBLC→Core→Z3까지 실행
 
-종료 근거: [generator report](../../../../artifacts/results/public/guardsynth-source-aware-generator-001/source-aware-generator-2026-08-09-v3/REPORT_KO.md)
+종료 근거: [generator report](../../artifacts/public/guardsynth-source-aware-generator-001/source-aware-generator-2026-08-09-v3/REPORT_KO.md)
 
 완료 경계: structured synthetic generator이며 자연어 CoC parser/검색기는 아니다.
 
@@ -306,7 +306,7 @@ Todo:
 
 - [terminal decision](../reports/GUARDSYNTH_P0B_TERMINAL_DECISION_REPORT_V01.md)
 - [thorough test report](../reports/GUARDSYNTH_SOURCE_BOUNDARY_THOROUGH_TEST_REPORT_V01.md)
-- [readiness artifact](../../../../artifacts/results/public/guardsynth-real-scene-readiness-001/terminal-readiness-2026-08-09-v3/REPORT_KO.md)
+- [readiness artifact](../../artifacts/public/guardsynth-real-scene-readiness-001/terminal-readiness-2026-08-09-v3/REPORT_KO.md)
 
 완료 경계: source-boundary software 종료이며 24-scene 연구 gate는 미통과다.
 
@@ -329,7 +329,7 @@ Todo:
 종료 근거:
 
 - [design](../designs/GUARDSYNTH_LABEL_LIGHT_GROUNDING_DESIGN_V01.md)
-- [execution report](../../../../artifacts/results/public/guardsynth-label-light-grounding-001/label-light-2026-08-10-v3/REPORT_KO.md)
+- [execution report](../../artifacts/public/guardsynth-label-light-grounding-001/label-light-2026-08-10-v3/REPORT_KO.md)
 
 완료 경계: label-light workflow 구현이며 실제 association accuracy/절감률은 미측정이다.
 
@@ -737,7 +737,7 @@ Todo:
 종료 근거:
 
 - [source catalog v0.1](../../../../projects/04-guardsynth-coc/src/guard_synth/fixtures/source_catalog_kr_v0_1.json)
-- [E-1 audit report](../../../../artifacts/results/public/guardsynth-source-catalog-001/kr-source-catalog-2026-08-10-v2/REPORT_KO.md)
+- [E-1 audit report](../../artifacts/public/guardsynth-source-catalog-001/kr-source-catalog-2026-08-10-v2/REPORT_KO.md)
 
 실행 결과: template 15개, slice 5/6/4, family 6/6, source 없는 규범·실행 수치 0건,
 집중 10/10, maintained 202/202, P0a 7/7, 구조 10/10. 첫 v1 실행은 subprocess
@@ -816,21 +816,21 @@ Todo:
 
 준비도 근거:
 
-- `artifacts/results/public/guardsynth-24-scene-dry-run-001/kr-dry-run-readiness-2026-08-10-v1/`
-- `artifacts/results/public/guardsynth-scene-evidence-review-001/scene-evidence-review-2026-08-10-v5/`
-- `artifacts/results/restricted/guardsynth-image-review-partial-scene-001/alpamayo-image-review-2026-08-11-v2/`
-- `artifacts/results/restricted/guardsynth-calibration-scene-source-audit-001/alpamayo-calibration-source-2026-08-11-v7/`
-- `artifacts/results/restricted/guardsynth-calibration-scene-source-audit-001/alpamayo-calibration-source-2026-08-11-v10-tracks-linked/`
-- `artifacts/results/restricted/guardsynth-calibration-scene-source-audit-001/alpamayo-calibration-source-2026-08-11-v12-transform-binding/`
-- `artifacts/results/restricted/guardsynth-geometric-association-001/alpamayo-episode-05-event-01-2026-08-11-v2/`
-- `artifacts/results/restricted/guardsynth-calibration-scene-source-audit-001/alpamayo-calibration-source-2026-08-11-v15-association/`
-- `artifacts/results/restricted/guardsynth-rule-applicability-001/alpamayo-episode-05-2026-08-11-v1/`
-- `artifacts/results/restricted/guardsynth-calibration-scene-source-audit-001/alpamayo-calibration-source-2026-08-11-v17-rule-applicability/`
-- `artifacts/results/restricted/guardsynth-vehicle-assurance-audit-001/alpamayo-episode-05-2026-08-11-v1/`
-- `artifacts/results/restricted/guardsynth-simulated-scene-dry-run-001/alpamayo-episode-05-simulation-2026-08-11-v4/`
-- `artifacts/results/restricted/guardsynth-sim24-candidate-audit-001/alpamayo-candidate-inventory-2026-08-12-v1/`
-- `artifacts/results/restricted/guardsynth-sim24-candidate-audit-001/alpamayo-candidate-inventory-2026-08-12-v2/`
-- `artifacts/results/restricted/guardsynth-sim24-batch-001/alpamayo-terminal-batch-2026-08-12-v1/`
+- `projects/04-guardsynth-coc/artifacts/public/guardsynth-24-scene-dry-run-001/kr-dry-run-readiness-2026-08-10-v1/`
+- `projects/04-guardsynth-coc/artifacts/public/guardsynth-scene-evidence-review-001/scene-evidence-review-2026-08-10-v5/`
+- `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-image-review-partial-scene-001/alpamayo-image-review-2026-08-11-v2/`
+- `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-calibration-scene-source-audit-001/alpamayo-calibration-source-2026-08-11-v7/`
+- `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-calibration-scene-source-audit-001/alpamayo-calibration-source-2026-08-11-v10-tracks-linked/`
+- `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-calibration-scene-source-audit-001/alpamayo-calibration-source-2026-08-11-v12-transform-binding/`
+- `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-geometric-association-001/alpamayo-episode-05-event-01-2026-08-11-v2/`
+- `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-calibration-scene-source-audit-001/alpamayo-calibration-source-2026-08-11-v15-association/`
+- `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-rule-applicability-001/alpamayo-episode-05-2026-08-11-v1/`
+- `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-calibration-scene-source-audit-001/alpamayo-calibration-source-2026-08-11-v17-rule-applicability/`
+- `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-vehicle-assurance-audit-001/alpamayo-episode-05-2026-08-11-v1/`
+- `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-simulated-scene-dry-run-001/alpamayo-episode-05-simulation-2026-08-11-v4/`
+- `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-sim24-candidate-audit-001/alpamayo-candidate-inventory-2026-08-12-v1/`
+- `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-sim24-candidate-audit-001/alpamayo-candidate-inventory-2026-08-12-v2/`
+- `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-sim24-batch-001/alpamayo-terminal-batch-2026-08-12-v1/`
 
 선행 보완 M13-R01:
 
@@ -874,9 +874,9 @@ Todo:
 
 종료 근거:
 
-- `artifacts/results/public/guardsynth-coc-frontend-001/crosswalk-synthetic-2026-08-12-v3/`
-- `artifacts/results/public/guardsynth-coc-frontend-materialization-001/crosswalk-synthetic-2026-08-12-v1/`
-- `artifacts/results/public/guardsynth-coc-frontend-matrix-001/locked-synthetic-2026-08-12-v1/`
+- `projects/04-guardsynth-coc/artifacts/public/guardsynth-coc-frontend-001/crosswalk-synthetic-2026-08-12-v3/`
+- `projects/04-guardsynth-coc/artifacts/public/guardsynth-coc-frontend-materialization-001/crosswalk-synthetic-2026-08-12-v1/`
+- `projects/04-guardsynth-coc/artifacts/public/guardsynth-coc-frontend-matrix-001/locked-synthetic-2026-08-12-v1/`
 - 신규 front-end 단위/통합 테스트 16/16, 전체 maintained 286/286
 - 공개 synthetic crosswalk에서 source-linked proposal 1건, 다른 precondition은
   `NOT_APPLICABLE/REVIEW_REQUIRED`, source에 없는 safe-distance 수치는 생성하지 않음
@@ -923,7 +923,7 @@ Todo:
 
 종료 근거:
 
-- `artifacts/results/public/guardsynth-baseline-protocol-001/locked-interface-2026-08-12-v2/`
+- `projects/04-guardsynth-coc/artifacts/public/guardsynth-baseline-protocol-001/locked-interface-2026-08-12-v2/`
 - 24 cases × 10 baselines = 240/240 schema-valid result
 - channel firewall 0건, hidden failure 0건
 - B0/B3/B4/B5/B6/B7/B8/B13은 controlled input에서 실행; B1/B2는 provider adapter 테스트
@@ -1041,7 +1041,7 @@ Todo:
 
 이전 locked-KR preflight:
 
-- [M16 source acquisition restricted run](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-m16-scene-acquisition-001/m16-source-acquisition-2026-08-13-v1/)
+- M16 source acquisition restricted run (superseded run removed; see artifact migration catalog)
 - 로컬 source record 33개에서 image-event alias 10개를 결정적으로 제거해 distinct event 23개
 - 기존 적격 집계 4개를 개별 field에서 재감사: 8/8 closure 3개, cross-event timestamp/evidence
   conflict 1개, locked KR scope compatible 0개
@@ -1055,13 +1055,13 @@ Todo:
 
 현재 multi-jurisdiction preflight:
 
-- [M16 multi-jurisdiction restricted run](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-m16-scene-acquisition-001/m16-source-acquisition-2026-08-14-v3/)
+- M16 multi-jurisdiction restricted run (superseded run removed; see artifact migration catalog)
 - 23개 distinct candidate 중 8/8 source-complete 3개, scene jurisdiction까지 닫힌 eligible 1개
 - 나머지 source-complete 2개는 촬영 관할 `UNKNOWN`, 기존 1개는 cross-event conflict로 제외
 - eligible 1/60, shortfall 59; pedestrian 1/20, stop/signals 0/20, following/cut-in 0/20
 - HAZARD_TRUE_ACTIVE 1/10, 나머지 다섯 outcome 0/10; annotation start `false`
 - retained eligible 1개는 기존 M13 실행 근거가 있고 새 승격은 0개이므로 추가 translation 실행 없음
-- [latest source-review precheck](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-m16-scene-acquisition-001/m16-source-acquisition-2026-08-14-v18/)
+- [latest source-review precheck](../../artifacts/restricted/guardsynth-m16-scene-acquisition-001/m16-source-acquisition-2026-08-14-v18)
 - annotation 2,066개 materialized; 135 events 중 classified 98, unsupported 37, multi-slice 38
 - total sensor cohort 81 clips/486 members/1,448,583,496 bytes; event temporal closure 98/98
 - v18 precheck calibration 405 rows/3,337,630 bytes; 당시 event calibration/rig binding 98/98,

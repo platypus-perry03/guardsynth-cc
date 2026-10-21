@@ -24,7 +24,7 @@ P0b에서 다음 공개 경로를 구현하고 회귀 테스트로 고정했다.
 
 ## 2. 24-slot 실행 결과
 
-[공개 집계 결과](../../../../artifacts/results/public/guardsynth-real-scene-readiness-001/terminal-readiness-2026-08-09-v3/REPORT_KO.md)는
+[공개 집계 결과](../../artifacts/public/guardsynth-real-scene-readiness-001/terminal-readiness-2026-08-09-v3/REPORT_KO.md)는
 현재 로컬 restricted derived input의 식별자와 CoC 본문을 포함하지 않는다.
 
 | 항목 | 결과 |

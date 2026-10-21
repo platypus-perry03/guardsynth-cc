@@ -1,0 +1,443 @@
+{
+  "fresh_P2_violations": [
+    {
+      "id": "test-010-0-2000-xy_waypoints",
+      "seed": 42,
+      "hold_ms": 2000,
+      "encoding": "xy_waypoints",
+      "CoC": "Remain at the current position until the required hold period has ended, then proceed when permitted.",
+      "CNL": "Hold the ego vehicle's initial position for at least 2.0 s. At every listed waypoint with t <= 2.0 s, including the endpoint, the radial XY distance from the initial position must be at most 0.200 m. Movement after that period is permitted.",
+      "selected_label": "B",
+      "reference_label": "D",
+      "selected_xy_mm": [
+        [
+          0,
+          0
+        ],
+        [
+          39,
+          52
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          0,
+          180
+        ],
+        [
+          174,
+          232
+        ],
+        [
+          34,
+          46
+        ],
+        [
+          0,
+          539
+        ]
+      ],
+      "times_ms": [
+        0,
+        250,
+        500,
+        1000,
+        1500,
+        2000,
+        2100
+      ],
+      "excess_m": 0.08999999999999997,
+      "SMT": "UNSAT",
+      "model_response": "B"
+    },
+    {
+      "id": "test-010-2-500-xy_waypoints",
+      "seed": 42,
+      "hold_ms": 500,
+      "encoding": "xy_waypoints",
+      "CoC": "Remain at the current position until the required hold period has ended, then proceed when permitted.",
+      "CNL": "Hold the ego vehicle's initial position for at least 0.5 s. At every listed waypoint with t <= 0.5 s, including the endpoint, the radial XY distance from the initial position must be at most 0.200 m. Movement after that period is permitted.",
+      "selected_label": "A",
+      "reference_label": "D",
+      "selected_xy_mm": [
+        [
+          0,
+          0
+        ],
+        [
+          76,
+          101
+        ],
+        [
+          186,
+          -140
+        ],
+        [
+          57,
+          76
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          146,
+          0
+        ],
+        [
+          395,
+          -296
+        ]
+      ],
+      "times_ms": [
+        0,
+        250,
+        500,
+        1000,
+        1500,
+        2000,
+        2100
+      ],
+      "excess_m": 0.03280034364235804,
+      "SMT": "UNSAT",
+      "model_response": "A"
+    },
+    {
+      "id": "test-010-0-2000-xy_waypoints",
+      "seed": 17,
+      "hold_ms": 2000,
+      "encoding": "xy_waypoints",
+      "CoC": "Remain at the current position until the required hold period has ended, then proceed when permitted.",
+      "CNL": "Hold the ego vehicle's initial position for at least 2.0 s. At every listed waypoint with t <= 2.0 s, including the endpoint, the radial XY distance from the initial position must be at most 0.200 m. Movement after that period is permitted.",
+      "selected_label": "B",
+      "reference_label": "D",
+      "selected_xy_mm": [
+        [
+          0,
+          0
+        ],
+        [
+          39,
+          52
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          0,
+          180
+        ],
+        [
+          174,
+          232
+        ],
+        [
+          34,
+          46
+        ],
+        [
+          0,
+          539
+        ]
+      ],
+      "times_ms": [
+        0,
+        250,
+        500,
+        1000,
+        1500,
+        2000,
+        2100
+      ],
+      "excess_m": 0.08999999999999997,
+      "SMT": "UNSAT",
+      "model_response": "B"
+    },
+    {
+      "id": "test-010-2-2000-xy_waypoints",
+      "seed": 17,
+      "hold_ms": 2000,
+      "encoding": "xy_waypoints",
+      "CoC": "Remain at the current position until the required hold period has ended, then proceed when permitted.",
+      "CNL": "Hold the ego vehicle's initial position for at least 2.0 s. At every listed waypoint with t <= 2.0 s, including the endpoint, the radial XY distance from the initial position must be at most 0.200 m. Movement after that period is permitted.",
+      "selected_label": "A",
+      "reference_label": "B",
+      "selected_xy_mm": [
+        [
+          0,
+          0
+        ],
+        [
+          76,
+          101
+        ],
+        [
+          186,
+          -140
+        ],
+        [
+          57,
+          76
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          146,
+          0
+        ],
+        [
+          395,
+          -296
+        ]
+      ],
+      "times_ms": [
+        0,
+        250,
+        500,
+        1000,
+        1500,
+        2000,
+        2100
+      ],
+      "excess_m": 0.03280034364235804,
+      "SMT": "UNSAT",
+      "model_response": "A"
+    },
+    {
+      "id": "test-007-0-500-xy_waypoints",
+      "seed": 123,
+      "hold_ms": 500,
+      "encoding": "xy_waypoints",
+      "CoC": "Remain at the current position until the required hold period has ended, then proceed when permitted.",
+      "CNL": "Hold the ego vehicle's initial position for at least 0.5 s. At every listed waypoint with t <= 0.5 s, including the endpoint, the radial XY distance from the initial position must be at most 0.200 m. Movement after that period is permitted.",
+      "selected_label": "D",
+      "reference_label": "A",
+      "selected_xy_mm": [
+        [
+          0,
+          0
+        ],
+        [
+          225,
+          0
+        ],
+        [
+          0,
+          96
+        ],
+        [
+          -88,
+          118
+        ],
+        [
+          179,
+          0
+        ],
+        [
+          102,
+          136
+        ],
+        [
+          766,
+          0
+        ]
+      ],
+      "times_ms": [
+        0,
+        250,
+        500,
+        1000,
+        1500,
+        2000,
+        2100
+      ],
+      "excess_m": 0.024999999999999994,
+      "SMT": "UNSAT",
+      "model_response": "D"
+    },
+    {
+      "id": "test-007-2-500-xy_waypoints",
+      "seed": 123,
+      "hold_ms": 500,
+      "encoding": "xy_waypoints",
+      "CoC": "Remain at the current position until the required hold period has ended, then proceed when permitted.",
+      "CNL": "Hold the ego vehicle's initial position for at least 0.5 s. At every listed waypoint with t <= 0.5 s, including the endpoint, the radial XY distance from the initial position must be at most 0.200 m. Movement after that period is permitted.",
+      "selected_label": "B",
+      "reference_label": "C",
+      "selected_xy_mm": [
+        [
+          0,
+          0
+        ],
+        [
+          225,
+          0
+        ],
+        [
+          0,
+          96
+        ],
+        [
+          -88,
+          118
+        ],
+        [
+          179,
+          0
+        ],
+        [
+          102,
+          136
+        ],
+        [
+          766,
+          0
+        ]
+      ],
+      "times_ms": [
+        0,
+        250,
+        500,
+        1000,
+        1500,
+        2000,
+        2100
+      ],
+      "excess_m": 0.024999999999999994,
+      "SMT": "UNSAT",
+      "model_response": "B"
+    },
+    {
+      "id": "test-008-0-500-interval_maxima",
+      "seed": 123,
+      "hold_ms": 500,
+      "encoding": "interval_maxima",
+      "CoC": "Remain at the current position until the required hold period has ended, then proceed when permitted.",
+      "CNL": "Hold the ego vehicle's initial position for at least 0.5 s. At every listed waypoint with t <= 0.5 s, including the endpoint, the radial XY distance from the initial position must be at most 0.200 m. Movement after that period is permitted.",
+      "selected_label": "C",
+      "reference_label": "A",
+      "selected_xy_mm": [
+        [
+          0,
+          0
+        ],
+        [
+          -80,
+          106
+        ],
+        [
+          233,
+          -175
+        ],
+        [
+          51,
+          68
+        ],
+        [
+          0,
+          117
+        ],
+        [
+          151,
+          0
+        ],
+        [
+          629,
+          0
+        ]
+      ],
+      "times_ms": [
+        0,
+        250,
+        500,
+        1000,
+        1500,
+        2000,
+        2100
+      ],
+      "excess_m": 0.09140006863417177,
+      "SMT": "UNSAT",
+      "model_response": "C"
+    },
+    {
+      "id": "test-012-2-2000-xy_waypoints",
+      "seed": 123,
+      "hold_ms": 2000,
+      "encoding": "xy_waypoints",
+      "CoC": "Remain at the current position until the required hold period has ended, then proceed when permitted.",
+      "CNL": "Hold the ego vehicle's initial position for at least 2.0 s. At every listed waypoint with t <= 2.0 s, including the endpoint, the radial XY distance from the initial position must be at most 0.200 m. Movement after that period is permitted.",
+      "selected_label": "C",
+      "reference_label": "B",
+      "selected_xy_mm": [
+        [
+          0,
+          0
+        ],
+        [
+          22,
+          -16
+        ],
+        [
+          179,
+          0
+        ],
+        [
+          20,
+          27
+        ],
+        [
+          142,
+          189
+        ],
+        [
+          87,
+          0
+        ],
+        [
+          -552,
+          736
+        ]
+      ],
+      "times_ms": [
+        0,
+        250,
+        500,
+        1000,
+        1500,
+        2000,
+        2100
+      ],
+      "excess_m": 0.03640008460235372,
+      "SMT": "UNSAT",
+      "model_response": "C"
+    }
+  ],
+  "previous_025m_case_after_training": [
+    {
+      "seed": 42,
+      "choice": "A",
+      "reference": "A",
+      "correct": true,
+      "violation": false
+    },
+    {
+      "seed": 17,
+      "choice": "A",
+      "reference": "A",
+      "correct": true,
+      "violation": false
+    },
+    {
+      "seed": 123,
+      "choice": "D",
+      "reference": "A",
+      "correct": false,
+      "violation": true
+    }
+  ]
+}

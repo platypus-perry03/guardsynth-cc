@@ -1,0 +1,110 @@
+{
+  "project_id": "guardsynth-coc",
+  "status": "COMPLETED_AS_EXPECTED",
+  "results": [
+    {
+      "case_id": "s01_clear_and_enter",
+      "verdict": "PASS",
+      "expected_verdict": "PASS",
+      "base_consistency": "SAT",
+      "recorded_action": "SAT",
+      "scope": "Synthetic stated policy and fixed entity/zone/movement bindings; not scene safety or actual causal identification",
+      "missing_from_local": [],
+      "missing_from_model": [],
+      "unsat_core_clause_ids": [],
+      "model_horizon": 2,
+      "variable_count": 30,
+      "source_frame_count": 2,
+      "elapsed_s": 0.047777
+    },
+    {
+      "case_id": "s02_active_and_enter",
+      "verdict": "FAIL",
+      "expected_verdict": "FAIL",
+      "base_consistency": "SAT",
+      "recorded_action": "UNSAT",
+      "scope": "Synthetic stated policy and fixed entity/zone/movement bindings; not scene safety or actual causal identification",
+      "missing_from_local": [],
+      "missing_from_model": [],
+      "unsat_core_clause_ids": [
+        "cross_a_evidence_1",
+        "cross_a_fact_1",
+        "cross_a_no_entry",
+        "cross_a_on",
+        "cross_a_transition",
+        "recorded_action_query"
+      ],
+      "model_horizon": 2,
+      "variable_count": 30,
+      "source_frame_count": 2,
+      "elapsed_s": 0.044085
+    },
+    {
+      "case_id": "s03_unknown_and_defer",
+      "verdict": "REVIEW_REQUIRED",
+      "expected_verdict": "REVIEW_REQUIRED",
+      "base_consistency": "SAT",
+      "recorded_action": "SAT",
+      "scope": "Synthetic stated policy and fixed entity/zone/movement bindings; not scene safety or actual causal identification",
+      "missing_from_local": [],
+      "missing_from_model": [],
+      "unsat_core_clause_ids": [],
+      "model_horizon": 2,
+      "variable_count": 30,
+      "source_frame_count": 2,
+      "elapsed_s": 0.040596
+    },
+    {
+      "case_id": "s04_local_omission",
+      "verdict": "FAIL",
+      "expected_verdict": "FAIL",
+      "base_consistency": "SAT",
+      "recorded_action": "UNSAT",
+      "scope": "Synthetic stated policy and fixed entity/zone/movement bindings; not scene safety or actual causal identification",
+      "missing_from_local": [
+        "cross_a"
+      ],
+      "missing_from_model": [],
+      "unsat_core_clause_ids": [
+        "cross_a_evidence_1",
+        "cross_a_fact_1",
+        "cross_a_no_entry",
+        "cross_a_on",
+        "cross_a_transition",
+        "recorded_action_query"
+      ],
+      "model_horizon": 2,
+      "variable_count": 30,
+      "source_frame_count": 2,
+      "naive_without_carry": {
+        "recorded_action": "SAT",
+        "missing_condition_ids": [
+          "cross_a"
+        ],
+        "assessment": "INVALID_MODEL_MISSING_CARRY"
+      },
+      "elapsed_s": 0.071261
+    },
+    {
+      "case_id": "s05_postcondition_mismatch",
+      "verdict": "FAIL",
+      "expected_verdict": "FAIL",
+      "base_consistency": "SAT",
+      "recorded_action": "UNSAT",
+      "scope": "Synthetic stated policy and fixed entity/zone/movement bindings; not scene safety or actual causal identification",
+      "missing_from_local": [],
+      "missing_from_model": [],
+      "unsat_core_clause_ids": [
+        "entry_completion_semantics",
+        "recorded_action_query"
+      ],
+      "model_horizon": 2,
+      "variable_count": 30,
+      "source_frame_count": 2,
+      "elapsed_s": 0.042451
+    }
+  ],
+  "paid_model_calls": 0,
+  "training_eligible": false,
+  "scene_truth_certified": false
+}

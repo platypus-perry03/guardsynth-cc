@@ -25,7 +25,11 @@ class M16SceneAcquisitionPipelineTest(unittest.TestCase):
         pipeline_dir = ROOT / "projects/04-guardsynth-coc/pipelines/cli/m16_scene_acquisition"
         if str(pipeline_dir) not in sys.path:
             sys.path.insert(0, str(pipeline_dir))
-        from run import execute
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("m16_acquisition_run", pipeline_dir / "run.py")
+        runner = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(runner)
+        execute = runner.execute
 
         with TemporaryDirectory() as directory:
             restricted = Path(directory) / "restricted"

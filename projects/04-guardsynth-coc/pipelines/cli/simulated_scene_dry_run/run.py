@@ -43,20 +43,20 @@ CLAIM_SCOPE = (
     "NOT_REAL_VEHICLE_ASSURANCE_OR_SAFETY"
 )
 DEFAULT_AUDIT = ROOT / (
-    "artifacts/results/restricted/guardsynth-calibration-scene-source-audit-001/"
+    "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-calibration-scene-source-audit-001/"
     "alpamayo-calibration-source-2026-08-11-v17-rule-applicability/"
     "CALIBRATION_SOURCE_AUDIT.json"
 )
 DEFAULT_ASSOCIATION = ROOT / (
-    "artifacts/results/restricted/guardsynth-geometric-association-001/"
+    "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-geometric-association-001/"
     "alpamayo-episode-05-event-01-2026-08-11-v2/ASSOCIATION_EVIDENCE.json"
 )
 DEFAULT_RULE = ROOT / (
-    "artifacts/results/restricted/guardsynth-rule-applicability-001/"
+    "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-rule-applicability-001/"
     "alpamayo-episode-05-2026-08-11-v1/RULE_APPLICABILITY_EVIDENCE.json"
 )
 DEFAULT_ADAPTER = ROOT / (
-    "artifacts/results/restricted/eblc-p0b-001/"
+    "platforms/eblc-bcv/artifacts/restricted/eblc-p0b-001/"
     "p0b-data-adapter-2026-08-11-v2-all-candidates/ADAPTER_RESULT.json"
 )
 DEFAULT_MODEL = ROOT / "projects/04-guardsynth-coc/src/guard_synth/fixtures/simulated_assurance_profile_v0_1.json"

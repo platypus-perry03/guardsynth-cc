@@ -27,6 +27,7 @@ class HTTPTest(unittest.TestCase):
         self.cookie = self.csrf = None
 
     def tearDown(self):
+        self.doCleanups()
         self.server.shutdown();self.server.server_close();self.thread.join()
         self.store.close();self.temp.cleanup()
 
@@ -99,115 +100,36 @@ class HTTPTest(unittest.TestCase):
         self.assertNotEqual(self.request("/../auth.json")[0],200)
         self.assertEqual(self.store.objects("job"),[])
 
-    def test_browser_manual_tab_preserves_edit_and_explains_dynamic_fields(self):
-        # Opening help must not replace the editing tab, clear values, or trigger jobs.
-        try:
-            browser=Browser(self.temp.name,f"http://127.0.0.1:{self.port}/")
-        except FileNotFoundError as exc:
-            self.skipTest(str(exc))
-        try:
-            self.assertTrue(browser.evaluate("!!document.getElementById('manual_link')"))
-            browser.evaluate("document.getElementById('actor').value='reviewer';document.getElementById('secret').value='studio-test-password';document.getElementById('login_form').requestSubmit()")
-            browser.wait("!document.getElementById('workspace').hidden")
-            browser.evaluate(f"openExtraction({json.dumps(self.extraction)})")
-            browser.evaluate("selectOrdinal(6)")
-            browser.evaluate("document.getElementById('coc_edited_text').value='저장한 검토 문장';saveCoc().then(flush)")
-            browser.evaluate("document.getElementById('coc_edited_text').value='매뉴얼을 보는 동안 유지할 입력'")
-            # Real user gesture: untrusted JS click() is blocked by Chromium's popup policy.
-            point=browser.evaluate("(()=>{const a=document.getElementById('manual_link');a.scrollIntoView();const r=a.getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};})()")
-            for event in ("mousePressed","mouseReleased"):
-                browser.call("Input.dispatchMouseEvent", {"type":event,"button":"left","clickCount":1,**point})
-            deadline=time.monotonic()+10
-            help_targets=[]
-            while time.monotonic()<deadline:
-                targets=browser.call("Target.getTargets")["targetInfos"]
-                help_targets=[t for t in targets if t["url"].endswith('/manual.html')]
-                if help_targets: break
-                time.sleep(.05)
-            self.assertEqual(len(help_targets),1)
-            self.assertEqual(browser.evaluate("location.pathname"),"/")
-            self.assertEqual(browser.evaluate("state.moment.ordinal"),6)
-            self.assertEqual(browser.evaluate("document.getElementById('coc_edited_text').value"),"매뉴얼을 보는 동안 유지할 입력")
-            # Each generated field has a visible, accessible description; examples are not values.
-            self.assertTrue(browser.evaluate("[...document.querySelectorAll('#coc_fields textarea,#action_fields select,#predicate_fields select')].every(el=>{const h=document.getElementById(el.getAttribute('aria-describedby'));return h && h.textContent.trim().length>0 && h.getBoundingClientRect().height>0;})"))
-            self.assertEqual(browser.evaluate("document.getElementById('coc_assumptions').value"),"")
-            browser.call("Target.closeTarget",{"targetId":help_targets[0]["targetId"]})
-            browser.evaluate("saveCoc().then(flush)")
-            self.assertEqual(self.store.moment(self.ids[6])["components"]["coc"]["payload"]["edited_text"],"매뉴얼을 보는 동안 유지할 입력")
-            self.assertEqual(self.store.moment(self.ids[6])["approvals"],{})
-            self.assertEqual(self.store.objects("job"),[])
-        finally:
-            browser.close()
 
-    def test_browser_generation_blocks_duplicate_clicks_and_loads_saved_result(self):
-        from apps.guardsynth_studio.provider import MockProvider
-        self.service.provider=MockProvider()
-        browser=Browser(self.temp.name,f"http://127.0.0.1:{self.port}/")
-        try:
-            browser.evaluate("document.getElementById('actor').value='reviewer';document.getElementById('secret').value='studio-test-password';document.getElementById('login_form').requestSubmit()")
-            browser.wait("document.querySelectorAll('#videos button').length>0")
-            browser.evaluate("document.querySelector('#videos button:last-child').click()")
-            browser.wait("document.getElementById('timestamp').textContent.includes('시점 1')")
-            browser.evaluate("document.getElementById('generate_coc').click();document.getElementById('generate_coc').click()")
-            browser.wait("document.getElementById('generate_coc').disabled")
-            end=time.monotonic()+5
-            while not self.store.objects('job') and time.monotonic()<end:time.sleep(.05)
-            self.assertEqual(len(self.store.objects('job')),1)
-            Worker(self.service).run_once()
-            browser.wait("!document.getElementById('generate_coc').disabled && document.getElementById('coc_edited_text').value.length>0")
-            self.assertEqual(len(self.store.objects('job')),1)
-            self.assertEqual(self.store.objects('job')[0]['status'],'SUCCEEDED')
-            browser.evaluate("document.getElementById('generate_coc').click()")
-            end=time.monotonic()+5
-            while len(self.store.objects('job'))<2 and time.monotonic()<end:time.sleep(.05)
-            self.assertEqual(len(self.store.objects('job')),2)
-            from .helpers import edit
-            edit(self.service,self.ids[0],"coc",{"edited_text":"다른 창에서 저장한 최신 문장"})
-            Worker(self.service).run_once()
-            browser.wait("!document.getElementById('generate_coc').disabled && document.getElementById('coc_edited_text').value==='다른 창에서 저장한 최신 문장' && document.getElementById('error').textContent.includes('자동 재시도하지 않았습니다')")
-            self.assertEqual(self.store.objects('job')[1]['status'],'STALE_RESULT')
-        finally:
-            browser.close()
 
-    def test_browser_navigation_zoom_outbox_reload_and_xss(self):
-        from PIL import Image
-        ex=self.store.get(self.extraction,"extraction")
-        for frame in ex["frames"]:
-            path=self.store.root/(frame["asset_id"]+".png")
-            Image.new("RGB",(64,64),(90,150,190)).save(path)
-            self.store.put("asset",{"relative_path":path.name,"content_type":"image/png"},frame["asset_id"])
+
+
+
+
+    def test_http_supplied_null_can_rejects_entire_pair(self):
+        self.login()
+        metadata = {"name": "null-pair.mp4", "source": "synthetic", "license": "test", "permission": True}
+        boundary = "studio-test-boundary"
+        fields = [("file", b"synthetic-video"), ("metadata", json.dumps(metadata).encode()), ("vehicle_state", b"null")]
+        body = b"".join((f'--{boundary}\r\nContent-Disposition: form-data; name="{name}"\r\n\r\n'.encode() + value + b"\r\n") for name, value in fields) + f"--{boundary}--\r\n".encode()
+        connection = http.client.HTTPConnection("127.0.0.1", self.port, timeout=10)
         try:
-            browser=Browser(self.temp.name,f"http://127.0.0.1:{self.port}/")
-        except FileNotFoundError as exc:
-            self.skipTest(str(exc))
-        try:
-            browser.evaluate("document.getElementById('actor').value='reviewer';document.getElementById('secret').value='studio-test-password';document.getElementById('login_form').requestSubmit()")
-            browser.wait("!document.getElementById('workspace').hidden")
-            browser.evaluate(f"openExtraction({json.dumps(self.extraction)})")
-            browser.evaluate("selectOrdinal(6)")
-            self.assertEqual(browser.evaluate("Array.from(document.querySelectorAll('#strip img'),x=>x.alt)"),[f"frame {i}" for i in range(1,8)])
-            browser.evaluate("document.getElementById('next').click()")
-            browser.wait("state.moment.ordinal===7")
-            self.assertEqual(browser.evaluate("state.moment.frames.map(f=>f.ordinal)"),list(range(1,8)))
-            browser.evaluate("document.getElementById('previous').click()")
-            browser.wait("state.moment.ordinal===6")
-            browser.evaluate("document.getElementById('enlarge').click()")
-            browser.wait("document.getElementById('zoom').open")
-            browser.evaluate("document.getElementById('close_zoom').click()")
-            self.assertEqual(browser.evaluate("state.moment.ordinal"),6)
-            browser.evaluate("document.getElementById('coc_edited_text').value='<script>window.pwned=true</script>';saveCoc()")
-            browser.evaluate("flush()")
-            self.assertFalse(browser.evaluate("!!window.pwned"))
-            self.assertEqual(self.store.moment(self.ids[6])["components"]["coc"]["payload"]["edited_text"],"<script>window.pwned=true</script>")
-            # Network outage after locally durable edit; reload restores fetch and replays the outbox.
-            browser.evaluate("window.fetch=()=>Promise.reject(new Error('test offline'));document.getElementById('coc_edited_text').value='outbox recovery';saveCoc()")
-            self.assertGreater(browser.evaluate("dbOp('getAll').then(x=>x.length)"),0)
-            browser.call("Page.reload")
-            browser.wait("typeof state!=='undefined' && !!state.csrf")
-            browser.wait("document.getElementById('save_state').textContent==='저장됨'")
-            self.assertEqual(self.store.moment(self.ids[6])["components"]["coc"]["payload"]["edited_text"],"outbox recovery")
+            connection.request("POST", "/api/studio/v1/videos", body, {"Content-Type": f"multipart/form-data; boundary={boundary}", "Cookie": self.cookie, "X-CSRF-Token": self.csrf, "Idempotency-Key": uid()})
+            response = connection.getresponse();response.read()
+            self.assertEqual(response.status, 422)
         finally:
-            browser.close()
+            connection.close()
+        self.assertEqual(len(self.store.objects("video")), 1)
+        self.assertEqual(self.store.objects("job"), [])
+
+
+
+
+
+
+
+
+
 
     def test_http_server_restart_preserves_committed_edit(self):
         self.login()
@@ -218,55 +140,115 @@ class HTTPTest(unittest.TestCase):
         self.service = Service(self.store)
         self.server = make_server(self.service,self.auth,self.port)
         self.thread = threading.Thread(target=self.server.serve_forever,daemon=True);self.thread.start()
-        self.assertEqual(self.request(path)[0],403)
+        self.assertEqual(self.request(path)[0],401)
         self.cookie=self.csrf=None;self.login()
         status,_,body=self.request(path)
         self.assertEqual(status,200)
         self.assertEqual(json.loads(body)["components"]["coc"]["payload"]["edited_text"],"server restart")
 
-    def test_browser_human_review_to_smt_cnl_draft_export(self):
-        from PIL import Image
-        ex=self.store.get(self.extraction,"extraction")
-        for frame in ex["frames"]:
-            p=self.store.root/(frame["asset_id"]+".png");Image.new("RGB",(64,64),(80,130,170)).save(p)
-            self.store.put("asset",{"relative_path":p.name,"content_type":"image/png"},frame["asset_id"])
-        worker=Worker(self.service);worker.start()
-        try:
-            browser=Browser(self.temp.name,f"http://127.0.0.1:{self.port}/")
-        except FileNotFoundError as exc:
-            worker.stop();self.skipTest(str(exc))
-        try:
-            browser.evaluate("document.getElementById('actor').value='reviewer';document.getElementById('secret').value='studio-test-password';document.getElementById('login_form').requestSubmit()")
-            browser.wait("!!state.csrf")
-            browser.evaluate(f"openExtraction({json.dumps(self.extraction)})")
-            browser.evaluate("document.getElementById('coc_edited_text').value='현재 사람 관찰';document.getElementById('causal').checked=true;saveCoc()")
-            browser.evaluate("flush().then(()=>approve('coc','APPROVE'))")
-            browser.evaluate("document.getElementById('action_DEFER_ENTRY').value='APPROPRIATE';document.getElementById('action_ENTER_ZONE').value='APPROPRIATE';saveAction()")
-            browser.evaluate("flush().then(()=>approve('action','APPROVE'))")
-            browser.evaluate("document.getElementById('source_version').value='1';document.getElementById('source_locator').value='section 1';document.getElementById('source_quote').value='진입 전 해제 확인 정책';document.getElementById('source_reviewed').checked=true;document.getElementById('save_source').click()")
-            browser.wait("!!state.moment.components.source")
-            browser.evaluate("flush().then(()=>approve('source','APPROVE'))")
-            browser.evaluate("state.drawing={target_point:[.5,.5],zone_polygon:[[.1,.1],[.8,.1],[.8,.8]]};document.getElementById('binding_confirmed').checked=true;document.getElementById('ped_truth').value='FALSE';document.getElementById('road_truth').value='FALSE';document.getElementById('ped_valid').checked=true;document.getElementById('road_valid').checked=true;document.getElementById('road_context').checked=true;saveBinding()")
-            browser.evaluate("approve('binding','APPROVE')")
-            browser.evaluate("document.getElementById('prepare_proposal').click()")
-            browser.wait("!!state.moment.components.proposal")
-            browser.evaluate("flush().then(()=>approve('proposal','APPROVE'))")
-            browser.evaluate("document.getElementById('prepare_contract').click()")
-            browser.wait("!!state.moment.components.contract")
-            browser.evaluate("flush().then(()=>approve('contract','APPROVE'))")
-            browser.evaluate("job('CHECK')")
-            self.assertEqual(browser.evaluate("data('check').status"),"PASS")
-            browser.evaluate("job('CNL').then(()=>approve('cnl','APPROVE'))")
-            browser.evaluate("job('COMBINE').then(()=>approve('combined','APPROVE'))")
-            self.assertIn("현재",browser.evaluate("document.getElementById('combined_text').textContent"))
-            self.assertEqual(browser.evaluate("state.moment.eligibility.state"),"HELD")
-            self.assertIn("REAL_PROVIDER_REQUIRED",browser.evaluate("state.moment.eligibility.reasons"))
-            browser.evaluate("document.getElementById('export').click()")
-            browser.wait("document.getElementById('exports').textContent.includes('READY')")
-            self.assertTrue(all(not row.get("training_eligible") for exp in self.store.objects("export") for row in
-                                [json.loads(line) for line in self.service.asset_path(exp["files"][0]["asset_id"]).read_text().splitlines()]))
-        finally:
-            browser.close();worker.stop()
 
 
-if __name__ == "__main__":unittest.main()
+
+
+
+
+
+
+
+
+    def browser_login(self):
+        browser=Browser(self.temp.name,f'http://127.0.0.1:{self.port}/')
+        self.addCleanup(browser.close)
+        browser.evaluate("$('actor').value='reviewer';$('secret').value='studio-test-password';$('login_form').requestSubmit(); true")
+        browser.wait("!$('workspace').hidden && state.extractions.length>0")
+        browser.evaluate('openExtraction('+json.dumps(self.extraction)+').then(()=>true)')
+        return browser
+
+    def test_browser_minimal_five_stage_cycle_accepts_without_manual_options(self):
+        from .test_sequence import scene,condition
+        class Provider:
+            mode='MOCK';model='test-only'
+            def generate(self,kind,frames,prompt,schema,limits):
+                data=scene(0)['coc'] if kind=='SEQ_COC' else {'constraints':[condition(source_refs=[])]}
+                if kind=='SEQ_COC': data['evidence_refs']=[frames[-1]['frame_id']]
+                else: data['constraints'][0]['evidence_refs']=[frames[-1]['frame_id']]
+                return {'parsed_candidate':data,'raw_output':json.dumps(data),'model_version':'test-only','provider_request_id':uid()}
+        self.service.provider=Provider()
+        browser=self.browser_login()
+        self.assertEqual(browser.evaluate("document.querySelectorAll('.pipeline_step').length"),5)
+        self.assertFalse(browser.evaluate("!!$('legacy_coc') || !!$('follow_up') || !!$('seq_catalog') || !!$('json_editor')"))
+        self.assertEqual(browser.evaluate("document.querySelectorAll('#sequence_review select').length"),0)
+        browser.evaluate("$('seq_generate_coc').click();$('seq_generate_coc').click();true")
+        browser.wait('state.busy && $("seq_generate_coc").disabled')
+        end=time.monotonic()+5
+        while not self.store.objects('job') and time.monotonic()<end:time.sleep(.05)
+        self.assertEqual(len(self.store.objects('job')),1)
+        Worker(self.service).run_once()
+        browser.wait('!state.busy && $("seq_explanation").value.length>0')
+        self.assertTrue(browser.evaluate("$('seq_approve_coc').disabled"))
+        browser.evaluate("$('seq_accept_coc').click();true")
+        browser.wait('!$("seq_approve_coc").disabled')
+        browser.evaluate("$('seq_approve_coc').click();true")
+        browser.wait('!state.busy && state.stage===2 && !$("seq_generate_constraints").disabled')
+        browser.evaluate("$('seq_generate_constraints').click();true")
+        end=time.monotonic()+5
+        while len(self.store.objects('job'))<2 and time.monotonic()<end:time.sleep(.05)
+        Worker(self.service).run_once()
+        try: browser.wait('!state.busy && !!document.querySelector(".sequence_condition textarea")')
+        except AssertionError:
+            self.fail(json.dumps({"ui":browser.evaluate("({error:$('error').textContent,busy:state.busy,components:Object.keys(state.moment.components),stage:state.stage})"),"jobs":[{k:j.get(k) for k in ('kind','status','error')} for j in self.store.objects('job')]},ensure_ascii=False))
+        self.assertEqual(browser.evaluate("document.querySelector('[data-path=\"constraints[0].condition_class\"]').options.length"),8)
+        self.assertEqual(browser.evaluate("document.querySelector('[data-path=\"constraints[0].condition_class\"]').value"),'')
+        original_text=browser.evaluate("document.querySelector('.sequence_condition textarea').value")
+        browser.evaluate("(()=>{const e=document.querySelector('.sequence_condition textarea');e.value='';e.dispatchEvent(new Event('input',{bubbles:true}));return flush().catch(()=>true);})()")
+        browser.evaluate("(()=>{const e=document.querySelector('.sequence_condition textarea');e.value='고친 제약 설명';e.dispatchEvent(new Event('input',{bubbles:true}));return flush().catch(()=>true);})()")
+        self.assertEqual(self.store.moment(self.ids[0])['components']['sequence_constraints']['payload']['constraints'][0]['description'],'고친 제약 설명')
+        browser.evaluate("(()=>{const e=document.querySelector('.sequence_condition textarea');e.value="+json.dumps(original_text)+";e.dispatchEvent(new Event('input',{bubbles:true}));return flush().then(()=>true);})()")
+        browser.evaluate("$('seq_accept_constraints').click();true")
+        browser.wait('!$("seq_approve_constraints").disabled')
+        browser.evaluate("$('seq_approve_constraints').click();true")
+        browser.wait('!state.busy && state.stage===3 && !$("seq_generate_eblc").disabled')
+        for button,stage in [('seq_generate_eblc',3),('seq_check',4),('seq_generate_cnl',5)]:
+            if stage>3: browser.evaluate('showStage('+str(stage)+');true')
+            browser.wait('!$("'+button+'").disabled')
+            count=len(self.store.objects('job'))
+            browser.evaluate('$("'+button+'").click();true')
+            end=time.monotonic()+5
+            while len(self.store.objects('job'))==count and time.monotonic()<end:time.sleep(.05)
+            Worker(self.service).run_once()
+            browser.wait('!state.busy')
+        self.assertIn('추가 확인',browser.evaluate("$('seq_cnl_verification_text').textContent"))
+        self.assertNotIn('검증 상태:',browser.evaluate("$('seq_cnl_text').textContent"))
+        self.assertEqual([j['kind'] for j in self.store.objects('job')],['SEQ_COC','SEQ_CONSTRAINTS','SEQ_EBLC','SEQ_VERIFY','SEQ_CNL'])
+        browser.evaluate("showStage(1);$('seq_explanation').value='작성자 수정';$('seq_explanation').dispatchEvent(new Event('input',{bubbles:true}));flush().then(()=>true)")
+        self.assertFalse(browser.evaluate("$('seq_accept_coc').checked"))
+        browser.evaluate('loadMoment(state.moment.id).then(()=>true)')
+        browser.wait('$("seq_generate_cnl").disabled && $("seq_check").disabled')
+        self.assertEqual(self.store.moment(self.ids[0])['components']['sequence_coc']['payload']['original_candidate']['explanation'],'보행자 때문에 대기함')
+        self.assertFalse(browser.evaluate("$('error').textContent.length>0"))
+
+    def test_browser_causal_thumbnail_queue_navigation_and_divider_preserve_edit(self):
+        browser=self.browser_login()
+        width=browser.evaluate('$("strip").children[0].getBoundingClientRect().width')
+        browser.evaluate('selectOrdinal(6).then(()=>true)')
+        self.assertEqual(browser.evaluate('$("strip").children.length'),7)
+        self.assertAlmostEqual(width,browser.evaluate('$("strip").children[0].getBoundingClientRect().width'),delta=2)
+        browser.evaluate("$('seq_explanation').value='<script>window.pwned=true</script>'; $('seq_explanation').dispatchEvent(new Event('input',{bubbles:true}));flush().then(()=>true)")
+        browser.call('Emulation.setDeviceMetricsOverride',{'width':1600,'height':1100,'deviceScaleFactor':1,'mobile':False})
+        before=browser.evaluate('$("viewer").getBoundingClientRect().width')
+        browser.evaluate("$('review_divider').dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true}));true")
+        self.assertGreater(browser.evaluate('$("viewer").getBoundingClientRect().width'),before)
+        browser.evaluate('selectOrdinal(9).then(()=>selectOrdinal(6)).then(()=>true)')
+        self.assertEqual(browser.evaluate('$("seq_explanation").value'),'<script>window.pwned=true</script>')
+        self.assertFalse(browser.evaluate('!!window.pwned'))
+        browser.evaluate("$('timeline').value='2';$('timeline').dispatchEvent(new Event('change'));true")
+        browser.wait('state.moment.ordinal===2')
+        self.assertEqual(browser.evaluate('$("strip").children.length'),3)
+        self.assertFalse(browser.evaluate('$("error").textContent.length>0'))
+
+    def test_browser_selected_extraction_is_named_by_interval_and_frame_count(self):
+        browser=self.browser_login()
+        text=browser.evaluate('$("extraction_select").selectedOptions[0].textContent')
+        self.assertIn('10',text)
+        self.assertEqual(browser.evaluate('document.querySelectorAll("#sequence_review input:not([type=checkbox])").length'),0)
+        self.assertEqual(browser.evaluate('document.querySelectorAll("#sequence_review textarea").length'),1)

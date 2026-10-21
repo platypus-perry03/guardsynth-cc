@@ -14,4 +14,4 @@ Reusable implementation and conformance tests remain here.
   numeric EBLC programs or a source-certification/vehicle-safety claim. Scene binding stays in Project 04.
 
 - Status: [`STATUS.md`](STATUS.md)
-- Results: [`results/RESULT_INDEX.md`](results/RESULT_INDEX.md)
+- Results: [`artifacts/RESULT_INDEX.md`](artifacts/RESULT_INDEX.md)

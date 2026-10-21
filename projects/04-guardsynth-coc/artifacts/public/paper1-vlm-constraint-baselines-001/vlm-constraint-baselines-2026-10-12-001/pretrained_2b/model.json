@@ -1,0 +1,9 @@
+{
+  "path": "LOCAL_PATH_REMOVED_d248733d543e",
+  "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+  "config_sha256": "bec4b3d446efa05807365c9e1cec03ac590836879d02f3a6da879971154bdd3b",
+  "index_sha256": null,
+  "shards": {
+    "model.safetensors": 4255140312
+  }
+}

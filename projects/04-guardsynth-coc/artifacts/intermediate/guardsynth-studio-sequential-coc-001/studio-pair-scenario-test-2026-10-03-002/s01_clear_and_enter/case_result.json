@@ -1,0 +1,15 @@
+{
+  "case_id": "s01_clear_and_enter",
+  "verdict": "PASS",
+  "expected_verdict": "PASS",
+  "base_consistency": "SAT",
+  "recorded_action": "SAT",
+  "scope": "Synthetic stated policy and fixed entity/zone/movement bindings; not scene safety or actual causal identification",
+  "missing_from_local": [],
+  "missing_from_model": [],
+  "unsat_core_clause_ids": [],
+  "model_horizon": 2,
+  "variable_count": 30,
+  "source_frame_count": 2,
+  "elapsed_s": 0.047777
+}

@@ -5,7 +5,7 @@ research_question: Can persistent obligations, release conditions, and action-or
 status: manuscript_ready
 dependencies:
   - uppaal-runtime
-artifact_root: artifacts/projects/sequential-coc-verification
+artifact_root: projects/03-sequential-coc-verification/artifacts
 canonical_status: STATUS.md
 canonical_research_plan: docs/plans/01_RESEARCH_PLAN_V01.md
 canonical_milestones: docs/plans/02_PROJECT_MILESTONES.md

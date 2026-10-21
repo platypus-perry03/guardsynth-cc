@@ -17,6 +17,7 @@ import sys
 ROOT = next(p for p in Path(__file__).resolve().parents if (p / 'PROJECT_REGISTRY.json').is_file())
 sys.path[:0] = [str(ROOT / 'projects/04-guardsynth-coc/src'), str(Path(__file__).parent)]
 from guard_synth.event_source_binding import source_index
+from cli.project_paths import artifact_digest_matches
 import execute_speed_contracts as execution
 
 BASE = execution.BASE
@@ -194,7 +195,7 @@ def execute(output):
     observations = submission['records']
     packet_run = BASE / 'source-gap-ui-2026-09-09-002'
     packet = load(packet_run, 'source_gap_packet.json')
-    if inputs[str((packet_run / 'source_gap_packet.json').relative_to(ROOT))] != submission['packet_sha256']:
+    if not artifact_digest_matches(packet_run / 'source_gap_packet.json', submission['packet_sha256']):
         raise ValueError('source observation packet mismatch')
     scene_packet = {r['candidate_digest']: (i, r) for i, r in enumerate(packet['scenes'])}
     ui_manifest = json.loads(pin(packet_run / 'RUN_MANIFEST.json'))

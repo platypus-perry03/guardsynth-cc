@@ -31,7 +31,7 @@ from experiments.sequential_coc.stateful_checker import check_stateful
 ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / "PROJECT_REGISTRY.json").is_file())
 DEFAULT_OUTPUT = (
     ROOT
-    / "artifacts/results/restricted/sequential-coc-consistency-v1/mutations.jsonl"
+    / "projects/03-sequential-coc-verification/artifacts/restricted/sequential-coc-consistency-v1/mutations.jsonl"
 )
 SCHEMA_VERSION = "sequential-coc-mutation-pair-v1"
 PRIMARY_TYPES = (

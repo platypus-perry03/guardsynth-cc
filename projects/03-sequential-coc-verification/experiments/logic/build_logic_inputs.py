@@ -19,7 +19,7 @@ DEFAULT_COHORT = (
 )
 DEFAULT_OUTPUT = (
     ROOT
-    / "artifacts/results/restricted/alp-exp-005/feasibility-batch-v0"
+    / "projects/01-safety-constrained-coc/artifacts/restricted/alp-exp-005/feasibility-batch-v0"
     / "bounded-temporal-smt-v0/logic-inputs.json"
 )
 WORKER = Path(__file__).with_name("extract_logic_input_episode.py")

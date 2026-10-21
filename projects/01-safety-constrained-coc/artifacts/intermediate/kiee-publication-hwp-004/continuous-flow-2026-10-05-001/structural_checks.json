@@ -1,0 +1,18 @@
+{
+  "status": "awaiting-hancom-validation",
+  "native_sections": 1,
+  "previous_native_sections": 15,
+  "forced_source_column_breaks": 0,
+  "logical_tables": 12,
+  "source_cells_checked": 318,
+  "table_source_mismatches": 0,
+  "body_and_captions_preserved": true,
+  "embedded_images_preserved": true,
+  "normal_size_object_anchors": true,
+  "object_cache_text_height_matches_line_height": true,
+  "independent_parser_valid": true,
+  "cache_page_overflows": 0,
+  "cache_estimated_pages": 15,
+  "hancom_page_count": null,
+  "hancom_application_validation": false
+}

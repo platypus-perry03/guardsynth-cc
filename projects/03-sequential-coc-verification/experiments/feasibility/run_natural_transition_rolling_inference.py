@@ -19,7 +19,7 @@ from pathlib import Path
 ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / "PROJECT_REGISTRY.json").is_file())
 RUNNER = ROOT / "runtime/alpamayo/run_alp_exp_005.py"
 PYTHON = ROOT / "runtime/alpamayo/ar1_venv/bin/python"
-BATCH = ROOT / "artifacts/results/restricted/alp-exp-005/feasibility-batch-v0"
+BATCH = ROOT / "projects/01-safety-constrained-coc/artifacts/restricted/alp-exp-005/feasibility-batch-v0"
 BASE_EPISODE = BATCH / "episode-00"
 DEFAULT_OUTPUT = BATCH / "episode-00-natural-transition-rolling-v0"
 CLIP_ID = "caf6ea10-fc2b-47d1-814c-67c73b6cea9f"

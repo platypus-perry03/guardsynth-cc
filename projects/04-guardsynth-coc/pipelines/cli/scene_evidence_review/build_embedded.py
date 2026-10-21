@@ -25,7 +25,7 @@ SOURCE_HTML_BY_MODE = {
     "evidence": HERE / "scene_evidence_review.html",
     "image-only": HERE / "image_only_scene_review.html",
 }
-RESTRICTED_ROOT = ROOT / "artifacts/results/restricted"
+RESTRICTED_ROOT = ROOT / "projects/04-guardsynth-coc/artifacts/restricted"
 MARKER = '<div id="embeddedImageStore" hidden aria-hidden="true"></div><!-- restricted packager replaces this exact element -->'
 SUPPORTED_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp", ".gif"}
 
@@ -49,7 +49,7 @@ def build(
     if not image_dir.is_dir():
         raise FileNotFoundError(f"image directory not found: {image_dir}")
     if not output_dir.is_relative_to(RESTRICTED_ROOT.resolve()):
-        raise ValueError("embedded scene images may only be written under artifacts/results/restricted")
+        raise ValueError("embedded scene images may only be written under projects/04-guardsynth-coc/artifacts/restricted")
     if output_dir.exists():
         raise FileExistsError(f"refusing to overwrite existing output: {output_dir}")
 

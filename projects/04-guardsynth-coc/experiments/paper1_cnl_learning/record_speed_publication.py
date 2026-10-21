@@ -5,31 +5,32 @@ import json
 from pathlib import Path
 import shutil
 import prepare_speed_assignment as prep
+from apps.research_portal.artifact_registry import ArtifactRegistry
 
 ASSIGNMENT = prep.BASE / 'speed-action-assigned-2026-09-29-001'
-PORTAL = prep.ROOT / 'artifacts/projects/guardsynth-coc/restricted/guardsynth-project-portal-001/portal-2026-09-29-001'
+PORTAL = prep.ROOT / 'projects/04-guardsynth-coc/artifacts/restricted/guardsynth-project-portal-001/portal-2026-09-29-001'
 SUBMISSIONS = prep.BASE / 'speed-action-submission-2026-09-29-001'
-URL = 'http://127.0.0.1:8766/reviews/paper1_speed_action_jonh.html'
 
 
 def execute(output, preflight, http_checks):
     if output.exists():
         raise FileExistsError(output)
+    data = json.loads((PORTAL / 'PORTAL_DATA.json').read_text())
+    project = next(p for p in data['research_projects'] if p['id'] == 'guardsynth-coc')
+    page = next(p for p in project['review_pages'] if p['id'] == 'paper1-speed-action-jonh')
+    url = 'http://127.0.0.1:8766' + page['href']
     checks = [json.loads((d / 'browser_checks.json').read_text()) for d in (preflight, http_checks)]
     if any(c['status'] != 'PASS' or c['real_responses_received'] != 0 or not c['test_only'] for c in checks):
         raise ValueError('browser evidence failed or not test-only')
-    if checks[1]['url'] != URL or any(c['fresh_context_count'] != '0/19' for c in checks):
+    if checks[1]['url'] != url or any(c['fresh_context_count'] != '0/19' for c in checks):
         raise ValueError('published URL or clean-context evidence mismatch')
     assigned = ASSIGNMENT / 'assigned_speed_action_review.html'
-    served = PORTAL / 'reviews/paper1_speed_action_jonh.html'
-    if assigned.read_bytes() != served.read_bytes():
+    served, _ = ArtifactRegistry(prep.ROOT).resolve_asset(
+        page['artifact_id'], page['href'].rsplit('/', 1)[-1], include_restricted=True)
+    if assigned.resolve() != served.resolve():
         raise ValueError('published HTML differs from browser-tested assignment')
     if sorted(p.name for p in SUBMISSIONS.iterdir()) != ['README.md']:
         raise ValueError('submission directory requires actual receipt reconciliation')
-    data = json.loads((PORTAL / 'PORTAL_DATA.json').read_text())
-    project = next(p for p in data['research_projects'] if p['id'] == 'guardsynth-coc')
-    if not any(p['href'] == 'reviews/paper1_speed_action_jonh.html' for p in project['review_pages']):
-        raise ValueError('coordinator registration missing')
     output.mkdir(parents=True, exist_ok=False, mode=0o700)
     def write(name, value):
         (output / name).write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
@@ -38,7 +39,7 @@ def execute(output, preflight, http_checks):
             shutil.copyfile(directory / name, output / (label + '_' + name))
     result = {'project_id': 'guardsynth-coc', 'status': 'ASSIGNED_AND_PUBLISHED_ACTION_RESPONSES_PENDING',
         'reviewer_id': 'Jonh', 'assigned_scenes': 19, 'action_slots': 76, 'held_candidates': [79, 81],
-        'reviewer_url': URL, 'coordinator_url': 'http://127.0.0.1:8766/reviews.html',
+        'reviewer_url': url, 'coordinator_url': 'http://127.0.0.1:8766/reviews.html',
         'publication_verified': True, 'browser_workflows_passed': 2, 'initial_count': '0/19',
         'external_messages_sent': 0, 'responses_received': 0, 'gold_added': 0, 'training_started': False,
         'test_responses_in_operational_submission_folder': 0,
@@ -46,7 +47,7 @@ def execute(output, preflight, http_checks):
         'formal_two_reviewer_gate_met': False, 'm16_gate': 'PARTIAL', 'm17_gate': 'PARTIAL'}
     write('RESULT.json', result)
     (output / 'REPORT_KO.md').write_text('# Jonh ACTION 게시 및 실제 브라우저 검사\n\n'
-        f'검토자 전용 URL: {URL}\n\n담당자 목록: http://127.0.0.1:8766/reviews.html\n\n'
+        f'검토자 전용 URL: {url}\n\n담당자 목록: http://127.0.0.1:8766/reviews.html\n\n'
         '정확한 19장면/76판단을 배정하고 실제 Chromium 점검 뒤 기존 port8766 포털에 게시했다. '
         '다른 세션/포트는 변경하지 않았다. 기존 중단 URL 및 immutable run은 보존했다.\n\n'
         '파일 화면 및 실제 HTTP 화면에서 초기0/19, 이미지 확대/복귀 시 응답 유지, 장면 이동/reload, '

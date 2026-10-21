@@ -27,7 +27,7 @@ from experiments.sequential_coc.contract_ir import (
 
 
 ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / "PROJECT_REGISTRY.json").is_file())
-OUTPUT_DIR = ROOT / "artifacts/results/restricted/sequential-coc-consistency-v1"
+OUTPUT_DIR = ROOT / "projects/03-sequential-coc-verification/artifacts/restricted/sequential-coc-consistency-v1"
 OUTPUT_PATH = OUTPUT_DIR / "cross-scene-secondary.json"
 OFFICIAL_TRAINVAL_ROOT = ROOT / "data/baseline/nuscenes_metadata/interp_12Hz_trainval"
 EXPECTED_INVENTORY = {

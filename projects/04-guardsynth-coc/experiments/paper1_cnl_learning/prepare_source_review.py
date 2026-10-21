@@ -37,9 +37,9 @@ def audit_inputs():
     bindings = load(BINDING / "event_source_bindings.json")
     aligned = {r["candidate_digest"]: r for r in load(ALIGNMENT / "scene_constraint_alignment.json")["records"]}
     geometry = {r["candidate_digest"]: r for r in load(GEOMETRY / "GEOMETRY_CANDIDATE_MANIFEST.json")["records"]}
-    submission = load(SUBMISSION / "m16_geometry_candidate_review (1).json")
+    submission = load(SUBMISSION / "m16_geometry_candidate_review_v2_0.json")
     upload_counts = {}
-    for name in ("m16_geometry_candidate_review.json", "m16_geometry_candidate_review (1).json"):
+    for name in ("m16_geometry_candidate_review.json", "m16_geometry_candidate_review_v2_0.json"):
         path = SUBMISSION / name
         inputs[str(path.relative_to(ROOT))] = digest(path)
         uploaded = load(path)["records"]

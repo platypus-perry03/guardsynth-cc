@@ -38,7 +38,7 @@ runtime/alpamayo/ar1_venv/bin/python -m unittest \
 
 runtime/alpamayo/ar1_venv/bin/python \
   projects/01-safety-constrained-coc/experiments/contract_micro_world/run_experiment.py \
-  --output artifacts/results/public/contract-microworld-v0/pilot-2026-08-04
+  --output projects/01-safety-constrained-coc/artifacts/public/contract-microworld-v0/pilot-2026-08-04
 ```
 
 Standalone minimum dependencies are Python 3.11+, NumPy 2.x, and PyTorch 2.x. CPU execution is supported.
@@ -57,7 +57,7 @@ The v1 pilot had no successful training state in which a complete STOP was follo
 ```bash
 runtime/alpamayo/ar1_venv/bin/python \
   projects/01-safety-constrained-coc/experiments/contract_micro_world/run_phase_complete_experiment.py \
-  --output artifacts/results/public/contract-microworld-v1/pilot-phase-complete-isolated-2026-08-04-v2 \
+  --output projects/01-safety-constrained-coc/artifacts/public/contract-microworld-v1/pilot-phase-complete-isolated-2026-08-04-v2 \
   --train-per-kind 200 --test-per-kind 100 --epochs 35 --seeds 42 43 44
 ```
 
@@ -70,7 +70,7 @@ Frozen phase-complete policies are evaluated without retraining on pedestrian re
 ```bash
 runtime/alpamayo/ar1_venv/bin/python \
   projects/01-safety-constrained-coc/experiments/contract_micro_world/run_release_reversal_stress.py \
-  --model-dir artifacts/results/public/contract-microworld-v1/pilot-phase-complete-isolated-2026-08-04-v2 \
-  --output artifacts/results/public/contract-microworld-v2/pilot-release-reversal-2026-08-04-v1 \
+  --model-dir projects/01-safety-constrained-coc/artifacts/public/contract-microworld-v1/pilot-phase-complete-isolated-2026-08-04-v2 \
+  --output projects/01-safety-constrained-coc/artifacts/public/contract-microworld-v2/pilot-release-reversal-2026-08-04-v1 \
   --per-type 100 --seeds 42 43 44
 ```

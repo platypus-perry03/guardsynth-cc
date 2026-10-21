@@ -173,7 +173,7 @@ fail-closed 동작을 확인한다. 실제 법규의 정당성, 차량 제동 �
 
 
 def execute(run_id: str) -> tuple[Path, dict[str, Any]]:
-    output = ROOT / "artifacts/results/public/eblc-scenario-test-001" / run_id
+    output = ROOT / "platforms/eblc-bcv/artifacts/public/eblc-scenario-test-001" / run_id
     if output.exists():
         raise FileExistsError(f"refusing to overwrite existing run: {run_id}")
 

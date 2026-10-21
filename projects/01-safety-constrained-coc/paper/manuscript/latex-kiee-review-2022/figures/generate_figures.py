@@ -21,8 +21,8 @@ ROOT = HERE.parents[3]
 DATA = HERE / "data"
 DATA.mkdir(parents=True, exist_ok=True)
 
-TEMPORAL_JSON = ROOT / "artifacts/results/public/small-vlm-guard-v0/temporal-guard-multiseed-v0/summary.json"
-MANEUVER_JSON = ROOT / "artifacts/results/public/small-vlm-guard-v0/maneuver-guard-multiseed-v0/summary.json"
+TEMPORAL_JSON = ROOT / "projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/temporal-guard-multiseed-v0/summary.json"
+MANEUVER_JSON = ROOT / "projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/maneuver-guard-multiseed-v0/summary.json"
 
 BLUE = "#2878A0"
 GREEN = "#28785A"
@@ -291,7 +291,7 @@ def figure_results() -> None:
     fig, axes = plt.subplots(
         1,
         2,
-        figsize=(8.0, 3.7),
+        figsize=(8.0, 4.2),
         layout="constrained",
         gridspec_kw={"width_ratios": [1.12, 1]},
     )
@@ -312,7 +312,7 @@ def figure_results() -> None:
     ax.set_xlim(0, 1.13)
     ax.set_xlabel("Rate")
     ax.set_title("(a) Constraint-integrated CoC: temporal input shifts")
-    ax.legend(frameon=False, loc="lower right")
+    ax.legend(frameon=False, loc="upper center", bbox_to_anchor=(0.5, -0.18), borderaxespad=0)
 
     ax = axes[1]
     conditions = ["Requirement CoC", "Safety-Constrained CoC", "Shuffled constraint"]
@@ -328,8 +328,12 @@ def figure_results() -> None:
     ax.set_xlim(0, 1.13)
     ax.set_xlabel("Rate")
     ax.set_title("(b) Stopping and lane change: paired-contract accuracy")
-    ax.legend(frameon=False, loc="lower right")
-    save(fig, "fig05_temporal_pair")
+    ax.legend(frameon=False, loc="upper center", bbox_to_anchor=(0.5, -0.18), borderaxespad=0)
+    with plt.rc_context({"svg.fonttype": "none", "pdf.fonttype": 3}):
+        fig.savefig(HERE / "fig05_temporal_pair.svg", bbox_inches="tight")
+        fig.savefig(HERE / "fig05_temporal_pair.pdf", bbox_inches="tight")
+        fig.savefig(HERE / "fig05_temporal_pair.png", bbox_inches="tight", dpi=600)
+    plt.close(fig)
 
 
 def figure_typed_contract() -> None:
@@ -390,7 +394,7 @@ def figure_release_reversal() -> None:
         {"condition": "Delayed dynamic contract", "unsafe": 0.481, "collision": 0.248},
         {"condition": "Delayed shield", "unsafe": 0.348, "collision": 0.163},
     ]
-    source = "artifacts/results/public/contract-microworld-v2/pilot-release-reversal-2026-08-04-v1/DEEP_STRESS_ASSESSMENT_KO.md"
+    source = "projects/01-safety-constrained-coc/artifacts/public/contract-microworld-v2/pilot-release-reversal-2026-08-04-v1/DEEP_STRESS_ASSESSMENT_KO.md"
     for row in rows: row["source"] = source
     write_csv("release_reversal.csv", ["condition", "unsafe", "collision", "source"], rows)
     fig, axes = plt.subplots(
@@ -413,7 +417,7 @@ def figure_release_reversal() -> None:
     ax.set_title("(a) Risk reappears after release")
 
     ax = axes[1]
-    ax.set_xlim(0, 1.16)
+    ax.set_xlim(-0.16, 1.16)
     ax.set_ylim(0, 2.8)
     ax.axis("off")
     ax.plot([0.05, 1.02], [1.35, 1.35], color="#555555", lw=1.4)
@@ -428,7 +432,11 @@ def figure_release_reversal() -> None:
     ax.add_patch(FancyArrowPatch((0.88, 2.48), (0.88, 2.08), arrowstyle="-|>", color=RED))
     ax.text(0.88, 2.57, "Release must revert\nto hold", ha="center", color=RED, fontsize=7.5, clip_on=True)
     ax.set_title("(b) Unseen state transition")
-    save(fig, "fig06_release_reversal")
+    with plt.rc_context({"svg.fonttype": "none", "pdf.fonttype": 3}):
+        fig.savefig(HERE / "fig06_release_reversal.svg", bbox_inches="tight")
+        fig.savefig(HERE / "fig06_release_reversal.pdf", bbox_inches="tight")
+        fig.savefig(HERE / "fig06_release_reversal.png", bbox_inches="tight", dpi=600)
+    plt.close(fig)
 
 
 def main() -> int:

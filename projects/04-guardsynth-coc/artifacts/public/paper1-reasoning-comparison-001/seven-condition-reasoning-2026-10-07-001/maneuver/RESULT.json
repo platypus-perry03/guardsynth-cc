@@ -1,0 +1,12 @@
+{
+  "status": "COMPLETE",
+  "scored_predictions": 864,
+  "unique_inputs": 76,
+  "resumed_raw_records": 0,
+  "model_setup_seconds": 2.2889301106333733,
+  "current_worker_wall_seconds": 42.67852821573615,
+  "cuda_visible_devices": "8",
+  "gpu": "NVIDIA A100 80GB PCIe",
+  "torch": "2.8.0+cu128",
+  "timing_scope": "Recorded batch generation times exclude setup and any unsaved interrupted work"
+}

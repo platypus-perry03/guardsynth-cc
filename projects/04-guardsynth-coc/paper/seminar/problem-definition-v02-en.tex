@@ -1,0 +1,510 @@
+% !TeX program = xelatex
+% project_id: guardsynth-coc
+% Created 2026-10-20: overview redesign of problem-definition-v01-en.tex using the
+% manuscript terminology (BEHAVIORAL_CONSTRAINT_TERMINOLOGY_NOTES_V01.md).
+% Order: problem definition, approach, results, contributions.
+% Inputs: NCA main.tex (title, authors, abstract); 01-introduction-v03-en.tex;
+% 03-method.tex; 04-experimental-setup.tex; 05-results.tex; 07-conclusion-v02-en.tex.
+% Reuses reported numbers only; no new experiments or model predictions.
+% Compile beside this source; see README.md for the local TeX dependency path.
+\documentclass[aspectratio=169,11pt]{beamer}
+\usepackage{fontspec}
+\setsansfont{TeX Gyre Heros}
+\setmainfont{TeX Gyre Heros}
+\newfontfamily\display{TeX Gyre Adventor}
+\usefonttheme{professionalfonts}
+\usepackage{amsmath,amssymb,tikz}
+\usetikzlibrary{arrows.meta}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\definecolor{ink}{HTML}{1B2A41}
+\definecolor{sub}{HTML}{5B6B7F}
+\definecolor{teal}{HTML}{0F8B8D}
+\definecolor{amber}{HTML}{E3913A}
+\definecolor{coral}{HTML}{D1495B}
+\definecolor{paper}{HTML}{F3F6F9}
+\definecolor{rule}{HTML}{D9E1E8}
+\definecolor{base}{HTML}{A7B3C0}
+\setbeamercolor{normal text}{fg=ink,bg=white}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\hypersetup{
+  pdftitle={GuardSynth: Checkable Behavioral Constraints for CoC-Augmented Candidate Selection},
+  pdfsubject={Paper overview: problem, approach, results, and contributions},
+  pdfauthor={Jin Hyun Kim, Insup Lee, Seung Hyun Kong},
+  colorlinks=true,urlcolor=sub
+}
+\tikzset{
+  t/.style={anchor=north west,inner sep=0pt,align=left,text=ink},
+  c/.style={anchor=north,inner sep=0pt,text=ink},
+  card/.style={fill=paper,draw=none,rounded corners=4pt},
+  edge/.style={draw=rule,line width=0.6pt,rounded corners=4pt},
+  go/.style={-{Stealth[length=2.4mm,width=2mm]},line width=1.1pt,draw=teal},
+  dot/.style={circle,inner sep=0pt,minimum size=#1},
+}
+\newcommand{\fs}[2]{\fontsize{#1}{#2}\selectfont}
+% Slide header: kicker, title, one-line subtitle.
+\newcommand{\head}[3]{%
+  \fill[amber] (0.80,8.30) rectangle (1.25,8.38);
+  \node[t,text=amber,font=\fs{7.5}{9}\bfseries] at (1.40,8.43) {#1};
+  \node[t,text width=14.4cm,font=\display\bfseries\fs{18}{22}] at (0.80,8.00) {#2};
+  \node[t,text width=14.4cm,text=sub,font=\fs{10}{13}] at (0.80,7.17) {#3};
+}
+% Slide footer: source note and page number.
+\newcommand{\foot}[1]{%
+  \node[t,text=sub,text width=12.8cm,font=\fs{6}{7.5}] at (0.80,0.45) {#1};
+  \node[anchor=north east,inner sep=0pt,text=sub,font=\fs{7}{9}]
+    at (15.20,0.45) {GuardSynth \quad\textbf{\insertframenumber}};
+}
+% One-line takeaway band near the bottom of a slide.
+\newcommand{\takeaway}[1]{%
+  \fill[teal] (0.80,0.82) rectangle (0.88,1.52);
+  \node[anchor=west,inner sep=0pt,text=ink,font=\fs{10}{12}\bfseries] at (1.10,1.17) {#1};
+}
+% Numbered circle badge.
+\newcommand{\badge}[3]{%
+  \node[dot=0.56cm,fill=#3,text=white,font=\display\bfseries\fs{10}{10}] at (#1) {#2};
+}
+% Table header label and keyword bullet.
+\newcommand{\colhead}[1]{{\fs{7}{9}\bfseries\color{teal}#1}}
+\newcommand{\li}[1]{{\color{teal}\textbullet}\enspace #1}
+\newcommand{\canvas}{%
+  \begin{tikzpicture}[remember picture,overlay,x=1cm,y=1cm]
+  \begin{scope}[shift={(current page.south west)}]}
+\newcommand{\closecanvas}{\end{scope}\end{tikzpicture}}
+
+\begin{document}
+
+% ---------------------------------------------------------------- 1. Title
+\begin{frame}[plain]
+\canvas
+  \fill[ink] (0,0) rectangle (16,9);
+  % Road in perspective with a guarded corridor ahead of the vehicle.
+  \begin{scope}
+    \clip (0,0) rectangle (16,9);
+    \fill[white,opacity=0.06] (10.2,0) -- (13.3,6.9) -- (13.8,6.9) -- (18.0,0) -- cycle;
+    \foreach \y/\h/\w in {0.20/0.70/0.10,1.45/0.55/0.085,2.55/0.43/0.07,3.50/0.33/0.055,4.30/0.25/0.045,4.95/0.18/0.035,5.50/0.13/0.03} {
+      \fill[white,opacity=0.35] ({14.00-0.40*\y/6.9-\w/2},\y) rectangle ++(\w,\h);
+    }
+    \fill[teal,opacity=0.22] (11.80,2.55) -- (13.00,6.20) -- (13.40,6.20) -- (13.50,2.55) -- cycle;
+    \draw[teal,line width=1pt,dash pattern=on 3pt off 2pt] (11.80,2.55) -- (13.00,6.20);
+    \draw[teal,line width=1pt,dash pattern=on 3pt off 2pt] (13.50,2.55) -- (13.40,6.20);
+    % Vehicle (top view).
+    \fill[white,rounded corners=5pt] (12.08,0.85) rectangle (13.23,2.55);
+    \fill[ink!80,rounded corners=2pt] (12.25,1.95) rectangle (13.06,2.30);
+    \fill[ink!80,rounded corners=2pt] (12.25,1.05) rectangle (13.06,1.30);
+  \end{scope}
+  \node[dot=0.95cm,fill=teal] at (13.20,6.85) {};
+  \draw[white,line width=2pt,line cap=round,line join=round]
+    (12.97,6.86) -- (13.14,6.68) -- (13.45,7.04);
+  \fill[amber] (0.90,7.98) rectangle (1.40,8.06);
+  \node[t,text=amber,font=\fs{8}{10}\bfseries] at (1.55,8.11) {PAPER SEMINAR \,\textbullet\, OVERVIEW};
+  \node[t,text=white,font=\display\bfseries\fs{34}{38}] at (0.90,7.50) {GuardSynth};
+  \node[t,text=white!88!ink,font=\fs{14}{18}] at (0.90,6.05)
+    {Checkable Behavioral Constraints for\\CoC-Augmented Candidate Selection};
+  \node[t,text=white!68!ink,font=\fs{10}{13}] at (0.90,4.70)
+    {EBLC \,\textbullet\, SMT checking \,\textbullet\, CNL appended to CoC};
+  \draw[white!35!ink,line width=0.5pt] (0.90,3.70) -- (9.40,3.70);
+  \node[t,text=white,font=\fs{12}{15}\bfseries] at (0.90,3.38)
+    {Jin Hyun Kim\textsuperscript{1}\quad Insup Lee\textsuperscript{2}\quad Seung Hyun Kong\textsuperscript{3}};
+  \node[t,text=white!70!ink,font=\fs{8.5}{12}] at (0.90,2.75)
+    {\textsuperscript{1}Gyeongsang National University, Republic of Korea\\
+     \textsuperscript{2}University of Pennsylvania, USA\\
+     \textsuperscript{3}KAIST, Republic of Korea};
+  \node[t,text=white!55!ink,font=\fs{7.5}{10}] at (0.90,0.80)
+    {Manuscript in the Neural Computing and Applications format \quad\textbullet\quad October 2026};
+\closecanvas
+\end{frame}
+
+% ---------------------------------------------------------------- 2. Problem: example
+\begin{frame}[plain]
+\canvas
+  \head{PROBLEM}{Same Scene, Different Rule}
+    {A pedestrian has just cleared the crossing. When may the car enter?}
+  \path[card] (0.80,1.95) rectangle (10.10,6.45);
+  % Time axis: clearance at x = 2.70, 3.40 cm per second.
+  \draw[-{Stealth[length=2mm]},sub,line width=0.7pt] (2.70,2.75) -- (9.75,2.75);
+  \foreach \s/\l in {0/clear,0.5/+0.5 s,1/+1.0 s,1.5/+1.5 s,2/+2.0 s} {
+    \draw[sub,line width=0.6pt] ({2.70+\s*3.40},2.67) -- ({2.70+\s*3.40},2.83);
+    \node[anchor=north,font=\fs{7.5}{9},text=sub] at ({2.70+\s*3.40},2.58) {\l};
+  }
+  \node[t,font=\fs{10}{12}\bfseries] at (1.05,6.20) {Action candidates};
+  \node[dot=0.42cm,fill=ink,text=white,font=\fs{8}{8}\bfseries] at (4.40,5.50) {A};
+  \node[dot=0.42cm,fill=ink,text=white,font=\fs{8}{8}\bfseries] at (7.80,5.50) {B};
+  \node[anchor=west,font=\fs{8.5}{10},text=sub] at (4.70,5.50) {early, higher $J$};
+  \node[anchor=west,font=\fs{8.5}{10},text=sub] at (8.10,5.50) {later};
+  % Rule 1.
+  \node[t,font=\fs{9}{11}\bfseries] at (1.05,4.80) {Rule};
+  \node[t,font=\fs{8.5}{11},text=sub] at (1.05,4.45) {wait 0.5 s};
+  \fill[coral!18] (2.70,4.10) rectangle (4.40,4.80);
+  \fill[teal!14] (4.40,4.10) rectangle (9.50,4.80);
+  \node[dot=0.42cm,fill=teal,text=white,font=\fs{8}{8}\bfseries] at (4.40,4.45) {A};
+  \node[dot=0.42cm,fill=teal!50,text=white,font=\fs{8}{8}\bfseries] at (7.80,4.45) {B};
+  \node[anchor=west,font=\fs{8.5}{10}\bfseries,text=teal] at (4.70,4.45) {preferred};
+  \node[anchor=west,font=\fs{8.5}{10},text=sub] at (8.10,4.45) {admissible};
+  % Rule 2.
+  \node[t,font=\fs{9}{11}\bfseries] at (1.05,3.80) {Rule};
+  \node[t,font=\fs{8.5}{11},text=sub] at (1.05,3.45) {wait 1.5 s};
+  \fill[coral!18] (2.70,3.10) rectangle (7.80,3.80);
+  \fill[teal!14] (7.80,3.10) rectangle (9.50,3.80);
+  \node[dot=0.42cm,fill=coral,text=white,font=\fs{8}{8}\bfseries] at (4.40,3.45) {A};
+  \node[dot=0.42cm,fill=teal,text=white,font=\fs{8}{8}\bfseries] at (7.80,3.45) {B};
+  \node[anchor=west,font=\fs{8.5}{10}\bfseries,text=coral] at (4.70,3.45) {prohibited};
+  \node[anchor=west,font=\fs{8.5}{10}\bfseries,text=teal] at (8.10,3.45) {preferred};
+  % Two requirements.
+  \node[t,font=\fs{10}{12.5}\bfseries] at (10.50,6.40) {Two requirements};
+  \badge{10.78,5.50}{1}{coral}
+  \node[t,font=\fs{10}{12}\bfseries] at (11.20,5.72) {Constraint compliance};
+  \node[t,font=\fs{8.5}{10.5},text=sub] at (11.20,5.30) {no prohibited candidate};
+  \badge{10.78,4.20}{2}{teal}
+  \node[t,font=\fs{10}{12}\bfseries] at (11.20,4.42) {Preferred selection};
+  \node[t,font=\fs{8.5}{10.5},text=sub] at (11.20,4.00) {highest progress score $J$\\among admissible candidates};
+  \takeaway{Explaining a decision $\neq$ following the supplied rule.}
+  \foot{Pedestrian-entry task. $J$: synthetic progress score; waiting times are supplied rule values. Source: Introduction.}
+\closecanvas
+\end{frame}
+
+% ---------------------------------------------------------------- 3. Problem definition
+\begin{frame}[plain]
+\canvas
+  \head{PROBLEM DEFINITION}{Three Construction Problems}
+    {Behavioral constraints supplied as learning sentences must be checkable.}
+  \foreach \x in {0.80,5.75,10.70} {\path[card] (\x,1.95) rectangle ++(4.50,4.50);}
+  % Icon 1: three evidence roles.
+  \foreach \dx/\c in {0/teal,0.42/amber,0.84/coral} {\fill[\c] (1.27+\dx,5.95) circle (0.17);}
+  % Icon 2: three overlapping conditions.
+  \draw[teal,line width=1.4pt] (6.30,5.85) circle (0.28);
+  \draw[amber,line width=1.4pt] (6.68,5.85) circle (0.28);
+  \draw[coral,line width=1.4pt] (6.49,6.15) circle (0.28);
+  % Icon 3: sentence bubble.
+  \draw[ink,line width=1.2pt,rounded corners=3pt] (11.05,5.70) rectangle (12.05,6.25);
+  \draw[ink,line width=1.2pt] (11.30,5.70) -- (11.22,5.52) -- (11.50,5.70);
+  \foreach \yy in {6.10,5.97,5.84} {\draw[ink,line width=0.8pt] (11.22,\yy) -- (11.88,\yy);}
+  \node[t,font=\fs{11}{13.5}\bfseries] at (1.10,5.30) {Evidence and\\applicability};
+  \node[t,font=\fs{11}{13.5}\bfseries] at (6.05,5.30) {Logical meaning\\and composition};
+  \node[t,font=\fs{11}{13.5}\bfseries] at (11.00,5.30) {Meaning across\\representations};
+  \node[t,font=\fs{9}{14}] at (1.10,4.20) {\li{Observation}\\\li{Supplied rule}\\\li{Modeling assumption}};
+  \node[t,font=\fs{9}{14}] at (6.05,4.20) {\li{Restriction and release}\\\li{Candidate admissibility}\\\li{Joint satisfiability}};
+  \node[t,font=\fs{9}{14}] at (11.00,4.20) {\li{Formal specification}\\\li{CNL sentence}\\\li{Model behavior}};
+  \foreach \x/\q in {1.10/{Roles explicit and separable?},6.05/{Consistent under the context?},11.00/{Same meaning in language?}} {
+    \node[t,font=\fs{8.5}{10.5}\bfseries,text=teal] at (\x,2.55) {\q};
+  }
+  \takeaway{Needed: explicit evidence, checked logic, preserved meaning.}
+  \foot{Source: Introduction. Motivating cases: Uber/Tempe braking suppression, Cruise pullover, Highway Code Rule 129.}
+\closecanvas
+\end{frame}
+
+% ---------------------------------------------------------------- 4. Approach: workflow
+\begin{frame}[plain]
+\canvas
+  \head{APPROACH}{GuardSynth Workflow}
+    {Original CoC + observations + supplied rules + modeling assumptions.}
+  \foreach \x/\c in {0.80/amber,4.50/teal,8.20/teal,11.90/teal} {
+    \path[card] (\x,2.70) rectangle ++(3.30,3.75);
+    \fill[\c] (\x,6.37) rectangle ++(3.30,0.08);
+  }
+  \foreach \x in {4.13,7.83,11.53} {\draw[go] (\x,4.55) -- ++(0.34,0);}
+  \badge{1.28,5.95}{1}{amber}
+  \badge{4.98,5.95}{2}{teal}
+  \badge{8.68,5.95}{3}{teal}
+  \badge{12.38,5.95}{4}{teal}
+  \foreach \x/\h/\b in {
+      1.05/{Constraint\\construction}/{\li{Restriction}\\\li{Evidence roles}\\\li{Field binding}},
+      4.75/{Specification\\(EBLC)}/{\li{Applicability}\\\li{Persistence, release}\\\li{Timing, evidence}},
+      8.45/{Checking\\(SMT / Z3)}/{\li{Structural}\\\li{Satisfiability}\\\li{Logic--rule}\\\li{Evidence}},
+      12.15/{Language\\generation}/{\li{CNL rendering}\\\li{Sentence check}\\\li{Append to CoC}}} {
+    \node[t,font=\fs{10}{12}\bfseries] at (\x,5.55) {\h};
+    \node[t,font=\fs{8.5}{12.5}] at (\x,4.60) {\b};
+  }
+  \draw[go] (13.55,2.65) -- (13.55,2.40);
+  \path[edge] (0.80,1.80) rectangle (15.20,2.35);
+  \node[anchor=west,inner sep=0pt,font=\fs{9}{11}] at (1.10,2.075)
+    {\textbf{Outputs:}\ \ EBLC specification \,\textbullet\, check records \,\textbullet\,
+     \textcolor{teal}{\textbf{CoC + CNL for training}}};
+  \takeaway{Approach: evidence-bound, checkable, readable learning constraints.}
+  \foot{EBLC: Evidence-Bound Lifecycle Contract; SMT: Satisfiability Modulo Theories; CNL: Controlled Natural Language. Method 3.2.}
+\closecanvas
+\end{frame}
+
+% ---------------------------------------------------------------- 5. Approach: example
+\begin{frame}[plain]
+\canvas
+  \head{APPROACH \,\textbullet\, EXAMPLE}{One Pedestrian-Entry Constraint}
+    {Evidence $\to$ EBLC restriction $\to$ SMT query $\to$ CNL.}
+  % Evidence chips.
+  \node[t,font=\fs{7.5}{9}\bfseries,text=amber!85!ink] at (0.80,6.45) {1 \ EVIDENCE BINDING};
+  \foreach \y/\lab/\val/\c in {6.05/OBSERVATION/{Clearance time $\tau$}/teal,
+                              4.85/SUPPLIED RULE/{Wait $\Delta=0.5$ s}/amber,
+                              3.65/MODELING ASSUMPTION/{No reoccupation}/coral} {
+    \path[card] (0.80,\y-0.95) rectangle (4.40,\y);
+    \fill[\c] (0.80,\y-0.95) rectangle (0.88,\y);
+    \node[t,text=\c,font=\fs{7}{9}\bfseries] at (1.10,\y-0.18) {\lab};
+    \node[t,font=\fs{10}{12}] at (1.10,\y-0.50) {\val};
+  }
+  \draw[go] (4.55,4.30) -- (5.20,4.30);
+  % Logic.
+  \node[t,font=\fs{7.5}{9}\bfseries,text=teal] at (5.40,6.45) {2 \ EBLC AND SMT};
+  \path[edge] (5.40,2.70) rectangle (10.00,6.05);
+  \node[t,font=\fs{7.5}{9}\bfseries,text=sub] at (5.65,5.80) {RESTRICTION};
+  \node[font=\fs{14}{18}] at (7.70,5.05) {$e \Rightarrow u \ge \tau + \Delta$};
+  \draw[rule,line width=0.5pt] (5.65,4.40) -- (9.75,4.40);
+  \node[t,font=\fs{7.5}{9}\bfseries,text=sub] at (5.65,4.20) {COUNTEREXAMPLE QUERY};
+  \node[font=\fs{10}{12}] at (7.70,3.70) {$\Phi_C\land e\land(u<\tau+\Delta)$};
+  \node[font=\fs{11}{13}\bfseries,text=teal] at (7.70,3.15) {UNSAT};
+  \draw[go] (10.15,4.30) -- (10.80,4.30);
+  % Sentence.
+  \node[t,font=\fs{7.5}{9}\bfseries,text=teal] at (11.00,6.45) {3 \ CNL APPENDED TO CoC};
+  \path[card] (11.00,2.70) rectangle (15.20,6.05);
+  \fill[teal] (11.00,2.70) rectangle (11.08,6.05);
+  \node[t,text width=3.75cm,font=\fs{9}{12}\itshape] at (11.30,5.80)
+    {``Do not enter the pedestrian conflict zone while it is occupied. Enter only
+     after the zone has remained clear for at least 0.5 s.''};
+  \node[t,font=\fs{8}{10},text=sub] at (11.30,3.20) {parse back $\to$ sentence\\correspondence};
+  \takeaway{Each field stays linked to its observation, rule, or assumption.}
+  \foot{$e$: entry flag; $u$: entry time. Source: Method 3.3, 3.4, 3.6, 3.8.}
+\closecanvas
+\end{frame}
+
+% ---------------------------------------------------------------- 6. Results: setup
+\begin{frame}[plain]
+\canvas
+  \head{RESULTS \,\textbullet\, SETUP}{Candidate-Selection Experiments}
+    {Synthetic tasks; Qwen3-VL-2B-Instruct LoRA adapters; three seeds.}
+  \path[card] (0.80,2.25) rectangle (7.80,6.45);
+  \node[t] at (1.10,6.22) {\colhead{TASKS}};
+  \node[t,font=\fs{9.5}{12}\bfseries] at (1.10,5.80) {Pedestrian entry};
+  \node[t,font=\fs{8.5}{10.5},text=sub] at (1.10,5.40) {4 candidates \,\textbullet\, wait $\Delta\in\{0.5,1.5\}$ s};
+  \node[t,font=\fs{9.5}{12}\bfseries] at (1.10,4.75) {Position hold};
+  \node[t,font=\fs{8.5}{10.5},text=sub] at (1.10,4.35) {$R=0.2$ m \,\textbullet\, $T\in\{0.5,2.0\}$ s \,\textbullet\, XY / maxima};
+  \node[t,font=\fs{9.5}{12}\bfseries] at (1.10,3.70) {Six tasks};
+  \node[t,font=\fs{8.5}{10.5},text=sub] at (1.10,3.30) {speed, clearance, entry delay,\\pedestrian entry, stopping, lane change};
+  \path[card] (8.20,2.25) rectangle (15.20,6.45);
+  \node[t] at (8.50,6.22) {\colhead{COMPARED CONDITIONS}};
+  \node[t,font=\fs{9}{14.5}] at (8.50,5.80)
+    {\li{2B: CoC only, CE}\\
+     \li{2B: CoC only, CE + semantic loss}\\
+     \li{2B: CoC + CNL, CE}\\
+     \li{P0 / P1 / P2: CoC / NL guard / EBLC CNL}\\
+     \li{8B: pretrained, no task training}};
+  \node[t,font=\fs{8}{10},text=sub] at (8.50,3.05) {Evaluation: identical CoC + CNL for all};
+  \foreach \x/\h/\b in {0.80/{PSS \ \textmd{preferred-selection score}}/{highest-$J$ admissible candidate},
+                       5.65/{CVR \ \textmd{constraint violation rate}}/{prohibited candidate selected},
+                       10.50/{RPA \ \textmd{rule-pair accuracy}}/{both rule-paired labels correct}} {
+    \path[edge] (\x,0.85) rectangle ++(4.70,1.15);
+    \node[t,font=\fs{9}{11}\bfseries] at (\x+0.22,1.80) {\h};
+    \node[t,font=\fs{8}{10},text=sub] at (\x+0.22,1.38) {\b};
+  }
+  \foot{Source: Experimental Setup 4.1--4.4. NL guard: natural-language guard.}
+\closecanvas
+\end{frame}
+
+% ---------------------------------------------------------------- 7. Result 1
+\begin{frame}[plain]
+\canvas
+  \head{RESULT 1 \,\textbullet\, CONSTRAINT TRAINING}{Training with CNL Improves Rule Use}
+    {Same 2B initialization \,\textbullet\, identical CNL at evaluation \,\textbullet\, CE \,\textbullet\, 3 seeds}
+  \fill[base] (0.80,6.30) rectangle (1.05,6.50);
+  \node[anchor=west,font=\fs{8}{10}\bfseries,text=sub] at (1.15,6.40) {CoC-only training};
+  \fill[teal] (4.40,6.30) rectangle (4.65,6.50);
+  \node[anchor=west,font=\fs{8}{10}\bfseries,text=teal] at (4.75,6.40) {CoC + CNL training};
+  \foreach \px/\ttl/\dir in {0.80/{CVR (\%)}/{lower is better},8.20/{RPA (\%)}/{higher is better}} {
+    \path[card] (\px,2.55) rectangle ++(7.00,3.55);
+    \node[t,font=\fs{10}{12}\bfseries] at (\px+0.30,5.92) {\ttl};
+    \node[anchor=north east,inner sep=0pt,font=\fs{7.5}{9},text=sub] at (\px+6.75,5.88) {\dir};
+    \draw[sub!60,line width=0.5pt] (\px+0.30,3.15) -- (\px+6.70,3.15);
+  }
+  % CVR bars: 0.105 cm per percent.
+  \foreach \cx/\lab/\b/\o in {2.05/{Entry}/17.92/1.11,4.30/{Hold: maxima}/6.51/0.00,6.55/{Hold: XY}/6.25/1.56} {
+    \fill[base] (\cx-0.48,3.15) rectangle ({\cx-0.05},{3.15+\b*0.105});
+    \fill[teal] (\cx+0.05,3.15) rectangle ({\cx+0.48},{3.15+\o*0.105+0.02});
+    \node[anchor=south,font=\fs{7.5}{9}] at ({\cx-0.265},{3.15+\b*0.105}) {\b};
+    \node[anchor=south,font=\fs{7.5}{9}\bfseries,text=teal] at ({\cx+0.265},{3.15+\o*0.105+0.02}) {\o};
+    \node[anchor=north,font=\fs{7.5}{9},text=sub] at (\cx,3.05) {\lab};
+  }
+  % RPA bars: 0.021 cm per percent.
+  \foreach \cx/\lab/\b/\o in {9.45/{Entry}/1.94/96.94,11.70/{Hold: maxima}/56.77/92.71,13.95/{Hold: XY}/51.56/86.98} {
+    \fill[base] (\cx-0.48,3.15) rectangle ({\cx-0.05},{3.15+\b*0.021+0.02});
+    \fill[teal] (\cx+0.05,3.15) rectangle ({\cx+0.48},{3.15+\o*0.021});
+    \node[anchor=south,font=\fs{7.5}{9}] at ({\cx-0.265},{3.15+\b*0.021+0.02}) {\b};
+    \node[anchor=south,font=\fs{7.5}{9}\bfseries,text=teal] at ({\cx+0.265},{3.15+\o*0.021}) {\o};
+    \node[anchor=north,font=\fs{7.5}{9},text=sub] at (\cx,3.05) {\lab};
+  }
+  \path[edge] (0.80,1.75) rectangle (15.20,2.40);
+  \node[anchor=west,inner sep=0pt,font=\fs{9}{11}] at (1.10,2.075)
+    {\textbf{PSS (\%)}\quad CoC only: 50.14 / 78.39 / 75.52
+     \quad$\longrightarrow$\quad \textcolor{teal}{\textbf{CoC + CNL: 98.47 / 96.09 / 93.49}}};
+  \takeaway{CVR $\le$1.56\% \ \textbullet\ RPA $\ge$86.98\% \ \textbullet\ PSS 93.49--98.47\%}
+  \foot{Source: Results 5.1. Entry: 240 test rows; hold: 128 per representation.}
+\closecanvas
+\end{frame}
+
+% ---------------------------------------------------------------- 8. Result 2
+\begin{frame}[plain]
+\canvas
+  \head{RESULT 2 \,\textbullet\, ALTERNATIVE CONTROLS}{Avoiding Violations Is Not Enough}
+    {Pedestrian entry \,\textbullet\, identical CoC + CNL at evaluation \,\textbullet\, \%}
+  \path[card] (0.80,2.10) rectangle (15.20,6.45);
+  \fill[teal!8] (0.95,2.25) rectangle (15.05,3.00);
+  \node[t] at (1.10,6.20) {\colhead{CONDITION}};
+  \foreach \x/\h in {9.20/PSS $\uparrow$,11.50/CVR $\downarrow$,13.80/RPA $\uparrow$} {
+    \node[c,font=\fs{8}{10}\bfseries,text=teal] at (\x,6.20) {\h};
+  }
+  \draw[rule,line width=0.6pt] (1.10,5.80) -- (14.90,5.80);
+  \foreach \y/\cond/\p/\v/\r/\c in {
+      5.50/{2B: CoC only, CE}/50.14/17.92/1.94/ink,
+      4.70/{2B: CoC only, CE + semantic loss}/50.00/0.00/0.00/ink,
+      3.90/{8B: pretrained, no task training}/27.08/68.75/0.83/ink,
+      2.85/{2B: CoC + CNL, CE}/98.47/1.11/96.94/teal} {
+    \node[t,font=\fs{10.5}{12.5}\bfseries,text=\c] at (1.10,\y) {\cond};
+    \node[c,font=\display\bfseries\fs{13}{15},text=\c] at (9.20,\y+0.03) {\p};
+    \node[c,font=\display\bfseries\fs{13}{15},text=\c] at (11.50,\y+0.03) {\v};
+    \node[c,font=\display\bfseries\fs{13}{15},text=\c] at (13.80,\y+0.03) {\r};
+  }
+  \takeaway{Semantic loss: CVR 0\%, but RPA 0\%. \ CNL training: both.}
+  \foot{Source: Results 5.1, 5.2. 8B with 512 tokens: CVR 66.67\%; not a matched model-size comparison.}
+\closecanvas
+\end{frame}
+
+% ---------------------------------------------------------------- 9. Result 3
+\begin{frame}[plain]
+\canvas
+  \head{RESULT 3 \,\textbullet\, SIX TASKS}{Supplied Constraints Across Six Tasks}
+    {P0: CoC only \,\textbullet\, P1: natural-language guard \,\textbullet\, P2: EBLC-derived CNL}
+  \path[card] (0.80,1.85) rectangle (10.05,6.45);
+  \node[t] at (1.05,6.22) {\colhead{TASK}};
+  \node[c] at (6.95,6.22) {\colhead{PSS / CVR (\%)}};
+  \foreach \x/\h in {5.00/P0,6.95/P1,8.95/P2} {\node[c,font=\fs{9}{11}\bfseries] at (\x,5.85) {\h};}
+  \draw[rule,line width=0.6pt] (1.05,5.48) -- (9.85,5.48);
+  \foreach \i/\task/\a/\b/\cc in {
+      0/{Maximum speed}/{50.00 / 24.31}/{100.00 / 0.00}/{100.00 / 0.00},
+      1/{Minimum clearance}/{50.00 / 24.31}/{100.00 / 0.00}/{100.00 / 0.00},
+      2/{Minimum entry delay}/{50.00 / 24.31}/{100.00 / 0.00}/{100.00 / 0.00},
+      3/{Pedestrian entry}/{49.86 / 19.17}/{96.81 / 1.39}/{98.06 / 0.83},
+      4/{Stopping}/{50.00 / 23.61}/{100.00 / 0.00}/{100.00 / 0.00},
+      5/{Lane change}/{50.00 / 38.19}/{100.00 / 0.00}/{97.92 / 0.00}} {
+    \pgfmathsetmacro{\yy}{5.30-\i*0.55}
+    \node[t,font=\fs{8.5}{10}] at (1.05,\yy) {\task};
+    \node[c,font=\fs{8}{10},text=sub] at (5.00,\yy) {\a};
+    \node[c,font=\fs{8}{10}] at (6.95,\yy) {\b};
+    \node[c,font=\fs{8}{10}\bfseries,text=teal] at (8.95,\yy) {\cc};
+  }
+  \path[card] (10.35,1.85) rectangle (15.20,6.45);
+  \node[t] at (10.60,6.22) {\colhead{RPA (\%)}};
+  \foreach \x/\h in {12.55/P0,13.55/P1,14.60/P2} {\node[c,font=\fs{9}{11}\bfseries] at (\x,5.85) {\h};}
+  \draw[rule,line width=0.6pt] (10.60,5.48) -- (15.00,5.48);
+  \foreach \i/\fam/\a/\b/\cc in {0/{Entry}/0.00/93.61/96.11,1/{Static}/0.00/100.00/100.00,2/{Maneuver}/0.00/100.00/97.92} {
+    \pgfmathsetmacro{\yy}{5.30-\i*0.55}
+    \node[t,font=\fs{8.5}{10}] at (10.60,\yy) {\fam};
+    \node[c,font=\fs{8}{10},text=sub] at (12.55,\yy) {\a};
+    \node[c,font=\fs{8}{10}] at (13.55,\yy) {\b};
+    \node[c,font=\fs{8}{10}\bfseries,text=teal] at (14.60,\yy) {\cc};
+  }
+  \node[t,font=\fs{8}{10},text=sub] at (10.60,3.40) {P0: no rule information\\$\to$ about 50\% PSS ceiling};
+  \takeaway{P1, P2: PSS 96.81--100\% \ \textbullet\ CVR $\le$1.39\% \ \textbullet\ RPA $\ge$93.61\%}
+  \foot{Source: Results 5.4, 5.5. Three-seed means; checkpoints differ from the fresh-adapter study.}
+\closecanvas
+\end{frame}
+
+% ---------------------------------------------------------------- 10. Result 4
+\begin{frame}[plain]
+\canvas
+  \head{RESULT 4 \,\textbullet\, SPECIFICATION CHECKING}{Fault Injection into Learning Specifications}
+    {Pedestrian-entry and position-hold specifications \,\textbullet\, 384 cases}
+  \path[card] (0.80,1.85) rectangle (10.95,6.45);
+  \node[t] at (1.05,6.22) {\colhead{INJECTED FAULT}};
+  \node[t] at (4.70,6.22) {\colhead{LOCATION}};
+  \node[t] at (6.75,6.22) {\colhead{DETECTING LAYER}};
+  \node[c] at (9.60,6.22) {\colhead{ENTRY}};
+  \node[c] at (10.45,6.22) {\colhead{HOLD}};
+  \draw[rule,line width=0.6pt] (1.05,5.92) -- (10.75,5.92);
+  \foreach \i/\cs/\loc/\lay/\n/\c in {
+      0/{Valid specification}/{None}/{None (accepted)}/24/ink,
+      1/{Changed spec.\ duration}/{Specification}/{Logic--rule, evidence}/24/ink,
+      2/{Reversed comparison}/{Formula}/{Logic--rule}/24/ink,
+      3/{Deleted release condition}/{Formula}/{Logic--rule}/24/ink,
+      4/{Changed unit}/{Specification}/{Structural}/24/ink,
+      5/{Changed sentence duration}/{CNL}/{Sentence}/24/ink,
+      6/{Changed sentence negation}/{CNL}/{Sentence}/24/ink,
+      7/{Jointly wrong record + spec.}/{Record + spec.}/{Not detected}/0/coral} {
+    \pgfmathsetmacro{\yy}{5.75-\i*0.44}
+    \node[t,font=\fs{7.5}{9},text=\c] at (1.05,\yy) {\cs};
+    \node[t,font=\fs{7.5}{9},text=sub] at (4.70,\yy) {\loc};
+    \node[t,font=\fs{7.5}{9},text=\c] at (6.75,\yy) {\lay};
+    \node[c,font=\fs{7.5}{9}\bfseries,text=\c] at (9.60,\yy) {\n/24};
+    \node[c,font=\fs{7.5}{9}\bfseries,text=\c] at (10.45,\yy) {\n/24};
+  }
+  \foreach \y/\c/\num/\txt in {6.45/teal/{288/288}/{supported faults detected},
+                              4.95/teal/{48/48}/{valid specifications accepted},
+                              3.45/coral/{0/48}/{jointly wrong detected}} {
+    \path[card] (11.25,\y-1.30) rectangle (15.20,\y);
+    \fill[\c] (11.25,\y-1.30) rectangle (11.33,\y);
+    \node[t,font=\display\bfseries\fs{18}{20},text=\c] at (11.55,\y-0.20) {\num};
+    \node[t,font=\fs{8}{10}] at (11.55,\y-0.85) {\txt};
+  }
+  \takeaway{Different check layers catch different faults; records need independent evidence.}
+  \foot{Source: Results 5.9. 7,392 probe queries, no UNKNOWN. Evidence and sentence checks were added after training.}
+\closecanvas
+\end{frame}
+
+% ---------------------------------------------------------------- 11. Result 5
+\begin{frame}[plain]
+\canvas
+  \head{RESULT 5 \,\textbullet\, COMPOSITION}{Constraint-Composition Diagnostic}
+    {Documented clauses + authored states, models, objectives, or requests}
+  \path[card] (0.80,1.85) rectangle (8.40,6.45);
+  \node[t,font=\fs{7.5}{9}\bfseries,text=teal] at (1.05,6.22) {EXAMPLE \ $v=10$ m/s, $a=5$ m/s$^2$, $d=15$ m};
+  \coordinate (S1) at (2.10,4.60);
+  \coordinate (S2) at (7.10,4.60);
+  \coordinate (S3) at (4.60,2.95);
+  \draw[teal,line width=1.2pt] (S1) -- (S2) -- (S3) -- cycle;
+  \foreach \p/\w in {{(4.60,4.60)}/{SAT},{(3.35,3.775)}/{SAT},{(5.85,3.775)}/{SAT}} {
+    \node[fill=white,draw=teal,rounded corners=2pt,inner sep=2pt,text=teal,font=\fs{7}{8}\bfseries] at \p {\w};
+  }
+  \node[dot=0.80cm,fill=coral,text=white,font=\fs{6.5}{8}\bfseries] at (4.60,4.00) {UNSAT};
+  \foreach \n in {S1,S2,S3} {\node[dot=0.28cm,fill=ink] at (\n) {};}
+  \node[anchor=south,align=center,inner sep=0pt,font=\fs{8.5}{10.5}\bfseries] at (2.10,4.80)
+    {Policy record\\{\mdseries\fs{9}{11}$t_b\ge1$}};
+  \node[anchor=south,align=center,inner sep=0pt,font=\fs{8.5}{10.5}\bfseries] at (6.95,4.80)
+    {Motion model\\{\mdseries\fs{9}{11}$x\ge10t_b+10$}};
+  \node[anchor=north,align=center,inner sep=0pt,font=\fs{8.5}{10.5}\bfseries] at (4.60,2.75)
+    {Stopping objective \,{\mdseries\fs{9}{11}$x\le15$}};
+  \node[anchor=north,inner sep=0pt,text=coral,font=\fs{8}{10}] at (4.60,2.30)
+    {pairs SAT \,\textbullet\, all three UNSAT};
+  % Counts.
+  \foreach \y/\num/\txt/\c in {6.35/176/{configurations}/ink,
+                              5.30/58/{UNSAT}/coral,
+                              4.25/12/{three-way conflicts:\\every pair SAT}/coral} {
+    \node[t,font=\display\bfseries\fs{24}{26},text=\c] at (8.90,\y) {\num};
+    \node[t,font=\fs{10}{12}] at (11.00,\y-0.15) {\txt};
+  }
+  \node[t,font=\fs{8}{10},text=sub] at (8.90,3.05)
+    {896 subset queries agree with the reference\\832 SAT witnesses validated \,\textbullet\, UNKNOWN = 0};
+  \takeaway{Joint checks find conflicts that pairwise checks miss.}
+  \foot{Source: Results 5.10. Diagnostic configurations, not real-world conflict frequencies or crash reconstructions.}
+\closecanvas
+\end{frame}
+
+% ---------------------------------------------------------------- 12. Contributions
+\begin{frame}[plain]
+\canvas
+  \head{CONTRIBUTIONS}{What GuardSynth Contributes}
+    {From supplied rules to checkable learning constraints and measured rule use.}
+  \foreach \y/\n/\h/\b in {
+      6.45/1/{Evidence-bound construction}/{EBLC: observation, rule, assumption bindings},
+      5.52/2/{Specification checking}/{SMT: satisfiability, admissibility, composition},
+      4.59/3/{Language for learning}/{CNL + sentence correspondence $\to$ CoC},
+      3.66/4/{Separate evaluation}/{CVR, PSS, RPA measured separately}} {
+    \path[card] (0.80,\y-0.80) rectangle (15.20,\y);
+    \badge{1.30,\y-0.40}{\n}{teal}
+    \node[anchor=west,inner sep=0pt,font=\fs{11}{13}\bfseries] at (1.85,\y-0.40) {\h};
+    \node[anchor=west,inner sep=0pt,font=\fs{9.5}{12},text=sub] at (7.70,\y-0.40) {\b};
+  }
+  \node[t,font=\fs{8}{10},text=sub] at (0.80,2.55)
+    {Scope: synthetic candidate selection \,\textbullet\, one 2B model family \,\textbullet\, three seeds\\
+     Next: real scenes \,\textbullet\, trajectory models \,\textbullet\, richer compositions};
+  \takeaway{Training with checked constraints improves rule-dependent selection.}
+  \foot{Source: Abstract, Results 5.12, Conclusion.}
+\closecanvas
+\end{frame}
+
+\end{document}

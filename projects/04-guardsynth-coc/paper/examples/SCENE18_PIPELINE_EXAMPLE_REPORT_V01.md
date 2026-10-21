@@ -7,7 +7,7 @@
 - 상위 범위: [1차 논문/2차 개발 분리](../../docs/decisions/PAPER_AND_DEPLOYMENT_SCOPE_DECISION_V01.md)
 - 본문용 요약: [영문 LaTeX 삽입문](scene18-worked-example.tex)
 - 재현 코드: [worked_example.py](../../experiments/paper1_cnl_learning/worked_example.py)
-- 실행 자료: [화면](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-paper-worked-example-001/scene18-pipeline-example-2026-09-08-002/worked_example.html), [RESULT](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-paper-worked-example-001/scene18-pipeline-example-2026-09-08-002/RESULT.json), [manifest](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-paper-worked-example-001/scene18-pipeline-example-2026-09-08-002/RUN_MANIFEST.json)
+- 실행 자료: [화면](../../artifacts/restricted/guardsynth-paper-worked-example-001/scene18-pipeline-example-2026-09-08-002/worked_example.html), [RESULT](../../artifacts/restricted/guardsynth-paper-worked-example-001/scene18-pipeline-example-2026-09-08-002/RESULT.json), [manifest](../../artifacts/restricted/guardsynth-paper-worked-example-001/scene18-pipeline-example-2026-09-08-002/RUN_MANIFEST.json)
 
 ## 1. 이 예제가 보여주는 것과 보여주지 않는 것
 
@@ -61,7 +61,7 @@ timestamp이며, 선택된 실제 프레임 시각은 실행 `source_example.jso
 
 ### 2.2 표시 이미지
 
-![장면 #18의 기준 시점 기계 표시 이미지](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-m16-scene-acquisition-001/m16-geometry-candidate-2026-09-05-v1/geometry/event-026/frame-p0000-overlay.jpg)
+![장면 #18의 기준 시점 기계 표시 이미지](../../artifacts/restricted/guardsynth-m16-scene-acquisition-001/m16-geometry-candidate-2026-09-05-v1/geometry/event-026/frame-p0000-overlay.jpg)
 
 야간, 전방의 보행자와 도로/차량이 보이는 장면이다. 녹색은 기계가 제안한 road 영역이며,
 에고 차로·횡단 충돌 영역·보행자 위치의 정답 마스크가 아니다. 단일 그림만으로 횡단의
@@ -118,7 +118,7 @@ Agent3의 신원을 직접 확인했다는 뜻은 아니다. 대상의 keypoint�
 그 점을 t0의 위치나 polygon으로 복사하지 않는다.
 
 원본 파일/CoC/영상/표시 이미지의 SHA-256과 실제 값은
-[source_example.json](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-paper-worked-example-001/scene18-pipeline-example-2026-09-08-002/source_example.json)과 run manifest에 기록한다.
+[source_example.json](../../artifacts/restricted/guardsynth-paper-worked-example-001/scene18-pipeline-example-2026-09-08-002/source_example.json)과 run manifest에 기록한다.
 
 ## 4. 필요한 행동 제약 후보 만들기
 
@@ -158,7 +158,7 @@ Agent3의 신원을 직접 확인했다는 뜻은 아니다. 대상의 keypoint�
 
 ### 5.1 실행 가능성 구분
 
-[eblc_design_draft.json](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-paper-worked-example-001/scene18-pipeline-example-2026-09-08-002/eblc_design_draft.json)은
+[eblc_design_draft.json](../../artifacts/restricted/guardsynth-paper-worked-example-001/scene18-pipeline-example-2026-09-08-002/eblc_design_draft.json)은
 EBLC의 binding/evidence/predicate/lifecycle/constraint/composition 구조에 대응한 **설계 투영**이다.
 기존 platform의 수치 stopping program은 zone position, response time, deceleration 등을
 요구하므로 이 정성적 JSON을 기존 parser에 입력해 성공했다고 주장할 수 없다.
@@ -292,7 +292,7 @@ enter_conflict_zone_0 = TRUE
 
 `worked_example.py`의 `CLAUSES`에는 C1–C5의 식과 영문 문장을 사람이 짝지어 작성했다.
 runner는 이 목록을 고정 순서로 조립하고
-[cnl_correspondence.json](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-paper-worked-example-001/scene18-pipeline-example-2026-09-08-002/cnl_correspondence.json)에 저장한다.
+[cnl_correspondence.json](../../artifacts/restricted/guardsynth-paper-worked-example-001/scene18-pipeline-example-2026-09-08-002/cnl_correspondence.json)에 저장한다.
 따라서 **deterministic assembly of manually authored clause pairs**이다. 자동으로 의미를
 증명하는 번역기나 platform의 기존 CNL renderer가 실행된 것으로 기술하지 않는다.
 
@@ -375,7 +375,7 @@ L0/L3만으로 EBLC 검증 고유의 효과를 주장할 수 없고 CNL 추가�
 ```
 
 위는 필드 설명용 발췌이며 전체 실제 값은
-[training_example_preview.json](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-paper-worked-example-001/scene18-pipeline-example-2026-09-08-002/training_example_preview.json)에 있다.
+[training_example_preview.json](../../artifacts/restricted/guardsynth-paper-worked-example-001/scene18-pipeline-example-2026-09-08-002/training_example_preview.json)에 있다.
 자동화된 tests는 원본 CoC의 동일성, action/finalized target의 null, export 차단, SMT-LIB
 재입력 결과, source hash, 98개 geometry 번호와 설문 번호의 차이 등을 검사한다.
 

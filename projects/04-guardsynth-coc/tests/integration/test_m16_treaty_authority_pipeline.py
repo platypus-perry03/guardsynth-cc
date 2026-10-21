@@ -24,7 +24,7 @@ class M16TreatyAuthorityPipelineTest(unittest.TestCase):
         from bind_treaty_authority import execute
 
         frontier = ROOT / (
-            "artifacts/projects/guardsynth-coc/restricted/"
+            "projects/04-guardsynth-coc/artifacts/restricted/"
             "guardsynth-m16-scene-acquisition-001/"
             "m16-geometry-source-frontier-2026-09-06-v1"
         )

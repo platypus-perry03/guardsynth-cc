@@ -1,0 +1,143 @@
+% !TeX program = xelatex
+% project_id: guardsynth-coc
+% Two slides: problem definition only, based on the NCA Introduction v02.
+% Compile beside this source; see README.md for the local TeX dependency path.
+\documentclass[aspectratio=169,11pt]{beamer}
+\usepackage{fontspec}
+\setsansfont{Noto Sans CJK KR}
+\setmainfont{Noto Sans CJK KR}
+\usefonttheme{professionalfonts}
+\XeTeXlinebreaklocale "ko"
+\XeTeXlinebreakskip=0pt plus 1pt
+\usepackage{amsmath,tikz}
+\usetikzlibrary{arrows.meta}
+\definecolor{navy}{HTML}{142D4E}
+\definecolor{teal}{HTML}{087E8B}
+\definecolor{muted}{HTML}{586776}
+\definecolor{pale}{HTML}{F2F6F8}
+\definecolor{line}{HTML}{DCE5EA}
+\definecolor{danger}{HTML}{B34141}
+\definecolor{rose}{HTML}{FBEFEE}
+\definecolor{mint}{HTML}{EAF5F3}
+\setbeamercolor{normal text}{fg=navy,bg=white}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\hypersetup{
+  pdftitle={언어 추론 기반 자율주행의 문제 정의},
+  pdfsubject={규칙에 따른 행동 선택과 학습용 제약의 정확성},
+  pdfauthor={GuardSynth research project},
+  colorlinks=true,urlcolor=muted
+}
+\tikzset{
+  textnode/.style={anchor=north west,inner sep=0pt,align=left,text=navy},
+  arrow/.style={-{Stealth[length=2mm]},line width=0.8pt,draw=teal!60}
+}
+\begin{document}
+
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay,x=1cm,y=1cm]
+\begin{scope}[shift={(current page.south west)}]
+  \node[textnode,text=teal,font=\fontsize{8}{10}\selectfont]
+    at (0.75,8.45) {VLM·VLA 기반 자율주행 \quad / \quad 문제 정의 01};
+  \node[textnode,text width=14.5cm,font=\fontsize{19.5}{24}\selectfont\bfseries]
+    at (0.75,7.86) {규칙이 바뀌면, 선택도 달라져야 한다};
+  \node[textnode,text width=14.5cm,text=muted,font=\fontsize{10}{14}\selectfont]
+    at (0.75,7.02)
+    {언어 추론은 판단의 이유를 설명한다. 외부 규칙에 맞는 선택은 별도로 확인해야 한다.};
+
+  \fill[pale,rounded corners=2.5mm] (0.75,5.20) rectangle (15.25,6.40);
+  \node[textnode,text=teal,font=\fontsize{8.5}{11}\selectfont\bfseries]
+    at (1.05,6.15) {장면 · 설명 · 후보 고정};
+  \node[textnode,text width=13.85cm,font=\fontsize{11.5}{16}\selectfont]
+    at (1.05,5.73)
+    {관측: 충돌 구역이 비어 있음 \qquad 후보 행동: 구역 해소 1.0\,s 뒤 진입};
+  \draw[arrow] (4.20,5.16) -- (4.20,4.88);
+  \draw[arrow] (11.78,5.16) -- (11.78,4.88);
+
+  \fill[mint,rounded corners=2.5mm] (0.75,2.70) rectangle (7.70,4.82);
+  \node[textnode,text=teal,font=\fontsize{10}{13}\selectfont\bfseries]
+    at (1.05,4.56) {적용 규칙 A};
+  \node[textnode,text width=6.30cm,font=\fontsize{12.5}{17}\selectfont]
+    at (1.05,4.07) {구역 해소 후 0.5\,s 이상 대기};
+  \node[textnode,text=teal,font=\fontsize{16}{20}\selectfont\bfseries]
+    at (1.05,3.39) {1.0\,s 뒤 진입 \quad 허용};
+
+  \fill[rose,rounded corners=2.5mm] (8.30,2.70) rectangle (15.25,4.82);
+  \node[textnode,text=danger,font=\fontsize{10}{13}\selectfont\bfseries]
+    at (8.60,4.56) {적용 규칙 B};
+  \node[textnode,text width=6.30cm,font=\fontsize{12.5}{17}\selectfont]
+    at (8.60,4.07) {구역 해소 후 1.5\,s 이상 대기};
+  \node[textnode,text=danger,font=\fontsize{16}{20}\selectfont\bfseries]
+    at (8.60,3.39) {1.0\,s 뒤 진입 \quad 불허};
+
+  \fill[navy,rounded corners=2mm] (0.75,1.42) rectangle (15.25,2.27);
+  \node[textnode,text=white,text width=13.85cm,font=\fontsize{11}{15}\selectfont\bfseries]
+    at (1.05,2.02)
+    {필요한 능력: 같은 장면에서도 적용 규칙을 조건으로 행동 선택을 바꾸는 것};
+  \node[textnode,text=muted,font=\fontsize{6.5}{9}\selectfont]
+    at (0.75,1.06)
+    {예시는 설명용 합성 규칙이다. 실제 법정 대기 시간을 뜻하지 않는다. CoC는 언어 추론의 한 예다.};
+  \draw[line,line width=0.4pt] (0.75,0.74) -- (15.25,0.74);
+  \node[textnode,text=muted,font=\fontsize{6.5}{9}\selectfont]
+    at (0.75,0.56)
+    {문헌: \href{https://arxiv.org/abs/2608.29583}{Drive the Thoughts (2026)}
+     \quad · \quad
+     \href{https://arxiv.org/abs/2610.16634}{Language2Drive (2026)}};
+  \node[anchor=north east,inner sep=0pt,text=muted,font=\fontsize{7.5}{10}\selectfont]
+    at (15.25,0.56) {1 / 2};
+\end{scope}
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay,x=1cm,y=1cm]
+\begin{scope}[shift={(current page.south west)}]
+  \node[textnode,text=teal,font=\fontsize{8}{10}\selectfont]
+    at (0.75,8.45) {VLM·VLA 기반 자율주행 \quad / \quad 문제 정의 02};
+  \node[textnode,text width=14.5cm,font=\fontsize{19}{24}\selectfont\bfseries]
+    at (0.75,7.86) {행동의 적절성과 제약의 정확성을 함께 묻는다};
+  \node[textnode,text width=14.5cm,text=muted,font=\fontsize{10}{14}\selectfont]
+    at (0.75,7.02)
+    {규칙에 따른 선택과 학습에 사용할 제약의 품질은 각각 확인해야 한다.};
+
+  \fill[pale,rounded corners=2.5mm] (0.75,2.40) rectangle (7.70,6.40);
+  \node[textnode,text=teal,font=\fontsize{10}{13}\selectfont\bfseries]
+    at (1.05,6.13) {문제 1 \quad 규칙을 활용하는 행동 선택};
+  \node[textnode,text width=6.30cm,font=\fontsize{12}{17}\selectfont\bfseries]
+    at (1.05,5.55)
+    {제약과 함께 학습하면,\\준수하며 적절하게 선택하는가?};
+  \draw[line,line width=0.5pt] (1.05,4.27) -- (7.40,4.27);
+  \node[textnode,text width=6.30cm,text=muted,font=\fontsize{9.5}{12.5}\selectfont]
+    at (1.05,4.04)
+    {계속 대기하면 위반은 줄어도\\진행 기회를 놓칠 수 있다.};
+  \node[textnode,text=teal,font=\fontsize{12}{17}\selectfont\bfseries]
+    at (1.05,2.98) {허용됨 \(\neq\) 목적에 가장 적절함};
+
+  \fill[pale,rounded corners=2.5mm] (8.30,2.40) rectangle (15.25,6.40);
+  \node[textnode,text=teal,font=\fontsize{10}{13}\selectfont\bfseries]
+    at (8.60,6.13) {문제 2 \quad 학습용 제약의 정확성};
+  \node[textnode,text width=6.30cm,font=\fontsize{12}{17}\selectfont\bfseries]
+    at (8.60,5.55)
+    {제약이 사례·근거·의도한 규칙과\\대응하는지 어떻게 확인하는가?};
+  \draw[line,line width=0.5pt] (8.60,4.27) -- (14.95,4.27);
+  \node[textnode,text width=6.30cm,text=muted,font=\fontsize{9}{12}\selectfont]
+    at (8.60,4.04)
+    {사례와 규칙의 잘못된 연결\\조건·수치·해제 시점의 오해\\제약 문장과 의도한 의미의 불일치};
+  \fill[navy,rounded corners=2mm] (0.75,1.35) rectangle (15.25,2.20);
+  \node[textnode,text=white,text width=13.85cm,font=\fontsize{12}{16}\selectfont\bfseries]
+    at (1.05,1.96)
+    {행동이 제약을 따르는 능력과 제약 자체의 정확성은 서로 다른 확인 대상이다.};
+  \draw[line,line width=0.4pt] (0.75,0.74) -- (15.25,0.74);
+  \node[textnode,text=muted,font=\fontsize{6.5}{9}\selectfont]
+    at (0.75,0.56)
+    {근거: NCA 서론 v02 \quad | \quad
+     \href{https://arxiv.org/abs/2109.01652}{FLAN (ICLR 2022)}
+     \quad · \quad
+     \href{https://doi.org/10.1007/978-3-031-37703-7_18}{nl2spec (CAV 2023)}};
+  \node[anchor=north east,inner sep=0pt,text=muted,font=\fontsize{7.5}{10}\selectfont]
+    at (15.25,0.56) {2 / 2};
+\end{scope}
+\end{tikzpicture}
+\end{frame}
+
+\end{document}

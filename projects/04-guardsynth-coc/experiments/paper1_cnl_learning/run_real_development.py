@@ -12,8 +12,8 @@ import time
 import run as learning
 
 ROOT = learning.ROOT
-BASE = ROOT / 'artifacts/projects/guardsynth-coc/restricted/guardsynth-eblc-learning-001'
-READINESS = ROOT / 'artifacts/projects/guardsynth-coc/restricted/guardsynth-paper1-training-readiness-001'
+BASE = ROOT / 'projects/04-guardsynth-coc/artifacts/restricted/guardsynth-eblc-learning-001'
+READINESS = ROOT / 'projects/04-guardsynth-coc/artifacts/restricted/guardsynth-paper1-training-readiness-001'
 EXPORT = READINESS / 'development-data-2026-09-08-001'
 
 

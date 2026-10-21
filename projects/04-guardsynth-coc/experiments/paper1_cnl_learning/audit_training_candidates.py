@@ -99,7 +99,7 @@ def collect():
         raise ValueError("binding partition differs from inventory")
     aligned = index_unique(source.load(source.ALIGNMENT / "scene_constraint_alignment.json")["records"])
     geometries = index_unique(source.load(source.GEOMETRY / "GEOMETRY_CANDIDATE_MANIFEST.json")["records"])
-    submitted = index_unique(source.load(source.SUBMISSION / "m16_geometry_candidate_review (1).json")["records"])
+    submitted = index_unique(source.load(source.SUBMISSION / "m16_geometry_candidate_review_v2_0.json")["records"])
     structured_path = alignment.ACQUISITION / "m16-cascade-structured-link-audit-2026-09-05-v1/CASCADE_STRUCTURED_LINK_AUDIT.json"
     structured = index_unique(source.load(structured_path)["records"])
     authority_path = alignment.ACQUISITION / "m16-treaty-authority-binding-2026-09-06-v2/TREATY_AUTHORITY_AUDIT.json"
@@ -230,7 +230,7 @@ def collect():
         row["status"] = classify(row)
         row["display_label"] = (f"영상 #{a['review_index']:02d}" if a else "영상검토 없음") + f" · 후보 #{g['review_index']:02d}"
         row["evidence_refs"] = {"inventory": str((alignment.INVENTORY / "source_audit.json").relative_to(ROOT)),
-            "geometry_submission": str((source.SUBMISSION / "m16_geometry_candidate_review (1).json").relative_to(ROOT)),
+            "geometry_submission": str((source.SUBMISSION / "m16_geometry_candidate_review_v2_0.json").relative_to(ROOT)),
             "event_binding": str((source.BINDING / "event_source_bindings.json").relative_to(ROOT)) if b else None,
             "current_scene18_preflight": str((PREFLIGHT / "RUN_MANIFEST.json").relative_to(ROOT)) if special else None}
         rows.append(row)

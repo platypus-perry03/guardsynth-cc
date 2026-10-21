@@ -1,0 +1,29 @@
+{
+  "$defs": {
+    "BasicEgoBehaviorSchema": {
+      "properties": {
+        "effect_on_ego_behavior": {
+          "title": "Effect On Ego Behavior",
+          "type": "string"
+        }
+      },
+      "required": [
+        "effect_on_ego_behavior"
+      ],
+      "title": "BasicEgoBehaviorSchema",
+      "type": "object"
+    }
+  },
+  "description": "This schema combines all the individual schemas into one.\nIt is used to validate the final output structure.",
+  "properties": {
+    "ego_behavior_schema": {
+      "$ref": "#/$defs/BasicEgoBehaviorSchema",
+      "description": "Ego Vehicle Behavior Schema"
+    }
+  },
+  "required": [
+    "ego_behavior_schema"
+  ],
+  "title": "OutputSchema",
+  "type": "object"
+}

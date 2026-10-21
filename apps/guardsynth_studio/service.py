@@ -13,6 +13,21 @@ from .provider import DisabledProvider, OpenAIProvider, PROMPT_VERSIONS
 from .store import EDITABLE, DEPENDENCIES
 
 
+COC_TEXT_FIELDS = ("observations", "relations", "assumptions", "unknowns", "action_rationale", "edited_text")
+
+
+def model_suggestion(data):
+    """Read the immutable model response, including historical drafts without migration."""
+    raw = data.get("raw_output")
+    try:
+        candidate = json.loads(raw) if isinstance(raw, str) else raw
+    except (ValueError, TypeError):
+        return None
+    if not isinstance(candidate, dict) or not all(isinstance(candidate.get(k), str) for k in COC_TEXT_FIELDS):
+        return None
+    return {k: candidate[k] for k in COC_TEXT_FIELDS}
+
+
 def payload(moment, kind):
     return moment["components"].get(kind, {}).get("payload", {})
 
@@ -27,8 +42,14 @@ class Service:
         self._frames = {}
 
     def capabilities(self):
+        budget = None
+        if isinstance(self.provider, OpenAIProvider):
+            count = self.store.db.execute("SELECT value FROM metadata WHERE key='openai_calls'").fetchone()
+            used = int(count[0]) if count else 0
+            limit = self.provider.config["max_calls"]
+            budget = {"used": used, "limit": limit, "remaining": max(0, limit - used)}
         return {"studio_schema_version": 1, "provider_mode": self.provider.mode, "model": self.provider.model,
-                "profiles": ["studio-entry-v0.1"], "limits": LIMITS, "classification": "RESTRICTED"}
+                "profiles": ["studio-entry-v0.1"], "limits": LIMITS, "classification": "RESTRICTED", "call_budget": budget}
 
     def asset_path(self, asset_id):
         asset = self.store.get(asset_id, "asset")
@@ -46,12 +67,33 @@ class Service:
         if shutil.disk_usage(self.store.root).free < LIMITS["free_bytes"]:
             raise StudioError("DISK_FULL", "At least 2 GiB free space required", 507)
 
-    def upload(self, data, metadata, actor, key):
+    def generation_status(self, moment):
+        if self.provider.mode == "DISABLED":
+            return {"enabled": False, "reason": "모델 설정이 없어 생성할 수 없습니다. 저장된 답변은 검토할 수 있습니다."}
+        budget = self.capabilities()["call_budget"]
+        if budget and budget["remaining"] == 0:
+            return {"enabled": False, "reason": "호출 한도가 소진되었습니다. 저장된 답변은 검토·수정할 수 있습니다."}
+        if isinstance(self.provider, OpenAIProvider):
+            try:
+                self.provider.authorize(moment)
+            except StudioError:
+                return {"enabled": False, "reason": "이 영상 또는 CAN의 외부 전송 승인이 필요합니다."}
+        return {"enabled": True, "reason": ""}
+
+    def upload(self, data, metadata, actor, key, *, vehicle_state=None):
         if not 0 < len(data) <= LIMITS["upload_bytes"]:
             raise StudioError("UPLOAD_SIZE", "Upload size exceeds limit", 413)
         if not all(isinstance(metadata.get(k), str) and metadata[k].strip() for k in ("name", "source", "license")) or metadata.get("permission") is not True:
             raise StudioError("PERMISSION", "Source, license and permission required")
         hashed = hashlib.sha256(data).hexdigest()
+        if vehicle_state is not None:
+            from .vehicle_state import validate
+            vehicle_state = deepcopy(vehicle_state)
+            # A portable file cannot grant consent on behalf of the importing reviewer.
+            if not isinstance(vehicle_state, dict) or type(metadata.get("vehicle_state_transmission_approved", False)) is not bool:
+                raise StudioError("VEHICLE_STATE_SCHEMA", "CAN object and explicit boolean consent required")
+            vehicle_state["transmission_approved"] = metadata.get("vehicle_state_transmission_approved", False)
+            validate(vehicle_state, {"original_sha256": hashed}, require_transmission=False)
         def operation():
             self.free_space()
             parent = self.store.get(metadata["parent_video_id"], "video") if metadata.get("parent_video_id") else None
@@ -82,19 +124,26 @@ class Service:
             video.update({"original_sha256": hashed, "asset_id": asset_id, "permission": True,
                           "classification": "RESTRICTED", "lineage_group_id": group_id, "revision": 0,
                           "uploaded_by": actor, "created": now(), "status": "PROBE_PENDING"})
+            if vehicle_state is not None:
+                video.update(vehicle_state_id=self.store.put("vehicle_state", vehicle_state),
+                             vehicle_state_digest=digest(vehicle_state), vehicle_state_actor=actor)
             self.store.put("video", video, video_id)
             job_id = self.new_job("PROBE", {"video_id": video_id}, actor)
             return {"video_id": video_id, "job_id": job_id}
-        return self.store.mutate(actor, key, {"op": "upload", "sha": hashed, "metadata": metadata}, operation)
+        request = {"op": "upload", "sha": hashed, "metadata": metadata}
+        if vehicle_state is not None:
+            request["vehicle_state"] = vehicle_state
+        return self.store.mutate(actor, key, request, operation)
 
     def new_job(self, kind, inputs, actor, moment=None):
-        if sum(j["status"] == "QUEUED" for j in self.store.objects("job")) >= LIMITS["queue"]:
+        from .provider import VLM_TASKS
+        if len(self.store.job_ids(statuses=("QUEUED",), limit=LIMITS["queue"])) >= LIMITS["queue"]:
             raise StudioError("QUEUE_FULL", "Queue is full", 429)
         value = {"kind": kind, "inputs": deepcopy(inputs), "input_digest": digest(inputs), "actor": actor,
                  "moment_id": moment["id"] if moment else None, "base_revision": moment["revision"] if moment else None,
                  "status": "QUEUED", "generation": 0, "attempt": 0, "result": None, "error": None,
-                 "provider_mode": self.provider.mode if kind in ("COC", "PROPOSAL") else None, "created": now()}
-        if kind in ("COC", "PROPOSAL") and isinstance(self.provider, OpenAIProvider):
+                 "provider_mode": self.provider.mode if kind in VLM_TASKS else None, "created": now()}
+        if kind in VLM_TASKS and isinstance(self.provider, OpenAIProvider):
             value["provider_binding"] = self.provider.authorize(moment)
         return self.store.put("job", value)
 
@@ -138,6 +187,9 @@ class Service:
         self.refresh_tool_versions(value)
         value["frames"] = self.causal_frames(value)
         value["eligibility"] = self.eligibility(value)
+        value["model_suggestion"] = model_suggestion(payload(value, "coc"))
+        value["vehicle_state"] = self.causal_vehicle_state(value)
+        value["generation"] = self.generation_status(value)
         return value
 
     def attach_vehicle_state(self, identity, revision, data, actor, key):
@@ -165,7 +217,7 @@ class Service:
         if not video.get("vehicle_state_id"):
             return None
         value = self.store.get(video["vehicle_state_id"], "vehicle_state")
-        validate(value, video)
+        validate(value, video, require_transmission=False)
         if digest(value) != video["vehicle_state_digest"]:
             raise StudioError("VEHICLE_STATE_INTEGRITY", "Vehicle state changed")
         return causal_projection(value, self.causal_frames(moment))
@@ -181,18 +233,34 @@ class Service:
             elif isinstance(value, list):
                 for child in value: reject_secrets(child)
         reject_secrets(data)
+        if kind in ("sequence_coc", "sequence_constraints"):
+            from .sequence import validate_edit
+            return validate_edit(self, moment, kind, data)
         if kind == "coc":
             allowed = {"observations", "relations", "assumptions", "unknowns", "action_rationale", "suggested_actions",
-                       "edited_text", "causal_confirmed", "leakage", "context_text"}
+                       "edited_text", "causal_confirmed", "leakage", "context_text", "review_choice"}
             if set(data) - allowed:
                 raise StudioError("PROVENANCE", "Generated provenance cannot be edited")
             if any(not isinstance(data[k], str) for k in ("observations", "relations", "assumptions", "unknowns", "action_rationale", "edited_text", "context_text") if k in data):
                 raise StudioError("COC_SCHEMA", "CoC fields must be text")
             if any(type(data[k]) is not bool for k in ("causal_confirmed", "leakage") if k in data):
                 raise StudioError("COC_SCHEMA", "CoC review flags must be boolean")
+            incoming = set(data)
             original = payload(moment, "coc")
             data = {**original, **data}
             data.setdefault("origin", "HUMAN")
+            if "review_choice" in data and data["review_choice"] not in ("UNREVIEWED", "ACCEPTED", "EDITED"):
+                raise StudioError("COC_REVIEW", "Invalid review choice")
+            suggestion = model_suggestion(original)
+            changed = suggestion is not None and any(data.get(k, "") != suggestion[k] for k in COC_TEXT_FIELDS)
+            if data.get("review_choice") == "ACCEPTED" and (suggestion is None or changed):
+                # Only an explicit acceptance of unchanged content is valid.
+                if "review_choice" in payload(moment, "coc") and "review_choice" not in incoming:
+                    data["review_choice"] = "EDITED" if changed else "UNREVIEWED"
+                else:
+                    raise StudioError("COC_REVIEW", "Only unchanged model suggestions can be accepted")
+            if suggestion is not None:
+                data["review_choice"] = "EDITED" if changed else ("ACCEPTED" if data.get("review_choice") == "ACCEPTED" else "UNREVIEWED")
         if kind in ("binding", "coc"):
             if data.get("max_observed_timestamp_us", moment["t0_us"]) > moment["t0_us"]:
                 raise StudioError("FUTURE", "Future evidence is not allowed")
@@ -245,8 +313,15 @@ class Service:
     def validate_approval(self, m, kind):
         self.refresh_tool_versions(m)
         data = payload(m, kind)
+        if kind in ("sequence_coc", "sequence_constraints"):
+            from .sequence import validate_approval
+            return validate_approval(self, m, kind)
         if kind == "coc" and (not data.get("edited_text") or data.get("causal_confirmed") is not True or data.get("leakage")):
             raise StudioError("CAUSAL_REVIEW", "CoC text and causal-only review required")
+        if kind == "coc" and model_suggestion(data) is not None:
+            changed = any(data.get(k, "") != v for k, v in model_suggestion(data).items())
+            if not changed and data.get("review_choice") != "ACCEPTED":
+                raise StudioError("COC_REVIEW", "수정이 없으면 'LLM 제안 그대로 수용'을 확인하세요")
         if kind == "source":
             if not data.get("records"):
                 raise StudioError("SOURCE", "No grounded sources")
@@ -328,6 +403,9 @@ class Service:
         return self.store.mutate(actor, key, ["approve", items], operation)
 
     def enqueue(self, identity, revision, kind, actor, key):
+        if kind in ("SEQ_COC", "SEQ_CONSTRAINTS"):
+            from .sequence import enqueue_sequence
+            return enqueue_sequence(self, identity, revision, kind, actor, key)
         if kind not in ("COC", "PROPOSAL", "CHECK", "CNL", "COMBINE"):
             raise StudioError("JOB", "Unsupported job")
         if kind in ("COC", "PROPOSAL") and self.provider.mode == "DISABLED":
@@ -400,6 +478,11 @@ class Service:
         return {"state": "ENHANCED_READY" if not reasons else "HELD", "reasons": reasons}
 
     def refresh_tool_versions(self, m):
+        from .sequence import context_current
+        for kind in ("sequence_coc", "sequence_constraints"):
+            c=m["components"].get(kind)
+            if c and not context_current(self,m,kind):
+                c["stale"]=True
         if not any(k in m["components"] for k in ("check", "cnl")):
             return
         from guard_synth.studio_contract import QUERY_VERSION, renderer_signature

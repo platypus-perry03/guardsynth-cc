@@ -26,6 +26,6 @@ RC 이후 v0.2에는 결함 수정, 설명 보강 및 의미를 바꾸지 않는
 추가하지 않는다. 의미 변경은 별도 버전과 conformance 기준선이 필요하다.
 
 검증 수치와 artifact는 RC 실행 후
-`artifacts/results/public/eblc-release-candidate-001/eblc-v0.2-rc1-2026-08-09/`에
+`platforms/eblc-bcv/artifacts/public/eblc-release-candidate-001/eblc-v0.2-rc1-2026-08-09/`에
 고정한다. 이 release는 연구용 bounded software semantics이며 실제 법규나 차량 안전
 인증물이 아니다.

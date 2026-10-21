@@ -1,0 +1,36 @@
+{
+  "project_id": "guardsynth-coc",
+  "run_id": "discussion-section-2026-09-30-001",
+  "documents": [
+    {
+      "language": "ko",
+      "source": "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_DISCUSSION_V01_KO.md",
+      "source_sha256": "eab9889e7691fda6b4c3065a3cbcb9557801304bab55f6bf480c3ed584f8b5da",
+      "pdf": "ieee-access-discussion-v01-ko.pdf",
+      "figures": 0,
+      "code_boxes": 0,
+      "tables": 0,
+      "links": []
+    },
+    {
+      "language": "en",
+      "source": "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_DISCUSSION_V01_EN.md",
+      "source_sha256": "fbfcc25f0565026d2d74a3a36f437c838289db9989ed8e1698161e133157e33c",
+      "pdf": "ieee-access-discussion-v01-en.pdf",
+      "figures": 0,
+      "code_boxes": 0,
+      "tables": 0,
+      "links": []
+    }
+  ],
+  "purpose": "Approved four-part Discussion; no added experiment or performance claim",
+  "source_sha256": {
+    "projects/04-guardsynth-coc/paper/ieee-access/render_experiments.py": "9c05bba1c3ef6a2dfcb83ee4b38f946077f2f9562e154f4d02ba0b3a902e1902",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/discussion-section-2026-09-30-001/build_snapshot.py": "c88d8cae9ec1b7268bf82e4e22bf935e24bd48b3aef0cf174ad8af16e7d464c9",
+    "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_EXPERIMENTS_V01_KO.md": "788faf3991f3da679e884495ec8441f6fda942b974f27b696b3e20dc82e68919",
+    "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_EXPERIMENTS_SUPPLEMENT_V01_KO.md": "152bae618f21519b51790ffbdc8b03efb27cd9ca3cb3084e50056267fcac05e7",
+    "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_METHODOLOGY_V01_KO.md": "70f50d64f0179d34c5be1b9a652311a56201edf59bf062e5b171c2891d8dc033"
+  },
+  "reproduce": "Run build_snapshot.py with Python before finalizing RESULT.json; each generated TeX independently compiles twice with XeLaTeX.",
+  "scope": "Standalone Korean and English Discussion; main.tex and frozen experiments unchanged"
+}

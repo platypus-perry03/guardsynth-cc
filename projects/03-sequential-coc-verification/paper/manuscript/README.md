@@ -3,7 +3,7 @@
 The current review revision, clean manuscript, and three reviewer responses are in
 [latex-kiee-review-2022-coc-audit-revision-v01/](latex-kiee-review-2022-coc-audit-revision-v01/README.md).
 That directory includes the TeX sources and rebuild instructions. Its supporting
-records are under `artifacts/projects/sequential-coc-verification/`.
+records are under `projects/03-sequential-coc-verification/artifacts/`.
 
 The earlier KIEE anonymous-review copy is retained in
 `latex-kiee-review-2022-coc-audit/`.  Its title is *Stateful Consistency

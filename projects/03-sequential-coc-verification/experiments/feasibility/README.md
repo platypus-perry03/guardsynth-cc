@@ -37,7 +37,7 @@ Alpamayo 생태계 공식 데이터만을 대상으로 한 내부 실험 보고�
 - CoC: `Decelerate to maintain a safe distance from the stopped truck ahead while navigating through the construction zone.`
 - 영상 증거: 과거 구간부터 전방 트럭과 공사 구간이 보이며, 시간 진행에 따라 트럭과의 간격이 감소한다.
 - 궤적 증거: 속도는 `t0`에서 약 `5.8646 m/s`, 4초 후 `4.0798 m/s`, 6초 후 `4.5531 m/s`다. 6초 전체 변화는 `-1.3115 m/s`이고, 미래 구간의 인접 샘플 속도 차분 중 약 74%가 음수다.
-- 시각 자료: [timeline_contact_sheet.jpg](../../artifacts/results/public/scene-0001/timeline_contact_sheet.jpg)
+- 시각 자료: [timeline_contact_sheet.jpg](../../artifacts/public/scene-0001/timeline_contact_sheet.jpg)
 
 실행:
 
@@ -101,9 +101,9 @@ trusted CoC 수와 제어 전환 다양성이 높은 12개 scene을 선정하고
 
 ```bash
 python projects/03-sequential-coc-verification/experiments/feasibility/check_cohort.py \
-  --output artifacts/results/public/cohort-13/weak-kinematic-cohort-result.json
+  --output projects/03-sequential-coc-verification/artifacts/public/cohort-13/weak-kinematic-cohort-result.json
 python projects/03-sequential-coc-verification/experiments/uppaal/run_cohort_verification.py \
-  --output artifacts/results/public/cohort-13/uppaal-cohort-verification-result.json
+  --output projects/03-sequential-coc-verification/artifacts/public/cohort-13/uppaal-cohort-verification-result.json
 ```
 
 | 항목 | 결과 |
@@ -144,11 +144,11 @@ label이 존재하고 egomotion archive에 포함된 scene 전체를 자동 선�
 
 ```bash
 python projects/03-sequential-coc-verification/experiments/feasibility/check_cohort.py --chunk 0 \
-  --output artifacts/results/public/chunk-0000-94/weak-kinematic-cohort-result.json
+  --output projects/03-sequential-coc-verification/artifacts/public/chunk-0000-94/weak-kinematic-cohort-result.json
 python projects/03-sequential-coc-verification/experiments/uppaal/run_cohort_verification.py \
-  --cohort-result artifacts/results/public/chunk-0000-94/weak-kinematic-cohort-result.json \
-  --model-dir artifacts/intermediate/uppaal-models/chunk-0000-94 \
-  --output artifacts/results/public/chunk-0000-94/uppaal-cohort-verification-result.json
+  --cohort-result projects/03-sequential-coc-verification/artifacts/public/chunk-0000-94/weak-kinematic-cohort-result.json \
+  --model-dir projects/03-sequential-coc-verification/projects/03-sequential-coc-verification/artifacts/intermediate/uppaal-models/chunk-0000-94 \
+  --output projects/03-sequential-coc-verification/artifacts/public/chunk-0000-94/uppaal-cohort-verification-result.json
 ```
 
 | 항목 | 결과 |
@@ -172,7 +172,7 @@ python projects/03-sequential-coc-verification/experiments/uppaal/run_cohort_ver
 보행자·신호·선행차 등 일부 원인은 관측되지만, 반복/stale CoC, anticipatory label,
 semantic grounding 오류와 실제 response delay를 현재 신호만으로 구분할 수 없다.
 따라서 5건 모두 safety violation이 아니라 `UNKNOWN_REVIEW_REQUIRED`다. contact sheet와
-triage는 `artifacts/results/public/chunk-0000-94/video-review-result.json`에 기록한다.
+triage는 `projects/03-sequential-coc-verification/artifacts/public/chunk-0000-94/video-review-result.json`에 기록한다.
 
 이 확장은 한 scene의 결과를 일반화한 것이 아니라 동일 checker가 더 다양한 episode에서
 어디서 실패하고, 영상 검토가 명세를 어떻게 수정하는지 보여주는 반복성 증거다. UPPAAL
@@ -220,7 +220,7 @@ UPPAAL에서는 episode별 baseline, provenance mutation, response deletion muta
 
 ```bash
 python projects/03-sequential-coc-verification/experiments/feasibility/check_longitudinal_falsification.py \
-  > artifacts/results/public/scene-0001/longitudinal-falsification-result.json
+  > projects/03-sequential-coc-verification/artifacts/public/scene-0001/longitudinal-falsification-result.json
 ```
 
 기본 grid에서 응답지연 `0.5/1/2/2.1597초`의 collision scenario 수는 각각 `3/6/12/13`, 모든 열거 제동조건에서 collision witness가 없었던 최소 시험 gap은 `10/10/15/20m`였다. 마지막 delay는 위의 불안정한 speed-trace heuristic을 sensitivity anchor로 다시 사용한 것이다. 이는 지연과 차량 물리를 합성한 counterexample 탐색의 feasibility다. 실제 gap과 차량 calibration이 없으므로 scene 안전 판정은 계속 `UNKNOWN`이며, finite grid의 no-witness는 연속 상태공간의 안전 proof가 아니다.
@@ -252,6 +252,6 @@ low-quality event         6800ms
 
 여섯 query는 obligation 활성화·응답 도달성, deadline miss, clock reset, untrusted overwrite와 deadlock을 검사한다. XML 구조, variant completeness와 runner output parser에 대한 단위 테스트는 통과했다.
 
-학술용 verifier license 활성화 후 다섯 variant와 여섯 query, 총 30개 symbolic 판정을 실행했다. `normal`은 모두 PASS했고 `deadline_2s`의 deadline query, `clock_reset`의 clock-reset query, `no_response`의 response reachability와 deadline query, `untrusted_overwrite`의 trust-policy query가 각각 FAIL했다. 모든 결과가 사전 작성한 mutation oracle과 일치해 [UPPAAL 실행 결과](../../artifacts/results/public/scene-0001/uppaal-verification-result.json)의 overall은 `PASS`다.
+학술용 verifier license 활성화 후 다섯 variant와 여섯 query, 총 30개 symbolic 판정을 실행했다. `normal`은 모두 PASS했고 `deadline_2s`의 deadline query, `clock_reset`의 clock-reset query, `no_response`의 response reachability와 deadline query, `untrusted_overwrite`의 trust-policy query가 각각 FAIL했다. 모든 결과가 사전 작성한 mutation oracle과 일치해 [UPPAAL 실행 결과](../../artifacts/public/scene-0001/uppaal-verification-result.json)의 overall은 `PASS`다.
 
-첫 symbolic 실행에서는 의도적인 episode terminal state도 UPPAAL deadlock으로 판정되었다. diagnostic trace로 원인을 확인하고 `CoC.Done`에 terminal stutter를 명시한 뒤 모든 variant의 `A[] not deadlock`이 PASS했다. 전체 trace는 [uppaal-traces](../../artifacts/results/public/scene-0001/uppaal-traces/)에 보존한다. 이 PASS는 timed-protocol mutation 검출 feasibility이며 collision 또는 실제 차량 안전 증명이 아니다. 설치·생성·실행 절차는 [projects/03-sequential-coc-verification/experiments/uppaal/README.md](../uppaal/README.md)에 기록한다.
+첫 symbolic 실행에서는 의도적인 episode terminal state도 UPPAAL deadlock으로 판정되었다. diagnostic trace로 원인을 확인하고 `CoC.Done`에 terminal stutter를 명시한 뒤 모든 variant의 `A[] not deadlock`이 PASS했다. 전체 trace는 [uppaal-traces](../../artifacts/public/scene-0001/uppaal-traces/)에 보존한다. 이 PASS는 timed-protocol mutation 검출 feasibility이며 collision 또는 실제 차량 안전 증명이 아니다. 설치·생성·실행 절차는 [projects/03-sequential-coc-verification/experiments/uppaal/README.md](../uppaal/README.md)에 기록한다.

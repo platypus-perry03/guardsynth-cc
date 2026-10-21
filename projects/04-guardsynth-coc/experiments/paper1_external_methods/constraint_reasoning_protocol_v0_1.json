@@ -1,0 +1,88 @@
+{
+  "project_id": "guardsynth-coc",
+  "experiment_id": "paper1-reasoning-comparison-001",
+  "version": "0.1",
+  "status": "READY_FOR_EXECUTION",
+  "selected_on": "2026-10-07",
+  "question": "Does inference-time reasoning improve action selection when the same supplied constraint information is available?",
+  "role": "Constraint-aware prompting controls on existing P1 checkpoints; P1 and P2 are archived baselines",
+  "methods": [
+    {
+      "id": "zero_shot_cot",
+      "name": "Zero-shot CoT",
+      "paper": "https://arxiv.org/abs/2205.11916",
+      "official_repository": "https://github.com/kojima-takeshi188/zero_shot_cot",
+      "commit": "5ef330fcdeec0cd26aee27943504f91f8ec1c33c",
+      "procedure": "Generate reasoning using the original cot_trigger_no=1, then extract a final answer in a second generation",
+      "source_locations": [
+        "main.py:zero_shot_cot branch",
+        "main.py:parse_arguments"
+      ],
+      "reasoning_max_new_tokens": 128,
+      "answer_max_new_tokens": 32
+    },
+    {
+      "id": "plan_and_solve",
+      "name": "Plan-and-Solve",
+      "paper": "https://aclanthology.org/2023.acl-long.147/",
+      "official_repository": "https://github.com/AGI-Edgerunners/Plan-and-Solve-Prompting",
+      "commit": "9d5a176f5b4de1011d426009ab6398dc76046e88",
+      "procedure": "Use original basic PS prompt_201 for planning and solving, following the official answer-extraction procedure; no PS+ substitutions or self-consistency",
+      "source_locations": [
+        "prompt.py:prompt_201",
+        "main.py:zero_shot_cot",
+        "config.py"
+      ],
+      "reasoning_max_new_tokens": 256,
+      "answer_max_new_tokens": 32
+    }
+  ],
+  "backbone": "Qwen/Qwen3-VL-2B-Instruct",
+  "checkpoints": "Reuse existing P1 final LoRA checkpoints for all three task families and seeds",
+  "optimization_seeds": [
+    42,
+    17,
+    123
+  ],
+  "additional_training": false,
+  "additional_human_labels": false,
+  "model_input": [
+    "Existing P1 image",
+    "Original CoC with the frozen P1 natural-language rule",
+    "Existing candidate descriptions",
+    "Original generic reasoning-method instructions"
+  ],
+  "forbidden_model_input": [
+    "P2 CNL injected into P1",
+    "EBLC JSON",
+    "Oracle metadata beyond the supplied P1 text",
+    "Reference labels",
+    "SAT/UNSAT results"
+  ],
+  "primary_test_rows_per_method_and_checkpoint_seed": {
+    "temporal": 240,
+    "static": 144,
+    "maneuver": 96,
+    "total": 480
+  },
+  "planned_total_answer_predictions": 2880,
+  "metrics": [
+    "Accuracy",
+    "Constraint violation rate",
+    "Contract-pair accuracy",
+    "Invalid-answer rate",
+    "Generated tokens",
+    "Inference latency"
+  ],
+  "failure_accounting": "Invalid outputs remain in the denominator; report their frequency separately and do not invent an action label or an admissibility verdict",
+  "budget_accounting": "Original code defaults give unequal reasoning token caps; report actual cost and do not claim equal inference budgets",
+  "interpretation_limits": [
+    "Prompting-procedure transfer to our Qwen VLM, not original GPT-model benchmark reproduction",
+    "P1 and its prompting controls use identical checkpoints, images and rule-bearing text; only inference instructions/extraction change",
+    "P2 expresses the same supplied task rules with CNL and uses its own matched-budget archived checkpoint; this does not isolate verification causally",
+    "Native reasoning caps remain 128 and 256; actual token usage and synchronized batch generation time are reported",
+    "These label-trained checkpoints may emit option labels without multistep reasoning; raw outputs are retained",
+    "Existing synthetic test rows and seeds are reused; no new training, independent road scenes, human labels or original DriveLM/DriveVLM execution"
+  ],
+  "reporting_gate": "Only report scored results after all three families and seeds finish; input and adapter hashes are frozen before inference"
+}

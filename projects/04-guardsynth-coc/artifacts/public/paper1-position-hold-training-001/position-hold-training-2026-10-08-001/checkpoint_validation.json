@@ -1,0 +1,2666 @@
+{
+  "checkpoint_roundtrip_prediction_checks": 288,
+  "matching": 288,
+  "checks": [
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "before_test",
+      "id": "test-000-0-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "before_test",
+      "id": "test-000-0-500-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "before_test",
+      "id": "test-000-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "before_test",
+      "id": "test-000-0-2000-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "before_test",
+      "id": "test-000-2-500-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "before_test",
+      "id": "test-000-2-500-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "before_test",
+      "id": "test-000-2-2000-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "before_test",
+      "id": "test-000-2-2000-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "after_test",
+      "id": "test-000-0-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "after_test",
+      "id": "test-000-0-500-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "after_test",
+      "id": "test-000-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "after_test",
+      "id": "test-000-0-2000-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "after_test",
+      "id": "test-000-2-500-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "after_test",
+      "id": "test-000-2-500-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "after_test",
+      "id": "test-000-2-2000-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "after_test",
+      "id": "test-000-2-2000-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-500-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-2000-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-500-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-500-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-2000-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-2000-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-500-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-500-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-2000-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-2000-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-500-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-500-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-2000-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-2000-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "before_test",
+      "id": "test-000-0-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "before_test",
+      "id": "test-000-0-500-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "before_test",
+      "id": "test-000-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "before_test",
+      "id": "test-000-0-2000-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "before_test",
+      "id": "test-000-2-500-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "before_test",
+      "id": "test-000-2-500-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "before_test",
+      "id": "test-000-2-2000-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "before_test",
+      "id": "test-000-2-2000-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "after_test",
+      "id": "test-000-0-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "after_test",
+      "id": "test-000-0-500-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "after_test",
+      "id": "test-000-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "after_test",
+      "id": "test-000-0-2000-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "after_test",
+      "id": "test-000-2-500-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "after_test",
+      "id": "test-000-2-500-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "after_test",
+      "id": "test-000-2-2000-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "after_test",
+      "id": "test-000-2-2000-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-500-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-2000-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-500-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-500-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-2000-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-2000-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-500-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-500-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-2000-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-2000-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-500-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-500-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-2000-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-2000-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "before_test",
+      "id": "test-000-0-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "before_test",
+      "id": "test-000-0-500-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "before_test",
+      "id": "test-000-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "before_test",
+      "id": "test-000-0-2000-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "before_test",
+      "id": "test-000-2-500-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "before_test",
+      "id": "test-000-2-500-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "before_test",
+      "id": "test-000-2-2000-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "before_test",
+      "id": "test-000-2-2000-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "after_test",
+      "id": "test-000-0-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "after_test",
+      "id": "test-000-0-500-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "after_test",
+      "id": "test-000-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "after_test",
+      "id": "test-000-0-2000-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "after_test",
+      "id": "test-000-2-500-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "after_test",
+      "id": "test-000-2-500-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "after_test",
+      "id": "test-000-2-2000-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "after_test",
+      "id": "test-000-2-2000-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-500-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-2000-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-500-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-500-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-2000-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-2000-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-500-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-500-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-2000-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-2000-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-500-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-500-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-2000-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-2000-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "before_test",
+      "id": "test-000-0-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "before_test",
+      "id": "test-000-0-500-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "before_test",
+      "id": "test-000-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "before_test",
+      "id": "test-000-0-2000-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "before_test",
+      "id": "test-000-2-500-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "before_test",
+      "id": "test-000-2-500-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "before_test",
+      "id": "test-000-2-2000-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "before_test",
+      "id": "test-000-2-2000-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "after_test",
+      "id": "test-000-0-500-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "after_test",
+      "id": "test-000-0-500-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "after_test",
+      "id": "test-000-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "after_test",
+      "id": "test-000-0-2000-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "after_test",
+      "id": "test-000-2-500-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "after_test",
+      "id": "test-000-2-500-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "after_test",
+      "id": "test-000-2-2000-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "after_test",
+      "id": "test-000-2-2000-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-500-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-2000-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-500-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-500-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-2000-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-2000-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-500-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-500-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-2000-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-2000-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-500-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-500-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-2000-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-2000-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "before_test",
+      "id": "test-000-0-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "before_test",
+      "id": "test-000-0-500-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "before_test",
+      "id": "test-000-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "before_test",
+      "id": "test-000-0-2000-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "before_test",
+      "id": "test-000-2-500-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "before_test",
+      "id": "test-000-2-500-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "before_test",
+      "id": "test-000-2-2000-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "before_test",
+      "id": "test-000-2-2000-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "after_test",
+      "id": "test-000-0-500-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "after_test",
+      "id": "test-000-0-500-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "after_test",
+      "id": "test-000-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "after_test",
+      "id": "test-000-0-2000-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "after_test",
+      "id": "test-000-2-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "after_test",
+      "id": "test-000-2-500-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "after_test",
+      "id": "test-000-2-2000-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "after_test",
+      "id": "test-000-2-2000-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-500-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-2000-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-500-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-500-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-2000-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-2000-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-500-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-500-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-2000-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-2000-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-500-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-500-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-2000-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-2000-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "before_test",
+      "id": "test-000-0-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "before_test",
+      "id": "test-000-0-500-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "before_test",
+      "id": "test-000-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "before_test",
+      "id": "test-000-0-2000-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "before_test",
+      "id": "test-000-2-500-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "before_test",
+      "id": "test-000-2-500-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "before_test",
+      "id": "test-000-2-2000-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "before_test",
+      "id": "test-000-2-2000-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "after_test",
+      "id": "test-000-0-500-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "after_test",
+      "id": "test-000-0-500-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "after_test",
+      "id": "test-000-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "after_test",
+      "id": "test-000-0-2000-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "after_test",
+      "id": "test-000-2-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "after_test",
+      "id": "test-000-2-500-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "after_test",
+      "id": "test-000-2-2000-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "after_test",
+      "id": "test-000-2-2000-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-500-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-2000-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-500-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-500-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-2000-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-2000-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-500-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-500-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-2000-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-2000-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-500-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-500-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-2000-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-2000-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "before_test",
+      "id": "test-000-0-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "before_test",
+      "id": "test-000-0-500-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "before_test",
+      "id": "test-000-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "before_test",
+      "id": "test-000-0-2000-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "before_test",
+      "id": "test-000-2-500-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "before_test",
+      "id": "test-000-2-500-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "before_test",
+      "id": "test-000-2-2000-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "before_test",
+      "id": "test-000-2-2000-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "after_test",
+      "id": "test-000-0-500-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "after_test",
+      "id": "test-000-0-500-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "after_test",
+      "id": "test-000-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "after_test",
+      "id": "test-000-0-2000-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "after_test",
+      "id": "test-000-2-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "after_test",
+      "id": "test-000-2-500-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "after_test",
+      "id": "test-000-2-2000-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "after_test",
+      "id": "test-000-2-2000-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-500-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-2000-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-500-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-500-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-2000-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-2000-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-500-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-500-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-2000-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-2000-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-500-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-500-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-2000-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-2000-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "before_test",
+      "id": "test-000-0-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "before_test",
+      "id": "test-000-0-500-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "before_test",
+      "id": "test-000-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "before_test",
+      "id": "test-000-0-2000-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "before_test",
+      "id": "test-000-2-500-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "before_test",
+      "id": "test-000-2-500-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "before_test",
+      "id": "test-000-2-2000-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "before_test",
+      "id": "test-000-2-2000-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "after_test",
+      "id": "test-000-0-500-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "after_test",
+      "id": "test-000-0-500-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "after_test",
+      "id": "test-000-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "after_test",
+      "id": "test-000-0-2000-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "after_test",
+      "id": "test-000-2-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "after_test",
+      "id": "test-000-2-500-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "after_test",
+      "id": "test-000-2-2000-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "after_test",
+      "id": "test-000-2-2000-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-500-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-2000-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-500-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-500-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-2000-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-2000-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-500-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-500-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-2000-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-2000-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-500-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-500-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-2000-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-2000-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "before_test",
+      "id": "test-000-0-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "before_test",
+      "id": "test-000-0-500-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "before_test",
+      "id": "test-000-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "before_test",
+      "id": "test-000-0-2000-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "before_test",
+      "id": "test-000-2-500-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "before_test",
+      "id": "test-000-2-500-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "before_test",
+      "id": "test-000-2-2000-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "before_test",
+      "id": "test-000-2-2000-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "after_test",
+      "id": "test-000-0-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "after_test",
+      "id": "test-000-0-500-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "after_test",
+      "id": "test-000-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "after_test",
+      "id": "test-000-0-2000-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "after_test",
+      "id": "test-000-2-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "after_test",
+      "id": "test-000-2-500-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "after_test",
+      "id": "test-000-2-2000-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "after_test",
+      "id": "test-000-2-2000-xy_waypoints",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-500-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-500-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-2000-interval_maxima",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-0-2000-xy_waypoints",
+      "expected": "C",
+      "observed": "C",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-500-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-500-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-2000-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-00-rotation-1-2000-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-500-interval_maxima",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-500-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-2000-interval_maxima",
+      "expected": "A",
+      "observed": "A",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-2-2000-xy_waypoints",
+      "expected": "D",
+      "observed": "D",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-500-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-500-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-2000-interval_maxima",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "phase": "after_regression",
+      "id": "profile-12-rotation-3-2000-xy_waypoints",
+      "expected": "B",
+      "observed": "B",
+      "matches": true
+    }
+  ],
+  "weights": [
+    {
+      "arm": "p0",
+      "seed": 42,
+      "changed_tensors": 224,
+      "total_tensors": 224,
+      "trainable_parameter_count": 3211264
+    },
+    {
+      "arm": "p0",
+      "seed": 17,
+      "changed_tensors": 224,
+      "total_tensors": 224,
+      "trainable_parameter_count": 3211264
+    },
+    {
+      "arm": "p0",
+      "seed": 123,
+      "changed_tensors": 224,
+      "total_tensors": 224,
+      "trainable_parameter_count": 3211264
+    },
+    {
+      "arm": "p1",
+      "seed": 42,
+      "changed_tensors": 224,
+      "total_tensors": 224,
+      "trainable_parameter_count": 3211264
+    },
+    {
+      "arm": "p1",
+      "seed": 17,
+      "changed_tensors": 224,
+      "total_tensors": 224,
+      "trainable_parameter_count": 3211264
+    },
+    {
+      "arm": "p1",
+      "seed": 123,
+      "changed_tensors": 224,
+      "total_tensors": 224,
+      "trainable_parameter_count": 3211264
+    },
+    {
+      "arm": "p2",
+      "seed": 42,
+      "changed_tensors": 224,
+      "total_tensors": 224,
+      "trainable_parameter_count": 3211264
+    },
+    {
+      "arm": "p2",
+      "seed": 17,
+      "changed_tensors": 224,
+      "total_tensors": 224,
+      "trainable_parameter_count": 3211264
+    },
+    {
+      "arm": "p2",
+      "seed": 123,
+      "changed_tensors": 224,
+      "total_tensors": 224,
+      "trainable_parameter_count": 3211264
+    }
+  ],
+  "hardware": "NVIDIA A100 80GB PCIe",
+  "cuda_visible_devices": "3",
+  "procedure": "Reload frozen parent and saved final adapter; greedy generation on matching eight-case batches, including previous 0.25m excursion example; compare selected labels. Validation predictions are not additional performance-test rows."
+}

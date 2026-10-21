@@ -1,0 +1,235 @@
+{
+  "project_id": "guardsynth-coc",
+  "run_id": "coauthor-seminar-2026-10-07-002",
+  "source": "projects/04-guardsynth-coc/paper/seminar/coauthor-seminar-v01-en.tex",
+  "language": "en",
+  "input_sha256": {
+    "projects/04-guardsynth-coc/paper/seminar/coauthor-seminar-v01-en.tex": "f6d9a50f0e631a9f3fff0ca411b1aae1a1460ddc9129c6158c95b749e7f7c121",
+    "projects/04-guardsynth-coc/paper/ieee-access/main.tex": "5f43d36bcf947e6b223540df2c08ab2f22a88121190cb178be2e9bcd4911068f",
+    "projects/04-guardsynth-coc/paper/ieee-access/references.bib": "55d935f81c21fe60569e883befaafcb938deef2bb006f7f3ae6a2c03863112dd",
+    "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_METHODOLOGY_V01_EN.md": "cf202803d80fabe9ea72e7b8523fb4388bc64991a2680769ded899716c62b9ad",
+    "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_EXPERIMENTS_V01_EN.md": "c11244b59232b0de91b0f6de8fa5f66986f212b0f5b389218232f1dd3e6414c6",
+    "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_EXPERIMENTS_SUPPLEMENT_V01_EN.md": "0c0f88ef0ff25cd47426ec45f1b825d717be62de2fd43ea9302557318bf7e7a4",
+    "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_RELATED_WORK_V01_EN.md": "ca82461a6fa1e4e2721c66a5161817f18e927f94c5955bc9862639bce95bfc23"
+  },
+  "outputs": {
+    "slides": {
+      "file": "coauthor-seminar-v01-en.pdf",
+      "pages": 32,
+      "sha256": "553d697d89fff7f6690406ad96901de4d3313695177ab511c8725e2ceb4e63ab"
+    },
+    "notes": {
+      "file": "coauthor-seminar-v01-en-notes.pdf",
+      "pages": 32,
+      "sha256": "b52263f233f9250dffea465936d7b0a9998662fc6c763eda3d51327084da12b8"
+    }
+  },
+  "engine": "LOCAL_PATH_REMOVED_79e0d7dfee0d",
+  "texinputs": ":/tmp/guardsynth-seminar-texdeps/tex//",
+  "main_slides": 26,
+  "backup_slides": 6,
+  "talk_minutes": 27,
+  "discussion_minutes": 3,
+  "timing": [
+    {
+      "slide": 1,
+      "start_seconds": 0,
+      "duration_seconds": 30
+    },
+    {
+      "slide": 2,
+      "start_seconds": 30,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 3,
+      "start_seconds": 90,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 4,
+      "start_seconds": 150,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 5,
+      "start_seconds": 210,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 6,
+      "start_seconds": 270,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 7,
+      "start_seconds": 330,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 8,
+      "start_seconds": 390,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 9,
+      "start_seconds": 450,
+      "duration_seconds": 90
+    },
+    {
+      "slide": 10,
+      "start_seconds": 540,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 11,
+      "start_seconds": 615,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 12,
+      "start_seconds": 675,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 13,
+      "start_seconds": 750,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 14,
+      "start_seconds": 810,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 15,
+      "start_seconds": 885,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 16,
+      "start_seconds": 945,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 17,
+      "start_seconds": 1020,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 18,
+      "start_seconds": 1080,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 19,
+      "start_seconds": 1155,
+      "duration_seconds": 105
+    },
+    {
+      "slide": 20,
+      "start_seconds": 1260,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 21,
+      "start_seconds": 1320,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 22,
+      "start_seconds": 1380,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 23,
+      "start_seconds": 1440,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 24,
+      "start_seconds": 1500,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 25,
+      "start_seconds": 1560,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 26,
+      "start_seconds": 1620,
+      "duration_seconds": 180
+    }
+  ],
+  "manuscript_and_experiments_modified": false,
+  "new_model_predictions": 0,
+  "visual_review": {
+    "status": "PASS",
+    "slides_reviewed": 32,
+    "presenter_note_pages_checked": 32,
+    "method": "All-page rendered contact sheets; detailed comparison-table, data-table, plot, and note-page inspection",
+    "primary_source_links": 9
+  },
+  "related_work_comparison": {
+    "slides": [
+      4,
+      5
+    ],
+    "basis": "Central objectives and representations, aligned with manuscript Table 1",
+    "primary_sources_checked": "2026-10-07",
+    "sources": [
+      {
+        "study": "DriveLM",
+        "url": "https://arxiv.org/abs/2312.14150"
+      },
+      {
+        "study": "DriveVLM",
+        "url": "https://arxiv.org/abs/2402.12289"
+      },
+      {
+        "study": "Alpamayo-R1",
+        "url": "https://arxiv.org/abs/2511.00088"
+      },
+      {
+        "study": "Drive-R1",
+        "url": "https://ojs.aaai.org/index.php/AAAI/article/view/37602"
+      },
+      {
+        "study": "DriveReg",
+        "url": "https://ojs.aaai.org/index.php/AAAI/article/view/41168"
+      },
+      {
+        "study": "Esterle et al.",
+        "url": "https://arxiv.org/abs/2007.00330"
+      },
+      {
+        "study": "NL2TL",
+        "url": "https://aclanthology.org/2023.emnlp-main.985/"
+      },
+      {
+        "study": "nl2spec",
+        "url": "https://arxiv.org/abs/2303.04864"
+      },
+      {
+        "study": "ACE",
+        "url": "https://attempto.ifi.uzh.ch/site/pubs/papers/FLAIRS0601FuchsN.pdf"
+      }
+    ],
+    "additional_internal_comparison": "Preceding Safety-Constrained CoC manuscript; publication metadata unconfirmed",
+    "external_baseline_experiments": false,
+    "performance_ranking": false
+  },
+  "verification": {
+    "xelatex": "PASS, two passes per PDF",
+    "overflow_missing_glyphs_undefined_references": "None",
+    "main_talk_minutes": 27,
+    "discussion_minutes": 3,
+    "primary_metric_values_matched": 36,
+    "unseen_condition_metric_values_matched": 18,
+    "english_only_slides_and_notes": true,
+    "korean_edition_preserved": true,
+    "manuscript_and_experiment_input_hashes": "Unchanged",
+    "file_naming": "No new findings; 10 pre-existing unrelated repository findings"
+  }
+}

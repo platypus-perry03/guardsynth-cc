@@ -119,7 +119,7 @@ polygon 확인만으로 depth·metric frame·temporal track·규범 근거를 �
 - 관측 paired effect/variance source ref가 없으면 생성되지 않는 power-planning 계약
 
 최종 preflight package:
-`artifacts/results/restricted/guardsynth-expert-pilot-preflight-001/m16-preflight-2026-08-12-v4/`
+`projects/04-guardsynth-coc/artifacts/restricted/guardsynth-expert-pilot-preflight-001/m16-preflight-2026-08-12-v4/`
 
 software 검증(2026-08-12):
 

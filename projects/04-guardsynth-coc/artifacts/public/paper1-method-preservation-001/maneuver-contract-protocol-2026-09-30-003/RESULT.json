@@ -1,0 +1,9 @@
+{
+  "status": "FROZEN_BEFORE_NEW_TRAINING",
+  "candidate_bindings": 3072,
+  "solver_status_counts": {
+    "UNSAT": 1152,
+    "SAT": 1920
+  },
+  "oracle_disagreements": 0
+}

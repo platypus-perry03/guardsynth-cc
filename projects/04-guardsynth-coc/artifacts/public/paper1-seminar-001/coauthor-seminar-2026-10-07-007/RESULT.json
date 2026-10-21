@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "project_id": "guardsynth-coc",
+  "run_id": "coauthor-seminar-2026-10-07-007",
+  "language": "en",
+  "main_slides": 29,
+  "backup_slides": 9,
+  "talk_minutes": 27,
+  "discussion_minutes": 3,
+  "outputs": {
+    "slides": {
+      "file": "coauthor-seminar-v01-en.pdf",
+      "pages": 38,
+      "sha256": "5316a74f4ce26821f59d440c04aa247ba18f33a95582f41ed55468a452fc6e07"
+    },
+    "notes": {
+      "file": "coauthor-seminar-v01-en-notes.pdf",
+      "pages": 38,
+      "sha256": "99b74706a5b3cd77e284a728e04ea3325ee40ed914c357cfbc1fff6394dc3f83"
+    }
+  },
+  "updates": [
+    "External-system comparison scope clarified and native checks moved to B9 in run 006",
+    "P0 + ZS-CoT and P0 + PS defined on slides 17 and 20",
+    "Inference-time prompting, answer extraction and token budgets explained in English notes"
+  ],
+  "new_model_predictions": 0,
+  "checks": {
+    "main_frames": 29,
+    "backup_frames": 9,
+    "unchanged_other_frames": 36,
+    "timing_unchanged": true,
+    "preserved_files": 107,
+    "prompt_definitions_on_slides": [
+      17,
+      20
+    ],
+    "no_retraining_or_constraint_addition_explicit": true,
+    "note_procedure_matches_runner": true,
+    "build_logs_clean": true,
+    "visual_review": {
+      "status": "PASS",
+      "slide_pages": [
+        17,
+        20
+      ],
+      "notes_pages": [
+        20
+      ],
+      "findings": "Definitions, graph, footers and English notes readable and unclipped."
+    },
+    "file_naming": {
+      "repository_exit_code": 1,
+      "preexisting_findings": 10,
+      "task_paths_in_findings": 0
+    }
+  }
+}

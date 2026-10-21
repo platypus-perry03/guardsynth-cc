@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import hashlib
-from fnmatch import fnmatch
 import json
 from pathlib import Path
 
@@ -77,7 +76,6 @@ class ArtifactRegistry:
         self.root = root.resolve()
         self._records: dict[str, dict] = {}
         self._discover_owned()
-        self._discover_legacy()
 
     @staticmethod
     def _asset_records(artifact_id: str, run_root: Path) -> tuple[list[dict], dict[str, dict]]:
@@ -147,7 +145,15 @@ class ArtifactRegistry:
         for owner_kind, owner_id, owner_root in _owners(self.root):
             if not owner_root.is_dir():
                 continue
-            for manifest_path in sorted(owner_root.glob("*/*/*/RUN_MANIFEST.json")):
+            run_roots = {
+                path.parent
+                for name in ("RUN_MANIFEST.json", "EMBEDDED_REVIEW_MANIFEST.json")
+                for path in owner_root.glob(f"*/*/*/{name}")
+            }
+            for run_root in sorted(run_roots):
+                manifest_path = run_root / "RUN_MANIFEST.json"
+                if not manifest_path.is_file():
+                    manifest_path = run_root / "EMBEDDED_REVIEW_MANIFEST.json"
                 actual_owner, classification = classify_artifact_path(self.root, manifest_path)
                 if actual_owner != owner_id:
                     raise ArtifactRegistryError(f"artifact owner mismatch: {manifest_path}")
@@ -160,46 +166,6 @@ class ArtifactRegistry:
                     manifest_path=manifest_path,
                     opaque_source=f"{owner_id}\0{classification}\0{relative}",
                 )
-
-    def _discover_legacy(self) -> None:
-        ownership_path = self.root / "artifacts/LEGACY_OWNERSHIP.json"
-        if not ownership_path.is_file():
-            return
-        ownership = json.loads(ownership_path.read_text(encoding="utf-8"))
-        if ownership.get("immutable") is not True:
-            raise ArtifactRegistryError("legacy artifact catalog must be immutable")
-        owner_kinds = {owner_id: owner_kind for owner_kind, owner_id, _ in _owners(self.root)}
-        for rule in ownership.get("rules", []):
-            owner_id = rule["owner"]
-            if owner_id not in owner_kinds:
-                raise ArtifactRegistryError(f"unknown legacy artifact owner: {owner_id}")
-            class_root = (self.root / "artifacts" / rule["class"]).resolve()
-            if not class_root.is_dir():
-                continue
-            access_classification = "intermediate" if rule["class"] == "intermediate" else rule["class"].split("/")[-1]
-            for experiment_root in sorted(class_root.iterdir()):
-                if not experiment_root.is_dir() or not fnmatch(experiment_root.name, rule["pattern"]):
-                    continue
-                manifests: list[Path] = []
-                for run_root in sorted(path for path in experiment_root.iterdir() if path.is_dir()):
-                    candidates = [
-                        path for path in (
-                            run_root / "RUN_MANIFEST.json",
-                            run_root / "EMBEDDED_REVIEW_MANIFEST.json",
-                        ) if path.is_file()
-                    ]
-                    if len(candidates) > 1:
-                        candidates = candidates[:1]
-                    manifests.extend(candidates)
-                for manifest_path in manifests:
-                    self._register(
-                        owner_kind=owner_kinds[owner_id],
-                        owner_id=owner_id,
-                        classification="legacy_immutable",
-                        access_classification=access_classification,
-                        manifest_path=manifest_path,
-                        opaque_source=f"legacy\0{owner_id}\0{manifest_path.relative_to(self.root).as_posix()}",
-                    )
 
     def records(self, *, include_restricted: bool = True) -> list[dict]:
         allowed = {"public"}

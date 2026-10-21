@@ -1,0 +1,8 @@
+{
+  "task": "temporal",
+  "arm": "ce_no_rule",
+  "seed": 123,
+  "rows": 240,
+  "status": "COMPLETE",
+  "elapsed_seconds": 967.8602529540658
+}

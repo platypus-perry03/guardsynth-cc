@@ -722,7 +722,7 @@ projects/03-sequential-coc-verification/
     feasibility-summary.md
 ```
 
-모델 출력 원문, 제한 데이터 및 trajectory 배열은 이 공개 설계 폴더가 아니라 접근 통제된 기존 `artifacts/results/restricted` 또는 `internal-derived` 경로에 저장한다.
+모델 출력 원문, 제한 데이터 및 trajectory 배열은 이 공개 설계 폴더가 아니라 접근 통제된 기존 `projects/03-sequential-coc-verification/artifacts/restricted` 또는 `internal-derived` 경로에 저장한다.
 
 ## 17. 첫 번째 실행 실험
 

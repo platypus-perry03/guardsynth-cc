@@ -71,7 +71,7 @@
 절차로 받는다. 실제 source-verified/export는 여전히 0이며 M14/M16 전체는 PARTIAL이다.
 
 [설계와 수용 기준](../designs/PAPER1_SOURCE_ACCEPTANCE_DESIGN_V01.md),
-[검토 화면](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-paper1-source-acceptance-001/scene18-source-acceptance-2026-09-08-003/scene18_source_binding_review.html).
+[검토 화면](../../artifacts/restricted/guardsynth-paper1-source-acceptance-001/scene18-source-acceptance-2026-09-08-003/scene18_source_binding_review.html).
 
 ## 6. 2026-09-08 행동 계약의 실제 Core실행
 
@@ -79,7 +79,7 @@
 [개발 계약](../designs/PAPER1_ACTION_CONTRACT_DESIGN_V01.md)은 `CLEAR_REQUIRED_FOR_ENTRY`를
 명시하고 보행자·주도로 의무를 분리한다. 실제 source/gold 계약 전체의 동결은 아니다.
 
-- 실행: `artifacts/projects/guardsynth-coc/restricted/guardsynth-paper1-action-contract-001/scene18-action-contract-2026-09-08-002/`
+- 실행: `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-paper1-action-contract-001/scene18-action-contract-2026-09-08-002/`
 - 경로: 해시 재검증한 #18 CoC/annotation/video → pinned task adapter →
   `eblc-action-contract-v0.1` parser → 기존 typed Core → 기존 SMT compiler → 공통 CNL renderer.
 - Z3 4.16.0: 기본 SAT 1, 전제 SAT 12, probe 12(SAT 3/UNSAT 9), 총 25/25 예상 일치.
@@ -127,10 +127,10 @@ tensor를 0으로 바꾸면 마지막-token logits가 바뀌었지만, 이는 te
 ## 2. 증거와 실패 이력
 
 owner-scoped restricted root:
-`artifacts/projects/guardsynth-coc/restricted/guardsynth-eblc-learning-001/`
+`projects/04-guardsynth-coc/artifacts/restricted/guardsynth-eblc-learning-001/`
 
-- [source audit 002](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-eblc-learning-001/paper1-source-audit-2026-09-06-002/RESULT.json): inventory 완료, cohort NOT_EVALUATED
-- [VLM smoke 003](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-eblc-learning-001/paper1-vlm-smoke-2026-09-06-003/RESULT.json): 네 arm update·weights·image input 확인; lowercase adapter 저장 재현
+- [source audit 002](../../artifacts/restricted/guardsynth-eblc-learning-001/paper1-source-audit-2026-09-06-002/RESULT.json): inventory 완료, cohort NOT_EVALUATED
+- [VLM smoke 003](../../artifacts/restricted/guardsynth-eblc-learning-001/paper1-vlm-smoke-2026-09-06-003/RESULT.json): 네 arm update·weights·image input 확인; lowercase adapter 저장 재현
 - VLM smoke 002도 성공한 불변 run으로 보존한다. PEFT가 arm 이름으로 생성한 대문자
   adapter 디렉터리 4개는 manifest 보존 목적의 exact-run naming 예외를 등록했고,
   003부터 producer의 adapter 이름을 소문자로 고쳤다. 구조 test가 예외를 이 4개에 한정한다.
@@ -142,7 +142,7 @@ owner-scoped restricted root:
 검증: 새 CNL/runner integration 18, 기존 source generator 12, platform CNL 10,
 portal/projection 9, checkpoint naming 예외 범위 1로 targeted tests 50개가 통과했다.
 새 문서 링크와 성공 run output hash를 검증했다. naming 검사는 기존 사용자 제출
-`m16_geometry_candidate_review (1).csv`/`.json` 및 root `portal_exec.md` 3건만 남는다.
+`m16_geometry_candidate_review_v2_0.csv`/`.json` 및 root `portal_exec.md` 3건만 남는다.
 이 사용자 파일들은 변경하지 않았다. 기존 structure suite도 20/21 통과하며 같은 naming
 3건을 보고하는 검사 1개만 실패한다.
 
@@ -172,9 +172,9 @@ source inventory에는 2026-09-05의 prior field status가 포함되며, 이를 
 ## 4. 2026-09-07 기존 검토 재사용 실행
 
 위 다음 작업 중 기존 답변과 실제 장면 source의 연결을 실행했다.
-[읽기 전용 대응표](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-review-constraint-alignment-001/reviewed-scene-alignment-2026-09-07-001/review_constraint_alignment.html),
-[집계 결과](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-review-constraint-alignment-001/reviewed-scene-alignment-2026-09-07-001/RESULT.json),
-[전체 JSON](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-review-constraint-alignment-001/reviewed-scene-alignment-2026-09-07-001/scene_constraint_alignment.json)에 보존한다.
+[읽기 전용 대응표](../../artifacts/restricted/guardsynth-review-constraint-alignment-001/reviewed-scene-alignment-2026-09-07-001/review_constraint_alignment.html),
+[집계 결과](../../artifacts/restricted/guardsynth-review-constraint-alignment-001/reviewed-scene-alignment-2026-09-07-001/RESULT.json),
+[전체 JSON](../../artifacts/restricted/guardsynth-review-constraint-alignment-001/reviewed-scene-alignment-2026-09-07-001/scene_constraint_alignment.json)에 보존한다.
 
 - 60건 영상 설문의 JSON/CSV·packet·이미지 연결 및 이미지 실제 bytes hash를 재검증했다.
 - 98건 geometry 제출의 JSON/CSV·candidate hash를 재검증하고, 선택 19건의 5-frame
@@ -201,9 +201,9 @@ clause를 동결하는 작업이다. 이미 완료한 human 관찰을 취소하�
 
 ## 5. 2026-09-07 사건 시점 source binding 실행
 
-[사건별 보고서](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-review-constraint-alignment-001/event-source-binding-2026-09-07-002/REPORT_KO.md),
-[집계 결과](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-review-constraint-alignment-001/event-source-binding-2026-09-07-002/RESULT.json),
-[대상·시점·출처 JSON](../../../../artifacts/projects/guardsynth-coc/restricted/guardsynth-review-constraint-alignment-001/event-source-binding-2026-09-07-002/event_source_bindings.json).
+[사건별 보고서](../../artifacts/restricted/guardsynth-review-constraint-alignment-001/event-source-binding-2026-09-07-002/REPORT_KO.md),
+[집계 결과](../../artifacts/restricted/guardsynth-review-constraint-alignment-001/event-source-binding-2026-09-07-002/RESULT.json),
+[대상·시점·출처 JSON](../../artifacts/restricted/guardsynth-review-constraint-alignment-001/event-source-binding-2026-09-07-002/event_source_bindings.json).
 
 기존 run의 입력 해시를 다시 확인하고 18개 CASCADE 원본 파일을 해시·clip ID·event 시점으로
 연결했다. 19개 사건/32개 개발 후보 분모와 기존 응답을 보존했다.

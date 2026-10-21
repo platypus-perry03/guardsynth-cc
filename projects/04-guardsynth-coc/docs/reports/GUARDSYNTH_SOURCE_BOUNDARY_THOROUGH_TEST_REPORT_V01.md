@@ -39,7 +39,7 @@
 
 ## 3. 최종 결과
 
-[최신 terminal run](../../../../artifacts/results/public/guardsynth-real-scene-readiness-001/terminal-readiness-2026-08-09-v3/RESULT.json)의 결과는 다음과 같다.
+[최신 terminal run](../../artifacts/public/guardsynth-real-scene-readiness-001/terminal-readiness-2026-08-09-v3/RESULT.json)의 결과는 다음과 같다.
 
 | 테스트 | 결과 |
 |---|---:|

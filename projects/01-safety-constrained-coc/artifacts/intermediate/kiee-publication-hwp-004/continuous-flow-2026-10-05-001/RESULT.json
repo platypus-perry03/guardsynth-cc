@@ -1,0 +1,49 @@
+{
+  "status": "awaiting-hancom-validation",
+  "native_sections": 1,
+  "previous_native_sections": 15,
+  "forced_source_column_breaks": 0,
+  "logical_tables": 12,
+  "source_cells_checked": 318,
+  "table_source_mismatches": 0,
+  "body_and_captions_preserved": true,
+  "embedded_images_preserved": true,
+  "normal_size_object_anchors": true,
+  "object_cache_text_height_matches_line_height": true,
+  "independent_parser_valid": true,
+  "cache_page_overflows": 0,
+  "cache_estimated_pages": 15,
+  "hancom_page_count": null,
+  "hancom_application_validation": false,
+  "reported_hancom_defects": {
+    "pages": [
+      5,
+      6,
+      7,
+      9,
+      10,
+      12,
+      13,
+      15
+    ],
+    "observations": [
+      "Single-line spill followed by forced page-sized section boundary.",
+      "Large remainder whitespace after displaced body text.",
+      "Table/caption overlap around Tables 5 and 6."
+    ]
+  },
+  "changes": [
+    "Remove all artificial source-page sections; the paper has one native section.",
+    "Remove all source-column break attributes.",
+    "Keep native one/two-column changes and start wide blocks at a page boundary.",
+    "Use 8.5pt inline-object anchors instead of 0.1pt anchors.",
+    "Use native-style equal line/text object heights and 85 percent baselines.",
+    "Reserve cell text line advances in minimum row heights.",
+    "Add 3pt spacing after table/image anchor paragraphs."
+  ],
+  "limitations": [
+    "Actual Hancom pagination and rendering have not been directly verified.",
+    "The cache estimates 15 pages; this is not a confirmed Hancom page count.",
+    "The hwp-cli renderer cannot validate within-section column changes, so no claimed final PDF preview is provided."
+  ]
+}

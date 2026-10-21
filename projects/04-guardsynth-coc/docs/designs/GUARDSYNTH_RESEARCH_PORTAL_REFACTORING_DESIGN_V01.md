@@ -44,7 +44,7 @@ human review 완료 또는 core research 완료로 변환하지 않는다.
 - repository 구조·명명 권위: `AGENTS.md`, Structure Codex v3.6, File Naming Codex v1.4
 - registry: `PROJECT_REGISTRY.json`, `PROJECTS.md`
 - 5개 프로젝트: 각 `PROJECT.yaml`, `README.md`, `STATUS.md`, canonical 계획 통제 세트,
-  survey index와 `results/RESULT_INDEX.md`
+  survey index와 `artifacts/RESULT_INDEX.md`
 - 공용 플랫폼: `platforms/eblc-bcv/PLATFORM.yaml`, `README.md`, `STATUS.md`, result index
 - 포털: README, 944-line builder/server, site assets, 207-line test suite와 현재 v9 run manifest
 - GuardSynth 연구 권위: 연구계획 v2, milestone ledger, execution tracker, M16 requirements,
@@ -97,7 +97,7 @@ canonical survey에 기록된 값만 사용한다.
 ### 2.2 현재 v9 run의 정확한 범위
 
 현재 canonical portal run은
-`artifacts/projects/guardsynth-coc/restricted/guardsynth-project-portal-001/portal-2026-08-14-v9/`
+`projects/04-guardsynth-coc/artifacts/restricted/guardsynth-project-portal-001/portal-2026-08-14-v9/`
 이다. 5개 프로젝트, 52개 milestone, 논문 PDF 2개와 restricted review HTML 9개를 포함한다.
 이는 `BUILT` 상태의 local tracking/review package이며 연구 결과, 전문가 agreement, 법률 자문,
 실제 차량 안전 증거가 아니다.
@@ -334,7 +334,7 @@ CoC                  실제 장면·시간 상태       외부 규칙·시스템
 5. milestone ledger
 6. execution tracker
 7. `docs/surveys/README.md`
-8. `results/RESULT_INDEX.md`
+8. `artifacts/RESULT_INDEX.md`
 
 project page는 1–6을 live control set으로, 7–8을 live evidence index로 읽는다. milestone result와
 lesson은 문서에 명시된 경우만 표시하고, 없으면 `canonical 문서에 기록되지 않음`으로 둔다.
@@ -515,7 +515,7 @@ classification header와 cache policy를 붙인다.
 public export는 restricted DB/file의 복사가 아니다. allowlisted aggregate field만 새 object로
 직렬화한다. export 전 leakage test는 raw identifier, path separator pattern, CoC full-text hash,
 image magic bytes, restricted artifact ID와 forbidden key를 검사한다. 결과는 해당 review owner의
-`artifacts/projects/<project-id>/public/`에 새 immutable run으로 쓴다.
+`projects/<NN>-<project-id>/artifacts/public/`에 새 immutable run으로 쓴다.
 
 ## 11. external review 데이터 모델
 
@@ -752,7 +752,7 @@ remote host에서 portal은 계속 loopback에만 열린다.
 ```bash
 # remote host
 python3 -m apps.research_portal.run \
-  --output-dir artifacts/projects/guardsynth-coc/restricted/guardsynth-project-portal-001/<new-run-id> \
+  --output-dir projects/04-guardsynth-coc/artifacts/restricted/guardsynth-project-portal-001/<new-run-id> \
   --serve --port 8765
 
 # reviewer workstation
@@ -930,9 +930,9 @@ projects/04-guardsynth-coc/docs/decisions/GUARDSYNTH_PORTAL_REVIEW_STORAGE_DECIS
 ### 18.5 generated paths
 
 ```text
-artifacts/projects/guardsynth-coc/restricted/guardsynth-project-portal-001/<new-run-id>/
-artifacts/projects/<project-id>/restricted/research-review-round-001/<review-round-id>/
-artifacts/projects/<project-id>/public/research-review-export-001/<export-run-id>/
+projects/04-guardsynth-coc/artifacts/restricted/guardsynth-project-portal-001/<new-run-id>/
+projects/<NN>-<project-id>/artifacts/restricted/research-review-round-001/<review-round-id>/
+projects/<NN>-<project-id>/artifacts/public/research-review-export-001/<export-run-id>/
 ```
 
 review operations directory는 `OPEN` 동안 운영 state이고 close/final integrity 후 immutable이다.

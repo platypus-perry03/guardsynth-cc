@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "project_id": "guardsynth-coc",
+  "run_id": "coauthor-seminar-2026-10-08-001",
+  "language": "en",
+  "title": "GuardSynth: Augmenting Chain-of-Causation with Verified Behavioral Constraints for Autonomous Driving",
+  "main_slides": 29,
+  "backup_slides": 9,
+  "talk_minutes": 27,
+  "discussion_minutes": 3,
+  "outputs": {
+    "slides": {
+      "file": "coauthor-seminar-v01-en.pdf",
+      "pages": 38,
+      "sha256": "899889ed15c7f9d5b30d38f36f0439db5ecb87b4b83600bd2c2eb86a78b9808c"
+    },
+    "notes": {
+      "file": "coauthor-seminar-v01-en-notes.pdf",
+      "pages": 38,
+      "sha256": "0eef602b72d13533836ba5b474ada26d52944974f2c5fc2d9aa3dba70a87e74a"
+    }
+  },
+  "updates": [
+    "Manuscript title synchronized on slide1 and PDF metadata"
+  ],
+  "new_model_predictions": 0,
+  "checks": {
+    "other_slide_pages_unchanged": 37,
+    "other_note_pages_unchanged": 37,
+    "timing_unchanged": true,
+    "build_logs_clean": true,
+    "visual_review": "PASS"
+  }
+}

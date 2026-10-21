@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-12T17:12:27.030762+00:00",
+  "controller_pid": 1549764,
+  "source_sha256": "340d58f7ea89c8b6df1e21c17cf53a694c9161cf83558c3ce5eda2175a3a5d81",
+  "reason": "Previous execution sessions ended before completion",
+  "unchanged_protocol": true,
+  "saved_evaluation_rows": 76,
+  "saved_diagnostic_rows": 616,
+  "restarted_fits": [
+    "temporal_ce_rule_seed123",
+    "temporal_semantic_rule_seed123"
+  ],
+  "return_codes": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "finished_at": "2026-10-12T17:19:53.667038+00:00"
+}

@@ -1,4 +1,4 @@
-"""Build the public workspace SHA-256 manifest under Structure Codex v3."""
+"""Build the public workspace SHA-256 manifest under Structure Codex v4."""
 
 from __future__ import annotations
 
@@ -20,23 +20,22 @@ EXCLUDED_PREFIXES = (
     ".git/",
     ".agents/",
     ".codex/",
+    ".aws/",
     ".ruff_cache/",
     ".superpowers/",
     ".worktrees/",
     "archive/handoff/packages/",
     "archive/installers/",
-    "artifacts/results/restricted/",
     "data/restricted/",
     "projects/01-safety-constrained-coc/experiments/alpamayo/",
     "projects/01-safety-constrained-coc/experiments/vlm_guard_learning/",
     "papers/",
     "runtime/",
     "third_party/",
-    "portal_exec.md",
 )
 EXCLUDED_PATTERNS = (
-    "artifacts/projects/*/restricted/*",
-    "artifacts/platforms/*/restricted/*",
+    "projects/*/artifacts/restricted/*",
+    "platforms/*/artifacts/restricted/*",
 )
 MODEL_ARTIFACT_SUFFIXES = (
     ".safetensors",
@@ -46,7 +45,7 @@ MODEL_ARTIFACT_SUFFIXES = (
     ".onnx",
     ".gguf",
 )
-SMALL_VLM_ROOT = "artifacts/results/public/small-vlm-guard-v0/"
+SMALL_VLM_ROOT = "projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/"
 SMALL_VLM_EXCLUDED_PARTS = {"adapter", "processor"}
 EXCLUDED_PARTS = {
     ".git", ".cache", "__pycache__", ".pytest_cache", ".matplotlib-cache",

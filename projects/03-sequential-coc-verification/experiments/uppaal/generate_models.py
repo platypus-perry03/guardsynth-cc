@@ -11,9 +11,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 PROJECT_ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / "PROJECT_REGISTRY.json").is_file())
-MODEL_DIR = PROJECT_ROOT / "artifacts/intermediate/uppaal-models"
+MODEL_DIR = PROJECT_ROOT / "projects/03-sequential-coc-verification/projects/03-sequential-coc-verification/artifacts/intermediate/uppaal-models"
 DEFAULT_EPISODE_RESULT = (
-    PROJECT_ROOT / "artifacts/results/public/scene-0001/episode-check-result.json"
+    PROJECT_ROOT / "projects/03-sequential-coc-verification/artifacts/public/scene-0001/episode-check-result.json"
 )
 
 

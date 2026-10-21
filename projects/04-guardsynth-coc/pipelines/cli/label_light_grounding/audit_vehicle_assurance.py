@@ -14,7 +14,7 @@ from typing import Any
 if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[4]))
 
-from cli.project_paths import project_root
+from cli.project_paths import artifact_roots, project_root
 
 
 ROOT = project_root(__file__)
@@ -26,7 +26,7 @@ from guard_synth.vehicle_assurance_audit import audit_vehicle_assurance_candidat
 
 
 EXPERIMENT_ID = "GUARDSYNTH-VEHICLE-ASSURANCE-AUDIT-001"
-RESTRICTED_RESULTS = ROOT / "artifacts/results/restricted"
+RESTRICTED_RESULTS = ROOT / "projects/04-guardsynth-coc/artifacts/restricted"
 RESTRICTED_DATA = ROOT / "data/restricted"
 DATASET_URL = "https://huggingface.co/datasets/nvidia/PhysicalAI-Autonomous-Vehicles"
 DRIVE_AGX_URL = "https://developer.nvidia.com/drive/agx"
@@ -57,6 +57,7 @@ def _restricted_input(path: Path) -> Path:
     result = path.resolve()
     if not (
         result.is_relative_to(RESTRICTED_RESULTS.resolve())
+        or any(result.is_relative_to(root) for root in artifact_roots(ROOT, "restricted"))
         or result.is_relative_to(RESTRICTED_DATA.resolve())
     ):
         raise ValueError("scene inputs must remain under restricted data/results")

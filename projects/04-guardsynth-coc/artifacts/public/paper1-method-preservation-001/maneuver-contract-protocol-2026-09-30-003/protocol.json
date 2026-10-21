@@ -1,0 +1,59 @@
+{
+  "project_id": "guardsynth-coc",
+  "protocol": "supplied-multitask-v0.1",
+  "task": "maneuver",
+  "arms": [
+    "P0",
+    "P1",
+    "P2",
+    "SHUFFLED_GUARD"
+  ],
+  "seeds": [
+    42,
+    17,
+    123
+  ],
+  "data_seed": 20260930,
+  "train_rows": 384,
+  "evaluation_rows": 96,
+  "splits": [
+    "test",
+    "paraphrase",
+    "unseen",
+    "hard"
+  ],
+  "epochs": 3,
+  "batch_size": 2,
+  "accumulation": 8,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.01,
+  "lora_rank": 8,
+  "lora_alpha": 16,
+  "lora_dropout": 0.05,
+  "optimizer_updates_per_fit": 72,
+  "model_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+  "checkpoint_policy": "FINAL_FIXED_BUDGET_NO_SELECTION",
+  "decoder": "GREEDY_MAX_12_TOKENS_EXACT_LABEL",
+  "shuffle": "P2_CNL_PERMUTED_WITHIN_SUBTYPE_TRAIN_ONLY_FIXED_DATA_SEED",
+  "metrics": {
+    "accuracy": "correct",
+    "violation_rate": "violation",
+    "compliant_completion": "compliant_completion",
+    "goal_completion": "goal_complete",
+    "conservative_rate": "conservative",
+    "deadlock_rate": "deadlock",
+    "coverage": "valid",
+    "pair_accuracy": "pair_correct"
+  },
+  "denominator": "ALL_ROWS_IN_EACH_REPORTED_STRATUM",
+  "limits": [
+    "Supplied synthetic candidate summaries, not real-road extraction or closed-loop control.",
+    "Candidate scalars are in text; images are schematic and may repeat across splits.",
+    "P0 lacks the variable contract and has contradictory paired targets.",
+    "P1/P2 receive constraints during training and evaluation; not train-only benefit.",
+    "Finite candidate stop/gap checks do not prove continuous abort/retry dynamics.",
+    "Exact thresholds retain milli-unit precision; legacy one-decimal wording is corrected in all guarded arms.",
+    "Paraphrase reuses test scenes; hard combines boundary, wording and units, not factorial.",
+    "Three optimization seeds and synthetic parameter templates do not establish road generalization."
+  ]
+}

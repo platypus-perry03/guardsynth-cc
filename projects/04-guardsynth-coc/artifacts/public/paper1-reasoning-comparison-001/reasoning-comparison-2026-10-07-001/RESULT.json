@@ -1,0 +1,1362 @@
+{
+  "status": "COMPLETE",
+  "project_id": "guardsynth-coc",
+  "scored_predictions": 2880,
+  "unique_inference_costs": {
+    "temporal": {
+      "zero_shot_cot": [
+        {
+          "seed": 42,
+          "unique_inputs": 120,
+          "mean_generated_tokens": 2,
+          "total_generated_tokens": 240,
+          "generation_seconds": 4.678913559764624,
+          "reason_cap_hits": 0,
+          "reason_label_only": 120
+        },
+        {
+          "seed": 17,
+          "unique_inputs": 120,
+          "mean_generated_tokens": 2,
+          "total_generated_tokens": 240,
+          "generation_seconds": 4.156268622726202,
+          "reason_cap_hits": 0,
+          "reason_label_only": 120
+        },
+        {
+          "seed": 123,
+          "unique_inputs": 120,
+          "mean_generated_tokens": 2,
+          "total_generated_tokens": 240,
+          "generation_seconds": 4.724282253533602,
+          "reason_cap_hits": 0,
+          "reason_label_only": 120
+        }
+      ],
+      "plan_and_solve": [
+        {
+          "seed": 42,
+          "unique_inputs": 120,
+          "mean_generated_tokens": 2,
+          "total_generated_tokens": 240,
+          "generation_seconds": 4.20769065245986,
+          "reason_cap_hits": 0,
+          "reason_label_only": 120
+        },
+        {
+          "seed": 17,
+          "unique_inputs": 120,
+          "mean_generated_tokens": 2,
+          "total_generated_tokens": 240,
+          "generation_seconds": 4.179111827164888,
+          "reason_cap_hits": 0,
+          "reason_label_only": 120
+        },
+        {
+          "seed": 123,
+          "unique_inputs": 120,
+          "mean_generated_tokens": 2,
+          "total_generated_tokens": 240,
+          "generation_seconds": 4.2770263366401196,
+          "reason_cap_hits": 0,
+          "reason_label_only": 120
+        }
+      ]
+    },
+    "static": {
+      "zero_shot_cot": [
+        {
+          "seed": 42,
+          "unique_inputs": 24,
+          "mean_generated_tokens": 2.3333333333333335,
+          "total_generated_tokens": 56,
+          "generation_seconds": 1.7161370441317558,
+          "reason_cap_hits": 0,
+          "reason_label_only": 24
+        },
+        {
+          "seed": 17,
+          "unique_inputs": 24,
+          "mean_generated_tokens": 2,
+          "total_generated_tokens": 48,
+          "generation_seconds": 0.9043491706252098,
+          "reason_cap_hits": 0,
+          "reason_label_only": 24
+        },
+        {
+          "seed": 123,
+          "unique_inputs": 24,
+          "mean_generated_tokens": 2,
+          "total_generated_tokens": 48,
+          "generation_seconds": 0.787743903696537,
+          "reason_cap_hits": 0,
+          "reason_label_only": 24
+        }
+      ],
+      "plan_and_solve": [
+        {
+          "seed": 42,
+          "unique_inputs": 24,
+          "mean_generated_tokens": 246.45833333333334,
+          "total_generated_tokens": 5915,
+          "generation_seconds": 32.91452429443598,
+          "reason_cap_hits": 23,
+          "reason_label_only": 1
+        },
+        {
+          "seed": 17,
+          "unique_inputs": 24,
+          "mean_generated_tokens": 13.208333333333334,
+          "total_generated_tokens": 317,
+          "generation_seconds": 10.883921463042498,
+          "reason_cap_hits": 1,
+          "reason_label_only": 23
+        },
+        {
+          "seed": 123,
+          "unique_inputs": 24,
+          "mean_generated_tokens": 258.2916666666667,
+          "total_generated_tokens": 6199,
+          "generation_seconds": 28.531292617321014,
+          "reason_cap_hits": 24,
+          "reason_label_only": 0
+        }
+      ]
+    },
+    "maneuver": {
+      "zero_shot_cot": [
+        {
+          "seed": 42,
+          "unique_inputs": 38,
+          "mean_generated_tokens": 2,
+          "total_generated_tokens": 76,
+          "generation_seconds": 2.429567325860262,
+          "reason_cap_hits": 0,
+          "reason_label_only": 38
+        },
+        {
+          "seed": 17,
+          "unique_inputs": 38,
+          "mean_generated_tokens": 2,
+          "total_generated_tokens": 76,
+          "generation_seconds": 1.6901751421391964,
+          "reason_cap_hits": 0,
+          "reason_label_only": 38
+        },
+        {
+          "seed": 123,
+          "unique_inputs": 38,
+          "mean_generated_tokens": 2,
+          "total_generated_tokens": 76,
+          "generation_seconds": 1.9531912952661514,
+          "reason_cap_hits": 0,
+          "reason_label_only": 38
+        }
+      ],
+      "plan_and_solve": [
+        {
+          "seed": 42,
+          "unique_inputs": 38,
+          "mean_generated_tokens": 2,
+          "total_generated_tokens": 76,
+          "generation_seconds": 1.7505443096160889,
+          "reason_cap_hits": 0,
+          "reason_label_only": 38
+        },
+        {
+          "seed": 17,
+          "unique_inputs": 38,
+          "mean_generated_tokens": 2,
+          "total_generated_tokens": 76,
+          "generation_seconds": 1.7307818457484245,
+          "reason_cap_hits": 0,
+          "reason_label_only": 38
+        },
+        {
+          "seed": 123,
+          "unique_inputs": 38,
+          "mean_generated_tokens": 2,
+          "total_generated_tokens": 76,
+          "generation_seconds": 1.91572992131114,
+          "reason_cap_hits": 0,
+          "reason_label_only": 38
+        }
+      ]
+    }
+  },
+  "three_seed_means": {
+    "temporal": {
+      "zero_shot_cot": {
+        "accuracy": 0.4986111111111111,
+        "violation_rate": 0.18194444444444444,
+        "pair_accuracy": 0.0,
+        "invalid_rate": 0.0
+      },
+      "plan_and_solve": {
+        "accuracy": 0.4986111111111111,
+        "violation_rate": 0.17916666666666667,
+        "pair_accuracy": 0.0,
+        "invalid_rate": 0.0
+      },
+      "P0": {
+        "accuracy": 0.4986111111111111,
+        "violation_rate": 0.19166666666666665,
+        "pair_accuracy": 0.0,
+        "invalid_rate": 0.0
+      },
+      "P1": {
+        "accuracy": 0.9680555555555556,
+        "violation_rate": 0.013888888888888888,
+        "pair_accuracy": 0.9361111111111111,
+        "invalid_rate": 0.0
+      },
+      "P2": {
+        "accuracy": 0.9805555555555555,
+        "violation_rate": 0.008333333333333333,
+        "pair_accuracy": 0.9611111111111111,
+        "invalid_rate": 0.0
+      }
+    },
+    "max_speed": {
+      "zero_shot_cot": {
+        "accuracy": 0.5,
+        "violation_rate": 0.25,
+        "pair_accuracy": 0.0,
+        "invalid_rate": 0.0
+      },
+      "plan_and_solve": {
+        "accuracy": 0.5,
+        "violation_rate": 0.2569444444444444,
+        "pair_accuracy": 0.0,
+        "invalid_rate": 0.0
+      },
+      "P0": {
+        "accuracy": 0.5,
+        "violation_rate": 0.24305555555555555,
+        "pair_accuracy": 0.0,
+        "invalid_rate": 0.0
+      },
+      "P1": {
+        "accuracy": 1.0,
+        "violation_rate": 0.0,
+        "pair_accuracy": 1.0,
+        "invalid_rate": 0.0
+      },
+      "P2": {
+        "accuracy": 1.0,
+        "violation_rate": 0.0,
+        "pair_accuracy": 1.0,
+        "invalid_rate": 0.0
+      }
+    },
+    "min_clearance": {
+      "zero_shot_cot": {
+        "accuracy": 0.5,
+        "violation_rate": 0.25,
+        "pair_accuracy": 0.0,
+        "invalid_rate": 0.0
+      },
+      "plan_and_solve": {
+        "accuracy": 0.5,
+        "violation_rate": 0.2569444444444444,
+        "pair_accuracy": 0.0,
+        "invalid_rate": 0.0
+      },
+      "P0": {
+        "accuracy": 0.5,
+        "violation_rate": 0.24305555555555555,
+        "pair_accuracy": 0.0,
+        "invalid_rate": 0.0
+      },
+      "P1": {
+        "accuracy": 1.0,
+        "violation_rate": 0.0,
+        "pair_accuracy": 1.0,
+        "invalid_rate": 0.0
+      },
+      "P2": {
+        "accuracy": 1.0,
+        "violation_rate": 0.0,
+        "pair_accuracy": 1.0,
+        "invalid_rate": 0.0
+      }
+    },
+    "min_entry_delay": {
+      "zero_shot_cot": {
+        "accuracy": 0.5,
+        "violation_rate": 0.25,
+        "pair_accuracy": 0.0,
+        "invalid_rate": 0.0
+      },
+      "plan_and_solve": {
+        "accuracy": 0.5,
+        "violation_rate": 0.2569444444444444,
+        "pair_accuracy": 0.0,
+        "invalid_rate": 0.0
+      },
+      "P0": {
+        "accuracy": 0.5,
+        "violation_rate": 0.24305555555555555,
+        "pair_accuracy": 0.0,
+        "invalid_rate": 0.0
+      },
+      "P1": {
+        "accuracy": 1.0,
+        "violation_rate": 0.0,
+        "pair_accuracy": 1.0,
+        "invalid_rate": 0.0
+      },
+      "P2": {
+        "accuracy": 1.0,
+        "violation_rate": 0.0,
+        "pair_accuracy": 1.0,
+        "invalid_rate": 0.0
+      }
+    },
+    "cruise_stop": {
+      "zero_shot_cot": {
+        "accuracy": 0.5,
+        "violation_rate": 0.2361111111111111,
+        "pair_accuracy": 0.0,
+        "invalid_rate": 0.0
+      },
+      "plan_and_solve": {
+        "accuracy": 0.5,
+        "violation_rate": 0.25,
+        "pair_accuracy": 0.0,
+        "invalid_rate": 0.0
+      },
+      "P0": {
+        "accuracy": 0.5,
+        "violation_rate": 0.2361111111111111,
+        "pair_accuracy": 0.0,
+        "invalid_rate": 0.0
+      },
+      "P1": {
+        "accuracy": 1.0,
+        "violation_rate": 0.0,
+        "pair_accuracy": 1.0,
+        "invalid_rate": 0.0
+      },
+      "P2": {
+        "accuracy": 1.0,
+        "violation_rate": 0.0,
+        "pair_accuracy": 1.0,
+        "invalid_rate": 0.0
+      }
+    },
+    "lane_change": {
+      "zero_shot_cot": {
+        "accuracy": 0.5,
+        "violation_rate": 0.3680555555555556,
+        "pair_accuracy": 0.0,
+        "invalid_rate": 0.0
+      },
+      "plan_and_solve": {
+        "accuracy": 0.5,
+        "violation_rate": 0.3541666666666667,
+        "pair_accuracy": 0.0,
+        "invalid_rate": 0.0
+      },
+      "P0": {
+        "accuracy": 0.5,
+        "violation_rate": 0.3819444444444444,
+        "pair_accuracy": 0.0,
+        "invalid_rate": 0.0
+      },
+      "P1": {
+        "accuracy": 1.0,
+        "violation_rate": 0.0,
+        "pair_accuracy": 1.0,
+        "invalid_rate": 0.0
+      },
+      "P2": {
+        "accuracy": 0.9791666666666666,
+        "violation_rate": 0.0,
+        "pair_accuracy": 0.9583333333333334,
+        "invalid_rate": 0.0
+      }
+    }
+  },
+  "per_seed": {
+    "temporal": {
+      "zero_shot_cot": [
+        {
+          "seed": 42,
+          "rows": 240,
+          "pairs": 120,
+          "accuracy": 0.49583333333333335,
+          "violation_rate": 0.2125,
+          "violation_rate_valid_only": 0.2125,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 17,
+          "rows": 240,
+          "pairs": 120,
+          "accuracy": 0.5,
+          "violation_rate": 0.10833333333333334,
+          "violation_rate_valid_only": 0.10833333333333334,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 123,
+          "rows": 240,
+          "pairs": 120,
+          "accuracy": 0.5,
+          "violation_rate": 0.225,
+          "violation_rate_valid_only": 0.225,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        }
+      ],
+      "plan_and_solve": [
+        {
+          "seed": 42,
+          "rows": 240,
+          "pairs": 120,
+          "accuracy": 0.49583333333333335,
+          "violation_rate": 0.225,
+          "violation_rate_valid_only": 0.225,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 17,
+          "rows": 240,
+          "pairs": 120,
+          "accuracy": 0.5,
+          "violation_rate": 0.10416666666666667,
+          "violation_rate_valid_only": 0.10416666666666667,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 123,
+          "rows": 240,
+          "pairs": 120,
+          "accuracy": 0.5,
+          "violation_rate": 0.20833333333333334,
+          "violation_rate_valid_only": 0.20833333333333334,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        }
+      ],
+      "P0": [
+        {
+          "seed": 42,
+          "rows": 240,
+          "pairs": 120,
+          "accuracy": 0.49583333333333335,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 17,
+          "rows": 240,
+          "pairs": 120,
+          "accuracy": 0.5,
+          "violation_rate": 0.1125,
+          "violation_rate_valid_only": 0.1125,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 123,
+          "rows": 240,
+          "pairs": 120,
+          "accuracy": 0.5,
+          "violation_rate": 0.2125,
+          "violation_rate_valid_only": 0.2125,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        }
+      ],
+      "P1": [
+        {
+          "seed": 42,
+          "rows": 240,
+          "pairs": 120,
+          "accuracy": 0.9708333333333333,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.9416666666666667
+        },
+        {
+          "seed": 17,
+          "rows": 240,
+          "pairs": 120,
+          "accuracy": 0.9458333333333333,
+          "violation_rate": 0.0375,
+          "violation_rate_valid_only": 0.0375,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.8916666666666667
+        },
+        {
+          "seed": 123,
+          "rows": 240,
+          "pairs": 120,
+          "accuracy": 0.9875,
+          "violation_rate": 0.004166666666666667,
+          "violation_rate_valid_only": 0.004166666666666667,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.975
+        }
+      ],
+      "P2": [
+        {
+          "seed": 42,
+          "rows": 240,
+          "pairs": 120,
+          "accuracy": 0.9625,
+          "violation_rate": 0.008333333333333333,
+          "violation_rate_valid_only": 0.008333333333333333,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.925
+        },
+        {
+          "seed": 17,
+          "rows": 240,
+          "pairs": 120,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        },
+        {
+          "seed": 123,
+          "rows": 240,
+          "pairs": 120,
+          "accuracy": 0.9791666666666666,
+          "violation_rate": 0.016666666666666666,
+          "violation_rate_valid_only": 0.016666666666666666,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.9583333333333334
+        }
+      ]
+    },
+    "max_speed": {
+      "zero_shot_cot": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        }
+      ],
+      "plan_and_solve": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.2708333333333333,
+          "violation_rate_valid_only": 0.2708333333333333,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        }
+      ],
+      "P0": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.22916666666666666,
+          "violation_rate_valid_only": 0.22916666666666666,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        }
+      ],
+      "P1": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        }
+      ],
+      "P2": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        }
+      ]
+    },
+    "min_clearance": {
+      "zero_shot_cot": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        }
+      ],
+      "plan_and_solve": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.2708333333333333,
+          "violation_rate_valid_only": 0.2708333333333333,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        }
+      ],
+      "P0": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.22916666666666666,
+          "violation_rate_valid_only": 0.22916666666666666,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        }
+      ],
+      "P1": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        }
+      ],
+      "P2": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        }
+      ]
+    },
+    "min_entry_delay": {
+      "zero_shot_cot": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        }
+      ],
+      "plan_and_solve": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.2708333333333333,
+          "violation_rate_valid_only": 0.2708333333333333,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        }
+      ],
+      "P0": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.22916666666666666,
+          "violation_rate_valid_only": 0.22916666666666666,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        }
+      ],
+      "P1": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        }
+      ],
+      "P2": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        }
+      ]
+    },
+    "cruise_stop": {
+      "zero_shot_cot": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.20833333333333334,
+          "violation_rate_valid_only": 0.20833333333333334,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        }
+      ],
+      "plan_and_solve": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        }
+      ],
+      "P0": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.20833333333333334,
+          "violation_rate_valid_only": 0.20833333333333334,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        }
+      ],
+      "P1": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        }
+      ],
+      "P2": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        }
+      ]
+    },
+    "lane_change": {
+      "zero_shot_cot": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.3541666666666667,
+          "violation_rate_valid_only": 0.3541666666666667,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.5,
+          "violation_rate_valid_only": 0.5,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        }
+      ],
+      "plan_and_solve": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.3125,
+          "violation_rate_valid_only": 0.3125,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.5,
+          "violation_rate_valid_only": 0.5,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        }
+      ],
+      "P0": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.25,
+          "violation_rate_valid_only": 0.25,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.3958333333333333,
+          "violation_rate_valid_only": 0.3958333333333333,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.5,
+          "violation_rate": 0.5,
+          "violation_rate_valid_only": 0.5,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.0
+        }
+      ],
+      "P1": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        }
+      ],
+      "P2": [
+        {
+          "seed": 42,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        },
+        {
+          "seed": 17,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 1.0,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 1.0
+        },
+        {
+          "seed": 123,
+          "rows": 48,
+          "pairs": 24,
+          "accuracy": 0.9375,
+          "violation_rate": 0.0,
+          "violation_rate_valid_only": 0.0,
+          "invalid_rate": 0.0,
+          "pair_accuracy": 0.875
+        }
+      ]
+    }
+  },
+  "caveats": [
+    "Both methods are transferred prompting procedures on our VLM and dataset, not full reproductions of their original GPT-3 experiments",
+    "Neither is a driving-specific model or a replacement reproduction of DriveLM/DriveVLM",
+    "Current paired data contain identical P0 image-and-prompt inputs with different targets; the best fixed output per identical input is correct on at most 50 percent of the rows",
+    "More reasoning cannot recover an omitted experimental rule; differences from P2 mix information availability and reasoning strategy",
+    "Reusing P0 checkpoints tests inference procedures, not new training methods or training-only gains"
+  ]
+}

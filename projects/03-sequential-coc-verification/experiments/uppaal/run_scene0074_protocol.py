@@ -22,7 +22,7 @@ from run_verification import ANSI_ESCAPE, DEFAULT_VERIFYTA, classify_output
 ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / "PROJECT_REGISTRY.json").is_file())
 DEFAULT_OUTPUT = (
     ROOT
-    / "artifacts/results/public/scene-0074"
+    / "projects/03-sequential-coc-verification/artifacts/public/scene-0074"
     / "uppaal-repeated-obligation-semantics-result.json"
 )
 
@@ -79,11 +79,11 @@ def main() -> None:
         ),
         "source_evidence": {
             "cohort_result": (
-                "artifacts/results/public/chunk-0000-94/weak-kinematic-cohort-result.json"
+                "projects/03-sequential-coc-verification/artifacts/public/chunk-0000-94/weak-kinematic-cohort-result.json"
             ),
             "event": "scene-0074@3400000",
             "camera_review": (
-                "artifacts/results/public/chunk-0000-94/video-review/"
+                "projects/03-sequential-coc-verification/artifacts/public/chunk-0000-94/video-review/"
                 "scene-0074-t3_4-contact-sheet.jpg"
             ),
         },

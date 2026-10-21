@@ -23,7 +23,7 @@ from scipy.spatial.transform import Rotation
 
 
 ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / "PROJECT_REGISTRY.json").is_file())
-BATCH = ROOT / "artifacts/results/restricted/alp-exp-005/feasibility-batch-v0"
+BATCH = ROOT / "projects/01-safety-constrained-coc/artifacts/restricted/alp-exp-005/feasibility-batch-v0"
 DEFAULT_OUTPUT = BATCH / "multiscene-future-delay-screen-v0"
 DATA_ROOT = ROOT / "data/restricted/nvidia_physicalai"
 TIMES_S = np.arange(1, 65, dtype=float) / 10.0

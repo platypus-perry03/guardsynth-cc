@@ -5,7 +5,7 @@ research_question: How do natural-language, structured, raw-logic, and executabl
 status: writing_plan
 dependencies:
   - eblc-bcv
-artifact_root: artifacts/projects/specification-alignment
+artifact_root: projects/02-specification-alignment/artifacts
 canonical_status: STATUS.md
 canonical_research_plan: docs/plans/01_RESEARCH_PLAN_V01.md
 canonical_milestones: docs/plans/02_PROJECT_MILESTONES.md

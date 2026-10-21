@@ -166,12 +166,12 @@ def main() -> None:
     parser.add_argument(
         "--candidate-path",
         type=Path,
-        default=Path("artifacts/results/public/nuscenes-scene-continuity-candidates.json"),
+        default=Path("projects/03-sequential-coc-verification/artifacts/public/scene-continuity-001/continuity-audit-001/nuscenes-scene-continuity-candidates.json"),
     )
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("artifacts/results/public/nuscenes-official-mini-continuity-audit.json"),
+        default=Path("projects/03-sequential-coc-verification/artifacts/public/scene-continuity-001/continuity-audit-001/nuscenes-official-mini-continuity-audit.json"),
     )
     args = parser.parse_args()
     result = audit(args.metadata_root, args.coc_root, args.candidate_path)

@@ -8,7 +8,7 @@
   Full manuscript/result-table integration remains to be done; this amendment does not change training.
 
 - State: `M18_CONTROLLED_EXPERIMENTS_CLOSED_M20_INTEGRATION_PENDING`
-- Current closure (2026-09-29): [full experiment audit and tables](../../artifacts/projects/guardsynth-coc/public/paper1-method-preservation-001/temporal-experiment-closure-2026-09-29-001/REPORT_KO.md).
+- Current closure (2026-09-29): [full experiment audit and tables](artifacts/public/paper1-method-preservation-001/temporal-experiment-closure-2026-09-29-001/REPORT_KO.md).
   Expanded18/18 fits:3,240 updates and17,280 predictions. Cost6/6 additional fits:360 updates,
   6,480 predictions including three pre-adapter baselines. Secondary metrics are complete.
   All seed metrics recomputed, paired budgets and checkpoint changes checked,296 unique source-file
@@ -93,7 +93,7 @@ The queued/running counts below are dated execution history, superseded by the c
 - Exact boundary: only6 distinct storyboard images and24 P0 image/candidate inputs. New seeds reuse
   templates, not fresh visual environments. This supports controlled effect preservation, not
   automatic road grounding, verification-only causal benefit, or training-only causal attribution.
-- M20: `paper/main.tex` now contains actual results, figure, criteria and limitations;4-page PDF at
+- M20: `paper/ieee-access/main.tex` now contains actual results, figure, criteria and limitations;4-page PDF at
   `temporal-paper-2026-09-29-001/main.pdf`. Venue/citation/manuscript refinement remains; not submitted.
 - Verification:43 focused/regression tests pass,100 SMT queries pass, paper compiles without layout
   or unresolved-reference warnings. Naming retains only5 pre-existing unrelated violations; diff check passes.
@@ -259,7 +259,7 @@ The queued/running counts below are dated execution history, superseded by the c
   No CoC/answers/polygons/machine verdicts/CNL or links to them appear in the direct ACTION page.
   Real Chromium checks use disposable profiles and test-only downloads outside the submission folder.
   Responses/gold/training remain 0; final JSON download is not server receipt.
-  Submission folder: `artifacts/projects/guardsynth-coc/restricted/guardsynth-paper1-training-readiness-001/speed-action-submission-2026-09-29-001/`.
+  Submission folder: `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-paper1-training-readiness-001/speed-action-submission-2026-09-29-001/`.
   All 19 ACTION precede any CNL/source exposure; one-reviewer development review does not satisfy the two-reviewer formal gate.
   Existing suspended URLs and immutable runs remain unchanged. M16/M17 PARTIAL; no main freeze.
   Publication receipt/screenshots: `speed-action-publication-2026-09-29-001` (two real Chromium workflows passed).
@@ -274,7 +274,7 @@ The queued/running counts below are dated execution history, superseded by the c
   Its exact 19-scene assignment/publication proposal is now approved and executed above.
   ACTION for all assigned scenes precedes CNL/source exposure. One reviewer does not meet the formal two-reviewer gate.
   Actual assignment count unset, dispatch/responses/gold/training 0; M16/M17 PARTIAL.
-  See [preparation report](../../artifacts/projects/guardsynth-coc/restricted/guardsynth-paper1-training-readiness-001/speed-action-assignment-preparation-2026-09-29-001/REPORT_KO.md).
+  See [preparation report](artifacts/restricted/guardsynth-paper1-training-readiness-001/speed-action-assignment-preparation-2026-09-29-001/REPORT_KO.md).
 - Current approval and execution (2026-09-28): both development semantics and blinded common
   input accepted by the user's explicit follow-up; see [approval record](docs/decisions/PAPER1_SPEED_DEVELOPMENT_APPROVAL_DECISION_V01.md).
   `speed-contract-execution-2026-09-28-001` produces 15 conditional speed contracts/CNL documents.

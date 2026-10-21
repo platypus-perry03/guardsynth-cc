@@ -13,7 +13,7 @@ from typing import Any
 
 PAPER = Path(__file__).resolve().parents[1]
 REPO = next(parent for parent in Path(__file__).resolve().parents if (parent / "PROJECT_REGISTRY.json").is_file())
-VLM = REPO / "artifacts/results/public/small-vlm-guard-v0"
+VLM = REPO / "projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0"
 
 
 def load(path: Path) -> dict[str, Any]:
@@ -244,7 +244,7 @@ class ExperimentalEvidenceTests(unittest.TestCase):
             self.assert_close(overall_conservative, expected_overall[condition][1])
 
     def test_auxiliary_closed_loop_numbers_from_episode_rows(self) -> None:
-        root = REPO / "artifacts/results/public"
+        root = REPO / "projects/01-safety-constrained-coc/artifacts/public"
         cases = (
             (
                 root / "contract-microworld-v1/pilot-phase-complete-isolated-2026-08-04-v2",
@@ -285,7 +285,7 @@ class ExperimentalEvidenceTests(unittest.TestCase):
 
     def test_r1_scope_and_reported_deltas(self) -> None:
         result = load(
-            REPO / "artifacts/results/restricted/alp-exp-006/guard-semantic-summary-v2/summary.json"
+            REPO / "projects/01-safety-constrained-coc/artifacts/restricted/alp-exp-006/guard-semantic-summary-v2/summary.json"
         )
         self.assertEqual(result["scene_count"], 1)
         self.assertEqual(result["paired_run_count"], 3)

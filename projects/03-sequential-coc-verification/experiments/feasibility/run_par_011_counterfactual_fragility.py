@@ -27,7 +27,7 @@ import matplotlib.pyplot as plt
 
 
 ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / "PROJECT_REGISTRY.json").is_file())
-BATCH = ROOT / "artifacts/results/restricted/alp-exp-005/feasibility-batch-v0"
+BATCH = ROOT / "projects/01-safety-constrained-coc/artifacts/restricted/alp-exp-005/feasibility-batch-v0"
 RUN_ROOT = BATCH / "episode-05"
 DEFAULT_OUTPUT = BATCH / "safety-acceleration-focus-v1/par-011-counterfactual-fragility-v0"
 CLIP_ID = "d50948f9-0017-4847-a280-1bed65d706b0"

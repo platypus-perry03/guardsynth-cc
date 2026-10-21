@@ -1,0 +1,12 @@
+{
+  "temporal": {
+    "cuda_visible_devices": "2"
+  },
+  "static": {
+    "cuda_visible_devices": "2"
+  },
+  "maneuver": {
+    "cuda_visible_devices": "7"
+  },
+  "note": "The manifest records the freeze environment as GPU 2. Independent family workers use the devices listed here. All are NVIDIA A100 80GB PCIe; device 7 was confirmed idle before launch."
+}

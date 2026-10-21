@@ -1,0 +1,155 @@
+{
+  "project_id": "guardsynth-coc",
+  "task_id": "document-grounded-constraint-composition",
+  "review_date": "2026-10-17",
+  "claim_scope": "MANUALLY_DOCUMENT_GROUNDED_RESTRICTED_SCENARIOS_NOT_ACCIDENT_RECONSTRUCTION_OR_LEGAL_VALIDATION",
+  "source_capture": "Primary documents inspected through web retrieval. Entries are reviewer-written paraphrases and locators, not byte-preserved PDF snapshots or automated semantic extraction.",
+  "sources": {
+    "ntsb2019": {
+      "title": "Collision Between Vehicle Controlled by Developmental Automated Driving System and Pedestrian, Tempe, Arizona, March 18, 2018",
+      "publisher": "NTSB",
+      "version": "HAR-19/03, adopted November 19, 2019; corrected copy reissued June 26, 2020",
+      "url": "https://www.ntsb.gov/investigations/AccidentReports/Reports/HAR1903.pdf",
+      "locator": "Printed pp. 13-14, 16-17, 30, 40-41; PDF pages 25-26, 28-29, 42, 52-53 (one-based)",
+      "verified_paraphrase": "The former Uber ADS suppressed braking for one second after detecting an emergency to verify the hazard, consider an alternative path, or allow operator takeover. NTSB describes emergency recognition 1.2 seconds before impact and suppression ending 0.2 seconds before impact. Avoidance already required braking beyond ADS design specifications at recognition; the system also lacked maximum-braking-only mitigation when avoidance was impossible.",
+      "scope": "Historical system design, not a present requirement. The experiment selects an already-triggered emergency branch with a persistent hazard, no takeover and no alternative path. The original trigger involved required deceleration above 7 m/s^2 or jerk magnitude above 5 m/s^3; trigger eligibility and jerk are not modeled. It does not reproduce Tempe or claim suppression removal would have avoided that crash.",
+      "use": "MODELED_POLICY_BRANCH"
+    },
+    "fhwa2009": {
+      "title": "Guidance Memorandum on Consideration and Implementation of Proven Safety Countermeasures",
+      "publisher": "FHWA",
+      "version": "Yellow Change Intervals, section 7, revised July 1, 2009",
+      "url": "https://highways.dot.gov/safety/proven-safety-countermeasures/guidance-memorandum-consideration-and-implementation-proven",
+      "locator": "Section 7: Yellow Change Intervals, Description and Guidance Statement/Application",
+      "verified_paraphrase": "A yellow interval inconsistent with operating speed can create a dilemma zone where a driver can neither stop safely nor reach the intersection before red. The guidance uses a kinematic timing model with reaction time at least one second and average deceleration at most ten feet per second squared.",
+      "scope": "Historical engineering guidance, not a universal legal rule or a measured autonomous-vehicle reaction time. The experiment uses the one-second assumption and a conservative rounded nominal deceleration of 3 m/s^2, not an emergency-braking limit.",
+      "use": "MODELING_GUIDANCE"
+    },
+    "fhwa2008": {
+      "title": "Traffic Signal Timing Manual",
+      "publisher": "FHWA",
+      "version": "FHWA-HOP-08-024, June 2008; archived and superseded",
+      "url": "https://ops.fhwa.dot.gov/publications/fhwahop08024/chapter5.htm",
+      "locator": "Chapter 5, section 5.3.2, Yellow Change; equation 5-2 and permissive/restrictive yellow-law discussion",
+      "verified_paraphrase": "The manual explains differing permissive and restrictive yellow laws and kinematic change-interval calculations. Under permissive yellow, entry can occur during yellow and clearance can continue during red; local statutes determine interpretation.",
+      "scope": "We test reaching the stop line before red, not clearing the entire intersection before red. Constant approach speed, a level road, and a two-action stop/proceed abstraction are declared assumptions.",
+      "use": "MODEL_AND_JURISDICTION_BOUNDARY"
+    },
+    "waymo2026": {
+      "title": "Jaguar I-PACE Emergency Response Guide and Law Enforcement Interaction Protocol",
+      "publisher": "Waymo",
+      "version": "Revision June 2026",
+      "url": "https://storage.googleapis.com/gweb-mobius-waymo-cdn/waymo/uploads/0186190d983d81f3b54485f05b03bc27c4bacf58.pdf",
+      "landing_url": "https://community.waymo.com/firstresponders/",
+      "locator": "pp. 13, 17 (PDF pages 13, 17, one-based)",
+      "verified_paraphrase": "The guide says autonomous driving is prevented by a deployed airbag, an open door, Park, or an applied parking brake. It separately says a vehicle remains stationary for a traffic stop and describes confirmation that autonomous operations may resume after the stop.",
+      "scope": "The interlock is about driving autonomously; the document explicitly warns that vehicles may still roll or move. Candidate move/hold requests and boolean scene states are authored test inputs, not logged Waymo commands. Absence of these blockers does not establish general driving permission or safety.",
+      "use": "MANUFACTURER_INTERLOCK"
+    },
+    "highway129": {
+      "title": "The Highway Code: Rule 129",
+      "publisher": "UK Department for Transport",
+      "version": "Online text reviewed October 17, 2026; page update October 22, 2025",
+      "url": "https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158#rule129",
+      "locator": "Rule 129",
+      "verified_paraphrase": "Crossing or straddling double white lines with a solid nearer line is generally prohibited. Crossing is permitted when necessary to pass a stationary vehicle if the road is clear. Additional exceptions concern premises/side roads and specified slow road users.",
+      "scope": "The restricted model fixes all other exceptions false and retains the stationary-vehicle exception. Permission to cross is not an obligation to cross. The unconditional-prohibition variant is an intentionally faulty transcription, not the actual rule.",
+      "use": "EXCEPTION_PRESERVATION"
+    },
+    "cruise2023": {
+      "title": "Part 573 Safety Recall Report 23E-086",
+      "publisher": "Cruise LLC, filed with NHTSA",
+      "version": "Submission November 7, 2023",
+      "url": "https://static.nhtsa.gov/odi/rcl/2023/RCLRPT-23E086-7725.PDF",
+      "locator": "pp. 2-4",
+      "verified_paraphrase": "After the October 2 collision the vehicle stopped, mischaracterized the event as lateral, and attempted a pullover that dragged the pedestrian. The report describes a corrected response that would have remained stationary in this incident.",
+      "scope": "The full decision guard is not disclosed. This supports studying applicability and transitions, not extracting a universal lateral-collision-implies-pullover policy or reconstructing the controller.",
+      "use": "QUALITATIVE_ONLY"
+    },
+    "highway219": {
+      "title": "The Highway Code: Rule 219",
+      "publisher": "UK Department for Transport",
+      "version": "Online text reviewed October 17, 2026",
+      "url": "https://www.gov.uk/guidance/the-highway-code/road-users-requiring-extra-care-204-to-225#rule219",
+      "locator": "Rule 219",
+      "verified_paraphrase": "Drivers should consider an emergency vehicle's route and act to let it pass while complying with traffic signs and avoiding endangering others.",
+      "scope": "It supplies no unconditional instruction to enter a red-light intersection or move immediately. Such a mandatory deadline would be fabricated.",
+      "use": "REJECT_UNGUARDED_CONFLICT"
+    },
+    "cfr39210": {
+      "title": "49 CFR 392.10: Railroad grade crossings; stopping required",
+      "publisher": "FMCSA / eCFR",
+      "version": "eCFR text current October 15, 2026, inspected October 17, 2026",
+      "url": "https://www.ecfr.gov/current/title-49/subtitle-B/chapter-III/subchapter-B/part-392/subpart-B/section-392.10",
+      "locator": "Paragraphs (a), (a)(1)-(6), and (b)",
+      "verified_paraphrase": "Specified commercial vehicles must stop fifteen to fifty feet before railway tracks and check for approaching trains; listed exceptions include directions to proceed by a police officer or flagman and certain green signals permitted by local law.",
+      "scope": "It is not a stop mandate for every autonomous passenger car. Vehicle class and exceptions must be retained; we do not combine it with unrelated jurisdictions to manufacture a conflict.",
+      "use": "SCOPE_CHECK_ONLY"
+    },
+    "unr152": {
+      "title": "UN Regulation No. 152, original 2020 edition",
+      "publisher": "UNECE",
+      "url": "https://unece.org/fileadmin/DAM/trans/main/wp29/wp29regs/2020/R152e.pdf",
+      "locator": "Candidate paragraph 5.2.1.1",
+      "scope": "Official search index suggests a conditional warning lead time, with an exception for late anticipation. Direct PDF retrieval returned HTTP 403. The original clause and current amendments were not fully verified; excluded from executable cases and manuscript claims.",
+      "use": "RETRIEVAL_INCOMPLETE"
+    },
+    "unr157": {
+      "title": "UN Regulation No. 157, ALKS",
+      "publisher": "UNECE",
+      "url": "https://unece.org/sites/default/files/2023-12/R157e.pdf",
+      "locator": "Candidate paragraphs 5.4.2.1, 5.4.4.1 and 5.5.1",
+      "scope": "Planned-operation-end, transition-demand and minimum-risk-manoeuvre timing were investigated. Official PDF retrieval returned HTTP 403. Drafts and secondary copies were not substituted for a verified final edition; no numerical requirement is used in this experiment.",
+      "use": "RETRIEVAL_INCOMPLETE"
+    }
+  },
+  "grids": {
+    "suppression": {
+      "speed_m_s": [
+        10,
+        15,
+        20
+      ],
+      "deceleration_m_s2": [
+        5,
+        7
+      ],
+      "delay_ms": [
+        0,
+        1000
+      ],
+      "distance_mm_relative_to_delayed_stop": [
+        -1,
+        0,
+        1
+      ],
+      "additional_distance": "For every speed/deceleration pair, add ceil(immediate stopping distance) + speed*500 mm under both zero and 1000 ms delay; this is between the two stopping thresholds."
+    },
+    "yellow": {
+      "speed_m_s": [
+        10,
+        15,
+        20
+      ],
+      "reaction_ms": 1000,
+      "nominal_deceleration_m_s2": 3,
+      "yellow_ms": [
+        3000,
+        4000,
+        5000
+      ],
+      "distance_grid": "For each stop-line reach and nominal stop threshold x: floor(x)-1, ceil(x), ceil(x)+1; also floor of their midpoint; also 50000 mm for v=15 m/s and Y=3000 ms. Duplicate distances within a parameter group are removed."
+    },
+    "interlock": "all 16 boolean combinations of door, Park, parking brake, airbag, each with a drive and hold request",
+    "exception": "all 8 boolean combinations of stationary vehicle, necessity, clear road; cross/hold candidate; faithful/omitted-exception transcription"
+  },
+  "planned_case_count": 176,
+  "planned_subset_queries": 896,
+  "assumptions": [
+    "Scenario speeds, obstacle distances, signal phases, scene booleans, candidate requests and avoidance objectives are authored diagnostic inputs, not measured operations or accident states.",
+    "For braking, level road, constant speed until braking, constant deceleration afterwards, stationary obstacle and no evasive manoeuvre; jerk, emergency-trigger eligibility, friction variation and perception uncertainty are outside the model. The already-triggered emergency flag is supplied, not derived from the hypothetical stopping state.",
+    "For yellow, only stop or proceed at unchanged speed; stopping uses a nominal comfort bound, not physical maximum braking. Entry before red is checked, not complete intersection clearance.",
+    "For Rule 129, the nearer line is solid and all exceptions except necessary passing of a stationary vehicle on a clear road are fixed absent.",
+    "Different source roles are an external document, authored observations/candidate, a derived requirement, and explicit modeling assumptions; they are not falsely presented as multiple collected conflicting operator documents."
+  ]
+}

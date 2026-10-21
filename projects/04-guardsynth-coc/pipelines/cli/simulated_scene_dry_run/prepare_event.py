@@ -26,7 +26,7 @@ from guard_synth.simulated_scene_evidence import (
 
 
 EXPERIMENT_ID = "GUARDSYNTH-SIMULATED-SCENE-EVIDENCE-001"
-RESTRICTED_ROOT = ROOT / "artifacts/results/restricted"
+RESTRICTED_ROOT = ROOT / "projects/04-guardsynth-coc/artifacts/restricted"
 DEFAULT_REQUIREMENT = (
     ROOT / "projects/04-guardsynth-coc/src/guard_synth/fixtures/simulated_corridor_requirement_v0_1.json"
 )

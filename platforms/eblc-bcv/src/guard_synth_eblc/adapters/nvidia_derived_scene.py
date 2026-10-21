@@ -195,7 +195,7 @@ def audit_local_candidates(project_root: Path) -> dict[str, object]:
         },
         {
             "asset_class": "RESTRICTED_MODEL_TRAJECTORY_ARRAYS",
-            "relative_path": "artifacts/results/restricted/alp-exp-005/feasibility-batch-v0/episode-02/seed-42/ground_truth_trajectory.npz",
+            "relative_path": "projects/01-safety-constrained-coc/artifacts/restricted/alp-exp-005/feasibility-batch-v0/episode-02/seed-42/ground_truth_trajectory.npz",
             "available_fields": ["ego_trajectory_array_without_complete_scene_contract"],
         },
     ]
@@ -392,7 +392,7 @@ def adapt_existing_derived_bundle(project_root: Path) -> dict[str, Any]:
         / "data/restricted/nvidia_physicalai/internal-derived/cohort-10/obstacle-feasibility.json"
     )
     cohort_path = project_root / "data/restricted/nvidia_physicalai/internal-derived/cohort-10/cohort-conformance.json"
-    batch_root = project_root / "artifacts/results/restricted/alp-exp-005/feasibility-batch-v0"
+    batch_root = project_root / "projects/01-safety-constrained-coc/artifacts/restricted/alp-exp-005/feasibility-batch-v0"
     obstacles = json.loads(obstacle_path.read_text(encoding="utf-8"))
     cohort = json.loads(cohort_path.read_text(encoding="utf-8"))
     candidates: list[dict[str, Any]] = []
@@ -511,7 +511,7 @@ def _report(result: dict[str, Any], run_id: str) -> str:
 
 
 def write_restricted_run(project_root: Path, run_id: str) -> Path:
-    output = project_root / "artifacts/results/restricted/eblc-p0b-001" / run_id
+    output = project_root / "platforms/eblc-bcv/artifacts/restricted/eblc-p0b-001" / run_id
     if output.exists():
         raise FileExistsError(f"refusing to overwrite existing restricted run: {run_id}")
     result = adapt_existing_derived_bundle(project_root)

@@ -1,0 +1,288 @@
+{
+  "role": "Post-training diagnostic analysis; not used to tune data, hyperparameters or select checkpoints",
+  "rescored_current_predictions": 6912,
+  "rescored_original_diagnostic_predictions": 2304,
+  "extra_legacy_candidate_SMT_checks": 1024,
+  "critical_previous_025m_case": [
+    {
+      "seed": 42,
+      "choice": "A",
+      "reference": "A",
+      "correct": true,
+      "violation": false
+    },
+    {
+      "seed": 17,
+      "choice": "A",
+      "reference": "A",
+      "correct": true,
+      "violation": false
+    },
+    {
+      "seed": 123,
+      "choice": "D",
+      "reference": "A",
+      "correct": false,
+      "violation": true
+    }
+  ],
+  "diagnostic_before_after": [
+    {
+      "arm": "p0",
+      "phase": "before_diagnostic",
+      "encoding": "interval_maxima",
+      "hold_ms": 500,
+      "predictions": 192,
+      "correct": 84,
+      "violations": 17,
+      "tolerance_violations": 11
+    },
+    {
+      "arm": "p0",
+      "phase": "after_diagnostic",
+      "encoding": "interval_maxima",
+      "hold_ms": 500,
+      "predictions": 192,
+      "correct": 154,
+      "violations": 0,
+      "tolerance_violations": 0
+    },
+    {
+      "arm": "p0",
+      "phase": "before_diagnostic",
+      "encoding": "interval_maxima",
+      "hold_ms": 2000,
+      "predictions": 192,
+      "correct": 103,
+      "violations": 89,
+      "tolerance_violations": 42
+    },
+    {
+      "arm": "p0",
+      "phase": "after_diagnostic",
+      "encoding": "interval_maxima",
+      "hold_ms": 2000,
+      "predictions": 192,
+      "correct": 136,
+      "violations": 53,
+      "tolerance_violations": 18
+    },
+    {
+      "arm": "p0",
+      "phase": "before_diagnostic",
+      "encoding": "xy_waypoints",
+      "hold_ms": 500,
+      "predictions": 192,
+      "correct": 100,
+      "violations": 13,
+      "tolerance_violations": 11
+    },
+    {
+      "arm": "p0",
+      "phase": "after_diagnostic",
+      "encoding": "xy_waypoints",
+      "hold_ms": 500,
+      "predictions": 192,
+      "correct": 157,
+      "violations": 5,
+      "tolerance_violations": 5
+    },
+    {
+      "arm": "p0",
+      "phase": "before_diagnostic",
+      "encoding": "xy_waypoints",
+      "hold_ms": 2000,
+      "predictions": 192,
+      "correct": 123,
+      "violations": 69,
+      "tolerance_violations": 42
+    },
+    {
+      "arm": "p0",
+      "phase": "after_diagnostic",
+      "encoding": "xy_waypoints",
+      "hold_ms": 2000,
+      "predictions": 192,
+      "correct": 80,
+      "violations": 106,
+      "tolerance_violations": 53
+    },
+    {
+      "arm": "p1",
+      "phase": "before_diagnostic",
+      "encoding": "interval_maxima",
+      "hold_ms": 500,
+      "predictions": 192,
+      "correct": 99,
+      "violations": 10,
+      "tolerance_violations": 5
+    },
+    {
+      "arm": "p1",
+      "phase": "after_diagnostic",
+      "encoding": "interval_maxima",
+      "hold_ms": 500,
+      "predictions": 192,
+      "correct": 174,
+      "violations": 0,
+      "tolerance_violations": 0
+    },
+    {
+      "arm": "p1",
+      "phase": "before_diagnostic",
+      "encoding": "interval_maxima",
+      "hold_ms": 2000,
+      "predictions": 192,
+      "correct": 137,
+      "violations": 55,
+      "tolerance_violations": 23
+    },
+    {
+      "arm": "p1",
+      "phase": "after_diagnostic",
+      "encoding": "interval_maxima",
+      "hold_ms": 2000,
+      "predictions": 192,
+      "correct": 172,
+      "violations": 16,
+      "tolerance_violations": 1
+    },
+    {
+      "arm": "p1",
+      "phase": "before_diagnostic",
+      "encoding": "xy_waypoints",
+      "hold_ms": 500,
+      "predictions": 192,
+      "correct": 142,
+      "violations": 6,
+      "tolerance_violations": 5
+    },
+    {
+      "arm": "p1",
+      "phase": "after_diagnostic",
+      "encoding": "xy_waypoints",
+      "hold_ms": 500,
+      "predictions": 192,
+      "correct": 153,
+      "violations": 17,
+      "tolerance_violations": 17
+    },
+    {
+      "arm": "p1",
+      "phase": "before_diagnostic",
+      "encoding": "xy_waypoints",
+      "hold_ms": 2000,
+      "predictions": 192,
+      "correct": 101,
+      "violations": 91,
+      "tolerance_violations": 49
+    },
+    {
+      "arm": "p1",
+      "phase": "after_diagnostic",
+      "encoding": "xy_waypoints",
+      "hold_ms": 2000,
+      "predictions": 192,
+      "correct": 113,
+      "violations": 79,
+      "tolerance_violations": 41
+    },
+    {
+      "arm": "p2",
+      "phase": "before_diagnostic",
+      "encoding": "interval_maxima",
+      "hold_ms": 500,
+      "predictions": 192,
+      "correct": 79,
+      "violations": 4,
+      "tolerance_violations": 0
+    },
+    {
+      "arm": "p2",
+      "phase": "after_diagnostic",
+      "encoding": "interval_maxima",
+      "hold_ms": 500,
+      "predictions": 192,
+      "correct": 186,
+      "violations": 0,
+      "tolerance_violations": 0
+    },
+    {
+      "arm": "p2",
+      "phase": "before_diagnostic",
+      "encoding": "interval_maxima",
+      "hold_ms": 2000,
+      "predictions": 192,
+      "correct": 155,
+      "violations": 30,
+      "tolerance_violations": 12
+    },
+    {
+      "arm": "p2",
+      "phase": "after_diagnostic",
+      "encoding": "interval_maxima",
+      "hold_ms": 2000,
+      "predictions": 192,
+      "correct": 189,
+      "violations": 1,
+      "tolerance_violations": 0
+    },
+    {
+      "arm": "p2",
+      "phase": "before_diagnostic",
+      "encoding": "xy_waypoints",
+      "hold_ms": 500,
+      "predictions": 192,
+      "correct": 143,
+      "violations": 8,
+      "tolerance_violations": 8
+    },
+    {
+      "arm": "p2",
+      "phase": "after_diagnostic",
+      "encoding": "xy_waypoints",
+      "hold_ms": 500,
+      "predictions": 192,
+      "correct": 144,
+      "violations": 40,
+      "tolerance_violations": 39
+    },
+    {
+      "arm": "p2",
+      "phase": "before_diagnostic",
+      "encoding": "xy_waypoints",
+      "hold_ms": 2000,
+      "predictions": 192,
+      "correct": 117,
+      "violations": 75,
+      "tolerance_violations": 45
+    },
+    {
+      "arm": "p2",
+      "phase": "after_diagnostic",
+      "encoding": "xy_waypoints",
+      "hold_ms": 2000,
+      "predictions": 192,
+      "correct": 114,
+      "violations": 77,
+      "tolerance_violations": 50
+    }
+  ],
+  "limits": [
+    "Fresh train/test generators have invalid maxima at least 20/22mm over the 200mm limit; diagnostics include 1mm overshoots.",
+    "The sets also differ in trajectory templates, utilities and diagram rendering. Their effects are not isolated.",
+    "The existing diagnostic is previously inspected, not a pristine held-out test.",
+    "Candidate selections do not generate or execute vehicle trajectories."
+  ],
+  "original_diagnostic_output_hashes": {
+    "p0_seed42.jsonl": "2d655f707b584016003899f04c13c621be039f99f99b019a3f31d4da75164042",
+    "p0_seed17.jsonl": "7ba4b9ed5c323571b590fca46d8dda124fc0d6565ab4182103ef81396f73433e",
+    "p0_seed123.jsonl": "8b25e128ff804b6d68911329054a7c2451d85b6fa5db8839324a12168374f2d2",
+    "p1_seed42.jsonl": "b0c5d10a3dcdbbd5fec5bd7ee1e1a201d4092b15cb36425b2cbbec2fea651367",
+    "p1_seed17.jsonl": "0fa30132f5595edbbfc67ec51e71904280d27c4fa239d10960d3f1ee77a47831",
+    "p1_seed123.jsonl": "424bde3abdb7036c5d654fa3e71154ef516f7b2db3a028c49738892280e6c10d",
+    "p2_seed42.jsonl": "2540b4f81659e54b94e768729dae54703bf5143e41dd1071fea1a6a023e4a424",
+    "p2_seed17.jsonl": "f5175feb67bc37dc9398a8f9fab0b2368fc6409294a619c2e548e7a5ed715c86",
+    "p2_seed123.jsonl": "8ad75dc8030d11897e49d50575b5978008784cbf18c94d21347ee3d2ad706eac"
+  }
+}

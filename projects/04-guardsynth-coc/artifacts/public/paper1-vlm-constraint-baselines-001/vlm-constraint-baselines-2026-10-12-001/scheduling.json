@@ -1,0 +1,179 @@
+{
+  "paused_own_queue_parents": [
+    1239880,
+    1240293
+  ],
+  "current_fits": {
+    "position_hold": [
+      "position_hold",
+      "ce_no_rule",
+      42
+    ],
+    "temporal": [
+      "temporal",
+      "semantic_no_rule",
+      42
+    ]
+  },
+  "resources": {
+    "temporal_workers": 3,
+    "hold_workers": 2
+  },
+  "rule": "Only distinct fixed-protocol fits; no change to data, initialization or optimizer budgets",
+  "additional_worker": {
+    "at": 1791820728.4982736,
+    "replaced_controller_pid": 1271293,
+    "reason": "Use a second position-hold worker within available GPU 9 memory; active model processes preserved",
+    "active_at_change": [
+      {
+        "task": "temporal",
+        "arm": "semantic_no_rule",
+        "seed": 42,
+        "pid": 1267977,
+        "gpu": "GPU_ID_REMOVED"
+      },
+      {
+        "task": "temporal",
+        "arm": "ce_rule",
+        "seed": 42,
+        "pid": 1271298,
+        "gpu": "GPU_ID_REMOVED"
+      },
+      {
+        "task": "temporal",
+        "arm": "semantic_rule",
+        "seed": 42,
+        "pid": 1271300,
+        "gpu": "GPU_ID_REMOVED"
+      },
+      {
+        "task": "position_hold",
+        "arm": "semantic_no_rule",
+        "seed": 42,
+        "pid": 1271301,
+        "gpu": "GPU_ID_REMOVED"
+      },
+      {
+        "task": "position_hold",
+        "arm": "semantic_rule",
+        "seed": 42,
+        "pid": 1302344,
+        "gpu": "GPU_ID_REMOVED"
+      }
+    ],
+    "new_controller_pid": 1305699
+  },
+  "recovery": {
+    "at": 1791820882.6720505,
+    "paused_controller_pids": [
+      1305699
+    ],
+    "current_controller_pid": 1311119,
+    "active_preserved": [
+      {
+        "task": "position_hold",
+        "arm": "ce_no_rule",
+        "seed": 17,
+        "pid": 1305706,
+        "gpu": "GPU_ID_REMOVED"
+      },
+      {
+        "task": "temporal",
+        "arm": "ce_no_rule",
+        "seed": 17,
+        "pid": 1309753,
+        "gpu": "GPU_ID_REMOVED"
+      }
+    ],
+    "restarted_jobs": [
+      "temporal_ce_rule_seed42",
+      "temporal_semantic_rule_seed42",
+      "position_hold_semantic_no_rule_seed42",
+      "position_hold_semantic_rule_seed42"
+    ],
+    "resume_predecessors_only_after_all_fits_complete": true
+  },
+  "future_worker_cpu_affinity": {
+    "at": 1791821107.4023764,
+    "sets": {
+      "1311119": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "1311129": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "1311130": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "1311131": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "1311132": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "1311133": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "1311134": [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55
+      ]
+    },
+    "scope": "Only future spawned fits inherit bounded CPU thread pools; existing model processes unchanged"
+  },
+  "diagnostic_cpu_threads": {
+    "at": 1791821239.000232,
+    "preserved_predictions": 30,
+    "OMP_NUM_THREADS": 1,
+    "MKL_NUM_THREADS": 1,
+    "same_prompt_model_budget_parser": true
+  }
+}

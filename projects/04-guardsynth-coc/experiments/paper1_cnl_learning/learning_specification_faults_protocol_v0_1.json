@@ -1,0 +1,38 @@
+{
+  "project_id": "guardsynth-coc",
+  "task_id": "learning-specification-fault-injection",
+  "protocol_version": "1.0",
+  "profiles": ["pedestrian_entry", "position_hold"],
+  "base_contexts_per_profile": 24,
+  "selection": {
+    "pedestrian_entry": "First 12 scene IDs in seed-42 benchmark_regression, retaining both 500 and 1500 ms rules; reconstruct and verify archived P2 prompts and image hashes",
+    "position_hold": "First 12 profile IDs in frozen test.jsonl, rotation 0 and interval_maxima, retaining both 500 and 2000 ms rules; verify archived P2 constraint text"
+  },
+  "variants": ["valid", "duration_change", "reverse_comparison", "delete_release", "unit_error", "cnl_duration", "cnl_negation", "shared_source_error"],
+  "mutations": {
+    "duration_change": "Swap between the two supported task durations in the candidate specification only",
+    "reverse_comparison": "Reverse the entry-time inequality, or the hold-radius inequality at the hold endpoint only",
+    "delete_release": "Remove the temporal entry gate, or omit the hold release by extending radial restrictions to every listed post-hold sample",
+    "unit_error": "Change the specification time unit from ms to s without rescaling values",
+    "cnl_duration": "Replace all occurrences of the hold/wait duration with the other supported duration in the rendered sentence",
+    "cnl_negation": "Remove Do not from the entry prohibition, or insert not into the hold-radius requirement",
+    "shared_source_error": "Swap supported duration in both the candidate specification and trusted source record"
+  },
+  "checks": {
+    "reused": ["unaltered structural validators", "unaltered logical lowering before mutation", "unaltered CNL renderers", "platform SMT compiler and solver"],
+    "evaluation_additions": ["comparison with frozen source records", "fixed-grammar parsers for the two learning specifications", "independent rule probes and result aggregation"],
+    "pedestrian_probes": "Archived action candidates and +/-1 ms plus exact boundary, with entry and non-entry",
+    "hold_probes": "Archived action candidates and 199/200/201 mm at every listed noninitial sample, including post-release samples; diagonal boundary and norm checks",
+    "kernel_subset": ["structural", "consistency", "logic_rule"],
+    "full_suite": ["structural", "consistency", "logic_rule", "evidence", "sentence"],
+    "unknown": "Report separately and reject; do not count as a proved semantic mismatch"
+  },
+  "units": "Integer milliseconds and millimetres; exact squared-distance reference",
+  "claim_scope": [
+    "Fault injection into the exact representation, lowering, and renderer used for learning",
+    "New evaluation-time evidence and sentence checks were not part of historical training runs",
+    "Repeated contexts use only two distinct rule specifications per task; no independent-scene or population inference",
+    "No VLM training, inference, image labeling, or continuous-time vehicle-safety claim",
+    "Do not pool the earlier separate temporal-profile evaluation with these counts"
+  ]
+}

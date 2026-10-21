@@ -12,7 +12,7 @@ EXPERIMENT = ROOT / "projects/04-guardsynth-coc/experiments/paper1_cnl_learning"
 
 class SceneTrainingPreflightTest(unittest.TestCase):
     def test_saved_real_processor_evidence_has_no_training_promotion(self):
-        source = ROOT / "artifacts/projects/guardsynth-coc/restricted/guardsynth-paper1-reviewed-contract-001/scene18-training-preflight-2026-09-08-001"
+        source = ROOT / "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-paper1-reviewed-contract-001/scene18-training-preflight-2026-09-08-001"
         result = json.loads((source / "RESULT.json").read_text())
         metrics = result["processor_metrics"]
         self.assertEqual(metrics[0]["prompt_tokens"], metrics[1]["prompt_tokens"])

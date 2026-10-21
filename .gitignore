@@ -2,8 +2,8 @@
 /.superpowers/
 /.agents/
 /.codex/
+/.aws/
 /.ruff_cache/
-/portal_exec.md
 /.worktrees/*
 !/.worktrees/README.md
 !/.worktrees/registry.json
@@ -20,8 +20,10 @@ projects/**/paper/**/*.bbl
 projects/**/paper/**/*.fls
 projects/**/paper/**/*.fdb_latexmk
 projects/**/paper/**/*.synctex.gz
-artifacts/**/.texlive-cache/
-artifacts/**/texlive-cache/
+projects/*/artifacts/**/.texlive-cache/
+projects/*/artifacts/**/texlive-cache/
+platforms/*/artifacts/**/.texlive-cache/
+platforms/*/artifacts/**/texlive-cache/
 
 # Restricted data and local/external runtime trees
 /data/restricted/
@@ -48,8 +50,8 @@ artifacts/**/texlive-cache/
 /experiments/**/adapter_model*.bin
 
 # Model artifacts stored with public result metadata
-/artifacts/results/public/small-vlm-guard-v0/**/adapter/
-/artifacts/results/public/small-vlm-guard-v0/**/processor/
+/projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/**/adapter/
+/projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/**/processor/
 **/*.safetensors
 **/*.ckpt
 **/*.pt
@@ -64,12 +66,10 @@ artifacts/**/texlive-cache/
 /archive/installers/
 
 .venv*/
-artifacts/results/restricted/*
-!artifacts/results/restricted/.gitkeep
-/artifacts/projects/*/restricted/*
-!/artifacts/projects/*/restricted/.gitkeep
-/artifacts/platforms/*/restricted/*
-!/artifacts/platforms/*/restricted/.gitkeep
+/projects/*/artifacts/restricted/*
+!/projects/*/artifacts/restricted/.gitkeep
+/platforms/*/artifacts/restricted/*
+!/platforms/*/artifacts/restricted/.gitkeep
 runtime/alpamayo/ar1_venv/
 *.token
 __pycache__/
@@ -82,3 +82,17 @@ REVIEWER_*_REPORT.md
 reviewer-0*.pdf
 # Upstream CoC-Nusc data (nuScenes-derived): local only
 /data/baseline/coc_nusc/
+
+# Local editorial material and packages containing reviewer correspondence
+**/paper/**/cover-letter.tex
+**/paper/**/*reviewed-by*.pdf
+**/paper/**/publication-source.zip
+/projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/2026-D-D04-0036.pdf
+/projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/* (1).pdf
+
+# Unsanitized local release draft; the approved public distribution is run 002
+/projects/04-guardsynth-coc/artifacts/public/paper1-reproducibility-release-001/github-release-2026-10-21-001/
+
+# Upstream road-frame copies remain local under the source providers' terms
+/projects/03-sequential-coc-verification/artifacts/public/chunk-0000-94/video-review/**/*.jpg
+/projects/03-sequential-coc-verification/artifacts/public/scene-0001/*.jpg

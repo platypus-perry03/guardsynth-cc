@@ -1,0 +1,31 @@
+{
+  "history": [
+    {
+      "epoch": 1,
+      "rows": 960,
+      "ce": 0.4588786618987797,
+      "semantic": 0.25671645204226173,
+      "total": 0.7155951145997581
+    },
+    {
+      "epoch": 2,
+      "rows": 960,
+      "ce": 0.11351054967566748,
+      "semantic": 0.06432941357294718,
+      "total": 0.17783996349489067
+    },
+    {
+      "epoch": 3,
+      "rows": 960,
+      "ce": 0.03691131774503636,
+      "semantic": 0.02939793864885966,
+      "total": 0.06630925601744195
+    }
+  ],
+  "updates": 180,
+  "elapsed_seconds": 414.79728319495916,
+  "initialization_sha256": "dcc73c07dd7dd528886dafa30e5b8c2009aac784656b4bdb0f3821755befe9cb",
+  "semantic_weight": 1.0,
+  "input_mode": "rule",
+  "trainable_parameters": 3211264
+}

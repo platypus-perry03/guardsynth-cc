@@ -30,31 +30,31 @@ ROOT = project_root(__file__)
 HERE = Path(__file__).resolve().parent
 TEMPLATE = HERE / "expert_source_review_workbench.html"
 ACQUISITION_RUN = ROOT / (
-    "artifacts/projects/guardsynth-coc/restricted/"
+    "projects/04-guardsynth-coc/artifacts/restricted/"
     "guardsynth-m16-scene-acquisition-001/"
     "m16-source-acquisition-2026-08-14-v18"
 )
 SOURCE_REVIEW_UI_RUN = ROOT / (
-    "artifacts/projects/guardsynth-coc/restricted/"
+    "projects/04-guardsynth-coc/artifacts/restricted/"
     "guardsynth-m16-source-review-001/m16-source-review-2026-08-15-v5"
 )
 OBSERVATION_RUN = ROOT / (
-    "artifacts/projects/guardsynth-coc/restricted/"
+    "projects/04-guardsynth-coc/artifacts/restricted/"
     "guardsynth-m16-source-review-001/m16-source-review-2026-09-04-v1"
 )
 GEOMETRY_RUN = ROOT / (
-    "artifacts/projects/guardsynth-coc/restricted/"
+    "projects/04-guardsynth-coc/artifacts/restricted/"
     "guardsynth-m16-scene-acquisition-001/"
     "m16-geometry-candidate-2026-09-05-v1"
 )
 CASCADE_AUDIT_RUN = ROOT / (
-    "artifacts/projects/guardsynth-coc/restricted/"
+    "projects/04-guardsynth-coc/artifacts/restricted/"
     "guardsynth-m16-scene-acquisition-001/"
     "m16-cascade-structured-link-audit-2026-09-05-v1"
 )
 CASCADE_DATA = ROOT / "data/restricted/nvidia_cascade/data"
 OUTPUT_ROOT = ROOT / (
-    "artifacts/projects/guardsynth-coc/restricted/"
+    "projects/04-guardsynth-coc/artifacts/restricted/"
     "guardsynth-m16-expert-source-review-001"
 )
 WORKBENCH_NAME = "expert_source_review_workbench.html"

@@ -28,7 +28,7 @@ MODEL_ID = "Qwen/Qwen3-VL-2B-Instruct"
 REVISION = "89644892e4d85e24eaac8bacfd4f463576704203"
 MODEL_PATH = Path.home() / ".cache/huggingface/hub/models--Qwen--Qwen3-VL-2B-Instruct/snapshots" / REVISION
 FIXTURE = ROOT / "projects/04-guardsynth-coc/src/guard_synth/fixtures/source_aware_generation_request_p0b_v0_1.json"
-ACQUISITION = ROOT / "artifacts/projects/guardsynth-coc/restricted/guardsynth-m16-scene-acquisition-001"
+ACQUISITION = ROOT / "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-m16-scene-acquisition-001"
 
 
 def write_json(path, value):
@@ -266,7 +266,7 @@ def main():
     args = parser.parse_args()
     if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*-[0-9]+", args.run_id):
         parser.error("run-id must be kebab-case with a numeric suffix")
-    output = ROOT / "artifacts/projects/guardsynth-coc/restricted/guardsynth-eblc-learning-001" / args.run_id
+    output = ROOT / "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-eblc-learning-001" / args.run_id
     output.mkdir(parents=True, exist_ok=False, mode=0o700)
     manifest = {
         "project_id": "guardsynth-coc", "experiment_id": "guardsynth-eblc-learning-001",

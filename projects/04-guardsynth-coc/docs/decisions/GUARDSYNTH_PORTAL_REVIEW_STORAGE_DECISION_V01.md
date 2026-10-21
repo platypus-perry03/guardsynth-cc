@@ -8,7 +8,7 @@
 ## 결정
 
 review round 하나는 project owner와 classification 하나에 귀속된 SQLite DB 하나를 사용한다.
-DB는 `artifacts/projects/<project-id>/restricted/` 아래의 새 operations run이 소유하며 WAL,
+DB는 `projects/<NN>-<project-id>/artifacts/restricted/` 아래의 새 operations run이 소유하며 WAL,
 foreign key, transaction, busy timeout과 schema version을 사용한다.
 
 독립 판정은 revision row로 append하고 finalize된 원 판정은 수정·삭제하지 않는다. adjudication은

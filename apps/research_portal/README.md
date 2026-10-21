@@ -4,15 +4,15 @@
 산출물·검토 워크스페이스를 제공하는 로컬 연구 운영 포털이다. 기본 빌드는 read-only이며,
 명시적으로 configured review DB와 auth file을 제공할 때만 동적 검토 API가 열린다. 제한 이미지가
 포함될 수 있으므로 새 출력은
-`artifacts/projects/guardsynth-coc/restricted/`에만
+`projects/04-guardsynth-coc/artifacts/restricted/`에만
 생성하고 서버는 loopback(`127.0.0.1`)에만 bind한다.
 
 ```bash
 python3 -m apps.research_portal.run \
-  --output-dir artifacts/projects/guardsynth-coc/restricted/guardsynth-project-portal-001/<run-id>
+  --output-dir projects/04-guardsynth-coc/artifacts/restricted/guardsynth-project-portal-001/<run-id>
 
 python3 -m apps.research_portal.run \
-  --output-dir artifacts/projects/guardsynth-coc/restricted/guardsynth-project-portal-001/<run-id> \
+  --output-dir projects/04-guardsynth-coc/artifacts/restricted/guardsynth-project-portal-001/<run-id> \
   --serve --port 8765
 ```
 
@@ -32,18 +32,18 @@ DB를 먼저 만든다. 대상이 등록된 owner/classification artifact root �
 
 ```bash
 python3 -m apps.research_portal.run \
-  --init-review-db artifacts/projects/guardsynth-coc/restricted/<operations-run>/round.sqlite3 \
+  --init-review-db projects/04-guardsynth-coc/artifacts/restricted/<operations-run>/round.sqlite3 \
   --review-owner guardsynth-coc --review-classification RESTRICTED
 ```
 
 ```bash
 python3 -m apps.research_portal.run \
-  --output-dir artifacts/projects/guardsynth-coc/restricted/guardsynth-project-portal-001/<run-id> \
+  --output-dir projects/04-guardsynth-coc/artifacts/restricted/guardsynth-project-portal-001/<run-id> \
   --serve --port 8765 \
-  --review-db artifacts/projects/guardsynth-coc/restricted/<operations-run>/round.sqlite3 \
+  --review-db projects/04-guardsynth-coc/artifacts/restricted/<operations-run>/round.sqlite3 \
   --review-owner guardsynth-coc --review-classification RESTRICTED \
-  --auth-file artifacts/projects/guardsynth-coc/restricted/<operations-run>/auth.json \
-  --review-public-export-root artifacts/projects/guardsynth-coc/public/research-review-export-001
+  --auth-file projects/04-guardsynth-coc/artifacts/restricted/<operations-run>/auth.json \
+  --review-public-export-root projects/04-guardsynth-coc/artifacts/public/research-review-export-001
 ```
 
 `--review-public-export-root`는 선택 항목이다. 설정한 경우에만 닫힌 회차에서 allowlisted aggregate
@@ -65,4 +65,5 @@ auth file은 `{"users": [...]}` 구조이며 각 user는 opaque `actor_id`,
 
 생성된 run 파일은 재현성을 위한 빌드 스냅샷으로 변경하지 않고, live 응답만
 권위 문서에서 재계산한다. 연구영역의 활성 마일스톤이 원장에 없으면 stale 상태를 표시하지
-않고 HTTP 503으로 중단한다. 저장소 전체가 아니라 선택해 복사한 포털 파일만 서비스한다.
+않고 HTTP 503으로 중단한다. 포털의 정적 파일과 레지스트리에 등록된 개별 산출물만 서비스한다.
+검토 HTML은 원본 산출물의 `/assets/` 주소를 사용하므로 빌드마다 대형 사본을 만들지 않는다.

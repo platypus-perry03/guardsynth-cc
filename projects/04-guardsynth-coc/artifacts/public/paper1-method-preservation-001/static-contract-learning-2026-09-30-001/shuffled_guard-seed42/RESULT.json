@@ -1,0 +1,35 @@
+{
+  "status": "COMPLETE",
+  "evaluation": {
+    "test": {
+      "accuracy": 0.5208333333333334,
+      "violation_rate": 0.2152777777777778,
+      "compliant_completion": 0.7847222222222222,
+      "goal_completion": 1.0,
+      "conservative_rate": 0.2638888888888889,
+      "deadlock_rate": 0.0,
+      "coverage": 1.0,
+      "pair_accuracy": 0.1111111111111111
+    },
+    "paraphrase": {
+      "accuracy": 0.5069444444444444,
+      "violation_rate": 0.24305555555555555,
+      "compliant_completion": 0.7569444444444444,
+      "goal_completion": 1.0,
+      "conservative_rate": 0.25,
+      "deadlock_rate": 0.0,
+      "coverage": 1.0,
+      "pair_accuracy": 0.013888888888888888
+    },
+    "unseen": {
+      "accuracy": 0.4791666666666667,
+      "violation_rate": 0.25,
+      "compliant_completion": 0.75,
+      "goal_completion": 1.0,
+      "conservative_rate": 0.2708333333333333,
+      "deadlock_rate": 0.0,
+      "coverage": 1.0,
+      "pair_accuracy": 0.1111111111111111
+    }
+  }
+}

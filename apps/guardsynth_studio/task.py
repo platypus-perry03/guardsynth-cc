@@ -55,6 +55,18 @@ def main():
     elif kind == "EXTRACT":
         from .media import extract
         result = extract(request["path"], request["output"], request["interval_s"])
+    elif kind in ("SEQ_EBLC","SEQ_VERIFY","SEQ_CNL"):
+        from guard_synth.studio_sequence import compile_sequence,verify_compiled,render_verified
+        if kind=="SEQ_EBLC": result=compile_sequence(request["moments"],request["catalog"])
+        elif kind=="SEQ_VERIFY": result=verify_compiled(request["compiled"])
+        else: result=render_verified(request["compiled"],request["verification"])
+    elif kind == "SEQ_QUALITY":
+        from guard_synth.studio_grounded_sequence import compile_grounded_sequence,verify_grounded_compiled
+        compiled=compile_grounded_sequence(request["moments"],request["catalog"],request.get("initial_summary"))
+        result=verify_grounded_compiled(compiled)
+    elif kind == "SEQ_CHECK":
+        from guard_synth.studio_sequence import verify_sequence
+        result = verify_sequence(request["moments"], request["catalog"])
     elif kind in ("CHECK", "CNL"):
         from guard_synth.studio_contract import check, render
         result = check(request["contract"], request["binding"]) if kind == "CHECK" else render(request["contract"], request["binding"], request["check"])

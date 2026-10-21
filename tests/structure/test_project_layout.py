@@ -8,6 +8,7 @@ import subprocess
 import unittest
 
 from cli.checks.project_integrity import broken_markdown_links
+from cli.project_paths import artifact_roots
 from cli.checks.file_naming import (
     maintained_directories,
     maintained_files,
@@ -31,7 +32,7 @@ STANDARD_PROJECT_DIRS = {
     "tests/acceptance",
     "experiments",
     "paper",
-    "results",
+    "artifacts",
 }
 
 
@@ -54,7 +55,7 @@ class ProjectStructureCodexV3Test(unittest.TestCase):
         codex = ROOT / "docs/architecture/PROJECT_STRUCTURE_CODEX.md"
         agents = ROOT / "AGENTS.md"
         self.assertTrue(codex.is_file())
-        self.assertIn("Codex version: `v3.6`", codex.read_text(encoding="utf-8"))
+        self.assertIn("Codex version: `v4.1`", codex.read_text(encoding="utf-8"))
         self.assertIn("PROJECT_STRUCTURE_CODEX.md", agents.read_text(encoding="utf-8"))
         self.assertIn("Superpowers", agents.read_text(encoding="utf-8"))
         self.assertIn("../guardsynth-cc-worktrees/", agents.read_text(encoding="utf-8"))
@@ -300,24 +301,49 @@ class ProjectStructureCodexV3Test(unittest.TestCase):
             ("platforms", self.registry["platforms"]),
         ):
             for entry in entries:
-                root = ROOT / "artifacts" / group / entry["id"]
+                root = ROOT / entry["artifact_root"]
+                self.assertEqual(root.parent, ROOT / entry["path"])
+                self.assertFalse((ROOT / entry["path"] / "results").exists())
+                self.assertTrue((root / "RESULT_INDEX.md").is_file())
                 for classification in ("public", "restricted", "intermediate"):
                     self.assertTrue((root / classification).is_dir())
 
-    def test_every_legacy_artifact_family_has_one_owner(self) -> None:
-        catalog = json.loads(
-            (ROOT / "artifacts/LEGACY_OWNERSHIP.json").read_text(encoding="utf-8")
+    def test_artifacts_have_one_location_and_retention_is_recorded(self) -> None:
+        self.assertFalse((ROOT / "artifacts").exists())
+        migration = json.loads(
+            (ROOT / "docs/architecture/ARTIFACT_MIGRATION.json").read_text()
         )
-        self.assertTrue(catalog["immutable"])
-        for classification in ("results/public", "results/restricted", "intermediate"):
-            for path in (ROOT / "artifacts" / classification).iterdir():
-                if not path.is_dir():
-                    continue
-                matches = [
-                    rule for rule in catalog["rules"]
-                    if rule["class"] == classification and fnmatch(path.name, rule["pattern"])
-                ]
-                self.assertEqual(len(matches), 1, f"{classification}/{path.name}")
+        self.assertTrue(migration["removed_runs"])
+        roots = [ROOT / entry["artifact_root"] for entry in
+                 (*self.registry["projects"], *self.registry["platforms"])]
+        for entry in migration["retained_runs"]:
+            path = ROOT / entry["path"]
+            self.assertTrue(path.is_dir(), path)
+            self.assertEqual(sum(path.is_relative_to(root) for root in roots), 1)
+            self.assertTrue(entry["reasons"])
+        for entry in migration["removed_runs"]:
+            self.assertFalse((ROOT / entry["path"]).exists())
+            self.assertTrue((ROOT / entry["superseded_by"]).is_dir())
+        projects = {entry["id"]: ROOT / entry["path"]
+                    for entry in self.registry["projects"]}
+        for entry in migration["paper_builds"]:
+            paper = ROOT / entry["path"]
+            self.assertTrue(paper.is_relative_to(projects[entry["project_id"]] / "paper"))
+            self.assertTrue((paper / entry["source"]).is_file())
+            self.assertTrue((paper / entry["pdf"]).is_file())
+            for old_path in entry["previous_paths"]:
+                self.assertFalse((ROOT / old_path).exists())
+        for entry in (*self.registry["projects"], *self.registry["platforms"]):
+            probe = entry["artifact_root"] + "/restricted/ignore-probe-001/result.json"
+            ignored = subprocess.run(["git", "check-ignore", "-q", probe], cwd=ROOT)
+            self.assertEqual(ignored.returncode, 0, probe)
+
+    def test_restricted_input_roots_follow_all_registered_owners(self) -> None:
+        expected = {
+            (ROOT / entry["artifact_root"] / "restricted").resolve()
+            for entry in (*self.registry["projects"], *self.registry["platforms"])
+        }
+        self.assertEqual(set(artifact_roots(ROOT, "restricted")), expected)
 
     def test_superpowers_has_scratch_promotion_and_archive_separation(self) -> None:
         policy = ROOT / "governance/superpowers/README.md"
@@ -369,36 +395,56 @@ class ProjectStructureCodexV3Test(unittest.TestCase):
         self.assertGreater(len(maintained_directories()), 100)
         self.assertEqual(naming_violations(), ())
 
-    def test_completed_portal_naming_exception_is_immutable_and_scoped(self) -> None:
+    def test_ieee_bibliography_style_naming_exception_is_scoped(self) -> None:
         exceptions = json.loads(
             (ROOT / "docs/architecture/NAMING_EXCEPTIONS.json").read_text(encoding="utf-8")
         )["exceptions"]
-        pattern = (
-            "artifacts/projects/guardsynth-coc/restricted/"
-            "guardsynth-project-portal-001/portal-2026-08-12-v6/reviews/*.html"
-        )
+        pattern = "projects/04-guardsynth-coc/paper/ieee-access/template/IEEEtran.bst"
         self.assertEqual(
             [item["pattern"] for item in exceptions if item["pattern"] == pattern],
             [pattern],
         )
-        matched = {
-            path.relative_to(ROOT).as_posix()
-            for path in maintained_files()
-            if fnmatch(path.relative_to(ROOT).as_posix(), pattern)
-        }
-        self.assertEqual(
-            matched,
-            {
-                pattern.replace("*.html", "association-01.html"),
-                pattern.replace("*.html", "association-02.html"),
-                pattern.replace("*.html", "association-03.html"),
-                pattern.replace("*.html", "association-04.html"),
-                pattern.replace("*.html", "association-05.html"),
-                pattern.replace("*.html", "evidence-review.html"),
-                pattern.replace("*.html", "expert-training.html"),
-                pattern.replace("*.html", "image-review.html"),
-            },
+        self.assertTrue((ROOT / pattern).is_file())
+        self.assertFalse(fnmatch(pattern.replace("04-guardsynth-coc", "05-eblc-language-verification"), pattern))
+        self.assertFalse(fnmatch(pattern.replace("IEEEtran.bst", "other.bst"), pattern))
+
+    def test_retired_portal_exception_is_removed_with_its_run(self) -> None:
+        catalog = json.loads((ROOT / "docs/architecture/NAMING_EXCEPTIONS.json").read_text())
+        self.assertFalse(any("portal-2026-08-12-v6" in item["pattern"] for item in catalog["exceptions"]))
+        migration = json.loads((ROOT / "docs/architecture/ARTIFACT_MIGRATION.json").read_text())
+        self.assertTrue(any(item["path"].endswith("portal-2026-08-12-v6") for item in migration["removed_runs"]))
+
+    def test_completed_alpamayo_record_exception_is_immutable_and_scoped(self) -> None:
+        import hashlib
+
+        base = (
+            "projects/04-guardsynth-coc/artifacts/restricted/"
+            "alpamayo-speed-limits-001/speed-limits-2026-10-07-001"
         )
+        pattern = base + "/episode-0[269]/seed-4[234]000.json"
+        exceptions = json.loads((ROOT / "docs/architecture/NAMING_EXCEPTIONS.json").read_text())["exceptions"]
+        self.assertEqual([e["pattern"] for e in exceptions if e["pattern"] == pattern], [pattern])
+        expected = {
+            f"{base}/episode-{scene:02}/seed-{seed}.json"
+            for scene in (2, 6, 9) for seed in (42000, 43000, 44000)
+        }
+        matched = {
+            p.relative_to(ROOT).as_posix() for p in (ROOT / base).rglob("*.json")
+            if fnmatch(p.relative_to(ROOT).as_posix(), pattern)
+        }
+        self.assertEqual(matched, expected)
+        checksums = json.loads((ROOT / base / "report_checksums.json").read_text())
+        self.assertEqual(json.loads((ROOT / base / "RESULT.json").read_text())["status"], "COMPLETE")
+        for name in expected:
+            relative = name[len(base) + 1:]
+            self.assertEqual(hashlib.sha256((ROOT / name).read_bytes()).hexdigest(), checksums[relative])
+        for other in (
+            f"{base}/episode-03/seed-42000.json",
+            f"{base}/episode-02/seed-45000.json",
+            f"{base}/episode-02/seed-42000.npz",
+            f"{base.replace('-001', '-002')}/episode-02/seed-42000.json",
+        ):
+            self.assertFalse(fnmatch(other, pattern))
 
     def test_migration_map_points_to_canonical_locations(self) -> None:
         migration = json.loads(
@@ -417,6 +463,35 @@ class ProjectStructureCodexV3Test(unittest.TestCase):
         self.assertTrue(all((ROOT / path).is_file() for path in paths))
         self.assertFalse(any(path.startswith("research/") for path in paths))
         self.assertFalse(any(path.startswith("experiments/results/") for path in paths))
+
+    def test_review_digest_accepts_only_catalogued_relocation(self) -> None:
+        import hashlib
+        from tempfile import TemporaryDirectory
+        from unittest.mock import patch
+        from cli.project_paths import artifact_digest_matches
+
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            packet = root / "projects/04-guardsynth-coc/artifacts/restricted/packet.json"
+            packet.parent.mkdir(parents=True)
+            packet.write_text('{"path":"relocated"}')
+            original = hashlib.sha256(b'{"path":"original"}').hexdigest()
+            current = hashlib.sha256(packet.read_bytes()).hexdigest()
+            catalog = root / "docs/architecture/ARTIFACT_MIGRATION.json"
+            catalog.parent.mkdir(parents=True)
+            catalog.write_text(json.dumps({"rewritten_files": [{
+                "path": packet.relative_to(root).as_posix(),
+                "before_sha256": original, "after_sha256": current,
+            }]}))
+            with patch("cli.project_paths.project_root", return_value=root):
+                self.assertTrue(artifact_digest_matches(packet, current))
+                self.assertTrue(artifact_digest_matches(packet, original))
+                self.assertFalse(artifact_digest_matches(packet, "0" * 64))
+                other = packet.with_name("other.json")
+                other.write_bytes(packet.read_bytes())
+                self.assertFalse(artifact_digest_matches(other, original))
+                packet.write_text('{"path":"tampered"}')
+                self.assertFalse(artifact_digest_matches(packet, original))
 
 
 if __name__ == "__main__":

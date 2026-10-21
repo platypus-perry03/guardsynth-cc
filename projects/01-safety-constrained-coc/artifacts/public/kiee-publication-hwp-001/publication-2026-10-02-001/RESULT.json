@@ -1,0 +1,28 @@
+{
+  "status": "native-hwp-generated-and-validated",
+  "pages": 15,
+  "hwp_version": "5.1.1.0",
+  "format": "HWP5 compressed OLE compound binary",
+  "native_text_paragraphs": 1522,
+  "native_logical_tables": 12,
+  "native_layout_tables": 15,
+  "figures": 7,
+  "photos": 1,
+  "display_equation_images": 2,
+  "source_to_reopened_text_equal": true,
+  "all_text_paragraphs_present_in_render": true,
+  "render_issues": 0,
+  "font_substitutions": 0,
+  "font_missing": 0,
+  "photo_bytes_preserved": true,
+  "photo_sha256": "debc1d871990dfba172ed6feaa55d636323981cd363b7b4fcd5428c8bcb673fc",
+  "independent_parser_valid": true,
+  "independent_table_count": 27,
+  "independent_picture_count": 10,
+  "hancom_application_validation": false,
+  "limitations": [
+    "Hancom Hangul is unavailable; opening, saving, and pagination in Hancom were not directly tested.",
+    "Two display equations are embedded as images; body text and twelve logical tables are native editable HWP objects.",
+    "Two-column appearance is implemented by fifteen borderless layout tables, using the supplied template page geometry."
+  ]
+}

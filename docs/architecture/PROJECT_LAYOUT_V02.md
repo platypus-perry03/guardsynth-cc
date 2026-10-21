@@ -67,7 +67,7 @@ guardsynth-cc/
 | package regression test | `tests/<package>/` | `src/` |
 | experiment protocol/local analysis | `experiments/<family>/` | `src/` unless reusable |
 | regenerable intermediate output | `artifacts/intermediate/` | `experiments/` |
-| final run result and manifest | `artifacts/results/public|restricted/` | `experiments/` |
+| final run result and manifest | `projects/04-guardsynth-coc/artifacts/public|restricted/` | `experiments/` |
 
 Experiment-local tests may remain beside tightly coupled historical experiment code. Tests for
 the maintained `guard_synth_eblc` package are canonical under `tests/guard_synth_eblc/`.
@@ -98,8 +98,8 @@ Intermediate output may be replaced only when its manifest explicitly marks it r
 | `research/background/` | `docs/designs/` or `docs/surveys/` |
 | `research/*REPORT*.md` | `docs/reports/` |
 | root survey/working notes | `docs/surveys/` or `docs/notes/` |
-| `experiments/results/baseline/` | `artifacts/results/public/` |
-| `experiments/results/restricted/` | `artifacts/results/restricted/` |
+| `experiments/results/baseline/` | `projects/04-guardsynth-coc/artifacts/public/` |
+| `experiments/results/restricted/` | `projects/04-guardsynth-coc/artifacts/restricted/` |
 | `platforms/eblc-bcv/experiments/eblc_p0b/test_*.py` | `tests/guard_synth_eblc/test_*.py` |
 | `platforms/eblc-bcv/pipelines/cli_<purpose>/` | `platforms/eblc-bcv/pipelines/cli/<purpose>/` |
 

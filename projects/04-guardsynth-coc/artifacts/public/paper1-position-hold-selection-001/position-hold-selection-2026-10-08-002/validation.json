@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "rescored_predictions": 2304,
+  "source_and_input_hashes_verified": true,
+  "identical_prompts_across_checkpoints": true,
+  "independent_hypot_rescore": 2304,
+  "semantic_tests_passed": 5,
+  "test_runner": "Direct standard-library runner; pytest unavailable",
+  "visual_review": "PASS: input diagram and final comparison graph inspected"
+}

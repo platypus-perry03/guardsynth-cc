@@ -38,7 +38,7 @@ runtime/solvers/uppaal-5.0.0-linux64/bin/verifyta --lease 168 --key "$UPPAAL_LIC
 python projects/03-sequential-coc-verification/experiments/uppaal/generate_models.py
 ```
 
-시간 상수는 코드에 독립적으로 복사하지 않고 `artifacts/results/public/scene-0001/episode-check-result.json`에서 읽어 millisecond 단위로 양자화한다. 생성된 `scene-profile.json`이 source, trigger와 양자화 규칙을 기록한다.
+시간 상수는 코드에 독립적으로 복사하지 않고 `projects/03-sequential-coc-verification/artifacts/public/scene-0001/episode-check-result.json`에서 읽어 millisecond 단위로 양자화한다. 생성된 `scene-profile.json`이 source, trigger와 양자화 규칙을 기록한다.
 
 생성되는 모델:
 
@@ -84,7 +84,7 @@ A[] not deadlock
 
 ```bash
 python projects/03-sequential-coc-verification/experiments/uppaal/run_verification.py \
-  --output artifacts/results/public/scene-0001/uppaal-verification-result.json
+  --output projects/03-sequential-coc-verification/artifacts/public/scene-0001/uppaal-verification-result.json
 ```
 
 Runner는 각 query의 실제 판정과 `expected-results.json`의 mutation oracle을 비교한다. `normal`만 실행하는 것으로는 query vacuity를 배제할 수 없으므로 다섯 variant가 모두 예상 matrix와 일치해야 feasibility를 PASS로 판정한다.
@@ -121,7 +121,7 @@ episode evidence에서 가져온 값이다. 이후 `STOP` 요청 `5000ms`, 정�
 
 ```bash
 python projects/03-sequential-coc-verification/experiments/uppaal/run_chained_verification.py \
-  --output artifacts/results/public/scene-0001/uppaal-chained-verification-result.json
+  --output projects/03-sequential-coc-verification/artifacts/public/scene-0001/uppaal-chained-verification-result.json
 ```
 
 | variant | Decel | Hold | Recovered | deadline | order | clearance | deadlock |
@@ -222,7 +222,7 @@ python projects/03-sequential-coc-verification/experiments/uppaal/run_scene0074_
 `preserve-first` 계약에 대한 프로토콜 수준 반례인 동시에, 반복 CoC의 갱신 규칙을
 명세하지 않으면 검증 판정이 유일하지 않음을 보여주는 witness다. 충돌 위험, 실제
 가속 페달/토크 반응 또는 차량의 물리 안전성을 입증하는 반례는 아니다. 결과와
-추적성은 `artifacts/results/public/scene-0074/uppaal-repeated-obligation-semantics-result.json`
+추적성은 `projects/03-sequential-coc-verification/artifacts/public/scene-0074/uppaal-repeated-obligation-semantics-result.json`
 에 저장한다.
 
 ## 나머지 4개 후보 다중 속성 검증

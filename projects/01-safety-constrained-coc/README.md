@@ -11,4 +11,4 @@ safety. The manuscript and experiment code are owned here.
 - Surveys: [`docs/surveys/README.md`](docs/surveys/README.md)
 - Paper: [`paper/manuscript/WRITING_PLAN.md`](paper/manuscript/WRITING_PLAN.md)
 - Patent disclosure and analysis: [`paper/patents/README.md`](paper/patents/README.md)
-- Results: [`results/RESULT_INDEX.md`](results/RESULT_INDEX.md)
+- Results: [`artifacts/RESULT_INDEX.md`](artifacts/RESULT_INDEX.md)

@@ -1,0 +1,5190 @@
+{
+  "previous_paragraphs": 1251,
+  "new_paragraphs": 240,
+  "roles": [
+    "title",
+    "title",
+    "author",
+    "author",
+    "abstract",
+    "keywords",
+    "affiliation",
+    "affiliation",
+    "affiliation",
+    "heading",
+    "body",
+    "body",
+    "body",
+    "body",
+    "body",
+    "body",
+    "body",
+    "list",
+    "list",
+    "list",
+    "list",
+    "body",
+    "list",
+    "list",
+    "object",
+    "caption",
+    "caption",
+    "list",
+    "list",
+    "list",
+    "list",
+    "body",
+    "body",
+    "body",
+    "heading",
+    "heading",
+    "body",
+    "heading",
+    "body",
+    "heading",
+    "body",
+    "heading",
+    "body",
+    "body",
+    "heading",
+    "body",
+    "body",
+    "object",
+    "body",
+    "heading",
+    "body",
+    "object",
+    "body",
+    "body",
+    "heading",
+    "body",
+    "body",
+    "heading",
+    "body",
+    "body",
+    "heading",
+    "body",
+    "body",
+    "caption",
+    "caption",
+    "object",
+    "object",
+    "caption",
+    "caption",
+    "caption",
+    "caption",
+    "object",
+    "body",
+    "body",
+    "heading",
+    "body",
+    "body",
+    "heading",
+    "body",
+    "body",
+    "body",
+    "caption",
+    "caption",
+    "object",
+    "object",
+    "caption",
+    "caption",
+    "caption",
+    "caption",
+    "object",
+    "heading",
+    "body",
+    "list",
+    "list",
+    "list",
+    "list",
+    "list",
+    "body",
+    "body",
+    "heading",
+    "body",
+    "body",
+    "body",
+    "caption",
+    "caption",
+    "object",
+    "caption",
+    "caption",
+    "object",
+    "body",
+    "heading",
+    "body",
+    "body",
+    "body",
+    "heading",
+    "body",
+    "body",
+    "body",
+    "body",
+    "body",
+    "object",
+    "caption",
+    "caption",
+    "heading",
+    "body",
+    "heading",
+    "body",
+    "body",
+    "heading",
+    "body",
+    "body",
+    "body",
+    "body",
+    "caption",
+    "caption",
+    "object",
+    "caption",
+    "caption",
+    "object",
+    "heading",
+    "body",
+    "body",
+    "body",
+    "body",
+    "caption",
+    "caption",
+    "object",
+    "heading",
+    "body",
+    "body",
+    "body",
+    "body",
+    "body",
+    "body",
+    "caption",
+    "caption",
+    "object",
+    "heading",
+    "body",
+    "body",
+    "body",
+    "body",
+    "body",
+    "body",
+    "body",
+    "body",
+    "caption",
+    "caption",
+    "object",
+    "object",
+    "caption",
+    "caption",
+    "object",
+    "caption",
+    "caption",
+    "caption",
+    "caption",
+    "object",
+    "body",
+    "heading",
+    "body",
+    "heading",
+    "body",
+    "body",
+    "body",
+    "heading",
+    "body",
+    "body",
+    "heading",
+    "body",
+    "body",
+    "body",
+    "body",
+    "heading",
+    "body",
+    "body",
+    "object",
+    "caption",
+    "caption",
+    "body",
+    "body",
+    "heading",
+    "body",
+    "body",
+    "body",
+    "heading",
+    "body",
+    "body",
+    "body",
+    "heading",
+    "body",
+    "body",
+    "heading",
+    "body",
+    "body",
+    "heading",
+    "body",
+    "body",
+    "body",
+    "body",
+    "body",
+    "body",
+    "heading",
+    "body",
+    "heading",
+    "reference",
+    "reference",
+    "reference",
+    "reference",
+    "reference",
+    "reference",
+    "reference",
+    "reference",
+    "reference",
+    "reference",
+    "heading",
+    "bio-name",
+    "object",
+    "bio",
+    "list"
+  ],
+  "relocated_inline_blocks": [
+    {
+      "paragraph": 62,
+      "inline_blocks": 9
+    },
+    {
+      "paragraph": 80,
+      "inline_blocks": 9
+    },
+    {
+      "paragraph": 102,
+      "inline_blocks": 6
+    },
+    {
+      "paragraph": 119,
+      "inline_blocks": 3
+    },
+    {
+      "paragraph": 132,
+      "inline_blocks": 6
+    },
+    {
+      "paragraph": 143,
+      "inline_blocks": 3
+    },
+    {
+      "paragraph": 153,
+      "inline_blocks": 3
+    },
+    {
+      "paragraph": 165,
+      "inline_blocks": 12
+    }
+  ],
+  "hyphenation_repairs": [
+    {
+      "before": "exe- cutable",
+      "after": "executable"
+    },
+    {
+      "before": "driv- ing",
+      "after": "driving"
+    },
+    {
+      "before": "Ba- sic",
+      "after": "Basic"
+    },
+    {
+      "before": "Stan- dard",
+      "after": "Standard"
+    },
+    {
+      "before": "repre- sentation",
+      "after": "representation"
+    },
+    {
+      "before": "au- tonomous",
+      "after": "autonomous"
+    },
+    {
+      "before": "reason- ing",
+      "after": "reasoning"
+    },
+    {
+      "before": "met- ric",
+      "after": "metric"
+    },
+    {
+      "before": "for- mal",
+      "after": "formal"
+    },
+    {
+      "before": "Implemen- tation",
+      "after": "Implementation"
+    },
+    {
+      "before": "ad- versarial",
+      "after": "adversarial"
+    },
+    {
+      "before": "comple- tion",
+      "after": "completion"
+    }
+  ],
+  "positions": [
+    {
+      "paragraph": 0,
+      "page": 1,
+      "y": 0,
+      "height": 1594,
+      "role": "title"
+    },
+    {
+      "paragraph": 0,
+      "page": 1,
+      "y": 1833,
+      "height": 1594,
+      "role": "title"
+    },
+    {
+      "paragraph": 1,
+      "page": 1,
+      "y": 4166,
+      "height": 1395,
+      "role": "title"
+    },
+    {
+      "paragraph": 1,
+      "page": 1,
+      "y": 5770,
+      "height": 1395,
+      "role": "title"
+    },
+    {
+      "paragraph": 2,
+      "page": 1,
+      "y": 7874,
+      "height": 1196,
+      "role": "author"
+    },
+    {
+      "paragraph": 3,
+      "page": 1,
+      "y": 9549,
+      "height": 1196,
+      "role": "author"
+    },
+    {
+      "paragraph": 4,
+      "page": 1,
+      "y": 11224,
+      "height": 847,
+      "role": "abstract"
+    },
+    {
+      "paragraph": 4,
+      "page": 1,
+      "y": 12198,
+      "height": 847,
+      "role": "abstract"
+    },
+    {
+      "paragraph": 4,
+      "page": 1,
+      "y": 13172,
+      "height": 847,
+      "role": "abstract"
+    },
+    {
+      "paragraph": 4,
+      "page": 1,
+      "y": 14146,
+      "height": 847,
+      "role": "abstract"
+    },
+    {
+      "paragraph": 4,
+      "page": 1,
+      "y": 15120,
+      "height": 847,
+      "role": "abstract"
+    },
+    {
+      "paragraph": 4,
+      "page": 1,
+      "y": 16094,
+      "height": 847,
+      "role": "abstract"
+    },
+    {
+      "paragraph": 4,
+      "page": 1,
+      "y": 17068,
+      "height": 847,
+      "role": "abstract"
+    },
+    {
+      "paragraph": 4,
+      "page": 1,
+      "y": 18042,
+      "height": 847,
+      "role": "abstract"
+    },
+    {
+      "paragraph": 5,
+      "page": 1,
+      "y": 19316,
+      "height": 847,
+      "role": "keywords"
+    },
+    {
+      "paragraph": 5,
+      "page": 1,
+      "y": 20290,
+      "height": 847,
+      "role": "keywords"
+    },
+    {
+      "paragraph": 6,
+      "page": 1,
+      "y": 21564,
+      "height": 797,
+      "role": "affiliation"
+    },
+    {
+      "paragraph": 7,
+      "page": 1,
+      "y": 22781,
+      "height": 797,
+      "role": "affiliation"
+    },
+    {
+      "paragraph": 8,
+      "page": 1,
+      "y": 23998,
+      "height": 797,
+      "role": "affiliation"
+    },
+    {
+      "paragraph": 9,
+      "page": 1,
+      "y": 25715,
+      "height": 897,
+      "role": "heading"
+    },
+    {
+      "paragraph": 10,
+      "page": 1,
+      "y": 27047,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 10,
+      "page": 1,
+      "y": 28021,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 10,
+      "page": 1,
+      "y": 28995,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 10,
+      "page": 1,
+      "y": 29969,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 11,
+      "page": 1,
+      "y": 31243,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 11,
+      "page": 1,
+      "y": 32217,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 11,
+      "page": 1,
+      "y": 33191,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 11,
+      "page": 1,
+      "y": 34165,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 12,
+      "page": 1,
+      "y": 35439,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 12,
+      "page": 1,
+      "y": 36413,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 12,
+      "page": 1,
+      "y": 37387,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 12,
+      "page": 1,
+      "y": 38361,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 12,
+      "page": 1,
+      "y": 39335,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 13,
+      "page": 1,
+      "y": 40609,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 13,
+      "page": 1,
+      "y": 41583,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 13,
+      "page": 1,
+      "y": 42557,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 13,
+      "page": 1,
+      "y": 43531,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 14,
+      "page": 1,
+      "y": 44805,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 14,
+      "page": 1,
+      "y": 45779,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 14,
+      "page": 1,
+      "y": 46753,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 14,
+      "page": 1,
+      "y": 47727,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 15,
+      "page": 1,
+      "y": 49001,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 15,
+      "page": 1,
+      "y": 49975,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 15,
+      "page": 1,
+      "y": 50949,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 15,
+      "page": 1,
+      "y": 51923,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 15,
+      "page": 1,
+      "y": 52897,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 16,
+      "page": 1,
+      "y": 54171,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 17,
+      "page": 1,
+      "y": 55445,
+      "height": 847,
+      "role": "list"
+    },
+    {
+      "paragraph": 18,
+      "page": 1,
+      "y": 56569,
+      "height": 847,
+      "role": "list"
+    },
+    {
+      "paragraph": 19,
+      "page": 1,
+      "y": 57693,
+      "height": 847,
+      "role": "list"
+    },
+    {
+      "paragraph": 20,
+      "page": 1,
+      "y": 58817,
+      "height": 847,
+      "role": "list"
+    },
+    {
+      "paragraph": 21,
+      "page": 1,
+      "y": 59941,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 22,
+      "page": 1,
+      "y": 61215,
+      "height": 847,
+      "role": "list"
+    },
+    {
+      "paragraph": 23,
+      "page": 1,
+      "y": 62339,
+      "height": 847,
+      "role": "list"
+    },
+    {
+      "paragraph": 24,
+      "page": 2,
+      "y": 0,
+      "height": 21559,
+      "role": "object"
+    },
+    {
+      "paragraph": 25,
+      "page": 2,
+      "y": 21959,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 25,
+      "page": 2,
+      "y": 22761,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 25,
+      "page": 2,
+      "y": 23563,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 26,
+      "page": 2,
+      "y": 24665,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 26,
+      "page": 2,
+      "y": 25467,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 27,
+      "page": 2,
+      "y": 26569,
+      "height": 847,
+      "role": "list"
+    },
+    {
+      "paragraph": 28,
+      "page": 2,
+      "y": 27693,
+      "height": 847,
+      "role": "list"
+    },
+    {
+      "paragraph": 28,
+      "page": 2,
+      "y": 28667,
+      "height": 847,
+      "role": "list"
+    },
+    {
+      "paragraph": 29,
+      "page": 2,
+      "y": 29791,
+      "height": 847,
+      "role": "list"
+    },
+    {
+      "paragraph": 29,
+      "page": 2,
+      "y": 30765,
+      "height": 847,
+      "role": "list"
+    },
+    {
+      "paragraph": 30,
+      "page": 2,
+      "y": 31889,
+      "height": 847,
+      "role": "list"
+    },
+    {
+      "paragraph": 30,
+      "page": 2,
+      "y": 32863,
+      "height": 847,
+      "role": "list"
+    },
+    {
+      "paragraph": 31,
+      "page": 2,
+      "y": 33987,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 31,
+      "page": 2,
+      "y": 34961,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 31,
+      "page": 2,
+      "y": 35935,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 31,
+      "page": 2,
+      "y": 36909,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 31,
+      "page": 2,
+      "y": 37883,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 32,
+      "page": 2,
+      "y": 39157,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 32,
+      "page": 2,
+      "y": 40131,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 32,
+      "page": 2,
+      "y": 41105,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 32,
+      "page": 2,
+      "y": 42079,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 32,
+      "page": 2,
+      "y": 43053,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 32,
+      "page": 2,
+      "y": 44027,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 33,
+      "page": 2,
+      "y": 45301,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 33,
+      "page": 2,
+      "y": 46275,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 33,
+      "page": 2,
+      "y": 47249,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 33,
+      "page": 2,
+      "y": 48223,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 34,
+      "page": 2,
+      "y": 49997,
+      "height": 897,
+      "role": "heading"
+    },
+    {
+      "paragraph": 35,
+      "page": 2,
+      "y": 51829,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 36,
+      "page": 2,
+      "y": 53103,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 36,
+      "page": 2,
+      "y": 54077,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 36,
+      "page": 2,
+      "y": 55051,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 36,
+      "page": 2,
+      "y": 56025,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 37,
+      "page": 2,
+      "y": 57799,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 38,
+      "page": 2,
+      "y": 59073,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 38,
+      "page": 2,
+      "y": 60047,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 38,
+      "page": 2,
+      "y": 61021,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 39,
+      "page": 2,
+      "y": 62795,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 40,
+      "page": 2,
+      "y": 64069,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 40,
+      "page": 2,
+      "y": 65043,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 40,
+      "page": 2,
+      "y": 66017,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 40,
+      "page": 2,
+      "y": 66991,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 41,
+      "page": 3,
+      "y": 0,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 42,
+      "page": 3,
+      "y": 1274,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 42,
+      "page": 3,
+      "y": 2248,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 42,
+      "page": 3,
+      "y": 3222,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 43,
+      "page": 3,
+      "y": 4496,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 43,
+      "page": 3,
+      "y": 5470,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 43,
+      "page": 3,
+      "y": 6444,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 44,
+      "page": 3,
+      "y": 8218,
+      "height": 897,
+      "role": "heading"
+    },
+    {
+      "paragraph": 45,
+      "page": 3,
+      "y": 9550,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 45,
+      "page": 3,
+      "y": 10524,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 46,
+      "page": 3,
+      "y": 11798,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 46,
+      "page": 3,
+      "y": 12772,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 46,
+      "page": 3,
+      "y": 13746,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 47,
+      "page": 3,
+      "y": 15020,
+      "height": 3682,
+      "role": "object"
+    },
+    {
+      "paragraph": 48,
+      "page": 3,
+      "y": 19102,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 48,
+      "page": 3,
+      "y": 20076,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 49,
+      "page": 3,
+      "y": 21850,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 50,
+      "page": 3,
+      "y": 23124,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 50,
+      "page": 3,
+      "y": 24098,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 50,
+      "page": 3,
+      "y": 25072,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 51,
+      "page": 3,
+      "y": 26346,
+      "height": 5582,
+      "role": "object"
+    },
+    {
+      "paragraph": 52,
+      "page": 3,
+      "y": 32328,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 52,
+      "page": 3,
+      "y": 33302,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 52,
+      "page": 3,
+      "y": 34276,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 52,
+      "page": 3,
+      "y": 35250,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 52,
+      "page": 3,
+      "y": 36224,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 52,
+      "page": 3,
+      "y": 37198,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 52,
+      "page": 3,
+      "y": 38172,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 52,
+      "page": 3,
+      "y": 39146,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 52,
+      "page": 3,
+      "y": 40120,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 53,
+      "page": 3,
+      "y": 41394,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 53,
+      "page": 3,
+      "y": 42368,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 53,
+      "page": 3,
+      "y": 43342,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 54,
+      "page": 3,
+      "y": 45116,
+      "height": 897,
+      "role": "heading"
+    },
+    {
+      "paragraph": 55,
+      "page": 3,
+      "y": 46448,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 55,
+      "page": 3,
+      "y": 47422,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 55,
+      "page": 3,
+      "y": 48396,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 55,
+      "page": 3,
+      "y": 49370,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 56,
+      "page": 3,
+      "y": 50644,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 56,
+      "page": 3,
+      "y": 51618,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 56,
+      "page": 3,
+      "y": 52592,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 57,
+      "page": 3,
+      "y": 54366,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 58,
+      "page": 3,
+      "y": 55640,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 58,
+      "page": 3,
+      "y": 56614,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 58,
+      "page": 3,
+      "y": 57588,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 58,
+      "page": 3,
+      "y": 58562,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 59,
+      "page": 3,
+      "y": 59836,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 59,
+      "page": 3,
+      "y": 60810,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 59,
+      "page": 3,
+      "y": 61784,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 59,
+      "page": 3,
+      "y": 62758,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 59,
+      "page": 3,
+      "y": 63732,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 60,
+      "page": 4,
+      "y": 0,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 61,
+      "page": 4,
+      "y": 1274,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 61,
+      "page": 4,
+      "y": 2248,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 61,
+      "page": 4,
+      "y": 3222,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 62,
+      "page": 4,
+      "y": 4496,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 62,
+      "page": 4,
+      "y": 5470,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 62,
+      "page": 4,
+      "y": 6444,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 62,
+      "page": 4,
+      "y": 7418,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 62,
+      "page": 4,
+      "y": 8392,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 63,
+      "page": 4,
+      "y": 9666,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 64,
+      "page": 4,
+      "y": 10768,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 65,
+      "page": 4,
+      "y": 11870,
+      "height": 7846,
+      "role": "object"
+    },
+    {
+      "paragraph": 66,
+      "page": 4,
+      "y": 20116,
+      "height": 16395,
+      "role": "object"
+    },
+    {
+      "paragraph": 67,
+      "page": 4,
+      "y": 36911,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 67,
+      "page": 4,
+      "y": 37713,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 67,
+      "page": 4,
+      "y": 38515,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 68,
+      "page": 4,
+      "y": 39617,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 69,
+      "page": 4,
+      "y": 40719,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 69,
+      "page": 4,
+      "y": 41521,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 70,
+      "page": 4,
+      "y": 42623,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 71,
+      "page": 4,
+      "y": 43725,
+      "height": 15376,
+      "role": "object"
+    },
+    {
+      "paragraph": 72,
+      "page": 4,
+      "y": 59501,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 72,
+      "page": 4,
+      "y": 60475,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 72,
+      "page": 4,
+      "y": 61449,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 73,
+      "page": 5,
+      "y": 0,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 73,
+      "page": 5,
+      "y": 974,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 73,
+      "page": 5,
+      "y": 1948,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 73,
+      "page": 5,
+      "y": 2922,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 73,
+      "page": 5,
+      "y": 3896,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 73,
+      "page": 5,
+      "y": 4870,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 73,
+      "page": 5,
+      "y": 5844,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 73,
+      "page": 5,
+      "y": 6818,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 74,
+      "page": 5,
+      "y": 8592,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 75,
+      "page": 5,
+      "y": 9866,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 75,
+      "page": 5,
+      "y": 10840,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 75,
+      "page": 5,
+      "y": 11814,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 76,
+      "page": 5,
+      "y": 13088,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 76,
+      "page": 5,
+      "y": 14062,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 76,
+      "page": 5,
+      "y": 15036,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 77,
+      "page": 5,
+      "y": 16810,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 78,
+      "page": 5,
+      "y": 18084,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 78,
+      "page": 5,
+      "y": 19058,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 78,
+      "page": 5,
+      "y": 20032,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 79,
+      "page": 5,
+      "y": 21306,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 79,
+      "page": 5,
+      "y": 22280,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 80,
+      "page": 5,
+      "y": 23554,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 80,
+      "page": 5,
+      "y": 24528,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 80,
+      "page": 5,
+      "y": 25502,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 81,
+      "page": 5,
+      "y": 26776,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 81,
+      "page": 5,
+      "y": 27578,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 82,
+      "page": 5,
+      "y": 28680,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 83,
+      "page": 5,
+      "y": 29782,
+      "height": 12111,
+      "role": "object"
+    },
+    {
+      "paragraph": 84,
+      "page": 6,
+      "y": 0,
+      "height": 20420,
+      "role": "object"
+    },
+    {
+      "paragraph": 85,
+      "page": 6,
+      "y": 20820,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 85,
+      "page": 6,
+      "y": 21622,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 86,
+      "page": 6,
+      "y": 22724,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 87,
+      "page": 6,
+      "y": 23826,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 87,
+      "page": 6,
+      "y": 24628,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 88,
+      "page": 6,
+      "y": 25730,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 89,
+      "page": 6,
+      "y": 26832,
+      "height": 6541,
+      "role": "object"
+    },
+    {
+      "paragraph": 90,
+      "page": 6,
+      "y": 34273,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 91,
+      "page": 6,
+      "y": 35547,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 91,
+      "page": 6,
+      "y": 36521,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 92,
+      "page": 6,
+      "y": 37795,
+      "height": 847,
+      "role": "list"
+    },
+    {
+      "paragraph": 93,
+      "page": 6,
+      "y": 38919,
+      "height": 847,
+      "role": "list"
+    },
+    {
+      "paragraph": 94,
+      "page": 6,
+      "y": 40043,
+      "height": 847,
+      "role": "list"
+    },
+    {
+      "paragraph": 95,
+      "page": 6,
+      "y": 41167,
+      "height": 847,
+      "role": "list"
+    },
+    {
+      "paragraph": 96,
+      "page": 6,
+      "y": 42291,
+      "height": 847,
+      "role": "list"
+    },
+    {
+      "paragraph": 97,
+      "page": 6,
+      "y": 43415,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 97,
+      "page": 6,
+      "y": 44389,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 97,
+      "page": 6,
+      "y": 45363,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 98,
+      "page": 6,
+      "y": 46637,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 98,
+      "page": 6,
+      "y": 47611,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 99,
+      "page": 6,
+      "y": 49385,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 100,
+      "page": 6,
+      "y": 50659,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 100,
+      "page": 6,
+      "y": 51633,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 101,
+      "page": 6,
+      "y": 52907,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 101,
+      "page": 6,
+      "y": 53881,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 101,
+      "page": 6,
+      "y": 54855,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 102,
+      "page": 6,
+      "y": 56129,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 102,
+      "page": 6,
+      "y": 57103,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 102,
+      "page": 6,
+      "y": 58077,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 102,
+      "page": 6,
+      "y": 59051,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 102,
+      "page": 6,
+      "y": 60025,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 103,
+      "page": 7,
+      "y": 0,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 104,
+      "page": 7,
+      "y": 1102,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 105,
+      "page": 7,
+      "y": 2204,
+      "height": 14181,
+      "role": "object"
+    },
+    {
+      "paragraph": 106,
+      "page": 7,
+      "y": 16785,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 106,
+      "page": 7,
+      "y": 17587,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 107,
+      "page": 7,
+      "y": 18689,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 108,
+      "page": 7,
+      "y": 19791,
+      "height": 15931,
+      "role": "object"
+    },
+    {
+      "paragraph": 109,
+      "page": 7,
+      "y": 36122,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 109,
+      "page": 7,
+      "y": 37096,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 109,
+      "page": 7,
+      "y": 38070,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 109,
+      "page": 7,
+      "y": 39044,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 109,
+      "page": 7,
+      "y": 40018,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 110,
+      "page": 7,
+      "y": 41792,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 111,
+      "page": 7,
+      "y": 43066,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 111,
+      "page": 7,
+      "y": 44040,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 111,
+      "page": 7,
+      "y": 45014,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 112,
+      "page": 7,
+      "y": 46288,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 112,
+      "page": 7,
+      "y": 47262,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 112,
+      "page": 7,
+      "y": 48236,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 112,
+      "page": 7,
+      "y": 49210,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 112,
+      "page": 7,
+      "y": 50184,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 113,
+      "page": 7,
+      "y": 51458,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 113,
+      "page": 7,
+      "y": 52432,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 113,
+      "page": 7,
+      "y": 53406,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 113,
+      "page": 7,
+      "y": 54380,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 114,
+      "page": 7,
+      "y": 56154,
+      "height": 897,
+      "role": "heading"
+    },
+    {
+      "paragraph": 115,
+      "page": 7,
+      "y": 57486,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 115,
+      "page": 7,
+      "y": 58460,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 115,
+      "page": 7,
+      "y": 59434,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 116,
+      "page": 7,
+      "y": 60708,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 116,
+      "page": 7,
+      "y": 61682,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 116,
+      "page": 7,
+      "y": 62656,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 116,
+      "page": 7,
+      "y": 63630,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 117,
+      "page": 7,
+      "y": 64904,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 117,
+      "page": 7,
+      "y": 65878,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 117,
+      "page": 7,
+      "y": 66852,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 118,
+      "page": 8,
+      "y": 0,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 118,
+      "page": 8,
+      "y": 974,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 118,
+      "page": 8,
+      "y": 1948,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 118,
+      "page": 8,
+      "y": 2922,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 118,
+      "page": 8,
+      "y": 3896,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 118,
+      "page": 8,
+      "y": 4870,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 118,
+      "page": 8,
+      "y": 5844,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 118,
+      "page": 8,
+      "y": 6818,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 118,
+      "page": 8,
+      "y": 7792,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 118,
+      "page": 8,
+      "y": 8766,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 118,
+      "page": 8,
+      "y": 9740,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 119,
+      "page": 8,
+      "y": 11014,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 119,
+      "page": 8,
+      "y": 11988,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 119,
+      "page": 8,
+      "y": 12962,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 119,
+      "page": 8,
+      "y": 13936,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 119,
+      "page": 8,
+      "y": 14910,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 120,
+      "page": 8,
+      "y": 16184,
+      "height": 14297,
+      "role": "object"
+    },
+    {
+      "paragraph": 121,
+      "page": 8,
+      "y": 30881,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 121,
+      "page": 8,
+      "y": 31683,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 122,
+      "page": 8,
+      "y": 32785,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 123,
+      "page": 8,
+      "y": 34387,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 124,
+      "page": 8,
+      "y": 35661,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 124,
+      "page": 8,
+      "y": 36635,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 124,
+      "page": 8,
+      "y": 37609,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 124,
+      "page": 8,
+      "y": 38583,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 124,
+      "page": 8,
+      "y": 39557,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 124,
+      "page": 8,
+      "y": 40531,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 124,
+      "page": 8,
+      "y": 41505,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 124,
+      "page": 8,
+      "y": 42479,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 124,
+      "page": 8,
+      "y": 43453,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 124,
+      "page": 8,
+      "y": 44427,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 124,
+      "page": 8,
+      "y": 45401,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 125,
+      "page": 8,
+      "y": 47175,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 126,
+      "page": 8,
+      "y": 48449,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 126,
+      "page": 8,
+      "y": 49423,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 126,
+      "page": 8,
+      "y": 50397,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 126,
+      "page": 8,
+      "y": 51371,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 126,
+      "page": 8,
+      "y": 52345,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 126,
+      "page": 8,
+      "y": 53319,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 126,
+      "page": 8,
+      "y": 54293,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 126,
+      "page": 8,
+      "y": 55267,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 126,
+      "page": 8,
+      "y": 56241,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 127,
+      "page": 8,
+      "y": 57515,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 127,
+      "page": 8,
+      "y": 58489,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 127,
+      "page": 8,
+      "y": 59463,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 127,
+      "page": 8,
+      "y": 60437,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 127,
+      "page": 8,
+      "y": 61411,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 128,
+      "page": 9,
+      "y": 0,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 129,
+      "page": 9,
+      "y": 1274,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 129,
+      "page": 9,
+      "y": 2248,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 129,
+      "page": 9,
+      "y": 3222,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 129,
+      "page": 9,
+      "y": 4196,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 129,
+      "page": 9,
+      "y": 5170,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 130,
+      "page": 9,
+      "y": 6444,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 130,
+      "page": 9,
+      "y": 7418,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 130,
+      "page": 9,
+      "y": 8392,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 130,
+      "page": 9,
+      "y": 9366,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 130,
+      "page": 9,
+      "y": 10340,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 130,
+      "page": 9,
+      "y": 11314,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 131,
+      "page": 9,
+      "y": 12588,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 131,
+      "page": 9,
+      "y": 13562,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 131,
+      "page": 9,
+      "y": 14536,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 132,
+      "page": 9,
+      "y": 15810,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 132,
+      "page": 9,
+      "y": 16784,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 132,
+      "page": 9,
+      "y": 17758,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 132,
+      "page": 9,
+      "y": 18732,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 132,
+      "page": 9,
+      "y": 19706,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 132,
+      "page": 9,
+      "y": 20680,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 133,
+      "page": 9,
+      "y": 21954,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 133,
+      "page": 9,
+      "y": 22756,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 134,
+      "page": 9,
+      "y": 23858,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 134,
+      "page": 9,
+      "y": 24660,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 135,
+      "page": 9,
+      "y": 25762,
+      "height": 16306,
+      "role": "object"
+    },
+    {
+      "paragraph": 136,
+      "page": 9,
+      "y": 42468,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 136,
+      "page": 9,
+      "y": 43270,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 137,
+      "page": 9,
+      "y": 44372,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 137,
+      "page": 9,
+      "y": 45174,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 138,
+      "page": 9,
+      "y": 46276,
+      "height": 11236,
+      "role": "object"
+    },
+    {
+      "paragraph": 139,
+      "page": 10,
+      "y": 0,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 140,
+      "page": 10,
+      "y": 1274,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 140,
+      "page": 10,
+      "y": 2248,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 140,
+      "page": 10,
+      "y": 3222,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 140,
+      "page": 10,
+      "y": 4196,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 140,
+      "page": 10,
+      "y": 5170,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 140,
+      "page": 10,
+      "y": 6144,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 140,
+      "page": 10,
+      "y": 7118,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 140,
+      "page": 10,
+      "y": 8092,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 140,
+      "page": 10,
+      "y": 9066,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 140,
+      "page": 10,
+      "y": 10040,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 140,
+      "page": 10,
+      "y": 11014,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 140,
+      "page": 10,
+      "y": 11988,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 140,
+      "page": 10,
+      "y": 12962,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 141,
+      "page": 10,
+      "y": 14236,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 141,
+      "page": 10,
+      "y": 15210,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 141,
+      "page": 10,
+      "y": 16184,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 141,
+      "page": 10,
+      "y": 17158,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 141,
+      "page": 10,
+      "y": 18132,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 142,
+      "page": 10,
+      "y": 19406,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 142,
+      "page": 10,
+      "y": 20380,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 142,
+      "page": 10,
+      "y": 21354,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 142,
+      "page": 10,
+      "y": 22328,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 143,
+      "page": 10,
+      "y": 23602,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 143,
+      "page": 10,
+      "y": 24576,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 143,
+      "page": 10,
+      "y": 25550,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 143,
+      "page": 10,
+      "y": 26524,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 143,
+      "page": 10,
+      "y": 27498,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 143,
+      "page": 10,
+      "y": 28472,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 143,
+      "page": 10,
+      "y": 29446,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 143,
+      "page": 10,
+      "y": 30420,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 143,
+      "page": 10,
+      "y": 31394,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 143,
+      "page": 10,
+      "y": 32368,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 143,
+      "page": 10,
+      "y": 33342,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 143,
+      "page": 10,
+      "y": 34316,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 143,
+      "page": 10,
+      "y": 35290,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 144,
+      "page": 10,
+      "y": 36564,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 144,
+      "page": 10,
+      "y": 37366,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 145,
+      "page": 10,
+      "y": 38468,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 146,
+      "page": 10,
+      "y": 39570,
+      "height": 11236,
+      "role": "object"
+    },
+    {
+      "paragraph": 147,
+      "page": 10,
+      "y": 51706,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 148,
+      "page": 10,
+      "y": 52980,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 148,
+      "page": 10,
+      "y": 53954,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 148,
+      "page": 10,
+      "y": 54928,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 148,
+      "page": 10,
+      "y": 55902,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 148,
+      "page": 10,
+      "y": 56876,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 148,
+      "page": 10,
+      "y": 57850,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 148,
+      "page": 10,
+      "y": 58824,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 149,
+      "page": 11,
+      "y": 0,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 149,
+      "page": 11,
+      "y": 974,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 149,
+      "page": 11,
+      "y": 1948,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 149,
+      "page": 11,
+      "y": 2922,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 149,
+      "page": 11,
+      "y": 3896,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 149,
+      "page": 11,
+      "y": 4870,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 149,
+      "page": 11,
+      "y": 5844,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 149,
+      "page": 11,
+      "y": 6818,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 149,
+      "page": 11,
+      "y": 7792,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 149,
+      "page": 11,
+      "y": 8766,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 149,
+      "page": 11,
+      "y": 9740,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 150,
+      "page": 11,
+      "y": 11014,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 150,
+      "page": 11,
+      "y": 11988,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 150,
+      "page": 11,
+      "y": 12962,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 150,
+      "page": 11,
+      "y": 13936,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 150,
+      "page": 11,
+      "y": 14910,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 150,
+      "page": 11,
+      "y": 15884,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 151,
+      "page": 11,
+      "y": 17158,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 151,
+      "page": 11,
+      "y": 18132,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 151,
+      "page": 11,
+      "y": 19106,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 151,
+      "page": 11,
+      "y": 20080,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 151,
+      "page": 11,
+      "y": 21054,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 151,
+      "page": 11,
+      "y": 22028,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 151,
+      "page": 11,
+      "y": 23002,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 152,
+      "page": 11,
+      "y": 24276,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 152,
+      "page": 11,
+      "y": 25250,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 152,
+      "page": 11,
+      "y": 26224,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 152,
+      "page": 11,
+      "y": 27198,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 153,
+      "page": 11,
+      "y": 28472,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 153,
+      "page": 11,
+      "y": 29446,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 153,
+      "page": 11,
+      "y": 30420,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 153,
+      "page": 11,
+      "y": 31394,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 153,
+      "page": 11,
+      "y": 32368,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 153,
+      "page": 11,
+      "y": 33342,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 153,
+      "page": 11,
+      "y": 34316,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 154,
+      "page": 11,
+      "y": 35590,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 154,
+      "page": 11,
+      "y": 36392,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 155,
+      "page": 11,
+      "y": 37494,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 155,
+      "page": 11,
+      "y": 38296,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 156,
+      "page": 11,
+      "y": 39398,
+      "height": 19516,
+      "role": "object"
+    },
+    {
+      "paragraph": 157,
+      "page": 11,
+      "y": 59814,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 158,
+      "page": 11,
+      "y": 61088,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 158,
+      "page": 11,
+      "y": 62062,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 158,
+      "page": 11,
+      "y": 63036,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 158,
+      "page": 11,
+      "y": 64010,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 158,
+      "page": 11,
+      "y": 64984,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 158,
+      "page": 11,
+      "y": 65958,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 158,
+      "page": 11,
+      "y": 66932,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 158,
+      "page": 11,
+      "y": 67906,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 159,
+      "page": 12,
+      "y": 0,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 159,
+      "page": 12,
+      "y": 974,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 159,
+      "page": 12,
+      "y": 1948,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 159,
+      "page": 12,
+      "y": 2922,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 160,
+      "page": 12,
+      "y": 4196,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 160,
+      "page": 12,
+      "y": 5170,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 160,
+      "page": 12,
+      "y": 6144,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 161,
+      "page": 12,
+      "y": 7418,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 161,
+      "page": 12,
+      "y": 8392,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 161,
+      "page": 12,
+      "y": 9366,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 161,
+      "page": 12,
+      "y": 10340,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 161,
+      "page": 12,
+      "y": 11314,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 161,
+      "page": 12,
+      "y": 12288,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 161,
+      "page": 12,
+      "y": 13262,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 162,
+      "page": 12,
+      "y": 14536,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 162,
+      "page": 12,
+      "y": 15510,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 162,
+      "page": 12,
+      "y": 16484,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 163,
+      "page": 12,
+      "y": 17758,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 163,
+      "page": 12,
+      "y": 18732,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 163,
+      "page": 12,
+      "y": 19706,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 163,
+      "page": 12,
+      "y": 20680,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 164,
+      "page": 12,
+      "y": 21954,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 164,
+      "page": 12,
+      "y": 22928,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 164,
+      "page": 12,
+      "y": 23902,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 165,
+      "page": 12,
+      "y": 25176,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 165,
+      "page": 12,
+      "y": 26150,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 165,
+      "page": 12,
+      "y": 27124,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 165,
+      "page": 12,
+      "y": 28098,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 165,
+      "page": 12,
+      "y": 29072,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 165,
+      "page": 12,
+      "y": 30046,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 165,
+      "page": 12,
+      "y": 31020,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 165,
+      "page": 12,
+      "y": 31994,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 165,
+      "page": 12,
+      "y": 32968,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 166,
+      "page": 12,
+      "y": 34242,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 166,
+      "page": 12,
+      "y": 35044,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 166,
+      "page": 12,
+      "y": 35846,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 167,
+      "page": 12,
+      "y": 36948,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 168,
+      "page": 12,
+      "y": 38050,
+      "height": 6541,
+      "role": "object"
+    },
+    {
+      "paragraph": 169,
+      "page": 13,
+      "y": 0,
+      "height": 20387,
+      "role": "object"
+    },
+    {
+      "paragraph": 170,
+      "page": 13,
+      "y": 20787,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 170,
+      "page": 13,
+      "y": 21589,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 170,
+      "page": 13,
+      "y": 22391,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 170,
+      "page": 13,
+      "y": 23193,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 171,
+      "page": 13,
+      "y": 24295,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 171,
+      "page": 13,
+      "y": 25097,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 172,
+      "page": 13,
+      "y": 26199,
+      "height": 18774,
+      "role": "object"
+    },
+    {
+      "paragraph": 173,
+      "page": 13,
+      "y": 45373,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 173,
+      "page": 13,
+      "y": 46175,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 173,
+      "page": 13,
+      "y": 46977,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 174,
+      "page": 13,
+      "y": 48079,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 174,
+      "page": 13,
+      "y": 48881,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 175,
+      "page": 13,
+      "y": 49983,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 175,
+      "page": 13,
+      "y": 50785,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 176,
+      "page": 13,
+      "y": 51887,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 176,
+      "page": 13,
+      "y": 52689,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 177,
+      "page": 13,
+      "y": 53791,
+      "height": 5596,
+      "role": "object"
+    },
+    {
+      "paragraph": 178,
+      "page": 13,
+      "y": 59787,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 178,
+      "page": 13,
+      "y": 60761,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 179,
+      "page": 13,
+      "y": 62535,
+      "height": 897,
+      "role": "heading"
+    },
+    {
+      "paragraph": 180,
+      "page": 13,
+      "y": 63867,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 180,
+      "page": 13,
+      "y": 64841,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 181,
+      "page": 14,
+      "y": 0,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 182,
+      "page": 14,
+      "y": 1274,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 182,
+      "page": 14,
+      "y": 2248,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 182,
+      "page": 14,
+      "y": 3222,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 183,
+      "page": 14,
+      "y": 4496,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 183,
+      "page": 14,
+      "y": 5470,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 183,
+      "page": 14,
+      "y": 6444,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 183,
+      "page": 14,
+      "y": 7418,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 183,
+      "page": 14,
+      "y": 8392,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 184,
+      "page": 14,
+      "y": 9666,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 184,
+      "page": 14,
+      "y": 10640,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 184,
+      "page": 14,
+      "y": 11614,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 184,
+      "page": 14,
+      "y": 12588,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 184,
+      "page": 14,
+      "y": 13562,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 185,
+      "page": 14,
+      "y": 15336,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 186,
+      "page": 14,
+      "y": 16610,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 186,
+      "page": 14,
+      "y": 17584,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 186,
+      "page": 14,
+      "y": 18558,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 186,
+      "page": 14,
+      "y": 19532,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 186,
+      "page": 14,
+      "y": 20506,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 186,
+      "page": 14,
+      "y": 21480,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 186,
+      "page": 14,
+      "y": 22454,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 187,
+      "page": 14,
+      "y": 23728,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 187,
+      "page": 14,
+      "y": 24702,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 187,
+      "page": 14,
+      "y": 25676,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 187,
+      "page": 14,
+      "y": 26650,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 188,
+      "page": 14,
+      "y": 28424,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 189,
+      "page": 14,
+      "y": 29698,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 189,
+      "page": 14,
+      "y": 30672,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 189,
+      "page": 14,
+      "y": 31646,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 189,
+      "page": 14,
+      "y": 32620,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 190,
+      "page": 14,
+      "y": 33894,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 190,
+      "page": 14,
+      "y": 34868,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 190,
+      "page": 14,
+      "y": 35842,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 191,
+      "page": 14,
+      "y": 37116,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 191,
+      "page": 14,
+      "y": 38090,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 191,
+      "page": 14,
+      "y": 39064,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 191,
+      "page": 14,
+      "y": 40038,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 192,
+      "page": 14,
+      "y": 41312,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 192,
+      "page": 14,
+      "y": 42286,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 193,
+      "page": 14,
+      "y": 44060,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 194,
+      "page": 14,
+      "y": 45334,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 194,
+      "page": 14,
+      "y": 46308,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 194,
+      "page": 14,
+      "y": 47282,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 194,
+      "page": 14,
+      "y": 48256,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 195,
+      "page": 14,
+      "y": 49530,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 195,
+      "page": 14,
+      "y": 50504,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 195,
+      "page": 14,
+      "y": 51478,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 195,
+      "page": 14,
+      "y": 52452,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 196,
+      "page": 15,
+      "y": 0,
+      "height": 29311,
+      "role": "object"
+    },
+    {
+      "paragraph": 197,
+      "page": 15,
+      "y": 29711,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 197,
+      "page": 15,
+      "y": 30513,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 197,
+      "page": 15,
+      "y": 31315,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 198,
+      "page": 15,
+      "y": 32417,
+      "height": 697,
+      "role": "caption"
+    },
+    {
+      "paragraph": 199,
+      "page": 15,
+      "y": 33519,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 199,
+      "page": 15,
+      "y": 34493,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 199,
+      "page": 15,
+      "y": 35467,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 199,
+      "page": 15,
+      "y": 36441,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 199,
+      "page": 15,
+      "y": 37415,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 200,
+      "page": 15,
+      "y": 38689,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 200,
+      "page": 15,
+      "y": 39663,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 200,
+      "page": 15,
+      "y": 40637,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 200,
+      "page": 15,
+      "y": 41611,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 201,
+      "page": 15,
+      "y": 43385,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 202,
+      "page": 15,
+      "y": 44659,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 202,
+      "page": 15,
+      "y": 45633,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 202,
+      "page": 15,
+      "y": 46607,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 202,
+      "page": 15,
+      "y": 47581,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 202,
+      "page": 15,
+      "y": 48555,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 203,
+      "page": 15,
+      "y": 49829,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 203,
+      "page": 15,
+      "y": 50803,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 203,
+      "page": 15,
+      "y": 51777,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 203,
+      "page": 15,
+      "y": 52751,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 203,
+      "page": 15,
+      "y": 53725,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 203,
+      "page": 15,
+      "y": 54699,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 203,
+      "page": 15,
+      "y": 55673,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 203,
+      "page": 15,
+      "y": 56647,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 204,
+      "page": 15,
+      "y": 57921,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 204,
+      "page": 15,
+      "y": 58895,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 204,
+      "page": 15,
+      "y": 59869,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 205,
+      "page": 15,
+      "y": 61643,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 206,
+      "page": 15,
+      "y": 62917,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 206,
+      "page": 15,
+      "y": 63891,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 206,
+      "page": 15,
+      "y": 64865,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 207,
+      "page": 16,
+      "y": 0,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 207,
+      "page": 16,
+      "y": 974,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 207,
+      "page": 16,
+      "y": 1948,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 207,
+      "page": 16,
+      "y": 2922,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 207,
+      "page": 16,
+      "y": 3896,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 207,
+      "page": 16,
+      "y": 4870,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 207,
+      "page": 16,
+      "y": 5844,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 208,
+      "page": 16,
+      "y": 7118,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 208,
+      "page": 16,
+      "y": 8092,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 208,
+      "page": 16,
+      "y": 9066,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 208,
+      "page": 16,
+      "y": 10040,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 208,
+      "page": 16,
+      "y": 11014,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 208,
+      "page": 16,
+      "y": 11988,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 209,
+      "page": 16,
+      "y": 13762,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 210,
+      "page": 16,
+      "y": 15036,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 210,
+      "page": 16,
+      "y": 16010,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 210,
+      "page": 16,
+      "y": 16984,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 210,
+      "page": 16,
+      "y": 17958,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 210,
+      "page": 16,
+      "y": 18932,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 211,
+      "page": 16,
+      "y": 20206,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 211,
+      "page": 16,
+      "y": 21180,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 211,
+      "page": 16,
+      "y": 22154,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 211,
+      "page": 16,
+      "y": 23128,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 211,
+      "page": 16,
+      "y": 24102,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 212,
+      "page": 16,
+      "y": 25876,
+      "height": 847,
+      "role": "heading"
+    },
+    {
+      "paragraph": 213,
+      "page": 16,
+      "y": 27150,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 213,
+      "page": 16,
+      "y": 28124,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 213,
+      "page": 16,
+      "y": 29098,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 214,
+      "page": 16,
+      "y": 30372,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 214,
+      "page": 16,
+      "y": 31346,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 214,
+      "page": 16,
+      "y": 32320,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 214,
+      "page": 16,
+      "y": 33294,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 214,
+      "page": 16,
+      "y": 34268,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 215,
+      "page": 16,
+      "y": 36042,
+      "height": 897,
+      "role": "heading"
+    },
+    {
+      "paragraph": 216,
+      "page": 16,
+      "y": 37374,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 216,
+      "page": 16,
+      "y": 38348,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 216,
+      "page": 16,
+      "y": 39322,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 216,
+      "page": 16,
+      "y": 40296,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 217,
+      "page": 16,
+      "y": 41570,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 217,
+      "page": 16,
+      "y": 42544,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 217,
+      "page": 16,
+      "y": 43518,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 217,
+      "page": 16,
+      "y": 44492,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 217,
+      "page": 16,
+      "y": 45466,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 217,
+      "page": 16,
+      "y": 46440,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 217,
+      "page": 16,
+      "y": 47414,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 217,
+      "page": 16,
+      "y": 48388,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 217,
+      "page": 16,
+      "y": 49362,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 217,
+      "page": 16,
+      "y": 50336,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 218,
+      "page": 16,
+      "y": 51610,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 218,
+      "page": 16,
+      "y": 52584,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 218,
+      "page": 16,
+      "y": 53558,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 218,
+      "page": 16,
+      "y": 54532,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 218,
+      "page": 16,
+      "y": 55506,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 218,
+      "page": 16,
+      "y": 56480,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 219,
+      "page": 16,
+      "y": 57754,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 219,
+      "page": 16,
+      "y": 58728,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 219,
+      "page": 16,
+      "y": 59702,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 219,
+      "page": 16,
+      "y": 60676,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 219,
+      "page": 16,
+      "y": 61650,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 219,
+      "page": 16,
+      "y": 62624,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 219,
+      "page": 16,
+      "y": 63598,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 220,
+      "page": 16,
+      "y": 64872,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 220,
+      "page": 16,
+      "y": 65846,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 220,
+      "page": 16,
+      "y": 66820,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 221,
+      "page": 17,
+      "y": 0,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 221,
+      "page": 17,
+      "y": 974,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 221,
+      "page": 17,
+      "y": 1948,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 221,
+      "page": 17,
+      "y": 2922,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 221,
+      "page": 17,
+      "y": 3896,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 221,
+      "page": 17,
+      "y": 4870,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 222,
+      "page": 17,
+      "y": 6644,
+      "height": 897,
+      "role": "heading"
+    },
+    {
+      "paragraph": 223,
+      "page": 17,
+      "y": 7976,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 223,
+      "page": 17,
+      "y": 8950,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 223,
+      "page": 17,
+      "y": 9924,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 223,
+      "page": 17,
+      "y": 10898,
+      "height": 847,
+      "role": "body"
+    },
+    {
+      "paragraph": 224,
+      "page": 17,
+      "y": 12672,
+      "height": 897,
+      "role": "heading"
+    },
+    {
+      "paragraph": 225,
+      "page": 17,
+      "y": 14004,
+      "height": 797,
+      "role": "reference"
+    },
+    {
+      "paragraph": 225,
+      "page": 17,
+      "y": 14921,
+      "height": 797,
+      "role": "reference"
+    },
+    {
+      "paragraph": 226,
+      "page": 17,
+      "y": 15988,
+      "height": 797,
+      "role": "reference"
+    },
+    {
+      "paragraph": 226,
+      "page": 17,
+      "y": 16905,
+      "height": 797,
+      "role": "reference"
+    },
+    {
+      "paragraph": 227,
+      "page": 17,
+      "y": 17972,
+      "height": 797,
+      "role": "reference"
+    },
+    {
+      "paragraph": 228,
+      "page": 17,
+      "y": 19039,
+      "height": 797,
+      "role": "reference"
+    },
+    {
+      "paragraph": 228,
+      "page": 17,
+      "y": 19956,
+      "height": 797,
+      "role": "reference"
+    },
+    {
+      "paragraph": 229,
+      "page": 17,
+      "y": 21023,
+      "height": 797,
+      "role": "reference"
+    },
+    {
+      "paragraph": 229,
+      "page": 17,
+      "y": 21940,
+      "height": 797,
+      "role": "reference"
+    },
+    {
+      "paragraph": 230,
+      "page": 17,
+      "y": 23007,
+      "height": 797,
+      "role": "reference"
+    },
+    {
+      "paragraph": 230,
+      "page": 17,
+      "y": 23924,
+      "height": 797,
+      "role": "reference"
+    },
+    {
+      "paragraph": 231,
+      "page": 17,
+      "y": 24991,
+      "height": 797,
+      "role": "reference"
+    },
+    {
+      "paragraph": 231,
+      "page": 17,
+      "y": 25908,
+      "height": 797,
+      "role": "reference"
+    },
+    {
+      "paragraph": 232,
+      "page": 17,
+      "y": 26975,
+      "height": 797,
+      "role": "reference"
+    },
+    {
+      "paragraph": 232,
+      "page": 17,
+      "y": 27892,
+      "height": 797,
+      "role": "reference"
+    },
+    {
+      "paragraph": 233,
+      "page": 17,
+      "y": 28959,
+      "height": 797,
+      "role": "reference"
+    },
+    {
+      "paragraph": 233,
+      "page": 17,
+      "y": 29876,
+      "height": 797,
+      "role": "reference"
+    },
+    {
+      "paragraph": 234,
+      "page": 17,
+      "y": 30943,
+      "height": 797,
+      "role": "reference"
+    },
+    {
+      "paragraph": 234,
+      "page": 17,
+      "y": 31860,
+      "height": 797,
+      "role": "reference"
+    },
+    {
+      "paragraph": 235,
+      "page": 17,
+      "y": 33427,
+      "height": 897,
+      "role": "heading"
+    },
+    {
+      "paragraph": 236,
+      "page": 17,
+      "y": 34759,
+      "height": 847,
+      "role": "bio-name"
+    },
+    {
+      "paragraph": 237,
+      "page": 17,
+      "y": 35733,
+      "height": 7632,
+      "role": "object"
+    },
+    {
+      "paragraph": 238,
+      "page": 17,
+      "y": 43765,
+      "height": 847,
+      "role": "bio"
+    },
+    {
+      "paragraph": 238,
+      "page": 17,
+      "y": 44739,
+      "height": 847,
+      "role": "bio"
+    },
+    {
+      "paragraph": 238,
+      "page": 17,
+      "y": 45713,
+      "height": 847,
+      "role": "bio"
+    },
+    {
+      "paragraph": 238,
+      "page": 17,
+      "y": 46687,
+      "height": 847,
+      "role": "bio"
+    },
+    {
+      "paragraph": 238,
+      "page": 17,
+      "y": 47661,
+      "height": 847,
+      "role": "bio"
+    },
+    {
+      "paragraph": 239,
+      "page": 17,
+      "y": 48935,
+      "height": 847,
+      "role": "list"
+    },
+    {
+      "paragraph": 239,
+      "page": 17,
+      "y": 49909,
+      "height": 847,
+      "role": "list"
+    },
+    {
+      "paragraph": 239,
+      "page": 17,
+      "y": 50883,
+      "height": 847,
+      "role": "list"
+    }
+  ]
+}

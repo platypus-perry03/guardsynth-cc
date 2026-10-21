@@ -1,0 +1,8 @@
+{
+  "task": "position_hold",
+  "arm": "semantic_rule",
+  "seed": 42,
+  "rows": 256,
+  "status": "COMPLETE",
+  "elapsed_seconds": 668.7043422870338
+}

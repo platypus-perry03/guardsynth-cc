@@ -8,7 +8,7 @@ dependencies:
 related_projects:
   - guardsynth-coc
   - specification-alignment
-artifact_root: artifacts/projects/eblc-language-verification
+artifact_root: projects/05-eblc-language-verification/artifacts
 canonical_status: STATUS.md
 canonical_research_plan: docs/plans/01_RESEARCH_PLAN_V01.md
 canonical_milestones: docs/plans/02_PROJECT_MILESTONES.md

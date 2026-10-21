@@ -16,7 +16,7 @@ from PIL import Image
 import temporal_preservation as primary
 
 ROOT=primary.ROOT
-BASE=ROOT/'artifacts/projects/guardsynth-coc/public/paper1-temporal-diversity-001'
+BASE=ROOT/'projects/04-guardsynth-coc/artifacts/public/paper1-temporal-diversity-001'
 LEARNING=primary.BASE/'temporal-learning-2026-09-29-001'
 PROFILE='supplied-temporal-diversity-v0.2'
 SEED=2026092903

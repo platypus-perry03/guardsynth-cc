@@ -82,9 +82,9 @@ def analyze(root, output):
     from experiments.sequential_coc.stateful_checker import transition_rule_description, transition_table_sha256
     import pandas, pyarrow
 
-    legacy = root / 'artifacts/results/restricted/sequential-coc-consistency-v1'
+    legacy = root / 'projects/03-sequential-coc-verification/artifacts/restricted/sequential-coc-consistency-v1'
     review = legacy / 'review'
-    cohort_path = root / 'artifacts/results/public/chunk-0000-94/weak-kinematic-cohort-result.json'
+    cohort_path = root / 'projects/03-sequential-coc-verification/artifacts/public/chunk-0000-94/weak-kinematic-cohort-result.json'
     cohort = json.loads(cohort_path.read_text())
     inputs = list(legacy.rglob('*.csv')) + list(legacy.rglob('*.json')) + list(legacy.glob('*.jsonl')) + [cohort_path]
     code_root = root / 'projects/03-sequential-coc-verification/experiments/sequential_coc'

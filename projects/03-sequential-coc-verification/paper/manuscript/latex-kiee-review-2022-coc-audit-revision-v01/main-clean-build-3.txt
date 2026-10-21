@@ -1,0 +1,982 @@
+This is LuaHBTeX, Version 1.15.0 (TeX Live 2022/Debian) 
+ restricted system commands enabled.
+
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/main-clean.
+tex
+LaTeX2e <2022-11-01> patch level 1
+ L3 programming layer <2023-01-16>
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/main.tex
+(/usr/share/texlive/texmf-dist/tex/latex/extsizes/extarticle.cls
+Document Class: extarticle 1996/10/08 v1.0 Non Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/extsizes/size9.clo)
+(/usr/share/texlive/texmf-dist/tex/latex/base/exscale.sty))
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/kiee-review
+.sty (/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-luatex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/luatex.def)))
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx))
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/latex/pgf/frontendlayer/tikz.sty
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/latex/pgf/basiclayer/pgf.sty
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/latex/pgf/utilities/pgfrcs.sty
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/utilities/pgfutil-common.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/utilities/pgfutil-latex.def)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/utilities/pgfrcs.code.tex
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/pgf.revision.tex)))
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/latex/pgf/basiclayer/pgfcore.sty
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/latex/pgf/systemlayer/pgfsys.sty
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/utilities/pgfkeys.code.tex
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex))
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/systemlayer/pgf.cfg)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/systemlayer/pgfsys-luatex.def
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def)))
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex))
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/math/pgfmath.code.tex
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/math/pgfmathutil.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/math/pgfmathparser.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/math/pgfmathfunctions.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/math/pgfmathfloat.code.tex))
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/math/pgfint.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/basiclayer/pgfcorequick.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex)))
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/modules/pgfmoduleshapes.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/modules/pgfmoduleplot.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty))
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/latex/pgf/utilities/pgffor.sty
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/latex/pgf/utilities/pgfkeys.sty
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/latex/pgf/math/pgfmath.sty
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/math/pgfmath.code.tex))
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/utilities/pgffor.code.tex))
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/modules/pgfmodulematrix.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex)))
+ (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hluatex.def
+(/usr/share/texlive/texmf-dist/tex/generic/stringenc/stringenc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.te
+x)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryfit.code.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.co
+de.tex
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex))
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/.texlive-lo
+cal/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex))
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/revision-st
+yle.tex)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/main-clean.
+aux) (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+*geometry* driver: auto-detecting
+*geometry* detected driver: luatex
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/main-clean.
+out)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/main-clean.
+out)
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <8.5> not available
+(Font)              size <8> substituted on input line 15.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.25> not available
+(Font)              size <5> substituted on input line 15.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <8.5> not available
+(Font)              size <8> substituted on input line 15.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.25> not available
+(Font)              size <5> substituted on input line 15.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <8.5> not available
+(Font)              size <8> substituted on input line 15.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.25> not available
+(Font)              size <5> substituted on input line 15.
+
+
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/sections/01
+-introduction.tex
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+\TU/NotoSerifCJKkr(0)/m/n/8.5 생성한다 [[], [], []]. Alpamayo-R󴩅의 인
+과관계(Chain-
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
+\TU/NotoSerifCJKkr(0)/m/n/8.5 of-Causation, CoC) 설명은 ``보행자가 횡
+단 중이므로
+
+Underfull \hbox (badness 4492) in paragraph at lines 5--6
+\TU/NotoSerifCJKkr(0)/m/n/8.5 그러나 그럴듯한 설명이 올바른 행
+동을 보장하지는 않는다.
+
+Underfull \hbox (badness 2951) in paragraph at lines 5--6
+\TU/NotoSerifCJKkr(0)/m/n/8.5 󴩅󴩉󴩄쌍을 분석한 연구는 추론의 
+󴩇󴩇.󴩇%를 신뢰하기 어렵다고
+
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/figures/ove
+rview-pipeline.tex)
+Underfull \hbox (badness 2213) in paragraph at lines 15--16
+\TU/NotoSerifCJKkr(0)/m/n/8.5 수 있다. 예를 들어 앞선 CoC가 ``보행
+자가 통과할 때까지
+
+Underfull \hbox (badness 1215) in paragraph at lines 15--16
+\TU/NotoSerifCJKkr(0)/m/n/8.5 여부가 어디에도 기록되지 않았다면 
+진행의 근거가 부족하다.
+
+Underfull \hbox (badness 4940) in paragraph at lines 17--18
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 이 문제는 장면 경계에서 더 어려
+워진다. 보관된 연결
+
+Underfull \vbox (badness 10000) has occurred while \output is active
+Underfull \hbox (badness 1584) in paragraph at lines 19--20
+\TU/NotoSerifCJKkr(0)/m/n/8.5 옮긴다 [[], []]. 실행 중 검증과 유한 
+경로 모니터는 형식
+
+Underfull \hbox (badness 2626) in paragraph at lines 21--22
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 본 연구는 이를 위해 연속 CoC를 검
+사하는 프레임워크를
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--24
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 판정 규칙은 UP-PAAL 모델로 구현했
+다. UP-PAAL은
+
+Underfull \hbox (badness 1077) in paragraph at lines 23--24
+\TU/NotoSerifCJKkr(0)/m/n/8.5 명시할 수 있고, ``모순 상태에 도달
+하지 않는다''와 같은 검사
+
+Underfull \hbox (badness 2744) in paragraph at lines 23--24
+\TU/NotoSerifCJKkr(0)/m/n/8.5 속성을 질의로 기술할 수 있으며, 위
+반이 있으면 최초 문제
+
+Underfull \hbox (badness 1383) in paragraph at lines 25--26
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 본 논문의 연구 질문은 다음 두 가
+지이다. \TU/NotoSerifCJKkr(0)/b/n/8.5 RQ󴩅: \TU/NotoSerifCJKkr(0)/m/n/8.5 
+의무와
+
+Underfull \vbox (badness 10000) has occurred while \output is active [1{/var/li
+b/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 2837) in paragraph at lines 30--32
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 원문 구절, 의무, 해제 조건과 조건
+별 증거를 연결하는
+
+Underfull \hbox (badness 1484) in paragraph at lines 34--36
+\TU/NotoSerifCJKkr(0)/m/n/8.5 입력 조건, 즉 대상 동일성, 적용 범
+위와 증거 유효성을
+
+Underfull \hbox (badness 1694) in paragraph at lines 41--42
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 평가는 다섯 종류의 증거로 이루어
+지며, 이를 하나의 성능
+
+Underfull \hbox (badness 2197) in paragraph at lines 43--44
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 첫째, 문제 유형마다 한 항목만 바
+꾼 기존 󴩈󴩄쌍에서 현재
+
+Underfull \hbox (badness 1540) in paragraph at lines 43--44
+\TU/NotoSerifCJKkr(0)/m/n/8.5 사건만 보는 검사는 이전 의무가 필
+요한 두 유형을 판정하지
+
+Underfull \hbox (badness 2050) in paragraph at lines 43--44
+\TU/NotoSerifCJKkr(0)/m/n/8.5 󴩍󴩊/󴩅󴩈󴩈만 기대 판정과 일치
+했다. 이 실패 분석을 바탕으로
+
+Underfull \hbox (badness 4036) in paragraph at lines 43--44
+\TU/NotoSerifCJKkr(0)/m/n/8.5 개발한 조건 연결 모델은 같은 사례
+의 개발 후 재시험에서
+
+Underfull \hbox (badness 2469) in paragraph at lines 43--44
+\TU/NotoSerifCJKkr(0)/m/n/8.5 달랐음을 보여 준다. 독립적인 자연 
+오류 정답을 확보하지
+
+Underfull \hbox (badness 1424) in paragraph at lines 47--48
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 󴩆장에서 관련 연구를 정리하고, 
+󴩇장에서 평가 자료와 검토
+)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/sections/02
+-related-work.tex
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 Driv-eLM은 지각ㆍ예측ㆍ계획의 질의
+응답을 그래프로
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+\TU/NotoSerifCJKkr(0)/m/n/8.5 연결하고, DriveVLM은 장면 설명ㆍ분석
+ㆍ계층적 계획을
+
+Underfull \hbox (badness 1895) in paragraph at lines 9--10
+\TU/NotoSerifCJKkr(0)/m/n/8.5 결합하고, 지도 학습과 강화 학습으
+로 추론과 행동의 정렬을
+
+Underfull \hbox (badness 4048) in paragraph at lines 11--12
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 생성된 추론이 실제 판단을 반영하
+는지는 별개의 문제다.
+
+Underfull \hbox (badness 1845) in paragraph at lines 11--12
+\TU/NotoSerifCJKkr(0)/m/n/8.5 수 있음을 보였고 [[]], Lan-ham 등은 예
+측이 제시된 추론에
+
+Underfull \hbox (badness 3396) in paragraph at lines 11--12
+\TU/NotoSerifCJKkr(0)/m/n/8.5 Thoughts는 VLA 추론과 예측 궤적의 일
+관성을 실행 중에
+
+Underfull \hbox (badness 1314) in paragraph at lines 11--12
+\TU/NotoSerifCJKkr(0)/m/n/8.5 감시하는 모니터를 제안했다 [[]]. 언
+어 근거와 장면ㆍ궤적의
+
+Underfull \hbox (badness 1983) in paragraph at lines 27--28
+\TU/NotoSerifCJKkr(0)/m/n/8.5 해제 증거가 아예 없을 수도 있다. 
+본 연구는 원문 구절을
+
+Underfull \hbox (badness 1325) in paragraph at lines 27--28
+\TU/NotoSerifCJKkr(0)/m/n/8.5 의무ㆍ해제 조건ㆍ증거에 연결해 남
+긴다는 점에서 nl󴩆spec의
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
+\TU/NotoSerifCJKkr(0)/m/n/8.5 유한 접두 경로에서 참ㆍ거짓ㆍ미결
+정을 구분하고 최초로
+
+Underfull \hbox (badness 1147) in paragraph at lines 32--33
+\TU/NotoSerifCJKkr(0)/m/n/8.5 확정되는 시점을 다룬다 [[]]. 따라서 
+이전 상태의 기억, 세
+
+Underfull \vbox (badness 1163) has occurred while \output is active [2]
+Underfull \hbox (badness 2744) in paragraph at lines 39--40
+\TU/NotoSerifCJKkr(0)/m/n/8.5 주장하지 않으며, 다른 방법이 이러
+한 연결을 할 수 없다고
+)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/sections/03
+-data.tex
+Underfull \hbox (badness 2368) in paragraph at lines 8--9
+\TU/NotoSerifCJKkr(0)/m/n/8.5 사건열을 사용한다. 자연 CoC는 사람
+에 따른 해석 차이와
+
+Underfull \hbox (badness 3503) in paragraph at lines 8--9
+\TU/NotoSerifCJKkr(0)/m/n/8.5 계산하는 정답집으로 사용하지 않는
+다. 표 []󴩆[]에 각 자료의
+
+Underfull \hbox (badness 7631) in paragraph at lines 30--31
+\TU/NotoSerifCJKkr(0)/m/n/8.5 󴩌󴩅건은 경계 확장 모델과 함께 
+설계하여 검증 실행 전에
+
+Underfull \hbox (badness 2310) in paragraph at lines 34--35
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 자연 자료는 nuSce-nes의 영상ㆍ자차 
+움직임과 사후 자동
+
+Underfull \hbox (badness 1087) in paragraph at lines 34--35
+\TU/NotoSerifCJKkr(0)/m/n/8.5 중 자차 궤적 파일을 함께 보유한 
+󴩍󴩈장면ㆍ󴩈󴩄󴩇사건을 분석에
+
+Underfull \hbox (badness 3058) in paragraph at lines 36--37
+\TU/NotoSerifCJKkr(0)/m/n/8.5 개별 문장의 정확한 생성 이력과 품
+질 점수의 계산식ㆍ통과
+
+Underfull \hbox (badness 6893) in paragraph at lines 58--59
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 후보 선택기는 첫 문장에 정지ㆍ양
+보(\TU/lmtt/m/n/8.5 stop/yield\TU/NotoSerifCJKkr(0)/m/n/8.5 ), 둘째
+
+Underfull \hbox (badness 6775) in paragraph at lines 58--59
+\TU/NotoSerifCJKkr(0)/m/n/8.5 문장에 가속ㆍ진행(\TU/lmtt/m/n/8.5 accele
+rate/proceed\TU/NotoSerifCJKkr(0)/m/n/8.5 ) 표현이 있는 쌍을
+
+Underfull \hbox (badness 1418) in paragraph at lines 60--61
+\TU/NotoSerifCJKkr(0)/m/n/8.5 검토한 장면 묶음의 수다. 여러 사건
+이 한 장면에 속하므로
+
+Underfull \hbox (badness 7740) in paragraph at lines 64--65
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 보존된 검토 지침과 A/B 화면에 따
+르면, 󴩅차 검토에는
+
+Underfull \hbox (badness 8113) in paragraph at lines 64--65
+\TU/NotoSerifCJKkr(0)/m/n/8.5 CoC 원문과 첫 사건 기준 상대 시각을 
+제시하고 별도의
+
+Underfull \hbox (badness 3039) in paragraph at lines 64--65
+\TU/NotoSerifCJKkr(0)/m/n/8.5 영상ㆍ궤적ㆍ객체/신호 상태 자료와 
+검사기 결과는 제공하지
+)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/sections/04
+-problem.tex [3]
+Underfull \hbox (badness 2726) in paragraph at lines 15--16
+\TU/NotoSerifCJKkr(0)/m/n/8.5 않으므로, 검사 단위는 의무의 생성
+ㆍ유지ㆍ해제 증거ㆍ후속
+
+Underfull \hbox (badness 3049) in paragraph at lines 32--33
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 P󴩅은 미해제가 확인된 의무와 진
+행의 충돌, P󴩆는 미충족
+
+Underfull \hbox (badness 2762) in paragraph at lines 53--54
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 조건 연결ㆍ경계 확장 모델은 별도 
+해제 명령을 입력받지
+[4]
+Underfull \hbox (badness 1406) in paragraph at lines 76--77
+\TU/NotoSerifCJKkr(0)/m/n/8.5 확인된 연결, END-ED는 적용 범위의 명
+시적 종료, UN-CER-
+
+Underfull \vbox (badness 1057) has occurred while \output is active
+Underfull \hbox (badness 1418) in paragraph at lines 108--109
+\TU/NotoSerifCJKkr(0)/m/n/8.5 않았다. 두 시험의 결과를 서로 다른 
+모델의 성능으로 옮겨
+)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/sections/05
+-method.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 1.
+
+
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/figures/met
+hod-pipeline.tex) [5]
+Underfull \hbox (badness 2617) in paragraph at lines 22--23
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 󴩅󴩈󴩈건 통제 시나리오의 주평
+가에는 설계자가 원문과 함께
+
+Underfull \hbox (badness 1394) in paragraph at lines 22--23
+\TU/NotoSerifCJKkr(0)/m/n/8.5 반환했다([]󴩋.󴩆[]절). 파서는 행동
+과 조건 구절의 후보를 찾지만
+
+Underfull \hbox (badness 1067) in paragraph at lines 46--47
+\TU/NotoSerifCJKkr(0)/m/n/8.5 둘 이상인 󴩍󴩄장면의 원문 󴩇󴩍
+󴩍건에 파서를 실행했다. 사건이
+
+Underfull \hbox (badness 1983) in paragraph at lines 46--47
+\TU/NotoSerifCJKkr(0)/m/n/8.5 대상 누락, 󴩆개는 순서 모호였다. \T
+U/lmtt/m/n/8.5 until \TU/NotoSerifCJKkr(0)/m/n/8.5 해제 조건은 󴩄건,
+
+Underfull \hbox (badness 1668) in paragraph at lines 48--49
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 표 []󴩋[]은 두 입력 경로를 나누어 
+보여 준다. (a)는 scene-
+
+Underfull \hbox (badness 4217) in paragraph at lines 48--49
+\TU/NotoSerifCJKkr(0)/m/n/8.5 (b)는 설계자가 작성한 원문ㆍ프레임
+에서 조건 연결 모델의
+
+Underfull \hbox (badness 1221) in paragraph at lines 84--85
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 (a)에서 해제 증거가 미상이라는 것
+과 최종 판정은 다르다.
+
+Underfull \hbox (badness 1577) in paragraph at lines 92--93
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 조건 연결 모델은 []󴩈.󴩇[]절의 
+규칙을 하나의 관찰 템플릿으로
+
+Underfull \hbox (badness 6316) in paragraph at lines 117--118
+\TU/NotoSerifCJKkr(0)/m/n/8.5 실제 속도를 적분하지 않으므로 물
+리적으로 안전한 정지를
+
+Underfull \hbox (badness 4132) in paragraph at lines 134--135
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 조건 연결 모델은 com-mit-ted 위치 Run
+에서 \TU/lmtt/m/n/8.5 idx<N\TU/NotoSerifCJKkr(0)/m/n/8.5 이면
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
+\TU/lmtt/m/n/8.5 step()\TU/NotoSerifCJKkr(0)/m/n/8.5 을 실행하고 인덱
+스를 늘리는 자기 전이를 하고,
+
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/figures/con
+dition-observer.tex)
+Underfull \hbox (badness 1377) in paragraph at lines 175--176
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 안전 속성의 반례가 알려 주는 최
+초 문제와 끝까지 처리한
+
+Underfull \hbox (badness 1629) in paragraph at lines 179--180
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 경계 확장 모델도 Run/-Done 구조와 
+사건 인덱스를 쓴다.
+
+Underfull \hbox (badness 1168) in paragraph at lines 179--180
+\TU/NotoSerifCJKkr(0)/m/n/8.5 조건 연결 모델과 달리 의무별 연결 
+상태 \TU/lmtt/m/n/8.5 linked[K]\TU/NotoSerifCJKkr(0)/m/n/8.5 를 두고,
+[6]
+Underfull \hbox (badness 4013) in paragraph at lines 181--182
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 경계에서 연결을 갱신한다. END-ED인 
+의무는 종료하고
+
+Underfull \vbox (badness 6526) has occurred while \output is active
+Underfull \vbox (badness 10000) has occurred while \output is active [7]
+Underfull \hbox (badness 1097) in paragraph at lines 210--211
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 기존 UP-PAAL의 최초 반례 경로가 뒤
+에 생긴 미상 사유를
+)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/sections/06
+-experiments.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 1.
+
+
+Underfull \hbox (badness 5345) in paragraph at lines 6--7
+\TU/NotoSerifCJKkr(0)/m/n/8.5 이전 의무의 기억 효과를 확인하고, 
+󴩅󴩈󴩈건에서 기억만으로
+
+Underfull \hbox (badness 1762) in paragraph at lines 8--9
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 통제ㆍ경계 시나리오의 입력과 기
+대 판정은 같은 연구진이
+
+Underfull \hbox (badness 1019) in paragraph at lines 8--9
+\TU/NotoSerifCJKkr(0)/m/n/8.5 자연 검토에도 확정된 독립 오류 정
+답이 없어 TP/F-P/T-N/FN,
+
+Underfull \hbox (badness 1484) in paragraph at lines 16--17
+\TU/NotoSerifCJKkr(0)/m/n/8.5 장애물의 󴩊개 상황에 󴩌개 변형(
+표 []󴩅󴩅[])을 적용하고 중간 사건
+
+Underfull \hbox (badness 1325) in paragraph at lines 42--43
+\TU/NotoSerifCJKkr(0)/m/n/8.5 󴩅/󴩇/󴩉개 사건 창ㆍ조건별 FS-Mㆍ
+자동 텍스트ㆍ기존 UP-PAAL
+
+Underfull \hbox (badness 3302) in paragraph at lines 48--49
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 최초 불일치 󴩈󴩌건의 원인을 분
+석한 뒤 조건 연결 모델을
+
+Underfull \hbox (badness 1412) in paragraph at lines 54--55
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 경계 시험 󴩌󴩅건은 보행자 통과, 
+신호의 진행 허용, 장애물
+
+Underfull \hbox (badness 4341) in paragraph at lines 60--61
+\TU/NotoSerifCJKkr(0)/m/n/8.5 접두열 전체에서 최근 알려진 증거, 
+마지막 의무 생성, 그
+
+Underfull \hbox (badness 1242) in paragraph at lines 60--61
+\TU/NotoSerifCJKkr(0)/m/n/8.5 의무ㆍ증거ㆍ연결 상태, 누적된 확
+정 모순과 근거 부족 기록,
+
+Underfull \hbox (badness 1132) in paragraph at lines 60--61
+\TU/NotoSerifCJKkr(0)/m/n/8.5 각각의 최초 사건과 의무를 대조한
+다. P󴩆의 해제 명령은 이
+[8]
+Underfull \hbox (badness 1472) in paragraph at lines 68--69
+\TU/NotoSerifCJKkr(0)/m/n/8.5 감속ㆍ양보, 속도 유지, 가속ㆍ진행)
+을 기록된 종방향 속도와
+
+Underfull \hbox (badness 8038) in paragraph at lines 68--69
+\TU/NotoSerifCJKkr(0)/m/n/8.5 비교한다. 정지와 감속ㆍ양보는 같
+은 비진행 행동군으로
+
+Underfull \hbox (badness 1895) in paragraph at lines 68--69
+\TU/NotoSerifCJKkr(0)/m/n/8.5 가속이 관측되어도 해제 근거가 없
+으면 미상으로 두며, 속도
+
+Underfull \hbox (badness 1043) in paragraph at lines 68--69
+\TU/NotoSerifCJKkr(0)/m/n/8.5 움직임과 문장 행동의 대응이며 󴩈
+장의 확정 모순, 근거 부족,
+
+Underfull \hbox (badness 3343) in paragraph at lines 70--71
+[]\TU/NotoSerifCJKkr(0)/b/n/8.5 반응 시간 분석. \TU/NotoSerifCJKkr(0)/m/n
+/8.5 정지ㆍ양보 사건 시점의 속도가 $\OML/cmm/m/it/8.5 v \OMS/cmsy/
+m/n/8.5 ^^T
+
+Underfull \hbox (badness 1418) in paragraph at lines 70--71
+\TU/NotoSerifCJKkr(0)/m/n/8.5 속도 반응을 탐지한다. 기본 설정은 
+시작점 이후 관찰 구간
+
+Underfull \hbox (badness 1082) in paragraph at lines 70--71
+\OML/cmm/m/it/8.5 W \OT1/cmr/m/n/8.5 = 0\OML/cmm/m/it/8.5 :\OT1/cmr/m/n/8.5 5$\
+TU/NotoSerifCJKkr(0)/m/n/8.5 초 안에서 속도 변화량이 $\OML/cmm/m/it/8
+.5 ^^N \OT1/cmr/m/n/8.5 = 0\OML/cmm/m/it/8.5 :\OT1/cmr/m/n/8.5 1$ \TU/NotoSerif
+CJKkr(0)/m/n/8.5 m/s 이상이고
+
+Underfull \hbox (badness 1454) in paragraph at lines 70--71
+\TU/NotoSerifCJKkr(0)/m/n/8.5 방향이 일치하는 속도 증분의 비율
+이 $\OML/cmm/m/it/8.5 ^^Z \OT1/cmr/m/n/8.5 = 0\OML/cmm/m/it/8.5 :\OT1/cmr/m/n/
+8.5 7$ \TU/NotoSerifCJKkr(0)/m/n/8.5 이상인 최초
+)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/sections/07
+-results.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 1.
+
+
+Underfull \hbox (badness 2762) in paragraph at lines 6--7
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 결과는 두 단계로 제공한다. 첫째, 
+작성ㆍ기호 입력에서
+
+Underfull \hbox (badness 1515) in paragraph at lines 6--7
+\TU/NotoSerifCJKkr(0)/m/n/8.5 경계로 넓힌 뒤([]󴩋.󴩉[]절), 선언
+한 유한 범위에서 구현과 명세가
+
+Underfull \hbox (badness 5274) in paragraph at lines 10--11
+\TU/NotoSerifCJKkr(0)/m/n/8.5 모두 판정했다. 기준 사례에 확정 모
+순을 표시한 경우는
+
+Underfull \hbox (badness 1147) in paragraph at lines 10--11
+\TU/NotoSerifCJKkr(0)/m/n/8.5 해제 명령을 검사하는 $\OML/cmm/m/it/8.5 
+C[]$\TU/NotoSerifCJKkr(0)/m/n/8.5 나 사람의 실제 조기 해제를 확인
+한
+
+Underfull \hbox (badness 3078) in paragraph at lines 33--34
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 기억이 필요하다는 것만으로 충분
+하지는 않았다. 의무가
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
+\TU/NotoSerifCJKkr(0)/m/n/8.5 여럿이거나 사건 간격이 길거나 해
+제 근거가 빠진 󴩅󴩈󴩈개
+
+Underfull \hbox (badness 1629) in paragraph at lines 33--34
+\TU/NotoSerifCJKkr(0)/m/n/8.5 기대 판정과 일치했다(표 []󴩅󴩇[]). 
+이 집계는 기존 경로의 최종
+[9]
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/sections/re
+sult-tables.tex)
+Underfull \hbox (badness 1082) in paragraph at lines 37--38
+\TU/NotoSerifCJKkr(0)/m/n/8.5 출력 󴩇󴩄건으로 나뉘었다. 기대 
+근거 부족 󴩇󴩊건은 모두 미상
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+[][]\TU/NotoSerifCJKkr(0)/m/n/8.5 󴩋.󴩆[]절의 불일치 󴩈󴩌건은 
+기억의 길이가 아니라 의무를
+
+Underfull \hbox (badness 1721) in paragraph at lines 43--44
+\TU/NotoSerifCJKkr(0)/m/n/8.5 뒤에 명시적으로 해제되어도 지워지
+지 않았다. 이는 작성한
+
+Underfull \hbox (badness 3861) in paragraph at lines 45--46
+\TU/NotoSerifCJKkr(0)/m/n/8.5 복수 의무를 각각 판정한다. 또한 ``
+해제 정보를 기다리는
+
+Underfull \hbox (badness 2150) in paragraph at lines 45--46
+\TU/NotoSerifCJKkr(0)/m/n/8.5 단계''와 ``해제 근거 없이 진행한 단
+계''를 구분해 후자에서만
+
+Underfull \hbox (badness 2744) in paragraph at lines 45--46
+\TU/NotoSerifCJKkr(0)/m/n/8.5 근거 부족을 기록하고, 한 번 기록한 
+문제는 이후의 해제로
+
+Underfull \hbox (badness 4621) in paragraph at lines 85--86
+[][]\TU/NotoSerifCJKkr(0)/m/n/8.5 󴩋.󴩆[]절의 불일치를 해석하기 
+위해 기존 두 구현의 출력을
+
+Underfull \vbox (badness 6220) has occurred while \output is active
+Underfull \hbox (badness 1540) in paragraph at lines 106--107
+\TU/NotoSerifCJKkr(0)/m/n/8.5 증거를 버리면 장면을 넘어 이어지
+는 의무 위반을 판정할 수
+
+Underfull \hbox (badness 6078) in paragraph at lines 127--128
+\TU/NotoSerifCJKkr(0)/m/n/8.5 구현과 수식 판정을 비교한 결과, 두 
+모델 모두 불일치가
+
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/sections/hu
+man-tables.tex [10])
+Underfull \hbox (badness 5374) in paragraph at lines 154--155
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 표 []󴩅󴩍[]에서 텍스트 일관성의 $
+\OML/cmm/m/it/8.5 ^^T$\TU/NotoSerifCJKkr(0)/m/n/8.5 는 󴩄에 가까웠고 
+대부분의
+
+Underfull \hbox (badness 1242) in paragraph at lines 154--155
+\TU/NotoSerifCJKkr(0)/m/n/8.5 장면에서 네 명의 판정이 달랐다. 표 
+[]󴩆󴩄[]의 검토자별 분포도
+
+Underfull \hbox (badness 1540) in paragraph at lines 179--180
+\TU/NotoSerifCJKkr(0)/m/n/8.5 근거가 부족했고 반응 판정은 탐지 
+설정과 제한 시간에 따라
+
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/sections/tr
+ajectory-table.tex))
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/sections/08
+-discussion.tex
+Underfull \hbox (badness 7832) in paragraph at lines 6--7
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 본 장은 결과가 무엇을 뜻하는지 
+정리하고([]󴩌.󴩅[]절), 검토
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 이전 상태의 기억, 참ㆍ거짓ㆍ미결
+정의 󴩇값 판정, 최초
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+[]\TU/NotoSerifCJKkr(0)/m/n/8.5 자연 자료의 결과는 다른 층위의 
+문제를 보여 준다.
+
+Underfull \hbox (badness 1895) in paragraph at lines 16--17
+\TU/NotoSerifCJKkr(0)/m/n/8.5 사람의 판정이 엇갈렸고, 궤적 대조
+는 대부분 근거 부족으로
+
+Underfull \hbox (badness 1237) in paragraph at lines 20--21
+\TU/NotoSerifCJKkr(0)/m/n/8.5 정하는 데 쓴다(표 []󴩆󴩇[]). 같은 ``
+검토 필요'' 표시라도, 판정에
+[11]
+Underfull \hbox (badness 1253) in paragraph at lines 74--75
+[]\TU/NotoSerifCJKkr(0)/b/n/8.5 자동 추출\TU/NotoSerifCJKkr(0)/m/n/8.5 : 
+원문에서 의무, 해제 조건, 증거를 연결하는
+
+Underfull \hbox (badness 1688) in paragraph at lines 76--77
+[]\TU/NotoSerifCJKkr(0)/b/n/8.5 장면 연결과 학습 효과\TU/NotoSerifCJKk
+r(0)/m/n/8.5 : 실제 장면 연결에 필요한 대상
+
+Underfull \hbox (badness 6396) in paragraph at lines 76--77
+\TU/NotoSerifCJKkr(0)/m/n/8.5 검토 결과를 반영한 자료가 학습 성
+능에 주는 영향을
+)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/sections/10
+-conclusion.tex
+Underfull \hbox (badness 1895) in paragraph at lines 6--7
+\TU/NotoSerifCJKkr(0)/m/n/8.5 이런 주석에서는 행동 요구가 모호
+해지고, 같은 자료를 다시
+
+Underfull \hbox (badness 1540) in paragraph at lines 10--11
+\TU/NotoSerifCJKkr(0)/m/n/8.5 의무를 하나의 채널에 담고 대기 중 
+미상을 누적하는 표현과
+
+Underfull \hbox (badness 2469) in paragraph at lines 10--11
+\TU/NotoSerifCJKkr(0)/m/n/8.5 정책에서 생겼다. 의무별 상태와 조
+건별 증거를 나눈 조건
+)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/sections/11
+-appendix.tex [12]
+Underfull \hbox (badness 1430) in paragraph at lines 4--5
+\TU/NotoSerifCJKkr(0)/m/n/8.5 한 장면에 여러 사유가 겹칠 수 있으
+며 장면 판정은 []󴩊.󴩋[]절의
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+)
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/main-clean.
+bbl
+
+LaTeX Font Warning: Font shape `TU/NotoSerifCJKkr(0)/m/it' undefined
+(Font)              using `TU/NotoSerifCJKkr(0)/m/n' instead on input line 7.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--36
+[]\TU/NotoSerifCJKkr(0)/m/it/8 Miles Turpin, Ju-lian Michael, Ethan Perez, and
+
+Underfull \hbox (badness 3579) in paragraph at lines 43--47
+[]\TU/NotoSerifCJKkr(0)/m/it/8 Tian Yu, Lu Feng, and Se-bas-tian El-baum.  Driv
+e
+
+Underfull \hbox (badness 1400) in paragraph at lines 55--59
+\TU/NotoSerifCJKkr(0)/m/it/8 re-la-tion-ship in VLA for au-tonomous driv-ing.  
+arXiv
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--72
+[]\TU/NotoSerifCJKkr(0)/m/it/8 Se-bas-tian Maier-hofer, Anna-Katharina Ret-ting
+er,
+
+Underfull \hbox (badness 2735) in paragraph at lines 67--72
+\TU/NotoSerifCJKkr(0)/m/it/8 In-tel-li-gent Ve-hi-cles Sym-po-sium (IV), pages 
+󴩋󴩉󴩆--󴩋󴩉󴩍,
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--117
+[]\TU/NotoSerifCJKkr(0)/m/it/8 CISS, Aal-borg Uni-ver-sity.  In-dus-trial and s
+ci-en-
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--117
+\TU/NotoSerifCJKkr(0)/m/it/8 tific ev-er-green from dan-ish com-puter sci-en-ti
+st.
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--117
+[]$\TU/lmtt/m/n/8 https://www.ciss.dk/industrial-and-scientific-
+
+Underfull \hbox (badness 4673) in paragraph at lines 112--117
+\TU/lmtt/m/n/8 evergreen-from-danish-computer-scientist/$[]\TU/NotoSerifCJKkr(0
+)/m/it/8 .  De-vel-
+[13]
+Underfull \hbox (badness 1472) in paragraph at lines 126--129
+[]\TU/NotoSerifCJKkr(0)/m/it/8 Shai Shalev-Shwartz, Shaked Shammah, and Am-non
+
+Underfull \hbox (badness 1292) in paragraph at lines 131--136
+[]\TU/NotoSerifCJKkr(0)/m/it/8 UP-PAAL Team.  Se-man-tics of the sym-bolic quer
+ies.
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--136
+[]$\TU/lmtt/m/n/8 https://docs.uppaal.org/language-reference/query-
+
+Underfull \hbox (badness 4492) in paragraph at lines 145--151
+\TU/NotoSerifCJKkr(0)/m/it/8 Ed-ward Kim, Hadi Ra-van-bakhsh, Mar-cell Vazquez-
+
+
+Underfull \hbox (badness 5036) in paragraph at lines 153--158
+\TU/NotoSerifCJKkr(0)/m/it/8 Vora, Venice Erin Li-ong, Qiang Xu, Anush Kr-ish-
+
+Underfull \hbox (badness 1137) in paragraph at lines 153--158
+\TU/NotoSerifCJKkr(0)/m/it/8 nan, Yu Pan, Gi-an-carlo Bal-dan, and Os-car Bei-j
+bom.
+
+Underfull \hbox (badness 4001) in paragraph at lines 160--165
+\TU/NotoSerifCJKkr(0)/m/it/8 Jour-nal of Math-e-mat-i-cal and Sta-tis-ti-cal Ps
+y-chol-ogy,
+) [14]
+(projects/03-sequential-coc-verifica
+tion/paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/main-clean.
+aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.75pt have occurred.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+))
+(see the transcript file for additional information)
+ 617 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 28 attribute, 55 glue_spe
+c, 28 attribute_list, 2 write, 3 pdf_action nodes
+   avail lists: 1:1,2:4721,3:1189,4:176,5:4501,6:262,7:14924,8:114,9:9435,10:32
+,11:612
+</usr/share/texmf/fonts/opentype/public/lm/lmmono8-regular.otf></usr/share/texm
+f/fonts/opentype/public/lm/lmmono9-regular.otf><./fonts/NotoSerifCJKkr-Regular.
+otf><./fonts/NotoSerifCJKkr-Bold.otf></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cmextra/cmex9.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy8.pfb>
+Output written on main-clean.pdf (14 pages, 374526 bytes).
+Transcript written on main-clean.log.

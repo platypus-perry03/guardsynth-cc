@@ -27,7 +27,7 @@ from cli.pipelines.guardsynth.expert_pilot_preflight.run import execute
 
 
 BATCH = ROOT / (
-    "artifacts/results/restricted/guardsynth-sim24-batch-001/"
+    "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-sim24-batch-001/"
     "alpamayo-terminal-batch-2026-08-12-v1/BATCH_RESULT.json"
 )
 TRAINING = ROOT / "projects/04-guardsynth-coc/src/guard_synth/fixtures/expert_annotation_training_example_v0_1.json"

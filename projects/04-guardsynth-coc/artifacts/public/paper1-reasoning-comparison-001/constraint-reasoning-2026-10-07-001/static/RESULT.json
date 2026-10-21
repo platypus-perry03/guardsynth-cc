@@ -1,0 +1,11 @@
+{
+  "status": "COMPLETE",
+  "smoke": false,
+  "resumed": true,
+  "scored_rows": 864,
+  "unique_inputs": 144,
+  "model_setup_seconds": 8.237723272293806,
+  "worker_wall_seconds": null,
+  "resume_worker_wall_seconds": 103.10379257053137,
+  "timing_note": "Previous interrupted worker wall time was not retained; completed batch timings remain in raw records"
+}

@@ -21,7 +21,7 @@ M20 이후 2차 scope/resource를 재승인한 뒤 적용하며 이번 변경으
 - 상태: `PARTIAL` (재적격화); 역사적 `COMPLETE / M13_TERMINAL_DATA_SHORTFALL_FRONTEND_CAN_PROCEED` 보존
 - 종료 결과: 실제/파생 4/24장면·17계약 실행, 부족 20장면과 slice/strata 공백을
   synthetic fill 없이 terminal decision으로 기록
-- 결과: `artifacts/results/restricted/guardsynth-sim24-batch-001/alpamayo-terminal-batch-2026-08-12-v1/`
+- 결과: `projects/04-guardsynth-coc/artifacts/restricted/guardsynth-sim24-batch-001/alpamayo-terminal-batch-2026-08-12-v1/`
 - 결정 근거: [실제 차량 검증 후속 단계 이관](../decisions/ACTUAL_VEHICLE_VALIDATION_DEFERRAL_DECISION_V01.md)
 - 입력 등급: 실제/파생 장면은 source-linked, 차량 assurance는 simulation-only
 - 후속 보완: `M13-R01 / GS-P1-SIM24-REQUAL-001 QUEUED`; terminal 완료는 보존하며
@@ -73,7 +73,7 @@ M20 이후 2차 scope/resource를 재승인한 뒤 적용하며 이번 변경으
 - `RUN_MANIFEST.json`
 - `REPORT_KO.md`
 
-새 제한 원문·식별자는 `artifacts/projects/guardsynth-coc/restricted/` 아래에서만 처리한다.
+새 제한 원문·식별자는 `projects/04-guardsynth-coc/artifacts/restricted/` 아래에서만 처리한다.
 위 `artifacts/results/`는 기존 immutable run 참조다. 공개 결과에는 집계와
 비식별 reason code만 둔다.
 

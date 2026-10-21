@@ -1,0 +1,68 @@
+{
+  "project_id": "safety-constrained-coc",
+  "experiment_id": "kiee-publication-hwp-001",
+  "run_id": "publication-2026-10-02-001",
+  "license_class": "public",
+  "created_date": "2026-10-02",
+  "inputs": [
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/publication.pdf",
+      "sha256": "902a3dc92fd018302a988de69c21a03ae1fe2d26060232b49390f614241f2720"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/publication_reference.pdf",
+      "sha256": "776b7dd4cb846dd7657c701c945230434c04aaa3920c2088c5ca00a21f84e212"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/publication_template.hwp",
+      "sha256": "4364fd70f6c69dca350b1258896486b40c73bd02314ee902049bfee6db38e95a"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/sections/jin.jpg",
+      "sha256": "debc1d871990dfba172ed6feaa55d636323981cd363b7b4fcd5428c8bcb673fc"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/fonts/ChosunNm.ttf",
+      "sha256": "715b213eb713a520366ae9634dade0fe377601a5523ad71a60453410db9bf81b"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/sections/02-related-work.tex",
+      "sha256": "816ac66fa265e691c3db3cbe4b9c83f9ae05f04622163e1fe12ad48fc6a0c6d4"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/sections/03-problem.tex",
+      "sha256": "5aae5c9bbe0c846139cb5cd5afa17391593cf250cd441b817b3f3bd9c6135249"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/sections/04-method.tex",
+      "sha256": "678c424049e0e041516527f7b09e74d1b75b5482c59cccf9674e4d096697bd8c"
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/sections/05-experiments.tex",
+      "sha256": "32bf1354daebf5ff3c05548dc6aadb7d3000f7fea00d3bd7994ce948cdb686de"
+    }
+  ],
+  "tool": {
+    "name": "hwp-cli",
+    "version": "1.3.1",
+    "upstream": "https://github.com/STAIxBWLB/hwp-cli/releases/tag/v1.3.1",
+    "archive_sha256": "21bd8ab3b6834c48fcebca390e3d3f79dcedd6a4388e4eeaf802501f84fcf433"
+  },
+  "independent_parser": {
+    "name": "pyhwp",
+    "version": "0.1b15"
+  },
+  "rebuild_command": "HWP_FONT_DIR=<manuscript>/fonts hwp new --from document.json -o publication.hwp --strict",
+  "outputs": [
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/publication.hwp",
+      "sha256": "c430b8bf57ba5b6469e812589211a75d078d8b4b6499ed5dcc3af92b32fa9653",
+      "bytes": 818688
+    },
+    {
+      "path": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v02/publication-hwp.pdf",
+      "sha256": "fa28fae45b48a1206b350d6dbd7bb8c276e04d6494ed12b09d5390aed70f005f",
+      "bytes": 1322618
+    }
+  ]
+}

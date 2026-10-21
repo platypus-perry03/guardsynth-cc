@@ -1,0 +1,15 @@
+{
+  "reason": "Unified execution process terminated during a turn interruption",
+  "frozen_runner_sha256": "9a07caa04431154b1649d4c63348d93caf0645924c32e1db2130813581b581a1",
+  "resume_runner_sha256": "be5dc51277fd1fbd77f127c1d66a4867593fca02796a550ef7358bcdff74b6ea",
+  "family": "static",
+  "pending": [
+    [
+      123,
+      "plan_and_solve",
+      80
+    ]
+  ],
+  "configuration": "Same frozen checkpoint, prompts, extraction, greedy decoding, batch size 8 and token caps",
+  "timing_scope": "Per-record generation timings cover completed batches; interrupted unrecorded work is excluded"
+}

@@ -1,0 +1,97 @@
+{
+  "project_id": "guardsynth-coc",
+  "run_id": "matched-temporal-rules-2026-10-08-001",
+  "frozen_at": "2026-10-08T15:37:06.584648+00:00",
+  "checkpoint_arms": [
+    "p0",
+    "p1",
+    "p2"
+  ],
+  "seeds": [
+    42,
+    17,
+    123
+  ],
+  "splits": [
+    "test",
+    "unseen_duration"
+  ],
+  "examples_per_split": 240,
+  "image_count": 10,
+  "planned_predictions": 4320,
+  "model_path": "LOCAL_PATH_REMOVED_d248733d543e",
+  "sources": {
+    "projects/04-guardsynth-coc/experiments/paper1_external_methods/run_matched_temporal_comparison.py": "ccd6be64f8f8ab1b95ca2ae8ceb638a751df098230fd43f8d7303ef6d7879597",
+    "projects/04-guardsynth-coc/experiments/paper1_external_methods/run_reasoning_comparison.py": "9a07caa04431154b1649d4c63348d93caf0645924c32e1db2130813581b581a1",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-protocol-2026-09-29-001/evaluation_p2.jsonl": "4c566dd39c8d9a98e242f0728e3ee7ab1cfb1b035e12b7b0c0e99eee91302cbc",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-protocol-2026-09-29-001/RUN_MANIFEST.json": "2319c9cc6437802971af60c45f05cc43d4fe92388c10f9279d84a8e61abd6592",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-training-data-2026-09-29-001/test_p2.jsonl": "53b866265a01a2b2348b10cbdab14bf16f9b23ed9bb3feebaba8b666d775d82d",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-training-data-2026-09-29-001/test_paired.jsonl": "556a01447b1640188aefe9970fd7a7e78fca8cf3f0b53d671953344cec3172a8",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-training-data-2026-09-29-001/images/clear_11000.png": "7ac45079ec4b9f2463fdb772d80f36f5117730f1bfe87f249adfecbb085cb7ee",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-training-data-2026-09-29-001/images/clear_11100.png": "3b036024d8c46ef09d29334586c08b0ea303e50d30c8af5077845ef2bc8322c7",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-training-data-2026-09-29-001/images/clear_11200.png": "081144f7a1d5060d961cc5d1c955e52feb16153ccd46cd947e4ccbb95c4e630c",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-training-data-2026-09-29-001/images/clear_11300.png": "43ab3422b76805fa232b2741b25b7c3a629e346e1c1b31cbc4b22dda5e475360",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-training-data-2026-09-29-001/images/clear_11400.png": "1758f8e9dfab67756d5b7152be7604c674ad26bde22f1ae38ce4704e854c390d",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-training-data-2026-09-29-001/images/clear_11500.png": "ab68db9cea74424d46cde320bb7e8c8c3d281a4c0fecc44e1d4ee6c5e0c36cdd",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-training-data-2026-09-29-001/images/clear_11600.png": "bfb33cce7db0bb34560a0ef140c4d0c86583102e92202dd6d3e79a7f6f8b1a56",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-training-data-2026-09-29-001/images/clear_11700.png": "ae136967d5591800dc5318374caf9ede3af782e59955f85fc608bd06e55d0e74",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-training-data-2026-09-29-001/images/clear_11800.png": "ff8aa6f81cf203e9a45d8ef39a7e9d4d211836f14fdd120ed7e648fae648c170",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-training-data-2026-09-29-001/images/clear_11900.png": "4afac5a90dcbd5aad469c3e7e237775092d66da8a0293b0acf5e80d961fff91e",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed42/adapter/README.md": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed42/adapter/adapter_model.safetensors": "0890b2738dcd3d06dd7d1942cb6e2ec9c60bd359d70c062d647fa5f78d1b8946",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed42/adapter/adapter_config.json": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed17/adapter/README.md": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed17/adapter/adapter_model.safetensors": "7fa6acd065369ac969df544b4ee57722220dd9143eaa6b91b2e819fd5ad6a67a",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed17/adapter/adapter_config.json": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed123/adapter/README.md": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed123/adapter/adapter_model.safetensors": "8e3dc9e060587a63f5c0c48a1bd0377426810b99595e9750c3b7e5d4f41969c3",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p0-seed123/adapter/adapter_config.json": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p1-seed42/adapter/README.md": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p1-seed42/adapter/adapter_model.safetensors": "06c0f9e3ad16f732ca1c77349b6504854aadb71c8df730309555cc08d08c74be",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p1-seed42/adapter/adapter_config.json": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p1-seed17/adapter/README.md": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p1-seed17/adapter/adapter_model.safetensors": "2414dfc6cd146ac7902beaed7f2f1f29b4ce71951badaf9a85e5bc573def7e53",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p1-seed17/adapter/adapter_config.json": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p1-seed123/adapter/README.md": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p1-seed123/adapter/adapter_model.safetensors": "d48b483c6efe46f70676314caf587f63a80dbaba863976f80f4e6adc33a12371",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p1-seed123/adapter/adapter_config.json": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p2-seed42/adapter/README.md": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p2-seed42/adapter/adapter_model.safetensors": "7f2bc9e82c704f2ad54f53e61f2ab313819dda9274cab73387e48219ca571448",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p2-seed42/adapter/adapter_config.json": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p2-seed17/adapter/README.md": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p2-seed17/adapter/adapter_model.safetensors": "222f797dc52b2bfee616c487b6afa2c3021cfbf4882c19ae3a2e257b9d97826d",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p2-seed17/adapter/adapter_config.json": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p2-seed123/adapter/README.md": "cfb7ccf343a2b9cd6f189998a2a1e21a603844dd0cce39d61e1d77e3c6d2dcbb",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p2-seed123/adapter/adapter_model.safetensors": "6edb184852167696fcfbad61aa3cabcb6e58913f632ad28dfb6aa432eb1d666d",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001/temporal-expansion-learning-2026-09-29-001/p2-seed123/adapter/adapter_config.json": "c73bb3ca783da3495bad9a061d34d6c8c4e59eb644628e65326db12df7b70009"
+  },
+  "inference": {
+    "greedy": true,
+    "batch_size": 8,
+    "max_new_tokens": 12,
+    "dtype": "bfloat16",
+    "attention": "sdpa"
+  },
+  "protocol": {
+    "input": "Exact frozen P2 image, rule, CoC and candidate prompt for every checkpoint",
+    "known_waits_ms": [
+      500,
+      1500
+    ],
+    "unseen_waits_ms": [
+      800,
+      1800
+    ],
+    "scoring": "Independent integer clearance + wait gate; highest-progress allowed candidate",
+    "invalid": "Error with unknown admissibility; never counted as compliant",
+    "training": false,
+    "new_human_labels": false,
+    "alpamayo_comparison": false,
+    "limits": [
+      "Action-label selection, not trajectory generation or 0.2m position-hold compliance",
+      "Shared synthetic test images; two suites are correlated",
+      "Training exposure and checkpoint differ; verification causal benefit not isolated",
+      "P0 had rule-omitted paired training; supplied-input P0 is a specific diagnostic control"
+    ]
+  }
+}

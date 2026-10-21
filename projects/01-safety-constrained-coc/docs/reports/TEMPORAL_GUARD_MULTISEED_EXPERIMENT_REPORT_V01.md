@@ -296,5 +296,5 @@ Requirement CoC 자체에 “보행자에게 양보한 뒤 진행”이 포함�
 - 학습 및 평가: `projects/01-safety-constrained-coc/experiments/vlm_guard_learning/train_qwen_temporal_guard_lora.py`
 - 단일 seed 분석: `projects/01-safety-constrained-coc/experiments/vlm_guard_learning/analyze_temporal_guard.py`
 - 다중 seed 분석: `projects/01-safety-constrained-coc/experiments/vlm_guard_learning/analyze_temporal_guard_multiseed.py`
-- 기계 판독 결과: `artifacts/results/public/small-vlm-guard-v0/temporal-guard-multiseed-v0/summary.json`
-- 간략 결과표: `artifacts/results/public/small-vlm-guard-v0/temporal-guard-multiseed-v0/REPORT_KO.md`
+- 기계 판독 결과: `projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/temporal-guard-multiseed-v0/summary.json`
+- 간략 결과표: `projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/temporal-guard-multiseed-v0/REPORT_KO.md`

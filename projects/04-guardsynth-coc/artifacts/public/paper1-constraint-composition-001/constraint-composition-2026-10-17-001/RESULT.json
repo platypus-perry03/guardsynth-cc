@@ -1,0 +1,90 @@
+{
+  "project_id": "guardsynth-coc",
+  "task_id": "bounded-constraint-composition",
+  "status": "COMPLETE",
+  "aggregate": {
+    "cases": 123,
+    "full_sat": 88,
+    "full_unsat": 35,
+    "queries": 636,
+    "unknown": 0,
+    "mismatches": 0,
+    "sat_witnesses": 601,
+    "invalid_witnesses": 0,
+    "all_components_sat": 123,
+    "component_only_detected": 0,
+    "pairwise_detected": 23,
+    "minimal_conflict_groups": 35,
+    "pairwise_sat_full_unsat": 12,
+    "boundary_repairs_sat": 35
+  },
+  "families": {
+    "entry_deadline": {
+      "cases": 48,
+      "full_sat": 36,
+      "full_unsat": 12,
+      "queries": 192,
+      "unknown": 0,
+      "mismatches": 0,
+      "sat_witnesses": 180,
+      "invalid_witnesses": 0,
+      "all_components_sat": 48,
+      "component_only_detected": 0,
+      "pairwise_detected": 12,
+      "minimal_conflict_groups": 12,
+      "pairwise_sat_full_unsat": 0
+    },
+    "hold_departure": {
+      "cases": 12,
+      "full_sat": 10,
+      "full_unsat": 2,
+      "queries": 48,
+      "unknown": 0,
+      "mismatches": 0,
+      "sat_witnesses": 46,
+      "invalid_witnesses": 0,
+      "all_components_sat": 12,
+      "component_only_detected": 0,
+      "pairwise_detected": 2,
+      "minimal_conflict_groups": 2,
+      "pairwise_sat_full_unsat": 0
+    },
+    "speed_progress": {
+      "cases": 27,
+      "full_sat": 18,
+      "full_unsat": 9,
+      "queries": 108,
+      "unknown": 0,
+      "mismatches": 0,
+      "sat_witnesses": 99,
+      "invalid_witnesses": 0,
+      "all_components_sat": 27,
+      "component_only_detected": 0,
+      "pairwise_detected": 9,
+      "minimal_conflict_groups": 9,
+      "pairwise_sat_full_unsat": 0
+    },
+    "three_way_timing": {
+      "cases": 36,
+      "full_sat": 24,
+      "full_unsat": 12,
+      "queries": 288,
+      "unknown": 0,
+      "mismatches": 0,
+      "sat_witnesses": 276,
+      "invalid_witnesses": 0,
+      "all_components_sat": 36,
+      "component_only_detected": 0,
+      "pairwise_detected": 0,
+      "minimal_conflict_groups": 12,
+      "pairwise_sat_full_unsat": 12
+    }
+  },
+  "claim_scope": [
+    "All sources, observations, deadlines, and progress obligations are supplied synthetic inputs, not extracted road rules or accident reconstructions.",
+    "SAT/UNSAT concerns simultaneous satisfiability under the declared context. An UNSAT source group diagnoses conflicting requirements, not which source is wrong.",
+    "The preserved no-entry controls demonstrate that progress obligations must be explicit; waiting may satisfy a combination when entry is optional.",
+    "This is a post-training logical composition diagnostic; no CNL parser, model training, actual driving safety, or preservation of legal exceptions is evaluated.",
+    "Cases are an exhaustive fixed parameter grid, not independent road scenes or a population estimate."
+  ]
+}

@@ -23,7 +23,7 @@ from run_verification import ANSI_ESCAPE, DEFAULT_VERIFYTA, classify_output
 ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / "PROJECT_REGISTRY.json").is_file())
 DEFAULT_OUTPUT = (
     ROOT
-    / "artifacts/results/public/remaining-candidates"
+    / "projects/03-sequential-coc-verification/artifacts/public/remaining-candidates"
     / "uppaal-multi-property-verification-result.json"
 )
 

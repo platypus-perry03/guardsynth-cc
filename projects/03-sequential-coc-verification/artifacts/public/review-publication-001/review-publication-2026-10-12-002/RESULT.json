@@ -1,0 +1,27 @@
+{
+  "status": "READY_FOR_PUBLICATION",
+  "published": false,
+  "payload_files": 1095,
+  "checks": {
+    "inventory": "PASS",
+    "direct_identifier_scan": "PASS",
+    "original_review_ids_and_initials_absent": "PASS",
+    "anonymous_panel_schema": "PASS",
+    "regression_byte_regeneration": "PASS",
+    "agreement_matches_original": "PASS",
+    "python_replay": "PASS",
+    "bounded_replay": "PASS",
+    "publication_tests": "6/6",
+    "file_naming": "PASS",
+    "verifyta_rerun": "NOT_RUN_LICENSE_UNAVAILABLE_IN_PRIOR_ATTEMPT"
+  },
+  "added_files": 7,
+  "modified_files": 3,
+  "removed_files": 0,
+  "published_branch_unchanged": "79acd64a1fdf1f8b2c8a7817409368d976cd64f0",
+  "remaining_unrecoverable": [
+    "generation_model_revision",
+    "generation_prompts_and_settings",
+    "quality_score_formula_and_threshold"
+  ]
+}

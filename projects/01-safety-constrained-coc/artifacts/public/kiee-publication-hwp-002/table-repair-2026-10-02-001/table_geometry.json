@@ -1,0 +1,74 @@
+[
+  {
+    "table": 1,
+    "page": 4,
+    "minimum_row_text_gap_pt": 3.2,
+    "cells": 20
+  },
+  {
+    "table": 2,
+    "page": 4,
+    "minimum_row_text_gap_pt": 3.2,
+    "cells": 16
+  },
+  {
+    "table": 3,
+    "page": 5,
+    "minimum_row_text_gap_pt": 3.2,
+    "cells": 18
+  },
+  {
+    "table": 4,
+    "page": 5,
+    "minimum_row_text_gap_pt": 3.2,
+    "cells": 20
+  },
+  {
+    "table": 5,
+    "page": 6,
+    "minimum_row_text_gap_pt": 3.2,
+    "cells": 14
+  },
+  {
+    "table": 6,
+    "page": 6,
+    "minimum_row_text_gap_pt": 3.2,
+    "cells": 14
+  },
+  {
+    "table": 7,
+    "page": 8,
+    "minimum_row_text_gap_pt": 3.2,
+    "cells": 35
+  },
+  {
+    "table": 8,
+    "page": 8,
+    "minimum_row_text_gap_pt": 3.2,
+    "cells": 36
+  },
+  {
+    "table": 9,
+    "page": 9,
+    "minimum_row_text_gap_pt": 3.2,
+    "cells": 36
+  },
+  {
+    "table": 10,
+    "page": 10,
+    "minimum_row_text_gap_pt": 3.2,
+    "cells": 60
+  },
+  {
+    "table": 11,
+    "page": 11,
+    "minimum_row_text_gap_pt": 3.2,
+    "cells": 25
+  },
+  {
+    "table": 12,
+    "page": 11,
+    "minimum_row_text_gap_pt": 3.2,
+    "cells": 24
+  }
+]

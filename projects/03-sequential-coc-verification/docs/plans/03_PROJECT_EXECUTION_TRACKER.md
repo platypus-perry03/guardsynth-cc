@@ -4,27 +4,37 @@
 - 문서 계층: `03` 현재 실행 관리
 - 기준 연구계획: [01_RESEARCH_PLAN_V01.md](01_RESEARCH_PLAN_V01.md)
 - 전체 마일스톤: [02_PROJECT_MILESTONES.md](02_PROJECT_MILESTONES.md)
-- 현재 상태: `REVIEW_REVISION_FOLLOW_UP_COMPLETE`
+- 현재 상태: `REVIEW_RESPONSE_PACKAGE_READY` (2026-10-12)
 
 ## 1. 현재 단일 작업
 
-`SQ-M05`의 승인된 E6 문서 제작 COMPLETE (2026-10-01): 완료된 실험을 재실행하지 않고 문제 정의·방법·결과 표·관련 연구·한계·초록·결론을 적용 가능성과 근거 추적 주장에 맞췄다. 최초 96/144와 실패 48건, 개발 후 동일 사례 재시험 144/144를 구분했다. 파란색 개정 원고와 동일 내용 clean 원고 각 8쪽, 심사위원별 답변서 9/8/11항목과 PDF 10/9/12쪽을 완성했다. 28개 반영 발췌 및 원고 절·표·쪽 참조, marked/clean 페이지별 텍스트 동일성과 원 제출본·고정 코드 해시를 검증했다. E3 사람 검토와 개발 미사용 독립 시험은 미실시이며 전체 연구 검증 완료로 표시하지 않는다.
+`SQ-M05`의 요청된 실험·편집·검증을 완료했다. 다음 단일 작업은 저자의 개정 패키지 검토와 접수번호·실제 심사 차수 확인이다. 외부 제출은 수행하지 않는다.
 
-후속 편집 COMPLETE (2026-10-01): 사용자의 설명 축소 지적에 따라 원 제출본과 세 리뷰를 다시 비교했다. 유효한 자료 출처 흐름·단계별 방법·현재 UPPAAL 배열/두 위치/전이/질의·원문 회수 사례·실패 메커니즘·결과 활용을 복원·보강하고 서론은 간결하게 유지했다. 표14는 본문10쪽의3행2/7/18요약으로 정리했고27행 상세는 R3-11 답변서13쪽에 원 사유/건수 그대로 보존했다. 현재 marked/clean은11쪽, 답변서는10/9/13쪽이며28항목 참조·발췌·레이아웃 검증 PASS다. 이전 E6 완료와 봉인 산출물1,834파일은 해시가 유지되며 실험은 재실행하지 않았다. 새 빌드는 run004, [후속 검증 보고서](../../../../artifacts/projects/sequential-coc-verification/public/kiee-review-revision-001/manuscript-validation-2026-10-01-002/REPORT_KO.md)는 validation run002다.
+사용자 제안 순서대로 X3a → 81건 본문 통합 → 무선별 유한 직적 시험 X2a → 28항목 답변서 동기화 → 5 PDF 검증을 수행했다. [현재 패키지](../../paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/README.md)는 main/clean 12/12쪽, 답변서 10/9/13쪽이며 정규화 원고 텍스트와 28개 실제 발췌·쪽 위치를 검증했다. 현재 `document_validation.json`이 PASS의 근거이고 10월 1일 결과는 역사적 기록이다.
 
-실행 계획: [KIEE_REVIEW_RESPONSE_REEXPERIMENT_DESIGN_V01.md](../designs/KIEE_REVIEW_RESPONSE_REEXPERIMENT_DESIGN_V01.md). 원 제출본은 `paper/manuscript/latex-kiee-review-2022-coc-audit-10pages`이며 보존했다. 완성 개정본은 [revision-v01](../../paper/manuscript/latex-kiee-review-2022-coc-audit-revision-v01/README.md), 검증 결과는 [빌드 보고서](../../../../artifacts/projects/sequential-coc-verification/public/kiee-review-revision-001/manuscript-build-2026-10-01-001/REPORT_KO.md)와 [최종 재검증](../../../../artifacts/projects/sequential-coc-verification/public/kiee-review-revision-001/manuscript-validation-2026-10-01-001/REPORT_KO.md)에 있다.
+X3a 시간 요구/행동열/텍스트 AC1은 0.626706/0.322898/0.300936이다. 원 라벨·κ·쌍별 일치를 보존했으며 사람 신뢰도 개선으로 해석하지 않는다. 81건은 유지 81/81, 초기화 14/81의 작성 시험이다. X2a는 고정 XML step과 별도 접두열 수식의 35,042,928건에서 불일치 0, P4 고장 대조군 5,256건에서 상태 불일치 1,884건을 보존했다. 고정 소스/결과 해시와 전수 조합 수를 다시 확인했다.
 
-다음 단일 작업 `READY_NEXT`: 저자의 최종 검토와 미확인 접수번호·실제 심사 수정 차수 확인. E6 파일 제작을 막는 사유는 없으며 외부 제출은 이번 승인 범위에 포함되지 않는다. 10쪽은 이전 원고 분량일 뿐 필수 제한으로 단정하지 않는다. 자연 오류 정확도·자동 의미 추출·사람 재평가·독립 일반화·정량 시간·차량 안전은 남은 한계로 유지한다.
+R3-7은 **부분 대응**이다. 사례 선별을 없애고 계산 경로를 분리했지만 같은 작성자·공유 명세·유한 상한의 한계가 있다. 외부 독립 시험 X2b, 사람 재평가 X3b, 고정 81건의 별도 FSM 비교 X4, 자연 경계 의미 정답 X5와 LLM 비교 X6는 미실시다. 실제 전문가 2명·60건을 현재 문서 완료의 선행 조건으로 삼지 않는다. 검토자 자격·교육·합의 및 과거 생성 모델/프롬프트는 복원 불가로 인정한다.
 
-## 2. 완료 조건
+## 2. 완료 조건과 확인 결과
 
-- [x] 대상 출판 경로와 원고를 명시한다.
-- [x] 추가 보완이 현재 주장에 필수인지 구분한다.
-- [x] mutation coverage와 자연 오류 검출 정확도를 혼동하지 않는지 재검토한다.
-- [x] GuardSynth 합성 작업이 이 프로젝트로 유입되지 않았는지 확인한다.
-- [x] 다음 작업 하나만 `READY_NEXT` 또는 `ACTIVE`로 둔다.
+- [x] R1 9/R2 8/R3 11의 근거·부분/대안 대응·미충족 범위를 갱신한다.
+- [x] C1: 경계 의미·입력·질의·81건 결과와 간결한 서론을 본문에 통합한다.
+- [x] X3a: 기존 원시 CSV의 κ·AC1·범주 분포를 재분석하고 별도 계산으로 확인한다.
+- [x] C2/X2a: 선별 없는 유한 직적과 별도 수식 판정기를 고정·실행하고 전체 불일치를 보존한다. 외부 독립 시험과 구분한다.
+- [x] C3: 리뷰어 코멘트를 유지하고 28개 답변·본문 발췌·실제 페이지를 동기화한다.
+- [x] C4: 5 PDF를 빌드하고 marked/clean 텍스트 동일, 28발췌, 참조·레이아웃을 검증한다. 결과 표 9–10쪽은 시각 확인했다.
+- [x] 실험 결과 해시와 전체 조합 수, P4 고장 1,884개 불일치 기록을 확인한다.
+- [x] 프로젝트 범위의 `git diff --check` 통과. 전체 파일명 검사는 기존 P04 worker JSON 두 파일의 비정규 형식에서만 실패하며 이 작업의 파일 오류는 없다.
+- [ ] 저자 검토 및 접수번호·실제 심사 차수 확인. 심사 수용·외부 제출은 현재 완료 범위가 아니다.
 
-## 3. 참조
+근거는 [대응 설계 13.9절](../designs/KIEE_REVIEW_RESPONSE_REEXPERIMENT_DESIGN_V01.md#139-후속-실행-결과--2026-10-12)과 [결과 인덱스](../../artifacts/RESULT_INDEX.md)를 따른다.
+
+## 3. 이전 완료 기록의 적용 범위
+
+2026-10-01 E6 최초 문서 제작과 후속 편집은 당시 완료되었다. 최초 marked/clean 8쪽 이후 설명을 보강해 각 11쪽, 답변서 10/9/13쪽을 만들었고 28항목 발췌·참조·레이아웃을 검증했다. 최초 96/144와 실패 48건, 개발 후 같은 사례 재시험 144/144를 구분했으며 궤적 2/7/18의 본문 요약과 답변서 27행 상세를 보존했다. [후속 검증 보고서](../../artifacts/public/kiee-review-revision-001/manuscript-validation-2026-10-01-002/REPORT_KO.md)는 그 판본의 기록이며 10월 12일 국문 초안 이후 패키지의 검증 결과가 아니다. 원 제출본 `paper/manuscript/latex-kiee-review-2022-coc-audit-10pages`는 보존한다.
+
+## 4. 참조
 
 - [원고 개선계획](../../paper/manuscript/IMPROVEMENT_PLAN.md)
 - [국내 학술지 보완계획](../../paper/manuscript/DOMESTIC_JOURNAL_COMPLETION_PLAN.md)
@@ -32,4 +42,4 @@
 
 ## 2026-10-01 작업 위치 통합
 
-사용자 요청으로 `sequential-coc-review-20260930` 작업 트리의 모든 내용이 본 저장소로 통합되었다. 동일 파일은 유지하고 최신 개정본을 반영했으며, 충돌한 양쪽 원본은 제한 산출물의 통합 기록에 보존했다. 후속 작업은 `/home/jinhyun/prj_ws/prj_jin/guardsynth-cc`에서 진행한다. 현재 11쪽 원고·세 답변서와 실험 결과의 내용은 통합 전과 동일하다.
+사용자 요청으로 `sequential-coc-review-20260930` 작업 트리의 모든 내용이 본 저장소로 통합되었다. 동일 파일은 유지하고 최신 개정본을 반영했으며, 충돌한 양쪽 원본은 제한 산출물의 통합 기록에 보존했다. 후속 작업은 `REPOSITORY_ROOT`에서 진행한다. 통합 당시 11쪽 원고·세 답변서와 실험 결과의 내용은 통합 전과 동일했다.

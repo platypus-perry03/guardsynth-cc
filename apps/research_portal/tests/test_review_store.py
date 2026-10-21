@@ -125,10 +125,10 @@ class ReviewStoreTest(unittest.TestCase):
         (fake_root / "PROJECT_REGISTRY.json").write_text(json.dumps({
             "projects": [{
                 "id": "guardsynth-coc",
-                "artifact_root": "artifacts/projects/guardsynth-coc",
+                "artifact_root": "projects/04-guardsynth-coc/artifacts",
             }],
         }), encoding="utf-8")
-        target = fake_root / "artifacts/projects/guardsynth-coc/restricted/round-001/round.sqlite3"
+        target = fake_root / "projects/04-guardsynth-coc/artifacts/restricted/round-001/round.sqlite3"
         result = initialize_review_db(
             target,
             owner_project_id="guardsynth-coc",

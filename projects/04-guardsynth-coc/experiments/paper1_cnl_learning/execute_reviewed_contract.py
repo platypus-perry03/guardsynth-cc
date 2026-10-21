@@ -12,6 +12,7 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from align_reviews import ROOT, BASE, digest, load, verified, write_json
+from cli.project_paths import artifact_digest_matches
 from worked_example import source_example
 
 # Avoid an ambiguous import of this experiment's action_contract.py vs platform module.
@@ -53,6 +54,9 @@ def reviewed_inputs():
         if original[key] != change["before"]:
             raise ValueError("correction before value mismatch")
         original[key] = change["after"]
+    packet_path = PREPARATION / "source_review_packet.json"
+    if artifact_digest_matches(packet_path, original["packet_sha256"]):
+        original["packet_sha256"] = digest(packet_path)
     if original != effective or correction["user_statement"] != "다른 차량의 움직임은 확인되지 않았어요.":
         raise ValueError("clarification replay mismatch")
     scene, inputs = source_example()

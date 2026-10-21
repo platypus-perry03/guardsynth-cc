@@ -28,7 +28,7 @@ from urllib.parse import urlparse
 ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / "PROJECT_REGISTRY.json").is_file())
 DEFAULT_REVIEW_ROOT = (
     ROOT
-    / "artifacts/results/restricted/alp-exp-005"
+    / "projects/01-safety-constrained-coc/artifacts/restricted/alp-exp-005"
     / "feasibility-batch-v0/blind-review-v0"
 )
 REVIEW_COLUMNS = [

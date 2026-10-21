@@ -1,0 +1,9 @@
+{
+  "model": "2b",
+  "rows": 736,
+  "batch_size": 8,
+  "elapsed_seconds_resumed": 232.49530650302768,
+  "resumed_at_row": 616,
+  "output_sha256": "3c03add3d70877249b063f4ea140d8d5172c874c54e6475c0dffed6ba615ef83",
+  "gpu": "NVIDIA A100 80GB PCIe"
+}

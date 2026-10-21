@@ -10,7 +10,7 @@ from pathlib import Path
 import re
 
 ROOT = next(p for p in Path(__file__).resolve().parents if (p / 'PROJECT_REGISTRY.json').is_file())
-BASE = ROOT / 'artifacts/projects/guardsynth-coc/restricted/guardsynth-paper1-training-readiness-001'
+BASE = ROOT / 'projects/04-guardsynth-coc/artifacts/restricted/guardsynth-paper1-training-readiness-001'
 PREPARATION = BASE / 'longitudinal-endpoint-preparation-2026-09-28-002'
 PREFLIGHT = BASE / 'm17-machine-preflight-2026-09-28-002'
 DESIGN = ROOT / 'projects/04-guardsynth-coc/docs/designs/PAPER1_SPEED_CLAUSE_BINDING_DESIGN_V01.md'

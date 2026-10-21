@@ -1,0 +1,29 @@
+{
+  "project_id": "guardsynth-coc",
+  "run_id": "introduction-revision-2026-10-08-001",
+  "status": "VERIFIED",
+  "manuscript_pdf": "projects/04-guardsynth-coc/paper/ieee-access/ieee-access-manuscript-en.pdf",
+  "manuscript_pages": 23,
+  "supplement_pdf": "ieee-access-experiments-supplement-v01-en.pdf",
+  "supplement_pages": 16,
+  "bibliography_entries": 20,
+  "outside_introduction_unchanged": true,
+  "frozen_and_experiment_evidence_unchanged": true,
+  "raw_restricted_material_copied": false,
+  "numeric_claims_verified": true,
+  "unresolved_references_or_citations": false,
+  "visual_review_pages": {
+    "manuscript": [
+      1,
+      2,
+      3
+    ],
+    "supplement": [
+      14,
+      15,
+      16
+    ]
+  },
+  "file_naming": "No changed-file findings; 10 pre-existing unrelated findings",
+  "remaining_warnings": "Existing manuscript frontmatter/font warnings; supplement underfull table text warnings"
+}

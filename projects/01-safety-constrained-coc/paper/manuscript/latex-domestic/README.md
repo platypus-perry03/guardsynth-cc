@@ -21,7 +21,7 @@ make
 
 ## 수치 출처
 
-- 시간 계약: `artifacts/results/public/small-vlm-guard-v0/temporal-guard-multiseed-v0/summary.json`
-- 다중 maneuver/hard: `artifacts/results/public/small-vlm-guard-v0/maneuver-guard-multiseed-v0/summary.json`
+- 시간 계약: `projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/temporal-guard-multiseed-v0/summary.json`
+- 다중 maneuver/hard: `projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/maneuver-guard-multiseed-v0/summary.json`
 - R1 진단: `docs/reports/SAFETY_CONSTRAINED_COC_PROGRESS_REPORT_V01.md`
-- Release reversal: `artifacts/results/public/contract-microworld-v2/pilot-release-reversal-2026-08-04-v1/DEEP_STRESS_ASSESSMENT_KO.md`
+- Release reversal: `projects/01-safety-constrained-coc/artifacts/public/contract-microworld-v2/pilot-release-reversal-2026-08-04-v1/DEEP_STRESS_ASSESSMENT_KO.md`

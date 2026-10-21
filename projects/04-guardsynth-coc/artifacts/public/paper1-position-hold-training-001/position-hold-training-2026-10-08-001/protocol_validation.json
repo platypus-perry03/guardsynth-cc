@@ -1,0 +1,54 @@
+{
+  "profile_split_disjoint": true,
+  "diagnostic_disjoint": true,
+  "hypot_recomputed_candidates": 5376,
+  "reference_labels": {
+    "train": {
+      "A": 224,
+      "B": 256,
+      "C": 224,
+      "D": 256
+    },
+    "validation": {
+      "A": 40,
+      "B": 24,
+      "C": 40,
+      "D": 24
+    },
+    "test": {
+      "A": 60,
+      "B": 68,
+      "C": 60,
+      "D": 68
+    }
+  },
+  "semantic_unit_tests": 5,
+  "file_naming": "10 pre-existing unrelated findings; no new findings",
+  "boundary_coverage": {
+    "train": {
+      "candidate_queries": 3840,
+      "min_invalid_excess_mm": 20.0,
+      "invalid_cases_with_excess_below_20mm": 0,
+      "exact_boundary_admissible_queries": 508
+    },
+    "validation": {
+      "candidate_queries": 512,
+      "min_invalid_excess_mm": 25.0,
+      "invalid_cases_with_excess_below_20mm": 0,
+      "exact_boundary_admissible_queries": 56
+    },
+    "test": {
+      "candidate_queries": 1024,
+      "min_invalid_excess_mm": 22.0,
+      "invalid_cases_with_excess_below_20mm": 0,
+      "exact_boundary_admissible_queries": 164
+    },
+    "diagnostic": {
+      "candidate_queries": 1024,
+      "min_invalid_excess_mm": 1.0,
+      "invalid_cases_with_excess_below_20mm": 288,
+      "exact_boundary_admissible_queries": 256
+    }
+  },
+  "coverage_limit": "Primary train/test generators use invalid peaks of at least 220mm; earlier diagnostics include much smaller overshoots. These are different numeric distributions, not independent road scenes."
+}

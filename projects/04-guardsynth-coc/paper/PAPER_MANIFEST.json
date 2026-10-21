@@ -4,10 +4,10 @@
   "papers": [
     {
       "paper_id": "method-preservation",
-      "source": "main.tex",
+      "source": "ieee-access/main.tex",
       "status": "INTEGRATED_AUTHOR_REVIEW_DRAFT",
       "snapshot": "manuscript-revision-2026-09-30-001",
-      "english_layout_snapshot": "manuscript-layout-2026-09-30-001",
+      "english_layout_snapshot": "ieee-access",
       "languages": [
         "en",
         "ko"
@@ -15,12 +15,381 @@
       "evidence_runs": [
         "temporal-experiment-closure-2026-09-29-001",
         "multitask-contract-analysis-2026-09-30-001",
-        "expanded-diagnostics-analysis-2026-09-30-001"
+        "expanded-diagnostics-analysis-2026-09-30-001",
+        "position-hold-training-2026-10-08-001"
       ],
       "prior_manuscript": "projects/01-safety-constrained-coc/paper/manuscript/latex-kiee-review-2022-revision-v01",
       "prior_publication_metadata": "pending author confirmation",
-      "primary_comparison": "P1 and P2 versus P0; P1/P2 are our two development paths",
-      "source_sections": "IEEE_ACCESS_*_V01_EN.md and KO.md",
+      "primary_comparison": "Position-hold before/after additional training with identical evaluation inputs; six-task P1/P2 versus P0 comparison retained",
+      "source_sections": "ieee-access/IEEE_ACCESS_*_V01_EN.md and KO.md",
+      "experiments_modified": false,
+      "english_author_revision": {
+        "date": "2026-10-05",
+        "revision_items": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R07",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R16",
+          "R17",
+          "R18",
+          "R19",
+          "R20",
+          "R21",
+          "R22",
+          "R23",
+          "R24",
+          "R25",
+          "R26",
+          "R27",
+          "R28",
+          "R29",
+          "R30",
+          "R31",
+          "R32",
+          "R33",
+          "R34",
+          "R35",
+          "R36",
+          "R37",
+          "R38",
+          "R39",
+          "R40"
+        ],
+        "notes": "ieee-access/IEEE_ACCESS_MANUSCRIPT_REVISION_NOTES_V01_KO.md",
+        "pages": 19,
+        "figures": 6,
+        "tables": 12
+      },
+      "bibliography": {
+        "source": "ieee-access/references.bib",
+        "style": "ieee-access/template/IEEEtran.bst",
+        "processor": "bibtex",
+        "citation_keys_preserved": true
+      },
+      "title": "GuardSynth: Augmenting Chain-of-Causation with Verified Behavioral Constraints for Autonomous Driving",
+      "title_revision": {
+        "date": "2026-10-08",
+        "scope": "English title and running head"
+      },
+      "introduction_revision": {
+        "date": "2026-10-08",
+        "status": "VERIFIED_AND_INTEGRATED",
+        "source": "ieee-access/IEEE_ACCESS_INTRODUCTION_V01_EN.md",
+        "audit_run": "projects/04-guardsynth-coc/artifacts/public/paper1-introduction-revision-001/introduction-revision-2026-10-08-001",
+        "supplement_sections": [
+          "S11",
+          "S12"
+        ],
+        "outside_introduction_unchanged": true,
+        "experiment_results_modified": false,
+        "condensed_revision": {
+          "date": "2026-10-08",
+          "attachment_sha256": "a5c1065a7c3881939318c9002e0ae2a8ecf28457cc351b3e101874f71342d427",
+          "scope": "Replace Introduction with the shorter supplied English text",
+          "qualification_added": "The 0.087 m value is the largest mean XY difference averaged over three seeds for each input and rule-input route, rather than a bound on each paired prediction.",
+          "outside_introduction_sha256": "84f503f5fd2c88b6489827752704fb40366d5fc9035b0db6ab7fbd45a8b46e51",
+          "outside_introduction_unchanged": true,
+          "supplement_modified": false,
+          "experiment_results_modified": false,
+          "build": "PASS",
+          "pages": 23
+        }
+      },
+      "abstract_revision": {
+        "date": "2026-10-08",
+        "scope": "Replace Abstract with the most recently proposed English text",
+        "outside_abstract_sha256": "305687f6f8f325639c77b23155cb144e1f5e05386ed4c02f22faeb4adcd957a0",
+        "outside_abstract_unchanged": true,
+        "word_count": 215,
+        "experiment_results_modified": false,
+        "build": "PASS",
+        "references": "RESOLVED",
+        "pages": 23,
+        "visual_review_pages": [
+          1
+        ]
+      },
+      "position_hold_primary_revision": {
+        "date": "2026-10-08",
+        "scope": "Promote archived position-hold additional-training study to primary Results VI.A; integrate settings, all paired strata, abstract, discussion, and conclusion",
+        "evidence_run": "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001",
+        "settings_label": "sec:position-hold-setup",
+        "results_label": "sec:position-hold-results",
+        "table_label": "tab:position-hold-learning",
+        "table_number": 11,
+        "table_page": 18,
+        "numeric_rows_verified_against_csv": 12,
+        "evaluation_inputs_identical_for_all_arms_before_and_after": true,
+        "initial_adapters": "Nine existing temporal P0/P1/P2 adapters; prior histories differ",
+        "training_rows_per_fit": 960,
+        "fits": 9,
+        "test_profiles": 32,
+        "test_rows": 256,
+        "predictions_per_duration_encoding_arm": 192,
+        "two_second_interval_maxima_after": {
+          "P0": {
+            "accuracy": 86.98,
+            "violations": 22
+          },
+          "P1": {
+            "accuracy": 98.44,
+            "violations": 1
+          },
+          "P2": {
+            "accuracy": 98.44,
+            "violations": 0
+          }
+        },
+        "earlier_two_second_xy_regression_violations": {
+          "P1": 79,
+          "P2": 77
+        },
+        "earlier_diagnostic_reported_separately": true,
+        "experiment_results_modified": false,
+        "new_experiments_executed": false,
+        "primary_table_layout": "single column",
+        "pages": 24,
+        "references": "RESOLVED",
+        "visual_review_pages": [
+          1,
+          16,
+          18
+        ],
+        "new_body_overflow": false,
+        "protected_files": 406,
+        "file_naming": "10 pre-existing unrelated findings; no new findings"
+      },
+      "position_hold_graph_revision": {
+        "date": "2026-10-08",
+        "scope": "Replace primary position-hold table with before/after accuracy and strict violation-rate graphs",
+        "figure_label": "fig:position-hold-learning",
+        "figure_number": 5,
+        "figure_page": 19,
+        "file": "figures/position-hold-learning-en.pdf",
+        "renderer": "projects/04-guardsynth-coc/experiments/paper1_external_methods/build_position_hold_manuscript_figure.py",
+        "renderer_sha256": "061cb5cffacd2247aea3ed5fac6c9343bc9b25f13f8a3af40e6540c2dbfdfeb9",
+        "source_csv_sha256": "1b58dce617c06379a4efd01f26ec8074912eb3e8b900e8c9ef6753e8858e71d6",
+        "figure_sha256": "db7718a991bf363559cf311ec103c689fd639289ce9cdfcd666f9316c359b84c",
+        "plotted_values": 48,
+        "durations_s": [
+          0.5,
+          2.0
+        ],
+        "encodings": [
+          "interval_maxima",
+          "xy_waypoints"
+        ],
+        "arms": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "denominator_per_bar": 192,
+        "exact_counts_location": "Supplement S12 and frozen experiment report",
+        "experiment_results_modified": false,
+        "build": "PASS",
+        "references": "RESOLVED",
+        "pages": 24,
+        "new_body_overflow": false,
+        "visual_review_pages": [
+          18,
+          19
+        ],
+        "file_naming": "10 pre-existing unrelated findings; no new findings"
+      },
+      "video_grounding_revision": {
+        "date": "2026-10-08",
+        "scope": "Add method-only real-scene grounding procedure",
+        "section": "IV.B.3",
+        "label": "sec:video-to-constraint",
+        "title": "From Video Observations to a Scene-Specific Constraint",
+        "steps": [
+          "Identify observations with video evidence",
+          "Obtain rules and numerical parameters from supplied or confirmed sources",
+          "Confirm applicability and modeling assumptions",
+          "Bind accepted specification inputs and hold unresolved candidates"
+        ],
+        "workflow_figure": "fig:workflow",
+        "source_mapping_table": "tab:source-mapping",
+        "automatic_video_extraction_evaluated": false,
+        "complete_constraint_discovery_claimed": false,
+        "outside_method_unchanged": true,
+        "experiment_results_modified": false,
+        "build": "PASS",
+        "references": "RESOLVED",
+        "pages": 24,
+        "visual_review_pages": [
+          7,
+          8
+        ],
+        "protected_files": 406,
+        "new_body_overflow": false,
+        "file_naming": "10 pre-existing unrelated findings; no new findings"
+      },
+      "video_grounding_figure_revision": {
+        "date": "2026-10-08",
+        "scope": "Add illustrative video-to-constraint grounding figure in IV.B.3",
+        "label": "fig:video-grounding",
+        "number": 2,
+        "page": 8,
+        "renderer": "projects/04-guardsynth-coc/experiments/paper1_external_methods/build_video_grounding_manuscript_figure.py",
+        "renderer_sha256": "d4760813776b8c1ebc99fd12270671a99dd860457053bf3ce74845fa6b75f2cf",
+        "figure_file": "figures/video-grounding-en.pdf",
+        "figure_sha256": "0c876ffc08bc7fe1c174e702bbd70b7023ac4b77359dbe754212eb06014e764f",
+        "paths": [
+          "Video observations",
+          "Supplied or confirmed rule sources",
+          "Human confirmation",
+          "Accepted field binding",
+          "Unconfirmed candidates held without learning export"
+        ],
+        "automatic_extraction_performance_claimed": false,
+        "experimental_settings_and_results_unchanged": true,
+        "build": "PASS",
+        "references": "RESOLVED",
+        "pages": 25,
+        "figures": 9,
+        "tables": 16,
+        "visual_review_pages": [
+          8
+        ],
+        "protected_files": 406,
+        "new_body_overflow": false,
+        "file_naming": "10 pre-existing unrelated findings; no new findings"
+      },
+      "video_grounding_size_revision": {
+        "date": "2026-10-08",
+        "figure_label": "fig:video-grounding",
+        "figure_number": 2,
+        "figure_page": 8,
+        "linear_scale_relative_to_previous": 0.7,
+        "width_textwidth": 0.658,
+        "height_textheight": 0.28,
+        "aspect_ratio_preserved": true,
+        "figure_asset_and_caption_unchanged": true,
+        "build": "PASS",
+        "references": "RESOLVED",
+        "visual_review_pages": [
+          8
+        ],
+        "pages": 25,
+        "new_body_overflow": false
+      },
+      "supplied_input_scope_revision": {
+        "date": "2026-10-08",
+        "scope": "Remove automatic LLM/perception extraction and extraction-performance validation from the paper scope; align methods, first contribution, figure, discussion and conclusion with supplied-input selection and binding",
+        "input_origin": "Supplied synthetic observations and experimental rules; real-scene inputs require human review",
+        "method_heading": "Selecting Supplied Constraints and Binding Evidence",
+        "input_preparation_heading": "Preparing and Binding Supplied Scene Inputs",
+        "figure": 2,
+        "automatic_extraction_in_scope": false,
+        "specification_checks_and_model_evaluation_retained": true,
+        "experimental_settings_results_and_numeric_values_unchanged": true,
+        "figure_display_scale_preserved": 0.7,
+        "pages": 25,
+        "build": "PASS",
+        "references": "RESOLVED",
+        "visual_review_pages": [
+          7,
+          8
+        ],
+        "protected_files": 406,
+        "new_body_overflow": false,
+        "file_naming": "10 pre-existing unrelated findings; no new findings"
+      },
+      "working_pdf": "ieee-access/ieee-access-manuscript-en.pdf"
+    }
+  ],
+  "presentations": [
+    {
+      "presentation_id": "coauthor-seminar-v01-en",
+      "paper_id": "method-preservation",
+      "source": "seminar/coauthor-seminar-v01-en.tex",
+      "build": "seminar/build_seminar.py --language en",
+      "language": "en",
+      "format": "LaTeX Beamer, 16:9",
+      "main_slides": 29,
+      "backup_slides": 9,
+      "talk_minutes": 27,
+      "discussion_minutes": 3,
+      "artifact_run": "projects/04-guardsynth-coc/artifacts/public/paper1-seminar-001/coauthor-seminar-2026-10-08-001",
+      "presenter_notes": true,
+      "related_work_comparison_slides": [
+        5,
+        6
+      ],
+      "external_studies_evaluated": false,
+      "experiments_modified": false,
+      "sections": [
+        {
+          "title": "Introduction",
+          "slides": [
+            2,
+            4
+          ]
+        },
+        {
+          "title": "Related Work and Comparison",
+          "slides": [
+            5,
+            6
+          ]
+        },
+        {
+          "title": "Approach and Verification",
+          "slides": [
+            7,
+            15
+          ]
+        },
+        {
+          "title": "Experimental Results",
+          "slides": [
+            16,
+            23
+          ]
+        },
+        {
+          "title": "Conclusion",
+          "slides": [
+            24,
+            26
+          ]
+        }
+      ],
+      "comparison_graph_slides": [
+        19,
+        20,
+        21
+      ],
+      "external_comparison_status_slide": 17,
+      "title": "GuardSynth: Augmenting Chain-of-Causation with Verified Behavioral Constraints for Autonomous Driving"
+    },
+    {
+      "presentation_id": "coauthor-seminar-v01-ko",
+      "paper_id": "method-preservation",
+      "source": "seminar/coauthor-seminar-v01-ko.tex",
+      "build": "seminar/build_seminar.py",
+      "language": "ko",
+      "format": "LaTeX Beamer, 16:9",
+      "main_slides": 24,
+      "backup_slides": 6,
+      "talk_minutes": 27,
+      "discussion_minutes": 3,
+      "artifact_run": "projects/04-guardsynth-coc/artifacts/public/paper1-seminar-001/coauthor-seminar-2026-10-07-001",
+      "presenter_notes": true,
       "experiments_modified": false
     }
   ]

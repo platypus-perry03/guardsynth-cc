@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "scored_predictions_recomputed": 2880,
+  "raw_generation_records_verified": 2760,
+  "input_and_adapter_hashes_match": true,
+  "old_comparison_outputs_unchanged": true,
+  "unit_tests": 6,
+  "model_payload_and_extraction_verified": true,
+  "same_rule_semantics_p1_p2_tested": true,
+  "new_training": false,
+  "new_human_labels": false
+}

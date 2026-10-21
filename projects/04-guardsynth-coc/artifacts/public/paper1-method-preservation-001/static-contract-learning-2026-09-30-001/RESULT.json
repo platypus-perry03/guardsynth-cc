@@ -1,0 +1,8 @@
+{
+  "status": "COMPLETE",
+  "task": "static",
+  "completed_fits": 12,
+  "optimizer_updates": 1296,
+  "predictions": 5184,
+  "smoke": false
+}

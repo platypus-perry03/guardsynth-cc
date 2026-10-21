@@ -5,7 +5,7 @@ project or platform; they are not grouped globally by document type.
 
 ## Governing documents
 
-- [Project Structure Codex v3](architecture/PROJECT_STRUCTURE_CODEX.md)
+- [Project Structure Codex v4](architecture/PROJECT_STRUCTURE_CODEX.md)
 - [File Naming Codex](architecture/FILE_NAMING_CODEX.md)
 - [document hierarchy migration report](architecture/DOCUMENT_HIERARCHY_MIGRATION_REPORT_V01.md)
 - [v3 migration report](architecture/PROJECT_LAYOUT_MIGRATION_REPORT_V01.md)

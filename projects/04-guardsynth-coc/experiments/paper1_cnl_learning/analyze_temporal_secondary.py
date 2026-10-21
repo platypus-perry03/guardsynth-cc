@@ -9,7 +9,7 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[4]
-BASE = ROOT / 'artifacts/projects/guardsynth-coc/public/paper1-method-preservation-001'
+BASE = ROOT / 'projects/04-guardsynth-coc/artifacts/public/paper1-method-preservation-001'
 SOURCE = BASE / 'temporal-expansion-learning-2026-09-29-001'
 DATA = BASE / 'temporal-training-data-2026-09-29-001'
 ARMS = ('P0', 'P1', 'P2', 'NATURAL_GUARD', 'SHUFFLED_GUARD', 'LOGIC_GUARD')

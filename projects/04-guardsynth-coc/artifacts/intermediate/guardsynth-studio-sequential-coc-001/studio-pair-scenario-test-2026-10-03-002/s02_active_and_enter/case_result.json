@@ -1,0 +1,22 @@
+{
+  "case_id": "s02_active_and_enter",
+  "verdict": "FAIL",
+  "expected_verdict": "FAIL",
+  "base_consistency": "SAT",
+  "recorded_action": "UNSAT",
+  "scope": "Synthetic stated policy and fixed entity/zone/movement bindings; not scene safety or actual causal identification",
+  "missing_from_local": [],
+  "missing_from_model": [],
+  "unsat_core_clause_ids": [
+    "cross_a_evidence_1",
+    "cross_a_fact_1",
+    "cross_a_no_entry",
+    "cross_a_on",
+    "cross_a_transition",
+    "recorded_action_query"
+  ],
+  "model_horizon": 2,
+  "variable_count": 30,
+  "source_frame_count": 2,
+  "elapsed_s": 0.044085
+}

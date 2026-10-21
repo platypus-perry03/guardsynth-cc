@@ -52,7 +52,7 @@ python3 -m cli.pipelines.guardsynth.source_aware_generate.run --run-id <new-id>
 - `source_aware_generate`: 구조화 rule/context/profile을 program/indexed collection으로 생성
 
 기존 run ID는 덮어쓰지 않는다. 모든 공개 합성 결과는
-`artifacts/results/public/` 아래에 생성한다.
+`platforms/eblc-bcv/artifacts/public/` 아래에 생성한다.
 
 ## 4. 결과 읽기
 

@@ -6,14 +6,14 @@ vehicle assurance를 채우거나 9/9 source-complete로 바꾸지 않는다.
 
 ```bash
 python3 -m cli.pipelines.guardsynth.simulated_scene_dry_run.run \
-  --output-dir artifacts/results/restricted/guardsynth-simulated-scene-dry-run-001/<run-id>
+  --output-dir projects/04-guardsynth-coc/artifacts/restricted/guardsynth-simulated-scene-dry-run-001/<run-id>
 ```
 
 24장면 후보의 실제/파생 근거 보유 상태는 다음 명령으로 중복 제거·비식별 집계한다.
 
 ```bash
 python3 -m cli.pipelines.guardsynth.simulated_scene_dry_run.audit_candidates \
-  --output-dir artifacts/results/restricted/guardsynth-sim24-candidate-audit-001/<run-id>
+  --output-dir projects/04-guardsynth-coc/artifacts/restricted/guardsynth-sim24-candidate-audit-001/<run-id>
 ```
 
 이미 존재하는 derived adapter event에 source bundle과 geometric association을 연결해 8개
@@ -22,11 +22,11 @@ scene field를 닫을 때는 다음 명령을 사용한다.
 ```bash
 python3 -m cli.pipelines.guardsynth.simulated_scene_dry_run.prepare_event \
   --scene-ref episode-XX-event-YY \
-  --adapter-result artifacts/results/restricted/.../ADAPTER_RESULT.json \
+  --adapter-result projects/04-guardsynth-coc/artifacts/restricted/.../ADAPTER_RESULT.json \
   --adapter-candidate-index N \
-  --source-bundle artifacts/results/restricted/.../SCENE_SOURCE_BUNDLE.json \
-  --association artifacts/results/restricted/.../ASSOCIATION_EVIDENCE.json \
-  --output-dir artifacts/results/restricted/guardsynth-simulated-scene-evidence-001/<run-id>
+  --source-bundle projects/04-guardsynth-coc/artifacts/restricted/.../SCENE_SOURCE_BUNDLE.json \
+  --association projects/04-guardsynth-coc/artifacts/restricted/.../ASSOCIATION_EVIDENCE.json \
+  --output-dir projects/04-guardsynth-coc/artifacts/restricted/guardsynth-simulated-scene-evidence-001/<run-id>
 ```
 
 활성 predicate는 충돌 예측이 아니라 source-linked pedestrian track의 oriented box와 ego

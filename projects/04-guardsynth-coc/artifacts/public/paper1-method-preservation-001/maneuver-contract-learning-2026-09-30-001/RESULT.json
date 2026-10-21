@@ -1,0 +1,8 @@
+{
+  "status": "COMPLETE",
+  "task": "maneuver",
+  "completed_fits": 12,
+  "optimizer_updates": 864,
+  "predictions": 4608,
+  "smoke": false
+}

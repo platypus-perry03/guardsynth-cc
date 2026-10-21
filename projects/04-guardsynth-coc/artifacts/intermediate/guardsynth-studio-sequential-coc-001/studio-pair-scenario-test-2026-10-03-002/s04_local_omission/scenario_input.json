@@ -1,0 +1,135 @@
+{
+  "scope": {
+    "subject": "ego",
+    "zone": "Z1",
+    "movement": "M1_straight",
+    "scene_count": 2
+  },
+  "entities": [
+    {
+      "id": "ego",
+      "type": "VEHICLE"
+    },
+    {
+      "id": "A",
+      "type": "VEHICLE"
+    },
+    {
+      "id": "S1",
+      "type": "SIGNAL"
+    },
+    {
+      "id": "Z1",
+      "type": "ZONE"
+    },
+    {
+      "id": "M1_straight",
+      "type": "MOVEMENT"
+    }
+  ],
+  "relations": [
+    {
+      "subject": "S1",
+      "relation": "CONTROLS_MOVEMENT",
+      "object": "M1_straight",
+      "zone": "Z1"
+    },
+    {
+      "subject": "A",
+      "relation": "CROSSES_PATH_OF",
+      "object": "ego",
+      "zone": "Z1",
+      "movement": "M1_straight"
+    }
+  ],
+  "condition_definitions": [
+    {
+      "condition_id": "signal_s1",
+      "class": "TRAFFIC_CONTROL",
+      "condition_target": "S1",
+      "action_subject": "ego",
+      "action": "ENTER",
+      "action_target": "Z1",
+      "movement": "M1_straight",
+      "effect": "FORBID",
+      "activation": "자차 이동에 적용되는 S1의 적색 확인",
+      "release": "같은 S1의 적용 신호가 녹색으로 바뀜을 확인",
+      "rule_ref": "synthetic_policy_z1_m1"
+    },
+    {
+      "condition_id": "cross_a",
+      "class": "VEHICLE",
+      "relation": "CROSSES_PATH_OF",
+      "condition_target": "A",
+      "action_subject": "ego",
+      "action": "ENTER",
+      "action_target": "Z1",
+      "movement": "M1_straight",
+      "effect": "FORBID",
+      "activation": "A의 해당 충돌 영역 점유 확인",
+      "release": "같은 A의 해당 영역 이탈 확인",
+      "rule_ref": "synthetic_policy_z1_m1"
+    }
+  ],
+  "previous_state_summary": {
+    "signal_s1": "ACTIVE",
+    "cross_a": "ACTIVE"
+  },
+  "policy": {
+    "id": "synthetic_policy_z1_m1",
+    "synthetic": true,
+    "text": "Z1/M1에 진입하려면 선언된 신호 제한과 차량 A 제한의 해제를 확인해야 한다. 확인된 허용은 진입 의무가 아니다. 진입 보류는 정지 명령이 아니다."
+  },
+  "temporal_assumptions": {
+    "scene_1": {
+      "precondition_observed_s": 10.0,
+      "decision_s": 10.1,
+      "post_observed_s": 10.2
+    },
+    "scene_2": {
+      "precondition_observed_s": 11.0,
+      "decision_s": 11.1,
+      "post_observed_s": 11.2
+    },
+    "note": "가상 입력에서 조건이 행동 전 확인됐다고 명시함. 정량 동역학/실제 운전 인과 효과를 증명하지 않음."
+  },
+  "case_id": "s04_local_omission",
+  "current_cross_truth": "TRUE",
+  "current_action": "ENTER_ZONE",
+  "current_inside": true,
+  "current_local_constraint_ids": [
+    "signal_s1"
+  ],
+  "expected_verdict": "FAIL",
+  "scenes": [
+    {
+      "ordinal": 1,
+      "coc": "자차는 적용 신호 S1이 적색이고 교차 차량 A가 충돌 영역에 있어, Z1 진입을 보류하며 정지 상태를 유지했다.",
+      "observations": {
+        "signal": "RED",
+        "cross_a_occupancy": "TRUE",
+        "ego_position": "OUTSIDE_Z1"
+      },
+      "action_annotation": "HOLD",
+      "entry_decision": "DEFER_ENTRY",
+      "local_constraint_ids": [
+        "signal_s1",
+        "cross_a"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "coc": "적용 신호가 녹색으로 바뀌어 자차는 Z1에 진입했다.",
+      "observations": {
+        "signal": "GREEN",
+        "cross_a_occupancy": "TRUE",
+        "ego_position": "INSIDE_Z1"
+      },
+      "action_annotation": "ENTER",
+      "entry_decision": "ENTER_ZONE",
+      "local_constraint_ids": [
+        "signal_s1"
+      ]
+    }
+  ]
+}

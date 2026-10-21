@@ -45,7 +45,7 @@ audit runs as part of `tests/structure/test_project_layout.py`, so new irregular
 repository structure gate.
 
 The final post-rename regression is recorded in
-[`layout-v3-2026-08-12-v5`](../../artifacts/projects/guardsynth-coc/public/project-layout-refactor-001/layout-v3-2026-08-12-v5/REPORT_KO.md).
+[`layout-v3-2026-08-12-v5`](../../projects/04-guardsynth-coc/artifacts/public/project-layout-refactor-001/layout-v3-2026-08-12-v5/REPORT_KO.md).
 It passed 18/18 structure checks, 133/133 EBLC tests, 170/170 GuardSynth tests, 11/11
 micro-world tests, 166/166 Sequential CoC tests, 12/12 bounded logic/SMT tests, 7/7 P0a
 tests, 14/14 UPPAAL model-generation tests, eight domain CLI checks, and all four portal

@@ -17,7 +17,7 @@ from scipy.spatial.transform import Rotation
 
 
 ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / "PROJECT_REGISTRY.json").is_file())
-BATCH = ROOT / "artifacts/results/restricted/alp-exp-005/feasibility-batch-v0"
+BATCH = ROOT / "projects/01-safety-constrained-coc/artifacts/restricted/alp-exp-005/feasibility-batch-v0"
 RUN = BATCH / "episode-05/seed-44"
 OUTPUT = BATCH / "safety-acceleration-focus-v1/par-011-counterfactual-fragility-v0"
 TRACK_ID = "122"

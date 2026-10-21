@@ -253,7 +253,7 @@ def _report(result: dict[str, Any], run_id: str) -> str:
 
 
 def write_run(run_id: str) -> Path:
-    output = ROOT / "artifacts/results/public/eblc-robustness-audit-001" / run_id
+    output = ROOT / "platforms/eblc-bcv/artifacts/public/eblc-robustness-audit-001" / run_id
     if output.exists():
         raise FileExistsError(f"refusing to overwrite existing audit run: {run_id}")
     result = run_audit()

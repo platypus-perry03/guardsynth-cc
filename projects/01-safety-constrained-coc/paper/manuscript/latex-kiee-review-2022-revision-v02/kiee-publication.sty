@@ -1,0 +1,63 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{kiee-publication}[2026/10/01 KIEE publication format]
+
+% ChosunNm is the publisher's updated ChosunM, distributed by Chosun Ilbo.
+\setmainfont[Path=fonts/,BoldFont=ChosunNm.ttf,
+  BoldFeatures={FakeBold=1.5}]{ChosunNm.ttf}
+\setsansfont[Path=fonts/,BoldFont=ChosunNm.ttf,
+  BoldFeatures={FakeBold=1.5}]{ChosunNm.ttf}
+\geometry{a4paper,left=18mm,right=18mm,top=16mm,bottom=14mm}
+\pagestyle{empty}
+\renewcommand{\revfinal}[1]{#1}
+\renewcommand{\refname}{References}
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+
+% The supplied publication template contains the English abstract only.
+\RenewDocumentEnvironment{kieekoreanabstract}{+b}{}{}
+\renewenvironment{kieeabstract}
+  {\par\vspace{5pt}\fontsize{8.5pt}{12.75pt}\selectfont\noindent
+   \textbf{Abstract -- }\ignorespaces}
+  {\par}
+\renewcommand{\kieekeywords}[1]{%
+  \par\vspace{3pt}\fontsize{8.5pt}{12.75pt}\selectfont\noindent
+  \textbf{Keywords: }Autonomous driving, Chain-of-Causation, Execution guard,
+  Paired-contract benchmark, Trajectory selection, Vision-language model\par}
+
+% The mandatory caption labels are Fig. <number> and Table <number>.
+\DeclareCaptionLabelFormat{kieepublication}{#1 #2}
+\captionsetup{labelformat=kieepublication,labelsep=space}
+\renewcommand{\bifigcaption}[2]{%
+  \caption[#2]{#1\\[-0.2ex]\normalfont Fig.~\thefigure\enspace #2}}
+\renewcommand{\bitablecaption}[2]{%
+  \caption[#2]{#1\\[-0.2ex]\normalfont Table~\thetable\enspace #2}}
+
+\renewcommand{\makekieefrontmatter}[1]{%
+  \twocolumn[{%
+    \begin{minipage}{\textwidth}
+      \centering
+      {\fontsize{16pt}{20pt}\selectfont\bfseries \kieeenglishtitletext\par}
+      \vspace{5pt}
+      {\fontsize{14pt}{18pt}\selectfont\bfseries \kieekoreantitletext\par}
+      \vspace{8pt}
+      {\fontsize{12pt}{16pt}\selectfont\bfseries Jin Hyun Kim\par}
+      {\fontsize{12pt}{16pt}\selectfont\bfseries 김진현\textsuperscript{†}\par}
+      \vspace{8pt}
+      \begin{minipage}{0.94\textwidth}
+        #1
+      \end{minipage}
+      \vspace{10pt}
+    \end{minipage}%
+  }]%
+  \kieebodyfont
+  \begingroup
+  \renewcommand{\thefootnote}{}%
+  \footnotetext{\fontsize{8pt}{11pt}\selectfont\raggedright
+    † Corresponding Author: Dept. of AI Information Engineering,
+    Gyeongsang National University, Republic of Korea.\par
+    E-mail: \href{mailto:jin.kim@gnu.ac.kr}{jin.kim@gnu.ac.kr}\par
+    \url{https://orcid.org/0000-0002-2308-1638}}%
+  \endgroup
+  \hypersetup{pdfauthor={Jin Hyun Kim},
+    pdftitle={Guard-Aware Trajectory Candidate Selection for Vision-Language Autonomous Driving: Safety-Constrained Chain-of-Causation}}
+}

@@ -142,7 +142,7 @@ clear counter, verdict, entry/speed/deadlock violation과 progress permission이
 
 
 def execute(program_path: Path, run_id: str, *, run_tests: bool = True) -> tuple[Path, dict[str, Any]]:
-    output = ROOT / "artifacts/results/public/eblc-elaboration-conformance-001" / run_id
+    output = ROOT / "platforms/eblc-bcv/artifacts/public/eblc-elaboration-conformance-001" / run_id
     if output.exists():
         raise FileExistsError(f"refusing to overwrite existing run: {run_id}")
     program = load_program(program_path)

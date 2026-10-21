@@ -1,0 +1,130 @@
+{
+  "project_id": "guardsynth-coc",
+  "task_id": "bounded-constraint-composition",
+  "protocol_version": "1.0",
+  "clearance_ms": [
+    2000,
+    3500,
+    4500
+  ],
+  "wait_ms": [
+    500,
+    1500,
+    800,
+    1800
+  ],
+  "boundary_offsets": [
+    -1,
+    0,
+    1
+  ],
+  "hold_ms": [
+    500,
+    2000
+  ],
+  "required_x_mm": [
+    199,
+    200,
+    201
+  ],
+  "speed_caps_mm_s": [
+    500,
+    1500,
+    3000
+  ],
+  "travel_horizons_s": [
+    1,
+    2,
+    3
+  ],
+  "transition_delays_ms": [
+    100,
+    250,
+    500
+  ],
+  "families": {
+    "entry_deadline": "Reuse the learning entry gate and add an entry deadline. Require entry explicitly in the synthetic context. Sweep deadline minus release boundary by -1/0/+1 ms. Add a non-entry control for every conflicting pair.",
+    "hold_departure": "Reuse the learning hold profile. Require x >= 199/200/201 mm at the inclusive endpoint or the next listed sample. All y coordinates are zero; initial coordinates are zero; x is nonnegative. No interpolation or dynamics.",
+    "speed_progress": "Combine a speed cap and minimum distance under the explicit constant-speed relation x_mm = v_mm_s * horizon_s. Sweep the minimum distance by -1/0/+1 mm around cap * horizon.",
+    "three_way_timing": "Combine release >= stop + wait, entry >= release + delay, and entry <= stop + deadline. Sweep deadline by -1/0/+1 ms around wait + delay. Every proper subset must remain SAT."
+  },
+  "planned_case_count": 123,
+  "planned_subset_queries": 636,
+  "checks": [
+    "Evaluate the context alone and every nonempty constraint subset using the unchanged platform Core compiler and Z3.",
+    "Compare each result with an independent analytic integer oracle. Record UNKNOWN and mismatches separately; fail completion if either occurs.",
+    "Independently validate every SAT witness using numeric source parameters, not the Core expressions.",
+    "Enumerate subset-minimal UNSAT constraint groups relative to the fixed context; recheck every one-component deletion.",
+    "Require paired exact-boundary SAT controls for every generated contradictory full composition.",
+    "Report component-only, pairwise, and full-composition detection separately; do not pool with fault injection or VLM predictions."
+  ],
+  "claim_scope": [
+    "All sources, observations, deadlines, and progress obligations are supplied synthetic inputs, not extracted road rules or accident reconstructions.",
+    "SAT/UNSAT concerns simultaneous satisfiability under the declared context. An UNSAT source group diagnoses conflicting requirements, not which source is wrong.",
+    "The preserved no-entry controls demonstrate that progress obligations must be explicit; waiting may satisfy a combination when entry is optional.",
+    "This is a post-training logical composition diagnostic; no CNL parser, model training, actual driving safety, or preservation of legal exceptions is evaluated.",
+    "Cases are an exhaustive fixed parameter grid, not independent road scenes or a population estimate."
+  ],
+  "source_documents": {
+    "entry_deadline.entry_release": {
+      "document_id": "S1",
+      "kind": "SUPPLIED_SYNTHETIC_POLICY",
+      "title": "Pedestrian-entry waiting policy",
+      "origin": "Authored synthetic source record in this protocol; not an external law or actual operator document"
+    },
+    "entry_deadline.entry_deadline": {
+      "document_id": "S2",
+      "kind": "SUPPLIED_SYNTHETIC_OPERATOR_REQUIREMENT",
+      "title": "Operator entry-time instruction",
+      "origin": "Authored synthetic source record in this protocol; not an external law or actual operator document"
+    },
+    "hold_departure.position_hold": {
+      "document_id": "S3",
+      "kind": "SUPPLIED_SYNTHETIC_POLICY",
+      "title": "Position-hold policy",
+      "origin": "Authored synthetic source record in this protocol; not an external law or actual operator document"
+    },
+    "hold_departure.departure_requirement": {
+      "document_id": "S4",
+      "kind": "SUPPLIED_SYNTHETIC_OPERATOR_REQUIREMENT",
+      "title": "Operator zone-clearance instruction",
+      "origin": "Authored synthetic source record in this protocol; not an external law or actual operator document"
+    },
+    "speed_progress.speed_cap": {
+      "document_id": "S5",
+      "kind": "SUPPLIED_SYNTHETIC_POLICY",
+      "title": "Speed-limit policy",
+      "origin": "Authored synthetic source record in this protocol; not an external law or actual operator document"
+    },
+    "speed_progress.minimum_progress": {
+      "document_id": "S6",
+      "kind": "SUPPLIED_SYNTHETIC_OPERATOR_REQUIREMENT",
+      "title": "Operator minimum-progress instruction",
+      "origin": "Authored synthetic source record in this protocol; not an external law or actual operator document"
+    },
+    "three_way_timing.release_wait": {
+      "document_id": "S7",
+      "kind": "SUPPLIED_SYNTHETIC_POLICY",
+      "title": "Stop-release waiting policy",
+      "origin": "Authored synthetic source record in this protocol; not an external law or actual operator document"
+    },
+    "three_way_timing.transition_delay": {
+      "document_id": "S8",
+      "kind": "SUPPLIED_SYNTHETIC_MODELING_ASSUMPTION",
+      "title": "Minimum release-to-entry transition latency",
+      "origin": "Authored synthetic source record in this protocol; not an external law or actual operator document"
+    },
+    "three_way_timing.entry_deadline": {
+      "document_id": "S9",
+      "kind": "SUPPLIED_SYNTHETIC_OPERATOR_REQUIREMENT",
+      "title": "Operator final entry-time instruction",
+      "origin": "Authored synthetic source record in this protocol; not an external law or actual operator document"
+    }
+  },
+  "context_roles": {
+    "entry_deadline": "Supplied synthetic clearance observation and explicit required/optional entry condition",
+    "hold_departure": "Initial-origin and straight sampled-path modeling assumptions",
+    "speed_progress": "Nonnegative constant-speed modeling assumption over a specified duration",
+    "three_way_timing": "Supplied synthetic stop-time anchor and nonnegative event-time assumptions"
+  }
+}

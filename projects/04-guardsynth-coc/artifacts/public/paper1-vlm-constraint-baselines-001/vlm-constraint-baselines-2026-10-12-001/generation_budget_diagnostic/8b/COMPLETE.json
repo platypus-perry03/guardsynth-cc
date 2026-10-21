@@ -1,0 +1,97 @@
+{
+  "model": "8b",
+  "rows": 736,
+  "elapsed_seconds": 1049.162767816335,
+  "metrics": [
+    {
+      "task": "temporal",
+      "encoding": "candidate_scalars",
+      "rows": 240,
+      "accuracy": 0.275,
+      "violation_rate": 0.6666666666666666,
+      "invalid_rate": 0,
+      "rule_pair_accuracy": 0,
+      "strict_accuracy": 0.275,
+      "strict_invalid_rate": 0
+    },
+    {
+      "task": "max_speed",
+      "encoding": "candidate_scalars",
+      "rows": 48,
+      "accuracy": 0.6041666666666666,
+      "violation_rate": 0.3958333333333333,
+      "invalid_rate": 0,
+      "rule_pair_accuracy": 0.20833333333333334,
+      "strict_accuracy": 0.6041666666666666,
+      "strict_invalid_rate": 0
+    },
+    {
+      "task": "min_clearance",
+      "encoding": "candidate_scalars",
+      "rows": 48,
+      "accuracy": 0.5416666666666666,
+      "violation_rate": 0.4583333333333333,
+      "invalid_rate": 0,
+      "rule_pair_accuracy": 0.08333333333333333,
+      "strict_accuracy": 0.5416666666666666,
+      "strict_invalid_rate": 0
+    },
+    {
+      "task": "min_entry_delay",
+      "encoding": "candidate_scalars",
+      "rows": 48,
+      "accuracy": 0.5,
+      "violation_rate": 0.5,
+      "invalid_rate": 0,
+      "rule_pair_accuracy": 0,
+      "strict_accuracy": 0.5,
+      "strict_invalid_rate": 0
+    },
+    {
+      "task": "cruise_stop",
+      "encoding": "candidate_scalars",
+      "rows": 48,
+      "accuracy": 0.5,
+      "violation_rate": 0.25,
+      "invalid_rate": 0,
+      "rule_pair_accuracy": 0,
+      "strict_accuracy": 0.5,
+      "strict_invalid_rate": 0
+    },
+    {
+      "task": "lane_change",
+      "encoding": "candidate_scalars",
+      "rows": 48,
+      "accuracy": 0.75,
+      "violation_rate": 0.0,
+      "invalid_rate": 0,
+      "rule_pair_accuracy": 0.5,
+      "strict_accuracy": 0.75,
+      "strict_invalid_rate": 0
+    },
+    {
+      "task": "position_hold",
+      "encoding": "interval_maxima",
+      "rows": 128,
+      "accuracy": 0.703125,
+      "violation_rate": 0.0703125,
+      "invalid_rate": 0,
+      "rule_pair_accuracy": 0.515625,
+      "strict_accuracy": 0.703125,
+      "strict_invalid_rate": 0
+    },
+    {
+      "task": "position_hold",
+      "encoding": "xy_waypoints",
+      "rows": 128,
+      "accuracy": 0.3671875,
+      "violation_rate": 0.34375,
+      "invalid_rate": 0.171875,
+      "rule_pair_accuracy": 0.234375,
+      "strict_accuracy": 0.3671875,
+      "strict_invalid_rate": 0.171875
+    }
+  ],
+  "output_sha256": "5eef3c4374fe557cfc7bc37b6fac45156d82a3dc91ce1b5ede0210da1a069dc4",
+  "gpu": "NVIDIA A100 80GB PCIe"
+}

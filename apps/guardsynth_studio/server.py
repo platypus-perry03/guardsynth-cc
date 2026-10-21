@@ -47,17 +47,21 @@ def make_server(service, auth, port=0):
             sid = cookie.get("studio_session")
             if not sid:
                 raise StudioError("AUTH", "Login required", 401)
+            try:
+                session = sessions.require(sid.value)
+            except SecurityError:
+                raise StudioError("AUTH", "로그인 세션이 만료되었습니다. 다시 로그인하세요.", 401) from None
             token = self.headers.get("X-CSRF-Token") if write else None
             if write and not token:
                 raise StudioError("CSRF", "CSRF token required", 403)
-            return sessions.require(sid.value, token)
+            return sessions.require(sid.value, token) if write else session
 
         def read_body(self, upload=False):
             try:
                 size = int(self.headers.get("Content-Length", "0"))
             except ValueError:
                 raise StudioError("LENGTH", "Invalid Content-Length", 400)
-            maximum = LIMITS["upload_bytes"] + 65536 if upload else LIMITS["payload_bytes"]
+            maximum = LIMITS["upload_bytes"] + 65536 + 256 * 1024 if upload else LIMITS["payload_bytes"]
             if size < 0 or size > maximum or self.headers.get("Transfer-Encoding"):
                 raise StudioError("BODY_SIZE", "Request exceeds body limit", 413)
             self.connection.settimeout(120)
@@ -71,8 +75,8 @@ def make_server(service, auth, port=0):
                 validate_loopback_request(self.headers.get("Host", ""), self.headers.get("Origin"), self.server.server_port)
                 path = urlsplit(self.path).path
                 method = self.command
-                if method == "GET" and path in ("/", "/manual.html", "/app.js", "/style.css"):
-                    name, mime = {"/": ("index.html", "text/html; charset=utf-8"), "/manual.html": ("manual.html", "text/html; charset=utf-8"), "/app.js": ("app.js", "text/javascript"), "/style.css": ("style.css", "text/css")}[path]
+                if method == "GET" and path in ("/", "/manual.html", "/app.js", "/sequence.js", "/style.css"):
+                    name, mime = {"/": ("index.html", "text/html; charset=utf-8"), "/manual.html": ("manual.html", "text/html; charset=utf-8"), "/app.js": ("app.js", "text/javascript"), "/sequence.js": ("sequence.js", "text/javascript"), "/style.css": ("style.css", "text/css")}[path]
                     return self.respond(200, (STATIC / name).read_bytes(), mime)
                 if path == PREFIX + "/login" and method == "POST":
                     limiter.check(self.client_address[0])
@@ -108,12 +112,19 @@ def make_server(service, auth, port=0):
                         fields = {}
                         for part in message.iter_parts():
                             name = part.get_param("name", header="content-disposition")
-                            if name in fields or name not in ("file", "metadata"):
+                            if name in fields or name not in ("file", "metadata", "vehicle_state"):
                                 raise StudioError("UPLOAD", "Unknown or duplicate form field")
                             fields[name] = part.get_payload(decode=True)
                         if len(fields["metadata"]) > 65536:
                             raise StudioError("METADATA_SIZE", "Metadata exceeds 64 KiB", 413)
-                        result = service.upload(fields["file"], json.loads(fields["metadata"]), session.actor_id, key)
+                        state_data = fields.get("vehicle_state")
+                        if state_data is not None and len(state_data) > 256 * 1024:
+                            raise StudioError("VEHICLE_STATE_SIZE", "CAN JSON exceeds 256 KiB", 413)
+                        state_value = json.loads(state_data) if state_data is not None else None
+                        if state_data is not None and not isinstance(state_value, dict):
+                            raise StudioError("VEHICLE_STATE_SCHEMA", "CAN JSON object required")
+                        result = service.upload(fields["file"], json.loads(fields["metadata"]), session.actor_id, key,
+                                                vehicle_state=state_value)
                     finally:
                         upload_gate.release()
                     return self.respond(201, result)
@@ -142,6 +153,9 @@ def make_server(service, auth, port=0):
                     return {"jobs": [{k: j.get(k) for k in ("id", "kind", "status", "error", "moment_id")} for j in s.objects("job")]}
                 if len(p) == 2 and p[0] in ("jobs", "exports"):
                     return s.get(p[1], "job" if p[0] == "jobs" else "export")
+                if len(p)==3 and p[0]=="extractions" and p[2] in ("sequence", "sequence-export"):
+                    from .sequence import sequence_view, sequence_export
+                    return sequence_view(service,p[1]) if p[2]=="sequence" else sequence_export(service,p[1])
                 if len(p) == 2 and p[0] == "moments":
                     m = service.moment(p[1])
                     for c in m["components"].values():
@@ -160,7 +174,19 @@ def make_server(service, auth, port=0):
                 if self.headers.get("If-Match") != str(revision):
                     raise StudioError("IF_MATCH", "If-Match must match base revision", 409)
                 return service.edit(p[1], revision, data["kind"], data["payload"], actor, key, data.get("dependencies", []))
+            if method == "PATCH" and len(p)==3 and p[0]=="extractions" and p[2]=="sequence":
+                if self.headers.get("If-Match") != str(revision):
+                    raise StudioError("IF_MATCH", "규칙 목록의 입력 버전을 확인하세요.",409)
+                from .sequence import catalog_edit
+                return catalog_edit(service,p[1],revision,data["catalog"],actor,key)
             if method == "POST":
+                if len(p)==3 and p[0]=="extractions" and p[2] in ("sequence-eblc","sequence-verify","sequence-cnl"):
+                    from .sequence import enqueue_stage
+                    kind={"sequence-eblc":"SEQ_EBLC","sequence-verify":"SEQ_VERIFY","sequence-cnl":"SEQ_CNL"}[p[2]]
+                    return enqueue_stage(service,p[1],kind,actor,key)
+                if len(p)==3 and p[0]=="extractions" and p[2]=="sequence-check":
+                    from .sequence import enqueue_check
+                    return enqueue_check(service,p[1],actor,key)
                 if p == ["lineages", "merge"]:
                     return service.merge_lineages(data["groups"], data["reason"], actor, key)
                 if len(p) == 3 and p[0] == "videos" and p[2] == "permission":
@@ -182,7 +208,7 @@ def make_server(service, auth, port=0):
                         m = s.require_head(p[1], revision)
                         s.put("exposure", {"moment_id": m["id"], "actor": actor, "panel": data["panel"],
                                            "t0_us": m["t0_us"], "extraction_id": m["extraction_id"],
-                                           "constraints_visible": any(k in m["components"] for k in ("proposal", "contract", "cnl"))})
+                                           "constraints_visible": any(k in m["components"] for k in ("proposal", "contract", "cnl", "sequence_constraints"))})
                         return m
                     return s.mutate(actor, key, ["exposure", p[1], data], operation)
             raise StudioError("ROUTE", "Not found", 404)

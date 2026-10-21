@@ -42,11 +42,11 @@ from guard_synth.m16_scene_acquisition import assert_public_export_safe
 
 EXPERIMENT_ID = "GUARDSYNTH-M16-SCENE-ACQUISITION-001"
 ARTIFACT_ROOT = ROOT / (
-    "artifacts/projects/guardsynth-coc/restricted/"
+    "projects/04-guardsynth-coc/artifacts/restricted/"
     "guardsynth-m16-scene-acquisition-001/m16-source-acquisition-2026-08-14-v18"
 )
 REVIEW_ROOT = ROOT / (
-    "artifacts/projects/guardsynth-coc/restricted/"
+    "projects/04-guardsynth-coc/artifacts/restricted/"
     "guardsynth-m16-source-review-001/m16-source-review-2026-09-04-v1"
 )
 PRIMARY_ROOT = ROOT / "data/restricted/nvidia_physicalai/internal-derived/m16-shortlist-v1"

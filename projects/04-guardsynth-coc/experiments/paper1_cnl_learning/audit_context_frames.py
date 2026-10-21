@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 
 ROOT = next(p for p in Path(__file__).resolve().parents if (p / 'PROJECT_REGISTRY.json').is_file())
-BASE = ROOT / 'artifacts/projects/guardsynth-coc/restricted/guardsynth-paper1-training-readiness-001'
+BASE = ROOT / 'projects/04-guardsynth-coc/artifacts/restricted/guardsynth-paper1-training-readiness-001'
 SOURCE = BASE / 'm17-original-coc-context-audit-2026-09-28-002'
 FRAMES = BASE / 'source-gap-ui-2026-09-09-002'
 NOTES = Path(__file__).with_name('context_visual_observations_v0_1.json')

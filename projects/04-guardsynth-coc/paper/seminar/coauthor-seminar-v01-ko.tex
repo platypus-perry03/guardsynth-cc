@@ -1,0 +1,661 @@
+% !TeX program = xelatex
+% project_id: guardsynth-coc
+% Main talk: 27 minutes; coauthor discussion: 3 minutes; backup slides untimed.
+\documentclass[aspectratio=169,11pt]{beamer}
+\usepackage{fontspec}
+\setsansfont{Noto Sans CJK KR}
+\setmainfont{Noto Sans CJK KR}
+\setmonofont{Noto Sans Mono CJK KR}
+\XeTeXlinebreaklocale "ko"
+\XeTeXlinebreakskip=0pt plus 1pt
+\usepackage{amsmath,amssymb,booktabs,array,tikz,pgfplots}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\pgfplotsset{compat=1.18}
+\definecolor{navy}{HTML}{142D4E}
+\definecolor{teal}{HTML}{087E8B}
+\definecolor{amber}{HTML}{B36D15}
+\definecolor{muted}{HTML}{586776}
+\definecolor{paperbg}{HTML}{F3F6F8}
+\definecolor{danger}{HTML}{B34141}
+\setbeamercolor{normal text}{fg=navy,bg=white}
+\setbeamercolor{structure}{fg=teal}
+\setbeamercolor{frametitle}{fg=navy}
+\setbeamercolor{framesubtitle}{fg=muted}
+\setbeamercolor{block title}{fg=navy,bg=teal!12}
+\setbeamercolor{block body}{fg=navy,bg=paperbg}
+\setbeamercolor{alerted text}{fg=danger}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamerfont{framesubtitle}{size=\small}
+\setbeamerfont{block title}{size=\normalsize,series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize item}{\color{teal}\small\raisebox{.2ex}{\(\blacktriangleright\)}}
+\setbeamertemplate{itemize subitem}{\color{teal}\(\bullet\)}
+\setbeamersize{text margin left=9mm,text margin right=9mm}
+\setbeamertemplate{footline}{%
+  \hspace{9mm}\begin{minipage}{.78\paperwidth}\color{muted}\scriptsize
+  GuardSynth · 공저자 세미나 · 2026-10-07
+  \end{minipage}\hfill\color{muted}\scriptsize
+  \ifnum\value{framenumber}<25 \insertframenumber/24\else 보충 B\number\numexpr\value{framenumber}-24\relax\fi
+  \hspace{8mm}\vspace{3mm}}
+\ifdefined\seminarnotes
+  \setbeameroption{show only notes}
+\else
+  \setbeameroption{hide notes}
+\fi
+\setbeamertemplate{note page}[plain]
+\newcommand{\source}[1]{\par\vspace{2mm}{\fontsize{8}{10}\selectfont\color{muted}근거: #1\par}}
+\newcommand{\takeaway}[1]{\begin{block}{핵심 메시지}#1\end{block}}
+\newcommand{\good}[1]{\textcolor{teal}{#1}}
+\newcommand{\bad}[1]{\textcolor{danger}{#1}}
+\newcommand{\res}[2]{#1\,/\,\textcolor{muted}{#2}}
+\tikzset{card/.style={rounded corners=2pt,draw=teal!35,fill=paperbg,align=center,inner sep=8pt},arr/.style={-{Stealth[length=2.3mm]},thick,teal}}
+\title{GuardSynth}
+\subtitle{CoC의 행동 이유에 검증된 행동 제약을 더하기}
+\author{공저자 세미나}
+\date{2026년 10월 7일}
+
+\begin{document}
+
+% TIMING 01 0.50
+\begin{frame}[plain]
+  \vspace{4mm}
+  {\color{teal}\large 공저자 세미나 · 30분}\par\vspace{5mm}
+  {\color{navy}\Huge\bfseries GuardSynth}\par\vspace{3mm}
+  {\Large CoC의 행동 이유에\\검증된 행동 제약을 더하기}\par\vspace{5mm}
+  {\small Formal Specification and Verification of Behavioral Constraints\\for Enhanced CoC-Based VLM Learning}\par\vfill
+  \textcolor{muted}{27분 발표 + 3분 논의 \quad | \quad 현재 IEEE Access 원고 기준}
+  \note{\textbf{01 · 제목 · 0:00--0:30}\par
+  오늘은 원고의 핵심 논리를 공저자 관점에서 점검한다. 핵심은 기존 CoC를 버리는 것이 아니라, 설명에 빠진 행동 허용 조건을 구조화하고 검사한 뒤 자연어로 다시 붙이는 것이다. 합성 객관식 평가가 뒷받침하는 범위와 실제 장면 적용에 남은 과제를 함께 설명하겠다고 예고한다.}
+\end{frame}
+
+% TIMING 02 1.00
+\begin{frame}{설명이 있어도, 허용 조건은 비어 있을 수 있다}
+  \framesubtitle{문제 설정: 행동 이유와 행동을 허용하는 조건의 간극}
+  \begin{block}{원래 CoC (Chain of Causation)}
+    “횡단하는 보행자에게 양보한 뒤 교차로를 통과한다.”
+  \end{block}
+  \begin{itemize}\setlength{\itemsep}{3mm}
+    \item 언제부터 진입해도 되는가?
+    \item 구역이 비었다는 관찰만으로 대기 시간을 알 수 있는가?
+    \item 같은 장면에 다른 규칙이 주어지면 선택도 달라지는가?
+  \end{itemize}
+  \takeaway{연구 질문: \textbf{명시적 제약을 CoC에 추가하고, 그 제약의 의미를 검사할 수 있는가?}}
+  \source{원고 I; IV.A; VI.A--B}
+  \note{\textbf{02 · 연구 질문 · 0:30--1:30}\par
+  원래 문장은 보행자를 보호하려는 이유와 이후 진행을 연결하지만, 해제 시각이나 필요한 대기 시간까지 정하지 않는다. 이 간극을 명시적 제약으로 채우는 것이 연구 질문이다. 대기 시간 0.5초는 영상에서 발견한 사실이 아니라 실험에서 제공한 규칙이라는 점을 미리 강조한다. 뒤에서 같은 장면에 0.5초와 1.5초를 적용하는 예로 답한다.}
+\end{frame}
+
+% TIMING 03 1.25
+\begin{frame}{네 종류의 문장을 구분하면 접근이 명확해진다}
+  \framesubtitle{CoC의 모든 문장을 제약으로 변환하지 않는다}
+  \renewcommand{\arraystretch}{1.45}
+  \begin{tabular}{@{}p{2.0cm}p{8.5cm}p{2.7cm}@{}}
+    \toprule
+    \textbf{역할} & \textbf{예} & \textbf{하는 일}\\\midrule
+    관찰 & 보행자가 충돌 구역에 있다. & 상태 기술\\
+    행동 이유 & 보행자를 보호하기 위해 양보한다. & 이유 설명\\
+    행동 제약 & 구역이 점유된 동안 진입하지 마라. & 허용 행동 제한\\
+    선택 목표 & 허용 행동 중 진행 점수가 가장 큰 것을 고른다. & 후보 순위 결정\\\bottomrule
+  \end{tabular}\par
+  \vspace{3mm}
+  \takeaway{진입 조건을 만족한다는 것은 \textbf{진입할 수 있다}는 뜻이다. 진입을 반드시 선택한다는 뜻은 아니다.}
+  \source{원고 IV.B; IV.C, admissible candidate sets}
+  \note{\textbf{03 · 역할 구분 · 1:30--2:45}\par
+  한 예를 네 역할로 나눠 읽는다. 관찰은 무엇이 있는지, 이유는 왜 양보하는지, 제약은 무엇을 못 하는지, 목표는 남은 행동 중 무엇을 선호하는지를 담당한다. 제약은 목적함수를 대신하지 않는다. 이 구분이 뒤의 SAT와 정확도가 서로 다른 이유가 된다. CoC에서 행동 관련 후보를 찾되, 관찰이나 목표를 임의의 규칙으로 바꾸지 않는다고 설명한다.}
+\end{frame}
+
+% TIMING 04 1.25
+\begin{frame}{GuardSynth: 추출 → 명세 → 검증 → 자연어 추가}
+  \framesubtitle{각 단계의 출력과 책임을 구분한다}
+  \begin{center}
+  \begin{tikzpicture}[node distance=3mm]
+    \node[card,font=\small,text width=2.65cm,minimum height=2.4cm] (a) {\textbf{01 추출·근거 연결}\\[2mm]관련 대상·구역\\관찰·규칙·가정};
+    \node[card,font=\small,text width=2.65cm,minimum height=2.4cm,right=of a] (b) {\textbf{02 EBLC 명세}\\[2mm]조건·행동 제한\\유지·해제·근거};
+    \node[card,font=\small,text width=2.65cm,minimum height=2.4cm,right=of b] (c) {\textbf{03 논리 검증}\\[2mm]불허 후보 배제\\허용 경계 보존};
+    \node[card,font=\small,text width=2.65cm,minimum height=2.4cm,right=of c] (d) {\textbf{04 CNL 생성}\\[2mm]제약 의미 보존\\CoC 뒤에 추가};
+    \draw[arr] (a)--(b);\draw[arr] (b)--(c);\draw[arr] (c)--(d);
+  \end{tikzpicture}
+  \end{center}
+  \begin{itemize}\setlength{\itemsep}{2mm}
+    \item 예상과 다른 판정·solver UNKNOWN은 검토 후 다시 검사한다.
+    \item 실제 장면의 사실·규칙 적용성은 사람의 근거 확인이 필요하다.
+  \end{itemize}
+  \source{원고 Figure 1; IV.A--E}
+  \note{\textbf{04 · 전체 흐름 · 2:45--4:00}\par
+  그림을 왼쪽에서 오른쪽으로 따라간다. 추출 결과는 아직 검증된 제약이 아니라 근거가 붙은 후보다. EBLC는 그 후보의 해석을 고정하고, 검증은 제한된 모델에서 의도한 허용·불허 관계를 검사한다. 마지막 CNL이 모델 입력으로 들어간다. SMT 결과나 정답을 프롬프트에 넣는 흐름이 아님을 강조한다. 실제 장면의 근거 확인은 이 네 단계 중 첫 단계에서 이미 필요한 작업이다.}
+\end{frame}
+
+% TIMING 05 1.25
+\begin{frame}{11.0초라는 관찰과 0.5초라는 규칙은 다르다}
+  \framesubtitle{같은 관찰에서 다른 허용 경계가 나온다}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{.32\textwidth}\begin{block}{관찰}
+      구역 해소: 11.0초\\[2mm]
+      \texttt{clear\_ms = 11000}\\[2mm]
+      환경·근거의 값
+    \end{block}\end{column}
+    \begin{column}{.32\textwidth}\begin{block}{규칙}
+      해소 후 0.5초 대기\\[2mm]
+      \texttt{release\_clear\_ms}\\\texttt{= 500}\\[1mm]
+      계약의 파라미터
+    \end{block}\end{column}
+    \begin{column}{.32\textwidth}\begin{block}{가정}
+      해소 후 재점유 없음\\[2mm]
+      한 해소 시각으로\\연속 비점유를 표현\\[2mm]
+      해석·검증의 범위
+    \end{block}\end{column}
+  \end{columns}
+  \vspace{2mm}
+  \begin{center}\Large
+    \(11.0 + 0.5 = \good{11.5}\)초\qquad
+    \(11.0 + 1.5 = \good{12.5}\)초
+  \end{center}
+  \source{원고 Figure 2; IV.A, Observations / Rules / Modeling assumptions}
+  \note{\textbf{05 · 입력의 출처 · 4:00--5:15}\par
+  11초는 관찰값이고 0.5초는 제공된 규칙이다. 이 둘을 섞으면 관찰에서 규범을 추론한 것처럼 보인다. 재점유가 없다는 가정은 하나의 해소 시각을 사용하기 위한 조건이다. 다시 사람이 들어올 수 있다면 이 단일 시각 모델을 그대로 적용하면 안 된다. 관찰은 같아도 대기 규칙이 바뀌면 허용 경계가 바뀐다는 계산을 제시한다.}
+\end{frame}
+
+% TIMING 06 1.25
+\begin{frame}{EBLC는 제약의 대상·수명·근거를 함께 기록한다}
+  \framesubtitle{Evidence-Bound Lifecycle Contracts}
+  \renewcommand{\arraystretch}{1.22}
+  \begin{tabular}{@{}p{2.3cm}p{10.7cm}@{}}
+    \toprule
+    \textbf{요소} & \textbf{보행자 예제에서의 의미}\\\midrule
+    대상 & 제약받는 차량과 보행자 충돌 구역\\
+    활성 조건 & 보행자가 구역을 점유한다.\\
+    행동 제한 & 차량의 구역 진입을 금지한다.\\
+    유지 & 해제 조건이 확인되기까지 제한을 유지한다.\\
+    해제 & 비점유가 확인되고, 규칙이 요구한 대기 시간이 지난다.\\
+    근거·가정 & 점유·해소 관찰, 적용 규칙, 재점유 없음, 해석 버전\\\bottomrule
+  \end{tabular}\par
+  \vspace{2mm}
+  \textcolor{muted}{논문은 실행 가능한 \textbf{제한된 프로파일}을 사용한다. 모든 교통 상황을 포괄하는 언어로 평가한 것은 아니다.}
+  \source{원고 IV.C; Table 3; Code Box 1}
+  \note{\textbf{06 · EBLC 요소 · 5:15--6:30}\par
+  이름부터 풀어 설명한다. Evidence-Bound는 입력의 출처와 연결된다는 뜻이며, Lifecycle은 언제 켜지고 유지되고 해제되는지를 뜻한다. JSON의 필드만 나열하는 것과 달리 각 프로파일에 해석이 주어진다. 다만 모든 교통 법규를 표현하는 완성된 보편 언어를 주장하지 않는다. 주 실험의 시간 프로파일과 정성적 수명주기 프로파일은 별도임을 다음 슬라이드에서 이어 설명한다.}
+\end{frame}
+
+% TIMING 07 1.50
+\begin{frame}{시간 제약: 진입한다면 해제 시각 이후여야 한다}
+  \framesubtitle{EBLC → Core(논리 중간 표현) → SMT; 계약·후보 값을 대입}
+  \begin{block}{실행 의미}
+    \centering\Large\(e \Rightarrow u_{\mathrm{ms}}\geq\tau_{\mathrm{ms}}+\Delta_{\mathrm{ms}}\)
+  \end{block}
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabular}{@{}llp{7.2cm}@{}}
+    \(e\) & \texttt{enters} & 행동 후보가 진입하는지\\
+    \(u_{\mathrm{ms}}\) & \texttt{entry\_ms} & 행동 후보의 진입 시각\\
+    \(\tau_{\mathrm{ms}}\) & \texttt{clear\_ms} & 환경에서 제공한 구역 해소 시각\\
+    \(\Delta_{\mathrm{ms}}\) & \texttt{release\_clear\_ms} & EBLC에 명세된 최소 대기 시간\\
+  \end{tabular}\par
+  \takeaway{\(e=\mathrm{false}\)이면 이 진입 제한을 위반하지 않는다. 대기 후보의 선호도는 별도 목표가 평가한다.}
+  \source{원고 IV.C, temporal semantics; IV.D, Core lowering}
+  \note{\textbf{07 · 수식과 입력 · 6:30--8:00}\par
+  네 기호를 모두 정의하고 읽는다. 진입 여부와 진입 시각은 행동 후보 정보이며 해소 시각은 환경 정보, 대기 시간은 계약의 규칙값이다. Core는 이 정보를 타입이 있는 논리 표현으로 옮기는 중간 표현이다. 밀리초 정수로 부등식을 검사하며 실제 차량의 연속 궤적을 검증하지는 않는다. enters가 false이면 함의의 전제가 거짓이므로 이 제한을 만족하지만, 그것만으로 좋은 행동이라고 할 수 없다고 설명한다.}
+\end{frame}
+
+% TIMING 08 1.50
+\begin{frame}{허용 여부와 기준 정답을 한 예에서 분리한다}
+  \framesubtitle{구역 해소 시각은 동일하게 11.0초}
+  \renewcommand{\arraystretch}{1.35}\small
+  \begin{tabular}{@{}lccp{3.4cm}p{3.4cm}@{}}
+    \toprule
+    후보 & 진입 시각 & 진행 점수 & 0.5초 규칙 & 1.5초 규칙\\\midrule
+    A & 10.5초 & 110 & \bad{불허} & \bad{불허}\\
+    B & 11.5초 & 100 & \good{허용 · 기준 정답} & \bad{불허}\\
+    C & 12.5초 & 85 & \good{허용} & \good{허용 · 기준 정답}\\
+    D & 진입 안 함 & 0 & \good{허용} & \good{허용}\\\bottomrule
+  \end{tabular}\par
+  \vspace{3mm}\normalsize
+  \begin{itemize}\setlength{\itemsep}{2mm}
+    \item 기준 정답: \textbf{허용 후보 중 진행 점수가 가장 큰 후보}.
+    \item 진행 점수는 템플릿에 부여한 합성 utility이며 거리·속도 측정값이 아니다.
+    \item 이 표는 생성한 사례이다. 실제 모델의 예측 결과와 구분한다.
+  \end{itemize}
+  \source{원고 Table 4; V.A, Candidate References and Label Assignment}
+  \note{\textbf{08 · 후보 예제 · 8:00--9:30}\par
+  0.5초 규칙에서는 B, C, D가 허용되고 진행 점수가 가장 높은 B가 정답이다. 1.5초 규칙에서는 B가 빠지고 C가 정답이 된다. D는 둘 다 허용되지만 진행을 하지 않으므로 정답이 아니다. 여기서 110, 100, 85, 0은 임의 템플릿 utility의 순서를 나타내며 물리적 이동량을 계산한 것이 아니다. 라벨 A--D는 실제 데이터에서 회전 배정되므로 B가 항상 정답인 구조도 아니다.}
+\end{frame}
+
+% TIMING 09 1.25
+\begin{frame}{EBLC 검증은 무엇을 확인하는가?}
+  \framesubtitle{허용되는 후보뿐 아니라 불허되는 가상 후보도 검사한다}
+  \renewcommand{\arraystretch}{1.25}\small
+  \begin{tabular}{@{}p{2.4cm}p{5.8cm}p{4.7cm}@{}}
+    \toprule
+    \textbf{확인할 성질} & \textbf{질의} & \textbf{기대 결과}\\\midrule
+    일관성 & 기본 계약을 만족하는 경우가 존재하는가? & SAT\\
+    제한 준수 & 해제 전 진입이 계약과 동시에 가능한가? & UNSAT\\
+    경계 보존 & 11.499 / 11.500 / 11.501초 진입 & UNSAT / SAT / SAT\\
+    진입 비강제 & 진입을 보류하는 후보 & SAT\\\bottomrule
+  \end{tabular}\par
+  \vspace{3mm}\normalsize
+  \takeaway{예상 UNSAT는 \textbf{금지 후보를 올바르게 배제했다}는 뜻이다. 실제 주행에서 위반이 발생했다는 관찰이 아니다.}
+  \source{원고 Table 5; IV.D, Properties and Queries}
+  \note{\textbf{09 · 검증 목적 · 9:30--10:45}\par
+  검증 목적은 올바른 후보만 학습 정답으로 만드는 것과 구별된다. 제약의 표현이 잘못되어 금지 후보까지 허용하는지, 혹은 모든 진입을 막는지 검사해야 한다. 기본 SAT만 확인하면 영원히 대기하는 해도 통과한다. 그래서 불허 후보와 해제 이후의 진입 후보를 함께 확인한다. 가상 위반 후보를 검사하는 것은 명세 품질을 검사하는 장치이며 실제 운전자의 위반을 발견했다는 주장이 아니다.}
+\end{frame}
+
+% TIMING 10 1.25
+\begin{frame}{Safety와 진입 가능성: liveness까지 증명하지 않는다}
+  \framesubtitle{반례 배제와 허용 해의 존재는 다른 질의이다}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{.49\textwidth}\begin{block}{조기 진입 반례 검색}
+      \[\Phi_C\land e\land\bigl(u<\tau+\Delta\bigr)\]
+      \good{UNSAT}: 명세·가정 아래 조기 진입 배제.
+    \end{block}\end{column}
+    \begin{column}{.49\textwidth}\begin{block}{해제 후 진입 가능성}
+      \[\Phi_C\land e\land\bigl(u=\tau+\Delta\bigr)\]
+      \good{SAT}: 경계에서 진입 가능한 해가 존재.
+    \end{block}\end{column}
+  \end{columns}
+  \vspace{3mm}
+  \begin{itemize}\setlength{\itemsep}{2mm}
+    \item \textbf{Safety}: 모델 안에서 금지한 조기 진입이 없다.
+    \item \textbf{Feasibility}: 진입할 수 있는 해가 있다.
+    \item \textbf{Liveness}: 결국 진행한다는 보장은 별도 성질이다.
+  \end{itemize}
+  \source{원고 III.B; IV.D, Properties and Queries}
+  \note{\textbf{10 · 성질의 범위 · 10:45--12:00}\par
+  Phi C는 컴파일된 계약이다. 반례 검색에서 UNSAT가 나오는 것과 해제 후 진입 질의에서 SAT가 나오는 것을 나눠 읽는다. 진입 가능한 해가 있다는 사실은 모델이 실제로 그 후보를 선택한다는 뜻이 아니다. 대기를 계속하는 행동도 허용되어 있기 때문에 결국 진행한다는 liveness를 증명하지 않는다. 솔버의 satisfying model이라는 표현은 변수 할당을 뜻하고 학습된 VLM을 뜻하지 않는다고 덧붙인다.}
+\end{frame}
+
+% TIMING 11 1.00
+\begin{frame}{정성 수명주기에서는 이전 활성 상태를 유지할 수 있다}
+  \framesubtitle{주 시간 학습 실험과 별개의 프로파일}
+  \begin{block}{현재 근거 상태와 이전 활성 상태의 관계}
+    \centering
+    \(\mathrm{active}_{j,t}=\begin{cases}
+      \mathrm{true} & \text{valid TRUE}\\
+      \mathrm{false} & \text{valid FALSE}\\
+      \mathrm{active}_{j,t-1} & \text{UNKNOWN, CONFLICT, invalid evidence}
+    \end{cases}\)
+  \end{block}
+  \begin{center}
+    \begin{tabular}{@{}lcccc@{}}
+      근거 상태 & TRUE & UNKNOWN & FALSE & TRUE\\
+      활성 상태 & 활성 & 활성 유지 & 해제 & 재활성\\
+    \end{tabular}\par
+  \end{center}
+  \textcolor{muted}{초기 상태는 별도 입력. 진입 정책은 모든 의무의 \textbf{현재 유효한 해소 근거}를 요구한다.}
+  \source{원고 Code Box 2; Figure 3; IV.D, Lifecycle Checks}
+  \note{\textbf{11 · 수명주기 · 12:00--13:00}\par
+  truth는 근거의 조건 상태이고 active는 제약이 적용 중인지이므로 둘을 그대로 복사하지 않는다. 이미 활성인데 근거가 UNKNOWN으로 바뀌면 이전 상태를 유지한다. valid FALSE는 관찰이 없다는 뜻이 아니라 제한 조건의 해소가 확인되었다는 뜻이다. 이 프로파일은 주어진 초기 상태와 구성된 근거 이력으로 검사를 실행했으며, 실제 도로의 과거 상태를 자동으로 추적해 검증했다는 결과가 아니다.}
+\end{frame}
+
+% TIMING 12 1.25
+\begin{frame}{CNL은 제약을 읽을 수 있는 문장으로 되돌린다}
+  \framesubtitle{Controlled Natural Language · 원래 CoC + 생성된 두 문장}
+  \begin{block}{Original CoC}
+    \small Yield to the crossing pedestrian, then proceed through the intersection.
+  \end{block}
+  \begin{block}{EBLC에서 생성한 CNL}
+    \small Do not enter the pedestrian conflict zone while it is occupied.\\[2mm]
+    Enter only after the zone has remained clear for at least 0.5 s.
+  \end{block}
+  \begin{itemize}\small\setlength{\itemsep}{1mm}
+    \item “at least”는 포함 경계 \(\geq\), “only after”는 진입의 필요조건.
+    \item 11.0초 해소는 별도 환경 입력이며, 문장은 “11.5초에 진입”이라는 정답을 주지 않는다.
+  \end{itemize}
+  \source{원고 Table 6; Figure 4; IV.E}
+  \note{\textbf{12 · 최종 언어 입력 · 13:00--14:15}\par
+  전체 문장을 천천히 읽고 첫 문장이 원래 CoC임을 표시한다. 뒤의 두 문장은 점유 중 진입 금지와 연속 비점유 최소 대기를 나타낸다. only after를 반드시 진입하라는 지시로 바꾸면 의미가 달라진다. 모델은 별도 환경과 후보 정보로 정답을 골라야 한다. JSON의 모든 메타데이터를 문장으로 번역하는 것이 아니라 주어진 가정 아래 행동 관련 의미를 전달한다고 설명한다.}
+\end{frame}
+
+% TIMING 13 1.00
+\begin{frame}{모델 입력과 정답·검증 기록을 분리한다}
+  \framesubtitle{학습 목표는 A--D 중 한 후보 라벨}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{.55\textwidth}\begin{block}{모델이 받는 입력}
+      \begin{enumerate}\setlength{\itemsep}{2mm}
+        \item 이미지 + 환경·과제 정보
+        \item Requirement CoC: 원래 CoC + 제약 문장
+        \item 후보 A--D의 행동·수치 요약
+        \item 허용 후보 중 최선의 후보 선택 지시
+      \end{enumerate}
+    \end{block}\end{column}
+    \begin{column}{.42\textwidth}\begin{block}{별도 보관·사용}
+      \begin{itemize}\setlength{\itemsep}{2mm}
+        \item 기준 정답 라벨: 학습 목표 / 평가 정답
+        \item EBLC와 근거 기록
+        \item SAT / UNSAT 판정
+        \item 분할·이미지 참조
+      \end{itemize}
+    \end{block}\end{column}
+  \end{columns}
+  \source{원고 IV.E; V.A, Candidate References and Label Assignment}
+  \note{\textbf{13 · 학습 데이터 구조 · 14:15--15:15}\par
+  학생 모델은 제약을 보고 후보 라벨 하나를 출력하는 객관식 과제를 학습한다. supervised response에는 기준 정답 라벨만 들어간다. 별도의 계산 프로그램이 제공된 규칙과 후보값으로 허용 후보를 구한 뒤 utility 최대 후보를 정답으로 정한다. 솔버 판정과 raw EBLC는 모델에게 정답 힌트로 보여주지 않는다. 이미지가 있다는 것과 모델이 후보 수치를 영상에서 측정했다는 주장은 다르다고 짚는다.}
+\end{frame}
+
+% TIMING 14 1.25
+\begin{frame}{P0·P1·P2는 세 가지 입력·개발 조건이다}
+  \framesubtitle{핵심 비교는 제약을 받는 P1/P2와 CoC-only P0}
+  \renewcommand{\arraystretch}{1.4}\small
+  \begin{tabular}{@{}lp{6.3cm}p{5.5cm}@{}}
+    \toprule
+    조건 & 모델에게 제공하는 내용 & 의미\\\midrule
+    P0 & 원래 CoC & 제약 정보가 없는 기준 조건\\
+    P1 & CoC + 기존 자연어 제약 & 기존 자연어 제약 경로\\
+    P2 & CoC + EBLC 기반 CNL & 명세·검증을 거친 제약 개발 경로\\\bottomrule
+  \end{tabular}\par
+  \vspace{3mm}\normalsize
+  \begin{itemize}\setlength{\itemsep}{2mm}
+    \item 이미지·후보·정답·분할은 공유한다. P1/P2는 학습과 평가 모두에서 제약을 받는다.
+    \item P0는 동일 장면의 0.5초 / 1.5초 규칙을 구별할 정보가 없다.
+  \end{itemize}
+  \takeaway{평가는 \textbf{제공된 제약의 활용}을 본다. 동일 정보 아래 검증 자체의 인과 효과를 분리한 실험은 아니다.}
+  \source{원고 Table 8; V.A; VII.A--B}
+  \note{\textbf{14 · 비교 조건 · 15:15--16:30}\par
+  P1과 P2는 외부 경쟁 기법이 아니라 우리의 두 개발 경로다. P2의 기여를 모든 상황에서 더 높은 정확도라고 제시하지 않는다. P0에는 규칙 정보 자체가 없으므로 정확도 차이에 추가 정보 제공의 효과가 포함된다. P1/P2 모델을 학습한 뒤 평가 때도 제약을 준다. 제약 없이도 규칙을 내재화했는지를 평가한 것은 아니다. 공저자와 합의할 중요한 비교 해석이다.}
+\end{frame}
+
+% TIMING 15 1.00
+\begin{frame}{평가 데이터는 합성 후보 선택 과제이다}
+  \framesubtitle{각 P0/P1/P2 조건당 행 수 · 세 시드로 반복}
+  \renewcommand{\arraystretch}{1.35}
+  \begin{tabular}{@{}lrrrp{4.1cm}@{}}
+    \toprule
+    과제군 & 학습 & 검증 & 주 테스트 & 세부 과제\\\midrule
+    시간 & 960 & 240 & 240 & 해소 후 대기·진입\\
+    정적 & 576 & --- & 144 & 속도·간격·진입 지연\\
+    기동 & 384 & --- & 96 & 정지·차선 변경\\\bottomrule
+  \end{tabular}\par
+  \vspace{4mm}
+  \begin{itemize}\setlength{\itemsep}{2mm}
+    \item Qwen3-VL-2B-Instruct + LoRA; 3 epochs; seeds 42, 17, 123.
+    \item 후보 수치는 텍스트로 제공한다. 정적·기동 과제는 도식을 재사용한다.
+    \item 행 수와 반복 시드 수는 독립적인 실제 도로 장면 수가 아니다.
+  \end{itemize}
+  \source{원고 Table 9; V.A; Supplement S1, S8}
+  \note{\textbf{15 · 규모와 분할 · 16:30--17:30}\par
+  주 테스트 행 수는 과제군을 합하면 조건당 480이다. 같은 장면을 여러 규칙과 라벨로 변형했으므로 480개의 실제 영상이라고 말하지 않는다. 정적 과제는 각 유형 48행, 기동은 정지와 차선 변경 각 48행이다. 별도 validation이 없는 두 과제군도 마지막 체크포인트를 사용하며 시간 과제도 validation 점수로 체크포인트를 고르지 않는다. 이미지 재사용의 상세는 뒤의 한계에서 공개한다.}
+\end{frame}
+
+% TIMING 16 1.25
+\begin{frame}{정확도·위반율·계약 쌍 정확도는 서로 다른 지표다}
+  \framesubtitle{명세 질의 수와 모델 예측 수를 섞지 않는다}
+  \begin{itemize}\setlength{\itemsep}{3mm}
+    \item \textbf{정확도}: 선택이 최고 진행 점수의 허용 후보와 같은 비율.
+    \item \textbf{위반율}: 선택한 후보가 제공된 제약을 위반한 비율.
+    \item \textbf{계약 쌍 정확도}: 같은 장면·후보에 다른 규칙을 준 두 사례를 \emph{모두} 맞힌 비율.
+  \end{itemize}
+  \begin{block}{0.5초 규칙에서 C(12.5초 진입)를 선택했다면?}
+    제약은 준수한다. 하지만 정답 B보다 진행 점수가 낮으므로 정확도에서는 오답이다.
+  \end{block}
+  \textcolor{muted}{SMT 대응 검사는 같은 규칙·후보값의 두 구현이 일치하는지 보는 보조 검사이다.}
+  \source{원고 V.A; VI.A; Supplement S2}
+  \note{\textbf{16 · 평가 지표 · 17:30--18:45}\par
+  SAT이면 정답이라는 오해를 바로잡는다. 0.5초 규칙에서 C도 SAT지만 utility 85로 B의 100보다 낮아 오답이다. 반대로 불허 A를 선택하면 오답이면서 위반이다. 쌍 정확도는 계약 변화에 일관되게 반응하는지를 본다. 검증 질의의 분모는 명세나 후보 질의이고, 모델 정확도와 위반율의 분모는 모델 예측이다. 위반율은 충돌률이나 실제 도로 사고율이 아니다.}
+\end{frame}
+
+% TIMING 17 1.75
+\begin{frame}{주 결과: 제약을 받은 조건의 정확도·준수율이 높다}
+  \framesubtitle{셀 = 정확도 / 위반율 (\%) · 세 시드 평균}
+  \renewcommand{\arraystretch}{1.23}\small
+  \begin{tabular}{@{}p{4.2cm}ccc@{}}
+    \toprule
+    과제 & P0 & P1 & P2\\\midrule
+    최대 속도 & \res{50.00}{24.31} & \res{100.00}{0.00} & \res{100.00}{0.00}\\
+    최소 장애물 간격 & \res{50.00}{24.31} & \res{100.00}{0.00} & \res{100.00}{0.00}\\
+    최소 진입 지연 & \res{50.00}{24.31} & \res{100.00}{0.00} & \res{100.00}{0.00}\\
+    해소 후 대기·진입 & \res{49.86}{19.17} & \res{96.81}{1.39} & \res{98.06}{0.83}\\
+    정지 & \res{50.00}{23.61} & \res{100.00}{0.00} & \res{100.00}{0.00}\\
+    차선 변경 & \res{50.00}{38.19} & \res{100.00}{0.00} & \res{97.92}{0.00}\\\bottomrule
+  \end{tabular}\par
+  \vspace{2mm}\normalsize
+  \takeaway{P1/P2 모두 P0보다 개선된다. \textbf{P2가 P1보다 항상 우수하다는 결과는 아니다.}}
+  \source{원고 Table 10; VI.A; Supplement S2, S8}
+  \note{\textbf{17 · 주 성능 · 18:45--20:30}\par
+  모든 숫자를 읽지 말고 세 줄을 선택한다. 정적 과제는 P1과 P2가 평균 100, 위반 0으로 같다. 시간 과제에서는 P2 정확도 98.06, 위반 0.83이지만 잔여 위반은 존재한다. 차선 변경에서는 P1이 100이고 P2가 97.92로 더 낮다. P2의 차선 변경 잔여 오류는 허용되지만 진행 점수가 낮은 후보를 선택한 오류다. 따라서 형식화의 가치는 P1을 항상 이기는 성능이 아니라 점검 가능한 개발 경로라는 메시지로 연결한다. 비열등성 통계 검정은 하지 않았다.}
+\end{frame}
+
+% TIMING 18 1.25
+\begin{frame}{같은 장면이라도 규칙이 바뀌면 정답이 바뀐다}
+  \framesubtitle{계약 쌍 정확도: 두 규칙의 사례를 모두 맞혀야 성공}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{.69\textwidth}
+      \begin{tikzpicture}
+      \begin{axis}[width=9.2cm,height=4.5cm,ybar,bar width=23pt,ymin=0,ymax=108,
+        symbolic x coords={시간,정적,기동},xtick=data,ytick={0,25,50,75,100},
+        ylabel={계약 쌍 정확도 (\%)},tick label style={font=\small},
+        legend style={at={(.5,1.03)},anchor=south,legend columns=2,draw=none,font=\small},
+        ymajorgrids=true,grid style={gray!15},axis line style={gray!40},
+        nodes near coords, every node near coord/.append style={font=\scriptsize},enlarge x limits=.23]
+        \addplot[fill=amber!80,draw=none] coordinates {(시간,93.61) (정적,100) (기동,100)};
+        \addplot[fill=teal!85,draw=none] coordinates {(시간,96.11) (정적,100) (기동,97.92)};
+        \legend{P1,P2}
+      \end{axis}
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{.28\textwidth}\begin{block}{P0 = 0\%}
+      세 과제군 모두\\[2mm]
+      규칙을 받지 않아\\동일 입력의 다른\\정답을 구별하기 어렵다.
+    \end{block}\end{column}
+  \end{columns}
+  \source{원고 Figure 5 왼쪽; VI.B; Supplement S2, S8}
+  \note{\textbf{18 · 규칙 변화 · 20:30--21:45}\par
+  한 사례를 맞히는 것보다 두 계약을 모두 맞히는 것이 더 강한 조건이다. 시간 과제에서 0.5초면 B, 1.5초면 C라는 앞의 예를 다시 떠올리게 한다. P0의 쌍 정확도 0을 일반적인 CoC 추론 실패로 해석하면 안 된다. P0는 두 입력이 같지만 정답이 다르므로 구별 정보가 없다. P1과 P2는 제약을 받아 선택을 바꿀 수 있고, 그 반응이 대부분의 쌍에서 관찰된다.}
+\end{frame}
+
+% TIMING 19 1.00
+\begin{frame}{제약 문장을 추가하는 것만으로 충분하지 않다}
+  \framesubtitle{학습 중 사례--제약 연결을 섞고, 평가에서는 올바른 제약을 제공}
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabular}{@{}lcc@{}}
+    \toprule
+    과제군 & 올바른 연결의 P2 정확도 & 섞인 연결의 정확도\\\midrule
+    시간 & 98.06\% & \bad{50.56\%}\\
+    정적 & 100.00\% & \bad{50.69\%}\\
+    기동 & 98.96\% & \bad{49.65\%}\\\bottomrule
+  \end{tabular}\par
+  \vspace{4mm}
+  \takeaway{제약이 \textbf{어떤 사례에 적용되는지} 연결하는 것이 중요하다.}
+  \source{원고 Figure 5 오른쪽; VI.B; Supplement S2, S8}
+  \note{\textbf{19 · 연결 실험 · 21:45--22:45}\par
+  평가 입력에 일부러 틀린 제약을 주는 실험이 아니라 학습에서 연결을 섞은 뒤 평가에서는 정상 제약을 제공하는 실험이다. 성능이 약 50으로 내려가 연결의 중요성을 보여준다. 다만 시간 과제는 자연어 guard를 섞고 정적·기동 과제는 P2 CNL을 subtype 내에서 섞었다. 서로 완전히 같은 개입으로 합쳐 인과 크기를 주장하지 않는다. EBLC 근거 연결을 중시하는 방법론 동기와 맞닿는 보조 증거다.}
+\end{frame}
+
+% TIMING 20 1.25
+\begin{frame}{명세·CNL의 오류를 검출하되, 공통 근거 오류는 남는다}
+  \framesubtitle{모델 정확도와 별개의 품질 검사}
+  \renewcommand{\arraystretch}{1.3}\small
+  \begin{tabular}{@{}p{5.2cm}cp{4.4cm}@{}}
+    \toprule
+    입력 종류 & 사례 수 & 결과\\\midrule
+    지원하는 여섯 오류 유형 & 144 & \good{144 검출 · 0 누락}\\
+    근거와 명세에 함께 들어간 오류 & 24 & \bad{0 검출 · 24 누락}\\
+    정상 계약 & 24 & 24 수용 · 0 오탐\\\bottomrule
+  \end{tabular}\par
+  \vspace{3mm}\normalsize
+  \begin{itemize}\setlength{\itemsep}{2mm}
+    \item 전체 오류 검출: \(144/168 = 85.71\%\).
+    \item 부정·임계값·해제 조건·비교 방향·단위 등의 오류를 여러 층에서 검사한다.
+    \item 일관된 표현이라도 출발 근거가 틀리면 통과할 수 있다.
+  \end{itemize}
+  \source{원고 Table 11; VI.C; Supplement S3}
+  \note{\textbf{20 · 오류 검사 · 22:45--24:00}\par
+  100퍼센트 검출은 지원하는 여섯 오류 유형에 대한 값이다. 공통 근거 오류까지 포함하면 85.71퍼센트이며 정상 24개는 검출률의 분모에서 제외한다. 검출에는 schema, 근거 대응, Core와 환경 규칙 비교, CNL 의미 대응이 포함되어 SMT 하나가 모든 오류를 찾았다고 말하지 않는다. 영상이나 규칙 근거의 사실성은 다른 신뢰 계층이다. 이 실패 유형을 공저자에게 숨기지 않고 방법의 범위로 제시한다.}
+\end{frame}
+
+% TIMING 21 1.00
+\begin{frame}{미학습 수치에는 대응하지만, 새 표현에서 취약성이 남는다}
+  \framesubtitle{정확도 / 위반율 (\%) · 세 시드 평균}
+  \renewcommand{\arraystretch}{1.35}\small
+  \begin{tabular}{@{}lccc@{}}
+    \toprule
+    미학습 수치·시간 & P0 & P1 & P2\\\midrule
+    시간 & \res{49.86}{18.47} & \res{96.67}{2.22} & \res{96.67}{1.53}\\
+    정적 & \res{50.00}{22.92} & \res{99.54}{0.00} & \res{97.22}{0.23}\\
+    기동 & \res{50.00}{30.90} & \res{100.00}{0.00} & \res{98.96}{0.00}\\\bottomrule
+  \end{tabular}\par
+  \vspace{3mm}\normalsize
+  \begin{block}{별도 문장 변형 평가: 정적 P2}
+    정확도 \bad{80.32\%}, 위반율 \bad{7.87\%}.\\
+    위 표의 미학습 수치 결과와 다른 평가 조건이다.
+  \end{block}
+  \source{원고 Table 12; VI.D; Supplement S8}
+  \note{\textbf{21 · 조건 변화 · 24:00--25:00}\par
+  위 표는 새로운 숫자와 대기 시간을 평가한다. 그 조건에서 P1/P2는 P0보다 좋다. 새 표현으로 바꾼 정적 P2는 성능이 80.32로 떨어지고 위반 7.87이 남는다. 형식화된 CNL로 학습했다고 모든 표현에 강해진 것은 아니다. 문장 변형은 같은 장면을 재사용하므로 새로운 영상 일반화 증거도 아니다. 유리한 조건과 불리한 조건을 둘 다 논문에 남긴다는 점을 강조한다.}
+\end{frame}
+
+% TIMING 22 1.00
+\begin{frame}{세 가지 신뢰 계층과 현재 증거의 한계}
+  \framesubtitle{논리 검증을 통과해도 영상의 사실성과 모델 준수는 별도}
+  \begin{enumerate}\setlength{\itemsep}{3mm}
+    \item \textbf{근거의 타당성}: 관찰·규칙·가정이 장면에 맞는가?
+    \item \textbf{표현의 타당성}: EBLC·논리식·CNL이 의도한 제한을 보존하는가?
+    \item \textbf{행동의 준수}: VLM이 허용된 후보를 실제로 선택하는가?
+  \end{enumerate}
+  \begin{block}{현재 평가 범위}
+    제공된 합성 규칙 · 수치가 주어진 유한 후보 · 한 모델 · 세 시드.\\
+    이미지 재사용과 실제 장면의 추가 정답 구성 문제가 남는다.
+  \end{block}
+  \source{원고 VII.C--D; V.A; Supplement S7--S10}
+  \note{\textbf{22 · 한계 · 25:00--26:00}\par
+  정적 테스트의 13개 이미지는 학습과 겹치며 기동 과제는 두 도식을 재사용한다. 시간 과제는 이미지 픽셀이 분리되어도 후보값을 텍스트로 준다. 따라서 실제 도로의 영상 이해나 폐루프 안전을 입증하지 못한다. 실장면 원자료는 있으나 여섯 과제에 맞는 제약·후보 측정값·기준 정답을 갖춘 추가 평가셋은 확인하지 못했고, 사람의 새 레이블링 작업은 이번 단계에서 진행하지 않기로 한 상태라고 필요하면 설명한다.}
+\end{frame}
+
+% TIMING 23 1.00
+\begin{frame}{논문의 기여는 점검 가능한 제약 개발 경로이다}
+  \framesubtitle{공저자와 공유할 핵심 주장}
+  \begin{itemize}\setlength{\itemsep}{4mm}
+    \item \textbf{방법}: 출처 → EBLC 필드 → 논리 조건 → CNL → CoC의 연결.
+    \item \textbf{검사}: 불허 후보 배제와 허용 경계 보존, 지원 오류 유형의 검출.
+    \item \textbf{학습 증거}: 제한된 합성 과제에서 제약을 받은 CoC의 행동 선택 개선.
+  \end{itemize}
+  \takeaway{EBLC의 가치는 \textbf{어디서 온 어떤 제한을 검사하고 전달했는지 설명할 수 있다}는 데 있다.}
+  \source{원고 VII.B; VIII}
+  \note{\textbf{23 · 기여 정리 · 26:00--27:00}\par
+  기존 연구의 자연어 제약 강화 개념 위에서 추적 가능한 정식 개발 경로를 만든다는 위치를 강조한다. 학습 성능과 검증 가능성은 연결되지만 같은 종류의 증거가 아니다. P2가 항상 P1을 이긴다거나, 검증이 학습 향상의 원인이라고 결론내리지 않는다. 규칙의 근거와 실행 의미를 고정하고 사람과 모델이 읽을 수 있는 표현으로 되돌리는 인터페이스가 중심 기여다.}
+\end{frame}
+
+% TIMING 24 3.00
+\begin{frame}{공저자 논의: 무엇을 중심 주장으로 가져갈 것인가?}
+  \framesubtitle{마지막 3분 · 보충 슬라이드는 질문에 따라 사용}
+  \begin{enumerate}\setlength{\itemsep}{5mm}
+    \item \textbf{기여의 중심}\par
+      제약 정보의 행동 효과와, EBLC 기반 개발·검사 경로를 어떻게 구분할까?
+    \item \textbf{실험 해석}\par
+      P0의 정보 부족, P1/P2의 차이, 지원 프로파일의 범위를 충분히 설명했는가?
+    \item \textbf{논문 완성도}\par
+      합성 평가의 한계와 실패 사례를 유지하면서 주장을 어디까지 좁힐까?
+  \end{enumerate}
+  \note{\textbf{24 · 공저자 논의 · 27:00--30:00}\par
+  세 질문 중 하나씩 짧게 의견을 받는다. 시간이 부족하면 첫 질문을 우선한다. 이 자료는 새로운 실험을 제안하거나 새 데이터 레이블링을 자동으로 승인받는 발표가 아니다. 현재 완료된 증거로 어떤 주장을 낼지 합의하는 자리다. 세부 설정, 수식, 수명주기 질문에는 뒤의 보충 슬라이드로 이동한다.}
+\end{frame}
+
+\appendix
+
+\begin{frame}{B1 · 여섯 과제의 실제 명세 필드와 제한}
+  \framesubtitle{millitick 표현을 읽기 쉬운 물리 단위로 환산}
+  \renewcommand{\arraystretch}{1.25}\small
+  \begin{tabular}{@{}p{3.0cm}p{4.1cm}p{5.4cm}@{}}
+    \toprule
+    과제 & 필드·규칙값 & 후보가 완료할 때의 제한\\\midrule
+    최대 속도 & speed \(\leq 4.4\) m/s & 최대 속도 \(\leq 4.4\) m/s\\
+    최소 간격 & clearance \(\geq 2\) m & 최소 장애물 간격 \(\geq 2\) m\\
+    최소 진입 지연 & entry delay \(\geq 2.5\) s & 현재부터 진입까지 \(\geq 2.5\) s\\
+    시간 대기 & release wait = 0.5 s & 진입 시각 \(\geq\) 해소 시각 + 0.5 s\\
+    정지 & offset / decel / jerk & \(\leq 0\) m / \(\leq 5.8\) m/s\(^2\) / \(\leq 7.4\) m/s\(^3\)\\
+    차선 변경 & min gap \(\geq 5.8\) m & 동작 중 최소 간격 \(\geq 5.8\) m\\\bottomrule
+  \end{tabular}\par
+  \vspace{3mm}
+  \textcolor{muted}{수치는 원고의 구현 예제이다. 보편적 교통법·안전 기준으로 주장하지 않는다.}
+  \source{원고 Table 7}
+  \note{\textbf{B1 · 과제별 필드 · 필요할 때 사용}\par
+  정적·기동 프로파일은 완료 플래그 q에 대한 함의로 제한을 건다. 시간 프로파일의 전제는 enters이다. 수치는 supplied rules에서 오며 scale 1000의 정수값으로 표현된다. 예를 들어 4400은 4.4 m/s를 뜻한다. 이 표의 값은 frozen contract 예제이지 실제 법정 최대속도나 보편적인 승차감 기준이 아니다.}
+\end{frame}
+
+\begin{frame}{B2 · 여섯 질의와 기대 판정}
+  \framesubtitle{해소 11000 ms · 대기 500 ms}
+  \renewcommand{\arraystretch}{1.3}\small
+  \begin{tabular}{@{}p{3.2cm}p{6.6cm}l@{}}
+    \toprule
+    질의 & 검사할 내용 & 기대 판정\\\midrule
+    기본 계약 & 만족하는 변수 할당 존재 & SAT\\
+    상징적 조기 진입 & \(e\land u<\tau+\Delta\) & UNSAT\\
+    경계 직전 & enters=true, entry\_ms=11499 & UNSAT\\
+    경계 일치 & enters=true, entry\_ms=11500 & SAT\\
+    경계 이후 & enters=true, entry\_ms=11501 & SAT\\
+    진입 보류 & enters=false & SAT\\\bottomrule
+  \end{tabular}\par
+  \vspace{3mm}
+  \textcolor{muted}{0.5초·1.5초 계약의 12개 원고 질의와 기존 100개 경계 질의는 별도 검사 기록이다.}
+  \source{원고 Table 5; IV.D; VI.C}
+  \note{\textbf{B2 · 질의 종류 · 필요할 때 사용}\par
+  상징적 질의는 양쪽 시간 변수를 고정하지 않고 조기 진입 반례를 찾는다. 나머지 경계 질의는 구체 시각을 대입한다. 논리 모델 범위에서의 반례 배제와 한 사례의 결과 일치는 범위가 다르다. 기존 100개와 새로 정리한 12개 원고 질의는 학습 효과의 새로운 데이터가 아니라 재실행해 보관한 명세 검사다.}
+\end{frame}
+
+\begin{frame}{B3 · 어떤 잘못된 명세를 찾을 수 있는가?}
+  \framesubtitle{오류 예시는 이해를 위한 것이며 현재 구현의 발생 오류라는 뜻은 아니다}
+  \begin{itemize}\setlength{\itemsep}{4mm}
+    \item \(\geq\)를 \(>\)로 바꾸면: \textbf{11500 ms의 허용 경계가 거부}된다.
+    \item 대기 조건을 빼면: \textbf{11499 ms의 금지 진입이 허용}될 수 있다.
+    \item 근거와 명세의 대기 시간을 함께 바꾸면: 둘의 대응 검사만으로는 오류를 놓칠 수 있다.
+  \end{itemize}
+  \takeaway{기대 결과와 다른 SAT / UNSAT, solver UNKNOWN은 검토 대상이다.}
+  \source{원고 IV.D; Table 11; Supplement S3}
+  \note{\textbf{B3 · 오류 예제 · 필요할 때 사용}\par
+  검증이 올바른 행동만 보는지 질문받으면 이 예로 답한다. 포함 경계를 strict 비교로 잘못 옮기면 허용 행동을 불필요하게 막는다. 기다림을 제거하면 금지 행동을 허용한다. 검증은 두 방향을 모두 본다. 마지막 공유 오류는 논리적 일관성이 외부 사실의 정확성을 보장하지 않는다는 실패 사례다.}
+\end{frame}
+
+\begin{frame}{B4 · 활성 상태와 현재 진입 허용은 다르다}
+  \framesubtitle{초기 비활성이라고 해서 지금 진입해도 된다는 뜻은 아니다}
+  \begin{block}{정성 프로파일의 진입 정책}
+    \[\mathrm{clear}_{j,t}=\mathrm{valid}_{j,t}\land(\mathrm{truth}_{j,t}=\mathrm{FALSE})\]
+    \[\mathrm{entry\_permitted}_{t}=\bigwedge_j\mathrm{clear}_{j,t}\]
+  \end{block}
+  \begin{itemize}\setlength{\itemsep}{3mm}
+    \item 초기 활성 상태와 구성된 근거 이력을 입력으로 둔다.
+    \item UNKNOWN·CONFLICT·무효 근거는 이전 활성 상태를 유지한다.
+    \item 모든 의무가 현재 해소된 경우에도 진입과 보류 모두 허용한다.
+  \end{itemize}
+  \source{원고 Code Box 2; Figure 3; IV.D, Lifecycle Checks}
+  \note{\textbf{B4 · 상태와 정책 · 필요할 때 사용}\par
+  active=false는 초기 비활성 상태일 수도, 확인된 해제 상태일 수도 있다. 그래서 현재 진입 정책은 별도로 모든 의무의 유효한 해소 근거를 요구한다. 이전에 비활성이었다는 사실만으로 지금도 구역이 비었다고 판단할 수 없다. evidence UNKNOWN은 관찰의 상태이며 solver UNKNOWN은 질의를 판정하지 못했다는 결과다. 둘을 같은 값으로 처리하지 않는다.}
+\end{frame}
+
+\begin{frame}{B5 · 학습 설정과 추가 평가의 규모}
+  \framesubtitle{동일 과제군 안에서는 조건 간 학습 예산을 맞춤}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{.49\textwidth}\begin{block}{학습}
+      \small
+      Qwen3-VL-2B-Instruct\\
+      LoRA rank / alpha / dropout: 8 / 16 / 0.05\\
+      Batch 2, accumulation 8\\
+      AdamW: lr 0.0002, weight decay 0.01\\
+      3 epochs; 마지막 체크포인트 사용\\
+      시간 / 정적 / 기동 업데이트: 180 / 108 / 72
+    \end{block}\end{column}
+    \begin{column}{.49\textwidth}\begin{block}{추가 평가: 조건당 행}
+      \small
+      시간: 표현 변형 240, 미학습 대기 240\\[2mm]
+      정적: 표현 변형 144, 미학습 수치 144\\[2mm]
+      기동: 표현 변형 96, 미학습 수치 96, 복합 조건 96\\[2mm]
+      같은 장면을 재사용한 변형은 독립 영상으로 합산하지 않는다.
+    \end{block}\end{column}
+  \end{columns}
+  \source{원고 V.A; Supplement S1, S8}
+  \note{\textbf{B5 · 실행 설정 · 필요할 때 사용}\par
+  LoRA는 사전학습 가중치를 고정하고 낮은 랭크의 업데이트를 학습한다. 조건 간 동일한 예산은 같은 과제군 안의 비교라는 뜻이며 다른 과제군은 행 수가 달라 업데이트 수도 다르다. 세 optimization seed는 학습의 변동을 확인하지만 데이터의 독립 장면 수를 늘리지 않는다. 부가 평가 행을 모두 합쳐 실제 장면 규모처럼 말하지 않는다.}
+\end{frame}
+
+\begin{frame}{B6 · 공저자에게 자주 나오는 질문}
+  \small
+  \begin{block}{EBLC를 검사하는가, 모델 출력을 검사하는가?}
+    명세 검증은 허용·불허 의미를 검사한다. 모델 평가는 선택 라벨을 기준 정답·규칙과 비교한다. SMT 판정 대응은 보조 검사이다.
+  \end{block}
+  \begin{block}{P2가 P1보다 항상 좋은가?}
+    아니다. 형식적 비열등성도 검정하지 않았다. P2의 중심 가치는 점검 가능한 제약 개발 경로이다.
+  \end{block}
+  \begin{block}{실제 영상만 더 넣으면 같은 평가를 할 수 있는가?}
+    영상뿐 아니라 적용 제약·후보 측정값·기준 정답이 필요하다. 현재 추가 실장면 평가셋은 완성되어 있지 않다.
+  \end{block}
+  \source{원고 IV.D; VI.A; VII.B--D; 기존 평가 원자료 점검 기록}
+  \note{\textbf{B6 · 질문 대응 · 필요할 때 사용}\par
+  첫 답변은 서로 다른 두 검사를 분리한다. 두 번째는 성능 우위 주장 대신 개발 과정의 점검 가능성을 강조한다. 세 번째는 데이터 출처와 평가셋의 완성 상태를 구별한다. 기존에 확보한 PhysicalAI 및 nuScenes 자료를 바로 여섯 과제의 정답 있는 평가셋으로 사용할 수는 없다. 추가 사람 레이블링 작업은 이전 지시에 따라 중단한 상태이며 이 발표를 만들면서 재개하지 않았다.}
+\end{frame}
+
+\end{document}

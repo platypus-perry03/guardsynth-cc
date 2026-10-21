@@ -1,0 +1,494 @@
+{
+  "grammar_version": "eblc-core-v0.1",
+  "model_id": "position_hold_2000",
+  "horizon": 2,
+  "source_refs": [
+    "guardsynth-coc/position-hold-training-001/supplied-rule"
+  ],
+  "claim_scope": "SYNTHETIC_LISTED_WAYPOINTS_ONLY",
+  "declarations": [
+    {
+      "name": "x_0",
+      "sort": "INT",
+      "time_varying": false,
+      "enum_name": null,
+      "enum_values": [],
+      "unit": "1",
+      "frame": null,
+      "source_refs": [
+        "guardsynth-coc/position-hold-training-001/supplied-rule"
+      ]
+    },
+    {
+      "name": "y_0",
+      "sort": "INT",
+      "time_varying": false,
+      "enum_name": null,
+      "enum_values": [],
+      "unit": "1",
+      "frame": null,
+      "source_refs": [
+        "guardsynth-coc/position-hold-training-001/supplied-rule"
+      ]
+    },
+    {
+      "name": "x_1",
+      "sort": "INT",
+      "time_varying": false,
+      "enum_name": null,
+      "enum_values": [],
+      "unit": "1",
+      "frame": null,
+      "source_refs": [
+        "guardsynth-coc/position-hold-training-001/supplied-rule"
+      ]
+    },
+    {
+      "name": "y_1",
+      "sort": "INT",
+      "time_varying": false,
+      "enum_name": null,
+      "enum_values": [],
+      "unit": "1",
+      "frame": null,
+      "source_refs": [
+        "guardsynth-coc/position-hold-training-001/supplied-rule"
+      ]
+    },
+    {
+      "name": "x_2",
+      "sort": "INT",
+      "time_varying": false,
+      "enum_name": null,
+      "enum_values": [],
+      "unit": "1",
+      "frame": null,
+      "source_refs": [
+        "guardsynth-coc/position-hold-training-001/supplied-rule"
+      ]
+    },
+    {
+      "name": "y_2",
+      "sort": "INT",
+      "time_varying": false,
+      "enum_name": null,
+      "enum_values": [],
+      "unit": "1",
+      "frame": null,
+      "source_refs": [
+        "guardsynth-coc/position-hold-training-001/supplied-rule"
+      ]
+    },
+    {
+      "name": "x_3",
+      "sort": "INT",
+      "time_varying": false,
+      "enum_name": null,
+      "enum_values": [],
+      "unit": "1",
+      "frame": null,
+      "source_refs": [
+        "guardsynth-coc/position-hold-training-001/supplied-rule"
+      ]
+    },
+    {
+      "name": "y_3",
+      "sort": "INT",
+      "time_varying": false,
+      "enum_name": null,
+      "enum_values": [],
+      "unit": "1",
+      "frame": null,
+      "source_refs": [
+        "guardsynth-coc/position-hold-training-001/supplied-rule"
+      ]
+    },
+    {
+      "name": "x_4",
+      "sort": "INT",
+      "time_varying": false,
+      "enum_name": null,
+      "enum_values": [],
+      "unit": "1",
+      "frame": null,
+      "source_refs": [
+        "guardsynth-coc/position-hold-training-001/supplied-rule"
+      ]
+    },
+    {
+      "name": "y_4",
+      "sort": "INT",
+      "time_varying": false,
+      "enum_name": null,
+      "enum_values": [],
+      "unit": "1",
+      "frame": null,
+      "source_refs": [
+        "guardsynth-coc/position-hold-training-001/supplied-rule"
+      ]
+    },
+    {
+      "name": "x_5",
+      "sort": "INT",
+      "time_varying": false,
+      "enum_name": null,
+      "enum_values": [],
+      "unit": "1",
+      "frame": null,
+      "source_refs": [
+        "guardsynth-coc/position-hold-training-001/supplied-rule"
+      ]
+    },
+    {
+      "name": "y_5",
+      "sort": "INT",
+      "time_varying": false,
+      "enum_name": null,
+      "enum_values": [],
+      "unit": "1",
+      "frame": null,
+      "source_refs": [
+        "guardsynth-coc/position-hold-training-001/supplied-rule"
+      ]
+    },
+    {
+      "name": "x_6",
+      "sort": "INT",
+      "time_varying": false,
+      "enum_name": null,
+      "enum_values": [],
+      "unit": "1",
+      "frame": null,
+      "source_refs": [
+        "guardsynth-coc/position-hold-training-001/supplied-rule"
+      ]
+    },
+    {
+      "name": "y_6",
+      "sort": "INT",
+      "time_varying": false,
+      "enum_name": null,
+      "enum_values": [],
+      "unit": "1",
+      "frame": null,
+      "source_refs": [
+        "guardsynth-coc/position-hold-training-001/supplied-rule"
+      ]
+    }
+  ],
+  "clauses": [
+    {
+      "id": "hold_sample_0",
+      "kind": "INVARIANT",
+      "enforcement": "INITIAL",
+      "formula": {
+        "op": "le",
+        "left": {
+          "op": "add",
+          "left": {
+            "op": "mul",
+            "left": {
+              "op": "var",
+              "name": "x_0",
+              "offset": 0
+            },
+            "right": {
+              "op": "var",
+              "name": "x_0",
+              "offset": 0
+            }
+          },
+          "right": {
+            "op": "mul",
+            "left": {
+              "op": "var",
+              "name": "y_0",
+              "offset": 0
+            },
+            "right": {
+              "op": "var",
+              "name": "y_0",
+              "offset": 0
+            }
+          }
+        },
+        "right": {
+          "op": "literal",
+          "sort": "INT",
+          "value": 40000,
+          "enum_name": null,
+          "unit": "1",
+          "frame": null
+        }
+      },
+      "source_refs": [
+        "guardsynth-coc/position-hold-training-001/supplied-rule"
+      ],
+      "description": "Inclusive radial bound at 0ms."
+    },
+    {
+      "id": "hold_sample_1",
+      "kind": "INVARIANT",
+      "enforcement": "INITIAL",
+      "formula": {
+        "op": "le",
+        "left": {
+          "op": "add",
+          "left": {
+            "op": "mul",
+            "left": {
+              "op": "var",
+              "name": "x_1",
+              "offset": 0
+            },
+            "right": {
+              "op": "var",
+              "name": "x_1",
+              "offset": 0
+            }
+          },
+          "right": {
+            "op": "mul",
+            "left": {
+              "op": "var",
+              "name": "y_1",
+              "offset": 0
+            },
+            "right": {
+              "op": "var",
+              "name": "y_1",
+              "offset": 0
+            }
+          }
+        },
+        "right": {
+          "op": "literal",
+          "sort": "INT",
+          "value": 40000,
+          "enum_name": null,
+          "unit": "1",
+          "frame": null
+        }
+      },
+      "source_refs": [
+        "guardsynth-coc/position-hold-training-001/supplied-rule"
+      ],
+      "description": "Inclusive radial bound at 250ms."
+    },
+    {
+      "id": "hold_sample_2",
+      "kind": "INVARIANT",
+      "enforcement": "INITIAL",
+      "formula": {
+        "op": "le",
+        "left": {
+          "op": "add",
+          "left": {
+            "op": "mul",
+            "left": {
+              "op": "var",
+              "name": "x_2",
+              "offset": 0
+            },
+            "right": {
+              "op": "var",
+              "name": "x_2",
+              "offset": 0
+            }
+          },
+          "right": {
+            "op": "mul",
+            "left": {
+              "op": "var",
+              "name": "y_2",
+              "offset": 0
+            },
+            "right": {
+              "op": "var",
+              "name": "y_2",
+              "offset": 0
+            }
+          }
+        },
+        "right": {
+          "op": "literal",
+          "sort": "INT",
+          "value": 40000,
+          "enum_name": null,
+          "unit": "1",
+          "frame": null
+        }
+      },
+      "source_refs": [
+        "guardsynth-coc/position-hold-training-001/supplied-rule"
+      ],
+      "description": "Inclusive radial bound at 500ms."
+    },
+    {
+      "id": "hold_sample_3",
+      "kind": "INVARIANT",
+      "enforcement": "INITIAL",
+      "formula": {
+        "op": "le",
+        "left": {
+          "op": "add",
+          "left": {
+            "op": "mul",
+            "left": {
+              "op": "var",
+              "name": "x_3",
+              "offset": 0
+            },
+            "right": {
+              "op": "var",
+              "name": "x_3",
+              "offset": 0
+            }
+          },
+          "right": {
+            "op": "mul",
+            "left": {
+              "op": "var",
+              "name": "y_3",
+              "offset": 0
+            },
+            "right": {
+              "op": "var",
+              "name": "y_3",
+              "offset": 0
+            }
+          }
+        },
+        "right": {
+          "op": "literal",
+          "sort": "INT",
+          "value": 40000,
+          "enum_name": null,
+          "unit": "1",
+          "frame": null
+        }
+      },
+      "source_refs": [
+        "guardsynth-coc/position-hold-training-001/supplied-rule"
+      ],
+      "description": "Inclusive radial bound at 1000ms."
+    },
+    {
+      "id": "hold_sample_4",
+      "kind": "INVARIANT",
+      "enforcement": "INITIAL",
+      "formula": {
+        "op": "le",
+        "left": {
+          "op": "add",
+          "left": {
+            "op": "mul",
+            "left": {
+              "op": "var",
+              "name": "x_4",
+              "offset": 0
+            },
+            "right": {
+              "op": "var",
+              "name": "x_4",
+              "offset": 0
+            }
+          },
+          "right": {
+            "op": "mul",
+            "left": {
+              "op": "var",
+              "name": "y_4",
+              "offset": 0
+            },
+            "right": {
+              "op": "var",
+              "name": "y_4",
+              "offset": 0
+            }
+          }
+        },
+        "right": {
+          "op": "literal",
+          "sort": "INT",
+          "value": 40000,
+          "enum_name": null,
+          "unit": "1",
+          "frame": null
+        }
+      },
+      "source_refs": [
+        "guardsynth-coc/position-hold-training-001/supplied-rule"
+      ],
+      "description": "Inclusive radial bound at 1500ms."
+    },
+    {
+      "id": "hold_sample_5",
+      "kind": "INVARIANT",
+      "enforcement": "INITIAL",
+      "formula": {
+        "op": "le",
+        "left": {
+          "op": "add",
+          "left": {
+            "op": "mul",
+            "left": {
+              "op": "var",
+              "name": "x_5",
+              "offset": 0
+            },
+            "right": {
+              "op": "var",
+              "name": "x_5",
+              "offset": 0
+            }
+          },
+          "right": {
+            "op": "mul",
+            "left": {
+              "op": "var",
+              "name": "y_5",
+              "offset": 0
+            },
+            "right": {
+              "op": "var",
+              "name": "y_5",
+              "offset": 0
+            }
+          }
+        },
+        "right": {
+          "op": "literal",
+          "sort": "INT",
+          "value": 40000,
+          "enum_name": null,
+          "unit": "1",
+          "frame": null
+        }
+      },
+      "source_refs": [
+        "guardsynth-coc/position-hold-training-001/supplied-rule"
+      ],
+      "description": "Inclusive radial bound at 2000ms."
+    }
+  ],
+  "queries": [
+    {
+      "id": "consistency",
+      "formula": {
+        "op": "literal",
+        "sort": "BOOL",
+        "value": true,
+        "enum_name": null,
+        "unit": null,
+        "frame": null
+      },
+      "expected": "SAT",
+      "classification": "CONSISTENCY",
+      "source_refs": [
+        "guardsynth-coc/position-hold-training-001/supplied-rule"
+      ],
+      "description": "A zero-distance assignment is feasible."
+    }
+  ]
+}

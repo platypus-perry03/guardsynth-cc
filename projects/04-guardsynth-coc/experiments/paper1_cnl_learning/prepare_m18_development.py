@@ -122,7 +122,7 @@ def execute(output, evidence_path=None):
         'LOGIC_GUARD':'temporal-logic-guard-seed{}-v0'}
     for condition,pattern in patterns.items():
         for seed in (42,17,123):
-            directory=ROOT/'artifacts/results/public/small-vlm-guard-v0'/pattern.format(seed)
+            directory=ROOT/'projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0'/pattern.format(seed)
             path=directory/'result.json';d=json.loads(pin(path));pin(directory/'adapter/adapter_config.json')
             weights=directory/'adapter/adapter_model.safetensors';pin(weights)
             assert d['seed']==seed and sum(h['optimizer_steps'] for h in d['history'])==72

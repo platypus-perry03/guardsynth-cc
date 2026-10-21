@@ -1,0 +1,30 @@
+{
+  "status": "table-content-and-layout-repaired",
+  "pages": 15,
+  "logical_tables": 12,
+  "source_cells_checked": 318,
+  "source_cell_mismatches_before": 17,
+  "source_cell_mismatches_after": 0,
+  "changes": [
+    "Preserve contents of revone/revtwo/revfinal wrappers.",
+    "Restore source textbf/mathbf emphasis.",
+    "Use horizontal top/header/group/bottom rules, eliminating unintended vertical edges.",
+    "Measure each row from its own wrapped cell paragraphs.",
+    "Restore Table 11 column widths and keep words together.",
+    "Reallocate affected full-width bands to prevent table/body overlap."
+  ],
+  "all_source_table_values_preserved": true,
+  "body_and_captions_unchanged": true,
+  "all_native_text_present_in_render": true,
+  "all_table_rows_have_separate_text_bounds": true,
+  "render_issues": 0,
+  "font_substitution": 0,
+  "independent_parser_valid": true,
+  "photo_bytes_preserved": true,
+  "figures_resized": false,
+  "hancom_application_validation": false,
+  "limitations": [
+    "Hancom application is not available. Its own open/save behavior and rendering remain unverified.",
+    "Two-column appearance still uses borderless layout tables; two display equations are images."
+  ]
+}

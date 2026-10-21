@@ -21,7 +21,7 @@ the application and synthesis project.
 - Milestones: [`docs/plans/02_PROJECT_MILESTONES.md`](docs/plans/02_PROJECT_MILESTONES.md)
 - Execution tracker: [`docs/plans/03_PROJECT_EXECUTION_TRACKER.md`](docs/plans/03_PROJECT_EXECUTION_TRACKER.md)
 - Surveys: [`docs/surveys/README.md`](docs/surveys/README.md)
-- Results: [`results/RESULT_INDEX.md`](results/RESULT_INDEX.md)
+- Results: [`artifacts/RESULT_INDEX.md`](artifacts/RESULT_INDEX.md)
 - Engineering subproject: **GuardSynth Studio — CoC & EBLC Data Workbench**
   ([requirements](docs/requirements/GUARDSYNTH_STUDIO_REQUIREMENTS_V01.md),
   [design](docs/designs/GUARDSYNTH_STUDIO_DESIGN_V01.md),

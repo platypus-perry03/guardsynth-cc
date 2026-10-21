@@ -1,0 +1,104 @@
+{
+  "project_id": "guardsynth-coc",
+  "run_id": "introduction-revision-2026-10-08-001",
+  "date": "2026-10-08",
+  "request": "Verify attached final introduction and replace the English manuscript introduction",
+  "attachment_sha256": "dd31053bf06757756f9b61ff645f743f9f02410131ff5b3a8945dbc45d7f130b",
+  "outside_introduction_sha256": "84f503f5fd2c88b6489827752704fb40366d5fc9035b0db6ab7fbd45a8b46e51",
+  "confirmed_items": {
+    "trajectory_difference": "Maximum three-seed group mean 0.08677590390046437 m; individual paired mean can reach 0.0962032675743103 m. Introduction qualifies the <=0.09 m statement.",
+    "model_family": "R1 is also called Alpamayo 1; 1.5 is an updated version in the same family, not the model used in these preliminary diagnostics.",
+    "supplement_sections": [
+      "S11",
+      "S12"
+    ],
+    "redistribution_scope": "Aggregate statistics and protocols only. No raw restricted images, trajectories, or full CoC outputs copied or released. No general redistribution clearance asserted.",
+    "wording_effect": "Static-task P2: 100 to 80.32 percent, a 19.68 percentage-point decrease; not a global maximum across all diagnostics.",
+    "preceding_study": "Already included typed guard checks; current distinction concerns the development of guard sources, bounds, release conditions, and checked CNL."
+  },
+  "experiment_results_modified": false,
+  "numeric_verification": {
+    "alpamayo-speed-limits-001/user": {
+      "violations": 6,
+      "outputs": 9
+    },
+    "alpamayo-speed-limits-001/coc": {
+      "violations": 6,
+      "outputs": 9
+    },
+    "alpamayo-nuscenes-speed-limits-001/user": {
+      "violations": 9,
+      "outputs": 9
+    },
+    "alpamayo-nuscenes-speed-limits-001/coc": {
+      "violations": 9,
+      "outputs": 9
+    },
+    "position_hold/physicalai/user": {
+      "violations": 3,
+      "outputs": 3
+    },
+    "position_hold/physicalai/coc": {
+      "violations": 3,
+      "outputs": 3
+    },
+    "position_hold/nuscenes/user": {
+      "violations": 3,
+      "outputs": 3
+    },
+    "position_hold/nuscenes/coc": {
+      "violations": 3,
+      "outputs": 3
+    },
+    "position_hold_training/p0": {
+      "violations": 22,
+      "predictions": 192
+    },
+    "position_hold_training/p1": {
+      "violations": 1,
+      "predictions": 192
+    },
+    "position_hold_training/p2": {
+      "violations": 0,
+      "predictions": 192
+    }
+  },
+  "read_only_evidence_sha256": {
+    "projects/04-guardsynth-coc/artifacts/restricted/alpamayo-speed-limits-001/speed-limits-2026-10-07-001/compliance_metrics.csv": "0766d666656dca83099f4466d6d341eccb62abe94a668c842512d05bc829155d",
+    "projects/04-guardsynth-coc/artifacts/restricted/alpamayo-speed-limits-001/speed-limits-2026-10-07-001/rule_pair_metrics.csv": "1f025c9f0b57b949128e9ce4028cfa50b30a95524f1cbe58f7a21b4cfbc53308",
+    "projects/04-guardsynth-coc/artifacts/restricted/alpamayo-speed-limits-001/speed-limits-2026-10-07-001/RESULT.json": "830a753e9c2797c32d8f91489774436d79c00bdea047c2cb7e1a7d3a7e9a6bdf",
+    "projects/04-guardsynth-coc/artifacts/restricted/alpamayo-speed-limits-001/speed-limits-2026-10-07-001/RUN_MANIFEST.json": "c3dea0b04b510cd41c97300fe152e268bd5510866d5de67ac960f089df00d83d",
+    "projects/04-guardsynth-coc/artifacts/restricted/alpamayo-speed-limits-001/speed-limits-2026-10-07-001/REPORT_KO.md": "7baeca1c3c57c0e0bcc2aba6ec43e79391ab26aea0bebe8979b1d426b11202ac",
+    "projects/04-guardsynth-coc/artifacts/restricted/alpamayo-nuscenes-speed-limits-001/speed-limits-2026-10-08-001/compliance_metrics.csv": "3d11043e6593f76eec05b77f18e7271a92ee27773f6cbe71b3ad22586d2cb65b",
+    "projects/04-guardsynth-coc/artifacts/restricted/alpamayo-nuscenes-speed-limits-001/speed-limits-2026-10-08-001/rule_pair_metrics.csv": "0ad81ee8f42bc86f4bebc23735b329ddde959ef38d3fbb03c20d605fd30b207c",
+    "projects/04-guardsynth-coc/artifacts/restricted/alpamayo-nuscenes-speed-limits-001/speed-limits-2026-10-08-001/RESULT.json": "164e189be1091ffb985dd06d37da938fc45c27bad26fa1a51589e32df4d1d275",
+    "projects/04-guardsynth-coc/artifacts/restricted/alpamayo-nuscenes-speed-limits-001/speed-limits-2026-10-08-001/RUN_MANIFEST.json": "b4bddf98787be13983af4d670595564d79b578f554b580071f78fe7878afd9e8",
+    "projects/04-guardsynth-coc/artifacts/restricted/alpamayo-nuscenes-speed-limits-001/speed-limits-2026-10-08-001/REPORT_KO.md": "d96be64318af838ad553fb3a8bef710fb24f3e49f78fa0ca9c99e219460403e4",
+    "projects/04-guardsynth-coc/artifacts/restricted/alpamayo-position-hold-001/position-hold-2026-10-08-001/hold_metrics.csv": "d7bd73471ccf46a2a4cc36be0f9900556320f0e8f6f9fda82ef0b21a3b558171",
+    "projects/04-guardsynth-coc/artifacts/restricted/alpamayo-position-hold-001/position-hold-2026-10-08-001/RESULT.json": "fcb68549e90fb41636e1ead6401e7344fccb626b6e19dfca7fc5a9fbb6f9e5e6",
+    "projects/04-guardsynth-coc/artifacts/restricted/alpamayo-position-hold-001/position-hold-2026-10-08-001/RUN_MANIFEST.json": "3b708ab9206f871f07b75dfccca4f31c6499c422d0b742244cf4b1120c798d74",
+    "projects/04-guardsynth-coc/artifacts/restricted/alpamayo-position-hold-001/position-hold-2026-10-08-001/REPORT_KO.md": "fe713de975a3d4e173be2608f3ef66ce3dd402f7b5ff32821fbaf16d1746470b",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/comparison_metrics.csv": "1b58dce617c06379a4efd01f26ec8074912eb3e8b900e8c9ef6753e8858e71d6",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/RESULT.json": "f334f35c73f8cd603d75fbecaeaf8714c58496ab5468da7e3bbee973b7efffb0",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/RUN_MANIFEST.json": "a8cda281142c7a3e5ffd611f9fafbf3b07ad7ee6c22b5c130abee2d2aa768e31",
+    "projects/04-guardsynth-coc/artifacts/public/paper1-position-hold-training-001/position-hold-training-2026-10-08-001/REPORT_KO.md": "7f15060a357d93709b497ec0f98fee122ce0d6f2b3e142fa43a94f4a1febebdb"
+  },
+  "source_sha256": {
+    "projects/04-guardsynth-coc/paper/ieee-access/main.tex": "4cad45059303532873b0b46788040066faccaf5d923caee1b48aebff672efa71",
+    "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_INTRODUCTION_V01_EN.md": "6d985bf28beffc6bca7a07e47a2300078f9ba7e29bcded4129890db2cb7f5699",
+    "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_EXPERIMENTS_SUPPLEMENT_V01_EN.md": "1b016edd76185297e1914ae454fc7ae21845a1ecac11ad17fd3465a6051e545e",
+    "projects/04-guardsynth-coc/paper/ieee-access/references.bib": "61236d4bb63204d7b8f46c8641bf78631cf59e7e7b027efede0b7623f11ce8e1"
+  },
+  "supplement": {
+    "sections": "S1-S12",
+    "source": "ieee-access-experiments-supplement-v01-en.tex",
+    "pdf": "ieee-access-experiments-supplement-v01-en.pdf",
+    "frozen_s1_s10_preserved": true,
+    "pages": 16,
+    "pdf_sha256": "63fdca907c82f83a8ed612690b12eb5e857d16d3975d3d4f4d0aa5cef99a8fc8"
+  },
+  "manuscript_pdf": "projects/04-guardsynth-coc/paper/ieee-access/ieee-access-manuscript-en.pdf",
+  "manuscript_pdf_sha256": "1be316a2ce0d24f2541f740eee36e9ceeb0ef86229f9d14a749d7b0adbd9d53c",
+  "outside_introduction_verified": true,
+  "read_only_evidence_verified": true
+}

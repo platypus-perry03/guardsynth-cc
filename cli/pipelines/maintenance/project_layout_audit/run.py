@@ -1,4 +1,4 @@
-"""Validate Project Structure Codex v3 and persist a reproducible public audit."""
+"""Validate Project Structure Codex v4 and persist a reproducible public audit."""
 
 from __future__ import annotations
 
@@ -14,7 +14,7 @@ import sys
 from typing import Any
 
 from cli.checks.project_integrity import broken_markdown_links
-from cli.project_paths import project_root
+from cli.project_paths import artifact_roots, project_root
 
 
 ROOT = project_root(__file__)
@@ -65,7 +65,7 @@ def _file_count(path: Path) -> int:
 
 def _report(result: dict[str, Any]) -> str:
     tests = result["tests"]
-    return f"""# 프로젝트 폴더 구조 v3 리팩토링 검증 보고서
+    return f"""# 프로젝트 폴더 구조 v4 통합 검증 보고서
 
 - 상태: **{result['status']}**
 - 실행일: {result['run_date']}
@@ -107,7 +107,7 @@ skip되며, 모델 생성과 판정 파서 회귀는 실행한다.
 
 
 def run(run_id: str) -> Path:
-    output = ROOT / "artifacts/projects/guardsynth-coc/public/project-layout-refactor-001" / run_id
+    output = ROOT / "projects/04-guardsynth-coc/artifacts/public/project-layout-refactor-001" / run_id
     if output.exists():
         raise FileExistsError(f"refusing to overwrite existing run: {run_id}")
 
@@ -168,7 +168,7 @@ def run(run_id: str) -> Path:
         "run_id": run_id,
         "run_date": date.today().isoformat(),
         "status": "EXECUTED" if passed else "FAILED",
-        "layout_version": "3.3",
+        "layout_version": "4.0",
         "claim_scope": CLAIM_SCOPE,
         "tests": {
             "structure": structure,
@@ -188,11 +188,11 @@ def run(run_id: str) -> Path:
             "research_projects": "projects/<NN>-<project-id>",
             "shared_platforms": "platforms/<platform-id>",
             "applications": "apps/<app-id>",
-            "generated_artifacts": "artifacts/projects|platforms/<owner>/<class>",
+            "generated_artifacts": "projects|platforms/<owner>/artifacts/<class>",
         },
         "file_counts": {
-            "public_results": _file_count(ROOT / "artifacts/results/public"),
-            "restricted_results": _file_count(ROOT / "artifacts/results/restricted"),
+            "public_results": sum(_file_count(path) for path in artifact_roots(ROOT, "public")),
+            "restricted_results": sum(_file_count(path) for path in artifact_roots(ROOT, "restricted")),
             "maintained_eblc_tests": len(tuple((ROOT / "platforms/eblc-bcv/tests").rglob("test_*.py"))),
             "maintained_guardsynth_tests": len(tuple((ROOT / "projects/04-guardsynth-coc/tests").rglob("test_*.py"))),
         },
@@ -230,7 +230,7 @@ def run(run_id: str) -> Path:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--run-id", default="layout-v3-2026-08-12-v1")
+    parser.add_argument("--run-id", default="layout-v4-2026-10-09-001")
     args = parser.parse_args()
     output = run(args.run_id)
     print(output.relative_to(ROOT).as_posix())

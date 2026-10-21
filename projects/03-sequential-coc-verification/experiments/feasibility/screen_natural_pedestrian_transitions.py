@@ -21,7 +21,7 @@ import pandas as pd
 ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / "PROJECT_REGISTRY.json").is_file())
 DEFAULT_REASONING = ROOT / "data/restricted/nvidia_physicalai/reasoning/ood_reasoning.parquet"
 DEFAULT_PRESENCE = ROOT / "data/restricted/nvidia_physicalai/metadata/feature_presence.parquet"
-DEFAULT_BATCH = ROOT / "artifacts/results/restricted/alp-exp-005/feasibility-batch-v0"
+DEFAULT_BATCH = ROOT / "projects/01-safety-constrained-coc/artifacts/restricted/alp-exp-005/feasibility-batch-v0"
 DEFAULT_OUTPUT = DEFAULT_BATCH / "natural-pedestrian-transition-screen-v0"
 
 PEDESTRIAN = re.compile(r"\b(pedestrian(?:s)?|person|people|child(?:ren)?|crosswalk)\b", re.I)

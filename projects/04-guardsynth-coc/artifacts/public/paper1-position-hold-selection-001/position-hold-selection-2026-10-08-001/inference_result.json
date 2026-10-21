@@ -1,0 +1,8 @@
+{
+  "status": "COMPLETE",
+  "new_predictions": 2304,
+  "gpu": "NVIDIA A100 80GB PCIe",
+  "cuda_visible_devices": "8",
+  "torch": "2.8.0+cu128",
+  "transformers": "4.57.1"
+}

@@ -44,12 +44,12 @@ from guard_synth.m16_scene_acquisition import assert_public_export_safe
 
 EXPERIMENT_ID = "GUARDSYNTH-M16-SCENE-ACQUISITION-001"
 PRIOR_ROOT = ROOT / (
-    "artifacts/projects/guardsynth-coc/restricted/"
+    "projects/04-guardsynth-coc/artifacts/restricted/"
     "guardsynth-m16-scene-acquisition-001/"
     "m16-post-review-source-closure-2026-09-05-v1"
 )
 ACQUISITION_ROOT = ROOT / (
-    "artifacts/projects/guardsynth-coc/restricted/"
+    "projects/04-guardsynth-coc/artifacts/restricted/"
     "guardsynth-m16-scene-acquisition-001/"
     "m16-source-acquisition-2026-08-14-v18"
 )

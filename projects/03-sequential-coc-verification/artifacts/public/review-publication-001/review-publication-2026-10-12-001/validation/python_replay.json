@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "controlled_cases": 144,
+  "boundary_cases": 81,
+  "python_verdict_matches_expected": {
+    "legacy_full": 96,
+    "legacy_local": 72,
+    "fsm": 144,
+    "previous_1": 84,
+    "previous_3": 90,
+    "previous_5": 90,
+    "legacy_auto_text": 36
+  },
+  "all_450_models_reconstructed": true,
+  "condition_and_boundary_solver_verdicts_replayed": false
+}

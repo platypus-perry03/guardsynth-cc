@@ -4,7 +4,7 @@
     {
       "path": "baseline/coc_nusc",
       "license_class": "PUBLIC_BASELINE",
-      "consumers": ["safety-constrained-coc", "sequential-coc-verification"]
+      "consumers": ["safety-constrained-coc", "sequential-coc-verification", "guardsynth-coc"]
     },
     {
       "path": "restricted/nvidia_cascade",

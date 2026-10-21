@@ -1,0 +1,58 @@
+{
+  "project_id": "guardsynth-coc",
+  "task_id": "vlm-constraint-baselines",
+  "protocol_version": "1.0",
+  "e1": {
+    "models": ["Qwen/Qwen3-VL-2B-Instruct", "Qwen/Qwen3-VL-8B-Instruct"],
+    "inputs": "Exact frozen P2 image, CoC, CNL and candidates; no demonstrations or task-specific training",
+    "families": ["temporal", "static", "maneuver", "position_hold"],
+    "rows": 736,
+    "decoding": "Greedy, 12 new tokens, unchanged unique-option parser; invalid responses retained",
+    "seeds": "One deterministic generation, not three duplicated inference seeds"
+  },
+  "e2": {
+    "model": "Qwen/Qwen3-VL-2B-Instruct",
+    "tasks": ["temporal", "position_hold"],
+    "arms": {
+      "ce_no_rule": {"rule_input": false, "semantic_weight": 0.0},
+      "semantic_no_rule": {"rule_input": false, "semantic_weight": 1.0},
+      "ce_rule": {"rule_input": true, "semantic_weight": 0.0},
+      "semantic_rule": {"rule_input": true, "semantic_weight": 1.0}
+    },
+    "seeds": [42, 17, 123],
+    "initialization": "Same pretrained base and seeded fresh LoRA initialization for every arm; no historical temporal adapters",
+    "rule_availability": "Arm-specific rule availability at both training and evaluation; additional common-rule evaluation reported separately",
+    "loss": "Assistant-only token cross entropy + lambda * (-log(sum of conditional A-D probabilities of admissible labels))",
+    "semantic_scope": "Categorical adaptation inspired by Xu et al. (ICML 2018); not a reproduction of their Bernoulli-output experiments",
+    "semantic_probabilities": "FP32 softmax over A-D logits at the first assistant label position; no reference label in admissibility mask",
+    "admissibility": "Independent integer rules evaluated only to construct training masks and to score held-out predictions; no oracle filtering during decoding",
+    "epochs": 3,
+    "training_rows_per_task": 960,
+    "batch_size": 2,
+    "gradient_accumulation": 8,
+    "optimizer_updates": 180,
+    "learning_rate": 0.0002,
+    "weight_decay": 0.01,
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "gradient_clip_norm": 1.0,
+    "checkpoint": "Fixed final epoch, no validation or test selection",
+    "hyperparameters": "lambda=1 fixed before execution; no test-driven tuning",
+    "planned_fits": 24
+  },
+  "metrics": ["accuracy", "violation_rate", "invalid_rate", "rule_pair_accuracy"],
+  "grouping": "Task, rule duration and input encoding; no pooling of correlated variants as independent scenes",
+  "sources": {
+    "qwen8b": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct",
+    "semantic_loss": "https://proceedings.mlr.press/v80/xu18h.html"
+  },
+  "interpretation": [
+    "Without the rule, identical inputs can have different reference labels; report empirical input-identifiability ceiling",
+    "Low violation alone can reflect conservative lower-progress selections; always report accuracy and paired correctness",
+    "Semantic loss constrains conditional A-D mass, not the full generated language; invalid outputs remain possible",
+    "Fresh position-hold fits differ from historical continuation fits; do not claim matched historical initialization",
+    "Only synthetic candidate selection; no trajectory generation, independent road-scene or runtime safety guarantee",
+    "An 8B success or failure is evidence for these frozen tasks, not a universal necessity or sufficiency of training"
+  ]
+}

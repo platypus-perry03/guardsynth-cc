@@ -43,12 +43,12 @@ from guard_synth.m16_geometry_candidate import (
 EXPERIMENT_ID = "GUARDSYNTH-M16-SCENE-ACQUISITION-001"
 RUN_STATUS = "M16_SOURCE_GEOMETRY_CANDIDATES_GENERATED_CURATOR_REVIEW_REQUIRED"
 PRIOR_ROOT = ROOT / (
-    "artifacts/projects/guardsynth-coc/restricted/"
+    "projects/04-guardsynth-coc/artifacts/restricted/"
     "guardsynth-m16-scene-acquisition-001/"
     "m16-cascade-structured-link-audit-2026-09-05-v1"
 )
 ACQUISITION_ROOT = ROOT / (
-    "artifacts/projects/guardsynth-coc/restricted/"
+    "projects/04-guardsynth-coc/artifacts/restricted/"
     "guardsynth-m16-scene-acquisition-001/"
     "m16-source-acquisition-2026-08-14-v18"
 )

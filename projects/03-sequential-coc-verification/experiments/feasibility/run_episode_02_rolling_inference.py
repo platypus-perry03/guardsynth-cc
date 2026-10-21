@@ -13,7 +13,7 @@ from pathlib import Path
 ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / "PROJECT_REGISTRY.json").is_file())
 RUNNER = ROOT / "runtime/alpamayo/run_alp_exp_005.py"
 PYTHON = ROOT / "runtime/alpamayo/ar1_venv/bin/python"
-BATCH = ROOT / "artifacts/results/restricted/alp-exp-005/feasibility-batch-v0"
+BATCH = ROOT / "projects/01-safety-constrained-coc/artifacts/restricted/alp-exp-005/feasibility-batch-v0"
 OUTPUT = BATCH / "episode-02-rolling-prefix-v0"
 CLIP_ID = "13f0af4c-2565-4a4d-b765-7f397f1d1684"
 BASE_T0_US = 5_148_839
@@ -100,7 +100,7 @@ def main() -> int:
         "prefix_offsets_us": [0, *OFFSETS_US],
         "seeds": sorted(SEED_TO_PHYSICAL_GPU),
         "physical_gpu_assignment": {str(k): v for k, v in SEED_TO_PHYSICAL_GPU.items()},
-        "base_prefix_source": "artifacts/results/restricted/alp-exp-005/feasibility-batch-v0/episode-02",
+        "base_prefix_source": "projects/01-safety-constrained-coc/artifacts/restricted/alp-exp-005/feasibility-batch-v0/episode-02",
         "new_run_count": len(OFFSETS_US) * len(SEED_TO_PHYSICAL_GPU),
         "records": records,
         "publication_control": "LICENSE_RESTRICTED_INTERNAL_RESULT",

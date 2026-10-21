@@ -85,7 +85,7 @@ C1 stopping_distance@0 = 3
 division definedness   = 18 assertions
 ```
 
-실행 artifact는 [보고서](../../../../artifacts/results/public/guardsynth-source-aware-generator-001/source-aware-generator-2026-08-09-v3/REPORT_KO.md)에 있다.
+실행 artifact는 [보고서](../../artifacts/public/guardsynth-source-aware-generator-001/source-aware-generator-2026-08-09-v3/REPORT_KO.md)에 있다.
 
 ## 6. 입증하지 않은 것과 다음 작업
 

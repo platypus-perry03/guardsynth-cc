@@ -1,0 +1,161 @@
+{
+  "source": "actual CARLA Town02 episode 20261021T193018Z",
+  "official_repository": "https://github.com/NVlabs/alpamayo-coc-autolabeler",
+  "official_commit": "4dda80943b8a88b186f0fe8b0340789380c0ce39",
+  "prompt": "full unabridged official CoC prompt via original VLMCoCAgent; no compact subclass and no extra grounding override",
+  "image_count": 16,
+  "packing": "16 individual original 640x360 PNGs, no contact sheets or resizing",
+  "history_frames": 4,
+  "future_frames": 12,
+  "frame_interval_seconds": 0.5,
+  "keyframe_time_seconds": 5.1,
+  "max_tokens": 1024,
+  "maximum_content_parts_in_one_message": 32,
+  "api_key_included": false,
+  "frames": [
+    {
+      "file": "frames/000031.png",
+      "source_frame_index": 31,
+      "time_seconds": 3.1,
+      "relative_to_event_seconds": -2.0,
+      "width": 640,
+      "height": 360,
+      "sha256": "26e8df184800d4287e6d6a567d7a200bf4e41d0ec092ccfa2fb1453a5fea2b66"
+    },
+    {
+      "file": "frames/000036.png",
+      "source_frame_index": 36,
+      "time_seconds": 3.6,
+      "relative_to_event_seconds": -1.5,
+      "width": 640,
+      "height": 360,
+      "sha256": "434126c5e574da2668567f248c9245326a937d1e83298b8cfc635eab8bc006b5"
+    },
+    {
+      "file": "frames/000041.png",
+      "source_frame_index": 41,
+      "time_seconds": 4.1000000000000005,
+      "relative_to_event_seconds": -1.0,
+      "width": 640,
+      "height": 360,
+      "sha256": "ee57284ab14ead56c2fd3c9199d9c2f09f06bc4f1f249eb09a6a2e5d9c599f8e"
+    },
+    {
+      "file": "frames/000046.png",
+      "source_frame_index": 46,
+      "time_seconds": 4.6000000000000005,
+      "relative_to_event_seconds": -0.5,
+      "width": 640,
+      "height": 360,
+      "sha256": "03259d0b3e59837c3ee25a47ced75c1181bba6d920605fdcac527742530c2d8c"
+    },
+    {
+      "file": "frames/000051.png",
+      "source_frame_index": 51,
+      "time_seconds": 5.1000000000000005,
+      "relative_to_event_seconds": 0.0,
+      "width": 640,
+      "height": 360,
+      "sha256": "3eae379828684036f3d84623d1eff68c6e4f5306fe0167a9c7e0d5f45fc5250f"
+    },
+    {
+      "file": "frames/000056.png",
+      "source_frame_index": 56,
+      "time_seconds": 5.6000000000000005,
+      "relative_to_event_seconds": 0.5,
+      "width": 640,
+      "height": 360,
+      "sha256": "2e7ce89f214575af6ebffbffd1d63b239b52b208b67fdf3f5f98363435508fbc"
+    },
+    {
+      "file": "frames/000061.png",
+      "source_frame_index": 61,
+      "time_seconds": 6.1000000000000005,
+      "relative_to_event_seconds": 1.0,
+      "width": 640,
+      "height": 360,
+      "sha256": "db3fad59e35264d1ca5a328ad262987adfacf719bd182bb5a5d46452f4aa7636"
+    },
+    {
+      "file": "frames/000066.png",
+      "source_frame_index": 66,
+      "time_seconds": 6.6000000000000005,
+      "relative_to_event_seconds": 1.5,
+      "width": 640,
+      "height": 360,
+      "sha256": "537ac393c91b2a421694894db13ebd30df94cbf0b0c8712f89489a3a77f4bbae"
+    },
+    {
+      "file": "frames/000071.png",
+      "source_frame_index": 71,
+      "time_seconds": 7.1000000000000005,
+      "relative_to_event_seconds": 2.0,
+      "width": 640,
+      "height": 360,
+      "sha256": "31d724376120669bfea99b96be76847a13b79474caaa9a23e4f8aaad4ff52aa3"
+    },
+    {
+      "file": "frames/000076.png",
+      "source_frame_index": 76,
+      "time_seconds": 7.6000000000000005,
+      "relative_to_event_seconds": 2.5,
+      "width": 640,
+      "height": 360,
+      "sha256": "e24cd0cc551c0d638d1a4ed6faa32ff06e9f649b3b018e4bafe6155472bf60ff"
+    },
+    {
+      "file": "frames/000081.png",
+      "source_frame_index": 81,
+      "time_seconds": 8.1,
+      "relative_to_event_seconds": 3.0,
+      "width": 640,
+      "height": 360,
+      "sha256": "f226c0e63ece63a1e00d2fcd3dc4c1cfa0f0de8532023de6f22584fc66914451"
+    },
+    {
+      "file": "frames/000086.png",
+      "source_frame_index": 86,
+      "time_seconds": 8.6,
+      "relative_to_event_seconds": 3.5,
+      "width": 640,
+      "height": 360,
+      "sha256": "fff4cc7971f06029bcef4e5c8dc90a6c3ec702e2454f96bfeacafbf77b4744e1"
+    },
+    {
+      "file": "frames/000091.png",
+      "source_frame_index": 91,
+      "time_seconds": 9.1,
+      "relative_to_event_seconds": 4.0,
+      "width": 640,
+      "height": 360,
+      "sha256": "d402b70be2719ee5bf90b091770dbf78ac467e6ec91f8b15dc304607c7e2c20b"
+    },
+    {
+      "file": "frames/000096.png",
+      "source_frame_index": 96,
+      "time_seconds": 9.600000000000001,
+      "relative_to_event_seconds": 4.5,
+      "width": 640,
+      "height": 360,
+      "sha256": "7b45cc5c067f0f6ca0fdf7c30956710a8f13ab84e9132a33d34847a932ee3a01"
+    },
+    {
+      "file": "frames/000101.png",
+      "source_frame_index": 101,
+      "time_seconds": 10.100000000000001,
+      "relative_to_event_seconds": 5.0,
+      "width": 640,
+      "height": 360,
+      "sha256": "b5ec586550d8605c6e3b3e06e39e4a0772dfe1ccaec4370332ff9f588acd6a2e"
+    },
+    {
+      "file": "frames/000106.png",
+      "source_frame_index": 106,
+      "time_seconds": 10.600000000000001,
+      "relative_to_event_seconds": 5.5,
+      "width": 640,
+      "height": 360,
+      "sha256": "82e661a4fe23050a01555df0453b19ea6da4a2778673782c2891c90bbdda5675"
+    }
+  ]
+}

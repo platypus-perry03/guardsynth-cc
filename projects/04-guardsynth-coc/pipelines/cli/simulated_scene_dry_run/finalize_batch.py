@@ -28,43 +28,43 @@ from guard_synth.sim24_batch import build_sim24_terminal_batch
 
 EXPERIMENT_ID = "GUARDSYNTH-SIM24-BATCH-001"
 DEFAULT_INVENTORY = ROOT / (
-    "artifacts/results/restricted/guardsynth-sim24-candidate-audit-001/"
+    "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-sim24-candidate-audit-001/"
     "alpamayo-candidate-inventory-2026-08-12-v2/SCENE_CANDIDATE_INVENTORY.json"
 )
 DEFAULT_CLOSURES = (
     ROOT / (
-        "artifacts/results/restricted/guardsynth-simulated-scene-evidence-001/"
+        "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-simulated-scene-evidence-001/"
         "alpamayo-episode-00-event-02-2026-08-12-v1/SCENE_SOURCE_CLOSURE.json"
     ),
     ROOT / (
-        "artifacts/results/restricted/guardsynth-simulated-scene-evidence-001/"
+        "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-simulated-scene-evidence-001/"
         "alpamayo-episode-02-event-00-2026-08-12-v1/SCENE_SOURCE_CLOSURE.json"
     ),
     ROOT / (
-        "artifacts/results/restricted/guardsynth-simulated-scene-evidence-001/"
+        "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-simulated-scene-evidence-001/"
         "alpamayo-episode-02-event-01-2026-08-12-v1/SCENE_SOURCE_CLOSURE.json"
     ),
     ROOT / (
-        "artifacts/results/restricted/guardsynth-calibration-scene-source-audit-001/"
+        "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-calibration-scene-source-audit-001/"
         "alpamayo-calibration-source-2026-08-11-v17-rule-applicability/"
         "CALIBRATION_SOURCE_AUDIT.json"
     ),
 )
 DEFAULT_RUNS = (
     ROOT / (
-        "artifacts/results/restricted/guardsynth-simulated-scene-dry-run-001/"
+        "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-simulated-scene-dry-run-001/"
         "alpamayo-episode-00-event-02-simulation-2026-08-12-v2"
     ),
     ROOT / (
-        "artifacts/results/restricted/guardsynth-simulated-scene-dry-run-001/"
+        "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-simulated-scene-dry-run-001/"
         "alpamayo-episode-02-event-00-simulation-2026-08-12-v2"
     ),
     ROOT / (
-        "artifacts/results/restricted/guardsynth-simulated-scene-dry-run-001/"
+        "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-simulated-scene-dry-run-001/"
         "alpamayo-episode-02-event-01-simulation-2026-08-12-v2"
     ),
     ROOT / (
-        "artifacts/results/restricted/guardsynth-simulated-scene-dry-run-001/"
+        "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-simulated-scene-dry-run-001/"
         "alpamayo-episode-05-event-01-simulation-2026-08-12-v5"
     ),
 )

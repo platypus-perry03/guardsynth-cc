@@ -37,7 +37,7 @@ runtime/alpamayo/ar1_venv/bin/python \
 기본 결과는 제한 결과 아래에 저장한다.
 
 ```text
-artifacts/results/restricted/alp-exp-005/feasibility-batch-v0/
+projects/01-safety-constrained-coc/artifacts/restricted/alp-exp-005/feasibility-batch-v0/
   bounded-temporal-smt-v0/verification-result.json
 ```
 
@@ -87,7 +87,7 @@ runtime/alpamayo/ar1_venv/bin/python \
 결과와 A/B 블라인드 검토 화면은 각각 아래에 저장된다.
 
 ```text
-artifacts/results/restricted/alp-exp-005/feasibility-batch-v0/
+projects/01-safety-constrained-coc/artifacts/restricted/alp-exp-005/feasibility-batch-v0/
   phase-aware-alignment-v1/
   phase-aware-review-v1/
 ```

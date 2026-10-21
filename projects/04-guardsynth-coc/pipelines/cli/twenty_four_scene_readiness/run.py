@@ -30,7 +30,7 @@ from guard_synth.source_catalog import KR_FIXTURE_PATH, load_source_catalog
 
 EXPERIMENT_ID = "GUARDSYNTH-24-SCENE-DRY-RUN-001"
 DEFAULT_RUN_ID = "kr-dry-run-readiness-2026-08-10-v1"
-LEGACY_PUBLIC_RESULT = ROOT / "artifacts/results/public/guardsynth-real-scene-readiness-001/terminal-readiness-2026-08-09-v3/RESULT.json"
+LEGACY_PUBLIC_RESULT = ROOT / "projects/04-guardsynth-coc/artifacts/public/guardsynth-real-scene-readiness-001/terminal-readiness-2026-08-09-v3/RESULT.json"
 CLAIM_SCOPE = "M13_SLOT_AND_INPUT_READINESS_NOT_REAL_SCENE_EXECUTION_ASSOCIATION_ACCURACY_OR_VEHICLE_SAFETY"
 
 
@@ -105,7 +105,7 @@ packet과 vehicle assurance를 확보·작성하는 것이다.
 
 
 def execute(run_id: str) -> tuple[Path, dict[str, Any]]:
-    output = ROOT / "artifacts/results/public/guardsynth-24-scene-dry-run-001" / run_id
+    output = ROOT / "projects/04-guardsynth-coc/artifacts/public/guardsynth-24-scene-dry-run-001" / run_id
     if output.exists():
         raise FileExistsError(f"refusing to overwrite existing run: {run_id}")
     output.mkdir(parents=True)

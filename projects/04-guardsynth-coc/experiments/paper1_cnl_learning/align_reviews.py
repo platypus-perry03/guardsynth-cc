@@ -19,7 +19,7 @@ ROOT = next(p for p in Path(__file__).resolve().parents if (p / "PROJECT_REGISTR
 sys.path[:0] = [str(ROOT), str(ROOT / "projects/04-guardsynth-coc/src")]
 from guard_synth.review_constraint_alignment import ALIGNMENT_VERSION, align_reviewed_scene, index_records
 
-BASE = ROOT / "artifacts/projects/guardsynth-coc/restricted"
+BASE = ROOT / "projects/04-guardsynth-coc/artifacts/restricted"
 ACQUISITION = BASE / "guardsynth-m16-scene-acquisition-001"
 REVIEW = BASE / "guardsynth-m16-source-review-001/m16-source-review-2026-09-04-v1"
 GEOMETRY = ACQUISITION / "m16-geometry-candidate-2026-09-05-v1"
@@ -107,7 +107,7 @@ def execute(output):
     geometry_path = GEOMETRY / "GEOMETRY_CANDIDATE_MANIFEST.json"
     geometry_manifest = load(geometry_path)
     verified(geometry_path, load(GEOMETRY / "RUN_MANIFEST.json")["output_hashes"]["geometry_candidate_manifest"])
-    geometry_json = SUBMISSION / "m16_geometry_candidate_review (1).json"
+    geometry_json = SUBMISSION / "m16_geometry_candidate_review_v2_0.json"
     geometry_csv = geometry_json.with_suffix(".csv")
     geometry_export = load(geometry_json)
     verified(geometry_path, geometry_export["manifest_sha256"])

@@ -17,7 +17,7 @@ from alpamayo_r1.load_physical_aiavdataset import load_physical_aiavdataset
 ROOT = next(parent for parent in Path(__file__).resolve().parents if (parent / "PROJECT_REGISTRY.json").is_file())
 REVIEW_ROOT = (
     ROOT
-    / "artifacts/results/restricted/alp-exp-005"
+    / "projects/01-safety-constrained-coc/artifacts/restricted/alp-exp-005"
     / "feasibility-batch-v0/blind-review-v0"
 )
 COHORT_PATH = (

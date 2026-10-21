@@ -1,0 +1,344 @@
+{
+  "project_id": "guardsynth-coc",
+  "task_id": "learning-specification-fault-injection",
+  "status": "COMPLETE",
+  "aggregate": {
+    "cases": 384,
+    "valid_cases": 48,
+    "valid_accepted": 48,
+    "supported_errors": 288,
+    "supported_detected": 288,
+    "supported_kernel_detected": 192,
+    "shared_source_errors": 48,
+    "shared_source_missed": 48,
+    "unknown_cases": 0,
+    "probe_queries": 7392,
+    "by_kind": {
+      "valid": {
+        "cases": 48,
+        "detected": 0,
+        "kernel_detected": 0,
+        "layer_flags": {
+          "structural": 0,
+          "consistency": 0,
+          "logic_rule": 0,
+          "evidence": 0,
+          "sentence": 0
+        }
+      },
+      "duration_change": {
+        "cases": 48,
+        "detected": 48,
+        "kernel_detected": 48,
+        "layer_flags": {
+          "structural": 0,
+          "consistency": 0,
+          "logic_rule": 48,
+          "evidence": 48,
+          "sentence": 0
+        }
+      },
+      "reverse_comparison": {
+        "cases": 48,
+        "detected": 48,
+        "kernel_detected": 48,
+        "layer_flags": {
+          "structural": 0,
+          "consistency": 0,
+          "logic_rule": 48,
+          "evidence": 0,
+          "sentence": 0
+        }
+      },
+      "delete_release": {
+        "cases": 48,
+        "detected": 48,
+        "kernel_detected": 48,
+        "layer_flags": {
+          "structural": 0,
+          "consistency": 0,
+          "logic_rule": 48,
+          "evidence": 0,
+          "sentence": 0
+        }
+      },
+      "unit_error": {
+        "cases": 48,
+        "detected": 48,
+        "kernel_detected": 48,
+        "layer_flags": {
+          "structural": 48,
+          "consistency": 0,
+          "logic_rule": 0,
+          "evidence": 0,
+          "sentence": 0
+        }
+      },
+      "cnl_duration": {
+        "cases": 48,
+        "detected": 48,
+        "kernel_detected": 0,
+        "layer_flags": {
+          "structural": 0,
+          "consistency": 0,
+          "logic_rule": 0,
+          "evidence": 0,
+          "sentence": 48
+        }
+      },
+      "cnl_negation": {
+        "cases": 48,
+        "detected": 48,
+        "kernel_detected": 0,
+        "layer_flags": {
+          "structural": 0,
+          "consistency": 0,
+          "logic_rule": 0,
+          "evidence": 0,
+          "sentence": 48
+        }
+      },
+      "shared_source_error": {
+        "cases": 48,
+        "detected": 0,
+        "kernel_detected": 0,
+        "layer_flags": {
+          "structural": 0,
+          "consistency": 0,
+          "logic_rule": 0,
+          "evidence": 0,
+          "sentence": 0
+        }
+      }
+    }
+  },
+  "profiles": {
+    "pedestrian_entry": {
+      "cases": 192,
+      "valid_cases": 24,
+      "valid_accepted": 24,
+      "supported_errors": 144,
+      "supported_detected": 144,
+      "supported_kernel_detected": 96,
+      "shared_source_errors": 24,
+      "shared_source_missed": 24,
+      "unknown_cases": 0,
+      "probe_queries": 1680,
+      "by_kind": {
+        "valid": {
+          "cases": 24,
+          "detected": 0,
+          "kernel_detected": 0,
+          "layer_flags": {
+            "structural": 0,
+            "consistency": 0,
+            "logic_rule": 0,
+            "evidence": 0,
+            "sentence": 0
+          }
+        },
+        "duration_change": {
+          "cases": 24,
+          "detected": 24,
+          "kernel_detected": 24,
+          "layer_flags": {
+            "structural": 0,
+            "consistency": 0,
+            "logic_rule": 24,
+            "evidence": 24,
+            "sentence": 0
+          }
+        },
+        "reverse_comparison": {
+          "cases": 24,
+          "detected": 24,
+          "kernel_detected": 24,
+          "layer_flags": {
+            "structural": 0,
+            "consistency": 0,
+            "logic_rule": 24,
+            "evidence": 0,
+            "sentence": 0
+          }
+        },
+        "delete_release": {
+          "cases": 24,
+          "detected": 24,
+          "kernel_detected": 24,
+          "layer_flags": {
+            "structural": 0,
+            "consistency": 0,
+            "logic_rule": 24,
+            "evidence": 0,
+            "sentence": 0
+          }
+        },
+        "unit_error": {
+          "cases": 24,
+          "detected": 24,
+          "kernel_detected": 24,
+          "layer_flags": {
+            "structural": 24,
+            "consistency": 0,
+            "logic_rule": 0,
+            "evidence": 0,
+            "sentence": 0
+          }
+        },
+        "cnl_duration": {
+          "cases": 24,
+          "detected": 24,
+          "kernel_detected": 0,
+          "layer_flags": {
+            "structural": 0,
+            "consistency": 0,
+            "logic_rule": 0,
+            "evidence": 0,
+            "sentence": 24
+          }
+        },
+        "cnl_negation": {
+          "cases": 24,
+          "detected": 24,
+          "kernel_detected": 0,
+          "layer_flags": {
+            "structural": 0,
+            "consistency": 0,
+            "logic_rule": 0,
+            "evidence": 0,
+            "sentence": 24
+          }
+        },
+        "shared_source_error": {
+          "cases": 24,
+          "detected": 0,
+          "kernel_detected": 0,
+          "layer_flags": {
+            "structural": 0,
+            "consistency": 0,
+            "logic_rule": 0,
+            "evidence": 0,
+            "sentence": 0
+          }
+        }
+      }
+    },
+    "position_hold": {
+      "cases": 192,
+      "valid_cases": 24,
+      "valid_accepted": 24,
+      "supported_errors": 144,
+      "supported_detected": 144,
+      "supported_kernel_detected": 96,
+      "shared_source_errors": 24,
+      "shared_source_missed": 24,
+      "unknown_cases": 0,
+      "probe_queries": 5712,
+      "by_kind": {
+        "valid": {
+          "cases": 24,
+          "detected": 0,
+          "kernel_detected": 0,
+          "layer_flags": {
+            "structural": 0,
+            "consistency": 0,
+            "logic_rule": 0,
+            "evidence": 0,
+            "sentence": 0
+          }
+        },
+        "duration_change": {
+          "cases": 24,
+          "detected": 24,
+          "kernel_detected": 24,
+          "layer_flags": {
+            "structural": 0,
+            "consistency": 0,
+            "logic_rule": 24,
+            "evidence": 24,
+            "sentence": 0
+          }
+        },
+        "reverse_comparison": {
+          "cases": 24,
+          "detected": 24,
+          "kernel_detected": 24,
+          "layer_flags": {
+            "structural": 0,
+            "consistency": 0,
+            "logic_rule": 24,
+            "evidence": 0,
+            "sentence": 0
+          }
+        },
+        "delete_release": {
+          "cases": 24,
+          "detected": 24,
+          "kernel_detected": 24,
+          "layer_flags": {
+            "structural": 0,
+            "consistency": 0,
+            "logic_rule": 24,
+            "evidence": 0,
+            "sentence": 0
+          }
+        },
+        "unit_error": {
+          "cases": 24,
+          "detected": 24,
+          "kernel_detected": 24,
+          "layer_flags": {
+            "structural": 24,
+            "consistency": 0,
+            "logic_rule": 0,
+            "evidence": 0,
+            "sentence": 0
+          }
+        },
+        "cnl_duration": {
+          "cases": 24,
+          "detected": 24,
+          "kernel_detected": 0,
+          "layer_flags": {
+            "structural": 0,
+            "consistency": 0,
+            "logic_rule": 0,
+            "evidence": 0,
+            "sentence": 24
+          }
+        },
+        "cnl_negation": {
+          "cases": 24,
+          "detected": 24,
+          "kernel_detected": 0,
+          "layer_flags": {
+            "structural": 0,
+            "consistency": 0,
+            "logic_rule": 0,
+            "evidence": 0,
+            "sentence": 24
+          }
+        },
+        "shared_source_error": {
+          "cases": 24,
+          "detected": 0,
+          "kernel_detected": 0,
+          "layer_flags": {
+            "structural": 0,
+            "consistency": 0,
+            "logic_rule": 0,
+            "evidence": 0,
+            "sentence": 0
+          }
+        }
+      }
+    }
+  },
+  "interpretation": [
+    "Fault injection into the exact representation, lowering, and renderer used for learning",
+    "New evaluation-time evidence and sentence checks were not part of historical training runs",
+    "Repeated contexts use only two distinct rule specifications per task; no independent-scene or population inference",
+    "No VLM training, inference, image labeling, or continuous-time vehicle-safety claim",
+    "Do not pool the earlier separate temporal-profile evaluation with these counts"
+  ]
+}

@@ -9,7 +9,7 @@
 \makekieefrontmatter{%
 \begin{kieeabstract}
 % English abstract and Korean introduction updated from the supplied draft.
-\rev{Vision--language driving models explain their actions with Chain-of-Causation (CoC) text, but an explanation rarely states when the requirement it introduces ends. Read in order, an earlier obligation such as ``stop until the pedestrian has passed'' may still be active when a later CoC justifies proceeding by a different condition, such as a green light. We present a framework that links each obligation to its release conditions and condition-specific evidence, separates confirmed contradictions from insufficient release evidence, and reports the first issue event and the obligation involved. The checking rules are implemented as a UPPAAL observer model with explicit queries. Checker inputs are symbolic frames written by the authors; automatic extraction accuracy on natural CoC text is not evaluated. On 144 authored scenarios, an earlier single-obligation checker matched the expected decision in 96/144 cases; the condition-linked model developed from this failure analysis matched 144/144 on regression, as did a simple finite-state machine. On 81 two- and three-scene boundary cases with given object identity, scope, and evidence validity, the retaining model matched all expected decisions, whereas a model that resets state at scene boundaries judged 41 of 44 contradiction cases compatible with the encoded obligations. A hash-fixed, unselected enumeration of 35,042,928 event sequences found no mismatch between the model step and a separately written formula evaluator. Four reviewers of 27 natural CoC scenes agreed poorly on textual consistency (Fleiss' $\kappa$ = 0.027), so natural detection accuracy is not reported. The results show feasibility on authored symbolic inputs, not accuracy on natural annotations or vehicle safety.}
+\rev{Chain-of-Causation (CoC) explanations from vision--language driving models state why an action is taken but may omit when its obligation ends. An earlier ``stop until the pedestrian has passed'' obligation may remain active when a later CoC justifies proceeding by a green light. We present a framework that links each obligation to its release conditions and condition-specific evidence, separates confirmed contradictions from insufficient release evidence, and reports the first issue event. The rules run as a UPPAAL observer model on symbolic frames written by the authors. In 40 legacy pairs, a memoryless checker missed both cross-event error types (20/40 versus 40/40). On 144 authored scenarios, the earlier single-obligation checker matched 96/144 expected decisions; the condition-linked model developed after this failure analysis matched 144/144 when rerun on the same cases, as did a simple finite-state machine. In 81 authored boundary cases with supplied links, retaining state matched all expected decisions, whereas resetting it judged 41 of 44 contradictions compatible. An unselected enumeration of 35,042,928 event sequences matched a separate formula evaluator. Four reviewers disagreed on 27 natural scenes (Fleiss' $\kappa$ = 0.027). Without independent reference labels, natural accuracy is not reported. Results demonstrate feasibility on authored inputs, not vehicle safety.}
 \end{kieeabstract}
 \kieekeywords{\rev{Chain-of-Causation, Temporal consistency, Condition-linked obligations, Model checking, Feasibility, Evidence traceability}}
 }
@@ -25,12 +25,15 @@
 \input{sections/10-conclusion}
 \input{sections/11-appendix}
 
+% Omit identifying funding details from anonymous review PDFs; restore for publication.
+\iffalse
 \section*{감사의 글}
 \begingroup
 \raggedright
 본 연구는 대한민국 정부(교육과학기술부)의 재원으로 한국연구재단(NRF)의 지원을 받아 수행되었으며(\nolinkurl{NRF-2023R1A2C1006639}), 대한민국 정부(과학기술정보통신부)의 재원으로 정보통신기획평가원(IITP)의 지역지능화혁신인재양성사업 지원을 받아 수행되었음(\nolinkurl{IITP-2026-RS-2024-00436773}).
 \par
 \endgroup
+\fi
 \bibliographystyle{unsrt}
 \begingroup
 \fontsize{8pt}{12pt}\selectfont

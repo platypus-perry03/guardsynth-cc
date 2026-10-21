@@ -21,8 +21,8 @@ ROOT = HERE.parents[3]
 DATA = HERE / "data"
 DATA.mkdir(parents=True, exist_ok=True)
 
-TEMPORAL_JSON = ROOT / "artifacts/results/public/small-vlm-guard-v0/temporal-guard-multiseed-v0/summary.json"
-MANEUVER_JSON = ROOT / "artifacts/results/public/small-vlm-guard-v0/maneuver-guard-multiseed-v0/summary.json"
+TEMPORAL_JSON = ROOT / "projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/temporal-guard-multiseed-v0/summary.json"
+MANEUVER_JSON = ROOT / "projects/01-safety-constrained-coc/artifacts/public/small-vlm-guard-v0/maneuver-guard-multiseed-v0/summary.json"
 
 BLUE = "#2878A0"
 GREEN = "#28785A"
@@ -364,7 +364,7 @@ def figure_release_reversal() -> None:
         {"condition": "지연된 동적 계약", "unsafe": 0.481, "collision": 0.248},
         {"condition": "지연된 차단장치", "unsafe": 0.348, "collision": 0.163},
     ]
-    source = "artifacts/results/public/contract-microworld-v2/pilot-release-reversal-2026-08-04-v1/DEEP_STRESS_ASSESSMENT_KO.md"
+    source = "projects/01-safety-constrained-coc/artifacts/public/contract-microworld-v2/pilot-release-reversal-2026-08-04-v1/DEEP_STRESS_ASSESSMENT_KO.md"
     for row in rows: row["source"] = source
     write_csv("release_reversal.csv", ["condition", "unsafe", "collision", "source"], rows)
     fig, axes = plt.subplots(

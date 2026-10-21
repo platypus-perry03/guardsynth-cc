@@ -153,7 +153,7 @@ def _project(root: Path, registry_entry: dict, overrides: Mapping[Path, str]) ->
     if not paper_root.is_dir() or owner not in paper_root.parents:
         raise ProjectionError(f"invalid paper root for {registry_entry['id']}")
     readme_path = owner / "README.md"
-    result_index_path = owner / "results/RESULT_INDEX.md"
+    result_index_path = owner / "artifacts/RESULT_INDEX.md"
     for source in (readme_path, result_index_path):
         if not source.is_file():
             raise ProjectionError(f"missing canonical source: {source}")

@@ -1,0 +1,14 @@
+{
+  "seed": 42,
+  "lora_sha256": "072e6092c12eac4b3f81068a15f0362f89f4f1b19dd11e8d2bce83d39b1e5baa",
+  "model": {
+    "path": "LOCAL_PATH_REMOVED_d248733d543e",
+    "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+    "config_sha256": "bec4b3d446efa05807365c9e1cec03ac590836879d02f3a6da879971154bdd3b",
+    "index_sha256": null,
+    "shards": {
+      "model.safetensors": 4255140312
+    }
+  },
+  "cuda_visible_devices": "GPU_ID_REMOVED"
+}

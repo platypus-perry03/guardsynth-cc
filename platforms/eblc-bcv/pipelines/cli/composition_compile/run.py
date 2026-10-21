@@ -271,7 +271,7 @@ def execute(
     run_id: str,
     program_version: str = "eblc-program-v0.2",
 ) -> tuple[Path, dict[str, Any]]:
-    output = ROOT / "artifacts/results/public/eblc-composition-compilation-001" / run_id
+    output = ROOT / "platforms/eblc-bcv/artifacts/public/eblc-composition-compilation-001" / run_id
     if output.exists():
         raise FileExistsError(f"refusing to overwrite existing run: {run_id}")
     bundle = (

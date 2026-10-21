@@ -14,12 +14,12 @@
       "reason": "Publisher LaTeX class filenames are external interfaces."
     },
     {
-      "pattern": "artifacts/projects/guardsynth-coc/restricted/guardsynth-project-portal-001/portal-2026-08-12-v6/reviews/*.html",
-      "reason": "The completed v6 portal run is immutable; its recorded review bundle paths are preserved for manifest reproducibility."
+      "pattern": "projects/04-guardsynth-coc/paper/ieee-access/template/IEEEtran.bst",
+      "reason": "Preserve the unmodified CTAN IEEE BibTeX style filename; source, license notices, and SHA-256 are recorded in the adjacent README. This exception covers only this paper dependency."
     },
     {
-      "pattern": "artifacts/projects/guardsynth-coc/restricted/guardsynth-eblc-learning-001/paper1-vlm-smoke-2026-09-06-002/adapters/L[0-3]",
-      "reason": "PEFT generated these four adapter directories from arm identifiers in the completed hash-manifested 002 run. Preserve immutable checkpoint provenance; the producer now uses lowercase adapter names. This exception admits only these exact four directories, not later runs."
+      "pattern": "projects/04-guardsynth-coc/artifacts/restricted/alpamayo-speed-limits-001/speed-limits-2026-10-07-001/episode-0[269]/seed-4[234]000.json",
+      "reason": "Preserve the exact nine checksummed record paths in the completed, source-frozen Alpamayo speed-limit pilot. Its producer is pinned to this immutable run and refuses recreation; subsequent protocols must use snake_case JSON names. This exception admits no other scene, seed, or run."
     }
   ]
 }

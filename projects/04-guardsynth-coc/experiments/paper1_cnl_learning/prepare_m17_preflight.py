@@ -20,7 +20,7 @@ ROOT = entry.r.ROOT
 BASE = entry.PARENT.parent
 INTAKE = BASE / "source-observation-intake-2026-09-28-001"
 PACKET = BASE / "source-gap-ui-2026-09-09-002/source_gap_packet.json"
-EXPOSURE = ROOT / "artifacts/projects/guardsynth-coc/restricted/guardsynth-eblc-learning-001/paper1-source-audit-2026-09-06-002/source_audit.json"
+EXPOSURE = ROOT / "projects/04-guardsynth-coc/artifacts/restricted/guardsynth-eblc-learning-001/paper1-source-audit-2026-09-06-002/source_audit.json"
 DESIGN = ROOT / "projects/04-guardsynth-coc/docs/designs/PAPER1_M17_MACHINE_PREFLIGHT_DESIGN_V01.md"
 CLAIM = "CONDITIONAL_ACTION_SELECTION_NOT_VEHICLE_SAFETY"
 

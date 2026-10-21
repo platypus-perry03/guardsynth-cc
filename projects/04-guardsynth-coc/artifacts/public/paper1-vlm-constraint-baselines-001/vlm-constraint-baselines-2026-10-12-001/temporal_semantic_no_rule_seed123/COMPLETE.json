@@ -1,0 +1,8 @@
+{
+  "task": "temporal",
+  "arm": "semantic_no_rule",
+  "seed": 123,
+  "rows": 240,
+  "status": "COMPLETE",
+  "evaluation_resumed_from_saved_adapter": true
+}

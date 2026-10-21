@@ -294,7 +294,7 @@ class LabelLightIntegrationAndMetricsTest(unittest.TestCase):
         self.assertEqual(metrics["human_corrections"], 0)
 
     def test_current_restricted_adapter_is_aggregated_without_identifiers(self) -> None:
-        path = ROOT / "artifacts/results/restricted/eblc-p0b-001/p0b-restricted-grounding-multiview-2026-08-08-v1/ADAPTER_RESULT.json"
+        path = ROOT / "platforms/eblc-bcv/artifacts/restricted/eblc-p0b-001/p0b-restricted-grounding-multiview-2026-08-08-v1/ADAPTER_RESULT.json"
         if not path.is_file():
             self.skipTest("restricted adapter result is absent")
         result = assess_legacy_adapter_label_light(load_json(path), target_slots=24)

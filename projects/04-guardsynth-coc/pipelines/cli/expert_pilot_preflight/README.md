@@ -4,7 +4,7 @@ M13 source-complete 장면 집계를 60-scene M16 quota와 비교한다.
 
 ```bash
 python3 -m cli.pipelines.guardsynth.expert_pilot_preflight.run \
-  --output-dir artifacts/results/restricted/guardsynth-expert-pilot-preflight-001/<run-id>
+  --output-dir projects/04-guardsynth-coc/artifacts/restricted/guardsynth-expert-pilot-preflight-001/<run-id>
 ```
 
 부족한 장면은 합성하지 않으며 start gate 미통과 시 annotation을 시작하지 않는다.

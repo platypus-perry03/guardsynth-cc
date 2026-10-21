@@ -120,7 +120,7 @@ class ProjectPortalTest(unittest.TestCase):
             )
             self.assertEqual(project["tracking_sync"]["mode"], "LIVE_ON_PAGE_LOAD")
 
-    def test_site_pages_and_selected_restricted_reviews_are_self_contained(self) -> None:
+    def test_site_pages_reuse_canonical_restricted_review_assets(self) -> None:
         with TemporaryDirectory() as directory:
             output = Path(directory) / "portal"
             manifest = build_portal(output)
@@ -133,12 +133,22 @@ class ProjectPortalTest(unittest.TestCase):
             result = json.loads((output / "RESULT.json").read_text(encoding="utf-8"))
             self.assertEqual(result["status"], "BUILT")
             self.assertEqual(result["review_page_count"], 9)
-            speed = (output / "reviews/paper1_speed_action_jonh.html").read_text(encoding="utf-8")
+            from apps.research_portal.artifact_registry import ArtifactRegistry
+            service = ArtifactRegistry(ROOT)
+            data = json.loads((output / "PORTAL_DATA.json").read_text(encoding="utf-8"))
+            pages = next(item for item in data["research_projects"] if item["id"] == "guardsynth-coc")["review_pages"]
+            def review_text(name):
+                page = next(item for item in pages if item["asset_name"] == name)
+                _, _, artifact_id, asset_id = page["href"].split("/")
+                path, _ = service.resolve_asset(artifact_id, asset_id, include_restricted=True)
+                return path.read_text(encoding="utf-8")
+            self.assertFalse((output / "reviews").exists())
+            speed = review_text("paper1_speed_action_jonh.html")
             self.assertIn("Jonh · 속도 행동 검토", speed)
             for forbidden in ('original_coc', 'raw_answer', 'zone_polygon', 'cnl_file', 'href="/'):
                 self.assertNotIn(forbidden, speed)
             for name in ("paper1_action_review.html", "paper1_action_assignment_preview.html"):
-                suspended = (output / "reviews" / name).read_text(encoding="utf-8")
+                suspended = review_text(name)
                 self.assertIn("이 16장면 검토는 중단했습니다", suspended)
                 self.assertIn("임의 경로 배정은 철회", suspended)
                 self.assertNotIn("<form", suspended)
@@ -160,16 +170,14 @@ class ProjectPortalTest(unittest.TestCase):
             self.assertIn("downloads/paper3-sequential-coc-uppaal-10pages.pdf", papers)
             review_text = (output / "review_04.html").read_text(encoding="utf-8")
             self.assertIn("이 연구영역에 소유권이 등록된 검토 패키지만 표시합니다", review_text)
-            expert_review = (
-                output / "reviews" / "m16_expert_source_review.html"
-            ).read_text(encoding="utf-8")
+            expert_review = review_text("m16_expert_source_review.html")
             self.assertIn("전문가 ID", expert_review)
             self.assertIn("기계 표시는 정답이 아닙니다", expert_review)
             self.assertIn("불일치할 때만 그리기", expert_review)
             self.assertIn('id="zoneButtons"', expert_review)
             self.assertIn('id="disposition"', expert_review)
             self.assertIn("선행 관찰 초안", expert_review)
-            source_review = (output / "reviews" / "scene18_source_binding_review.html").read_text(encoding="utf-8")
+            source_review = review_text("scene18_source_binding_review.html")
             self.assertIn("판단 시점의 대상·영역 확인", source_review)
             self.assertIn("정확한 시간 대응이 확인되지 않은", source_review)
             self.assertIn("판단 불가", source_review)
@@ -194,11 +202,8 @@ class ProjectPortalTest(unittest.TestCase):
             for page in next(
                 item for item in data["research_projects"] if item["id"] == "guardsynth-coc"
             )["review_pages"]:
-                self.assertTrue((output / page["href"]).is_file(), page["href"])
-                self.assertRegex(
-                    Path(page["href"]).name,
-                    r"^[a-z][a-z0-9_]*\.html$",
-                )
+                self.assertRegex(page["href"], r"^/assets/art-[a-f0-9]+/asset-[a-f0-9]+$")
+                self.assertTrue(review_text(page["asset_name"]))
             for removed_review in (
                 "m16_source_review.html",
                 "image_review.html",
@@ -231,6 +236,8 @@ class ProjectPortalTest(unittest.TestCase):
             self.assertFalse(str(ROOT) in all_text, "portal HTML exposes the absolute repository path")
 
     def test_all_portal_local_links_resolve(self) -> None:
+        from apps.research_portal.artifact_registry import ArtifactRegistry
+        registry = ArtifactRegistry(ROOT)
         with TemporaryDirectory() as directory:
             output = Path(directory) / "portal"
             build_portal(output)
@@ -238,6 +245,11 @@ class ProjectPortalTest(unittest.TestCase):
                 text = source.read_text(encoding="utf-8")
                 for raw in re.findall(r"(?:href|src)=\"([^\"]+)\"", text):
                     if raw.startswith(("#", "http:", "https:", "data:")):
+                        continue
+                    if raw.startswith("/assets/"):
+                        _, _, artifact_id, asset_id = raw.split("/")
+                        path, _ = registry.resolve_asset(artifact_id, asset_id, include_restricted=True)
+                        self.assertTrue(path.is_file())
                         continue
                     target = (source.parent / raw.split("#", 1)[0]).resolve()
                     self.assertTrue(target.exists(), f"{source.name}: {raw}")

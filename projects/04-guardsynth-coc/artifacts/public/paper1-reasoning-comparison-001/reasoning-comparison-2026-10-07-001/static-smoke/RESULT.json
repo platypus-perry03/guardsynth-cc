@@ -1,0 +1,10 @@
+{
+  "status": "COMPLETE",
+  "smoke": true,
+  "scored_rows": 24,
+  "unique_inputs": 2,
+  "model_setup_seconds": 20.676648285239935,
+  "worker_wall_seconds": 35.383840676397085,
+  "gpu": "NVIDIA A100 80GB PCIe",
+  "torch": "2.8.0+cu128"
+}

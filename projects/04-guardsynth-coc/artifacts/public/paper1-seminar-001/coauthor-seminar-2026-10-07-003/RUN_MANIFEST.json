@@ -1,0 +1,169 @@
+{
+  "project_id": "guardsynth-coc",
+  "run_id": "coauthor-seminar-2026-10-07-003",
+  "source": "projects/04-guardsynth-coc/paper/seminar/coauthor-seminar-v01-en.tex",
+  "language": "en",
+  "input_sha256": {
+    "projects/04-guardsynth-coc/paper/seminar/coauthor-seminar-v01-en.tex": "9a641917c59424f6d9519c31981672300238009d2a0cfdb0d7470eb58a3dd5b1",
+    "projects/04-guardsynth-coc/paper/ieee-access/main.tex": "5f43d36bcf947e6b223540df2c08ab2f22a88121190cb178be2e9bcd4911068f",
+    "projects/04-guardsynth-coc/paper/ieee-access/references.bib": "55d935f81c21fe60569e883befaafcb938deef2bb006f7f3ae6a2c03863112dd",
+    "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_METHODOLOGY_V01_EN.md": "cf202803d80fabe9ea72e7b8523fb4388bc64991a2680769ded899716c62b9ad",
+    "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_EXPERIMENTS_V01_EN.md": "c11244b59232b0de91b0f6de8fa5f66986f212b0f5b389218232f1dd3e6414c6",
+    "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_EXPERIMENTS_SUPPLEMENT_V01_EN.md": "0c0f88ef0ff25cd47426ec45f1b825d717be62de2fd43ea9302557318bf7e7a4",
+    "projects/04-guardsynth-coc/paper/ieee-access/IEEE_ACCESS_RELATED_WORK_V01_EN.md": "ca82461a6fa1e4e2721c66a5161817f18e927f94c5955bc9862639bce95bfc23"
+  },
+  "outputs": {
+    "slides": {
+      "file": "coauthor-seminar-v01-en.pdf",
+      "pages": 32,
+      "sha256": "d8fbe08c128bcaf9c94c64533a92ec64f43eceba59bb4c8b510b28b89e862e3f"
+    },
+    "notes": {
+      "file": "coauthor-seminar-v01-en-notes.pdf",
+      "pages": 32,
+      "sha256": "0e97916cdff96d43d043ceb3647b3055f8ee50a5a4f01a450cc0ab3353ff27da"
+    }
+  },
+  "engine": "LOCAL_PATH_REMOVED_79e0d7dfee0d",
+  "texinputs": ":/tmp/guardsynth-seminar-texdeps/tex//",
+  "main_slides": 26,
+  "backup_slides": 6,
+  "talk_minutes": 27,
+  "discussion_minutes": 3,
+  "timing": [
+    {
+      "slide": 1,
+      "start_seconds": 0,
+      "duration_seconds": 30
+    },
+    {
+      "slide": 2,
+      "start_seconds": 30,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 3,
+      "start_seconds": 90,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 4,
+      "start_seconds": 150,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 5,
+      "start_seconds": 210,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 6,
+      "start_seconds": 270,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 7,
+      "start_seconds": 330,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 8,
+      "start_seconds": 390,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 9,
+      "start_seconds": 450,
+      "duration_seconds": 90
+    },
+    {
+      "slide": 10,
+      "start_seconds": 540,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 11,
+      "start_seconds": 615,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 12,
+      "start_seconds": 675,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 13,
+      "start_seconds": 750,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 14,
+      "start_seconds": 810,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 15,
+      "start_seconds": 885,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 16,
+      "start_seconds": 945,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 17,
+      "start_seconds": 1020,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 18,
+      "start_seconds": 1080,
+      "duration_seconds": 75
+    },
+    {
+      "slide": 19,
+      "start_seconds": 1155,
+      "duration_seconds": 105
+    },
+    {
+      "slide": 20,
+      "start_seconds": 1260,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 21,
+      "start_seconds": 1320,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 22,
+      "start_seconds": 1380,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 23,
+      "start_seconds": 1440,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 24,
+      "start_seconds": 1500,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 25,
+      "start_seconds": 1560,
+      "duration_seconds": 60
+    },
+    {
+      "slide": 26,
+      "start_seconds": 1620,
+      "duration_seconds": 180
+    }
+  ],
+  "manuscript_and_experiments_modified": false,
+  "new_model_predictions": 0,
+  "visual_review": "PASS: rendered title page inspected; remaining slides and notes text match run 002.",
+  "change": "Remove the two requested seminar-duration and draft-status lines from the English title slide."
+}

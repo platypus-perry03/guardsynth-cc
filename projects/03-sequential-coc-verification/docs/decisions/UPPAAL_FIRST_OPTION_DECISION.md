@@ -679,7 +679,7 @@ projects/03-sequential-coc-verification/
     uppaal-feasibility-summary.md
 ```
 
-Alpamayo CoC 원문, 제한 영상 및 trajectory 배열은 접근 통제된 `artifacts/results/restricted` 또는 `internal-derived` 경로에 저장한다.
+Alpamayo CoC 원문, 제한 영상 및 trajectory 배열은 접근 통제된 `projects/03-sequential-coc-verification/artifacts/restricted` 또는 `internal-derived` 경로에 저장한다.
 
 ## 18. 첫 번째 실행 항목
 

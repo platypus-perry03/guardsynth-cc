@@ -1,0 +1,17 @@
+{
+  "project_id": "guardsynth-coc",
+  "task_id": "pretrained-generation-budget-sensitivity",
+  "reason": "Primary 12-token run contained explanations truncated before a candidate label",
+  "design": "Post-hoc diagnostic; report alongside primary, never replace it or select best scores",
+  "max_new_tokens": 512,
+  "batch_size": 2,
+  "decoding": "Greedy; unchanged P2 prompts and images",
+  "parser": "Last explicit answer marker, else final sole-option line, else original unique-option parser",
+  "models": [
+    "2b",
+    "8b"
+  ],
+  "source": "2e57ac7d91a55e1c127781a5dee100613f6a1d0805f97d0a61e77d4a42ee16dc",
+  "test_sha256": "774bb817204e7ba043537480c47ab2e15fe531715b512bd34bff1a14d358c77d",
+  "created_at": "2026-10-12T15:44:35.251705+00:00"
+}

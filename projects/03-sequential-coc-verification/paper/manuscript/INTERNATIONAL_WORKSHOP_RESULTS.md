@@ -2,7 +2,7 @@
 
 대상 계획: `INTERNATIONAL_WORKSHOP_PLAN.md`
 
-실험 산출물 위치: `artifacts/results/public/workshop-boost/`
+실험 산출물 위치: `projects/01-safety-constrained-coc/artifacts/public/workshop-boost/`
 
 본 문서는 국제 워크숍 투고 수준으로 논문을 보강하기 위해 추가로 실행하거나 재정리한 실험 결과를 요약한다. 핵심 결론은 다음과 같다. 현재 결과는 물리적 안전성 증명이 아니라 reasoning-augmented driving annotation을 학습 데이터로 사용하기 전에 수행하는 protocol-level consistency audit의 실효성을 보인다.
 
@@ -30,7 +30,7 @@
 
 ```bash
 python projects/03-sequential-coc-verification/experiments/feasibility/audit_scene_continuity.py \
-  --output artifacts/results/public/workshop-boost/local-scene-continuity-negative-control.json
+  --output projects/01-safety-constrained-coc/artifacts/public/workshop-boost/local-scene-continuity-negative-control.json
 ```
 
 결과:
@@ -55,7 +55,7 @@ CoC-Nusc의 local egomotion은 scene마다 timestamp와 pose가 초기화된다.
 
 ```bash
 python projects/03-sequential-coc-verification/experiments/uppaal/run_boundary_negative_control.py \
-  --output artifacts/results/public/workshop-boost/boundary-negative-control-result.json
+  --output projects/01-safety-constrained-coc/artifacts/public/workshop-boost/boundary-negative-control-result.json
 ```
 
 Negative-control timeline:
@@ -140,7 +140,7 @@ metadata mirror를 사용하면 scene 간 시간 연속성 후보를 찾을 수 
 ```bash
 python projects/03-sequential-coc-verification/experiments/feasibility/check_cohort.py \
   --chunk 0 \
-  --output artifacts/results/public/workshop-boost/weak-kinematic-chunk0.json
+  --output projects/01-safety-constrained-coc/artifacts/public/workshop-boost/weak-kinematic-chunk0.json
 ```
 
 결과:
@@ -198,9 +198,9 @@ Review priority:
 
 ```bash
 python projects/03-sequential-coc-verification/experiments/uppaal/run_cohort_verification.py \
-  --cohort-result artifacts/results/public/workshop-boost/weak-kinematic-chunk0.json \
-  --model-dir artifacts/intermediate/uppaal-models/chunk-0000-94 \
-  --output artifacts/results/public/workshop-boost/uppaal-cohort-verification-result.json
+  --cohort-result projects/01-safety-constrained-coc/artifacts/public/workshop-boost/weak-kinematic-chunk0.json \
+  --model-dir projects/03-sequential-coc-verification/projects/03-sequential-coc-verification/artifacts/intermediate/uppaal-models/chunk-0000-94 \
+  --output projects/01-safety-constrained-coc/artifacts/public/workshop-boost/uppaal-cohort-verification-result.json
 ```
 
 결과:
@@ -225,7 +225,7 @@ python projects/03-sequential-coc-verification/experiments/uppaal/run_cohort_ver
 
 ```bash
 python projects/03-sequential-coc-verification/experiments/uppaal/run_multiscene_loop_verification.py \
-  --output artifacts/results/public/workshop-boost/uppaal-loop-verification-result.json
+  --output projects/01-safety-constrained-coc/artifacts/public/workshop-boost/uppaal-loop-verification-result.json
 ```
 
 대상 chain:
@@ -356,7 +356,7 @@ official nuScenes mini metadata도 별도로 확인하였다.
 
 Output:
 
-`artifacts/results/public/workshop-boost/remaining-experiments-feasibility.json`
+`projects/01-safety-constrained-coc/artifacts/public/workshop-boost/remaining-experiments-feasibility.json`
 
 결론:
 

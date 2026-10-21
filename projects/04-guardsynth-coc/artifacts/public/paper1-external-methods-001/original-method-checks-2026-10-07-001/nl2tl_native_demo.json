@@ -1,0 +1,83 @@
+{
+  "status": "NATIVE_DEMO_EXECUTED",
+  "scope": "Official notebook demonstration; no candidate-selection score",
+  "source_notebook_sha256": "95f9af2b5c14b2e25b7a89fef7806b8945a3fa324202efcfad206f6fc51e8537",
+  "checkpoint_files": {
+    "spiece.model": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86",
+    "tokenizer.json": "64d77b028a67760b92d96b67e6b8e89d4b152513d21461e2de3d954446283c4d",
+    "pytorch_model.bin": "0fa13d7f44c48d9be51967bef23c7c0ced59f34baf0138bd28782a07662df1ae",
+    "special_tokens_map.json": "4720c0fddbe4c5991334f85ad7073d9bd0a294a8ba4641a2f8dab614ca825949",
+    "tokenizer_config.json": "6973652f30c2c8359a70d8fe41f9af4f13b3225d9520dbecfe0b7f0c69f997f3",
+    "config.json": "a6b45677d79e05c15563d8e228d192d7debe8990eea696167ff3c60b02853a13"
+  },
+  "tokenizer": "Official t5-base downloaded separately, loaded locally",
+  "runtime": {
+    "torch": "2.8.0+cu128",
+    "transformers": "4.57.1"
+  },
+  "seed": 42,
+  "generation": {
+    "num_beams": 8,
+    "do_sample": true,
+    "max_length": 128
+  },
+  "predictions": [
+    {
+      "input": "At some point (prop_1), and at some point (prop_2), and always do not (prop_4).",
+      "output": "( ( prop_1 and prop_2 ) and globally ( negation prop_4 ) )",
+      "elapsed_seconds": 1.796972032636404
+    },
+    {
+      "input": "Stay at (prop_1) for 5 units in the future and stay at (prop_2) for 5 units in the future, and ensure that never (prop_3).",
+      "output": "( ( globally [0,5] prop_1 and globally [0,5] prop_2 ) and globally [0,1] negation prop_3 )",
+      "elapsed_seconds": 0.6404705233871937
+    },
+    {
+      "input": "First (prop_1), and then (prop_2), and ensure that never (prop_3).",
+      "output": "( ( prop_1 until prop_2 ) and globally ( negation prop_3 ) )",
+      "elapsed_seconds": 0.4270331524312496
+    },
+    {
+      "input": "Start by (prop_1). Then, (prop_2). Lastly, (prop_3).",
+      "output": "( ( prop_1 until prop_2 ) until prop_3 )",
+      "elapsed_seconds": 0.508656844496727
+    },
+    {
+      "input": "Guarantee that you (prop_1) and (prop_2)",
+      "output": "finally ( prop_1 and prop_2 )",
+      "elapsed_seconds": 0.3112018257379532
+    },
+    {
+      "input": "( prop_1 ) and whenever ( prop_2 )",
+      "output": "( prop_1 and finally prop_2 )",
+      "elapsed_seconds": 0.3016008399426937
+    },
+    {
+      "input": "Sooner or later (prop_1)",
+      "output": "finally prop_1",
+      "elapsed_seconds": 0.24784457683563232
+    },
+    {
+      "input": "Repeatedly (prop_1)",
+      "output": "globally ( finally prop_1 )",
+      "elapsed_seconds": 0.22779754921793938
+    },
+    {
+      "input": "At some point, (prop_1).",
+      "output": "finally prop_1",
+      "elapsed_seconds": 0.22914254665374756
+    },
+    {
+      "input": "Do prop_1 but not do prop_2",
+      "output": "( prop_1 and negation prop_2 )",
+      "elapsed_seconds": 0.24512973427772522
+    },
+    {
+      "input": "Do prop_1, do prop_2, do prop_3",
+      "output": "( prop_1 imply ( prop_2 and prop_3 ) )",
+      "elapsed_seconds": 0.34223470091819763
+    }
+  ],
+  "human_correction": false,
+  "our_augmentation": false
+}

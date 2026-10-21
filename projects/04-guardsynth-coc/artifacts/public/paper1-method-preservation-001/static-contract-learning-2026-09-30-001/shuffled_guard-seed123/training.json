@@ -1,0 +1,19 @@
+{
+  "arm": "SHUFFLED_GUARD",
+  "seed": 123,
+  "optimizer_updates": 108,
+  "history": [
+    {
+      "epoch": 1,
+      "mean_loss": 0.2775670689362515
+    },
+    {
+      "epoch": 2,
+      "mean_loss": 0.23713073656997746
+    },
+    {
+      "epoch": 3,
+      "mean_loss": 0.23338471735931104
+    }
+  ]
+}

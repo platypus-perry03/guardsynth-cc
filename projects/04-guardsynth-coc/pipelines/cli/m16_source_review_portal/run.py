@@ -30,7 +30,7 @@ ROOT = project_root(__file__)
 HERE = Path(__file__).resolve().parent
 TEMPLATE = HERE / "source_review_workbench.html"
 M16_RUN = ROOT / (
-    "artifacts/projects/guardsynth-coc/restricted/"
+    "projects/04-guardsynth-coc/artifacts/restricted/"
     "guardsynth-m16-scene-acquisition-001/"
     "m16-source-acquisition-2026-08-14-v18"
 )
@@ -44,7 +44,7 @@ RESERVE_ASSETS = ROOT / (
     "data/restricted/nvidia_physicalai/internal-derived/m16-reserve-v1"
 )
 OUTPUT_ROOT = ROOT / (
-    "artifacts/projects/guardsynth-coc/restricted/"
+    "projects/04-guardsynth-coc/artifacts/restricted/"
     "guardsynth-m16-source-review-001"
 )
 FRAME_OFFSETS_S = (-1.0, -0.5, 0.0, 0.5, 1.0)

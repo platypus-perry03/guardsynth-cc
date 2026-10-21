@@ -21,10 +21,10 @@ def documentation_files(root: Path) -> tuple[Path, ...]:
     files.extend((root / "governance").glob("*/README.md"))
     files.extend((root / "projects").glob("*/README.md"))
     files.extend((root / "projects").glob("*/STATUS.md"))
-    files.extend((root / "projects").glob("*/results/RESULT_INDEX.md"))
+    files.extend((root / "projects").glob("*/artifacts/RESULT_INDEX.md"))
     files.extend((root / "platforms").glob("*/README.md"))
     files.extend((root / "platforms").glob("*/STATUS.md"))
-    files.extend((root / "platforms").glob("*/results/RESULT_INDEX.md"))
+    files.extend((root / "platforms").glob("*/artifacts/RESULT_INDEX.md"))
     for relative in (
         "apps/research_portal/README.md",
         "archive/README.md",
