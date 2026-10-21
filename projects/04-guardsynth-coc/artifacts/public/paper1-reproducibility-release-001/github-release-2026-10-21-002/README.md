@@ -9,11 +9,11 @@ Code: [MIT](license-code.txt). Synthetic data/records: [CC BY 4.0](license-data.
 
 This is a frozen distribution, not a second maintained source tree. Source paths inside
 the archive retain the project's original layout. The archive contains no model weights,
-licensed road imagery, API credentials or server state. A GitHub PR must be merged before
-this release is available on the original repository's default branch.
+licensed road imagery, API credentials or server state. The versioned public folder provides an immutable release view; the default branch
+will contain it after the paper-scoped PR is merged.
 Host-specific home paths and GPU identifiers have been removed from exported copies.
 The file manifest records both original and public hashes; original experiment records remain unchanged.
 
 Validation records: [metrics](verification.json), [formal reruns and 16 tests](formal_verification.json), [public-content checks](public_content_review.json).
 
-Published for review in [jinkimh/guardsynth-cc PR #1](https://github.com/jinkimh/guardsynth-cc/pull/1). Merge is required for availability on the original repository main branch. Uploaded archive SHA-256 verified.
+See the [paper-specific entry point](../README.md) for the publication scope. The uploaded archive SHA-256 was verified. The earlier repository-wide PR was superseded by a paper-scoped publication.
