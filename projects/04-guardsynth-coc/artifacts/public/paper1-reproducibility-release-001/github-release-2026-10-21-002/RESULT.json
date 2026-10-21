@@ -1,0 +1,23 @@
+{
+  "project_id": "guardsynth-coc",
+  "task_id": "nca-public-reproducibility",
+  "run_id": "github-release-2026-10-21-002",
+  "status": "VALIDATED",
+  "created_at": "2026-10-21T20:17:29.066191+00:00",
+  "archive": "guardsynth-nca-reproducibility-2026-10-21-002.tar.gz",
+  "archive_sha256": "4e4a6f97b07cf31faddc226a20560a7691ac93789edf6e50c7a7f39c306b84ec",
+  "source_files": 1188,
+  "uncompressed_bytes": 152164885,
+  "compressed_bytes": 8889999,
+  "code_license": "MIT",
+  "synthetic_data_license": "CC-BY-4.0",
+  "publication": {
+    "status": "READY",
+    "user_authorization": "Publish to the existing jinkimh/guardsynth-cc via fork/PR after removing server-path metadata."
+  },
+  "validation": {
+    "metrics": "verification.json",
+    "formal_checks": "formal_verification.json",
+    "public_content": "public_content_review.json"
+  }
+}
