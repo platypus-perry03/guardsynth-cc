@@ -1199,8 +1199,11 @@
   "code_license": "MIT",
   "synthetic_data_license": "CC-BY-4.0",
   "publication": {
-    "status": "READY",
-    "user_authorization": "Publish to the existing jinkimh/guardsynth-cc via fork/PR after removing server-path metadata."
+    "status": "PR_OPEN",
+    "url": "https://github.com/jinkimh/guardsynth-cc/pull/1",
+    "repository": "jinkimh/guardsynth-cc",
+    "distribution_commit": "ac241c865b5e9ab910907e732fe377dc8d56a10b",
+    "remote_archive_sha256_verified": true
   },
   "validation": {
     "metrics": "verification.json",
